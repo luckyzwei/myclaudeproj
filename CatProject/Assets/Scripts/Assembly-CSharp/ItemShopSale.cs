@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ItemShopSale : ItemPackageGroup
+{
+	[Header("[ItemShopSale]")]
+	[SerializeField]
+	private GameObject TomorrowRootObj;
+
+	[SerializeField]
+	private GameObject TomorrowTimeObj;
+
+	[SerializeField]
+	private GameObject TomorrowLastObj;
+
+	[SerializeField]
+	private Text RemainBuyCountText;
+
+	[SerializeField]
+	private List<GameObject> SoldOutDectiveObjList;
+
+	private Config.E_ShopSaleListType ShopSaleListType;
+
+	private Config.E_ShopSaleItemResetType SaleResetType;
+
+	private bool isLock;
+
+	private bool isLastDay;
+
+	private bool isRedDot;
+
+	private DateTime SaleStartTime;
+
+	private DateTime NextResetTime;
+
+	public override void Set(int packageIdx)
+	{
+	}
+
+	private void Update()
+	{
+	}
+
+	public void UpdateBuyInfo()
+	{
+	}
+
+	private void UpdateRedDot()
+	{
+	}
+
+	public bool CheckCompanyExp()
+	{
+		return false;
+	}
+
+	protected override void OnClickBuy()
+	{
+	}
+
+	public override void OnBuySuccess()
+	{
+	}
+}

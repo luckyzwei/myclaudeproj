@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -45929202, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ParkingLotCarSet
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  mSecondKey: []
+  mDataList:
+  - _zone: 1
+    _name:
+    _desc:
+    _car_brand_info_idx: 010000000800000004000000
+    _need_count: 010000000100000001000000
+    _ability_info_idx: 3
+    _ability_value: 500
+    _icon:
+  - _zone: 101
+    _name:
+    _desc:
+    _car_brand_info_idx: 06000000
+    _need_count: 03000000
+    _ability_info_idx: 3
+    _ability_value: 500
+    _icon:
+  - _zone: 102
+    _name:
+    _desc:
+    _car_brand_info_idx: 07000000
+    _need_count: 03000000
+    _ability_info_idx: 3
+    _ability_value: 500
+    _icon:
+  - _zone: 103
+    _name:
+    _desc:
+    _car_brand_info_idx: 0b000000
+    _need_count: 03000000
+    _ability_info_idx: 6
+    _ability_value: 500
+    _icon:
+  - _zone: 104
+    _name:
+    _desc:
+    _car_brand_info_idx: 02000000
+    _need_count: 03000000
+    _ability_info_idx: 6
+    _ability_value: 500
+    _icon:
+  - _zone: 105
+    _name:
+    _desc:
+    _car_brand_info_idx: 030000000c0000000a000000
+    _need_count: 010000000100000001000000
+    _ability_info_idx: 6
+    _ability_value: 500
+    _icon:
+  - _zone: 106
+    _name:
+    _desc:
+    _car_brand_info_idx: 0d000000
+    _need_count: 03000000
+    _ability_info_idx: 6
+    _ability_value: 500
+    _icon:

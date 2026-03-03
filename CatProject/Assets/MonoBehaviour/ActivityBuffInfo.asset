@@ -1,0 +1,1781 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 221061055, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ActivityBuffInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 704
+  - 704
+  - 704
+  - 704
+  - 704
+  - 704
+  - 704
+  - 705
+  - 705
+  - 705
+  - 705
+  - 705
+  - 705
+  - 705
+  - 706
+  - 706
+  - 706
+  - 706
+  - 706
+  - 706
+  - 706
+  - 801
+  - 801
+  - 801
+  - 801
+  - 801
+  - 801
+  - 801
+  - 802
+  - 802
+  - 802
+  - 802
+  - 802
+  - 802
+  - 802
+  - 803
+  - 803
+  - 803
+  - 803
+  - 803
+  - 803
+  - 803
+  - 804
+  - 804
+  - 804
+  - 804
+  - 804
+  - 804
+  - 804
+  - 805
+  - 805
+  - 805
+  - 805
+  - 805
+  - 805
+  - 805
+  - 901
+  - 901
+  - 901
+  - 901
+  - 901
+  - 901
+  - 901
+  - 902
+  - 902
+  - 902
+  - 902
+  - 902
+  - 902
+  - 902
+  - 903
+  - 903
+  - 903
+  - 903
+  - 903
+  - 903
+  - 903
+  - 1001
+  - 1001
+  - 1001
+  - 1001
+  - 1001
+  - 1001
+  - 1001
+  - 1002
+  - 1002
+  - 1002
+  - 1002
+  - 1002
+  - 1002
+  - 1002
+  - 1101
+  - 1101
+  - 1101
+  - 1101
+  - 1101
+  - 1101
+  - 1101
+  - 1102
+  - 1102
+  - 1102
+  - 1102
+  - 1102
+  - 1102
+  - 1102
+  - 1103
+  - 1103
+  - 1103
+  - 1103
+  - 1103
+  - 1103
+  - 1103
+  - 1105
+  - 1105
+  - 1105
+  - 1105
+  - 1105
+  - 1105
+  - 1105
+  - 1201
+  - 1201
+  - 1201
+  - 1201
+  - 1201
+  - 1201
+  - 1201
+  - 1202
+  - 1202
+  - 1202
+  - 1202
+  - 1202
+  - 1202
+  - 1202
+  - 1205
+  - 1205
+  - 1205
+  - 1205
+  - 1205
+  - 1205
+  - 1205
+  - 1206
+  - 1206
+  - 1206
+  - 1206
+  - 1206
+  - 1206
+  - 1206
+  - 1207
+  - 1207
+  - 1207
+  - 1207
+  - 1207
+  - 1207
+  - 1207
+  - 1208
+  - 1208
+  - 1208
+  - 1208
+  - 1208
+  - 1208
+  - 1208
+  - 1209
+  - 1209
+  - 1209
+  - 1209
+  - 1209
+  - 1209
+  - 1209
+  - 1302
+  - 1302
+  - 1302
+  - 1302
+  - 1302
+  - 1302
+  - 1302
+  - 1301
+  - 1301
+  - 1301
+  - 1301
+  - 1301
+  - 1301
+  - 1301
+  - 1401
+  - 1401
+  - 1401
+  - 1401
+  - 1401
+  - 1401
+  - 1401
+  - 1402
+  - 1402
+  - 1402
+  - 1402
+  - 1402
+  - 1402
+  - 1402
+  - 1403
+  - 1403
+  - 1403
+  - 1403
+  - 1403
+  - 1403
+  - 1403
+  - 1404
+  - 1404
+  - 1404
+  - 1404
+  - 1404
+  - 1404
+  - 1404
+  - 1405
+  - 1405
+  - 1405
+  - 1405
+  - 1405
+  - 1405
+  - 1405
+  - 1406
+  - 1406
+  - 1406
+  - 1406
+  - 1406
+  - 1406
+  - 1406
+  - 1501
+  - 1501
+  - 1501
+  - 1501
+  - 1501
+  - 1501
+  - 1501
+  - 1502
+  - 1502
+  - 1502
+  - 1502
+  - 1502
+  - 1502
+  - 1502
+  - 1503
+  - 1503
+  - 1503
+  - 1503
+  - 1503
+  - 1503
+  - 1503
+  - 1504
+  - 1504
+  - 1504
+  - 1504
+  - 1504
+  - 1504
+  - 1504
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  mDataList:
+  - _office_item_idx: 704
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 704
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 705
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 706
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 801
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 802
+    _office_item_level: 7
+    _buff_idx: 1014
+    _add_buff_office_item_idx: 801
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 803
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 804
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 805
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 2
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 3
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 4
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 5
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 901
+    _office_item_level: 7
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 1
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 2
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 3
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 4
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 5
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 902
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 6
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 903
+    _office_item_level: 7
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 6
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1001
+    _office_item_level: 7
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 6
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1002
+    _office_item_level: 7
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1101
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1102
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1103
+    _office_item_level: 7
+    _buff_idx: 1014
+    _add_buff_office_item_idx: 1102
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 1
+    _buff_idx: 1001
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 2
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 3
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 4
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 5
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 6
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1105
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1201
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1202
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1205
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1206
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 1
+    _buff_idx: 1002
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 2
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 3
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 4
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 5
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1207
+    _office_item_level: 7
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1208
+    _office_item_level: 7
+    _buff_idx: 1014
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1209
+    _office_item_level: 7
+    _buff_idx: 1014
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 2
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 3
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 4
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 5
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1302
+    _office_item_level: 7
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 1
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 2
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 3
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 4
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 5
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1301
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 1
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 2
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 3
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 4
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 5
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1401
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 1
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 2
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 3
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 4
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 5
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 6
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1402
+    _office_item_level: 7
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 6
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1403
+    _office_item_level: 7
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 1
+    _buff_idx: 1003
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 2
+    _buff_idx: 1004
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 3
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 4
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 5
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 6
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1404
+    _office_item_level: 7
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 2
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 3
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 4
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 5
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1405
+    _office_item_level: 7
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 2
+    _buff_idx: 1006
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 3
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 4
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 5
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 6
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1406
+    _office_item_level: 7
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 2
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 3
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 4
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 5
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 6
+    _buff_idx: 1015
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1501
+    _office_item_level: 7
+    _buff_idx: 1017
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 1
+    _buff_idx: 1005
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 2
+    _buff_idx: 1007
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 3
+    _buff_idx: 1009
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 4
+    _buff_idx: 1011
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 5
+    _buff_idx: 1013
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 6
+    _buff_idx: 1015
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1502
+    _office_item_level: 7
+    _buff_idx: 1017
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 1
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 2
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 3
+    _buff_idx: 1012
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 4
+    _buff_idx: 1014
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 5
+    _buff_idx: 1016
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 6
+    _buff_idx: 1018
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1503
+    _office_item_level: 7
+    _buff_idx: 1020
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 1
+    _buff_idx: 1008
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 2
+    _buff_idx: 1010
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 3
+    _buff_idx: 1012
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 4
+    _buff_idx: 1014
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 5
+    _buff_idx: 1016
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 6
+    _buff_idx: 1018
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01
+  - _office_item_idx: 1504
+    _office_item_level: 7
+    _buff_idx: 1020
+    _add_buff_office_item_idx: -1
+    _buff_icon: Dynamic_Icon_Ability_01

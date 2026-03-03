@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1285967899, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SpecialDayShop
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _hot_tag: 1
+    _exchange_count: 5
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 600
+    _reward_type: 6
+    _reward_idx: 3001
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_1st_CEO
+    _reward_name: str_birthday_shop_exchange_reward_name_1
+  - _idx: 2
+    _hot_tag: 1
+    _exchange_count: 10
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 600
+    _reward_type: 4
+    _reward_idx: 18
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_1st_Plant
+    _reward_name: str_birthday_shop_exchange_reward_name_2
+  - _idx: 3
+    _hot_tag: 1
+    _exchange_count: 1
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 1140
+    _reward_type: 104
+    _reward_idx: 1004
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_1st_Car
+    _reward_name: str_birthday_shop_exchange_reward_name_3
+  - _idx: 4
+    _hot_tag: 0
+    _exchange_count: 5
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 400
+    _reward_type: 1
+    _reward_idx: 11
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Goods_TarotTicket_Special
+    _reward_name: str_birthday_shop_exchange_reward_name_4
+  - _idx: 5
+    _hot_tag: 0
+    _exchange_count: 10
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 200
+    _reward_type: 1
+    _reward_idx: 10
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Goods_TarotTicket_Basic
+    _reward_name: str_birthday_shop_exchange_reward_name_5
+  - _idx: 6
+    _hot_tag: 0
+    _exchange_count: 20
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 90
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Goods_Key_02
+    _reward_name: str_birthday_shop_exchange_reward_name_6
+  - _idx: 7
+    _hot_tag: 0
+    _exchange_count: 20
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 30
+    _reward_type: 3
+    _reward_idx: 201
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Goods_Key_01
+    _reward_name: str_birthday_shop_exchange_reward_name_7
+  - _idx: 8
+    _hot_tag: 0
+    _exchange_count: 15
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 200
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_region: 999
+    _reward_value: 3600
+    _reward_icon: DynamicShop_Icon_Money_03_
+    _reward_name: str_birthday_shop_exchange_reward_name_8
+  - _idx: 9
+    _hot_tag: 0
+    _exchange_count: 15
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 200
+    _reward_type: 2
+    _reward_idx: -1
+    _reward_region: 0
+    _reward_value: 3600
+    _reward_icon: DynamicShop_Icon_Exp_03
+    _reward_name: str_birthday_shop_exchange_reward_name_9
+  - _idx: 10
+    _hot_tag: 0
+    _exchange_count: 30
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 100
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_region: 999
+    _reward_value: 1800
+    _reward_icon: DynamicShop_Icon_Money_02_
+    _reward_name: str_birthday_shop_exchange_reward_name_10
+  - _idx: 11
+    _hot_tag: 0
+    _exchange_count: 30
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 100
+    _reward_type: 2
+    _reward_idx: -1
+    _reward_region: 0
+    _reward_value: 1800
+    _reward_icon: DynamicShop_Icon_Exp_02
+    _reward_name: str_birthday_shop_exchange_reward_name_11
+  - _idx: 12
+    _hot_tag: 0
+    _exchange_count: 60
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 50
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_region: 999
+    _reward_value: 900
+    _reward_icon: DynamicShop_Icon_Money_01_
+    _reward_name: str_birthday_shop_exchange_reward_name_12
+  - _idx: 13
+    _hot_tag: 0
+    _exchange_count: 60
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 50
+    _reward_type: 2
+    _reward_idx: -1
+    _reward_region: 0
+    _reward_value: 900
+    _reward_icon: DynamicShop_Icon_Exp_01
+    _reward_name: str_birthday_shop_exchange_reward_name_13
+  - _idx: 14
+    _hot_tag: 0
+    _exchange_count: 20
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 160
+    _reward_type: 3
+    _reward_idx: 103
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Plant_Supplies_03
+    _reward_name: str_birthday_shop_exchange_reward_name_14
+  - _idx: 15
+    _hot_tag: 0
+    _exchange_count: 50
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 60
+    _reward_type: 3
+    _reward_idx: 102
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Plant_Supplies_02
+    _reward_name: str_birthday_shop_exchange_reward_name_15
+  - _idx: 16
+    _hot_tag: 0
+    _exchange_count: 110
+    _cost_type: 1
+    _cost_idx: 13
+    _cost_region: 0
+    _cost_value: 20
+    _reward_type: 3
+    _reward_idx: 101
+    _reward_region: 0
+    _reward_value: 1
+    _reward_icon: DynamicShop_Icon_Plant_Supplies_01
+    _reward_name: str_birthday_shop_exchange_reward_name_16

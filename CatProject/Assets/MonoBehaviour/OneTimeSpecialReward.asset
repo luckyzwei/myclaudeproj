@@ -1,0 +1,2929 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392444489, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: OneTimeSpecialReward
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 201
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 202
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 203
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 301
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 302
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 303
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 401
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 402
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  - 501
+  mSecondKey:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  mDataList:
+  - _theme_index: 101
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 101
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 101
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 101
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 101
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 101
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 101
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 101
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 101
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 101
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 102
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 102
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 102
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 102
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 102
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 102
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 102
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 102
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 102
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 103
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 103
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 103
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 103
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 103
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 103
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 103
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 103
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 103
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 104
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 104
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 104
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 104
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 104
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 104
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1400000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_20
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 104
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1500000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_21
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 104
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 104
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 201
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 201
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 201
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 201
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 201
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 201
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 201
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 201
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 201
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 202
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 202
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 202
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 202
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 202
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 202
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 202
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 202
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 202
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 203
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 203
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 203
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 203
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 203
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 203
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1600000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_22
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 203
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1700000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_23
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 203
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 203
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 301
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 301
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 301
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 301
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 301
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 301
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 301
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 301
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 301
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 302
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 302
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 302
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 302
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 302
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 302
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 302
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 302
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 302
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 303
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 303
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 303
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 303
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 303
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 303
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1800000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_24
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 303
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1900000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_25
+    - DynamicShop_Icon_package_gem05
+  - _theme_index: 303
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 303
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 401
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 401
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 401
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 401
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 401
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 401
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 401
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 401
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 401
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 402
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 402
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 402
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 402
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 402
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 402
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 402
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1100000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_17
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 402
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 402
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 0
+    _mission_count: 5
+    _step: 0
+    _speech: str_onetime_special_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon: []
+  - _theme_index: 501
+    _level: 1
+    _mission_count: 10
+    _step: 14
+    _speech: str_onetime_special_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 501
+    _level: 2
+    _mission_count: 15
+    _step: 13
+    _speech: str_onetime_special_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_Free
+  - _theme_index: 501
+    _level: 3
+    _mission_count: 20
+    _step: 12
+    _speech: str_onetime_special_speech_3
+    _shop_special_idx: 15
+    _reward_type: 0400000001000000
+    _reward_idx: 1300000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_19
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 4
+    _mission_count: 25
+    _step: 11
+    _speech: str_onetime_special_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 501
+    _level: 5
+    _mission_count: 30
+    _step: 10
+    _speech: str_onetime_special_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000046000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem01
+  - _theme_index: 501
+    _level: 6
+    _mission_count: 35
+    _step: 9
+    _speech: str_onetime_special_speech_6
+    _shop_special_idx: 16
+    _reward_type: 0400000001000000
+    _reward_idx: 1300000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 010000002c010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_19
+    - DynamicShop_Icon_package_gem03
+  - _theme_index: 501
+    _level: 7
+    _mission_count: 40
+    _step: 8
+    _speech: str_onetime_special_speech_7
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 8
+    _mission_count: 50
+    _step: 7
+    _speech: str_onetime_special_speech_8
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 201c000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 9
+    _mission_count: 60
+    _step: 6
+    _speech: str_onetime_special_speech_9
+    _shop_special_idx: 17
+    _reward_type: 0400000001000000
+    _reward_idx: 1300000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 01000000f4010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_19
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 501
+    _level: 10
+    _mission_count: 70
+    _step: 5
+    _speech: str_onetime_special_speech_10
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 11
+    _mission_count: 80
+    _step: 4
+    _speech: str_onetime_special_speech_11
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 12
+    _mission_count: 90
+    _step: 3
+    _speech: str_onetime_special_speech_12
+    _shop_special_idx: 18
+    _reward_type: 0400000001000000
+    _reward_idx: 1300000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000090010000
+    _reward_icon:
+    - Dynamic_Icon_Plant_Reward_19
+    - DynamicShop_Icon_package_gem04
+  - _theme_index: 501
+    _level: 13
+    _mission_count: 100
+    _step: 2
+    _speech: str_onetime_special_speech_13
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a00008c000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _theme_index: 501
+    _level: 14
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_special_speech_14
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: 01000000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 01000000302a00008c000000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02

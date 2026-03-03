@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 814152039, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: StageData
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  mSecondKey: []
+  mDataList:
+  - _stage: 1
+    _name: str_stage_1
+    _desc: str_desc_stage_1
+    _stage_money_multiple: 1
+    _currency_type_1: -1
+    _stage_build_cost_1: -1
+    _currency_type_2: -1
+    _stage_build_cost_2: -1
+    _entrance_reward: -1
+    _entrance_reward_count: -1
+    _stage_start_money: 0
+  - _stage: 2
+    _name: str_stage_2
+    _desc: str_desc_stage_2
+    _stage_money_multiple: 3
+    _currency_type_1: 1
+    _stage_build_cost_1: 50000000
+    _currency_type_2: 3
+    _stage_build_cost_2: 10
+    _entrance_reward: 2
+    _entrance_reward_count: 1
+    _stage_start_money: 100000

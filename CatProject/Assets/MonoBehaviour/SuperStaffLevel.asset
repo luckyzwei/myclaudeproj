@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -202700513, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SuperStaffLevel
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 10002
+  - 10003
+  - 10001
+  - 10002
+  - 10001
+  - 10002
+  - 10003
+  - 10002
+  - 10003
+  - 10101
+  - 10102
+  - 10103
+  - 10101
+  - 10102
+  - 10103
+  - 10101
+  - 10102
+  - 10103
+  - 10102
+  - 10201
+  - 10203
+  - 10201
+  - 10203
+  - 10202
+  - 10201
+  - 10203
+  - 10201
+  - 10203
+  - 10201
+  - 10301
+  - 10301
+  - 10301
+  - 10301
+  - 10302
+  - 10301
+  - 10301
+  - 10301
+  - 10301
+  - 10302
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  mDataList:
+  - _ability_idx: 10001
+    _level: 1
+    _upgrade_cost: 50
+    _ability_value: 1
+  - _ability_idx: 10002
+    _level: 2
+    _upgrade_cost: 100
+    _ability_value: 10
+  - _ability_idx: 10003
+    _level: 3
+    _upgrade_cost: 150
+    _ability_value: 3
+  - _ability_idx: 10001
+    _level: 4
+    _upgrade_cost: 200
+    _ability_value: 2
+  - _ability_idx: 10002
+    _level: 5
+    _upgrade_cost: 250
+    _ability_value: 20
+  - _ability_idx: 10001
+    _level: 6
+    _upgrade_cost: 300
+    _ability_value: 3
+  - _ability_idx: 10002
+    _level: 7
+    _upgrade_cost: 350
+    _ability_value: 30
+  - _ability_idx: 10003
+    _level: 8
+    _upgrade_cost: 400
+    _ability_value: 6
+  - _ability_idx: 10002
+    _level: 9
+    _upgrade_cost: 450
+    _ability_value: 40
+  - _ability_idx: 10003
+    _level: 10
+    _upgrade_cost: 500
+    _ability_value: 10
+  - _ability_idx: 10101
+    _level: 1
+    _upgrade_cost: 50
+    _ability_value: 1
+  - _ability_idx: 10102
+    _level: 2
+    _upgrade_cost: 100
+    _ability_value: 1
+  - _ability_idx: 10103
+    _level: 3
+    _upgrade_cost: 150
+    _ability_value: 50
+  - _ability_idx: 10101
+    _level: 4
+    _upgrade_cost: 200
+    _ability_value: 2
+  - _ability_idx: 10102
+    _level: 5
+    _upgrade_cost: 250
+    _ability_value: 2
+  - _ability_idx: 10103
+    _level: 6
+    _upgrade_cost: 300
+    _ability_value: 100
+  - _ability_idx: 10101
+    _level: 7
+    _upgrade_cost: 350
+    _ability_value: 3
+  - _ability_idx: 10102
+    _level: 8
+    _upgrade_cost: 400
+    _ability_value: 3
+  - _ability_idx: 10103
+    _level: 9
+    _upgrade_cost: 450
+    _ability_value: 200
+  - _ability_idx: 10102
+    _level: 10
+    _upgrade_cost: 500
+    _ability_value: 4
+  - _ability_idx: 10201
+    _level: 1
+    _upgrade_cost: 50
+    _ability_value: 10
+  - _ability_idx: 10203
+    _level: 2
+    _upgrade_cost: 100
+    _ability_value: 10
+  - _ability_idx: 10201
+    _level: 3
+    _upgrade_cost: 150
+    _ability_value: 20
+  - _ability_idx: 10203
+    _level: 4
+    _upgrade_cost: 200
+    _ability_value: 20
+  - _ability_idx: 10202
+    _level: 5
+    _upgrade_cost: 250
+    _ability_value: 1
+  - _ability_idx: 10201
+    _level: 6
+    _upgrade_cost: 300
+    _ability_value: 30
+  - _ability_idx: 10203
+    _level: 7
+    _upgrade_cost: 350
+    _ability_value: 30
+  - _ability_idx: 10201
+    _level: 8
+    _upgrade_cost: 400
+    _ability_value: 40
+  - _ability_idx: 10203
+    _level: 9
+    _upgrade_cost: 450
+    _ability_value: 40
+  - _ability_idx: 10201
+    _level: 10
+    _upgrade_cost: 500
+    _ability_value: 50
+  - _ability_idx: 10301
+    _level: 1
+    _upgrade_cost: 50
+    _ability_value: 10
+  - _ability_idx: 10301
+    _level: 2
+    _upgrade_cost: 100
+    _ability_value: 15
+  - _ability_idx: 10301
+    _level: 3
+    _upgrade_cost: 150
+    _ability_value: 20
+  - _ability_idx: 10301
+    _level: 4
+    _upgrade_cost: 200
+    _ability_value: 25
+  - _ability_idx: 10302
+    _level: 5
+    _upgrade_cost: 250
+    _ability_value: 1
+  - _ability_idx: 10301
+    _level: 6
+    _upgrade_cost: 300
+    _ability_value: 30
+  - _ability_idx: 10301
+    _level: 7
+    _upgrade_cost: 350
+    _ability_value: 35
+  - _ability_idx: 10301
+    _level: 8
+    _upgrade_cost: 400
+    _ability_value: 40
+  - _ability_idx: 10301
+    _level: 9
+    _upgrade_cost: 450
+    _ability_value: 45
+  - _ability_idx: 10302
+    _level: 10
+    _upgrade_cost: 500
+    _ability_value: 2

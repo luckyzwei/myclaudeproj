@@ -1,0 +1,470 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 358063480, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SoundPlayer
+  m_EditorClassIdentifier:
+  soundDatas:
+  - soundKey: bgm_stage_1
+    audioData: {fileID: 8300000, guid: 9930c03923fbdc445bbfc2eb49ac6be6, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_2
+    audioData: {fileID: 8300000, guid: 3df16e2dcaeb21f419da270839d443bb, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_3
+    audioData: {fileID: 8300000, guid: f39b76e962372cd4fb96e7d87469f0c6, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_4
+    audioData: {fileID: 8300000, guid: ef41424119e3d0a4ca2b917eda17bfdd, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_5
+    audioData: {fileID: 8300000, guid: 0f1e44136597ecf4e8b726f851fe37de, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_6
+    audioData: {fileID: 8300000, guid: f4aa6ba4ad9f21a45a56b17e83451a53, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_7
+    audioData: {fileID: 8300000, guid: 76c4e7a6a292d1049b7a66d9cd2a7dbc, type: 3}
+    Volume: 0.861
+  - soundKey: bgm_stage_8
+    audioData: {fileID: 8300000, guid: 1f4d6d474f637ba4c841d729c0c3403b, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_stage_9
+    audioData: {fileID: 8300000, guid: 1a4026943e4ef4a4488eb59dd4d2f9a4, type: 3}
+    Volume: 0.8
+  - soundKey: bgm_stage_10
+    audioData: {fileID: 8300000, guid: bf4909da37a1c5c4c9f2ba984f47f242, type: 3}
+    Volume: 0.858
+  - soundKey: bgm_stage_11
+    audioData: {fileID: 8300000, guid: c2dd9b3c9a933164d8f917982c3dacf1, type: 3}
+    Volume: 0.826
+  - soundKey: bgm_stage_12
+    audioData: {fileID: 8300000, guid: 04d74cb14fd2f7543aae8c3139d07b66, type: 3}
+    Volume: 0.303
+  - soundKey: bgm_map
+    audioData: {fileID: 8300000, guid: 777809ba57a924c48aacc3e75336e49c, type: 3}
+    Volume: 1
+  - soundKey: effect_cash_register
+    audioData: {fileID: 8300000, guid: a74a127b5f418494585cc7f0fc5d1177, type: 3}
+    Volume: 1
+  - soundKey: effect_bus_come
+    audioData: {fileID: 8300000, guid: 9d68da77667314a47be8786c52b5305b, type: 3}
+    Volume: 1
+  - soundKey: effect_bus_leave
+    audioData: {fileID: 8300000, guid: febafcf2871fa9744bfb9c99a3350bd1, type: 3}
+    Volume: 1
+  - soundKey: ui_button
+    audioData: {fileID: 8300000, guid: bd560289bf1650848838a2815157917a, type: 3}
+    Volume: 0.904
+  - soundKey: effect_company_level_up
+    audioData: {fileID: 8300000, guid: adf5cb7fc2c55d841adfad136871225f, type: 3}
+    Volume: 1
+  - soundKey: effect_user_level_up
+    audioData: {fileID: 8300000, guid: 9dc083a519d9a424989be6d7acf9b1ae, type: 3}
+    Volume: 1
+  - soundKey: effect_office_typing
+    audioData: {fileID: 8300000, guid: 548376bca040b36428194f0b73a2a6bf, type: 3}
+    Volume: 0.729
+  - soundKey: effect_roulette_spinning
+    audioData: {fileID: 8300000, guid: 3ea058dc6c918ed439366b8ee59397c0, type: 3}
+    Volume: 0.438
+  - soundKey: effect_reward_popup
+    audioData: {fileID: 8300000, guid: 2875eb4e89958034ca804ba6aaa88028, type: 3}
+    Volume: 0.304
+  - soundKey: effect_get_reward
+    audioData: {fileID: 8300000, guid: 47e7cf18b8f42814a87dd324e9f1f924, type: 3}
+    Volume: 0.215
+  - soundKey: effect_night_come
+    audioData: {fileID: 8300000, guid: f3a79a23fa7278a43ace80b6f47cb3ee, type: 3}
+    Volume: 0.531
+  - soundKey: effect_night_leave
+    audioData: {fileID: 8300000, guid: f3a79a23fa7278a43ace80b6f47cb3ee, type: 3}
+    Volume: 0.536
+  - soundKey: effect_lounge
+    audioData: {fileID: 8300000, guid: ef1420793ad4885419277af3e9221014, type: 3}
+    Volume: 0.485
+  - soundKey: effect_washroom
+    audioData: {fileID: 8300000, guid: 5684d8f8bd43dea46b27aabec7b2b440, type: 3}
+    Volume: 0.438
+  - soundKey: effect_meeting_room
+    audioData: {fileID: 8300000, guid: 8f7b8d70b0564e3459ad3ccddf2abbbd, type: 3}
+    Volume: 0.309
+  - soundKey: effect_ceo_room
+    audioData: {fileID: 8300000, guid: a17ad9b3e1dcf1048ab3ad4f98622b36, type: 3}
+    Volume: 0.583
+  - soundKey: effect_office_enter
+    audioData: {fileID: 0}
+    Volume: 1
+  - soundKey: ui_toast
+    audioData: {fileID: 8300000, guid: 0a88fbe2d304e854bba0d9ccc9e7ba58, type: 3}
+    Volume: 0.382
+  - soundKey: btn
+    audioData: {fileID: 8300000, guid: bd560289bf1650848838a2815157917a, type: 3}
+    Volume: 1
+  - soundKey: popup
+    audioData: {fileID: 8300000, guid: 6864d6256680c5143a632845398c7bbf, type: 3}
+    Volume: 0
+  - soundKey: effect_bus_waiting
+    audioData: {fileID: 8300000, guid: 065bd905cf67586449b1334792467552, type: 3}
+    Volume: 1
+  - soundKey: effect_technical_room
+    audioData: {fileID: 8300000, guid: b6d56bff9c60bbe41a2713298131f909, type: 3}
+    Volume: 0.356
+  - soundKey: effect_power_room
+    audioData: {fileID: 8300000, guid: d9b4cf26aa816794db6d239c66495cf2, type: 3}
+    Volume: 0.698
+  - soundKey: effect_stamp
+    audioData: {fileID: 8300000, guid: 0f2f51b4a02d9e3418c4c5f252916401, type: 3}
+    Volume: 1
+  - soundKey: effect_secretary_talking
+    audioData: {fileID: 8300000, guid: 9bb9a5966c6e25146a962900a58359fb, type: 3}
+    Volume: 0.49
+  - soundKey: effect_user_talking
+    audioData: {fileID: 8300000, guid: c6304e5845da26249ad3f104b59c1c42, type: 3}
+    Volume: 0.485
+  - soundKey: effect_vip_talking
+    audioData: {fileID: 8300000, guid: 6e523b786b3703c4aa9aaa9eea15c1e7, type: 3}
+    Volume: 0.495
+  - soundKey: effect_stage_open
+    audioData: {fileID: 8300000, guid: e05e129586ac77247920930f5a4c653d, type: 3}
+    Volume: 0.495
+  - soundKey: effect_recreation_room
+    audioData: {fileID: 8300000, guid: 2d662981d5c9c89478894a0c0795e223, type: 3}
+    Volume: 1
+  - soundKey: effect_plant_eat
+    audioData: {fileID: 8300000, guid: 0a88fbe2d304e854bba0d9ccc9e7ba58, type: 3}
+    Volume: 1
+  - soundKey: effect_plant_upgrade
+    audioData: {fileID: 8300000, guid: 5aa2518f07e7d5741a1f8cb35b09e654, type: 3}
+    Volume: 1
+  - soundKey: effect_plant_enter
+    audioData: {fileID: 8300000, guid: 0f2f51b4a02d9e3418c4c5f252916401, type: 3}
+    Volume: 0
+  - soundKey: effect_plant_hungry
+    audioData: {fileID: 8300000, guid: bbca53eb297e031439d1ffbc61014ede, type: 3}
+    Volume: 1
+  - soundKey: effect_ad_supply_money
+    audioData: {fileID: 8300000, guid: 427db887ce8128f42ba6bab97a75cc22, type: 3}
+    Volume: 1
+  - soundKey: bgm_house
+    audioData: {fileID: 8300000, guid: c5b20ff68f65b494c83b4e0a07e37d67, type: 3}
+    Volume: 0.897
+  - soundKey: effect_fitness_room
+    audioData: {fileID: 8300000, guid: ceb4b1f5a550b394085a16805ce3ca92, type: 3}
+    Volume: 0.765
+  - soundKey: effect_building_move
+    audioData: {fileID: 8300000, guid: cac7baf1719e0934d98f0f36728cf659, type: 3}
+    Volume: 1
+  - soundKey: effect_car_dealer_talking
+    audioData: {fileID: 8300000, guid: 7a19002655cb6744c9612685d5da4590, type: 3}
+    Volume: 0.603
+  - soundKey: effect_realtor_talking
+    audioData: {fileID: 8300000, guid: 341fc81263e5b6340878547ce39f7d37, type: 3}
+    Volume: 0.613
+  - soundKey: effect_house_purchase
+    audioData: {fileID: 8300000, guid: 78afaa225f93b6e479e4a5d3bd0ba609, type: 3}
+    Volume: 1
+  - soundKey: effect_house_car_sale
+    audioData: {fileID: 8300000, guid: 8624c0361e6d06948a9f01952f2e0e04, type: 3}
+    Volume: 1
+  - soundKey: effect_catstar_reward
+    audioData: {fileID: 8300000, guid: 7cf01169af5e79f48b45b9f2d7cca380, type: 3}
+    Volume: 0.82
+  - soundKey: bgm_factory
+    audioData: {fileID: 8300000, guid: 68adbd52e832a3d4cb01d031ae2d3fc2, type: 3}
+    Volume: 0.802
+  - soundKey: effect_factory_order
+    audioData: {fileID: 8300000, guid: a66dcb9311c93fb4f82130ee2380f507, type: 3}
+    Volume: 0.822
+  - soundKey: effect_factory_storage
+    audioData: {fileID: 8300000, guid: 1287c84d9a8b0574d85ed968769aebb4, type: 3}
+    Volume: 0.584
+  - soundKey: effect_factory_material
+    audioData: {fileID: 8300000, guid: 39b6e123b6981884191ec26eb138d731, type: 3}
+    Volume: 0.451
+  - soundKey: effect_factory_baking
+    audioData: {fileID: 8300000, guid: 94a1a21dae0385a468701ff228149209, type: 3}
+    Volume: 0.547
+  - soundKey: effect_factory_combination
+    audioData: {fileID: 8300000, guid: a25b6ccbdd7c72e428acc9f1c4774515, type: 3}
+    Volume: 0.524
+  - soundKey: effect_onetime_levelup
+    audioData: {fileID: 8300000, guid: 07ed9f910263d414b8791098506834f5, type: 3}
+    Volume: 0.806
+  - soundKey: effect_factory_completion
+    audioData: {fileID: 8300000, guid: fee9eac42d0942747b522da0378a4175, type: 3}
+    Volume: 1
+  - soundKey: effect_onetime_start
+    audioData: {fileID: 8300000, guid: 2542bd1f99c4cb74c8fe4512a0dcaee5, type: 3}
+    Volume: 0.861
+  - soundKey: effect_sleeping_room
+    audioData: {fileID: 8300000, guid: e2c9d4501b8551341a0980e4648cb56b, type: 3}
+    Volume: 0.861
+  - soundKey: effect_suitcase_get
+    audioData: {fileID: 8300000, guid: 15079e6a6cce8a742878a5c4e5b42cf0, type: 3}
+    Volume: 0.861
+  - soundKey: effect_suitcase_open
+    audioData: {fileID: 8300000, guid: 093b12d4b3103cc4f9edde25de00d74b, type: 3}
+    Volume: 0.861
+  - soundKey: effect_ceo_levelup
+    audioData: {fileID: 8300000, guid: 5aa2518f07e7d5741a1f8cb35b09e654, type: 3}
+    Volume: 0.5
+  - soundKey: effect_ceo_hire_sceen
+    audioData: {fileID: 8300000, guid: 3f3b2b7472b44f1408548855010d51f0, type: 3}
+    Volume: 0.5
+  - soundKey: effect_supply_room
+    audioData: {fileID: 8300000, guid: 0187c91e35cc79d4da80db360e67a4fc, type: 3}
+    Volume: 1
+  - soundKey: effect_restaurant
+    audioData: {fileID: 8300000, guid: 822f2c66e09cade45b02a349b9a286ee, type: 3}
+    Volume: 0.99
+  - soundKey: effect_phonebooth
+    audioData: {fileID: 8300000, guid: ea0b2c47982f778448f509e27ee6a492, type: 3}
+    Volume: 0.85
+  - soundKey: bgm_halloween_stage_all
+    audioData: {fileID: 8300000, guid: 4284b020f4aae8e4594ce6d161f928a4, type: 3}
+    Volume: 0.746
+  - soundKey: bgm_halloween_map
+    audioData: {fileID: 8300000, guid: 291ab0f31d20539448e198c640421e4b, type: 3}
+    Volume: 0.933
+  - soundKey: effect_halloween_ghost
+    audioData: {fileID: 8300000, guid: 194fa595fe2732740acdfc3bb2897719, type: 3}
+    Volume: 0.85
+  - soundKey: effect_halloween_thunder
+    audioData: {fileID: 8300000, guid: e44a2b0ea8d20324b99d957f4926ec40, type: 3}
+    Volume: 1
+  - soundKey: effect_music_room
+    audioData: {fileID: 8300000, guid: af558ebb7c18135409265088bd239c79, type: 3}
+    Volume: 0.887
+  - soundKey: effect_cafe_room
+    audioData: {fileID: 8300000, guid: 1fe7034d6dc6f9947abe98b3054282ce, type: 3}
+    Volume: 0.887
+  - soundKey: bgm_xmas_map
+    audioData: {fileID: 8300000, guid: 4587cae15d16d5f438907a894d0fd726, type: 3}
+    Volume: 0.887
+  - soundKey: bgm_xmas_stage_all
+    audioData: {fileID: 8300000, guid: 4587cae15d16d5f438907a894d0fd726, type: 3}
+    Volume: 0.887
+  - soundKey: effect_tarot_mixcard
+    audioData: {fileID: 8300000, guid: 39beb1ccf0aca0043a81933efd10ace6, type: 3}
+    Volume: 0.887
+  - soundKey: effect_tarot_get_special
+    audioData: {fileID: 8300000, guid: f9276eb814e9f43409711626668ffef1, type: 3}
+    Volume: 0.887
+  - soundKey: bgm_auctionhouse
+    audioData: {fileID: 8300000, guid: 5fac4593eb8fb72438115f51f045135e, type: 3}
+    Volume: 0.887
+  - soundKey: effect_auctionhouse_usecoin
+    audioData: {fileID: 8300000, guid: 625e57a2acd5e8f47ae0588a611b55c4, type: 3}
+    Volume: 0.887
+  - soundKey: effect_auctionhouse_result
+    audioData: {fileID: 8300000, guid: aae4bbb6da8b02f4685e5edd11453e4d, type: 3}
+    Volume: 0.887
+  - soundKey: bgm_stage_13
+    audioData: {fileID: 8300000, guid: fc735b344e5dfbd4c81c24cf00813a8f, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_stage_14
+    audioData: {fileID: 8300000, guid: 9d5d36d960db20048b5357e66b928ea2, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_stage_15
+    audioData: {fileID: 8300000, guid: 8654914136b01bf4480ebc6f55a34180, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_stage_16
+    audioData: {fileID: 8300000, guid: c450d90713ec28b4b95b26b4e892c702, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_stage_17
+    audioData: {fileID: 8300000, guid: 0b71afbb5e3258e4b98fc99fb628d5f6, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_stage_18
+    audioData: {fileID: 8300000, guid: 6d28308fe674264428ac35db35b37683, type: 3}
+    Volume: 0.495
+  - soundKey: bgm_seasonal_10001
+    audioData: {fileID: 8300000, guid: 60e3ec66e51d82e4ab9fcde2d7c47780, type: 3}
+    Volume: 0.353
+  - soundKey: effect_seasonal_slot_machine_spin
+    audioData: {fileID: 8300000, guid: bfa78692396884c40b50565c7ae5f621, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_slot_machine_normal_reward
+    audioData: {fileID: 8300000, guid: 4ee9a400ddcfe90478b0e57cf5f94913, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_slot_machine_jackpot_reward
+    audioData: {fileID: 8300000, guid: 2afd8d4d79181d341bfe8170ac974814, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_10001_building_normal
+    audioData: {fileID: 8300000, guid: db5cf019cac5d9644aa4460b17f3282a, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_10001_selling
+    audioData: {fileID: 8300000, guid: e49c04a7b182815478385ea9107d52d3, type: 3}
+    Volume: 0.621
+  - soundKey: effect_toast_slot_machine
+    audioData: {fileID: 8300000, guid: 5c4d158c468b46b409f0087cd8b222be, type: 3}
+    Volume: 0.883
+  - soundKey: effect_toast_mission_clear
+    audioData: {fileID: 8300000, guid: 54cbc20eb64f6c34a8e68d4ff7b21b8b, type: 3}
+    Volume: 0.869
+  - soundKey: effect_seasonal_10001_building_factory
+    audioData: {fileID: 8300000, guid: 39b6e123b6981884191ec26eb138d731, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_10001_restaurant
+    audioData: {fileID: 8300000, guid: 822f2c66e09cade45b02a349b9a286ee, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_10001_dormitory
+    audioData: {fileID: 8300000, guid: e2c9d4501b8551341a0980e4648cb56b, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_10001_under_construction
+    audioData: {fileID: 8300000, guid: b6d56bff9c60bbe41a2713298131f909, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_10001_construction_completed
+    audioData: {fileID: 8300000, guid: 9dc083a519d9a424989be6d7acf9b1ae, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_adsupply_come
+    audioData: {fileID: 8300000, guid: 427db887ce8128f42ba6bab97a75cc22, type: 3}
+    Volume: 0.921
+  - soundKey: effect_seasonal_adsupply_leave
+    audioData: {fileID: 8300000, guid: 427db887ce8128f42ba6bab97a75cc22, type: 3}
+    Volume: 0.921
+  - soundKey: bgm_valentine_stage_all
+    audioData: {fileID: 8300000, guid: 7ff86650897bc754bba73fe8d83f8010, type: 3}
+    Volume: 0.3
+  - soundKey: bgm_valentine_map
+    audioData: {fileID: 8300000, guid: 918aaf3f3f79e3b4a8abea983f676d30, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_seasonal_11001
+    audioData: {fileID: 8300000, guid: 1d0e02cad4148f1478d34334f53ce5f5, type: 3}
+    Volume: 0.546
+  - soundKey: effect_seasonal_11001_building_step_1
+    audioData: {fileID: 8300000, guid: 53f2895b83e2b50439579dc29e17a828, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_11001_building_step_2
+    audioData: {fileID: 8300000, guid: 90e371a96ffe7c04fa0f28ed0f4200ce, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_11001_building_step_3
+    audioData: {fileID: 8300000, guid: 897aab13adef12f46bfda527f2d09785, type: 3}
+    Volume: 1
+  - soundKey: effect_seasonal_11001_selling
+    audioData: {fileID: 8300000, guid: 97aca9e2203a20d4d98f4c510a68419d, type: 3}
+    Volume: 1
+  - soundKey: bgm_easter_stage_all
+    audioData: {fileID: 8300000, guid: aff1c96617c51904990e1447788b9887, type: 3}
+    Volume: 0.2
+  - soundKey: bgm_easter_maps
+    audioData: {fileID: 8300000, guid: aff1c96617c51904990e1447788b9887, type: 3}
+    Volume: 0.2
+  - soundKey: bgm_stage_19
+    audioData: {fileID: 8300000, guid: 9930c03923fbdc445bbfc2eb49ac6be6, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_20
+    audioData: {fileID: 8300000, guid: 3df16e2dcaeb21f419da270839d443bb, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_21
+    audioData: {fileID: 8300000, guid: f39b76e962372cd4fb96e7d87469f0c6, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_22
+    audioData: {fileID: 8300000, guid: ef41424119e3d0a4ca2b917eda17bfdd, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_23
+    audioData: {fileID: 8300000, guid: 0f1e44136597ecf4e8b726f851fe37de, type: 3}
+    Volume: 1
+  - soundKey: bgm_stage_24
+    audioData: {fileID: 8300000, guid: f4aa6ba4ad9f21a45a56b17e83451a53, type: 3}
+    Volume: 1
+  - soundKey: effect_birthdayroulette_spinning_short
+    audioData: {fileID: 8300000, guid: 8f166c1ca8e822f46a8a2c9d70f694f8, type: 3}
+    Volume: 0.258
+  - soundKey: effect_strike_notice
+    audioData: {fileID: 8300000, guid: 77da9cf2dc79acc4ebccba78a219115a, type: 3}
+    Volume: 0.258
+  - soundKey: effect_birthdayroulette_get_reward
+    audioData: {fileID: 8300000, guid: 9dc083a519d9a424989be6d7acf9b1ae, type: 3}
+    Volume: 0.258
+  - soundKey: bgm_acquisition_basic
+    audioData: {fileID: 8300000, guid: 1dc1af14bb637334295ff064b7722c83, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_acquisition_boss
+    audioData: {fileID: 8300000, guid: 480d7a6cececeb14086d56995b05ab01, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_acquisition_normal
+    audioData: {fileID: 8300000, guid: 53c5ad4fdd7fe9e4cbfc6032c14304f0, type: 3}
+    Volume: 0.5
+  - soundKey: effect_acquisition_skill_fail
+    audioData: {fileID: 8300000, guid: f29c15c687420e040ab1edaaeac7c9b6, type: 3}
+    Volume: 0.8
+  - soundKey: effect_acquisition_hit
+    audioData: {fileID: 8300000, guid: d4d3bcb63d824a44b92afee4cac28089, type: 3}
+    Volume: 1
+  - soundKey: effect_acquisition_miss
+    audioData: {fileID: 8300000, guid: 1af3f926bfa26c74d8d19ba44b478ecf, type: 3}
+    Volume: 1
+  - soundKey: effect_acquisition_buff
+    audioData: {fileID: 8300000, guid: 5aa2518f07e7d5741a1f8cb35b09e654, type: 3}
+    Volume: 1
+  - soundKey: effect_acquisition_debuff
+    audioData: {fileID: 8300000, guid: 3fa2c6a11abf25d4d96fb73a3e53dd61, type: 3}
+    Volume: 1
+  - soundKey: effect_acquisition_skill_1
+    audioData: {fileID: 8300000, guid: 5f56ee2d8032bf241836900078d8f1a6, type: 3}
+    Volume: 0.8
+  - soundKey: effect_acquisition_skill_start
+    audioData: {fileID: 8300000, guid: 6dc276a95d342cb449bfe90a825eb631, type: 3}
+    Volume: 0.8
+  - soundKey: effect_acquisition_start
+    audioData: {fileID: 8300000, guid: adf68c522344d8149b95c63c8afe7d27, type: 3}
+    Volume: 0.8
+  - soundKey: effect_acquisition_win
+    audioData: {fileID: 8300000, guid: 3fb5d6d8c64ee90488e58fa4b5f68564, type: 3}
+    Volume: 0.8
+  - soundKey: effect_acquisition_healing
+    audioData: {fileID: 8300000, guid: af58d6a3ce2cbe0469f022207b32307b, type: 3}
+    Volume: 0.8
+  - soundKey: effect_endlessoffer_next_slot
+    audioData: {fileID: 8300000, guid: 62cc908d055edea40922034d8ff3ea58, type: 3}
+    Volume: 0.8
+  - soundKey: effect_lock_open
+    audioData: {fileID: 8300000, guid: e756d4d8525915548887bb5c018f962f, type: 3}
+    Volume: 0.8
+  - soundKey: bgm_stage_25
+    audioData: {fileID: 8300000, guid: dba14ee2aed57f74c98b99edaf1fb652, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_stage_26
+    audioData: {fileID: 8300000, guid: 92795ac913c7815499fa5652ab147890, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_stage_27
+    audioData: {fileID: 8300000, guid: 168aeb7129f8fa3439c9a3ef70b93086, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_stage_28
+    audioData: {fileID: 8300000, guid: 54ccd488d4b89574e9f01f8022a3c5b9, type: 3}
+    Volume: 0.59
+  - soundKey: bgm_stage_29
+    audioData: {fileID: 8300000, guid: c17beb33c856e7743a76093eb1879e84, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_stage_30
+    audioData: {fileID: 8300000, guid: ce97dcd3bc1da14439ff60106c79af11, type: 3}
+    Volume: 0.5
+  - soundKey: bgm_seasonal_12001
+    audioData: {fileID: 8300000, guid: c18b94f03ba8e5444a804ce9fffed7ad, type: 3}
+    Volume: 0.626
+  - soundKey: effect_seasonal_12001_building_step_1
+    audioData: {fileID: 8300000, guid: 1cbf2eb29e576024e86e013323393642, type: 3}
+    Volume: 0.79
+  - soundKey: effect_seasonal_12001_building_step_2
+    audioData: {fileID: 8300000, guid: 219c3b7e87afad5428a6c8206d77d639, type: 3}
+    Volume: 0.801
+  - soundKey: effect_seasonal_12001_building_step_3
+    audioData: {fileID: 8300000, guid: 39b6e123b6981884191ec26eb138d731, type: 3}
+    Volume: 0.626
+  - soundKey: effect_seasonal_12001_selling
+    audioData: {fileID: 8300000, guid: 9513f4d402117f0499e810536225f25b, type: 3}
+    Volume: 1
+  - soundKey: 'effect_paper '
+    audioData: {fileID: 8300000, guid: c316a01e22e80044392b0ea179afc537, type: 3}
+    Volume: 0.738
+  TestAudioClip: {fileID: 0}
+  TestEditorVolume: 0.2

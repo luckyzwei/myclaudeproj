@@ -1,0 +1,548 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -827397369, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: TarotRewardInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1005
+  - 1006
+  - 1007
+  - 1008
+  - 1009
+  - 1010
+  - 1011
+  - 1012
+  - 1013
+  - 1014
+  - 1015
+  - 1016
+  - 1017
+  - 1018
+  - 1019
+  - 1020
+  - 1021
+  - 1022
+  - 1023
+  - 1024
+  - 1025
+  - 1026
+  - 1027
+  - 1028
+  - 1029
+  - 1030
+  - 1031
+  - 1032
+  - 1033
+  - 1034
+  - 1035
+  - 1036
+  - 1037
+  - 1038
+  - 1039
+  - 1040
+  - 1041
+  - 1042
+  - 1043
+  - 1044
+  - 1045
+  - 1046
+  - 1047
+  - 1048
+  - 1049
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 102
+    _reward_value: 2
+    _info_reward_name: str_tarot_info_reward_name_1
+  - _idx: 2
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 2
+    _reward_idx: -1
+    _reward_value: 1800
+    _info_reward_name: str_tarot_info_reward_name_2
+  - _idx: 3
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 2
+    _reward_idx: -1
+    _reward_value: 3600
+    _info_reward_name: str_tarot_info_reward_name_3
+  - _idx: 4
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 103
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_4
+  - _idx: 5
+    _open_stage: 4
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 201
+    _reward_value: 3
+    _info_reward_name: str_tarot_info_reward_name_5
+  - _idx: 6
+    _open_stage: 4
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_6
+  - _idx: 7
+    _open_stage: 6
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 401
+    _reward_value: 50
+    _info_reward_name: str_tarot_info_reward_name_7
+  - _idx: 8
+    _open_stage: 6
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 402
+    _reward_value: 15
+    _info_reward_name: str_tarot_info_reward_name_8
+  - _idx: 9
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 704
+    _reward_value: 50
+    _info_reward_name: str_tarot_info_reward_name_9
+  - _idx: 10
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 3
+    _reward_idx: 705
+    _reward_value: 5
+    _info_reward_name: str_tarot_info_reward_name_10
+  - _idx: 1001
+    _open_stage: 3
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 14
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1001
+  - _idx: 1002
+    _open_stage: 3
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 15
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1002
+  - _idx: 1003
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 5
+    _reward_idx: 1
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1003
+  - _idx: 1004
+    _open_stage: 3
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 5
+    _reward_idx: 2
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1004
+  - _idx: 1005
+    _open_stage: 7
+    _onetime_idx: -1
+    _shop_package_idx: 701
+    _reward_type: 103
+    _reward_idx: 2206
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1005
+  - _idx: 1006
+    _open_stage: 7
+    _onetime_idx: -1
+    _shop_package_idx: 701
+    _reward_type: 103
+    _reward_idx: 2212
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1006
+  - _idx: 1007
+    _open_stage: 8
+    _onetime_idx: -1
+    _shop_package_idx: 701
+    _reward_type: 103
+    _reward_idx: 2413
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1007
+  - _idx: 1008
+    _open_stage: 9
+    _onetime_idx: -1
+    _shop_package_idx: 701
+    _reward_type: 103
+    _reward_idx: 2501
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1008
+  - _idx: 1009
+    _open_stage: 9
+    _onetime_idx: -1
+    _shop_package_idx: 751
+    _reward_type: 103
+    _reward_idx: 2603
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1009
+  - _idx: 1010
+    _open_stage: 10
+    _onetime_idx: -1
+    _shop_package_idx: 751
+    _reward_type: 103
+    _reward_idx: 2709
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1010
+  - _idx: 1011
+    _open_stage: 11
+    _onetime_idx: -1
+    _shop_package_idx: 752
+    _reward_type: 103
+    _reward_idx: 2731
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1011
+  - _idx: 1012
+    _open_stage: 12
+    _onetime_idx: -1
+    _shop_package_idx: 753
+    _reward_type: 103
+    _reward_idx: 2741
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1012
+  - _idx: 1013
+    _open_stage: 3
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 103
+    _reward_idx: 1514
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1013
+  - _idx: 1014
+    _open_stage: 9
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 103
+    _reward_idx: 2514
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1014
+  - _idx: 1015
+    _open_stage: 3
+    _onetime_idx: 20
+    _shop_package_idx: -1
+    _reward_type: 104
+    _reward_idx: 1001
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1015
+  - _idx: 1016
+    _open_stage: 9
+    _onetime_idx: 27
+    _shop_package_idx: -1
+    _reward_type: 103
+    _reward_idx: 2515
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1016
+  - _idx: 1017
+    _open_stage: 3
+    _onetime_idx: 35
+    _shop_package_idx: -1
+    _reward_type: 104
+    _reward_idx: 1002
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1017
+  - _idx: 1018
+    _open_stage: 3
+    _onetime_idx: 35
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 16
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1018
+  - _idx: 1019
+    _open_stage: 3
+    _onetime_idx: 43
+    _shop_package_idx: -1
+    _reward_type: 104
+    _reward_idx: 1003
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1019
+  - _idx: 1020
+    _open_stage: 3
+    _onetime_idx: 43
+    _shop_package_idx: -1
+    _reward_type: 5
+    _reward_idx: 3
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1020
+  - _idx: 1021
+    _open_stage: 3
+    _onetime_idx: 43
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 17
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1021
+  - _idx: 1022
+    _open_stage: 3
+    _onetime_idx: 40
+    _shop_package_idx: -1
+    _reward_type: 103
+    _reward_idx: 1515
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1022
+  - _idx: 1023
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 7
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1023
+  - _idx: 1024
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 104
+    _reward_idx: 1004
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1024
+  - _idx: 1025
+    _open_stage: 3
+    _onetime_idx: -1
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 18
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1025
+  - _idx: 1026
+    _open_stage: 15
+    _onetime_idx: -1
+    _shop_package_idx: 754
+    _reward_type: 103
+    _reward_idx: 3513
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1026
+  - _idx: 1027
+    _open_stage: 16
+    _onetime_idx: -1
+    _shop_package_idx: 755
+    _reward_type: 103
+    _reward_idx: 3618
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1027
+  - _idx: 1028
+    _open_stage: 16
+    _onetime_idx: -1
+    _shop_package_idx: 755
+    _reward_type: 103
+    _reward_idx: 3746
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1028
+  - _idx: 1029
+    _open_stage: 17
+    _onetime_idx: -1
+    _shop_package_idx: 756
+    _reward_type: 103
+    _reward_idx: 3747
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1029
+  - _idx: 1030
+    _open_stage: 18
+    _onetime_idx: -1
+    _shop_package_idx: 757
+    _reward_type: 103
+    _reward_idx: 3748
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1030
+  - _idx: 1031
+    _open_stage: 21
+    _onetime_idx: -1
+    _shop_package_idx: 758
+    _reward_type: 103
+    _reward_idx: 4513
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1031
+  - _idx: 1032
+    _open_stage: 22
+    _onetime_idx: -1
+    _shop_package_idx: 759
+    _reward_type: 103
+    _reward_idx: 4618
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1032
+  - _idx: 1033
+    _open_stage: 22
+    _onetime_idx: -1
+    _shop_package_idx: 759
+    _reward_type: 103
+    _reward_idx: 4720
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1033
+  - _idx: 1034
+    _open_stage: 23
+    _onetime_idx: -1
+    _shop_package_idx: 760
+    _reward_type: 103
+    _reward_idx: 4734
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1034
+  - _idx: 1035
+    _open_stage: 24
+    _onetime_idx: -1
+    _shop_package_idx: 761
+    _reward_type: 103
+    _reward_idx: 4748
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1035
+  - _idx: 1036
+    _open_stage: 27
+    _onetime_idx: -1
+    _shop_package_idx: 762
+    _reward_type: 103
+    _reward_idx: 5513
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1036
+  - _idx: 1037
+    _open_stage: 28
+    _onetime_idx: -1
+    _shop_package_idx: 763
+    _reward_type: 103
+    _reward_idx: 5618
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1037
+  - _idx: 1038
+    _open_stage: 28
+    _onetime_idx: -1
+    _shop_package_idx: 763
+    _reward_type: 103
+    _reward_idx: 5720
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1038
+  - _idx: 1039
+    _open_stage: 29
+    _onetime_idx: -1
+    _shop_package_idx: 764
+    _reward_type: 103
+    _reward_idx: 5734
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1039
+  - _idx: 1040
+    _open_stage: 30
+    _onetime_idx: -1
+    _shop_package_idx: 765
+    _reward_type: 103
+    _reward_idx: 5748
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1040
+  - _idx: 1041
+    _open_stage: 3
+    _onetime_idx: 59
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 19
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1041
+  - _idx: 1042
+    _open_stage: 3
+    _onetime_idx: 59
+    _shop_package_idx: -1
+    _reward_type: 5
+    _reward_idx: 4
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1042
+  - _idx: 1043
+    _open_stage: 3
+    _onetime_idx: 71
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 20
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1043
+  - _idx: 1044
+    _open_stage: 3
+    _onetime_idx: 71
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 21
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1044
+  - _idx: 1045
+    _open_stage: 3
+    _onetime_idx: 71
+    _shop_package_idx: -1
+    _reward_type: 5
+    _reward_idx: 5
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1045
+  - _idx: 1046
+    _open_stage: 3
+    _onetime_idx: 79
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 22
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1046
+  - _idx: 1047
+    _open_stage: 3
+    _onetime_idx: 79
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 23
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1047
+  - _idx: 1048
+    _open_stage: 3
+    _onetime_idx: 87
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 24
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1048
+  - _idx: 1049
+    _open_stage: 3
+    _onetime_idx: 87
+    _shop_package_idx: -1
+    _reward_type: 4
+    _reward_idx: 25
+    _reward_value: 1
+    _info_reward_name: str_tarot_info_reward_name_1049

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1623335411, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: MiniGameDiggingInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  mDataList:
+  - _data_idx: 101
+    _order: 1
+    _cell_value: 9
+    _digging_item_idx: 0100000005000000
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: 0000000000000000
+    _reward_value: 0807000032000000
+    _reward_icon: icon
+    _use_currency_value: 1
+    _empty_land_speech:
+    - str_minigame_digging_empty_land_speech_101_1
+    - str_minigame_digging_empty_land_speech_101_2
+    - str_minigame_digging_empty_land_speech_101_3
+    _complete_speech: str_minigame_digging_complete_speech_101_1
+    _prefab: ItemMiniGame_DigFloor_01
+  - _data_idx: 101
+    _order: 2
+    _cell_value: 16
+    _digging_item_idx: 0200000002000000
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: 0000000000000000
+    _reward_value: 0807000032000000
+    _reward_icon:
+    _use_currency_value: 1
+    _empty_land_speech:
+    - str_minigame_digging_empty_land_speech_101_1
+    - str_minigame_digging_empty_land_speech_101_2
+    - str_minigame_digging_empty_land_speech_101_3
+    _complete_speech: str_minigame_digging_complete_speech_101_2
+    _prefab: ItemMiniGame_DigFloor_02
+  - _data_idx: 101
+    _order: 3
+    _cell_value: 25
+    _digging_item_idx: 0a000000ffffff/f
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: 0000000000000000
+    _reward_value: 0807000032000000
+    _reward_icon:
+    _use_currency_value: 1
+    _empty_land_speech:
+    - str_minigame_digging_empty_land_speech_101_1
+    - str_minigame_digging_empty_land_speech_101_2
+    - str_minigame_digging_empty_land_speech_101_3
+    _complete_speech: str_minigame_digging_complete_speech_101_3
+    _prefab: ItemMiniGame_DigFloor_03
+  - _data_idx: 101
+    _order: 4
+    _cell_value: 36
+    _digging_item_idx: 0b000000070000000700000007000000
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: 0000000000000000
+    _reward_value: 0807000032000000
+    _reward_icon:
+    _use_currency_value: 1
+    _empty_land_speech:
+    - str_minigame_digging_empty_land_speech_101_1
+    - str_minigame_digging_empty_land_speech_101_2
+    - str_minigame_digging_empty_land_speech_101_3
+    _complete_speech: str_minigame_digging_complete_speech_101_4
+    _prefab: ItemMiniGame_DigFloor_04
+  - _data_idx: 101
+    _order: 5
+    _cell_value: 49
+    _digging_item_idx: 0100000002000000030000000400000005000000
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: 0000000000000000
+    _reward_value: 0807000032000000
+    _reward_icon:
+    _use_currency_value: 1
+    _empty_land_speech:
+    - str_minigame_digging_empty_land_speech_101_1
+    - str_minigame_digging_empty_land_speech_101_2
+    - str_minigame_digging_empty_land_speech_101_3
+    _complete_speech: str_minigame_digging_complete_speech_101_5
+    _prefab: ItemMiniGame_DigFloor_05

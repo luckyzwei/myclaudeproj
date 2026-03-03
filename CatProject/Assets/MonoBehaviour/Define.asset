@@ -1,0 +1,1001 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -766373534, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: Define
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - get_off_work_delay
+  - officeitem_lv2_require_player_lv
+  - company_cancel_cost_cash_value
+  - company_levelup_reward
+  - company_list_renewal_cooltime
+  - company_list_show_count
+  - company_list_reset_gem_count
+  - name_max_count
+  - beginning_money_value
+  - beginning_power_value
+  - run_speed
+  - offline_reward_min_time
+  - offline_reward_max_time
+  - offline_reward_correction_value
+  - offline_reward_multiple
+  - supply_ad_appear_cooltime
+  - supply_ad_money_increment
+  - supply_ad_add_money
+  - supply_ad_exp_max_count
+  - supply_ad_exp_application_time
+  - supply_ad_exp_cooltime
+  - exp_ad_start_time
+  - exp_ad_end_time
+  - exp_ad_day_count
+  - exp_ad_cooltime
+  - office_buildcost_skip_time
+  - office_buildcost_skip_cash
+  - require_item_decrement
+  - office_maintenance_starttime
+  - office_maintenance_cooltime
+  - office_repair_cooltime
+  - office_maintenance_probability
+  - ceo_repair_runtime
+  - meetingroom_use_duration
+  - meetingroom_use_time
+  - activity_starttime
+  - activity_endtime
+  - activity_probability
+  - activity_cooltime
+  - activity_debuff_idx
+  - activity_employee_count
+  - speachbubble_duration_time
+  - speachbubble_type_1_rate
+  - speachbubble_type_2_rate
+  - speachbubble_view_percent
+  - speachbubble_good_max_count
+  - speachbubble_bad_max_count
+  - speachbubble_roomopen_max_count
+  - speachbubble_appraisal_item_lv
+  - get_money_time
+  - roulette_ad_cooltime
+  - roulette_need_gem
+  - roulette_confirmed_reward_1
+  - roulette_confirmed_reward_2
+  - roulette_lucky_draw_count
+  - roulette_lucky_draw_confirmed_reward_1
+  - roulette_confirmed_reward
+  - dayskip_ad_offtime
+  - mood_critical_cooltime
+  - mood_critical_runtime
+  - company_exp_gauge_color_rate_red
+  - company_exp_gauge_color_rate_yellow
+  - company_exp_gauge_color_rate_green
+  - encyclopedia_furniture_unlock_gem_reward
+  - garage_default
+  - chat_delaytime
+  - namechange_need_gem
+  - workspace_value_increasement_1
+  - workspace_value_increasement_2
+  - workspace_value_increasement_change
+  - factory_order_slot_max
+  - factory_order_cooltime
+  - factory_workplace_cost_changelv
+  - sec_company_option_time
+  - plant_supplies_free_cooltime
+  - plant_exp_per_s
+  - plant_tuto_item
+  - waiting_speachbubble_cooltime
+  - recreation_room_activity_time
+  - catbank_get_gemcount
+  - infra_reward_time
+  - invite_button_gem
+  - update_reward_gem
+  - version_aos
+  - version_ios
+  - hard_version_aos
+  - hard_version_ios
+  - phone_catstagram_reward_gem_count
+  - chat_send_btn_arrow_tuto_idx_1
+  - chat_send_btn_arrow_tuto_idx_2
+  - chat_send_btn_arrow_tuto_idx_3
+  - chat_send_btn_arrow_tuto_idx_4
+  - chat_send_btn_arrow_tuto_idx_5
+  - onetime_event_currency_item_upgrade_1
+  - onetime_event_currency_item_upgrade_2
+  - onetime_event_currency_item_upgrade_3
+  - onetime_event_currency_item_upgrade_4
+  - onetime_event_currency_ad
+  - onetime_event_currency_todolist
+  - onetime_need_currency_value
+  - onetime_event_currency_ad_company_reset
+  - plant_reward_gem_cooltime
+  - mission_safe_max_count
+  - mission_safe_min_count
+  - mission_slot_3_reward_multiple
+  - hud_Icon_fame_thouch_effect
+  - offline_reward_company_exp_correction_value
+  - noads_sale_start_player_lv
+  - noads_sale_time
+  - ads_sale_onemoretime
+  - ads_sale_onemoretime2
+  - invest_amount_multiple_min
+  - invest_amount_multiple_max
+  - invest_recovery_money_multiple
+  - invest_duration
+  - gamestart_loading_time
+  - playerlvpass_sale_start_player_lv
+  - playerlvpass_sale_time
+  - mission_ad_reward_multiple
+  - office_gem_item_increasement_player_lv
+  - noads_ab_test
+  - noads_ab_key
+  - premium_key_need_gem_count
+  - premium_key_count
+  - noads_ab_loading_ad_test
+  - noads_ab_loading_ad_key
+  - offerwall_event_onoff
+  - offerwall_event_add_bonus
+  - region_use_currency_idx1
+  - region_use_currency_idx7
+  - worldmap_hud_money_change_time
+  - manager_briefcase_ad_cooltime
+  - manager_tuto_item
+  - manager_tuto_get_card_idx
+  - manager_tuto_get_card_count
+  - manager_debuff_value
+  - manager_ratio
+  - manager_speech_cooltime
+  - noads_ab_loading_test
+  - noads_ab_loading_key
+  - inhouse_bonus_gem
+  - inhouse_invite_bonus_gem
+  - daily_ab_loading_test
+  - daily_ab_loading_key
+  - iaa_ab_st1ads_test
+  - iaa_ab_st1ads_key
+  - specialday_roulette_ad_cooltime
+  - specialday_roulette_need_gem_1
+  - specialday_roulette_need_gem_2
+  - specialday_roulette_need_gem_3
+  - specialday_roulette_need_gem_4
+  - specialday_roulette_need_gem_5
+  - specialday_roulette_reward1_plant_idx
+  - specialday_roulette_reward2_plant_idx
+  - specialday_roulette_reward3_plant_idx
+  - specialday_roulette_reward4_plant_idx
+  - specialday_roulette_reward_count
+  - specialday_surprise_apear_cooltime
+  - specialday_surprise_apeartime
+  - specialday_surprise_reward_count
+  - offerwall_show_hud_reddot_gem
+  - tarot_appear_cooltime
+  - tarot_gamestart_need_gem_count
+  - tarot_second_gameplay_need_gem_count
+  - tarot_third_gameplay_need_gem_count
+  - tarot_rewardchange_need_gem_count
+  - tarot_specialreward_first_draw_rate
+  - tarot_specialreward_second_draw_rate
+  - tarot_specialreward_third_draw_rate
+  - tarot_reward_replace_gem_count
+  - tarot_reward_select_reward_count
+  - auction_house_stamina_max_add_count
+  - auction_house_spy_gem_count_1
+  - auction_house_random_coin_max_count
+  - auction_house_random_coin_min_count
+  - auction_house_random_use_coin
+  - auction_house_min_use_coin
+  - auction_house_win_point
+  - auction_house_stamina_max_count
+  - auction_house_stamina_countup_cooltime
+  - auction_house_start_stamina_count
+  - seasonal_offline_reward_min_time
+  - seasonal_offline_reward_max_time
+  - seasonal_offline_reward_multiple
+  - seasonal_offline_reward_correction_value
+  - seasonal_roulette_need_coin
+  - seasonal_supply_ad_appear_cooltime
+  - seasonal_supply_production_time_min
+  - seasonal_supply_production_time_max
+  - seasonal_supply_day_count
+  - seasonal_shop_free_coin_cooltime
+  - seasonal_rank_loading_period
+  - seasonal_rank_refresh_period
+  - seasonal_mission_buff_period
+  - seasonal_mission_buff_value
+  - seasonal_step_mission_point
+  - seasonal_step_gem_point
+  - seasonal_roulette_first_reward
+  - seasonal_statue_buff_slot_count
+  - seasonal_statue_buff_reward_skill_book
+  - seasonal_pause_worker_reference_value
+  - seasonal_lunch_start_time
+  - seasonal_lunch_end_time
+  - seasonal_dinner_start_time
+  - seasonal_dinner_end_time
+  - seasonal_restaurant_use_time
+  - seasonal_restaurant_speachbubble_max_count
+  - seasonal_rank_period
+  - seasonal_period_ab_test
+  - seasonal_period_ab_key
+  - seasonal_remain_rewards_get_time
+  - coinbank_get_rate
+  - seasonal_office_buildcost_skip_time
+  - seasonal_office_buildcost_skip_cash
+  - seasonal_rank_period_buffer
+  - seasonal_office_building_slot_max
+  - seasonal_office_building_slot_max_add
+  - seasonal_overtime_gem
+  - stage_electronic_display_showtime
+  - next_region_banner_show_minus_lv
+  - supply_safe_max_default_count
+  - funnel_ab_st1build1sec_test
+  - funnel_ab_st1build1sec_key
+  - funnel_ab_st2build1sec_test
+  - funnel_ab_st2build1sec_key
+  - shop_ceo_box_normal_key_1_gem_price
+  - shop_ceo_box_premium_key_1_gem_price
+  - funnel_ab_st3build1sec_test
+  - funnel_ab_st3build1sec_key
+  - birthday_roulette_ticket_count
+  - birthday_roulette_ticket_count_2
+  - birthday_roulette_ticket_count_3
+  - birthday_roulette_ticket_count_4
+  - birthday_roulette_bonus_reward_ticket_count
+  - birthday_roulette_bonus_reward_currency_idx
+  - birthday_roulette_bonus_reward_count
+  - birthday_mission_refresh_gem_count
+  - birthday_mission_list_count
+  - birthday_attendance_replace_gem_count
+  - noads_popup_daily_count
+  - upgrade_btn_show_info_count
+  - factory_purchase_products_gem_value
+  - cost_instant_purchase_gem_value_main
+  - cost_instant_purchase_gem_value_seasonal
+  - seasonal_carrying_capacity_inventory_difference
+  - strike_notice_time
+  - strike_start_time
+  - strike_end_time
+  - strike_negotiation_gem_count
+  - strike_offline_debuff
+  - strike_ratio
+  - acquisition_reward_max_time
+  - acquisition_reward_min_time
+  - acquisition_company_sell_time
+  - acquisition_reward_add_time
+  - acquisition_ceo_hp
+  - acquisition_show_auto_checkbox
+  - acquisition_boss_multiple_idx
+  - acquisition_boss_hp
+  - acquisition_reward_x2_need_gem
+  - acquisition_reward_x2_plus_gem
+  - acquisition_shop_reward_count
+  - acquisition_shop_speed_count
+  - acquisition_x5_free_start
+  - acquisition_x5_free_end
+  - acquisition_sale_reward_interval_time
+  - reinforce_reset_show
+  - reinforce_reset_gem_count
+  - supply_ad_money_get_multiple_value
+  - supply_ad_money_get_multiple_gem
+  - offline_reward_gem_multiple_value
+  - offline_reward_gem_multiple_gem
+  - onetime_event_btn_change_count
+  - seasonal_offline_reward_gem_multiple_value
+  - seasonal_offline_reward_gem_multiple_gem
+  - reward_ab_mainadsupply_test
+  - reward_ab_mainadsupply_key
+  - supply_ad_limit_daily
+  - supply_ad_appear_cooltime_b
+  - car_encyclopedia_total_reward_gem_value
+  - gem_supply_ad_cooltime
+  - gem_supply_ad_limit_daily
+  - gem_supply_ad_gem_value
+  - revenue_graph_change_cycle
+  - main_booster_add_time_per
+  - main_booster_ad_limit_daily
+  - main_booster_gem_value
+  - main_booster_ticket_value
+  - booster_skip_time
+  - booster_skip_cash
+  - ad_billboard_anzu_onoff
+  - bonus_onetime_event_last_time
+  - interstitial_run_firebase
+  - interstitial_first_wait_time
+  - interstitial_reward_gem
+  - interstitial_time_firebase
+  - minigame_digging_empty_land_money_value
+  - minigame_trickery_start_need_value
+  - minigame_shredding_random_reward_count
+  - interstitial_uskrjp_first_wait_time
+  - interstitial_ww_first_wait_time
+  - interstitial_uskrjp_time_firebase
+  - interstitial_ww_time_firebase
+  - factory_order_free_skip_count
+  - auction_house_pass_safe_need_win_point
+  - auction_house_pass_safe_max_gem_value
+  - auction_house_pass_safe_remain_rewards_get_time
+  - company_list_renewal_cooltime_2
+  - company_list_renewal_count
+  - funnel_ab_list_admission_test
+  - funnel_ab_list_admission_key
+  - offerwall_segment
+  - offerwall_reuse_count
+  - funnel_ab_office_item_levelup_all_test
+  - funnel_ab_office_item_levelup_all_key
+  - seasonal_mine_roulette_free_spin_count
+  - seasonal_rank_cooltime
+  - freecash_link_reward_gem
+  - seasonal_mine_rank_point_magnification_1
+  - seasonal_mine_rank_point_magnification_2
+  - seasonal_mine_rank_point_magnification_3
+  - seasonal_mine_rank_point_magnification_4
+  - seasonal_mine_rank_point_magnification_5
+  - seasonal_mine_rank_point_magnification_6
+  - seasonal_mine_rank_point_magnification_7
+  - auction_house_win_point_x2_free_end
+  - auction_house_pass_sale_time
+  - auction_house_pass_get_win_point
+  mSecondKey: []
+  mDataList:
+  - _index: get_off_work_delay
+    _value: 5
+  - _index: officeitem_lv2_require_player_lv
+    _value: 8
+  - _index: company_cancel_cost_cash_value
+    _value: 0
+  - _index: company_levelup_reward
+    _value: 1
+  - _index: company_list_renewal_cooltime
+    _value: 6000
+  - _index: company_list_show_count
+    _value: 5
+  - _index: company_list_reset_gem_count
+    _value: 5
+  - _index: name_max_count
+    _value: 12
+  - _index: beginning_money_value
+    _value: 37800
+  - _index: beginning_power_value
+    _value: 86
+  - _index: run_speed
+    _value: 160
+  - _index: offline_reward_min_time
+    _value: 300
+  - _index: offline_reward_max_time
+    _value: 7200
+  - _index: offline_reward_correction_value
+    _value: 20
+  - _index: offline_reward_multiple
+    _value: 800
+  - _index: supply_ad_appear_cooltime
+    _value: 80
+  - _index: supply_ad_money_increment
+    _value: 30
+  - _index: supply_ad_add_money
+    _value: 6000
+  - _index: supply_ad_exp_max_count
+    _value: 5
+  - _index: supply_ad_exp_application_time
+    _value: 300
+  - _index: supply_ad_exp_cooltime
+    _value: 110
+  - _index: exp_ad_start_time
+    _value: 14
+  - _index: exp_ad_end_time
+    _value: 18
+  - _index: exp_ad_day_count
+    _value: 5
+  - _index: exp_ad_cooltime
+    _value: 180
+  - _index: office_buildcost_skip_time
+    _value: 60
+  - _index: office_buildcost_skip_cash
+    _value: 1
+  - _index: require_item_decrement
+    _value: 20
+  - _index: office_maintenance_starttime
+    _value: 100
+  - _index: office_maintenance_cooltime
+    _value: 900
+  - _index: office_repair_cooltime
+    _value: 600
+  - _index: office_maintenance_probability
+    _value: 2
+  - _index: ceo_repair_runtime
+    _value: 3
+  - _index: meetingroom_use_duration
+    _value: 7
+  - _index: meetingroom_use_time
+    _value: 36000
+  - _index: activity_starttime
+    _value: 52200
+  - _index: activity_endtime
+    _value: 79200
+  - _index: activity_probability
+    _value: 85
+  - _index: activity_cooltime
+    _value: 5
+  - _index: activity_debuff_idx
+    _value: 2001
+  - _index: activity_employee_count
+    _value: 2
+  - _index: speachbubble_duration_time
+    _value: 4
+  - _index: speachbubble_type_1_rate
+    _value: 50
+  - _index: speachbubble_type_2_rate
+    _value: 50
+  - _index: speachbubble_view_percent
+    _value: 25
+  - _index: speachbubble_good_max_count
+    _value: 4
+  - _index: speachbubble_bad_max_count
+    _value: 4
+  - _index: speachbubble_roomopen_max_count
+    _value: 2
+  - _index: speachbubble_appraisal_item_lv
+    _value: 2
+  - _index: get_money_time
+    _value: 10
+  - _index: roulette_ad_cooltime
+    _value: 28800
+  - _index: roulette_need_gem
+    _value: 160
+  - _index: roulette_confirmed_reward_1
+    _value: 9
+  - _index: roulette_confirmed_reward_2
+    _value: 9
+  - _index: roulette_lucky_draw_count
+    _value: 30
+  - _index: roulette_lucky_draw_confirmed_reward_1
+    _value: 1
+  - _index: roulette_confirmed_reward
+    _value: 4
+  - _index: dayskip_ad_offtime
+    _value: 6
+  - _index: mood_critical_cooltime
+    _value: 100
+  - _index: mood_critical_runtime
+    _value: 22
+  - _index: company_exp_gauge_color_rate_red
+    _value: 50
+  - _index: company_exp_gauge_color_rate_yellow
+    _value: 70
+  - _index: company_exp_gauge_color_rate_green
+    _value: 100
+  - _index: encyclopedia_furniture_unlock_gem_reward
+    _value: 120
+  - _index: garage_default
+    _value: 0
+  - _index: chat_delaytime
+    _value: 150
+  - _index: namechange_need_gem
+    _value: 10
+  - _index: workspace_value_increasement_1
+    _value: 1250
+  - _index: workspace_value_increasement_2
+    _value: 1080
+  - _index: workspace_value_increasement_change
+    _value: 10
+  - _index: factory_order_slot_max
+    _value: 5
+  - _index: factory_order_cooltime
+    _value: 600
+  - _index: factory_workplace_cost_changelv
+    _value: 11
+  - _index: sec_company_option_time
+    _value: 10
+  - _index: plant_supplies_free_cooltime
+    _value: 14400
+  - _index: plant_exp_per_s
+    _value: 1
+  - _index: plant_tuto_item
+    _value: 1
+  - _index: waiting_speachbubble_cooltime
+    _value: 6
+  - _index: recreation_room_activity_time
+    _value: 10
+  - _index: catbank_get_gemcount
+    _value: 5
+  - _index: infra_reward_time
+    _value: 120
+  - _index: invite_button_gem
+    _value: 1
+  - _index: update_reward_gem
+    _value: 10
+  - _index: version_aos
+    _value: 0
+  - _index: version_ios
+    _value: 0
+  - _index: hard_version_aos
+    _value: -1
+  - _index: hard_version_ios
+    _value: -1
+  - _index: phone_catstagram_reward_gem_count
+    _value: 1
+  - _index: chat_send_btn_arrow_tuto_idx_1
+    _value: 1001
+  - _index: chat_send_btn_arrow_tuto_idx_2
+    _value: 1002
+  - _index: chat_send_btn_arrow_tuto_idx_3
+    _value: 2001
+  - _index: chat_send_btn_arrow_tuto_idx_4
+    _value: 3001
+  - _index: chat_send_btn_arrow_tuto_idx_5
+    _value: 4001
+  - _index: onetime_event_currency_item_upgrade_1
+    _value: 1
+  - _index: onetime_event_currency_item_upgrade_2
+    _value: 2
+  - _index: onetime_event_currency_item_upgrade_3
+    _value: 3
+  - _index: onetime_event_currency_item_upgrade_4
+    _value: 5
+  - _index: onetime_event_currency_ad
+    _value: 3
+  - _index: onetime_event_currency_todolist
+    _value: 10
+  - _index: onetime_need_currency_value
+    _value: 1
+  - _index: onetime_event_currency_ad_company_reset
+    _value: 5
+  - _index: plant_reward_gem_cooltime
+    _value: 86400
+  - _index: mission_safe_max_count
+    _value: 5
+  - _index: mission_safe_min_count
+    _value: 3
+  - _index: mission_slot_3_reward_multiple
+    _value: 3
+  - _index: hud_Icon_fame_thouch_effect
+    _value: 6
+  - _index: offline_reward_company_exp_correction_value
+    _value: 5
+  - _index: noads_sale_start_player_lv
+    _value: 20
+  - _index: noads_sale_time
+    _value: 86400
+  - _index: ads_sale_onemoretime
+    _value: 86400
+  - _index: ads_sale_onemoretime2
+    _value: 172800
+  - _index: invest_amount_multiple_min
+    _value: 5
+  - _index: invest_amount_multiple_max
+    _value: 10
+  - _index: invest_recovery_money_multiple
+    _value: 50
+  - _index: invest_duration
+    _value: -999
+  - _index: gamestart_loading_time
+    _value: 3
+  - _index: playerlvpass_sale_start_player_lv
+    _value: 300
+  - _index: playerlvpass_sale_time
+    _value: 86400
+  - _index: mission_ad_reward_multiple
+    _value: 2
+  - _index: office_gem_item_increasement_player_lv
+    _value: 1
+  - _index: noads_ab_test
+    _value: 0
+  - _index: noads_ab_key
+    _value: -1
+  - _index: premium_key_need_gem_count
+    _value: 100
+  - _index: premium_key_count
+    _value: 1
+  - _index: noads_ab_loading_ad_test
+    _value: 0
+  - _index: noads_ab_loading_ad_key
+    _value: -1
+  - _index: offerwall_event_onoff
+    _value: 0
+  - _index: offerwall_event_add_bonus
+    _value: 200
+  - _index: region_use_currency_idx1
+    _value: 1
+  - _index: region_use_currency_idx7
+    _value: 2
+  - _index: worldmap_hud_money_change_time
+    _value: 1
+  - _index: manager_briefcase_ad_cooltime
+    _value: 1800
+  - _index: manager_tuto_item
+    _value: 10
+  - _index: manager_tuto_get_card_idx
+    _value: 101
+  - _index: manager_tuto_get_card_count
+    _value: 2
+  - _index: manager_debuff_value
+    _value: 50
+  - _index: manager_ratio
+    _value: 80
+  - _index: manager_speech_cooltime
+    _value: 10
+  - _index: noads_ab_loading_test
+    _value: 0
+  - _index: noads_ab_loading_key
+    _value: -1
+  - _index: inhouse_bonus_gem
+    _value: 5
+  - _index: inhouse_invite_bonus_gem
+    _value: 5
+  - _index: daily_ab_loading_test
+    _value: 0
+  - _index: daily_ab_loading_key
+    _value: -1
+  - _index: iaa_ab_st1ads_test
+    _value: 0
+  - _index: iaa_ab_st1ads_key
+    _value: -1
+  - _index: specialday_roulette_ad_cooltime
+    _value: 14400
+  - _index: specialday_roulette_need_gem_1
+    _value: 10
+  - _index: specialday_roulette_need_gem_2
+    _value: 50
+  - _index: specialday_roulette_need_gem_3
+    _value: 100
+  - _index: specialday_roulette_need_gem_4
+    _value: 150
+  - _index: specialday_roulette_need_gem_5
+    _value: 200
+  - _index: specialday_roulette_reward1_plant_idx
+    _value: 14
+  - _index: specialday_roulette_reward2_plant_idx
+    _value: 15
+  - _index: specialday_roulette_reward3_plant_idx
+    _value: 14
+  - _index: specialday_roulette_reward4_plant_idx
+    _value: 15
+  - _index: specialday_roulette_reward_count
+    _value: 14
+  - _index: specialday_surprise_apear_cooltime
+    _value: 300
+  - _index: specialday_surprise_apeartime
+    _value: 60
+  - _index: specialday_surprise_reward_count
+    _value: 5
+  - _index: offerwall_show_hud_reddot_gem
+    _value: 15
+  - _index: tarot_appear_cooltime
+    _value: 120
+  - _index: tarot_gamestart_need_gem_count
+    _value: 50
+  - _index: tarot_second_gameplay_need_gem_count
+    _value: 100
+  - _index: tarot_third_gameplay_need_gem_count
+    _value: 150
+  - _index: tarot_rewardchange_need_gem_count
+    _value: 30
+  - _index: tarot_specialreward_first_draw_rate
+    _value: 100
+  - _index: tarot_specialreward_second_draw_rate
+    _value: 150
+  - _index: tarot_specialreward_third_draw_rate
+    _value: 200
+  - _index: tarot_reward_replace_gem_count
+    _value: 20
+  - _index: tarot_reward_select_reward_count
+    _value: 60
+  - _index: auction_house_stamina_max_add_count
+    _value: 5
+  - _index: auction_house_spy_gem_count_1
+    _value: 10
+  - _index: auction_house_random_coin_max_count
+    _value: 4
+  - _index: auction_house_random_coin_min_count
+    _value: 4
+  - _index: auction_house_random_use_coin
+    _value: 5
+  - _index: auction_house_min_use_coin
+    _value: 6
+  - _index: auction_house_win_point
+    _value: 1
+  - _index: auction_house_stamina_max_count
+    _value: 5
+  - _index: auction_house_stamina_countup_cooltime
+    _value: 600
+  - _index: auction_house_start_stamina_count
+    _value: 1
+  - _index: seasonal_offline_reward_min_time
+    _value: 300
+  - _index: seasonal_offline_reward_max_time
+    _value: 7200
+  - _index: seasonal_offline_reward_multiple
+    _value: 800
+  - _index: seasonal_offline_reward_correction_value
+    _value: 15
+  - _index: seasonal_roulette_need_coin
+    _value: 5
+  - _index: seasonal_supply_ad_appear_cooltime
+    _value: 300
+  - _index: seasonal_supply_production_time_min
+    _value: 600
+  - _index: seasonal_supply_production_time_max
+    _value: 1200
+  - _index: seasonal_supply_day_count
+    _value: 10
+  - _index: seasonal_shop_free_coin_cooltime
+    _value: 300
+  - _index: seasonal_rank_loading_period
+    _value: 250
+  - _index: seasonal_rank_refresh_period
+    _value: 30
+  - _index: seasonal_mission_buff_period
+    _value: 1800
+  - _index: seasonal_mission_buff_value
+    _value: 1
+  - _index: seasonal_step_mission_point
+    _value: 3
+  - _index: seasonal_step_gem_point
+    _value: 1
+  - _index: seasonal_roulette_first_reward
+    _value: 2
+  - _index: seasonal_statue_buff_slot_count
+    _value: 15
+  - _index: seasonal_statue_buff_reward_skill_book
+    _value: 1
+  - _index: seasonal_pause_worker_reference_value
+    _value: 10
+  - _index: seasonal_lunch_start_time
+    _value: 43200
+  - _index: seasonal_lunch_end_time
+    _value: 46800
+  - _index: seasonal_dinner_start_time
+    _value: 75600
+  - _index: seasonal_dinner_end_time
+    _value: 79200
+  - _index: seasonal_restaurant_use_time
+    _value: 70
+  - _index: seasonal_restaurant_speachbubble_max_count
+    _value: 10
+  - _index: seasonal_rank_period
+    _value: 7200
+  - _index: seasonal_period_ab_test
+    _value: 0
+  - _index: seasonal_period_ab_key
+    _value: -1
+  - _index: seasonal_remain_rewards_get_time
+    _value: 259200
+  - _index: coinbank_get_rate
+    _value: 2
+  - _index: seasonal_office_buildcost_skip_time
+    _value: 15
+  - _index: seasonal_office_buildcost_skip_cash
+    _value: 1
+  - _index: seasonal_rank_period_buffer
+    _value: 3600
+  - _index: seasonal_office_building_slot_max
+    _value: 2
+  - _index: seasonal_office_building_slot_max_add
+    _value: 2
+  - _index: seasonal_overtime_gem
+    _value: 500
+  - _index: stage_electronic_display_showtime
+    _value: 300
+  - _index: next_region_banner_show_minus_lv
+    _value: 100
+  - _index: supply_safe_max_default_count
+    _value: 5
+  - _index: funnel_ab_st1build1sec_test
+    _value: 0
+  - _index: funnel_ab_st1build1sec_key
+    _value: -1
+  - _index: funnel_ab_st2build1sec_test
+    _value: 0
+  - _index: funnel_ab_st2build1sec_key
+    _value: -1
+  - _index: shop_ceo_box_normal_key_1_gem_price
+    _value: 19
+  - _index: shop_ceo_box_premium_key_1_gem_price
+    _value: 45
+  - _index: funnel_ab_st3build1sec_test
+    _value: 0
+  - _index: funnel_ab_st3build1sec_key
+    _value: -1
+  - _index: birthday_roulette_ticket_count
+    _value: 1
+  - _index: birthday_roulette_ticket_count_2
+    _value: 5
+  - _index: birthday_roulette_ticket_count_3
+    _value: 10
+  - _index: birthday_roulette_ticket_count_4
+    _value: 50
+  - _index: birthday_roulette_bonus_reward_ticket_count
+    _value: 100
+  - _index: birthday_roulette_bonus_reward_currency_idx
+    _value: 13
+  - _index: birthday_roulette_bonus_reward_count
+    _value: 50
+  - _index: birthday_mission_refresh_gem_count
+    _value: 2
+  - _index: birthday_mission_list_count
+    _value: 10
+  - _index: birthday_attendance_replace_gem_count
+    _value: 50
+  - _index: noads_popup_daily_count
+    _value: 3
+  - _index: upgrade_btn_show_info_count
+    _value: 5
+  - _index: factory_purchase_products_gem_value
+    _value: 34
+  - _index: cost_instant_purchase_gem_value_main
+    _value: 36
+  - _index: cost_instant_purchase_gem_value_seasonal
+    _value: 15
+  - _index: seasonal_carrying_capacity_inventory_difference
+    _value: 10
+  - _index: strike_notice_time
+    _value: 61200
+  - _index: strike_start_time
+    _value: 64800
+  - _index: strike_end_time
+    _value: 82800
+  - _index: strike_negotiation_gem_count
+    _value: 50
+  - _index: strike_offline_debuff
+    _value: 20
+  - _index: strike_ratio
+    _value: 30
+  - _index: acquisition_reward_max_time
+    _value: 7200
+  - _index: acquisition_reward_min_time
+    _value: 300
+  - _index: acquisition_company_sell_time
+    _value: 3600
+  - _index: acquisition_reward_add_time
+    _value: 3600
+  - _index: acquisition_ceo_hp
+    _value: 3
+  - _index: acquisition_show_auto_checkbox
+    _value: 10
+  - _index: acquisition_boss_multiple_idx
+    _value: 10
+  - _index: acquisition_boss_hp
+    _value: 110
+  - _index: acquisition_reward_x2_need_gem
+    _value: 15
+  - _index: acquisition_reward_x2_plus_gem
+    _value: 10
+  - _index: acquisition_shop_reward_count
+    _value: 1000
+  - _index: acquisition_shop_speed_count
+    _value: 5
+  - _index: acquisition_x5_free_start
+    _value: 10
+  - _index: acquisition_x5_free_end
+    _value: 25
+  - _index: acquisition_sale_reward_interval_time
+    _value: 10
+  - _index: reinforce_reset_show
+    _value: 5
+  - _index: reinforce_reset_gem_count
+    _value: 50
+  - _index: supply_ad_money_get_multiple_value
+    _value: 2
+  - _index: supply_ad_money_get_multiple_gem
+    _value: 5
+  - _index: offline_reward_gem_multiple_value
+    _value: 16
+  - _index: offline_reward_gem_multiple_gem
+    _value: 7
+  - _index: onetime_event_btn_change_count
+    _value: 4
+  - _index: seasonal_offline_reward_gem_multiple_value
+    _value: 16
+  - _index: seasonal_offline_reward_gem_multiple_gem
+    _value: 10
+  - _index: reward_ab_mainadsupply_test
+    _value: 0
+  - _index: reward_ab_mainadsupply_key
+    _value: -1
+  - _index: supply_ad_limit_daily
+    _value: 20
+  - _index: supply_ad_appear_cooltime_b
+    _value: 80
+  - _index: car_encyclopedia_total_reward_gem_value
+    _value: 1000
+  - _index: gem_supply_ad_cooltime
+    _value: 60
+  - _index: gem_supply_ad_limit_daily
+    _value: 50
+  - _index: gem_supply_ad_gem_value
+    _value: 10
+  - _index: revenue_graph_change_cycle
+    _value: 20
+  - _index: main_booster_add_time_per
+    _value: 600
+  - _index: main_booster_ad_limit_daily
+    _value: 3
+  - _index: main_booster_gem_value
+    _value: 10
+  - _index: main_booster_ticket_value
+    _value: 1
+  - _index: booster_skip_time
+    _value: 20
+  - _index: booster_skip_cash
+    _value: 1
+  - _index: ad_billboard_anzu_onoff
+    _value: 1
+  - _index: bonus_onetime_event_last_time
+    _value: 1800
+  - _index: interstitial_run_firebase
+    _value: 1
+  - _index: interstitial_first_wait_time
+    _value: 60
+  - _index: interstitial_reward_gem
+    _value: 1
+  - _index: interstitial_time_firebase
+    _value: 180
+  - _index: minigame_digging_empty_land_money_value
+    _value: 60
+  - _index: minigame_trickery_start_need_value
+    _value: 10
+  - _index: minigame_shredding_random_reward_count
+    _value: 2
+  - _index: interstitial_uskrjp_first_wait_time
+    _value: 60
+  - _index: interstitial_ww_first_wait_time
+    _value: 60
+  - _index: interstitial_uskrjp_time_firebase
+    _value: 180
+  - _index: interstitial_ww_time_firebase
+    _value: 120
+  - _index: factory_order_free_skip_count
+    _value: 2
+  - _index: auction_house_pass_safe_need_win_point
+    _value: 1
+  - _index: auction_house_pass_safe_max_gem_value
+    _value: 300
+  - _index: auction_house_pass_safe_remain_rewards_get_time
+    _value: 604800
+  - _index: company_list_renewal_cooltime_2
+    _value: 600
+  - _index: company_list_renewal_count
+    _value: 5
+  - _index: funnel_ab_list_admission_test
+    _value: 0
+  - _index: funnel_ab_list_admission_key
+    _value: -1
+  - _index: offerwall_segment
+    _value: 20
+  - _index: offerwall_reuse_count
+    _value: 2
+  - _index: funnel_ab_office_item_levelup_all_test
+    _value: 0
+  - _index: funnel_ab_office_item_levelup_all_key
+    _value: -1
+  - _index: seasonal_mine_roulette_free_spin_count
+    _value: 5
+  - _index: seasonal_rank_cooltime
+    _value: 86400
+  - _index: freecash_link_reward_gem
+    _value: 200
+  - _index: seasonal_mine_rank_point_magnification_1
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_2
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_3
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_4
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_5
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_6
+    _value: 100
+  - _index: seasonal_mine_rank_point_magnification_7
+    _value: 100
+  - _index: auction_house_win_point_x2_free_end
+    _value: 20
+  - _index: auction_house_pass_sale_time
+    _value: 86400
+  - _index: auction_house_pass_get_win_point
+    _value: 50

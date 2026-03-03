@@ -1,0 +1,3332 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1803326777, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: BuildingInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 10001
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 29
+  - 24
+  - 30
+  - 31
+  - 32
+  - 25
+  - 33
+  - 35
+  - 36
+  - 37
+  - 26
+  - 38
+  - 39
+  - 40
+  - 41
+  - 27
+  - 42
+  - 43
+  - 44
+  - 28
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  - 107
+  - 108
+  - 109
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+  - 126
+  - 127
+  - 128
+  - 129
+  - 130
+  - 131
+  - 132
+  - 133
+  - 134
+  - 135
+  - 136
+  - 137
+  - 138
+  - 139
+  - 140
+  - 141
+  - 142
+  - 143
+  - 144
+  - 145
+  - 146
+  - 147
+  - 148
+  - 149
+  - 150
+  - 151
+  - 152
+  - 153
+  - 154
+  - 155
+  - 156
+  - 157
+  - 158
+  - 159
+  - 160
+  - 161
+  - 162
+  - 163
+  - 164
+  - 165
+  - 166
+  - 167
+  - 168
+  - 169
+  - 170
+  - 171
+  - 172
+  - 173
+  - 174
+  - 175
+  - 176
+  - 177
+  - 178
+  - 179
+  - 180
+  - 181
+  - 182
+  - 183
+  - 184
+  - 185
+  - 186
+  - 187
+  - 188
+  - 189
+  - 190
+  - 191
+  - 192
+  - 193
+  - 194
+  - 195
+  - 196
+  - 197
+  - 198
+  - 199
+  - 200
+  - 201
+  - 202
+  - 203
+  - 204
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  - 211
+  - 212
+  - 213
+  - 214
+  - 215
+  - 216
+  - 217
+  - 218
+  - 219
+  - 220
+  - 221
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _zone: 1
+    _name: str_name_building_1
+    _description: str_desc_building_1
+    _type: 1
+    _need_lv: 0
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img: Worldmap_Building_01
+  - _idx: 10001
+    _zone: 1
+    _name: str_name_building_10001
+    _description: str_desc_building_10001
+    _type: 4
+    _need_lv: 14
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: e803
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_10001
+  - _idx: 2
+    _zone: 2
+    _name: str_name_building_2
+    _description: str_desc_building_2
+    _type: 1
+    _need_lv: 18
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 400d03
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img: Worldmap_Building_02
+  - _idx: 3
+    _zone: 2
+    _name: str_name_building_3
+    _description: str_desc_building_3
+    _type: 3
+    _need_lv: 35
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_03
+  - _idx: 4
+    _zone: 2
+    _name: str_name_building_4
+    _description: str_desc_building_4
+    _type: 2
+    _need_lv: 35
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_04
+  - _idx: 5
+    _zone: 2
+    _name: str_name_building_5
+    _description: str_desc_building_5
+    _type: 4
+    _need_lv: 35
+    _need_point: 45
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_05
+  - _idx: 6
+    _zone: 3
+    _name: str_name_building_6
+    _description: str_desc_building_6
+    _type: 2
+    _need_lv: 90
+    _need_point: -1
+    _need_building: 4
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: c0577e
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_06
+  - _idx: 7
+    _zone: 3
+    _name: str_name_building_7
+    _description: str_desc_building_7
+    _type: 5
+    _need_lv: 80
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: e0ca63
+    _icon: WorldMap_Icon_Factory
+    _offline_profit_cap:
+    _img: Worldmap_Building_07
+  - _idx: 8
+    _zone: 3
+    _name: str_name_building_8
+    _description: str_desc_building_8
+    _type: 1
+    _need_lv: 75
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 003e49
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img: Worldmap_Building_08
+  - _idx: 9
+    _zone: 3
+    _name: str_name_building_9
+    _description: str_desc_building_9
+    _type: 4
+    _need_lv: 130
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: e03913
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_09
+  - _idx: 10
+    _zone: 3
+    _name: str_name_building_10
+    _description: str_desc_building_10
+    _type: 3
+    _need_lv: 120
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_10
+  - _idx: 11
+    _zone: 3
+    _name: str_name_building_11
+    _description: str_desc_building_11
+    _type: 3
+    _need_lv: 150
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_11
+  - _idx: 12
+    _zone: 4
+    _name: str_name_building_12
+    _description: str_desc_building_12
+    _type: 1
+    _need_lv: 164
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00512502
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img: Worldmap_Building_12
+  - _idx: 13
+    _zone: 4
+    _name: str_name_building_13
+    _description: str_desc_building_13
+    _type: 3
+    _need_lv: 200
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_13
+  - _idx: 14
+    _zone: 4
+    _name: str_name_building_14
+    _description: str_desc_building_14
+    _type: 2
+    _need_lv: 200
+    _need_point: -1
+    _need_building: 6
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_14
+  - _idx: 15
+    _zone: 4
+    _name: str_name_building_15
+    _description: str_desc_building_15
+    _type: 4
+    _need_lv: 220
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 802c8000
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_15
+  - _idx: 16
+    _zone: 4
+    _name: str_name_building_16
+    _description: str_desc_building_16
+    _type: 4
+    _need_lv: 240
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 802c8000
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_16
+  - _idx: 17
+    _zone: 5
+    _name: str_name_building_17
+    _description: str_desc_building_17
+    _type: 2
+    _need_lv: 320
+    _need_point: -1
+    _need_building: 14
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 80412942
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_17
+  - _idx: 18
+    _zone: 5
+    _name: str_name_building_18
+    _description: str_desc_building_18
+    _type: 1
+    _need_lv: 300
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 0046c323
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img: Worldmap_Building_18
+  - _idx: 19
+    _zone: 5
+    _name: str_name_building_19
+    _description: str_desc_building_19
+    _type: 4
+    _need_lv: 360
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_19
+  - _idx: 20
+    _zone: 5
+    _name: str_name_building_20
+    _description: str_desc_building_20
+    _type: 3
+    _need_lv: 320
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_20
+  - _idx: 21
+    _zone: 6
+    _name: str_name_building_21
+    _description: str_desc_building_21
+    _type: 1
+    _need_lv: 500
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00bbeea000
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img: Worldmap_Building_21
+  - _idx: 22
+    _zone: 6
+    _name: str_name_building_22
+    _description: str_desc_building_22
+    _type: 3
+    _need_lv: 500
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_22
+  - _idx: 23
+    _zone: 7
+    _name: str_name_building_23
+    _description: str_desc_building_23
+    _type: 1
+    _need_lv: 800
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img: Worldmap2_Building1
+  - _idx: 29
+    _zone: 7
+    _name: str_name_building_29
+    _description: str_desc_building_29
+    _type: 4
+    _need_lv: 800
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap2_Building2
+  - _idx: 24
+    _zone: 8
+    _name: str_name_building_24
+    _description: str_desc_building_24
+    _type: 1
+    _need_lv: 850
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img: Worldmap2_Building3
+  - _idx: 30
+    _zone: 8
+    _name: str_name_building_30
+    _description: str_desc_building_30
+    _type: 3
+    _need_lv: 875
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_03
+  - _idx: 31
+    _zone: 8
+    _name: str_name_building_31
+    _description: str_desc_building_31
+    _type: 2
+    _need_lv: 875
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_31
+  - _idx: 32
+    _zone: 8
+    _name: str_name_building_32
+    _description: str_desc_building_32
+    _type: 4
+    _need_lv: 925
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 1
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap2_Building5
+  - _idx: 25
+    _zone: 9
+    _name: str_name_building_25
+    _description: str_desc_building_25
+    _type: 1
+    _need_lv: 950
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img: Worldmap2_Building6
+  - _idx: 33
+    _zone: 9
+    _name: str_name_building_33
+    _description: str_desc_building_33
+    _type: 2
+    _need_lv: 968
+    _need_point: -1
+    _need_building: 31
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_33
+  - _idx: 35
+    _zone: 9
+    _name: str_name_building_35
+    _description: str_desc_building_35
+    _type: 4
+    _need_lv: 1022
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap2_Building8
+  - _idx: 36
+    _zone: 9
+    _name: str_name_building_36
+    _description: str_desc_building_36
+    _type: 3
+    _need_lv: 1004
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_10
+  - _idx: 37
+    _zone: 9
+    _name: str_name_building_37
+    _description: str_desc_building_37
+    _type: 3
+    _need_lv: 1040
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_11
+  - _idx: 26
+    _zone: 10
+    _name: str_name_building_26
+    _description: str_desc_building_26
+    _type: 1
+    _need_lv: 1060
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img: Worldmap_Building_24
+  - _idx: 38
+    _zone: 10
+    _name: str_name_building_38
+    _description: str_desc_building_38
+    _type: 3
+    _need_lv: 1086
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_13
+  - _idx: 39
+    _zone: 10
+    _name: str_name_building_39
+    _description: str_desc_building_39
+    _type: 2
+    _need_lv: 1100
+    _need_point: -1
+    _need_building: 33
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_39
+  - _idx: 40
+    _zone: 10
+    _name: str_name_building_40
+    _description: str_desc_building_40
+    _type: 4
+    _need_lv: 1138
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_26
+  - _idx: 41
+    _zone: 10
+    _name: str_name_building_41
+    _description: str_desc_building_41
+    _type: 4
+    _need_lv: 1164
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_27
+  - _idx: 27
+    _zone: 11
+    _name: str_name_building_27
+    _description: str_desc_building_27
+    _type: 1
+    _need_lv: 1190
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img: Worldmap_Building_28
+  - _idx: 42
+    _zone: 11
+    _name: str_name_building_42
+    _description: str_desc_building_42
+    _type: 2
+    _need_lv: 1230
+    _need_point: -1
+    _need_building: 39
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_42
+  - _idx: 43
+    _zone: 11
+    _name: str_name_building_43
+    _description: str_desc_building_43
+    _type: 4
+    _need_lv: 1295
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_31
+  - _idx: 44
+    _zone: 11
+    _name: str_name_building_44
+    _description: str_desc_building_44
+    _type: 3
+    _need_lv: 1225
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_30
+  - _idx: 28
+    _zone: 12
+    _name: str_name_building_28
+    _description: str_desc_building_28
+    _type: 1
+    _need_lv: 1400
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img: Worldmap_Building_32
+  - _idx: 45
+    _zone: 12
+    _name: str_name_building_45
+    _description: str_desc_building_45
+    _type: 3
+    _need_lv: 1400
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_33
+  - _idx: 46
+    _zone: 13
+    _name: str_name_building_46
+    _description: str_desc_building_46
+    _type: 1
+    _need_lv: 1700
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img: Worldmap_Building_39
+  - _idx: 47
+    _zone: 13
+    _name: str_name_building_47
+    _description: str_desc_building_47
+    _type: 4
+    _need_lv: 1700
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_40
+  - _idx: 48
+    _zone: 14
+    _name: str_name_building_48
+    _description: str_desc_building_48
+    _type: 1
+    _need_lv: 1750
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img: Worldmap_Building_41
+  - _idx: 49
+    _zone: 14
+    _name: str_name_building_49
+    _description: str_desc_building_49
+    _type: 3
+    _need_lv: 1775
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_03
+  - _idx: 50
+    _zone: 14
+    _name: str_name_building_50
+    _description: str_desc_building_50
+    _type: 2
+    _need_lv: 1775
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_50
+  - _idx: 51
+    _zone: 14
+    _name: str_name_building_51
+    _description: str_desc_building_51
+    _type: 4
+    _need_lv: 1825
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 2
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_42
+  - _idx: 52
+    _zone: 15
+    _name: str_name_building_52
+    _description: str_desc_building_52
+    _type: 1
+    _need_lv: 1850
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img: Worldmap_Building_43
+  - _idx: 53
+    _zone: 15
+    _name: str_name_building_53
+    _description: str_desc_building_53
+    _type: 2
+    _need_lv: 1868
+    _need_point: -1
+    _need_building: 50
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_53
+  - _idx: 54
+    _zone: 15
+    _name: str_name_building_54
+    _description: str_desc_building_54
+    _type: 4
+    _need_lv: 1922
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_44
+  - _idx: 55
+    _zone: 15
+    _name: str_name_building_55
+    _description: str_desc_building_55
+    _type: 3
+    _need_lv: 1904
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_10
+  - _idx: 56
+    _zone: 15
+    _name: str_name_building_56
+    _description: str_desc_building_56
+    _type: 3
+    _need_lv: 1940
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_11
+  - _idx: 57
+    _zone: 16
+    _name: str_name_building_57
+    _description: str_desc_building_57
+    _type: 1
+    _need_lv: 1960
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img: Worldmap_Building_45
+  - _idx: 58
+    _zone: 16
+    _name: str_name_building_58
+    _description: str_desc_building_58
+    _type: 3
+    _need_lv: 1986
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_13
+  - _idx: 59
+    _zone: 16
+    _name: str_name_building_59
+    _description: str_desc_building_59
+    _type: 2
+    _need_lv: 2000
+    _need_point: -1
+    _need_building: 53
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_59
+  - _idx: 60
+    _zone: 16
+    _name: str_name_building_60
+    _description: str_desc_building_60
+    _type: 4
+    _need_lv: 2038
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_47
+  - _idx: 61
+    _zone: 16
+    _name: str_name_building_61
+    _description: str_desc_building_61
+    _type: 4
+    _need_lv: 2064
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_46
+  - _idx: 62
+    _zone: 17
+    _name: str_name_building_62
+    _description: str_desc_building_62
+    _type: 1
+    _need_lv: 2090
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img: Worldmap_Building_49
+  - _idx: 63
+    _zone: 17
+    _name: str_name_building_63
+    _description: str_desc_building_63
+    _type: 2
+    _need_lv: 2130
+    _need_point: -1
+    _need_building: 59
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_63
+  - _idx: 64
+    _zone: 17
+    _name: str_name_building_64
+    _description: str_desc_building_64
+    _type: 4
+    _need_lv: 2195
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_50
+  - _idx: 65
+    _zone: 17
+    _name: str_name_building_65
+    _description: str_desc_building_65
+    _type: 3
+    _need_lv: 2125
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_48
+  - _idx: 66
+    _zone: 18
+    _name: str_name_building_66
+    _description: str_desc_building_66
+    _type: 1
+    _need_lv: 2300
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img: Worldmap_Building_52
+  - _idx: 67
+    _zone: 18
+    _name: str_name_building_67
+    _description: str_desc_building_67
+    _type: 3
+    _need_lv: 2300
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_51
+  - _idx: 68
+    _zone: 19
+    _name: str_name_building_68
+    _description: str_desc_building_68
+    _type: 1
+    _need_lv: 2600
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img: Worldmap_Building_58
+  - _idx: 69
+    _zone: 19
+    _name: str_name_building_69
+    _description: str_desc_building_69
+    _type: 4
+    _need_lv: 2600
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_57
+  - _idx: 70
+    _zone: 20
+    _name: str_name_building_70
+    _description: str_desc_building_70
+    _type: 1
+    _need_lv: 2650
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img: Worldmap_Building_59
+  - _idx: 71
+    _zone: 20
+    _name: str_name_building_71
+    _description: str_desc_building_71
+    _type: 3
+    _need_lv: 2675
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_03
+  - _idx: 72
+    _zone: 20
+    _name: str_name_building_72
+    _description: str_desc_building_72
+    _type: 2
+    _need_lv: 2675
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_72
+  - _idx: 73
+    _zone: 20
+    _name: str_name_building_73
+    _description: str_desc_building_73
+    _type: 4
+    _need_lv: 2725
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 3
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_62
+  - _idx: 74
+    _zone: 21
+    _name: str_name_building_74
+    _description: str_desc_building_74
+    _type: 1
+    _need_lv: 2750
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img: Worldmap_Building_61
+  - _idx: 75
+    _zone: 21
+    _name: str_name_building_75
+    _description: str_desc_building_75
+    _type: 2
+    _need_lv: 2768
+    _need_point: -1
+    _need_building: 72
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_75
+  - _idx: 76
+    _zone: 21
+    _name: str_name_building_76
+    _description: str_desc_building_76
+    _type: 4
+    _need_lv: 2822
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_60
+  - _idx: 77
+    _zone: 21
+    _name: str_name_building_77
+    _description: str_desc_building_77
+    _type: 3
+    _need_lv: 2804
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_10
+  - _idx: 78
+    _zone: 21
+    _name: str_name_building_78
+    _description: str_desc_building_78
+    _type: 3
+    _need_lv: 2840
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_11
+  - _idx: 79
+    _zone: 22
+    _name: str_name_building_79
+    _description: str_desc_building_79
+    _type: 1
+    _need_lv: 2860
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img: Worldmap_Building_63
+  - _idx: 80
+    _zone: 22
+    _name: str_name_building_80
+    _description: str_desc_building_80
+    _type: 3
+    _need_lv: 2886
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_13
+  - _idx: 81
+    _zone: 22
+    _name: str_name_building_81
+    _description: str_desc_building_81
+    _type: 2
+    _need_lv: 2900
+    _need_point: -1
+    _need_building: 75
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_81
+  - _idx: 82
+    _zone: 22
+    _name: str_name_building_82
+    _description: str_desc_building_82
+    _type: 4
+    _need_lv: 2938
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_67
+  - _idx: 83
+    _zone: 22
+    _name: str_name_building_83
+    _description: str_desc_building_83
+    _type: 4
+    _need_lv: 2964
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_64
+  - _idx: 84
+    _zone: 23
+    _name: str_name_building_84
+    _description: str_desc_building_84
+    _type: 1
+    _need_lv: 2990
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img: Worldmap_Building_65
+  - _idx: 85
+    _zone: 23
+    _name: str_name_building_85
+    _description: str_desc_building_85
+    _type: 2
+    _need_lv: 3030
+    _need_point: -1
+    _need_building: 81
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_85
+  - _idx: 86
+    _zone: 23
+    _name: str_name_building_86
+    _description: str_desc_building_86
+    _type: 4
+    _need_lv: 3095
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_70
+  - _idx: 87
+    _zone: 23
+    _name: str_name_building_87
+    _description: str_desc_building_87
+    _type: 3
+    _need_lv: 3025
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_66
+  - _idx: 88
+    _zone: 24
+    _name: str_name_building_88
+    _description: str_desc_building_88
+    _type: 1
+    _need_lv: 3200
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img: Worldmap_Building_68
+  - _idx: 89
+    _zone: 24
+    _name: str_name_building_89
+    _description: str_desc_building_89
+    _type: 3
+    _need_lv: 3200
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_69
+  - _idx: 90
+    _zone: 25
+    _name: str_name_building_90
+    _description: str_desc_building_90
+    _type: 1
+    _need_lv: 3500
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img: Worldmap_Building_72
+  - _idx: 91
+    _zone: 25
+    _name: str_name_building_91
+    _description: str_desc_building_91
+    _type: 4
+    _need_lv: 3500
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_71
+  - _idx: 92
+    _zone: 26
+    _name: str_name_building_92
+    _description: str_desc_building_92
+    _type: 1
+    _need_lv: 3550
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img: Worldmap_Building_74
+  - _idx: 93
+    _zone: 26
+    _name: str_name_building_93
+    _description: str_desc_building_93
+    _type: 3
+    _need_lv: 3575
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_75
+  - _idx: 94
+    _zone: 26
+    _name: str_name_building_94
+    _description: str_desc_building_94
+    _type: 2
+    _need_lv: 3575
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_94
+  - _idx: 95
+    _zone: 26
+    _name: str_name_building_95
+    _description: str_desc_building_95
+    _type: 4
+    _need_lv: 3625
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 4
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_73
+  - _idx: 96
+    _zone: 27
+    _name: str_name_building_96
+    _description: str_desc_building_96
+    _type: 1
+    _need_lv: 3650
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img: Worldmap_Building_76
+  - _idx: 97
+    _zone: 27
+    _name: str_name_building_97
+    _description: str_desc_building_97
+    _type: 2
+    _need_lv: 3668
+    _need_point: -1
+    _need_building: 94
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_97
+  - _idx: 98
+    _zone: 27
+    _name: str_name_building_98
+    _description: str_desc_building_98
+    _type: 4
+    _need_lv: 3722
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_79
+  - _idx: 99
+    _zone: 27
+    _name: str_name_building_99
+    _description: str_desc_building_99
+    _type: 3
+    _need_lv: 3704
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_77
+  - _idx: 100
+    _zone: 27
+    _name: str_name_building_100
+    _description: str_desc_building_100
+    _type: 3
+    _need_lv: 3740
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_78
+  - _idx: 101
+    _zone: 28
+    _name: str_name_building_101
+    _description: str_desc_building_101
+    _type: 1
+    _need_lv: 3760
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img: Worldmap_Building_80
+  - _idx: 102
+    _zone: 28
+    _name: str_name_building_102
+    _description: str_desc_building_102
+    _type: 3
+    _need_lv: 3786
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_81
+  - _idx: 103
+    _zone: 28
+    _name: str_name_building_103
+    _description: str_desc_building_103
+    _type: 2
+    _need_lv: 3800
+    _need_point: -1
+    _need_building: 97
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_103
+  - _idx: 104
+    _zone: 28
+    _name: str_name_building_104
+    _description: str_desc_building_104
+    _type: 4
+    _need_lv: 3838
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img: Worldmap_Building_82
+  - _idx: 105
+    _zone: 28
+    _name: str_name_building_105
+    _description: str_desc_building_105
+    _type: 4
+    _need_lv: 3864
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_83
+  - _idx: 106
+    _zone: 29
+    _name: str_name_building_106
+    _description: str_desc_building_106
+    _type: 1
+    _need_lv: 3890
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img: Worldmap_Building_84
+  - _idx: 107
+    _zone: 29
+    _name: str_name_building_107
+    _description: str_desc_building_107
+    _type: 2
+    _need_lv: 3930
+    _need_point: -1
+    _need_building: 103
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img: WorldMap_Icon_House_107
+  - _idx: 108
+    _zone: 29
+    _name: str_name_building_108
+    _description: str_desc_building_108
+    _type: 4
+    _need_lv: 3995
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img: Worldmap_Building_85
+  - _idx: 109
+    _zone: 29
+    _name: str_name_building_109
+    _description: str_desc_building_109
+    _type: 3
+    _need_lv: 3925
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_20
+  - _idx: 110
+    _zone: 30
+    _name: str_name_building_110
+    _description: str_desc_building_110
+    _type: 1
+    _need_lv: 4100
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img: Worldmap_Building_86
+  - _idx: 111
+    _zone: 30
+    _name: str_name_building_111
+    _description: str_desc_building_111
+    _type: 3
+    _need_lv: 4100
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img: Worldmap_Building_22
+  - _idx: 112
+    _zone: 31
+    _name: str_name_building_112
+    _description: str_desc_building_112
+    _type: 1
+    _need_lv: 4400
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img:
+  - _idx: 113
+    _zone: 31
+    _name: str_name_building_113
+    _description: str_desc_building_113
+    _type: 4
+    _need_lv: 4400
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 114
+    _zone: 32
+    _name: str_name_building_114
+    _description: str_desc_building_114
+    _type: 1
+    _need_lv: 4450
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img:
+  - _idx: 115
+    _zone: 32
+    _name: str_name_building_115
+    _description: str_desc_building_115
+    _type: 3
+    _need_lv: 4475
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 116
+    _zone: 32
+    _name: str_name_building_116
+    _description: str_desc_building_116
+    _type: 2
+    _need_lv: 4475
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 117
+    _zone: 32
+    _name: str_name_building_117
+    _description: str_desc_building_117
+    _type: 4
+    _need_lv: 4525
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 5
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 118
+    _zone: 33
+    _name: str_name_building_118
+    _description: str_desc_building_118
+    _type: 1
+    _need_lv: 4550
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img:
+  - _idx: 119
+    _zone: 33
+    _name: str_name_building_119
+    _description: str_desc_building_119
+    _type: 2
+    _need_lv: 4568
+    _need_point: -1
+    _need_building: 116
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 120
+    _zone: 33
+    _name: str_name_building_120
+    _description: str_desc_building_120
+    _type: 4
+    _need_lv: 4622
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 121
+    _zone: 33
+    _name: str_name_building_121
+    _description: str_desc_building_121
+    _type: 3
+    _need_lv: 4604
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 122
+    _zone: 33
+    _name: str_name_building_122
+    _description: str_desc_building_122
+    _type: 3
+    _need_lv: 4640
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 123
+    _zone: 34
+    _name: str_name_building_123
+    _description: str_desc_building_123
+    _type: 1
+    _need_lv: 4660
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img:
+  - _idx: 124
+    _zone: 34
+    _name: str_name_building_124
+    _description: str_desc_building_124
+    _type: 3
+    _need_lv: 4686
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 125
+    _zone: 34
+    _name: str_name_building_125
+    _description: str_desc_building_125
+    _type: 2
+    _need_lv: 4700
+    _need_point: -1
+    _need_building: 119
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 126
+    _zone: 34
+    _name: str_name_building_126
+    _description: str_desc_building_126
+    _type: 4
+    _need_lv: 4738
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 127
+    _zone: 34
+    _name: str_name_building_127
+    _description: str_desc_building_127
+    _type: 4
+    _need_lv: 4764
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 128
+    _zone: 35
+    _name: str_name_building_128
+    _description: str_desc_building_128
+    _type: 1
+    _need_lv: 4790
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img:
+  - _idx: 129
+    _zone: 35
+    _name: str_name_building_129
+    _description: str_desc_building_129
+    _type: 2
+    _need_lv: 4830
+    _need_point: -1
+    _need_building: 125
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 130
+    _zone: 35
+    _name: str_name_building_130
+    _description: str_desc_building_130
+    _type: 4
+    _need_lv: 4895
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 131
+    _zone: 35
+    _name: str_name_building_131
+    _description: str_desc_building_131
+    _type: 3
+    _need_lv: 4825
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 132
+    _zone: 36
+    _name: str_name_building_132
+    _description: str_desc_building_132
+    _type: 1
+    _need_lv: 5000
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img:
+  - _idx: 133
+    _zone: 36
+    _name: str_name_building_133
+    _description: str_desc_building_133
+    _type: 3
+    _need_lv: 5000
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 134
+    _zone: 37
+    _name: str_name_building_134
+    _description: str_desc_building_134
+    _type: 1
+    _need_lv: 5300
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img:
+  - _idx: 135
+    _zone: 37
+    _name: str_name_building_135
+    _description: str_desc_building_135
+    _type: 4
+    _need_lv: 5300
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 136
+    _zone: 38
+    _name: str_name_building_136
+    _description: str_desc_building_136
+    _type: 1
+    _need_lv: 5350
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img:
+  - _idx: 137
+    _zone: 38
+    _name: str_name_building_137
+    _description: str_desc_building_137
+    _type: 3
+    _need_lv: 5375
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 138
+    _zone: 38
+    _name: str_name_building_138
+    _description: str_desc_building_138
+    _type: 2
+    _need_lv: 5375
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 139
+    _zone: 38
+    _name: str_name_building_139
+    _description: str_desc_building_139
+    _type: 4
+    _need_lv: 5425
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 6
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 140
+    _zone: 39
+    _name: str_name_building_140
+    _description: str_desc_building_140
+    _type: 1
+    _need_lv: 5450
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img:
+  - _idx: 141
+    _zone: 39
+    _name: str_name_building_141
+    _description: str_desc_building_141
+    _type: 2
+    _need_lv: 5468
+    _need_point: -1
+    _need_building: 138
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 142
+    _zone: 39
+    _name: str_name_building_142
+    _description: str_desc_building_142
+    _type: 4
+    _need_lv: 5522
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 143
+    _zone: 39
+    _name: str_name_building_143
+    _description: str_desc_building_143
+    _type: 3
+    _need_lv: 5504
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 144
+    _zone: 39
+    _name: str_name_building_144
+    _description: str_desc_building_144
+    _type: 3
+    _need_lv: 5540
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 145
+    _zone: 40
+    _name: str_name_building_145
+    _description: str_desc_building_145
+    _type: 1
+    _need_lv: 5560
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img:
+  - _idx: 146
+    _zone: 40
+    _name: str_name_building_146
+    _description: str_desc_building_146
+    _type: 3
+    _need_lv: 5586
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 147
+    _zone: 40
+    _name: str_name_building_147
+    _description: str_desc_building_147
+    _type: 2
+    _need_lv: 5600
+    _need_point: -1
+    _need_building: 141
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 148
+    _zone: 40
+    _name: str_name_building_148
+    _description: str_desc_building_148
+    _type: 4
+    _need_lv: 5638
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 149
+    _zone: 40
+    _name: str_name_building_149
+    _description: str_desc_building_149
+    _type: 4
+    _need_lv: 5664
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 150
+    _zone: 41
+    _name: str_name_building_150
+    _description: str_desc_building_150
+    _type: 1
+    _need_lv: 5690
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img:
+  - _idx: 151
+    _zone: 41
+    _name: str_name_building_151
+    _description: str_desc_building_151
+    _type: 2
+    _need_lv: 5730
+    _need_point: -1
+    _need_building: 147
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 152
+    _zone: 41
+    _name: str_name_building_152
+    _description: str_desc_building_152
+    _type: 4
+    _need_lv: 5795
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 153
+    _zone: 41
+    _name: str_name_building_153
+    _description: str_desc_building_153
+    _type: 3
+    _need_lv: 5725
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 154
+    _zone: 42
+    _name: str_name_building_154
+    _description: str_desc_building_154
+    _type: 1
+    _need_lv: 5900
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img:
+  - _idx: 155
+    _zone: 42
+    _name: str_name_building_155
+    _description: str_desc_building_155
+    _type: 3
+    _need_lv: 5900
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 156
+    _zone: 43
+    _name: str_name_building_156
+    _description: str_desc_building_156
+    _type: 1
+    _need_lv: 6200
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img:
+  - _idx: 157
+    _zone: 43
+    _name: str_name_building_157
+    _description: str_desc_building_157
+    _type: 4
+    _need_lv: 6200
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 158
+    _zone: 44
+    _name: str_name_building_158
+    _description: str_desc_building_158
+    _type: 1
+    _need_lv: 6250
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img:
+  - _idx: 159
+    _zone: 44
+    _name: str_name_building_159
+    _description: str_desc_building_159
+    _type: 3
+    _need_lv: 6275
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 160
+    _zone: 44
+    _name: str_name_building_160
+    _description: str_desc_building_160
+    _type: 2
+    _need_lv: 6275
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 161
+    _zone: 44
+    _name: str_name_building_161
+    _description: str_desc_building_161
+    _type: 4
+    _need_lv: 6325
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 7
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 162
+    _zone: 45
+    _name: str_name_building_162
+    _description: str_desc_building_162
+    _type: 1
+    _need_lv: 6350
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img:
+  - _idx: 163
+    _zone: 45
+    _name: str_name_building_163
+    _description: str_desc_building_163
+    _type: 2
+    _need_lv: 6368
+    _need_point: -1
+    _need_building: 160
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 164
+    _zone: 45
+    _name: str_name_building_164
+    _description: str_desc_building_164
+    _type: 4
+    _need_lv: 6422
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 165
+    _zone: 45
+    _name: str_name_building_165
+    _description: str_desc_building_165
+    _type: 3
+    _need_lv: 6404
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 166
+    _zone: 45
+    _name: str_name_building_166
+    _description: str_desc_building_166
+    _type: 3
+    _need_lv: 6440
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 167
+    _zone: 46
+    _name: str_name_building_167
+    _description: str_desc_building_167
+    _type: 1
+    _need_lv: 6460
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img:
+  - _idx: 168
+    _zone: 46
+    _name: str_name_building_168
+    _description: str_desc_building_168
+    _type: 3
+    _need_lv: 6486
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 169
+    _zone: 46
+    _name: str_name_building_169
+    _description: str_desc_building_169
+    _type: 2
+    _need_lv: 6500
+    _need_point: -1
+    _need_building: 163
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 170
+    _zone: 46
+    _name: str_name_building_170
+    _description: str_desc_building_170
+    _type: 4
+    _need_lv: 6538
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 171
+    _zone: 46
+    _name: str_name_building_171
+    _description: str_desc_building_171
+    _type: 4
+    _need_lv: 6564
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 172
+    _zone: 47
+    _name: str_name_building_172
+    _description: str_desc_building_172
+    _type: 1
+    _need_lv: 6590
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img:
+  - _idx: 173
+    _zone: 47
+    _name: str_name_building_173
+    _description: str_desc_building_173
+    _type: 2
+    _need_lv: 6630
+    _need_point: -1
+    _need_building: 169
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 174
+    _zone: 47
+    _name: str_name_building_174
+    _description: str_desc_building_174
+    _type: 4
+    _need_lv: 6695
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 175
+    _zone: 47
+    _name: str_name_building_175
+    _description: str_desc_building_175
+    _type: 3
+    _need_lv: 6625
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 176
+    _zone: 48
+    _name: str_name_building_176
+    _description: str_desc_building_176
+    _type: 1
+    _need_lv: 6800
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img:
+  - _idx: 177
+    _zone: 48
+    _name: str_name_building_177
+    _description: str_desc_building_177
+    _type: 3
+    _need_lv: 6800
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 178
+    _zone: 49
+    _name: str_name_building_178
+    _description: str_desc_building_178
+    _type: 1
+    _need_lv: 7100
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img:
+  - _idx: 179
+    _zone: 49
+    _name: str_name_building_179
+    _description: str_desc_building_179
+    _type: 4
+    _need_lv: 7100
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 180
+    _zone: 50
+    _name: str_name_building_180
+    _description: str_desc_building_180
+    _type: 1
+    _need_lv: 7150
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img:
+  - _idx: 181
+    _zone: 50
+    _name: str_name_building_181
+    _description: str_desc_building_181
+    _type: 3
+    _need_lv: 7175
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 182
+    _zone: 50
+    _name: str_name_building_182
+    _description: str_desc_building_182
+    _type: 2
+    _need_lv: 7175
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 183
+    _zone: 50
+    _name: str_name_building_183
+    _description: str_desc_building_183
+    _type: 4
+    _need_lv: 7225
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 8
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 184
+    _zone: 51
+    _name: str_name_building_184
+    _description: str_desc_building_184
+    _type: 1
+    _need_lv: 7250
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img:
+  - _idx: 185
+    _zone: 51
+    _name: str_name_building_185
+    _description: str_desc_building_185
+    _type: 2
+    _need_lv: 7268
+    _need_point: -1
+    _need_building: 182
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 186
+    _zone: 51
+    _name: str_name_building_186
+    _description: str_desc_building_186
+    _type: 4
+    _need_lv: 7322
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 187
+    _zone: 51
+    _name: str_name_building_187
+    _description: str_desc_building_187
+    _type: 3
+    _need_lv: 7304
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 188
+    _zone: 51
+    _name: str_name_building_188
+    _description: str_desc_building_188
+    _type: 3
+    _need_lv: 7340
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 189
+    _zone: 52
+    _name: str_name_building_189
+    _description: str_desc_building_189
+    _type: 1
+    _need_lv: 7360
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img:
+  - _idx: 190
+    _zone: 52
+    _name: str_name_building_190
+    _description: str_desc_building_190
+    _type: 3
+    _need_lv: 7386
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 191
+    _zone: 52
+    _name: str_name_building_191
+    _description: str_desc_building_191
+    _type: 2
+    _need_lv: 7400
+    _need_point: -1
+    _need_building: 185
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 192
+    _zone: 52
+    _name: str_name_building_192
+    _description: str_desc_building_192
+    _type: 4
+    _need_lv: 7438
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 193
+    _zone: 52
+    _name: str_name_building_193
+    _description: str_desc_building_193
+    _type: 4
+    _need_lv: 7464
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 194
+    _zone: 53
+    _name: str_name_building_194
+    _description: str_desc_building_194
+    _type: 1
+    _need_lv: 7490
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img:
+  - _idx: 195
+    _zone: 53
+    _name: str_name_building_195
+    _description: str_desc_building_195
+    _type: 2
+    _need_lv: 7530
+    _need_point: -1
+    _need_building: 191
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 196
+    _zone: 53
+    _name: str_name_building_196
+    _description: str_desc_building_196
+    _type: 4
+    _need_lv: 7595
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 197
+    _zone: 53
+    _name: str_name_building_197
+    _description: str_desc_building_197
+    _type: 3
+    _need_lv: 7525
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 198
+    _zone: 54
+    _name: str_name_building_198
+    _description: str_desc_building_198
+    _type: 1
+    _need_lv: 7700
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img:
+  - _idx: 199
+    _zone: 54
+    _name: str_name_building_199
+    _description: str_desc_building_199
+    _type: 3
+    _need_lv: 7700
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 200
+    _zone: 55
+    _name: str_name_building_200
+    _description: str_desc_building_200
+    _type: 1
+    _need_lv: 8000
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 808d5b
+    _img:
+  - _idx: 201
+    _zone: 55
+    _name: str_name_building_201
+    _description: str_desc_building_201
+    _type: 4
+    _need_lv: 8000
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00640104
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 202
+    _zone: 56
+    _name: str_name_building_202
+    _description: str_desc_building_202
+    _type: 1
+    _need_lv: 8050
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00350c
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00180d8f00
+    _img:
+  - _idx: 203
+    _zone: 56
+    _name: str_name_building_203
+    _description: str_desc_building_203
+    _type: 3
+    _need_lv: 8075
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 204
+    _zone: 56
+    _name: str_name_building_204
+    _description: str_desc_building_204
+    _type: 2
+    _need_lv: 8075
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: c0425f25
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 205
+    _zone: 56
+    _name: str_name_building_205
+    _description: str_desc_building_205
+    _type: 4
+    _need_lv: 8125
+    _need_point: 90
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 9
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 206
+    _zone: 57
+    _name: str_name_building_206
+    _description: str_desc_building_206
+    _type: 1
+    _need_lv: 8150
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00f82401
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 008d380c01
+    _img:
+  - _idx: 207
+    _zone: 57
+    _name: str_name_building_207
+    _description: str_desc_building_207
+    _type: 2
+    _need_lv: 8168
+    _need_point: -1
+    _need_building: 204
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 005ff901
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 208
+    _zone: 57
+    _name: str_name_building_208
+    _description: str_desc_building_208
+    _type: 4
+    _need_lv: 8222
+    _need_point: 500
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 80e74c
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 209
+    _zone: 57
+    _name: str_name_building_209
+    _description: str_desc_building_209
+    _type: 3
+    _need_lv: 8204
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 210
+    _zone: 57
+    _name: str_name_building_210
+    _description: str_desc_building_210
+    _type: 3
+    _need_lv: 8240
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 211
+    _zone: 58
+    _name: str_name_building_211
+    _description: str_desc_building_211
+    _type: 1
+    _need_lv: 8260
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00449508
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00eb08bf01
+    _img:
+  - _idx: 212
+    _zone: 58
+    _name: str_name_building_212
+    _description: str_desc_building_212
+    _type: 3
+    _need_lv: 8286
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 213
+    _zone: 58
+    _name: str_name_building_213
+    _description: str_desc_building_213
+    _type: 2
+    _need_lv: 8300
+    _need_point: -1
+    _need_building: 207
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00105522
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 214
+    _zone: 58
+    _name: str_name_building_214
+    _description: str_desc_building_214
+    _type: 4
+    _need_lv: 8338
+    _need_point: 6000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building
+    _offline_profit_cap:
+    _img:
+  - _idx: 215
+    _zone: 58
+    _name: str_name_building_215
+    _description: str_desc_building_215
+    _type: 4
+    _need_lv: 8364
+    _need_point: 8800
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00b20002
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 216
+    _zone: 59
+    _name: str_name_building_216
+    _description: str_desc_building_216
+    _type: 1
+    _need_lv: 8390
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00180d8f00
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 001a711802
+    _img:
+  - _idx: 217
+    _zone: 59
+    _name: str_name_building_217
+    _description: str_desc_building_217
+    _type: 2
+    _need_lv: 8430
+    _need_point: -1
+    _need_building: 213
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 0006a50801
+    _icon: WorldMap_Icon_House
+    _offline_profit_cap:
+    _img:
+  - _idx: 218
+    _zone: 59
+    _name: str_name_building_218
+    _description: str_desc_building_218
+    _type: 4
+    _need_lv: 8495
+    _need_point: 80000
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00c80208
+    _icon: WorldMap_Icon_Building_Revenue
+    _offline_profit_cap:
+    _img:
+  - _idx: 219
+    _zone: 59
+    _name: str_name_building_219
+    _description: str_desc_building_219
+    _type: 3
+    _need_lv: 8425
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:
+  - _idx: 220
+    _zone: 60
+    _name: str_name_building_220
+    _description: str_desc_building_220
+    _type: 1
+    _need_lv: 8600
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00ecba8302
+    _icon: WorldMap_Icon_Pur
+    _offline_profit_cap: 00ac23fc06
+    _img:
+  - _idx: 221
+    _zone: 60
+    _name: str_name_building_221
+    _description: str_desc_building_221
+    _type: 3
+    _need_lv: 8600
+    _need_point: -1
+    _need_building: -1
+    _cost_idx: 1
+    _cost_region: 10
+    _cost_value: 00
+    _icon: WorldMap_Icon_Car
+    _offline_profit_cap:
+    _img:

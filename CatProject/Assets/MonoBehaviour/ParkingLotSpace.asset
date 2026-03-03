@@ -1,0 +1,447 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1208767822, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ParkingLotSpace
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 101
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 102
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 103
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 104
+  - 105
+  - 105
+  - 105
+  - 105
+  - 105
+  - 105
+  - 106
+  - 106
+  - 106
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 1
+  - 2
+  - 3
+  mDataList:
+  - _parking_zone: 1
+    _order: 1
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 2
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 3
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 7
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 8
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 9
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 1
+    _order: 10
+    _need_point: -1
+    _gem_value: -1
+    _product_id:
+    _buff_type: 1
+    _buff_value: 100
+    _iap_idx: 0
+  - _parking_zone: 101
+    _order: 1
+    _need_point: -1
+    _gem_value: 10
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 101
+    _order: 2
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 101
+    _order: 3
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 101
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20104
+  - _parking_zone: 101
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20105
+  - _parking_zone: 101
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20106
+  - _parking_zone: 102
+    _order: 1
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 102
+    _order: 2
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 102
+    _order: 3
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 102
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20204
+  - _parking_zone: 102
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20205
+  - _parking_zone: 102
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20206
+  - _parking_zone: 103
+    _order: 1
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 103
+    _order: 2
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 103
+    _order: 3
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 103
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20304
+  - _parking_zone: 103
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20305
+  - _parking_zone: 103
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20306
+  - _parking_zone: 104
+    _order: 1
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 104
+    _order: 2
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 104
+    _order: 3
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 104
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20404
+  - _parking_zone: 104
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20405
+  - _parking_zone: 104
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20406
+  - _parking_zone: 105
+    _order: 1
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 105
+    _order: 2
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 105
+    _order: 3
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 105
+    _order: 4
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20504
+  - _parking_zone: 105
+    _order: 5
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20505
+  - _parking_zone: 105
+    _order: 6
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20506
+  - _parking_zone: 106
+    _order: 1
+    _need_point: -1
+    _gem_value: 50
+    _product_id:
+    _buff_type: 1
+    _buff_value: 1000
+    _iap_idx: 0
+  - _parking_zone: 106
+    _order: 2
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20602
+  - _parking_zone: 106
+    _order: 3
+    _need_point: -1
+    _gem_value: -1
+    _product_id: officecat_shop_01
+    _buff_type: 2
+    _buff_value: 1000
+    _iap_idx: 20603

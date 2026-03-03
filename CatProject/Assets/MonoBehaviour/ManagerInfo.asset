@@ -1,0 +1,647 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -254405878, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ManagerInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  - 107
+  - 108
+  - 109
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 201
+  - 202
+  - 203
+  - 204
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  - 211
+  - 212
+  - 213
+  - 214
+  - 215
+  - 216
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1005
+  - 1006
+  - 1007
+  - 1008
+  - 1009
+  - 1010
+  - 1011
+  - 1012
+  - 1013
+  - 1014
+  - 1015
+  - 1016
+  - 2001
+  - 2002
+  - 2003
+  - 2004
+  - 2005
+  - 2006
+  - 2007
+  - 2008
+  - 2009
+  - 2010
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 3001
+  - 3002
+  - 3003
+  - 3004
+  - 3006
+  - 3007
+  mSecondKey: []
+  mDataList:
+  - _idx: 101
+    _name: str_manager_chr_name_101
+    _card_stat_idx: 1
+    _prefab: Character_Manager_101
+    _img: Manager_Character_101
+    _unlock_stage: 4
+    _skill_idx: 4d04000035080000ffffff/f
+    _plus_force: 0
+  - _idx: 102
+    _name: str_manager_chr_name_102
+    _card_stat_idx: 1
+    _prefab: Character_Manager_102
+    _img: Manager_Character_102
+    _unlock_stage: 4
+    _skill_idx: 4e04000036080000
+    _plus_force: 0
+  - _idx: 103
+    _name: str_manager_chr_name_103
+    _card_stat_idx: 1
+    _prefab: Character_Manager_103
+    _img: Manager_Character_103
+    _unlock_stage: 4
+    _skill_idx: 4f04000037080000
+    _plus_force: 0
+  - _idx: 104
+    _name: str_manager_chr_name_104
+    _card_stat_idx: 1
+    _prefab: Character_Manager_104
+    _img: Manager_Character_104
+    _unlock_stage: 5
+    _skill_idx: 5004000038080000
+    _plus_force: 0
+  - _idx: 105
+    _name: str_manager_chr_name_105
+    _card_stat_idx: 1
+    _prefab: Character_Manager_105
+    _img: Manager_Character_105
+    _unlock_stage: 5
+    _skill_idx: 4d04000035080000
+    _plus_force: 0
+  - _idx: 106
+    _name: str_manager_chr_name_106
+    _card_stat_idx: 1
+    _prefab: Character_Manager_106
+    _img: Manager_Character_106
+    _unlock_stage: 6
+    _skill_idx: 4e04000036080000
+    _plus_force: 0
+  - _idx: 107
+    _name: str_manager_chr_name_107
+    _card_stat_idx: 1
+    _prefab: Character_Manager_107
+    _img: Manager_Character_107
+    _unlock_stage: 6
+    _skill_idx: 4f04000037080000
+    _plus_force: 0
+  - _idx: 108
+    _name: str_manager_chr_name_108
+    _card_stat_idx: 1
+    _prefab: Character_Manager_108
+    _img: Manager_Character_108
+    _unlock_stage: 7
+    _skill_idx: 5004000038080000
+    _plus_force: 0
+  - _idx: 109
+    _name: str_manager_chr_name_109
+    _card_stat_idx: 1
+    _prefab: Character_Manager_109
+    _img: Manager_Character_109
+    _unlock_stage: 7
+    _skill_idx: 5104000039080000
+    _plus_force: 0
+  - _idx: 110
+    _name: str_manager_chr_name_110
+    _card_stat_idx: 1
+    _prefab: Character_Manager_110
+    _img: Manager_Character_110
+    _unlock_stage: 7
+    _skill_idx: 520400003a080000
+    _plus_force: 0
+  - _idx: 111
+    _name: str_manager_chr_name_111
+    _card_stat_idx: 1
+    _prefab: Character_Manager_111
+    _img: Manager_Character_111
+    _unlock_stage: 8
+    _skill_idx: 530400003b080000
+    _plus_force: 0
+  - _idx: 112
+    _name: str_manager_chr_name_112
+    _card_stat_idx: 1
+    _prefab: Character_Manager_112
+    _img: Manager_Character_112
+    _unlock_stage: 8
+    _skill_idx: 4f0400003c080000
+    _plus_force: 0
+  - _idx: 113
+    _name: str_manager_chr_name_113
+    _card_stat_idx: 1
+    _prefab: Character_Manager_113
+    _img: Manager_Character_113
+    _unlock_stage: 8
+    _skill_idx: 5104000039080000
+    _plus_force: 0
+  - _idx: 114
+    _name: str_manager_chr_name_114
+    _card_stat_idx: 1
+    _prefab: Character_Manager_114
+    _img: Manager_Character_114
+    _unlock_stage: 9
+    _skill_idx: 520400003a080000
+    _plus_force: 0
+  - _idx: 115
+    _name: str_manager_chr_name_115
+    _card_stat_idx: 1
+    _prefab: Character_Manager_115
+    _img: Manager_Character_115
+    _unlock_stage: 9
+    _skill_idx: 530400003b080000
+    _plus_force: 0
+  - _idx: 116
+    _name: str_manager_chr_name_116
+    _card_stat_idx: 1
+    _prefab: Character_Manager_116
+    _img: Manager_Character_116
+    _unlock_stage: 9
+    _skill_idx: 4f0400003c080000
+    _plus_force: 0
+  - _idx: 201
+    _name: str_manager_chr_name_201
+    _card_stat_idx: 2
+    _prefab: Character_Manager_201
+    _img: Manager_Character_201
+    _unlock_stage: 4
+    _skill_idx: 4d04000035080000
+    _plus_force: 0
+  - _idx: 202
+    _name: str_manager_chr_name_202
+    _card_stat_idx: 2
+    _prefab: Character_Manager_202
+    _img: Manager_Character_202
+    _unlock_stage: 4
+    _skill_idx: 4e04000036080000
+    _plus_force: 0
+  - _idx: 203
+    _name: str_manager_chr_name_203
+    _card_stat_idx: 2
+    _prefab: Character_Manager_203
+    _img: Manager_Character_203
+    _unlock_stage: 4
+    _skill_idx: 4f04000037080000
+    _plus_force: 0
+  - _idx: 204
+    _name: str_manager_chr_name_204
+    _card_stat_idx: 2
+    _prefab: Character_Manager_204
+    _img: Manager_Character_204
+    _unlock_stage: 5
+    _skill_idx: 5004000038080000
+    _plus_force: 0
+  - _idx: 205
+    _name: str_manager_chr_name_205
+    _card_stat_idx: 2
+    _prefab: Character_Manager_205
+    _img: Manager_Character_205
+    _unlock_stage: 5
+    _skill_idx: 4d04000035080000
+    _plus_force: 0
+  - _idx: 206
+    _name: str_manager_chr_name_206
+    _card_stat_idx: 2
+    _prefab: Character_Manager_206
+    _img: Manager_Character_206
+    _unlock_stage: 6
+    _skill_idx: 4e04000036080000
+    _plus_force: 0
+  - _idx: 207
+    _name: str_manager_chr_name_207
+    _card_stat_idx: 2
+    _prefab: Character_Manager_207
+    _img: Manager_Character_207
+    _unlock_stage: 6
+    _skill_idx: 4f04000037080000
+    _plus_force: 0
+  - _idx: 208
+    _name: str_manager_chr_name_208
+    _card_stat_idx: 2
+    _prefab: Character_Manager_208
+    _img: Manager_Character_208
+    _unlock_stage: 7
+    _skill_idx: 5004000038080000
+    _plus_force: 0
+  - _idx: 209
+    _name: str_manager_chr_name_209
+    _card_stat_idx: 2
+    _prefab: Character_Manager_209
+    _img: Manager_Character_209
+    _unlock_stage: 7
+    _skill_idx: 5104000039080000
+    _plus_force: 0
+  - _idx: 210
+    _name: str_manager_chr_name_210
+    _card_stat_idx: 2
+    _prefab: Character_Manager_210
+    _img: Manager_Character_210
+    _unlock_stage: 7
+    _skill_idx: 520400003a080000
+    _plus_force: 0
+  - _idx: 211
+    _name: str_manager_chr_name_211
+    _card_stat_idx: 2
+    _prefab: Character_Manager_211
+    _img: Manager_Character_211
+    _unlock_stage: 8
+    _skill_idx: 530400003b080000
+    _plus_force: 0
+  - _idx: 212
+    _name: str_manager_chr_name_212
+    _card_stat_idx: 2
+    _prefab: Character_Manager_212
+    _img: Manager_Character_212
+    _unlock_stage: 8
+    _skill_idx: 4f0400003c080000
+    _plus_force: 0
+  - _idx: 213
+    _name: str_manager_chr_name_213
+    _card_stat_idx: 2
+    _prefab: Character_Manager_213
+    _img: Manager_Character_213
+    _unlock_stage: 8
+    _skill_idx: 5104000039080000
+    _plus_force: 0
+  - _idx: 214
+    _name: str_manager_chr_name_214
+    _card_stat_idx: 2
+    _prefab: Character_Manager_214
+    _img: Manager_Character_214
+    _unlock_stage: 9
+    _skill_idx: 520400003a080000
+    _plus_force: 0
+  - _idx: 215
+    _name: str_manager_chr_name_215
+    _card_stat_idx: 2
+    _prefab: Character_Manager_215
+    _img: Manager_Character_215
+    _unlock_stage: 9
+    _skill_idx: 530400003b080000
+    _plus_force: 0
+  - _idx: 216
+    _name: str_manager_chr_name_216
+    _card_stat_idx: 2
+    _prefab: Character_Manager_216
+    _img: Manager_Character_216
+    _unlock_stage: 9
+    _skill_idx: 4f0400003c080000
+    _plus_force: 0
+  - _idx: 1001
+    _name: str_manager_chr_name_1001
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1001
+    _img: Manager_Character_1001
+    _unlock_stage: 4
+    _skill_idx: b104000099080000
+    _plus_force: 0
+  - _idx: 1002
+    _name: str_manager_chr_name_1002
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1002
+    _img: Manager_Character_1002
+    _unlock_stage: 4
+    _skill_idx: b20400009a080000
+    _plus_force: 0
+  - _idx: 1003
+    _name: str_manager_chr_name_1003
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1003
+    _img: Manager_Character_1003
+    _unlock_stage: 4
+    _skill_idx: b30400009b080000
+    _plus_force: 0
+  - _idx: 1004
+    _name: str_manager_chr_name_1004
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1004
+    _img: Manager_Character_1004
+    _unlock_stage: 5
+    _skill_idx: b40400009c080000
+    _plus_force: 0
+  - _idx: 1005
+    _name: str_manager_chr_name_1005
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1005
+    _img: Manager_Character_1005
+    _unlock_stage: 5
+    _skill_idx: b104000099080000
+    _plus_force: 0
+  - _idx: 1006
+    _name: str_manager_chr_name_1006
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1006
+    _img: Manager_Character_1006
+    _unlock_stage: 6
+    _skill_idx: b20400009a080000
+    _plus_force: 0
+  - _idx: 1007
+    _name: str_manager_chr_name_1007
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1007
+    _img: Manager_Character_1007
+    _unlock_stage: 6
+    _skill_idx: b30400009b080000
+    _plus_force: 0
+  - _idx: 1008
+    _name: str_manager_chr_name_1008
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1008
+    _img: Manager_Character_1008
+    _unlock_stage: 7
+    _skill_idx: b40400009c080000
+    _plus_force: 0
+  - _idx: 1009
+    _name: str_manager_chr_name_1009
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1009
+    _img: Manager_Character_1009
+    _unlock_stage: 7
+    _skill_idx: b50400009d080000
+    _plus_force: 0
+  - _idx: 1010
+    _name: str_manager_chr_name_1010
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1010
+    _img: Manager_Character_1010
+    _unlock_stage: 7
+    _skill_idx: b60400009e080000
+    _plus_force: 0
+  - _idx: 1011
+    _name: str_manager_chr_name_1011
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1011
+    _img: Manager_Character_1011
+    _unlock_stage: 8
+    _skill_idx: b70400009f080000
+    _plus_force: 0
+  - _idx: 1012
+    _name: str_manager_chr_name_1012
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1012
+    _img: Manager_Character_1012
+    _unlock_stage: 8
+    _skill_idx: b3040000a0080000
+    _plus_force: 0
+  - _idx: 1013
+    _name: str_manager_chr_name_1013
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1013
+    _img: Manager_Character_1013
+    _unlock_stage: 8
+    _skill_idx: b50400009d080000
+    _plus_force: 0
+  - _idx: 1014
+    _name: str_manager_chr_name_1014
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1014
+    _img: Manager_Character_1014
+    _unlock_stage: 9
+    _skill_idx: b60400009e080000
+    _plus_force: 0
+  - _idx: 1015
+    _name: str_manager_chr_name_1015
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1015
+    _img: Manager_Character_1015
+    _unlock_stage: 9
+    _skill_idx: b70400009f080000
+    _plus_force: 0
+  - _idx: 1016
+    _name: str_manager_chr_name_1016
+    _card_stat_idx: 101
+    _prefab: Character_Manager_1016
+    _img: Manager_Character_1016
+    _unlock_stage: 9
+    _skill_idx: b3040000a0080000
+    _plus_force: 0
+  - _idx: 2001
+    _name: str_manager_chr_name_2001
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2001
+    _img: Manager_Character_2001
+    _unlock_stage: 4
+    _skill_idx: b104000099080000
+    _plus_force: 0
+  - _idx: 2002
+    _name: str_manager_chr_name_2002
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2002
+    _img: Manager_Character_2002
+    _unlock_stage: 4
+    _skill_idx: b20400009a080000
+    _plus_force: 0
+  - _idx: 2003
+    _name: str_manager_chr_name_2003
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2003
+    _img: Manager_Character_2003
+    _unlock_stage: 4
+    _skill_idx: b30400009b080000
+    _plus_force: 0
+  - _idx: 2004
+    _name: str_manager_chr_name_2004
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2004
+    _img: Manager_Character_2004
+    _unlock_stage: 5
+    _skill_idx: b40400009c080000
+    _plus_force: 0
+  - _idx: 2005
+    _name: str_manager_chr_name_2005
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2005
+    _img: Manager_Character_2005
+    _unlock_stage: 5
+    _skill_idx: b104000099080000
+    _plus_force: 0
+  - _idx: 2006
+    _name: str_manager_chr_name_2006
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2006
+    _img: Manager_Character_2006
+    _unlock_stage: 6
+    _skill_idx: b20400009a080000
+    _plus_force: 0
+  - _idx: 2007
+    _name: str_manager_chr_name_2007
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2007
+    _img: Manager_Character_2007
+    _unlock_stage: 6
+    _skill_idx: b30400009b080000
+    _plus_force: 0
+  - _idx: 2008
+    _name: str_manager_chr_name_2008
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2008
+    _img: Manager_Character_2008
+    _unlock_stage: 7
+    _skill_idx: b40400009c080000
+    _plus_force: 0
+  - _idx: 2009
+    _name: str_manager_chr_name_2009
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2009
+    _img: Manager_Character_2009
+    _unlock_stage: 7
+    _skill_idx: b50400009d080000
+    _plus_force: 0
+  - _idx: 2010
+    _name: str_manager_chr_name_2010
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2010
+    _img: Manager_Character_2010
+    _unlock_stage: 7
+    _skill_idx: b60400009e080000
+    _plus_force: 0
+  - _idx: 2011
+    _name: str_manager_chr_name_2011
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2011
+    _img: Manager_Character_2011
+    _unlock_stage: 8
+    _skill_idx: b70400009f080000
+    _plus_force: 0
+  - _idx: 2012
+    _name: str_manager_chr_name_2012
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2012
+    _img: Manager_Character_2012
+    _unlock_stage: 8
+    _skill_idx: b3040000a0080000
+    _plus_force: 0
+  - _idx: 2013
+    _name: str_manager_chr_name_2013
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2013
+    _img: Manager_Character_2013
+    _unlock_stage: 8
+    _skill_idx: b50400009d080000
+    _plus_force: 0
+  - _idx: 2014
+    _name: str_manager_chr_name_2014
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2014
+    _img: Manager_Character_2014
+    _unlock_stage: 9
+    _skill_idx: b60400009e080000
+    _plus_force: 0
+  - _idx: 2015
+    _name: str_manager_chr_name_2015
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2015
+    _img: Manager_Character_2015
+    _unlock_stage: 9
+    _skill_idx: b70400009f080000
+    _plus_force: 0
+  - _idx: 2016
+    _name: str_manager_chr_name_2016
+    _card_stat_idx: 102
+    _prefab: Character_Manager_2016
+    _img: Manager_Character_2016
+    _unlock_stage: 9
+    _skill_idx: b3040000a0080000
+    _plus_force: 0
+  - _idx: 3001
+    _name: str_manager_chr_name_3001
+    _card_stat_idx: 201
+    _prefab: Character_Manager_3001
+    _img: Manager_Character_3001
+    _unlock_stage: 4
+    _skill_idx: 15050000fd080000
+    _plus_force: 0
+  - _idx: 3002
+    _name: str_manager_chr_name_3002
+    _card_stat_idx: 201
+    _prefab: Character_Manager_3002
+    _img: Manager_Character_3002
+    _unlock_stage: 5
+    _skill_idx: 16050000fe080000
+    _plus_force: 0
+  - _idx: 3003
+    _name: str_manager_chr_name_3003
+    _card_stat_idx: 202
+    _prefab: Character_Manager_3003
+    _img: Manager_Character_3003
+    _unlock_stage: 5
+    _skill_idx: 17050000ff080000
+    _plus_force: 0
+  - _idx: 3004
+    _name: str_manager_chr_name_3004
+    _card_stat_idx: 201
+    _prefab: Character_Manager_3004
+    _img: Manager_Character_3004
+    _unlock_stage: 5
+    _skill_idx: 1805000000090000
+    _plus_force: 0
+  - _idx: 3006
+    _name: str_manager_chr_name_3006
+    _card_stat_idx: 202
+    _prefab: Character_Manager_3006
+    _img: Manager_Character_3006
+    _unlock_stage: 7
+    _skill_idx: 1a05000002090000
+    _plus_force: 20
+  - _idx: 3007
+    _name: str_manager_chr_name_3007
+    _card_stat_idx: 201
+    _prefab: Character_Manager_3007
+    _img: Manager_Character_3007
+    _unlock_stage: 7
+    _skill_idx: 1b05000003090000
+    _plus_force: 20

@@ -1,0 +1,614 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1737753764, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SeasonalBuildingSellingUpgrade
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  - 107
+  - 108
+  - 109
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+  - 126
+  - 127
+  - 128
+  - 129
+  - 130
+  - 131
+  - 132
+  - 133
+  - 134
+  - 135
+  - 136
+  - 137
+  - 138
+  - 139
+  - 140
+  - 141
+  - 142
+  - 143
+  - 144
+  - 145
+  - 146
+  - 147
+  - 148
+  - 149
+  - 150
+  - 151
+  - 152
+  - 153
+  - 154
+  - 155
+  - 156
+  - 157
+  - 158
+  - 159
+  - 160
+  - 161
+  - 162
+  - 163
+  - 164
+  - 165
+  - 166
+  - 167
+  - 168
+  - 169
+  - 170
+  - 171
+  - 172
+  - 173
+  - 174
+  - 175
+  - 176
+  - 177
+  - 178
+  - 179
+  - 180
+  - 181
+  - 182
+  - 183
+  - 184
+  - 185
+  - 186
+  - 187
+  - 188
+  - 189
+  - 190
+  - 191
+  - 192
+  - 193
+  - 194
+  - 195
+  - 196
+  - 197
+  - 198
+  - 199
+  mSecondKey: []
+  mDataList:
+  - _level: 1
+    _upgrade_cost: 0c
+  - _level: 2
+    _upgrade_cost: 3c
+  - _level: 3
+    _upgrade_cost: f000
+  - _level: 4
+    _upgrade_cost: 8403
+  - _level: 5
+    _upgrade_cost: b80b
+  - _level: 6
+    _upgrade_cost: e02e
+  - _level: 7
+    _upgrade_cost: 60ea00
+  - _level: 8
+    _upgrade_cost: 80a903
+  - _level: 9
+    _upgrade_cost: a0bb0d
+  - _level: 10
+    _upgrade_cost: c0c62d
+  - _level: 11
+    _upgrade_cost: 001bb700
+  - _level: 12
+    _upgrade_cost: 00879303
+  - _level: 13
+    _upgrade_cost: c74c4f0e
+  - _level: 14
+    _upgrade_cost: ba13a935
+  - _level: 15
+    _upgrade_cost: f50edeb200
+  - _level: 16
+    _upgrade_cost: c9932fcc02
+  - _level: 17
+    _upgrade_cost: 005847f80d
+  - _level: 18
+    _upgrade_cost: efeac3e537
+  - _level: 19
+    _upgrade_cost: 450e759cd100
+  - _level: 20
+    _upgrade_cost: bc4ad999ed0a
+  - _level: 21
+    _upgrade_cost: 004c74328636
+  - _level: 22
+    _upgrade_cost: 007c45fc9e1001
+  - _level: 23
+    _upgrade_cost: 00f015f17b4204
+  - _level: 24
+    _upgrade_cost: 004412c850f90f
+  - _level: 25
+    _upgrade_cost: 003892450d3f35
+  - _level: 26
+    _upgrade_cost: 00e0481635fcd400
+  - _level: 27
+    _upgrade_cost: 00606c6f09ed2804
+  - _level: 28
+    _upgrade_cost: 0080b1bd25b4a310
+  - _level: 29
+    _upgrade_cost: 00a059878de3653e
+  - _level: 30
+    _upgrade_cost: 00c02ac3d74bfecf00
+  - _level: 31
+    _upgrade_cost: 0000ab0c5f2ff93f03
+  - _level: 32
+    _upgrade_cost: 0000573fdbecdd3f10
+  - _level: 33
+    _upgrade_cost: 00005cfd6cb377ff40
+  - _level: 34
+    _upgrade_cost: 000019b6d8e000bef300
+  - _level: 35
+    _upgrade_cost: 0000fe5ed24258792c03
+  - _level: 36
+    _upgrade_cost: 0000f87b490b61e5b10c
+  - _level: 37
+    _upgrade_cost: 0000d86b6f38e57a793f
+  - _level: 38
+    _upgrade_cost: 000060afbde194ebe5fd00
+  - _level: 39
+    _upgrade_cost: 0000a851874e6e331eb803
+  - _level: 40
+    _upgrade_cost: 00003010c305c500ba650c
+  - _level: 41
+    _upgrade_cost: 0000c0400c171403e89631
+  - _level: 42
+    _upgrade_cost: 0000c0433d73640f88f2f700
+  - _level: 43
+    _upgrade_cost: 0000000ff5cc913d20cadf03
+  - _level: 44
+    _upgrade_cost: 000040f896c0e2e6f835870e
+  - _level: 45
+    _upgrade_cost: 0000803bf7819e01935e6d30
+  - _level: 46
+    _upgrade_cost: 000000eedc077a064c7ab5c100
+  - _level: 47
+    _upgrade_cost: 000000a6502762207c638bc803
+  - _level: 48
+    _upgrade_cost: 00000098429d8881f08d2d220f
+  - _level: 49
+    _upgrade_cost: 000000bab94dc0e545d42ac038
+  - _level: 50
+    _upgrade_cost: 0000006cc0ad2b533e6e392bbd00
+  - _level: 51
+    _upgrade_cost: 000000b001b7ae4cf9b8e5acf402
+  - _level: 52
+    _upgrade_cost: 000000700893697fde9c7c60c70e
+  - _level: 53
+    _upgrade_cost: 000000c0214ca6fd7973f2811d3b
+  - _level: 54
+    _upgrade_cost: 000000907e9d2f7709314da7aedd00
+  - _level: 55
+    _upgrade_cost: 000000e0a5b79ee274a356d8f0e202
+  - _level: 56
+    _upgrade_cost: 0000008097de7a8ad38d5a61c38b0b
+  - _level: 57
+    _upgrade_cost: 00000080f55866b421c5c4e6d0ba39
+  - _level: 58
+    _upgrade_cost: 00000000d66399d18614139b43ebe600
+  - _level: 59
+    _upgrade_cost: 000000806236ff91f98c87853df26103
+  - _level: 60
+    _upgrade_cost: 00000000f35ffd3b95806e12cd7c460b
+  - _level: 61
+    _upgrade_cost: 00000000cc7ff5ef5402ba4934f3192d
+  - _level: 62
+    _upgrade_cost: 00000000fc7ecbafa80ba27005c081e100
+  - _level: 63
+    _upgrade_cost: 00000000f0fb2dbfa22e88c21500078603
+  - _level: 64
+    _upgrade_cost: 00000000c470ec4ce2ae7e9951409a360d
+  - _level: 65
+    _upgrade_cost: 0000000038cdbe55f246a6ff0f81570b2c
+  - _level: 66
+    _upgrade_cost: 00000000e034fb56c91b99fe3f045e2db000
+  - _level: 67
+    _upgrade_cost: 000000006008e8b2ee8afdf83f15d6e27003
+  - _level: 68
+    _upgrade_cost: 000000008021a0cbba2bf6e3ff54588bc30d
+  - _level: 69
+    _upgrade_cost: 00000000a07d987bfc23db96bf3e8b4a9d33
+  - _level: 70
+    _upgrade_cost: 00000000c0a251f19e2285a17e26d04d0cac00
+  - _level: 71
+    _upgrade_cost: 00000000008b46c57b8a1486fa99403731b002
+  - _level: 72
+    _upgrade_cost: 0000000000b760da6ab4669ee4014314f6700d
+  - _level: 73
+    _upgrade_cost: 0000000000dc8269abd19a7992070c51d8c335
+  - _level: 74
+    _upgrade_cost: 0000000000b9aacb42920448651ced2f6b9ec900
+  - _level: 75
+    _upgrade_cost: 0000000000bee3a6de3c0ff0a65e16f50f10a002
+  - _level: 76
+    _upgrade_cost: 0000000000f88e9b7af33cc09b7a59d43f40800a
+  - _level: 77
+    _upgrade_cost: 0000000000d8ca0965c130c10a65bf253f418134
+  - _level: 78
+    _upgrade_cost: 0000000000602b279405c3042b94fd96fc0405d200
+  - _level: 79
+    _upgrade_cost: 0000000000a8e292eb54db51a1eb3636b3d2921303
+  - _level: 80
+    _upgrade_cost: 0000000000309ee9bbc585bb19bc615f55be3e410a
+  - _level: 81
+    _upgrade_cost: 0000000000c078a6ef1617ee66f0867d55f9fa0429
+  - _level: 82
+    _upgrade_cost: 0000000000c05b40ae7273a602b2a273abdee618cd00
+  - _level: 83
+    _upgrade_cost: 0000000000006f01b9cacd990ac88acead7a9b633403
+  - _level: 84
+    _upgrade_cost: 00000000004060c535b8c3c0276e88c60b0c8775040c
+  - _level: 85
+    _upgrade_cost: 000000000080eb9108668c8284c4c6957c7d17dd0e28
+  - _level: 86
+    _upgrade_cost: 000000000000ae472298310a12121b57f2f55d743ba000
+  - _level: 87
+    _upgrade_cost: 0000000000006666abf8f7325a5a87b3bbcdd545292103
+  - _level: 88
+    _upgrade_cost: 0000000000009899ade2dfcb68691dceee365717a5840c
+  - _level: 89
+    _upgrade_cost: 000000000000faff0a9287fc484bee84ff0d87176bf12e
+  - _level: 90
+    _upgrade_cost: 000000000000ecff79916ef49da56f10a92ec2a30f7a9c00
+  - _level: 91
+    _upgrade_cost: 000000000000b0ffe745bad17796be41a4ba088f3ee87102
+  - _level: 92
+    _upgrade_cost: 00000000000070fe875da31857f0b84835a52bcb3889390c
+  - _level: 93
+    _upgrade_cost: 000000000000c0f91f768d625cc1e322d594ae2ce324e630
+  - _level: 94
+    _upgrade_cost: 00000000000090e8f77a92711a15d6421fae8ee7530a5fb700
+  - _level: 95
+    _upgrade_cost: 000000000000e0b18f44e8cf02f11e34684486ae17cd3c6302
+  - _level: 96
+    _upgrade_cost: 00000000000080c73e12a13f0bc47bd0a01119ba5e34f38c09
+  - _level: 97
+    _upgrade_cost: 00000000000080e5395b253e38d46a1224587da2d905c0c02f
+  - _level: 98
+    _upgrade_cost: 0000000000000096e76c95f8e050ab499060f58966170003bf00
+  - _level: 99
+    _upgrade_cost: 0000000000008072645830a44b6f42141d2a5885c057404bcc02
+  - _level: 100
+    _upgrade_cost: 00000000000000d34ed14b23fc72dd980b377bbc812481a55309
+  - _level: 101
+    _upgrade_cost: 000000000000004c3b452f8df0cb75632edcecf1069204964e25
+  - _level: 102
+    _upgrade_cost: 000000000000007c285aecc1b2fb4cf1e74ca0b922da16ee88ba00
+  - _level: 103
+    _upgrade_cost: 00000000000000f0a168b107cbee33c59f3381e68a685bb823ea02
+  - _level: 104
+    _upgrade_cost: 00000000000000445f48d95c79bf8223978164e008c856f305ee0a
+  - _level: 105
+    _upgrade_cost: 0000000000000038e89b29e0e92809214d054f41c89a7680be6e24
+  - _level: 106
+    _upgrade_cost: 00000000000000e0a06fa680a7a3248434153c05216bda01faba9100
+  - _level: 107
+    _upgrade_cost: 0000000000000060242e40834532b794066a2c1aa5174409e2a6d802
+  - _level: 108
+    _upgrade_cost: 000000000000008091b8000d16c9dc521aa8b168945e1025889b620b
+  - _level: 109
+    _upgrade_cost: 00000000000000a021b4c2b012f2bbb662369a88ac62fd8a3ec7b12a
+  - _level: 110
+    _upgrade_cost: 00000000000000c01a0389a293d1c70b49b5ac1c3f9e4ccf2598508e00
+  - _level: 111
+    _upgrade_cost: 00000000000000006b0c248a4e461f2f24d5b272fc78323d9760423902
+  - _level: 112
+    _upgrade_cost: 0000000000000000173eb4b2885f9cebb4297e3dee5cfc31f4e24b1e0b
+  - _level: 113
+    _upgrade_cost: 00000000000000005cf8d0ca227e71aed3a6f8f5b873f1c7d08b2f792c
+  - _level: 114
+    _upgrade_cost: 000000000000000059a38f78029929ce9971649af571c9ed4e4c72c6a600
+  - _level: 115
+    _upgrade_cost: 00000000000000007e2034e7b2a88a045625a40288264ac3b153d2ea2b02
+  - _level: 116
+    _upgrade_cost: 0000000000000000f881d09ccba22a125895900a209a280dc74e49abaf08
+  - _level: 117
+    _upgrade_cost: 0000000000000000d8891210fa2dd55ab8ead234a002cb41e3896e586e2b
+  - _level: 118
+    _upgrade_cost: 000000000000000060274a40e8b7546be1aa4bd3800a2c078d27ba61b9ad00
+  - _level: 119
+    _upgrade_cost: 0000000000000000a81316f1a6b17d52cdc05b186327e5da50147a2e778b02
+  - _level: 120
+    _upgrade_cost: 000000000000000030ec9e23d7faa2bd01d831514a83a6d962ee96458d7b08
+  - _level: 121
+    _upgrade_cost: 0000000000000000c0b07b8e5ceb8bf60660c744290d9a668bb95b1635ee21
+  - _level: 122
+    _upgrade_cost: 0000000000000000c0736ac8ce98bbd022e0e457ce410201b99fca6f09a7a900
+  - _level: 123
+    _upgrade_cost: 000000000000000000cfa9213b63ee428b80935f39070904e47e2abf259ca602
+  - _level: 124
+    _upgrade_cost: 000000000000000040c83cbe1df4fd3a0a22692617db210fd75bdf8c8dc9f009
+  - _level: 125
+    _upgrade_cost: 0000000000000000809bca2463d8a3c4ccc6b32a4dda7032223293d5d79f2221
+  - _level: 126
+    _upgrade_cost: 0000000000000000006e2a938c618f12331bcfaa3469c3c988c84c565f7f8a8400
+  - _level: 127
+    _upgrade_cost: 00000000000000000026d4dfbee7cc5cff870b56070ed1f0abea7fafdc7cb49602
+  - _level: 128
+    _upgrade_cost: 00000000000000000098507ffb9e3373fd1f2e581d3844c3afaaffbd72f3d15a0a
+  - _level: 129
+    _upgrade_cost: 0000000000000000003a6e1d2f940170f6f7ac0a6ed23f1c13c07e48ee5093d426
+  - _level: 130
+    _upgrade_cost: 0000000000000000006c6fb747430520e08f40ce6ebdd40895d5fb461a63406f8100
+  - _level: 131
+    _upgrade_cost: 00000000000000000ae6e2570e534ecec62e8ec34bb9d23f7b6ce21c698c01bd0502
+  - _level: 132
+    _upgrade_cost: 00000000000000000070b4549a416980823d0b1da8cc9eb0a4afac8b0dbe07b11c0a
+  - _level: 133
+    _upgrade_cost: 000000000000000000c0d1526906a5010af62c74a0327bc292beb22e36f81ec47228
+  - _level: 134
+    _upgrade_cost: 0000000000000000009092f60ad82a86a59aa8b3d9fd4d59a64a1e2fcb22745fae9700
+  - _level: 135
+    _upgrade_cost: 000000000000000000e03d8b24d08e147d0332acd5f8037f2a4eba47a51e83939af901
+  - _level: 136
+    _upgrade_cost: 00000000000000001097524e0770f4e195b866e3f3cf234f71c177d4987a0c4e6ae607
+  - _level: 137
+    _upgrade_cost: 00000000000000000080d5e0da42289bc545e873b1704fec511b8e9ae9643e86138027
+  - _level: 138
+    _upgrade_cost: 0000000000000000000056836b0ba16c1617a1cfc5c23db1476d386aa693f9184e009e00
+  - _level: 139
+    _upgrade_cost: 00000000000000000080822cd3ea5b1794169cca659aa7d8cc99530eb0e9a7dd24815002
+  - _level: 140
+    _upgrade_cost: 00000000000000000000b3e9bf0edd4d98a05da3a80284270056c12fa0b52f38d003b707
+  - _level: 141
+    _upgrade_cost: 000000000000000080169ef2899cd5a27a094149b050e4239da2cbf3fde4bee0400fdc1e
+  - _level: 142
+    _upgrade_cost: 00000000000000000000fc41fe264515e68b50c32c35501603b81abb8330ba63444c4c9a00
+  - _level: 143
+    _upgrade_cost: 00000000000000000000f007f99b1455982f420db3d440590ce06aec0ec2e88e1131316902
+  - _level: 144
+    _upgrade_cost: 00000000000000000000c4dde5480d3f7b32b8719f1db34e2ec890f6b7d7e8d70178780a09
+  - _level: 145
+    _upgrade_cost: 0000000000000000000038e3a89d8127f052bb25be62aa5b9af0378bba795d7a5be5e6221e
+  - _level: 146
+    _upgrade_cost: 000000000000000000e487b9db7a6b120c070d269e30db33d43573530080aee96d959b8b78
+  - _level: 147
+    _upgrade_cost: 0000000000000000000060c031512016c37aa2f2dab64f290fcc5ee092824d8f25eb09ba5a02
+  - _level: 148
+    _upgrade_cost: 000000000000000000008001c74481580ceb89ca6bdb3ea53c307b814b0a363d96ac27e86a09
+  - _level: 149
+    _upgrade_cost: 00000000000000000000a045eac1e44b6e318537d4b6ab6be3f48d259ba68a6533c794e65023
+  - _level: 150
+    _upgrade_cost: 00000000000000000000c092b7db4f521afabb63c3b69111f6da83d2af8023fd55edef55b875
+  - _level: 151
+    _upgrade_cost: 000000000000000000a0d2ba4cead7f32787e3a2c4e93590ea440afa4501a4d158b5bf57e1d601
+  - _level: 152
+    _upgrade_cost: 000000000000000000000077572a3d6e0e8aafca4347625f391b4d72bc0dc6c6b78abeb6663209
+  - _level: 153
+    _upgrade_cost: 0000000000000000000000dc5da9f4b83928be2a0f1d897de56c34c9f136181bdf2afada9ac924
+  - _level: 154
+    _upgrade_cost: 0000000000000000000000f91f7b9575d81649e0f82cc2965c9884b20ace9aa5c4202ab504f48900
+  - _level: 155
+    _upgrade_cost: 00000000000000000000003e1545f287d1f648963deb31a134510f53ceaeaed2e41737b10fd8cb01
+  - _level: 156
+    _upgrade_cost: 00000000000000000000c1c6b93b6b8310f4c7481c28995243341db858f9a4e8f262dcc43e602f07
+  - _level: 157
+    _upgrade_cost: 0000000000000000000000d8a865ed9e5e48b3bdcf60e6971c58327d1ea8a575e0dd4dd839e1ec23
+  - _level: 158
+    _upgrade_cost: 000000000000000000000060a396b57b7a21cdf63e83995f7260c9f479a096d681773761e784b38f00
+  - _level: 159
+    _upgrade_cost: 00000000000000000000646b4558403b9aec9ab9fdc6534cbdb16c790f1e3594805191ac6332e11a02
+  - _level: 160
+    _upgrade_cost: 000000000000000000000030fada5d0a7b22040d93e8feaa9535d573f4d55afad655353f4cfd430407
+  - _level: 161
+    _upgrade_cost: 00000000000000000000e861b04de15a8160114d7cae44a6fa2614328f026ec4dc84e2fc30f50f111c
+  - _level: 162
+    _upgrade_cost: 0000000000000000000000c08b1b55cf9cb152047d2bea5bb12fa80c19b7188fcbb42af0f4c94f558c00
+  - _level: 163
+    _upgrade_cost: 0000000000000000000000002f6e543d73c64a11f4ada86fc5bea03264dc623c2ed3aac0d3273f553102
+  - _level: 164
+    _upgrade_cost: 00000000000000000000a07e2bcf5873773a2c051d4f4127724b9650726c7def425ea6175ad5acff3808
+  - _level: 165
+    _upgrade_cost: 0000000000000000000000804b619f7ea0b026d86a7ebcf3a350d978e4c2d3f2c14f57e8d67195a9681b
+  - _level: 166
+    _upgrade_cost: 000000000000000000004072fe7817004bf9e00b8d95497c1943b89e5bffb94d5ffed6d45bc755a6a26d
+  - _level: 167
+    _upgrade_cost: 000000000000000000000000e69973e489cc05e358e0b90acf4cfa70d9398bf8263bd226cae4ac3f2d2402
+  - _level: 168
+    _upgrade_cost: 0000000000000000000000009867ce912732178c6381e72a3c33e9c365e72ce29bec489b2893b3feb49008
+  - _level: 169
+    _upgrade_cost: 0000000000000000000000a1e641e9929a62c4345c091d57e9b516cb8a9eef817735e061ec6721bba61e20
+  - _level: 170
+    _upgrade_cost: 000000000000000000000000ec0e949eeef221575cd14d187000e310784c318b9c8d0f957bafc46fd6106b
+  - _level: 171
+    _upgrade_cost: 00000000000000000000004aeea1b05bf8cccd66f62e707f8d1bc6ffe37d8d9e47a4d167b7be12bf5943ac01
+  - _level: 172
+    _upgrade_cost: 000000000000000000000000702a9163a4faa6ce365b14e6c108bc5161f9d9df3a1037a5a7b55dbbc0505d08
+  - _level: 173
+    _upgrade_cost: 000000000000000000000000c0a9448e91ea9b3adb6c51980723f04685e5677feb40dc949ed676ed02437521
+  - _level: 174
+    _upgrade_cost: 0000000000000000000000e8e46c29dfcd2b211f2e906c497c97b650294e0390d3dad0535ef37dfa4abb777d
+  - _level: 175
+    _upgrade_cost: 000000000000000000000000e0495a721bf49c5cb4d0f9efdeb5b9f601b592b87f2bc144be7a4d98a4c539a201
+  - _level: 176
+    _upgrade_cost: 000000000000000000000010d18af82926aae893817237ceb9a0db1d9fc2b358c3b7e98a6dfc38619216e78806
+  - _level: 177
+    _upgrade_cost: 00000000000000000000000080c50def2412433c174e84bf6a3582462724766bfa65175fdd960de6db7083ac20
+  - _level: 178
+    _upgrade_cost: 000000000000000000000000001637bc93480cf15c3811feaad5081a9d90d8ade9975d7c755b36986fc30db28200
+  - _level: 179
+    _upgrade_cost: 0000000000000000000000402a5ed1b92f1c9399293413d07ebd3f496351e98c6acad66777a8fe7be29cb31bea01
+  - _level: 180
+    _upgrade_cost: 0000000000000000000000000093b0b0368b19c58940d767d96e6ec5ab0f13fde8ea91923c77a7eef20aacb16106
+  - _level: 181
+    _upgrade_cost: 000000000000000000000080a640def213a5d8c4294a9788cdd5eba18c3d307e12d3f5a0e60b9ac6cb2bb0c68619
+  - _level: 182
+    _upgrade_cost: 000000000000000000000000810ae3ae8192774adeda17390bb195e6122e652885e433d64626ef1cfbda70e1a17f
+  - _level: 183
+    _upgrade_cost: 00000000000000000000000000f02d371781fb970d2b4473f0a382b2ade5f415cf6899cded425594ea6bc38587fe01
+  - _level: 184
+    _upgrade_cost: 0000000000000000000000000ad5d7d96d1aa6e67fc203cb5c37fc20d6eb656f36b0069f6d12c25ab4d49c357c7a07
+  - _level: 185
+    _upgrade_cost: 0000000000000000000000000038be31a2cdc7eb291ad4a03d016137fb3675921c9efd899cc4293ef4c40a089eed18
+  - _level: 186
+    _upgrade_cost: 000000000000000000000000648a2cb4ecd544ee28b3f98edd2a3b81586d70ec3c8040c0e47cbec9ff132b2078b663
+  - _level: 187
+    _upgrade_cost: 000000000000000000000000e807e126934a14e352f42e05d793bbb8d4f93bcb25a8b4bab4842d06e964d7a05890f201
+  - _level: 188
+    _upgrade_cost: 0000000000000000000000000080718baf4270ae192d48424263504e812ea1c4ed68411feb700d6d538c5d836241ca07
+  - _level: 189
+    _upgrade_cost: 000000000000000000000000102f18f31a3dd7f89cc3af06794238d9703c2126a354203235fc178682e09e6c3175361d
+  - _level: 190
+    _upgrade_cost: 00000000000000000000000000c00a4f92417b04c133863cbcd8ec5250c5de199c9fb1067b0328d3125a116a4f316061
+  - _level: 191
+    _upgrade_cost: 000000000000000000000000a096fccd9fa4e3bce2d7637f76711fcfb8212b97fbedf4fb8edd17102c1f46a83dc5808501
+  - _level: 192
+    _upgrade_cost: 00000000000000000000000040e206dfcf4e4307c7636a3fec7fb99cf1e647e2a1d3b051f961ce21402e624934da839b07
+  - _level: 193
+    _upgrade_cost: 00000000000000000000000000005cb3b87d8466512cf0e9d2ba03ea19a99d15c8e08117721681fce1256c25d1680f6e1e
+  - _level: 194
+    _upgrade_cost: 00000000000000000000000080d6779645b1c6082c1d941ec2a8c383d018d4f14c9d4acecb2fb1cddbfd9c4c10c9b91c72
+  - _level: 195
+    _upgrade_cost: 0000000000000000000000000000fec184237881f9293a6c4c9f2eedc3c1320ec579d72592984dd488d9c753369ec05f7c01
+  - _level: 196
+    _upgrade_cost: 0000000000000000000000000061aca23c103bd9b14d039ee136d312e9b97b80c69ec134887639dd1ec4e951d978027ff105
+  - _level: 197
+    _upgrade_cost: 00000000000000000000000000cae332ffdbeb5e74c195b7d7b29b34cc1fdee85bb0ba1ae7b52e0e84aa84a73e5c0c7bb71d
+  - _level: 198
+    _upgrade_cost: 0000000000000000000000000000609f7c198b75f81d2dd2e1c7911e3a8ddc6f940d56d3abad3f58c2fa732efa7031ecdd76
+  - _level: 199
+    _upgrade_cost: 00000000000000000000000000e41dc4d377244802f4917247364bb482ee80a4907476d31db4227c9ba23f45ab67b935c0bd01

@@ -1,0 +1,2337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 515194474, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: RichRankInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  mDataList:
+  - _region_idx: 1
+    _idx: 1
+    _name: str_rank_company_name_1408
+    _icon: Logo_Icon_Company_1408
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 2
+    _name: str_rank_company_name_1613
+    _icon: Logo_Icon_Company_1613
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 3
+    _name: str_rank_company_name_1707
+    _icon: Logo_Icon_Company_1707
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 4
+    _name: str_rank_company_name_1409
+    _icon: Logo_Icon_Company_1409
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 5
+    _name: str_rank_company_name_1705
+    _icon: Logo_Icon_Company_1705
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 6
+    _name: str_rank_company_name_1601
+    _icon: Logo_Icon_Company_1601
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 7
+    _name: str_rank_company_name_1602
+    _icon: Logo_Icon_Company_1602
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 8
+    _name: str_rank_company_name_1603
+    _icon: Logo_Icon_Company_1603
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 9
+    _name: str_rank_company_name_1604
+    _icon: Logo_Icon_Company_1604
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 10
+    _name: str_rank_company_name_1605
+    _icon: Logo_Icon_Company_1605
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 11
+    _name: str_rank_company_name_1501
+    _icon: Logo_Icon_Company_1501
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 12
+    _name: str_rank_company_name_1502
+    _icon: Logo_Icon_Company_1502
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 13
+    _name: str_rank_company_name_1503
+    _icon: Logo_Icon_Company_1503
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 14
+    _name: str_rank_company_name_1504
+    _icon: Logo_Icon_Company_1504
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 15
+    _name: str_rank_company_name_1505
+    _icon: Logo_Icon_Company_1505
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 16
+    _name: str_rank_company_name_1401
+    _icon: Logo_Icon_Company_1401
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 17
+    _name: str_rank_company_name_1402
+    _icon: Logo_Icon_Company_1402
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 18
+    _name: str_rank_company_name_1403
+    _icon: Logo_Icon_Company_1403
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 19
+    _name: str_rank_company_name_1404
+    _icon: Logo_Icon_Company_1404
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 20
+    _name: str_rank_company_name_1405
+    _icon: Logo_Icon_Company_1405
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 21
+    _name: str_rank_company_name_1301
+    _icon: Logo_Icon_Company_1301
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 22
+    _name: str_rank_company_name_1302
+    _icon: Logo_Icon_Company_1302
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 23
+    _name: str_rank_company_name_1303
+    _icon: Logo_Icon_Company_1303
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 24
+    _name: str_rank_company_name_1304
+    _icon: Logo_Icon_Company_1304
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 25
+    _name: str_rank_company_name_1305
+    _icon: Logo_Icon_Company_1305
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 26
+    _name: str_rank_company_name_1201
+    _icon: Logo_Icon_Company_1201
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 27
+    _name: str_rank_company_name_1202
+    _icon: Logo_Icon_Company_1202
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 28
+    _name: str_rank_company_name_1203
+    _icon: Logo_Icon_Company_1203
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 1
+    _idx: 29
+    _name: str_rank_company_name_1204
+    _icon: Logo_Icon_Company_1204
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 1
+    _name: str_rank_company_name_2715
+    _icon: Logo_Icon_Company_2715
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 2
+    _name: str_rank_company_name_2716
+    _icon: Logo_Icon_Company_2716
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 3
+    _name: str_rank_company_name_2717
+    _icon: Logo_Icon_Company_2717
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 4
+    _name: str_rank_company_name_2718
+    _icon: Logo_Icon_Company_2718
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 5
+    _name: str_rank_company_name_2719
+    _icon: Logo_Icon_Company_2719
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 6
+    _name: str_rank_company_name_2720
+    _icon: Logo_Icon_Company_2720
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 7
+    _name: str_rank_company_name_2729
+    _icon: Logo_Icon_Company_2729
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 8
+    _name: str_rank_company_name_2730
+    _icon: Logo_Icon_Company_2730
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 9
+    _name: str_rank_company_name_2731
+    _icon: Logo_Icon_Company_2731
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 10
+    _name: str_rank_company_name_2732
+    _icon: Logo_Icon_Company_2732
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 11
+    _name: str_rank_company_name_2733
+    _icon: Logo_Icon_Company_2733
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 12
+    _name: str_rank_company_name_2734
+    _icon: Logo_Icon_Company_2734
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 13
+    _name: str_rank_company_name_2743
+    _icon: Logo_Icon_Company_2743
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 14
+    _name: str_rank_company_name_2744
+    _icon: Logo_Icon_Company_2744
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 15
+    _name: str_rank_company_name_2745
+    _icon: Logo_Icon_Company_2745
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 16
+    _name: str_rank_company_name_2746
+    _icon: Logo_Icon_Company_2746
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 17
+    _name: str_rank_company_name_2747
+    _icon: Logo_Icon_Company_2747
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 18
+    _name: str_rank_company_name_2616
+    _icon: Logo_Icon_Company_2616
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 19
+    _name: str_rank_company_name_2617
+    _icon: Logo_Icon_Company_2617
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 20
+    _name: str_rank_company_name_2618
+    _icon: Logo_Icon_Company_2618
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 21
+    _name: str_rank_company_name_2511
+    _icon: Logo_Icon_Company_2511
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 22
+    _name: str_rank_company_name_2512
+    _icon: Logo_Icon_Company_2512
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 23
+    _name: str_rank_company_name_2513
+    _icon: Logo_Icon_Company_2513
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 24
+    _name: str_rank_company_name_2413
+    _icon: Logo_Icon_Company_2413
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 25
+    _name: str_rank_company_name_2411
+    _icon: Logo_Icon_Company_2411
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 26
+    _name: str_rank_company_name_2412
+    _icon: Logo_Icon_Company_2412
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 27
+    _name: str_rank_company_name_2306
+    _icon: Logo_Icon_Company_2306
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 28
+    _name: str_rank_company_name_2307
+    _icon: Logo_Icon_Company_2307
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 2
+    _idx: 29
+    _name: str_rank_company_name_2308
+    _icon: Logo_Icon_Company_2308
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 1
+    _name: str_rank_company_name_3708
+    _icon: Logo_Icon_Company_3708
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 2
+    _name: str_rank_company_name_3718
+    _icon: Logo_Icon_Company_3718
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 3
+    _name: str_rank_company_name_3704
+    _icon: Logo_Icon_Company_3704
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 4
+    _name: str_rank_company_name_3719
+    _icon: Logo_Icon_Company_3719
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 5
+    _name: str_rank_company_name_3710
+    _icon: Logo_Icon_Company_3710
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 6
+    _name: str_rank_company_name_3729
+    _icon: Logo_Icon_Company_3729
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 7
+    _name: str_rank_company_name_3737
+    _icon: Logo_Icon_Company_3737
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 8
+    _name: str_rank_company_name_3707
+    _icon: Logo_Icon_Company_3707
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 9
+    _name: str_rank_company_name_3738
+    _icon: Logo_Icon_Company_3738
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 10
+    _name: str_rank_company_name_3742
+    _icon: Logo_Icon_Company_3742
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 11
+    _name: str_rank_company_name_3740
+    _icon: Logo_Icon_Company_3740
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 12
+    _name: str_rank_company_name_3717
+    _icon: Logo_Icon_Company_3717
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 13
+    _name: str_rank_company_name_3721
+    _icon: Logo_Icon_Company_3720
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 14
+    _name: str_rank_company_name_3712
+    _icon: Logo_Icon_Company_3712
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 15
+    _name: str_rank_company_name_3705
+    _icon: Logo_Icon_Company_3705
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 16
+    _name: str_rank_company_name_3736
+    _icon: Logo_Icon_Company_3736
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 17
+    _name: str_rank_company_name_3709
+    _icon: Logo_Icon_Company_3709
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 18
+    _name: str_rank_company_name_3703
+    _icon: Logo_Icon_Company_3703
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 19
+    _name: str_rank_company_name_3706
+    _icon: Logo_Icon_Company_3706
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 20
+    _name: str_rank_company_name_3714
+    _icon: Logo_Icon_Company_3714
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 21
+    _name: str_rank_company_name_3735
+    _icon: Logo_Icon_Company_3735
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 22
+    _name: str_rank_company_name_3733
+    _icon: Logo_Icon_Company_3733
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 23
+    _name: str_rank_company_name_3702
+    _icon: Logo_Icon_Company_3702
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 24
+    _name: str_rank_company_name_3711
+    _icon: Logo_Icon_Company_3711
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 25
+    _name: str_rank_company_name_3739
+    _icon: Logo_Icon_Company_3739
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 26
+    _name: str_rank_company_name_3715
+    _icon: Logo_Icon_Company_3715
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 27
+    _name: str_rank_company_name_3734
+    _icon: Logo_Icon_Company_3734
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 28
+    _name: str_rank_company_name_3731
+    _icon: Logo_Icon_Company_3731
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 3
+    _idx: 29
+    _name: str_rank_company_name_3713
+    _icon: Logo_Icon_Company_3713
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 1
+    _name: str_rank_company_name_4748
+    _icon: Logo_Icon_Company_4748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 2
+    _name: str_rank_company_name_4747
+    _icon: Logo_Icon_Company_4747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 3
+    _name: str_rank_company_name_4746
+    _icon: Logo_Icon_Company_4746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 4
+    _name: str_rank_company_name_4745
+    _icon: Logo_Icon_Company_4745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 5
+    _name: str_rank_company_name_4744
+    _icon: Logo_Icon_Company_4744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 6
+    _name: str_rank_company_name_4743
+    _icon: Logo_Icon_Company_4743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 7
+    _name: str_rank_company_name_4742
+    _icon: Logo_Icon_Company_4742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 8
+    _name: str_rank_company_name_4741
+    _icon: Logo_Icon_Company_4741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 9
+    _name: str_rank_company_name_4740
+    _icon: Logo_Icon_Company_4740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 10
+    _name: str_rank_company_name_4739
+    _icon: Logo_Icon_Company_4739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 11
+    _name: str_rank_company_name_4738
+    _icon: Logo_Icon_Company_4738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 12
+    _name: str_rank_company_name_4737
+    _icon: Logo_Icon_Company_4737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 13
+    _name: str_rank_company_name_4736
+    _icon: Logo_Icon_Company_4736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 14
+    _name: str_rank_company_name_4735
+    _icon: Logo_Icon_Company_4735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 15
+    _name: str_rank_company_name_4734
+    _icon: Logo_Icon_Company_4734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 16
+    _name: str_rank_company_name_4733
+    _icon: Logo_Icon_Company_4733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 17
+    _name: str_rank_company_name_4732
+    _icon: Logo_Icon_Company_4732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 18
+    _name: str_rank_company_name_4731
+    _icon: Logo_Icon_Company_4731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 19
+    _name: str_rank_company_name_4730
+    _icon: Logo_Icon_Company_4730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 20
+    _name: str_rank_company_name_4729
+    _icon: Logo_Icon_Company_4729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 21
+    _name: str_rank_company_name_4728
+    _icon: Logo_Icon_Company_4728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 22
+    _name: str_rank_company_name_4727
+    _icon: Logo_Icon_Company_4727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 23
+    _name: str_rank_company_name_4726
+    _icon: Logo_Icon_Company_4726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 24
+    _name: str_rank_company_name_4725
+    _icon: Logo_Icon_Company_4725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 25
+    _name: str_rank_company_name_4724
+    _icon: Logo_Icon_Company_4724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 26
+    _name: str_rank_company_name_4723
+    _icon: Logo_Icon_Company_4723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 27
+    _name: str_rank_company_name_4722
+    _icon: Logo_Icon_Company_4722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 28
+    _name: str_rank_company_name_4721
+    _icon: Logo_Icon_Company_4721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 4
+    _idx: 29
+    _name: str_rank_company_name_4720
+    _icon: Logo_Icon_Company_4720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 1
+    _name: str_rank_company_name_5748
+    _icon: Logo_Icon_Company_5748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 2
+    _name: str_rank_company_name_5747
+    _icon: Logo_Icon_Company_5747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 3
+    _name: str_rank_company_name_5746
+    _icon: Logo_Icon_Company_5746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 4
+    _name: str_rank_company_name_5745
+    _icon: Logo_Icon_Company_5745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 5
+    _name: str_rank_company_name_5744
+    _icon: Logo_Icon_Company_5744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 6
+    _name: str_rank_company_name_5743
+    _icon: Logo_Icon_Company_5743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 7
+    _name: str_rank_company_name_5742
+    _icon: Logo_Icon_Company_5742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 8
+    _name: str_rank_company_name_5741
+    _icon: Logo_Icon_Company_5741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 9
+    _name: str_rank_company_name_5740
+    _icon: Logo_Icon_Company_5740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 10
+    _name: str_rank_company_name_5739
+    _icon: Logo_Icon_Company_5739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 11
+    _name: str_rank_company_name_5738
+    _icon: Logo_Icon_Company_5738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 12
+    _name: str_rank_company_name_5737
+    _icon: Logo_Icon_Company_5737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 13
+    _name: str_rank_company_name_5736
+    _icon: Logo_Icon_Company_5736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 14
+    _name: str_rank_company_name_5735
+    _icon: Logo_Icon_Company_5735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 15
+    _name: str_rank_company_name_5734
+    _icon: Logo_Icon_Company_5734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 16
+    _name: str_rank_company_name_5733
+    _icon: Logo_Icon_Company_5733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 17
+    _name: str_rank_company_name_5732
+    _icon: Logo_Icon_Company_5732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 18
+    _name: str_rank_company_name_5731
+    _icon: Logo_Icon_Company_5731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 19
+    _name: str_rank_company_name_5730
+    _icon: Logo_Icon_Company_5730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 20
+    _name: str_rank_company_name_5729
+    _icon: Logo_Icon_Company_5729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 21
+    _name: str_rank_company_name_5728
+    _icon: Logo_Icon_Company_5728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 22
+    _name: str_rank_company_name_5727
+    _icon: Logo_Icon_Company_5727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 23
+    _name: str_rank_company_name_5726
+    _icon: Logo_Icon_Company_5726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 24
+    _name: str_rank_company_name_5725
+    _icon: Logo_Icon_Company_5725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 25
+    _name: str_rank_company_name_5724
+    _icon: Logo_Icon_Company_5724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 26
+    _name: str_rank_company_name_5723
+    _icon: Logo_Icon_Company_5723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 27
+    _name: str_rank_company_name_5722
+    _icon: Logo_Icon_Company_5722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 28
+    _name: str_rank_company_name_5721
+    _icon: Logo_Icon_Company_5721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 5
+    _idx: 29
+    _name: str_rank_company_name_5720
+    _icon: Logo_Icon_Company_5720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 1
+    _name: str_rank_company_name_6748
+    _icon: Logo_Icon_Company_6748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 2
+    _name: str_rank_company_name_6747
+    _icon: Logo_Icon_Company_6747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 3
+    _name: str_rank_company_name_6746
+    _icon: Logo_Icon_Company_6746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 4
+    _name: str_rank_company_name_6745
+    _icon: Logo_Icon_Company_6745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 5
+    _name: str_rank_company_name_6744
+    _icon: Logo_Icon_Company_6744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 6
+    _name: str_rank_company_name_6743
+    _icon: Logo_Icon_Company_6743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 7
+    _name: str_rank_company_name_6742
+    _icon: Logo_Icon_Company_6742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 8
+    _name: str_rank_company_name_6741
+    _icon: Logo_Icon_Company_6741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 9
+    _name: str_rank_company_name_6740
+    _icon: Logo_Icon_Company_6740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 10
+    _name: str_rank_company_name_6739
+    _icon: Logo_Icon_Company_6739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 11
+    _name: str_rank_company_name_6738
+    _icon: Logo_Icon_Company_6738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 12
+    _name: str_rank_company_name_6737
+    _icon: Logo_Icon_Company_6737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 13
+    _name: str_rank_company_name_6736
+    _icon: Logo_Icon_Company_6736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 14
+    _name: str_rank_company_name_6735
+    _icon: Logo_Icon_Company_6735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 15
+    _name: str_rank_company_name_6734
+    _icon: Logo_Icon_Company_6734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 16
+    _name: str_rank_company_name_6733
+    _icon: Logo_Icon_Company_6733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 17
+    _name: str_rank_company_name_6732
+    _icon: Logo_Icon_Company_6732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 18
+    _name: str_rank_company_name_6731
+    _icon: Logo_Icon_Company_6731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 19
+    _name: str_rank_company_name_6730
+    _icon: Logo_Icon_Company_6730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 20
+    _name: str_rank_company_name_6729
+    _icon: Logo_Icon_Company_6729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 21
+    _name: str_rank_company_name_6728
+    _icon: Logo_Icon_Company_6728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 22
+    _name: str_rank_company_name_6727
+    _icon: Logo_Icon_Company_6727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 23
+    _name: str_rank_company_name_6726
+    _icon: Logo_Icon_Company_6726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 24
+    _name: str_rank_company_name_6725
+    _icon: Logo_Icon_Company_6725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 25
+    _name: str_rank_company_name_6724
+    _icon: Logo_Icon_Company_6724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 26
+    _name: str_rank_company_name_6723
+    _icon: Logo_Icon_Company_6723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 27
+    _name: str_rank_company_name_6722
+    _icon: Logo_Icon_Company_6722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 28
+    _name: str_rank_company_name_6721
+    _icon: Logo_Icon_Company_6721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 6
+    _idx: 29
+    _name: str_rank_company_name_6720
+    _icon: Logo_Icon_Company_6720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 1
+    _name: str_rank_company_name_7748
+    _icon: Logo_Icon_Company_7748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 2
+    _name: str_rank_company_name_7747
+    _icon: Logo_Icon_Company_7747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 3
+    _name: str_rank_company_name_7746
+    _icon: Logo_Icon_Company_7746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 4
+    _name: str_rank_company_name_7745
+    _icon: Logo_Icon_Company_7745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 5
+    _name: str_rank_company_name_7744
+    _icon: Logo_Icon_Company_7744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 6
+    _name: str_rank_company_name_7743
+    _icon: Logo_Icon_Company_7743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 7
+    _name: str_rank_company_name_7742
+    _icon: Logo_Icon_Company_7742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 8
+    _name: str_rank_company_name_7741
+    _icon: Logo_Icon_Company_7741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 9
+    _name: str_rank_company_name_7740
+    _icon: Logo_Icon_Company_7740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 10
+    _name: str_rank_company_name_7739
+    _icon: Logo_Icon_Company_7739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 11
+    _name: str_rank_company_name_7738
+    _icon: Logo_Icon_Company_7738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 12
+    _name: str_rank_company_name_7737
+    _icon: Logo_Icon_Company_7737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 13
+    _name: str_rank_company_name_7736
+    _icon: Logo_Icon_Company_7736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 14
+    _name: str_rank_company_name_7735
+    _icon: Logo_Icon_Company_7735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 15
+    _name: str_rank_company_name_7734
+    _icon: Logo_Icon_Company_7734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 16
+    _name: str_rank_company_name_7733
+    _icon: Logo_Icon_Company_7733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 17
+    _name: str_rank_company_name_7732
+    _icon: Logo_Icon_Company_7732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 18
+    _name: str_rank_company_name_7731
+    _icon: Logo_Icon_Company_7731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 19
+    _name: str_rank_company_name_7730
+    _icon: Logo_Icon_Company_7730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 20
+    _name: str_rank_company_name_7729
+    _icon: Logo_Icon_Company_7729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 21
+    _name: str_rank_company_name_7728
+    _icon: Logo_Icon_Company_7728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 22
+    _name: str_rank_company_name_7727
+    _icon: Logo_Icon_Company_7727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 23
+    _name: str_rank_company_name_7726
+    _icon: Logo_Icon_Company_7726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 24
+    _name: str_rank_company_name_7725
+    _icon: Logo_Icon_Company_7725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 25
+    _name: str_rank_company_name_7724
+    _icon: Logo_Icon_Company_7724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 26
+    _name: str_rank_company_name_7723
+    _icon: Logo_Icon_Company_7723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 27
+    _name: str_rank_company_name_7722
+    _icon: Logo_Icon_Company_7722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 28
+    _name: str_rank_company_name_7721
+    _icon: Logo_Icon_Company_7721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 7
+    _idx: 29
+    _name: str_rank_company_name_7720
+    _icon: Logo_Icon_Company_7720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 1
+    _name: str_rank_company_name_8748
+    _icon: Logo_Icon_Company_8748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 2
+    _name: str_rank_company_name_8747
+    _icon: Logo_Icon_Company_8747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 3
+    _name: str_rank_company_name_8746
+    _icon: Logo_Icon_Company_8746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 4
+    _name: str_rank_company_name_8745
+    _icon: Logo_Icon_Company_8745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 5
+    _name: str_rank_company_name_8744
+    _icon: Logo_Icon_Company_8744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 6
+    _name: str_rank_company_name_8743
+    _icon: Logo_Icon_Company_8743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 7
+    _name: str_rank_company_name_8742
+    _icon: Logo_Icon_Company_8742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 8
+    _name: str_rank_company_name_8741
+    _icon: Logo_Icon_Company_8741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 9
+    _name: str_rank_company_name_8740
+    _icon: Logo_Icon_Company_8740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 10
+    _name: str_rank_company_name_8739
+    _icon: Logo_Icon_Company_8739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 11
+    _name: str_rank_company_name_8738
+    _icon: Logo_Icon_Company_8738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 12
+    _name: str_rank_company_name_8737
+    _icon: Logo_Icon_Company_8737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 13
+    _name: str_rank_company_name_8736
+    _icon: Logo_Icon_Company_8736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 14
+    _name: str_rank_company_name_8735
+    _icon: Logo_Icon_Company_8735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 15
+    _name: str_rank_company_name_8734
+    _icon: Logo_Icon_Company_8734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 16
+    _name: str_rank_company_name_8733
+    _icon: Logo_Icon_Company_8733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 17
+    _name: str_rank_company_name_8732
+    _icon: Logo_Icon_Company_8732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 18
+    _name: str_rank_company_name_8731
+    _icon: Logo_Icon_Company_8731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 19
+    _name: str_rank_company_name_8730
+    _icon: Logo_Icon_Company_8730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 20
+    _name: str_rank_company_name_8729
+    _icon: Logo_Icon_Company_8729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 21
+    _name: str_rank_company_name_8728
+    _icon: Logo_Icon_Company_8728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 22
+    _name: str_rank_company_name_8727
+    _icon: Logo_Icon_Company_8727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 23
+    _name: str_rank_company_name_8726
+    _icon: Logo_Icon_Company_8726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 24
+    _name: str_rank_company_name_8725
+    _icon: Logo_Icon_Company_8725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 25
+    _name: str_rank_company_name_8724
+    _icon: Logo_Icon_Company_8724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 26
+    _name: str_rank_company_name_8723
+    _icon: Logo_Icon_Company_8723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 27
+    _name: str_rank_company_name_8722
+    _icon: Logo_Icon_Company_8722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 28
+    _name: str_rank_company_name_8721
+    _icon: Logo_Icon_Company_8721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 8
+    _idx: 29
+    _name: str_rank_company_name_8720
+    _icon: Logo_Icon_Company_8720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 1
+    _name: str_rank_company_name_9748
+    _icon: Logo_Icon_Company_9748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 2
+    _name: str_rank_company_name_9747
+    _icon: Logo_Icon_Company_9747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 3
+    _name: str_rank_company_name_9746
+    _icon: Logo_Icon_Company_9746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 4
+    _name: str_rank_company_name_9745
+    _icon: Logo_Icon_Company_9745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 5
+    _name: str_rank_company_name_9744
+    _icon: Logo_Icon_Company_9744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 6
+    _name: str_rank_company_name_9743
+    _icon: Logo_Icon_Company_9743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 7
+    _name: str_rank_company_name_9742
+    _icon: Logo_Icon_Company_9742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 8
+    _name: str_rank_company_name_9741
+    _icon: Logo_Icon_Company_9741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 9
+    _name: str_rank_company_name_9740
+    _icon: Logo_Icon_Company_9740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 10
+    _name: str_rank_company_name_9739
+    _icon: Logo_Icon_Company_9739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 11
+    _name: str_rank_company_name_9738
+    _icon: Logo_Icon_Company_9738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 12
+    _name: str_rank_company_name_9737
+    _icon: Logo_Icon_Company_9737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 13
+    _name: str_rank_company_name_9736
+    _icon: Logo_Icon_Company_9736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 14
+    _name: str_rank_company_name_9735
+    _icon: Logo_Icon_Company_9735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 15
+    _name: str_rank_company_name_9734
+    _icon: Logo_Icon_Company_9734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 16
+    _name: str_rank_company_name_9733
+    _icon: Logo_Icon_Company_9733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 17
+    _name: str_rank_company_name_9732
+    _icon: Logo_Icon_Company_9732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 18
+    _name: str_rank_company_name_9731
+    _icon: Logo_Icon_Company_9731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 19
+    _name: str_rank_company_name_9730
+    _icon: Logo_Icon_Company_9730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 20
+    _name: str_rank_company_name_9729
+    _icon: Logo_Icon_Company_9729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 21
+    _name: str_rank_company_name_9728
+    _icon: Logo_Icon_Company_9728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 22
+    _name: str_rank_company_name_9727
+    _icon: Logo_Icon_Company_9727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 23
+    _name: str_rank_company_name_9726
+    _icon: Logo_Icon_Company_9726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 24
+    _name: str_rank_company_name_9725
+    _icon: Logo_Icon_Company_9725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 25
+    _name: str_rank_company_name_9724
+    _icon: Logo_Icon_Company_9724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 26
+    _name: str_rank_company_name_9723
+    _icon: Logo_Icon_Company_9723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 27
+    _name: str_rank_company_name_9722
+    _icon: Logo_Icon_Company_9722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 28
+    _name: str_rank_company_name_9721
+    _icon: Logo_Icon_Company_9721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 9
+    _idx: 29
+    _name: str_rank_company_name_9720
+    _icon: Logo_Icon_Company_9720
+    _rich_point: 10
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 1
+    _name: str_rank_company_name_10748
+    _icon: Logo_Icon_Company_10748
+    _rich_point: 145000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 2
+    _name: str_rank_company_name_10747
+    _icon: Logo_Icon_Company_10747
+    _rich_point: 115000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 3
+    _name: str_rank_company_name_10746
+    _icon: Logo_Icon_Company_10746
+    _rich_point: 90000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 4
+    _name: str_rank_company_name_10745
+    _icon: Logo_Icon_Company_10745
+    _rich_point: 66000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 5
+    _name: str_rank_company_name_10744
+    _icon: Logo_Icon_Company_10744
+    _rich_point: 58000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 6
+    _name: str_rank_company_name_10743
+    _icon: Logo_Icon_Company_10743
+    _rich_point: 55000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 7
+    _name: str_rank_company_name_10742
+    _icon: Logo_Icon_Company_10742
+    _rich_point: 52000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 8
+    _name: str_rank_company_name_10741
+    _icon: Logo_Icon_Company_10741
+    _rich_point: 49000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 9
+    _name: str_rank_company_name_10740
+    _icon: Logo_Icon_Company_10740
+    _rich_point: 46000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 10
+    _name: str_rank_company_name_10739
+    _icon: Logo_Icon_Company_10739
+    _rich_point: 37000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 11
+    _name: str_rank_company_name_10738
+    _icon: Logo_Icon_Company_10738
+    _rich_point: 9000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 12
+    _name: str_rank_company_name_10737
+    _icon: Logo_Icon_Company_10737
+    _rich_point: 8100
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 13
+    _name: str_rank_company_name_10736
+    _icon: Logo_Icon_Company_10736
+    _rich_point: 7500
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 14
+    _name: str_rank_company_name_10735
+    _icon: Logo_Icon_Company_10735
+    _rich_point: 7000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 15
+    _name: str_rank_company_name_10734
+    _icon: Logo_Icon_Company_10734
+    _rich_point: 6500
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 16
+    _name: str_rank_company_name_10733
+    _icon: Logo_Icon_Company_10733
+    _rich_point: 6000
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 17
+    _name: str_rank_company_name_10732
+    _icon: Logo_Icon_Company_10732
+    _rich_point: 4800
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 18
+    _name: str_rank_company_name_10731
+    _icon: Logo_Icon_Company_10731
+    _rich_point: 1300
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 19
+    _name: str_rank_company_name_10730
+    _icon: Logo_Icon_Company_10730
+    _rich_point: 950
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 20
+    _name: str_rank_company_name_10729
+    _icon: Logo_Icon_Company_10729
+    _rich_point: 700
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 21
+    _name: str_rank_company_name_10728
+    _icon: Logo_Icon_Company_10728
+    _rich_point: 550
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 22
+    _name: str_rank_company_name_10727
+    _icon: Logo_Icon_Company_10727
+    _rich_point: 400
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 23
+    _name: str_rank_company_name_10726
+    _icon: Logo_Icon_Company_10726
+    _rich_point: 320
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 24
+    _name: str_rank_company_name_10725
+    _icon: Logo_Icon_Company_10725
+    _rich_point: 80
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 25
+    _name: str_rank_company_name_10724
+    _icon: Logo_Icon_Company_10724
+    _rich_point: 50
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 26
+    _name: str_rank_company_name_10723
+    _icon: Logo_Icon_Company_10723
+    _rich_point: 40
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 27
+    _name: str_rank_company_name_10722
+    _icon: Logo_Icon_Company_10722
+    _rich_point: 30
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 28
+    _name: str_rank_company_name_10721
+    _icon: Logo_Icon_Company_10721
+    _rich_point: 20
+    _reward_lv: 1
+  - _region_idx: 10
+    _idx: 29
+    _name: str_rank_company_name_10720
+    _icon: Logo_Icon_Company_10720
+    _rich_point: 10
+    _reward_lv: 1

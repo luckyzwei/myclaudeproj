@@ -1,0 +1,2017 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -469490024, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: PlantLevel
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 13
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 19
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 21
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 22
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 23
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 24
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  - 25
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  mDataList:
+  - _plant_idx: 1
+    _level: 1
+    _ability_value: 20
+    _need_level_exp: 40000
+    _reduces_satiation_sec: 32
+    _img: Plant1_1
+  - _plant_idx: 1
+    _level: 2
+    _ability_value: 22
+    _need_level_exp: 80000
+    _reduces_satiation_sec: 32
+    _img: Plant1_1
+  - _plant_idx: 1
+    _level: 3
+    _ability_value: 24
+    _need_level_exp: 120000
+    _reduces_satiation_sec: 32
+    _img: Plant1_2
+  - _plant_idx: 1
+    _level: 4
+    _ability_value: 26
+    _need_level_exp: 180000
+    _reduces_satiation_sec: 32
+    _img: Plant1_2
+  - _plant_idx: 1
+    _level: 5
+    _ability_value: 28
+    _need_level_exp: 280000
+    _reduces_satiation_sec: 32
+    _img: Plant1_2
+  - _plant_idx: 1
+    _level: 6
+    _ability_value: 30
+    _need_level_exp: 380000
+    _reduces_satiation_sec: 32
+    _img: Plant1_2
+  - _plant_idx: 1
+    _level: 7
+    _ability_value: 32
+    _need_level_exp: 480000
+    _reduces_satiation_sec: 32
+    _img: Plant1_3
+  - _plant_idx: 1
+    _level: 8
+    _ability_value: 34
+    _need_level_exp: 580000
+    _reduces_satiation_sec: 32
+    _img: Plant1_3
+  - _plant_idx: 1
+    _level: 9
+    _ability_value: 36
+    _need_level_exp: 680000
+    _reduces_satiation_sec: 32
+    _img: Plant1_3
+  - _plant_idx: 1
+    _level: 10
+    _ability_value: 38
+    _need_level_exp: -1
+    _reduces_satiation_sec: -1
+    _img: Plant1_4
+  - _plant_idx: 2
+    _level: 1
+    _ability_value: 1400
+    _need_level_exp: 80000
+    _reduces_satiation_sec: 32
+    _img: Plant2_1
+  - _plant_idx: 2
+    _level: 2
+    _ability_value: 1500
+    _need_level_exp: 130000
+    _reduces_satiation_sec: 32
+    _img: Plant2_1
+  - _plant_idx: 2
+    _level: 3
+    _ability_value: 1600
+    _need_level_exp: 200000
+    _reduces_satiation_sec: 32
+    _img: Plant2_2
+  - _plant_idx: 2
+    _level: 4
+    _ability_value: 1700
+    _need_level_exp: 300000
+    _reduces_satiation_sec: 32
+    _img: Plant2_2
+  - _plant_idx: 2
+    _level: 5
+    _ability_value: 1800
+    _need_level_exp: 400000
+    _reduces_satiation_sec: 32
+    _img: Plant2_2
+  - _plant_idx: 2
+    _level: 6
+    _ability_value: 1900
+    _need_level_exp: 500000
+    _reduces_satiation_sec: 32
+    _img: Plant2_2
+  - _plant_idx: 2
+    _level: 7
+    _ability_value: 2000
+    _need_level_exp: 600000
+    _reduces_satiation_sec: 32
+    _img: Plant2_3
+  - _plant_idx: 2
+    _level: 8
+    _ability_value: 2100
+    _need_level_exp: 700000
+    _reduces_satiation_sec: 32
+    _img: Plant2_3
+  - _plant_idx: 2
+    _level: 9
+    _ability_value: 2200
+    _need_level_exp: 800000
+    _reduces_satiation_sec: 32
+    _img: Plant2_3
+  - _plant_idx: 2
+    _level: 10
+    _ability_value: 2300
+    _need_level_exp: -1
+    _reduces_satiation_sec: -1
+    _img: Plant2_4
+  - _plant_idx: 3
+    _level: 1
+    _ability_value: 1600
+    _need_level_exp: 80000
+    _reduces_satiation_sec: 32
+    _img: Plant3_1
+  - _plant_idx: 3
+    _level: 2
+    _ability_value: 1700
+    _need_level_exp: 130000
+    _reduces_satiation_sec: 32
+    _img: Plant3_1
+  - _plant_idx: 3
+    _level: 3
+    _ability_value: 1800
+    _need_level_exp: 200000
+    _reduces_satiation_sec: 32
+    _img: Plant3_2
+  - _plant_idx: 3
+    _level: 4
+    _ability_value: 1900
+    _need_level_exp: 300000
+    _reduces_satiation_sec: 32
+    _img: Plant3_2
+  - _plant_idx: 3
+    _level: 5
+    _ability_value: 2000
+    _need_level_exp: 400000
+    _reduces_satiation_sec: 32
+    _img: Plant3_2
+  - _plant_idx: 3
+    _level: 6
+    _ability_value: 2100
+    _need_level_exp: 500000
+    _reduces_satiation_sec: 32
+    _img: Plant3_2
+  - _plant_idx: 3
+    _level: 7
+    _ability_value: 2200
+    _need_level_exp: 600000
+    _reduces_satiation_sec: 32
+    _img: Plant3_3
+  - _plant_idx: 3
+    _level: 8
+    _ability_value: 2300
+    _need_level_exp: 700000
+    _reduces_satiation_sec: 32
+    _img: Plant3_3
+  - _plant_idx: 3
+    _level: 9
+    _ability_value: 2400
+    _need_level_exp: 800000
+    _reduces_satiation_sec: 32
+    _img: Plant3_3
+  - _plant_idx: 3
+    _level: 10
+    _ability_value: 2500
+    _need_level_exp: -1
+    _reduces_satiation_sec: -1
+    _img: Plant3_4
+  - _plant_idx: 4
+    _level: 1
+    _ability_value: 200
+    _need_level_exp: 40000
+    _reduces_satiation_sec: 32
+    _img: Plant4_1
+  - _plant_idx: 4
+    _level: 2
+    _ability_value: 220
+    _need_level_exp: 80000
+    _reduces_satiation_sec: 32
+    _img: Plant4_1
+  - _plant_idx: 4
+    _level: 3
+    _ability_value: 240
+    _need_level_exp: 120000
+    _reduces_satiation_sec: 32
+    _img: Plant4_2
+  - _plant_idx: 4
+    _level: 4
+    _ability_value: 260
+    _need_level_exp: 180000
+    _reduces_satiation_sec: 32
+    _img: Plant4_2
+  - _plant_idx: 4
+    _level: 5
+    _ability_value: 280
+    _need_level_exp: 280000
+    _reduces_satiation_sec: 32
+    _img: Plant4_2
+  - _plant_idx: 4
+    _level: 6
+    _ability_value: 300
+    _need_level_exp: 410000
+    _reduces_satiation_sec: 32
+    _img: Plant4_2
+  - _plant_idx: 4
+    _level: 7
+    _ability_value: 320
+    _need_level_exp: 630000
+    _reduces_satiation_sec: 32
+    _img: Plant4_3
+  - _plant_idx: 4
+    _level: 8
+    _ability_value: 340
+    _need_level_exp: 950000
+    _reduces_satiation_sec: 32
+    _img: Plant4_3
+  - _plant_idx: 4
+    _level: 9
+    _ability_value: 360
+    _need_level_exp: 1270000
+    _reduces_satiation_sec: 32
+    _img: Plant4_3
+  - _plant_idx: 4
+    _level: 10
+    _ability_value: 380
+    _need_level_exp: -1
+    _reduces_satiation_sec: 32
+    _img: Plant4_4
+  - _plant_idx: 5
+    _level: 1
+    _ability_value: 20
+    _need_level_exp: 30000
+    _reduces_satiation_sec: 32
+    _img: Plant5_1
+  - _plant_idx: 5
+    _level: 2
+    _ability_value: 22
+    _need_level_exp: 70000
+    _reduces_satiation_sec: 32
+    _img: Plant5_1
+  - _plant_idx: 5
+    _level: 3
+    _ability_value: 24
+    _need_level_exp: 120000
+    _reduces_satiation_sec: 32
+    _img: Plant5_2
+  - _plant_idx: 5
+    _level: 4
+    _ability_value: 26
+    _need_level_exp: 170000
+    _reduces_satiation_sec: 32
+    _img: Plant5_2
+  - _plant_idx: 5
+    _level: 5
+    _ability_value: 28
+    _need_level_exp: 220000
+    _reduces_satiation_sec: 32
+    _img: Plant5_2
+  - _plant_idx: 5
+    _level: 6
+    _ability_value: 30
+    _need_level_exp: 290000
+    _reduces_satiation_sec: 32
+    _img: Plant5_2
+  - _plant_idx: 5
+    _level: 7
+    _ability_value: 32
+    _need_level_exp: 360000
+    _reduces_satiation_sec: 32
+    _img: Plant5_3
+  - _plant_idx: 5
+    _level: 8
+    _ability_value: 34
+    _need_level_exp: 430000
+    _reduces_satiation_sec: 32
+    _img: Plant5_3
+  - _plant_idx: 5
+    _level: 9
+    _ability_value: 36
+    _need_level_exp: 500000
+    _reduces_satiation_sec: 32
+    _img: Plant5_3
+  - _plant_idx: 5
+    _level: 10
+    _ability_value: 38
+    _need_level_exp: -1
+    _reduces_satiation_sec: 32
+    _img: Plant5_4
+  - _plant_idx: 6
+    _level: 1
+    _ability_value: 2000
+    _need_level_exp: 40000
+    _reduces_satiation_sec: 32
+    _img: Plant6_1
+  - _plant_idx: 6
+    _level: 2
+    _ability_value: 2100
+    _need_level_exp: 80000
+    _reduces_satiation_sec: 32
+    _img: Plant6_1
+  - _plant_idx: 6
+    _level: 3
+    _ability_value: 2200
+    _need_level_exp: 120000
+    _reduces_satiation_sec: 32
+    _img: Plant6_2
+  - _plant_idx: 6
+    _level: 4
+    _ability_value: 2300
+    _need_level_exp: 180000
+    _reduces_satiation_sec: 32
+    _img: Plant6_2
+  - _plant_idx: 6
+    _level: 5
+    _ability_value: 2400
+    _need_level_exp: 280000
+    _reduces_satiation_sec: 32
+    _img: Plant6_2
+  - _plant_idx: 6
+    _level: 6
+    _ability_value: 2500
+    _need_level_exp: 410000
+    _reduces_satiation_sec: 32
+    _img: Plant6_2
+  - _plant_idx: 6
+    _level: 7
+    _ability_value: 2600
+    _need_level_exp: 630000
+    _reduces_satiation_sec: 32
+    _img: Plant6_3
+  - _plant_idx: 6
+    _level: 8
+    _ability_value: 2700
+    _need_level_exp: 950000
+    _reduces_satiation_sec: 32
+    _img: Plant6_3
+  - _plant_idx: 6
+    _level: 9
+    _ability_value: 2800
+    _need_level_exp: 1270000
+    _reduces_satiation_sec: 32
+    _img: Plant6_3
+  - _plant_idx: 6
+    _level: 10
+    _ability_value: 3000
+    _need_level_exp: -1
+    _reduces_satiation_sec: 32
+    _img: Plant6_4
+  - _plant_idx: 8
+    _level: 1
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_1
+  - _plant_idx: 8
+    _level: 2
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_1
+  - _plant_idx: 8
+    _level: 3
+    _ability_value: 150
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_2
+  - _plant_idx: 8
+    _level: 4
+    _ability_value: 200
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_2
+  - _plant_idx: 8
+    _level: 5
+    _ability_value: 250
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_2
+  - _plant_idx: 8
+    _level: 6
+    _ability_value: 300
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_2
+  - _plant_idx: 8
+    _level: 7
+    _ability_value: 350
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_3
+  - _plant_idx: 8
+    _level: 8
+    _ability_value: 400
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_3
+  - _plant_idx: 8
+    _level: 9
+    _ability_value: 450
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_3
+  - _plant_idx: 8
+    _level: 10
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant8_4
+  - _plant_idx: 9
+    _level: 1
+    _ability_value: 15
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_1
+  - _plant_idx: 9
+    _level: 2
+    _ability_value: 19
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_1
+  - _plant_idx: 9
+    _level: 3
+    _ability_value: 23
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_2
+  - _plant_idx: 9
+    _level: 4
+    _ability_value: 27
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_2
+  - _plant_idx: 9
+    _level: 5
+    _ability_value: 31
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_2
+  - _plant_idx: 9
+    _level: 6
+    _ability_value: 35
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_2
+  - _plant_idx: 9
+    _level: 7
+    _ability_value: 39
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_3
+  - _plant_idx: 9
+    _level: 8
+    _ability_value: 43
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_3
+  - _plant_idx: 9
+    _level: 9
+    _ability_value: 47
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_3
+  - _plant_idx: 9
+    _level: 10
+    _ability_value: 51
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant9_4
+  - _plant_idx: 10
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_1
+  - _plant_idx: 10
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_1
+  - _plant_idx: 10
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_2
+  - _plant_idx: 10
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_2
+  - _plant_idx: 10
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_2
+  - _plant_idx: 10
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_2
+  - _plant_idx: 10
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_3
+  - _plant_idx: 10
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_3
+  - _plant_idx: 10
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_3
+  - _plant_idx: 10
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant10_4
+  - _plant_idx: 11
+    _level: 1
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_1
+  - _plant_idx: 11
+    _level: 2
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_1
+  - _plant_idx: 11
+    _level: 3
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_2
+  - _plant_idx: 11
+    _level: 4
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_2
+  - _plant_idx: 11
+    _level: 5
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_2
+  - _plant_idx: 11
+    _level: 6
+    _ability_value: 6000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_2
+  - _plant_idx: 11
+    _level: 7
+    _ability_value: 7000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_3
+  - _plant_idx: 11
+    _level: 8
+    _ability_value: 8000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_3
+  - _plant_idx: 11
+    _level: 9
+    _ability_value: 9000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_3
+  - _plant_idx: 11
+    _level: 10
+    _ability_value: 10000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant11_4
+  - _plant_idx: 12
+    _level: 1
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_1
+  - _plant_idx: 12
+    _level: 2
+    _ability_value: 5600
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_1
+  - _plant_idx: 12
+    _level: 3
+    _ability_value: 6100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_2
+  - _plant_idx: 12
+    _level: 4
+    _ability_value: 6700
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_2
+  - _plant_idx: 12
+    _level: 5
+    _ability_value: 7200
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_2
+  - _plant_idx: 12
+    _level: 6
+    _ability_value: 7800
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_2
+  - _plant_idx: 12
+    _level: 7
+    _ability_value: 8300
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_3
+  - _plant_idx: 12
+    _level: 8
+    _ability_value: 8900
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_3
+  - _plant_idx: 12
+    _level: 9
+    _ability_value: 9400
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_3
+  - _plant_idx: 12
+    _level: 10
+    _ability_value: 10000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant12_4
+  - _plant_idx: 13
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_1
+  - _plant_idx: 13
+    _level: 2
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_1
+  - _plant_idx: 13
+    _level: 3
+    _ability_value: 1500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_2
+  - _plant_idx: 13
+    _level: 4
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_2
+  - _plant_idx: 13
+    _level: 5
+    _ability_value: 2500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_2
+  - _plant_idx: 13
+    _level: 6
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_2
+  - _plant_idx: 13
+    _level: 7
+    _ability_value: 3500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_3
+  - _plant_idx: 13
+    _level: 8
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_3
+  - _plant_idx: 13
+    _level: 9
+    _ability_value: 4500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_3
+  - _plant_idx: 13
+    _level: 10
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant13_4
+  - _plant_idx: 14
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_1
+  - _plant_idx: 14
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_1
+  - _plant_idx: 14
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_2
+  - _plant_idx: 14
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_2
+  - _plant_idx: 14
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_2
+  - _plant_idx: 14
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_2
+  - _plant_idx: 14
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_3
+  - _plant_idx: 14
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_3
+  - _plant_idx: 14
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_3
+  - _plant_idx: 14
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant14_4
+  - _plant_idx: 15
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_1
+  - _plant_idx: 15
+    _level: 2
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_1
+  - _plant_idx: 15
+    _level: 3
+    _ability_value: 1500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_2
+  - _plant_idx: 15
+    _level: 4
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_2
+  - _plant_idx: 15
+    _level: 5
+    _ability_value: 2500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_2
+  - _plant_idx: 15
+    _level: 6
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_2
+  - _plant_idx: 15
+    _level: 7
+    _ability_value: 3500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_3
+  - _plant_idx: 15
+    _level: 8
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_3
+  - _plant_idx: 15
+    _level: 9
+    _ability_value: 4500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_3
+  - _plant_idx: 15
+    _level: 10
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant15_4
+  - _plant_idx: 16
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_1
+  - _plant_idx: 16
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_1
+  - _plant_idx: 16
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_2
+  - _plant_idx: 16
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_2
+  - _plant_idx: 16
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_2
+  - _plant_idx: 16
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_2
+  - _plant_idx: 16
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_3
+  - _plant_idx: 16
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_3
+  - _plant_idx: 16
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_3
+  - _plant_idx: 16
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant16_4
+  - _plant_idx: 17
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_1
+  - _plant_idx: 17
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_1
+  - _plant_idx: 17
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_2
+  - _plant_idx: 17
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_2
+  - _plant_idx: 17
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_2
+  - _plant_idx: 17
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_2
+  - _plant_idx: 17
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_3
+  - _plant_idx: 17
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_3
+  - _plant_idx: 17
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_3
+  - _plant_idx: 17
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant17_4
+  - _plant_idx: 7
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 30000
+    _reduces_satiation_sec: 32
+    _img: Plant7_1
+  - _plant_idx: 7
+    _level: 2
+    _ability_value: 600
+    _need_level_exp: 70000
+    _reduces_satiation_sec: 32
+    _img: Plant7_1
+  - _plant_idx: 7
+    _level: 3
+    _ability_value: 700
+    _need_level_exp: 120000
+    _reduces_satiation_sec: 32
+    _img: Plant7_2
+  - _plant_idx: 7
+    _level: 4
+    _ability_value: 800
+    _need_level_exp: 170000
+    _reduces_satiation_sec: 32
+    _img: Plant7_2
+  - _plant_idx: 7
+    _level: 5
+    _ability_value: 900
+    _need_level_exp: 220000
+    _reduces_satiation_sec: 32
+    _img: Plant7_2
+  - _plant_idx: 7
+    _level: 6
+    _ability_value: 1000
+    _need_level_exp: 290000
+    _reduces_satiation_sec: 32
+    _img: Plant7_2
+  - _plant_idx: 7
+    _level: 7
+    _ability_value: 1100
+    _need_level_exp: 360000
+    _reduces_satiation_sec: 32
+    _img: Plant7_3
+  - _plant_idx: 7
+    _level: 8
+    _ability_value: 1200
+    _need_level_exp: 430000
+    _reduces_satiation_sec: 32
+    _img: Plant7_3
+  - _plant_idx: 7
+    _level: 9
+    _ability_value: 1300
+    _need_level_exp: 500000
+    _reduces_satiation_sec: 32
+    _img: Plant7_3
+  - _plant_idx: 7
+    _level: 10
+    _ability_value: 1400
+    _need_level_exp: -1
+    _reduces_satiation_sec: 32
+    _img: Plant7_4
+  - _plant_idx: 18
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_1
+  - _plant_idx: 18
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_1
+  - _plant_idx: 18
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_2
+  - _plant_idx: 18
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_2
+  - _plant_idx: 18
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_2
+  - _plant_idx: 18
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_2
+  - _plant_idx: 18
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_3
+  - _plant_idx: 18
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_3
+  - _plant_idx: 18
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_3
+  - _plant_idx: 18
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant18_4
+  - _plant_idx: 19
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_1
+  - _plant_idx: 19
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_1
+  - _plant_idx: 19
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_2
+  - _plant_idx: 19
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_2
+  - _plant_idx: 19
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_2
+  - _plant_idx: 19
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_2
+  - _plant_idx: 19
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_3
+  - _plant_idx: 19
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_3
+  - _plant_idx: 19
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_3
+  - _plant_idx: 19
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant19_4
+  - _plant_idx: 20
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_1
+  - _plant_idx: 20
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_1
+  - _plant_idx: 20
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_2
+  - _plant_idx: 20
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_2
+  - _plant_idx: 20
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_2
+  - _plant_idx: 20
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_2
+  - _plant_idx: 20
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_3
+  - _plant_idx: 20
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_3
+  - _plant_idx: 20
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_3
+  - _plant_idx: 20
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant20_4
+  - _plant_idx: 21
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_1
+  - _plant_idx: 21
+    _level: 2
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_1
+  - _plant_idx: 21
+    _level: 3
+    _ability_value: 1500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_2
+  - _plant_idx: 21
+    _level: 4
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_2
+  - _plant_idx: 21
+    _level: 5
+    _ability_value: 2500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_2
+  - _plant_idx: 21
+    _level: 6
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_2
+  - _plant_idx: 21
+    _level: 7
+    _ability_value: 3500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_3
+  - _plant_idx: 21
+    _level: 8
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_3
+  - _plant_idx: 21
+    _level: 9
+    _ability_value: 4500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_3
+  - _plant_idx: 21
+    _level: 10
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant21_4
+  - _plant_idx: 22
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_1
+  - _plant_idx: 22
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_1
+  - _plant_idx: 22
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_2
+  - _plant_idx: 22
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_2
+  - _plant_idx: 22
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_2
+  - _plant_idx: 22
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_2
+  - _plant_idx: 22
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_3
+  - _plant_idx: 22
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_3
+  - _plant_idx: 22
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_3
+  - _plant_idx: 22
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant22_4
+  - _plant_idx: 23
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_1
+  - _plant_idx: 23
+    _level: 2
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_1
+  - _plant_idx: 23
+    _level: 3
+    _ability_value: 1500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_2
+  - _plant_idx: 23
+    _level: 4
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_2
+  - _plant_idx: 23
+    _level: 5
+    _ability_value: 2500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_2
+  - _plant_idx: 23
+    _level: 6
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_2
+  - _plant_idx: 23
+    _level: 7
+    _ability_value: 3500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_3
+  - _plant_idx: 23
+    _level: 8
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_3
+  - _plant_idx: 23
+    _level: 9
+    _ability_value: 4500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_3
+  - _plant_idx: 23
+    _level: 10
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant23_4
+  - _plant_idx: 24
+    _level: 1
+    _ability_value: 10
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_1
+  - _plant_idx: 24
+    _level: 2
+    _ability_value: 20
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_1
+  - _plant_idx: 24
+    _level: 3
+    _ability_value: 30
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_2
+  - _plant_idx: 24
+    _level: 4
+    _ability_value: 40
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_2
+  - _plant_idx: 24
+    _level: 5
+    _ability_value: 50
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_2
+  - _plant_idx: 24
+    _level: 6
+    _ability_value: 60
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_2
+  - _plant_idx: 24
+    _level: 7
+    _ability_value: 70
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_3
+  - _plant_idx: 24
+    _level: 8
+    _ability_value: 80
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_3
+  - _plant_idx: 24
+    _level: 9
+    _ability_value: 90
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_3
+  - _plant_idx: 24
+    _level: 10
+    _ability_value: 100
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant24_4
+  - _plant_idx: 25
+    _level: 1
+    _ability_value: 500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_1
+  - _plant_idx: 25
+    _level: 2
+    _ability_value: 1000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_1
+  - _plant_idx: 25
+    _level: 3
+    _ability_value: 1500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_2
+  - _plant_idx: 25
+    _level: 4
+    _ability_value: 2000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_2
+  - _plant_idx: 25
+    _level: 5
+    _ability_value: 2500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_2
+  - _plant_idx: 25
+    _level: 6
+    _ability_value: 3000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_2
+  - _plant_idx: 25
+    _level: 7
+    _ability_value: 3500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_3
+  - _plant_idx: 25
+    _level: 8
+    _ability_value: 4000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_3
+  - _plant_idx: 25
+    _level: 9
+    _ability_value: 4500
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_3
+  - _plant_idx: 25
+    _level: 10
+    _ability_value: 5000
+    _need_level_exp: 0
+    _reduces_satiation_sec: 0
+    _img: Plant25_4

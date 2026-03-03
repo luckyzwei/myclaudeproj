@@ -1,0 +1,247 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 701098845, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: CardBox
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 101
+  - 16
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1011
+  - 1012
+  - 1013
+  - 1021
+  - 1022
+  - 1031
+  - 1032
+  - 1041
+  - 1042
+  - 1000001
+  - 1000002
+  - 1000011
+  - 1000012
+  - 1000021
+  - 1000022
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _name: str_name_shop_card_box_1
+    _card_type_count: 3
+    _reward_type: 0400000001000000
+    _reward_type_count: 0a00000004000000
+    _icon: HUD_Icon_Box_01
+    _big_icon: DynamicShop_Icon_Box_01
+    _prefab: Box_01
+    _showorder: 1
+  - _idx: 2
+    _name: str_name_shop_card_box_2
+    _card_type_count: 4
+    _reward_type: 040000000100000002000000
+    _reward_type_count: 140000000400000001000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 2
+  - _idx: 101
+    _name: str_name_shop_card_box_101
+    _card_type_count: 1
+    _reward_type: 0400000001000000
+    _reward_type_count: 0300000001000000
+    _icon: HUD_Icon_Box_Ads
+    _big_icon: DynamicShop_Icon_Box_Ads
+    _prefab: Box_Ads_03
+    _showorder: 3
+  - _idx: 16
+    _name: str_name_shop_card_box_16
+    _card_type_count: 4
+    _reward_type: 04000000010000000200000003000000
+    _reward_type_count: 64000000060000000300000001000000
+    _icon: HUD_Icon_Box_03
+    _big_icon: DynamicShop_Icon_Box_03
+    _prefab: Box_03
+    _showorder: 4
+  - _idx: 1001
+    _name: str_name_shop_card_box_1001
+    _card_type_count: -1
+    _reward_type: 05000000
+    _reward_type_count: 0a000000
+    _icon: HUD_Icon_Box_StarBox
+    _big_icon: DynamicShop_Icon_Box_04
+    _prefab: Box_StarBox_01
+    _showorder: 5
+  - _idx: 1002
+    _name: str_name_shop_card_box_1002
+    _card_type_count: 1
+    _reward_type: 0500000001000000
+    _reward_type_count: 1400000001000000
+    _icon: HUD_Icon_Box_StarBox
+    _big_icon: DynamicShop_Icon_Box_04
+    _prefab: Box_StarBox_01
+    _showorder: 6
+  - _idx: 1003
+    _name: str_name_shop_card_box_1003
+    _card_type_count: -1
+    _reward_type: 05000000
+    _reward_type_count: 05000000
+    _icon: HUD_Icon_Box_StarBox
+    _big_icon: DynamicShop_Icon_Box_04
+    _prefab: Box_StarBox_01
+    _showorder: 7
+  - _idx: 1004
+    _name: str_name_shop_card_box_1004
+    _card_type_count: -1
+    _reward_type: 05000000
+    _reward_type_count: 0a000000
+    _icon: HUD_Icon_Box_StarBox
+    _big_icon: DynamicShop_Icon_Box_04
+    _prefab: Box_StarBox_01
+    _showorder: 8
+  - _idx: 1011
+    _name: str_name_shop_card_box_1011
+    _card_type_count: 1
+    _reward_type: 01000000
+    _reward_type_count: 01000000
+    _icon: HUD_Icon_Box_Ads
+    _big_icon: DynamicShop_Icon_Box_Ads
+    _prefab: Box_Ads_03
+    _showorder: 9
+  - _idx: 1012
+    _name: str_name_shop_card_box_1012
+    _card_type_count: 1
+    _reward_type: 0400000001000000
+    _reward_type_count: 0500000002000000
+    _icon: HUD_Icon_Box_Ads
+    _big_icon: DynamicShop_Icon_Box_Ads
+    _prefab: Box_Ads_03
+    _showorder: 10
+  - _idx: 1013
+    _name: str_name_shop_card_box_1013
+    _card_type_count: 1
+    _reward_type: 01000000
+    _reward_type_count: 02000000
+    _icon: HUD_Icon_Box_Ads
+    _big_icon: DynamicShop_Icon_Box_Ads
+    _prefab: Box_Ads_03
+    _showorder: 11
+  - _idx: 1021
+    _name: str_name_shop_card_box_1021
+    _card_type_count: 2
+    _reward_type: 01000000
+    _reward_type_count: 03000000
+    _icon: HUD_Icon_Box_01
+    _big_icon: DynamicShop_Icon_Box_01
+    _prefab: Box_01
+    _showorder: 12
+  - _idx: 1022
+    _name: str_name_shop_card_box_1022
+    _card_type_count: 3
+    _reward_type: 0400000001000000
+    _reward_type_count: 0a00000004000000
+    _icon: HUD_Icon_Box_01
+    _big_icon: DynamicShop_Icon_Box_01
+    _prefab: Box_01
+    _showorder: 13
+  - _idx: 1031
+    _name: str_name_shop_card_box_1031
+    _card_type_count: 2
+    _reward_type: 01000000
+    _reward_type_count: 04000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 14
+  - _idx: 1032
+    _name: str_name_shop_card_box_1032
+    _card_type_count: 4
+    _reward_type: 040000000100000002000000
+    _reward_type_count: 140000000400000001000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 15
+  - _idx: 1041
+    _name: str_name_shop_card_box_1041
+    _card_type_count: 3
+    _reward_type: 0100000002000000
+    _reward_type_count: 0600000003000000
+    _icon: HUD_Icon_Box_03
+    _big_icon: DynamicShop_Icon_Box_03
+    _prefab: Box_03
+    _showorder: 16
+  - _idx: 1042
+    _name: str_name_shop_card_box_1042
+    _card_type_count: 4
+    _reward_type: 04000000010000000200000003000000
+    _reward_type_count: 64000000060000000300000001000000
+    _icon: HUD_Icon_Box_03
+    _big_icon: DynamicShop_Icon_Box_03
+    _prefab: Box_03
+    _showorder: 17
+  - _idx: 1000001
+    _name: str_name_shop_card_box_1000001
+    _card_type_count: -1
+    _reward_type: 04000000
+    _reward_type_count: 04000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 18
+  - _idx: 1000002
+    _name: str_name_shop_card_box_1000002
+    _card_type_count: -1
+    _reward_type: 0400000069000000
+    _reward_type_count: 0400000002000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 19
+  - _idx: 1000011
+    _name: str_name_shop_card_box_1000011
+    _card_type_count: -1
+    _reward_type: 01000000
+    _reward_type_count: 04000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 20
+  - _idx: 1000012
+    _name: str_name_shop_card_box_1000012
+    _card_type_count: -1
+    _reward_type: 010000006a000000
+    _reward_type_count: 0400000002000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 21
+  - _idx: 1000021
+    _name: str_name_shop_card_box_1000021
+    _card_type_count: -1
+    _reward_type: 02000000
+    _reward_type_count: 04000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 22
+  - _idx: 1000022
+    _name: str_name_shop_card_box_1000022
+    _card_type_count: -1
+    _reward_type: 0200000067000000
+    _reward_type_count: 0400000002000000
+    _icon: HUD_Icon_Box_02
+    _big_icon: DynamicShop_Icon_Box_02
+    _prefab: Box_02
+    _showorder: 23

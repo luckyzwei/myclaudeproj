@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1930899446, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: PackageGroup
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 1001
+  - 1002
+  - 20001
+  - 20002
+  - 30001
+  - 30002
+  - 30003
+  - 30004
+  mSecondKey: []
+  mDataList:
+  - _group: 10001
+    _reward_type: 0400000001000000
+    _reward_idx: 51c3000003000000
+    _reward_value: 1400000090010000
+    _reward_icon:
+    - DynamicShop_Icon_ShopTicket_Normal
+    - DynamicShop_Icon_ShopGem_03
+  - _group: 1001
+    _reward_type: 040000000100000001000000
+    _reward_idx: 51c300000200000003000000
+    _reward_value: 0a00000058020000f4010000
+    _reward_icon:
+    - DynamicShop_Icon_ShopTicket_Normal
+    - DynamicShop_Icon_ShopButton_02
+    - DynamicShop_Icon_ShopGem_03
+  - _group: 1002
+    _reward_type: 040000000100000001000000
+    _reward_idx: 52c300000200000003000000
+    _reward_value: 0a000000dc050000e8030000
+    _reward_icon:
+    - DynamicShop_Icon_ShopTicket_Gold
+    - DynamicShop_Icon_ShopButton_03
+    - DynamicShop_Icon_ShopGem_05
+  - _group: 20001
+    _reward_type: 040000000100000001000000
+    _reward_idx: f14902006a00000003000000
+    _reward_value: 32000000a08601002c010000
+    _reward_icon:
+    - DynamicShop_Icon_ShopTicket_Normal_Seasonal
+    - DynamicShop_Icon_Rice_03_01
+    - DynamicShop_Icon_ShopGem_03
+  - _group: 20002
+    _reward_type: 040000000100000001000000
+    _reward_idx: f24902006600000003000000
+    _reward_value: 14000000a00f000058020000
+    _reward_icon:
+    - DynamicShop_Icon_ShopTicket_Gold_Seasonal
+    - DynamicShop_Icon_ShopButton_03_01
+    - DynamicShop_Icon_ShopGem_04
+  - _group: 30001
+    _reward_type: 0300000003000000
+    _reward_idx: fb2a0000472f0000
+    _reward_value: 0400000004000000
+    _reward_icon:
+    - Event_Type3_01_Unique
+    - Event_Type2_01_Unique
+  - _group: 30002
+    _reward_type: 0300000003000000
+    _reward_idx: d73000000f300000
+    _reward_value: 0400000004000000
+    _reward_icon:
+    - Event_Type1_01_Unique
+    - Event_Type1_03_Unique
+    - 
+  - _group: 30003
+    _reward_type: 0300000003000000
+    _reward_idx: 73300000ab2f0000
+    _reward_value: 0400000004000000
+    _reward_icon:
+    - Event_Type2_03_Unique
+    - Event_Type2_02_Unique
+    - 
+  - _group: 30004
+    _reward_type: 0300000003000000
+    _reward_idx: 3b3100009f310000
+    _reward_value: 0400000004000000
+    _reward_icon:
+    - Event_Type1_02_Unique
+    - Event_Type1_04_Unique

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1125098007, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: WorldMissionReward
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _region_value: 1
+    _need_count_value: 10
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 50
+    _reward_icon: DynamicShop_Icon_package_gem01
+  - _idx: 2
+    _region_value: 1
+    _need_count_value: 15
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 100
+    _reward_icon: DynamicShop_Icon_package_gem02
+  - _idx: 3
+    _region_value: 1
+    _need_count_value: 20
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 150
+    _reward_icon: DynamicShop_Icon_package_gem03
+  - _idx: 4
+    _region_value: 2
+    _need_count_value: 5
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 100
+    _reward_icon: DynamicShop_Icon_package_gem02
+  - _idx: 5
+    _region_value: 2
+    _need_count_value: 10
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 200
+    _reward_icon: DynamicShop_Icon_package_gem04
+  - _idx: 6
+    _region_value: 2
+    _need_count_value: 15
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 400
+    _reward_icon: DynamicShop_Icon_package_gem05

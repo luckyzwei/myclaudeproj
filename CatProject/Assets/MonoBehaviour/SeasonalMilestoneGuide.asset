@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 236727088, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SeasonalMilestoneGuide
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 10002
+  - 11001
+  - 12001
+  mSecondKey: []
+  mDataList:
+  - _theme: 10001
+    _img_1: Seasonal_Icon_Building_101
+    _img_2: Seasonal_Icon_Product_Seashell
+    _img_3: Seasonal_Icon_Delivery_108
+    _img_4: Seasonal_Icon_Goods_Money
+    _guide_text: str_seasonal_milestone_guide_text_10001
+  - _theme: 10002
+    _img_1: Seasonal_Icon_Building_101
+    _img_2: Seasonal_Icon_Product_Seashell
+    _img_3: Seasonal_Icon_Delivery_108
+    _img_4: Seasonal_Icon_Goods_Money
+    _guide_text: str_seasonal_milestone_guide_text_10001
+  - _theme: 11001
+    _img_1: Seasonal_Icon_Building_1001
+    _img_2: Seasonal_Icon_Product_Wheat
+    _img_3: Seasonal_Icon_Delivery_1008
+    _img_4: Seasonal_Icon_Goods_Money
+    _guide_text: str_seasonal_milestone_guide_text_10001
+  - _theme: 12001
+    _img_1: Seasonal_Icon_Building_2001
+    _img_2: Seasonal_Icon_Product_SilverOre
+    _img_3: Seasonal_Icon_Delivery_2008
+    _img_4: Seasonal_Icon_Goods_Money
+    _guide_text: str_seasonal_milestone_guide_text_10001

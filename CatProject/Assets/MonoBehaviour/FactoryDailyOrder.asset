@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -384493616, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: FactoryDailyOrder
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  mSecondKey: []
+  mDataList:
+  - _order: 1
+    _order_count: 1
+    _reward_type: 3
+    _reward_idx: 2
+    _reward_value: 1
+    _contents_open_idx: 27
+    _change_reward_type: 3
+    _change_reward_idx: 2
+    _change_reward_value: 1
+    _open_stage: 7
+    _stage_reward_type: 3
+    _stage_reward_idx: 201
+    _stage_reward_value: 1
+  - _order: 2
+    _order_count: 3
+    _reward_type: 3
+    _reward_idx: 2
+    _reward_value: 1
+    _contents_open_idx: 27
+    _change_reward_type: 3
+    _change_reward_idx: 1
+    _change_reward_value: 1
+    _open_stage: 7
+    _stage_reward_type: 3
+    _stage_reward_idx: 201
+    _stage_reward_value: 2
+  - _order: 3
+    _order_count: 5
+    _reward_type: 3
+    _reward_idx: 1
+    _reward_value: 1
+    _contents_open_idx: 27
+    _change_reward_type: 3
+    _change_reward_idx: 3
+    _change_reward_value: 1
+    _open_stage: 7
+    _stage_reward_type: 3
+    _stage_reward_idx: 201
+    _stage_reward_value: 3
+  - _order: 4
+    _order_count: 10
+    _reward_type: 3
+    _reward_idx: 3
+    _reward_value: 2
+    _contents_open_idx: 27
+    _change_reward_type: 3
+    _change_reward_idx: 202
+    _change_reward_value: 1
+    _open_stage: 7
+    _stage_reward_type: 3
+    _stage_reward_idx: 202
+    _stage_reward_value: 1

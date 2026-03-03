@@ -1,0 +1,283 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b9eeb65caed45fc360b06a82853b99, type: 3}
+  m_Name: CrossPromotionInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1005
+  - 1006
+  - 1007
+  - 1008
+  - 1009
+  - 2001
+  - 2002
+  - 2003
+  - 2004
+  - 2005
+  - 2006
+  - 2007
+  - 3001
+  - 3002
+  - 3003
+  mSecondKey: []
+  mDataList:
+  - _idx: 1001
+    _name: Cat Magic School
+    _campaign_name: CP_School
+    _active: 1
+    _onelink: https://catmagicschool.onelink.me
+    _onelink_id: UYlG
+    _genre: 0
+    _order: 4
+    _pre_register: 0
+    _scheme: treepllacatmagicschool
+    _package_id: com.tree.idle.cat.academy
+    _icon: CrossPromotion_Icon_MagicSchool
+    _img: CrossPromotion_Img_MagicSchool
+  - _idx: 1002
+    _name: Office Cat
+    _campaign_name: CP_Office
+    _active: 1
+    _onelink: https://catoffice.onelink.me
+    _onelink_id: el4M
+    _genre: 0
+    _order: 2
+    _pre_register: 0
+    _scheme: treepllaoffice
+    _package_id: com.tree.idle.cat.office
+    _icon: CrossPromotion_Icon_Office
+    _img: CrossPromotion_Img_Office
+  - _idx: 1003
+    _name: Cat Mall
+    _campaign_name: CP_Mall
+    _active: 1
+    _onelink: https://catmall.onelink.me
+    _onelink_id: smOm
+    _genre: 0
+    _order: 5
+    _pre_register: 0
+    _scheme: treepllamall
+    _package_id: com.tree.idle.cat.mall
+    _icon: CrossPromotion_Icon_Mall
+    _img: CrossPromotion_Img_Mall
+  - _idx: 1004
+    _name: Cat Snack Bar
+    _campaign_name: CP_Snackbar
+    _active: 1
+    _onelink: https://catsnackbar.onelink.me
+    _onelink_id: uwR7
+    _genre: 0
+    _order: 3
+    _pre_register: 0
+    _scheme: treepllasnackbar
+    _package_id: com.tree.idle.catsnackbar
+    _icon: CrossPromotion_Icon_SnackBar
+    _img: CrossPromotion_Img_SnackBar
+  - _idx: 1005
+    _name: Lumbercat
+    _campaign_name: CP_Lumber
+    _active: 1
+    _onelink: https://lumbercat.onelink.me
+    _onelink_id: 9zxk
+    _genre: 0
+    _order: 6
+    _pre_register: 0
+    _scheme: treepllalumber
+    _package_id: com.tree.idle.cat.wood
+    _icon: CrossPromotion_Icon_Lumber
+    _img: CrossPromotion_Img_Lumber
+  - _idx: 1006
+    _name: Cat Town Valley
+    _campaign_name: CP_Town
+    _active: 1
+    _onelink: https://cattown.onelink.me
+    _onelink_id: Vh1z
+    _genre: 0
+    _order: 7
+    _pre_register: 0
+    _scheme: treepllacattown
+    _package_id: com.tree.idle.cattown
+    _icon: CrossPromotion_Icon_Town
+    _img: CrossPromotion_Img_Town
+  - _idx: 1007
+    _name: Cat City
+    _campaign_name: CP_City
+    _active: 3
+    _onelink: https://catcity.onelink.me
+    _onelink_id: 4eop
+    _genre: 0
+    _order: 1
+    _pre_register: 1
+    _scheme: treepllacity
+    _package_id: com.tree.idle.cat.city
+    _icon: CrossPromotion_Icon_City
+    _img: CrossPromotion_Img_City
+  - _idx: 1008
+    _name: Cat Theme Park
+    _campaign_name: CP_Park
+    _active: 0
+    _onelink: https://catpark.onelink.me
+    _onelink_id: Rt52
+    _genre: 0
+    _order: -1
+    _pre_register: 1
+    _scheme: treepllapark
+    _package_id: com.tree.idle.cat.themepark
+    _icon: CrossPromotion_Icon_Park
+    _img: CrossPromotion_Img_Park
+  - _idx: 1009
+    _name: Cat School
+    _campaign_name: CP_Catschool
+    _active: 1
+    _onelink: https://catschool.onelink.me
+    _onelink_id: wKyG
+    _genre: 0
+    _order: 0
+    _pre_register: 1
+    _scheme: treepllaschool
+    _package_id: com.tree.idle.cat.school
+    _icon: CrossPromotion_Icon_School
+    _img: CrossPromotion_Img_School
+  - _idx: 2001
+    _name: DDDigger
+    _campaign_name: CP_DDD
+    _active: 1
+    _onelink: https://deepdowndigging.onelink.me
+    _onelink_id: SQfn
+    _genre: 1
+    _order: 1
+    _pre_register: 0
+    _scheme: treeplladddigger
+    _package_id: com.tree.godown
+    _icon: CrossPromotion_Icon_DDDDDiger
+    _img: CrossPromotion_Img_DDDDDiger
+  - _idx: 2002
+    _name: Lucky Guy
+    _campaign_name: CP_Lucky
+    _active: 1
+    _onelink: https://luckyluckydefense.onelink.me
+    _onelink_id: w2nS
+    _genre: 1
+    _order: 2
+    _pre_register: 0
+    _scheme: treepllaluckydefense
+    _package_id: com.tree.hybrid.luckydefense
+    _icon: CrossPromotion_Icon_LuckyGuy
+    _img: CrossPromotion_Img_LuckyGuy
+  - _idx: 2003
+    _name: Block Clash!!
+    _campaign_name: CP_BlockClash
+    _active: 1
+    _onelink: https://blockclash.onelink.me
+    _onelink_id: u0xf
+    _genre: 1
+    _order: 3
+    _pre_register: 0
+    _scheme: treepllablockclash
+    _package_id: com.tree.hybrid.blockclash
+    _icon: CrossPromotion_Icon_BlockClash
+    _img: CrossPromotion_Img_BlockClash
+  - _idx: 2004
+    _name: Gear Truck!
+    _campaign_name: CP_GearTruck
+    _active: 1
+    _onelink: https://geartruck.onelink.me
+    _onelink_id: vaRT
+    _genre: 1
+    _order: 0
+    _pre_register: 0
+    _scheme: treepllageartruck
+    _package_id: com.tree.hybrid.geartank
+    _icon: CrossPromotion_Icon_GearTruck
+    _img: CrossPromotion_Img_GearTruck
+  - _idx: 2005
+    _name: Super Grinder!
+    _campaign_name: CP_SuperGrinder
+    _active: 0
+    _onelink: https://supergrinder.onelink.me
+    _onelink_id: WZkY
+    _genre: 1
+    _order: -1
+    _pre_register: 0
+    _scheme: treepllagrinder
+    _package_id: com.tree.grinder
+    _icon: CrossPromotion_Icon_SuperGrinder
+    _img: CrossPromotion_Img_SuperGrinder
+  - _idx: 2006
+    _name: Die Tomato
+    _campaign_name: CP_Tomato
+    _active: 0
+    _onelink: https://dietomato.onelink.me
+    _onelink_id: k9yL
+    _genre: 1
+    _order: -1
+    _pre_register: 0
+    _scheme: treedietomato
+    _package_id: com.tree.hybrid.dietomato
+    _icon: CrossPromotion_Icon_Tomato
+    _img: CrossPromotion_Img_Tomato
+  - _idx: 2007
+    _name: Block Miner
+    _campaign_name: CP_BlockMiner
+    _active: 0
+    _onelink: https://blockminer.onelink.me
+    _onelink_id: HsE2
+    _genre: 1
+    _order: -1
+    _pre_register: 0
+    _scheme: treepllablockminer
+    _package_id: com.tree.hybrid.blockmerge
+    _icon: CrossPromotion_Icon_BlockMiner
+    _img: CrossPromotion_Img_BlockMiner
+  - _idx: 3001
+    _name: Cat Block Jam
+    _campaign_name: CP_BlockJam
+    _active: 1
+    _onelink: https://blockcatjam.onelink.me
+    _onelink_id: vbJY
+    _genre: 2
+    _order: 2
+    _pre_register: 0
+    _scheme: treepllachickentrain
+    _package_id: com.tree.block.cat.jam
+    _icon: CrossPromotion_Icon_BlockJam
+    _img: CrossPromotion_Img_BlockJam
+  - _idx: 3002
+    _name: Cat's Life
+    _campaign_name: CP_Life
+    _active: 1
+    _onelink: https://catsslife.onelink.me
+    _onelink_id: n2bF
+    _genre: 2
+    _order: 1
+    _pre_register: 0
+    _scheme: treepllacatslife
+    _package_id: com.tree.hybrid.catslife
+    _icon: CrossPromotion_Icon_Life
+    _img: CrossPromotion_Img_Life
+  - _idx: 3003
+    _name: Cat Match
+    _campaign_name: CP_Match
+    _active: 1
+    _onelink: https://catmatch.onelink.me
+    _onelink_id: K8vG
+    _genre: 2
+    _order: 0
+    _pre_register: 0
+    _scheme: treepllacatmatch
+    _package_id: com.tree.puzzle.triplematch
+    _icon: CrossPromotion_Icon_Match
+    _img: CrossPromotion_Img_Match

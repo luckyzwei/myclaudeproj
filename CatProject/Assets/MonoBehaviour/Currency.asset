@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 804079969, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: Currency
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 6
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 10015
+  - 101
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  mDataList:
+  - _idx: 1
+    _region: 1
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney
+    - DynamicShop_Icon_Money_01_01
+    - DynamicShop_Icon_Money_02_01
+    - DynamicShop_Icon_Money_03_01
+    _guide_prefab_idx: ffffff/fffffff/fffffff/fffffff/fffffff/fffffff/fffffff/f
+  - _idx: 1
+    _region: 2
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney2
+    - DynamicShop_Icon_Money_01_02
+    - DynamicShop_Icon_Money_02_02
+    - DynamicShop_Icon_Money_03_02
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 3
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney3
+    - DynamicShop_Icon_Money_01_03
+    - DynamicShop_Icon_Money_02_03
+    - DynamicShop_Icon_Money_03_03
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 4
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney4
+    - DynamicShop_Icon_Money_01_04
+    - DynamicShop_Icon_Money_02_04
+    - DynamicShop_Icon_Money_03_04
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 5
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney5
+    - DynamicShop_Icon_Money_01_05
+    - DynamicShop_Icon_Money_02_05
+    - DynamicShop_Icon_Money_03_05
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 6
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney6
+    - DynamicShop_Icon_Money_01_06
+    - DynamicShop_Icon_Money_02_06
+    - DynamicShop_Icon_Money_03_06
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 7
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney7
+    - DynamicShop_Icon_Money_01_07
+    - DynamicShop_Icon_Money_02_07
+    - DynamicShop_Icon_Money_03_07
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 8
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney8
+    - DynamicShop_Icon_Money_01_08
+    - DynamicShop_Icon_Money_02_08
+    - DynamicShop_Icon_Money_03_08
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 9
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney9
+    - DynamicShop_Icon_Money_01_09
+    - DynamicShop_Icon_Money_02_09
+    - DynamicShop_Icon_Money_03_09
+    _guide_prefab_idx: ffffff/f
+  - _idx: 1
+    _region: 10
+    _name: str_currency_name_money
+    _img:
+    - Dynamic_Icon_Goods_GameMoney10
+    - DynamicShop_Icon_Money_01_10
+    - DynamicShop_Icon_Money_02_10
+    - DynamicShop_Icon_Money_03_10
+    _guide_prefab_idx: ffffff/f
+  - _idx: 2
+    _region: 0
+    _name: str_currency_name_cash
+    _img:
+    - Dynamic_Icon_Goods_Gem
+    - DynamicShop_Icon_package_gem01
+    - DynamicShop_Icon_package_gem02
+    - DynamicShop_Icon_package_gem05
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 1
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power1
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 2
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power2
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 3
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power3
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 4
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power4
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 5
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power5
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 6
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power6
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 7
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power7
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 8
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power8
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 9
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power9
+    _guide_prefab_idx: ffffff/f
+  - _idx: 3
+    _region: 10
+    _name: str_currency_name_power
+    _img:
+    - Dynamic_Icon_Goods_Power10
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 1
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 2
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point2
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 3
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point3
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 4
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point4
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 5
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point5
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 6
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point6
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 7
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point7
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 8
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point8
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 9
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point9
+    _guide_prefab_idx: ffffff/f
+  - _idx: 4
+    _region: 10
+    _name: str_phone_rank_richpoint
+    _img:
+    - Dynamic_Icon_Goods_Point10
+    _guide_prefab_idx: ffffff/f
+  - _idx: 5
+    _region: 1
+    _name: str_currency_name_permission
+    _img:
+    - Dynamic_Icon_Goods_permission
+    _guide_prefab_idx: ffffff/f
+  - _idx: 6
+    _region: 0
+    _name:
+    _img: []
+    _guide_prefab_idx: ffffff/f
+  - _idx: 10
+    _region: 0
+    _name: str_currency_name_basictarotticket
+    _img:
+    - Dynamic_Icon_Goods_TarotTicket_Basic
+    _guide_prefab_idx: ffffff/f
+  - _idx: 11
+    _region: 0
+    _name: str_currency_name_specialtarotticket
+    _img:
+    - Dynamic_Icon_Goods_TarotTicket_Special
+    _guide_prefab_idx: ffffff/f
+  - _idx: 12
+    _region: 0
+    _name: str_currency_name_stamina
+    _img:
+    - Dynamic_Icon_Goods_Stamina
+    _guide_prefab_idx: ffffff/f
+  - _idx: 13
+    _region: 0
+    _name: str_currency_name_token
+    _img:
+    - Event_Icon_Goods_Token
+    _guide_prefab_idx: ffffff/f
+  - _idx: 14
+    _region: 0
+    _name: str_currency_name_roulette_ticket
+    _img:
+    - Event_Icon_Goods_Ticket
+    _guide_prefab_idx: ffffff/f
+  - _idx: 15
+    _region: 0
+    _name: str_currency_name_ceo_upstone
+    _img:
+    - Dynamic_Icon_Acq_ReinStone
+    _guide_prefab_idx: 65000000670000000100000066000000
+  - _idx: 16
+    _region: 0
+    _name: str_currency_name_trade_ticket
+    _img: []
+    _guide_prefab_idx: ffffff/f
+  - _idx: 10015
+    _region: 0
+    _name: str_currency_name_ceo_upstone
+    _img:
+    - Dynamic_Icon_Acq_ReinStone
+    _guide_prefab_idx: ffffff/f
+  - _idx: 101
+    _region: 0
+    _name: str_currency_name_minigame_101
+    _img:
+    - Dynamic_Icon_Goods_MiniGame_101
+    _guide_prefab_idx:

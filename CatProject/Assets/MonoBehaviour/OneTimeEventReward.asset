@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1828810298, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: OneTimeEventReward
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  mSecondKey: []
+  mDataList:
+  - _level: 0
+    _mission_count: 10
+    _step: 0
+    _speech: str_onetime_speech_0
+    _shop_special_idx: -1
+    _reward_type: ffffff/fffffff/fffffff/f
+    _reward_idx: ffffff/fffffff/fffffff/f
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: ffffff/fffffff/fffffff/f
+    _reward_icon:
+    - 
+    - 
+  - _level: 1
+    _mission_count: 40
+    _step: 7
+    _speech: str_onetime_speech_1
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 5802000005000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_01_
+    - DynamicShop_Icon_package_Free
+  - _level: 2
+    _mission_count: 70
+    _step: 6
+    _speech: str_onetime_speech_2
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_01
+    - DynamicShop_Icon_package_gem01
+  - _level: 3
+    _mission_count: 90
+    _step: 5
+    _speech: str_onetime_speech_3
+    _shop_special_idx: 8
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 08070000c8000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem03
+  - _level: 4
+    _mission_count: 120
+    _step: 4
+    _speech: str_onetime_speech_4
+    _shop_special_idx: -1
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 100e000032000000
+    _reward_icon:
+    - DynamicShop_Icon_Money_02_
+    - DynamicShop_Icon_package_gem02
+  - _level: 5
+    _mission_count: 140
+    _step: 3
+    _speech: str_onetime_speech_5
+    _shop_special_idx: -1
+    _reward_type: 0200000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 100e000064000000
+    _reward_icon:
+    - DynamicShop_Icon_Exp_02
+    - DynamicShop_Icon_package_gem02
+  - _level: 6
+    _mission_count: 160
+    _step: 2
+    _speech: str_onetime_speech_6
+    _shop_special_idx: 9
+    _reward_type: 0100000001000000
+    _reward_idx: 0100000002000000
+    _reward_region: e7030000ffffff/f
+    _reward_value: 302a0000f4010000
+    _reward_icon:
+    - DynamicShop_Icon_Money_03_
+    - DynamicShop_Icon_package_gem05
+  - _level: 7
+    _mission_count: 0
+    _step: 1
+    _speech: str_onetime_speech_7
+    _shop_special_idx: -1
+    _reward_type: e70300000200000001000000
+    _reward_idx: e7030000ffffff/f02000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: e7030000302a00005e010000
+    _reward_icon:
+    - 
+    - DynamicShop_Icon_Exp_03
+    - DynamicShop_Icon_package_gem04

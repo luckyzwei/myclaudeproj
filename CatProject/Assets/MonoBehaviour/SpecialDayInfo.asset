@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 792551850, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SpecialDayInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 201
+  - 301
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _event_type: 1
+    _start_time: 2025-10-23 9:00:00
+    _end_time: 2025-11-06 9:00:00
+    _title_name: str_special_day_event_title_1
+    _title_img: SpecialDay_Img_Open_01_00
+    _hud_icon: HUD_Icon_SpecialDay1
+    _map_bgm: bgm_halloween_map
+    _stage_all_bgm: bgm_halloween_stage_all
+    _loding_tile: Tile_Special_1
+    _loading_color: SpecialEvent_1
+    _employee: 752700007e270000
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type: 0300000001000000
+    _reward_idx: c20200000b000000
+    _reward_value: 0100000001000000
+  - _idx: 2
+    _event_type: 1
+    _start_time: 2025-12-18 9:00:00
+    _end_time: 2026-01-01 9:00:00
+    _title_name: str_special_day_event_title_2
+    _title_img: SpecialDay_Img_Open_02_00
+    _hud_icon: HUD_Icon_SpecialDay2
+    _map_bgm: bgm_xmas_map
+    _stage_all_bgm: bgm_xmas_stage_all
+    _loding_tile: Tile_Special_2
+    _loading_color: SpecialEvent_2
+    _employee: d9270000e2270000
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type: 0300000001000000
+    _reward_idx: c20200000b000000
+    _reward_value: 0100000001000000
+  - _idx: 3
+    _event_type: 1
+    _start_time: 2026-02-12 9:00:00
+    _end_time: 2026-02-26 9:00:00
+    _title_name: str_special_day_event_title_3
+    _title_img: SpecialDay_Img_Open_03_00
+    _hud_icon: HUD_Icon_SpecialDay3
+    _map_bgm: bgm_valentine_map
+    _stage_all_bgm: bgm_valentine_stage_all
+    _loding_tile: Tile_Special_3
+    _loading_color: SpecialEvent_3
+    _employee: 3d28000046280000
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type: 0300000001000000
+    _reward_idx: c20200000b000000
+    _reward_value: 0100000001000000
+  - _idx: 4
+    _event_type: 1
+    _start_time: 2025-04-10 9:00:00
+    _end_time: 2025-04-24 9:00:00
+    _title_name: str_special_day_event_title_4
+    _title_img: SpecialDay_Img_Open_04_00
+    _hud_icon: HUD_Icon_SpecialDay4
+    _map_bgm: bgm_easter_map
+    _stage_all_bgm: bgm_easter_stage_all
+    _loding_tile: Tile_Special_4
+    _loading_color: SpecialEvent_4
+    _employee: a1280000aa280000
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type: 0300000001000000
+    _reward_idx: c20200000b000000
+    _reward_value: 0100000001000000
+  - _idx: 5
+    _event_type: 0
+    _start_time: 2025-08-07 9:00:00
+    _end_time: 2025-08-14 9:00:00
+    _title_name:
+    _title_img:
+    _hud_icon:
+    _map_bgm:
+    _stage_all_bgm:
+    _loding_tile: Tile_Special_5
+    _loading_color: SpecialEvent_5
+    _employee:
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type:
+    _reward_idx:
+    _reward_value:
+  - _idx: 201
+    _event_type: 2
+    _start_time: 2025-04-01 00:00:00
+    _end_time: 2025-04-01 23:59:59
+    _title_name:
+    _title_img:
+    _hud_icon:
+    _map_bgm:
+    _stage_all_bgm:
+    _loding_tile:
+    _loading_color:
+    _employee:
+    _add_employee: ffffff/f854e0000
+    _add_employee_ratio: 5000000014000000
+    _reward_type:
+    _reward_idx:
+    _reward_value:
+  - _idx: 301
+    _event_type: 3
+    _start_time: 2025-05-02 00:00:00
+    _end_time: 2025-05-09 23:59:59
+    _title_name: str_event_title_301
+    _title_img: Event_Img_Open_301_00
+    _hud_icon: Event_HUD_Icon_301
+    _map_bgm:
+    _stage_all_bgm:
+    _loding_tile: Tile_Event1
+    _loading_color: Event_1
+    _employee:
+    _add_employee:
+    _add_employee_ratio:
+    _reward_type:
+    _reward_idx:
+    _reward_value:

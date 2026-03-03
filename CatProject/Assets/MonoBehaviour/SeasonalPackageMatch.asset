@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1557556196, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SeasonalPackageMatch
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 10002
+  - 11001
+  - 12001
+  mSecondKey: []
+  mDataList:
+  - _theme: 10001
+    _enable_packages: e22e0000452f0000462f0000472f0000482f0000492f0000
+    _coin_packages: e12e0000e52e0000
+    _skillbook_packages: 1730000018300000193000001a3000001b3000001c3000001d3000001e3000001f300000
+    _levelup_packages: e42e0000
+  - _theme: 10002
+    _enable_packages: e22e0000452f0000462f0000472f0000482f0000492f0000
+    _coin_packages: e12e0000e52e0000
+    _skillbook_packages: 1730000018300000193000001a3000001b3000001c3000001d3000001e3000001f300000
+    _levelup_packages: e42e0000
+  - _theme: 11001
+    _enable_packages: e22e00004f2f0000502f0000512f0000522f0000532f0000
+    _coin_packages: e12e0000e52e0000
+    _skillbook_packages: 0d3000000e3000000f300000103000001130000012300000133000001430000015300000
+    _levelup_packages: 70300000
+  - _theme: 12001
+    _enable_packages: e22e0000592f00009be340485c2f00005d2f0000
+    _coin_packages: e12e0000e52e0000
+    _skillbook_packages: 213000002230000023300000243000002530000026300000273000002830000029300000
+    _levelup_packages: 74300000

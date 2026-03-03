@@ -1,0 +1,18 @@
+using System;
+using System.Numerics;
+
+public class MoneySafeData : IReadOnlyData, ICloneable
+{
+	public int Count;
+
+	public BigInteger Money;
+
+	public void Create()
+	{
+	}
+
+	public virtual object Clone()
+	{
+		return null;
+	}
+}

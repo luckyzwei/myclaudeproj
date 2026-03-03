@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -243585871, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: FactoryProductInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _workplace_type: 1
+    _need_workplace_lv: 1
+    _name: str_name_factory_product_1
+    _description: str_desc_factory_product_1
+    _product_icon: Factory_Icon_Product_1
+    _price: 660
+    _need_time: 6
+    _mix_product: ffffff/fffffff/f
+    _mix_demand: 0000000000000000
+    _order_need_workplace_type: 01000000ffffff/fffffff/fffffff/f
+    _order_need_workplace_lv: 01000000ffffff/fffffff/fffffff/f
+  - _idx: 2
+    _workplace_type: 1
+    _need_workplace_lv: 3
+    _name: str_name_factory_product_2
+    _description: str_desc_factory_product_2
+    _product_icon: Factory_Icon_Product_2
+    _price: 1080
+    _need_time: 6
+    _mix_product: ffffff/f
+    _mix_demand: 00000000
+    _order_need_workplace_type: 01000000
+    _order_need_workplace_lv: 03000000
+  - _idx: 3
+    _workplace_type: 1
+    _need_workplace_lv: 5
+    _name: str_name_factory_product_3
+    _description: str_desc_factory_product_3
+    _product_icon: Factory_Icon_Product_3
+    _price: 2340
+    _need_time: 5
+    _mix_product: ffffff/f
+    _mix_demand: 00000000
+    _order_need_workplace_type: 01000000
+    _order_need_workplace_lv: 05000000
+  - _idx: 4
+    _workplace_type: 1
+    _need_workplace_lv: 5
+    _name: str_name_factory_product_4
+    _description: str_desc_factory_product_4
+    _product_icon: Factory_Icon_Product_4
+    _price: 5400
+    _need_time: 10
+    _mix_product: ffffff/f
+    _mix_demand: 00000000
+    _order_need_workplace_type: 01000000
+    _order_need_workplace_lv: 05000000
+  - _idx: 5
+    _workplace_type: 2
+    _need_workplace_lv: 1
+    _name: str_name_factory_product_5
+    _description: str_desc_factory_product_5
+    _product_icon: Factory_Icon_Product_5
+    _price: 10950
+    _need_time: 30
+    _mix_product: 01000000
+    _mix_demand: 02000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0100000001000000
+  - _idx: 6
+    _workplace_type: 2
+    _need_workplace_lv: 3
+    _name: str_name_factory_product_6
+    _description: str_desc_factory_product_6
+    _product_icon: Factory_Icon_Product_6
+    _price: 19980
+    _need_time: 50
+    _mix_product: 02000000
+    _mix_demand: 02000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0300000003000000
+  - _idx: 7
+    _workplace_type: 2
+    _need_workplace_lv: 4
+    _name: str_name_factory_product_7
+    _description: str_desc_factory_product_7
+    _product_icon: Factory_Icon_Product_7
+    _price: 42000
+    _need_time: 60
+    _mix_product: 0500000006000000
+    _mix_demand: 0100000001000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0300000004000000
+  - _idx: 8
+    _workplace_type: 2
+    _need_workplace_lv: 4
+    _name: str_name_factory_product_8
+    _description: str_desc_factory_product_8
+    _product_icon: Factory_Icon_Product_8
+    _price: 36000
+    _need_time: 70
+    _mix_product: 01000000
+    _mix_demand: 04000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0500000004000000
+  - _idx: 9
+    _workplace_type: 2
+    _need_workplace_lv: 5
+    _name: str_name_factory_product_9
+    _description: str_desc_factory_product_9
+    _product_icon: Factory_Icon_Product_9
+    _price: 122400
+    _need_time: 120
+    _mix_product: 02000000
+    _mix_demand: 05000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0300000005000000
+  - _idx: 10
+    _workplace_type: 2
+    _need_workplace_lv: 6
+    _name: str_name_factory_product_10
+    _description: str_desc_factory_product_10
+    _product_icon: Factory_Icon_Product_10
+    _price: 111000
+    _need_time: 140
+    _mix_product: 02000000
+    _mix_demand: 0a000000
+    _order_need_workplace_type: 0100000002000000
+    _order_need_workplace_lv: 0300000006000000
+  - _idx: 11
+    _workplace_type: 3
+    _need_workplace_lv: 1
+    _name: str_name_factory_product_11
+    _description: str_desc_factory_product_11
+    _product_icon: Factory_Icon_Product_11
+    _price: 168000
+    _need_time: 100
+    _mix_product: 0300000004000000
+    _mix_demand: 0900000004000000
+    _order_need_workplace_type: 0100000003000000
+    _order_need_workplace_lv: 0500000001000000
+  - _idx: 12
+    _workplace_type: 3
+    _need_workplace_lv: 3
+    _name: str_name_factory_product_12
+    _description: str_desc_factory_product_12
+    _product_icon: Factory_Icon_Product_12
+    _price: 480000
+    _need_time: 220
+    _mix_product: 080000000b000000
+    _mix_demand: 0100000001000000
+    _order_need_workplace_type: 010000000200000003000000
+    _order_need_workplace_lv: 050000000400000003000000
+  - _idx: 13
+    _workplace_type: 3
+    _need_workplace_lv: 4
+    _name: str_name_factory_product_13
+    _description: str_desc_factory_product_13
+    _product_icon: Factory_Icon_Product_13
+    _price: 540000
+    _need_time: 240
+    _mix_product: 090000000b000000
+    _mix_demand: 0100000001000000
+    _order_need_workplace_type: 010000000200000003000000
+    _order_need_workplace_lv: 050000000500000004000000
+  - _idx: 14
+    _workplace_type: 3
+    _need_workplace_lv: 5
+    _name: str_name_factory_product_14
+    _description: str_desc_factory_product_14
+    _product_icon: Factory_Icon_Product_14
+    _price: 229320
+    _need_time: 100
+    _mix_product: 0300000004000000
+    _mix_demand: 0900000004000000
+    _order_need_workplace_type: 0100000003000000
+    _order_need_workplace_lv: 0500000005000000
+  - _idx: 15
+    _workplace_type: 3
+    _need_workplace_lv: 6
+    _name: str_name_factory_product_15
+    _description: str_desc_factory_product_15
+    _product_icon: Factory_Icon_Product_15
+    _price: 630000
+    _need_time: 220
+    _mix_product: 0a0000000e000000
+    _mix_demand: 0100000001000000
+    _order_need_workplace_type: 0100000003000000
+    _order_need_workplace_lv: 0500000006000000

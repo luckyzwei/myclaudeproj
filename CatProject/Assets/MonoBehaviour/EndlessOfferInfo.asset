@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 886979601, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: EndlessOfferInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 3001
+  - 3002
+  mSecondKey: []
+  mDataList:
+  - _offer_idx: 3001
+    _offer_type: 1
+    _contents_open: f3000000f4000000
+    _start_time: 2025-06-16 9:00:00
+    _end_time: 2999-12-31 9:00:00
+    _hud_icon:
+    - Acquisition_Icon_Package_Endless_A_1
+    - Acquisition_Icon_Package_Endless_A_2
+    - Acquisition_Icon_Package_Endless_A_3
+    _bg_img:
+    - Acquisition_Bg_Endless_01
+    - Acquisition_Bg_Endless_02
+    - Acquisition_Bg_Endless_03
+    _prefab: EndlessOfferComponent_01
+  - _offer_idx: 3002
+    _offer_type: 2
+    _contents_open: f5000000f6000000
+    _start_time: 2025-06-16 9:00:00
+    _end_time: 2999-12-31 9:00:00
+    _hud_icon:
+    - Acquisition_Icon_Package_Endless_B
+    _bg_img: []
+    _prefab: EndlessOfferComponent_02

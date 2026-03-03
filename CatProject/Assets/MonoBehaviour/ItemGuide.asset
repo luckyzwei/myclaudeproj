@@ -1,0 +1,254 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1483047920, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ItemGuide
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 101
+  - 102
+  - 103
+  - 201
+  - 301
+  - 401
+  - 402
+  - 403
+  - 404
+  - 405
+  - 406
+  - 501
+  - 502
+  - 503
+  - 504
+  - 505
+  - 506
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _on_off: 1
+    _guide_show_on: 8a000000ffffff/f
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Week
+    _deco_Icon:
+    _desc: str_shop_reinforcestone_desc_2_2
+    _short_cut: 1
+  - _idx: 2
+    _on_off: 1
+    _guide_show_on: ffffff/f
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Tuto_Cha_Secretary
+    _deco_Icon:
+    _desc: str_shop_breakstone_desc_5
+    _short_cut: 0
+  - _idx: 3
+    _on_off: 1
+    _guide_show_on: 8a000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Week
+    _deco_Icon:
+    _desc: str_shop_breakstone_desc_8
+    _short_cut: 1
+  - _idx: 101
+    _on_off: 1
+    _guide_show_on: 7a000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle
+    _deco_Icon:
+    _desc: str_shop_reinforcestone_desc_2_1
+    _short_cut: 1
+  - _idx: 102
+    _on_off: 1
+    _guide_show_on: ffffff/f
+    _guide_show_on_tutorial: 30
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Reset
+    _deco_Icon:
+    _desc: str_shop_reinforcestone_desc_2_3
+    _short_cut: 0
+  - _idx: 103
+    _on_off: 1
+    _guide_show_on: ffffff/f
+    _guide_show_on_tutorial: 30
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Bank
+    _deco_Icon:
+    _desc: str_shop_reinforcestone_desc_2_4
+    _short_cut: 1
+  - _idx: 201
+    _on_off: 1
+    _guide_show_on: 7a000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle
+    _deco_Icon:
+    _desc: str_shop_breakstone_desc_12
+    _short_cut: 1
+  - _idx: 301
+    _on_off: 1
+    _guide_show_on: 7a000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle
+    _deco_Icon: Info_Icon_Battle_Boss
+    _desc: str_shop_breakstone_desc_11
+    _short_cut: 1
+  - _idx: 401
+    _on_off: 1
+    _guide_show_on: ffffff/f
+    _guide_show_on_tutorial: -1
+    _guide_show_off: 139
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle
+    _deco_Icon: Info_Icon_Battle_5
+    _desc: str_shop_breakstone_desc_9
+    _short_cut: 1
+  - _idx: 402
+    _on_off: 1
+    _guide_show_on: 8b000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Pass
+    _deco_Icon: Info_Icon_Battle_SkillStone_01
+    _desc: str_shop_breakstone_desc_10
+    _short_cut: 1
+  - _idx: 403
+    _on_off: 1
+    _guide_show_on: f3000000f4000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Endless_A_1
+    - Info_Icon_Battle_Endless_A_2
+    - Info_Icon_Battle_Endless_A_3
+    _deco_Icon:
+    _desc: str_shop_breakstone_desc_13
+    _short_cut: 1
+  - _idx: 404
+    _on_off: 1
+    _guide_show_on: f5000000f6000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Endless_B
+    _deco_Icon:
+    _desc: str_shop_breakstone_desc_14
+    _short_cut: 1
+  - _idx: 405
+    _on_off: 1
+    _guide_show_on: 88000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: 15001
+    _icon:
+    - Info_Icon_Battle_Week
+    _deco_Icon: Info_Icon_Battle_SkillStone_02
+    _desc: str_shop_breakstone_desc_15
+    _short_cut: 1
+  - _idx: 406
+    _on_off: 1
+    _guide_show_on: 89000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: 15002
+    _icon:
+    - Info_Icon_Battle_Week
+    _deco_Icon: Info_Icon_Battle_SkillStone_03
+    _desc: str_shop_breakstone_desc_16
+    _short_cut: 1
+  - _idx: 501
+    _on_off: 0
+    _guide_show_on: 87000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon: []
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_6
+    _short_cut: 1
+  - _idx: 502
+    _on_off: 1
+    _guide_show_on: 2c000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon: []
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_4
+    _short_cut: 1
+  - _idx: 503
+    _on_off: 1
+    _guide_show_on: 7a000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon: []
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_7
+    _short_cut: 1
+  - _idx: 504
+    _on_off: 1
+    _guide_show_on: f2000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: 31001
+    _icon: []
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_8
+    _short_cut: 1
+  - _idx: 505
+    _on_off: 1
+    _guide_show_on: 0d000000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon: []
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_9
+    _short_cut: 1
+  - _idx: 506
+    _on_off: 1
+    _guide_show_on: 02010000
+    _guide_show_on_tutorial: -1
+    _guide_show_off: -1
+    _guide_show_off_product: -1
+    _icon:
+    - Info_Icon_Battle_Milestone
+    _deco_Icon:
+    _desc: str_accelerate_popup_desc_10
+    _short_cut: 1

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1825742528, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: AuctionTier
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+  mSecondKey: []
+  mDataList:
+  - _tier: 10
+    _min_score: 1
+    _max_score: 4
+  - _tier: 9
+    _min_score: 5
+    _max_score: 8
+  - _tier: 8
+    _min_score: 9
+    _max_score: 12
+  - _tier: 7
+    _min_score: 13
+    _max_score: 16
+  - _tier: 6
+    _min_score: 17
+    _max_score: 20
+  - _tier: 5
+    _min_score: 21
+    _max_score: 24
+  - _tier: 4
+    _min_score: 25
+    _max_score: 28
+  - _tier: 3
+    _min_score: 29
+    _max_score: 32
+  - _tier: 2
+    _min_score: 33
+    _max_score: 36
+  - _tier: 1
+    _min_score: 37
+    _max_score: 40

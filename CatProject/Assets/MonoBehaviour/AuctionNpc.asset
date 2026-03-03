@@ -1,0 +1,2417 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 707574413, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: AuctionNpc
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1005
+  - 1006
+  - 1007
+  - 1008
+  - 1009
+  - 1010
+  - 1011
+  - 1012
+  - 1013
+  - 1014
+  - 1015
+  - 1016
+  - 1017
+  - 1018
+  - 1019
+  - 1020
+  - 1021
+  - 1022
+  - 1023
+  - 1024
+  - 1025
+  - 1026
+  - 1027
+  - 1028
+  - 1029
+  - 1030
+  - 901
+  - 902
+  - 903
+  - 904
+  - 905
+  - 906
+  - 907
+  - 908
+  - 909
+  - 910
+  - 911
+  - 912
+  - 913
+  - 914
+  - 915
+  - 916
+  - 917
+  - 918
+  - 919
+  - 920
+  - 921
+  - 922
+  - 923
+  - 924
+  - 925
+  - 926
+  - 927
+  - 928
+  - 929
+  - 930
+  - 801
+  - 802
+  - 803
+  - 804
+  - 805
+  - 806
+  - 807
+  - 808
+  - 809
+  - 810
+  - 811
+  - 812
+  - 813
+  - 814
+  - 815
+  - 816
+  - 817
+  - 818
+  - 819
+  - 820
+  - 821
+  - 822
+  - 823
+  - 824
+  - 825
+  - 826
+  - 827
+  - 828
+  - 829
+  - 830
+  - 701
+  - 702
+  - 703
+  - 704
+  - 705
+  - 706
+  - 707
+  - 708
+  - 709
+  - 710
+  - 711
+  - 712
+  - 713
+  - 714
+  - 715
+  - 716
+  - 717
+  - 718
+  - 719
+  - 720
+  - 721
+  - 722
+  - 723
+  - 724
+  - 725
+  - 726
+  - 727
+  - 728
+  - 729
+  - 730
+  - 601
+  - 602
+  - 603
+  - 604
+  - 605
+  - 606
+  - 607
+  - 608
+  - 609
+  - 610
+  - 611
+  - 612
+  - 613
+  - 614
+  - 615
+  - 616
+  - 617
+  - 618
+  - 619
+  - 620
+  - 621
+  - 622
+  - 623
+  - 624
+  - 625
+  - 626
+  - 627
+  - 628
+  - 629
+  - 630
+  - 501
+  - 502
+  - 503
+  - 504
+  - 505
+  - 506
+  - 507
+  - 508
+  - 509
+  - 510
+  - 511
+  - 512
+  - 513
+  - 514
+  - 515
+  - 516
+  - 517
+  - 518
+  - 519
+  - 520
+  - 521
+  - 522
+  - 523
+  - 524
+  - 525
+  - 526
+  - 527
+  - 528
+  - 529
+  - 530
+  - 401
+  - 402
+  - 403
+  - 404
+  - 405
+  - 406
+  - 407
+  - 408
+  - 409
+  - 410
+  - 411
+  - 412
+  - 413
+  - 414
+  - 415
+  - 416
+  - 417
+  - 418
+  - 419
+  - 420
+  - 421
+  - 422
+  - 423
+  - 424
+  - 425
+  - 426
+  - 427
+  - 428
+  - 429
+  - 430
+  - 301
+  - 302
+  - 303
+  - 304
+  - 305
+  - 306
+  - 307
+  - 308
+  - 309
+  - 310
+  - 311
+  - 312
+  - 313
+  - 314
+  - 315
+  - 316
+  - 317
+  - 318
+  - 319
+  - 320
+  - 321
+  - 322
+  - 323
+  - 324
+  - 325
+  - 326
+  - 327
+  - 328
+  - 329
+  - 330
+  - 201
+  - 202
+  - 203
+  - 204
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  - 211
+  - 212
+  - 213
+  - 214
+  - 215
+  - 216
+  - 217
+  - 218
+  - 219
+  - 220
+  - 221
+  - 222
+  - 223
+  - 224
+  - 225
+  - 226
+  - 227
+  - 228
+  - 229
+  - 230
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  - 107
+  - 108
+  - 109
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+  - 126
+  - 127
+  - 128
+  - 129
+  - 130
+  mSecondKey: []
+  mDataList:
+  - _idx: 1001
+    _level: 10
+    _ceo_idx: 670000007200000065000000
+    _ceo_lv: 010000000400000001000000
+    _use_coin: 010000000400000001000000
+    _npc_name: str_auction_house_npc_name_1001
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1002
+    _level: 10
+    _ceo_idx: 740000007400000074000000
+    _ceo_lv: 010000000400000004000000
+    _use_coin: 010000000300000001000000
+    _npc_name: str_auction_house_npc_name_1002
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1003
+    _level: 10
+    _ceo_idx: 6e0000006600000074000000
+    _ceo_lv: 020000000200000002000000
+    _use_coin: 010000000100000001000000
+    _npc_name: str_auction_house_npc_name_1003
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1004
+    _level: 10
+    _ceo_idx: 6c0000006c0000006c000000
+    _ceo_lv: 010000000400000003000000
+    _use_coin: 010000000400000002000000
+    _npc_name: str_auction_house_npc_name_1004
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1005
+    _level: 10
+    _ceo_idx: 650000006500000065000000
+    _ceo_lv: 040000000100000003000000
+    _use_coin: 010000000100000003000000
+    _npc_name: str_auction_house_npc_name_1005
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1006
+    _level: 10
+    _ceo_idx: 680000006800000068000000
+    _ceo_lv: 030000000300000004000000
+    _use_coin: 020000000300000004000000
+    _npc_name: str_auction_house_npc_name_1006
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1007
+    _level: 10
+    _ceo_idx: 740000007400000074000000
+    _ceo_lv: 010000000100000004000000
+    _use_coin: 010000000100000001000000
+    _npc_name: str_auction_house_npc_name_1007
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1008
+    _level: 10
+    _ceo_idx: 730000006f00000072000000
+    _ceo_lv: 020000000400000001000000
+    _use_coin: 020000000400000001000000
+    _npc_name: str_auction_house_npc_name_1008
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1009
+    _level: 10
+    _ceo_idx: 6a0000006a0000006a000000
+    _ceo_lv: 010000000100000004000000
+    _use_coin: 010000000100000001000000
+    _npc_name: str_auction_house_npc_name_1009
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1010
+    _level: 10
+    _ceo_idx: 690000006900000069000000
+    _ceo_lv: 010000000400000004000000
+    _use_coin: 010000000100000002000000
+    _npc_name: str_auction_house_npc_name_1010
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1011
+    _level: 10
+    _ceo_idx: 6b0000006b0000006b000000
+    _ceo_lv: 010000000100000002000000
+    _use_coin: 010000000100000001000000
+    _npc_name: str_auction_house_npc_name_1011
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1012
+    _level: 10
+    _ceo_idx: 710000007100000071000000
+    _ceo_lv: 030000000400000003000000
+    _use_coin: 030000000100000003000000
+    _npc_name: str_auction_house_npc_name_1012
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1013
+    _level: 10
+    _ceo_idx: 6f0000006f0000006f000000
+    _ceo_lv: 020000000200000002000000
+    _use_coin: 020000000200000001000000
+    _npc_name: str_auction_house_npc_name_1013
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1014
+    _level: 10
+    _ceo_idx: 6a0000006a0000006a000000
+    _ceo_lv: 030000000100000002000000
+    _use_coin: 010000000100000001000000
+    _npc_name: str_auction_house_npc_name_1014
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1015
+    _level: 10
+    _ceo_idx: 670000006700000067000000
+    _ceo_lv: 010000000400000003000000
+    _use_coin: 010000000300000002000000
+    _npc_name: str_auction_house_npc_name_1015
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1016
+    _level: 10
+    _ceo_idx: 6d0000006b000000f0030000
+    _ceo_lv: 040000000400000001000000
+    _use_coin: 040000000200000002000000
+    _npc_name: str_auction_house_npc_name_1016
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1017
+    _level: 10
+    _ceo_idx: 6600000066000000eb030000
+    _ceo_lv: 040000000200000002000000
+    _use_coin: 020000000100000004000000
+    _npc_name: str_auction_house_npc_name_1017
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1018
+    _level: 10
+    _ceo_idx: 690000006a000000f0030000
+    _ceo_lv: 030000000300000001000000
+    _use_coin: 020000000300000002000000
+    _npc_name: str_auction_house_npc_name_1018
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1019
+    _level: 10
+    _ceo_idx: 6600000069000000f6030000
+    _ceo_lv: 040000000100000002000000
+    _use_coin: 010000000100000002000000
+    _npc_name: str_auction_house_npc_name_1019
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1020
+    _level: 10
+    _ceo_idx: 6c00000071000000e9030000
+    _ceo_lv: 010000000300000001000000
+    _use_coin: 010000000200000002000000
+    _npc_name: str_auction_house_npc_name_1020
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1021
+    _level: 10
+    _ceo_idx: 6a00000074000000ee030000
+    _ceo_lv: 020000000400000002000000
+    _use_coin: 010000000200000002000000
+    _npc_name: str_auction_house_npc_name_1021
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1022
+    _level: 10
+    _ceo_idx: 7200000071000000f1030000
+    _ceo_lv: 010000000300000001000000
+    _use_coin: 010000000300000002000000
+    _npc_name: str_auction_house_npc_name_1022
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1023
+    _level: 10
+    _ceo_idx: 7200000072000000ed030000
+    _ceo_lv: 030000000400000002000000
+    _use_coin: 020000000300000002000000
+    _npc_name: str_auction_house_npc_name_1023
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1024
+    _level: 10
+    _ceo_idx: 7400000068000000f4030000
+    _ceo_lv: 010000000100000001000000
+    _use_coin: 010000000100000002000000
+    _npc_name: str_auction_house_npc_name_1024
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1025
+    _level: 10
+    _ceo_idx: 6c00000068000000eb030000
+    _ceo_lv: 040000000400000001000000
+    _use_coin: 020000000300000002000000
+    _npc_name: str_auction_house_npc_name_1025
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1026
+    _level: 10
+    _ceo_idx: 6900000066000000f2030000
+    _ceo_lv: 020000000100000002000000
+    _use_coin: 010000000100000004000000
+    _npc_name: str_auction_house_npc_name_1026
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1027
+    _level: 10
+    _ceo_idx: 7300000069000000f8030000
+    _ceo_lv: 040000000200000002000000
+    _use_coin: 020000000100000002000000
+    _npc_name: str_auction_house_npc_name_1027
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 1028
+    _level: 10
+    _ceo_idx: 7300000074000000f8030000
+    _ceo_lv: 020000000100000001000000
+    _use_coin: 010000000100000002000000
+    _npc_name: str_auction_house_npc_name_1028
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 1029
+    _level: 10
+    _ceo_idx: 6600000071000000ec030000
+    _ceo_lv: 020000000300000002000000
+    _use_coin: 020000000300000004000000
+    _npc_name: str_auction_house_npc_name_1029
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 1030
+    _level: 10
+    _ceo_idx: 700000006f000000ee030000
+    _ceo_lv: 010000000100000001000000
+    _use_coin: 010000000100000002000000
+    _npc_name: str_auction_house_npc_name_1030
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 901
+    _level: 9
+    _ceo_idx: 6a0000007300000065000000
+    _ceo_lv: 070000000800000003000000
+    _use_coin: 050000000800000003000000
+    _npc_name: str_auction_house_npc_name_901
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 902
+    _level: 9
+    _ceo_idx: 6e0000006500000074000000
+    _ceo_lv: 060000000500000005000000
+    _use_coin: 050000000500000004000000
+    _npc_name: str_auction_house_npc_name_902
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 903
+    _level: 9
+    _ceo_idx: 690000006900000069000000
+    _ceo_lv: 060000000800000006000000
+    _use_coin: 050000000400000004000000
+    _npc_name: str_auction_house_npc_name_903
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 904
+    _level: 9
+    _ceo_idx: 700000007000000070000000
+    _ceo_lv: 060000000600000005000000
+    _use_coin: 040000000500000005000000
+    _npc_name: str_auction_house_npc_name_904
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 905
+    _level: 9
+    _ceo_idx: 690000006f00000074000000
+    _ceo_lv: 050000000400000005000000
+    _use_coin: 030000000300000004000000
+    _npc_name: str_auction_house_npc_name_905
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 906
+    _level: 9
+    _ceo_idx: 700000007000000070000000
+    _ceo_lv: 050000000300000004000000
+    _use_coin: 030000000300000004000000
+    _npc_name: str_auction_house_npc_name_906
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 907
+    _level: 9
+    _ceo_idx: 6b0000006f0000006e000000
+    _ceo_lv: 070000000500000005000000
+    _use_coin: 050000000400000005000000
+    _npc_name: str_auction_house_npc_name_907
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 908
+    _level: 9
+    _ceo_idx: 6e0000007400000070000000
+    _ceo_lv: 080000000700000006000000
+    _use_coin: 050000000500000006000000
+    _npc_name: str_auction_house_npc_name_908
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 909
+    _level: 9
+    _ceo_idx: 6c0000007400000066000000
+    _ceo_lv: 030000000300000005000000
+    _use_coin: 030000000300000003000000
+    _npc_name: str_auction_house_npc_name_909
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 910
+    _level: 9
+    _ceo_idx: 6d0000006c0000006f000000
+    _ceo_lv: 070000000600000005000000
+    _use_coin: 040000000400000003000000
+    _npc_name: str_auction_house_npc_name_910
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 911
+    _level: 9
+    _ceo_idx: 65000000680000006a000000
+    _ceo_lv: 060000000300000008000000
+    _use_coin: 030000000300000008000000
+    _npc_name: str_auction_house_npc_name_911
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 912
+    _level: 9
+    _ceo_idx: 66000000680000006d000000
+    _ceo_lv: 070000000600000004000000
+    _use_coin: 030000000600000003000000
+    _npc_name: str_auction_house_npc_name_912
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 913
+    _level: 9
+    _ceo_idx: 730000006e00000074000000
+    _ceo_lv: 040000000600000005000000
+    _use_coin: 030000000600000005000000
+    _npc_name: str_auction_house_npc_name_913
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 914
+    _level: 9
+    _ceo_idx: 6d000000730000006f000000
+    _ceo_lv: 060000000500000003000000
+    _use_coin: 040000000500000003000000
+    _npc_name: str_auction_house_npc_name_914
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 915
+    _level: 9
+    _ceo_idx: 73000000650000006a000000
+    _ceo_lv: 050000000400000008000000
+    _use_coin: 050000000300000003000000
+    _npc_name: str_auction_house_npc_name_915
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 916
+    _level: 9
+    _ceo_idx: 6d00000065000000ec030000
+    _ceo_lv: 080000000800000004000000
+    _use_coin: 080000000300000007000000
+    _npc_name: str_auction_house_npc_name_916
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 917
+    _level: 9
+    _ceo_idx: 6a0000006e000000ea030000
+    _ceo_lv: 030000000600000004000000
+    _use_coin: 030000000400000005000000
+    _npc_name: str_auction_house_npc_name_917
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 918
+    _level: 9
+    _ceo_idx: 700000006d000000eb030000
+    _ceo_lv: 040000000500000001000000
+    _use_coin: 030000000500000002000000
+    _npc_name: str_auction_house_npc_name_918
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 919
+    _level: 9
+    _ceo_idx: 6e0000006f000000f7030000
+    _ceo_lv: 040000000800000003000000
+    _use_coin: 040000000700000006000000
+    _npc_name: str_auction_house_npc_name_919
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 920
+    _level: 9
+    _ceo_idx: 6900000066000000e9030000
+    _ceo_lv: 080000000300000003000000
+    _use_coin: 070000000300000004000000
+    _npc_name: str_auction_house_npc_name_920
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 921
+    _level: 9
+    _ceo_idx: 700000006c000000f2030000
+    _ceo_lv: 070000000500000004000000
+    _use_coin: 040000000400000006000000
+    _npc_name: str_auction_house_npc_name_921
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 922
+    _level: 9
+    _ceo_idx: 7200000074000000eb030000
+    _ceo_lv: 060000000800000003000000
+    _use_coin: 030000000700000006000000
+    _npc_name: str_auction_house_npc_name_922
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 923
+    _level: 9
+    _ceo_idx: 6900000070000000f5030000
+    _ceo_lv: 080000000800000003000000
+    _use_coin: 030000000500000004000000
+    _npc_name: str_auction_house_npc_name_923
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 924
+    _level: 9
+    _ceo_idx: 6f00000069000000f4030000
+    _ceo_lv: 060000000800000001000000
+    _use_coin: 040000000300000002000000
+    _npc_name: str_auction_house_npc_name_924
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 925
+    _level: 9
+    _ceo_idx: 6f00000073000000f1030000
+    _ceo_lv: 070000000500000001000000
+    _use_coin: 060000000300000002000000
+    _npc_name: str_auction_house_npc_name_925
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 926
+    _level: 9
+    _ceo_idx: 7400000065000000f0030000
+    _ceo_lv: 050000000300000002000000
+    _use_coin: 030000000300000002000000
+    _npc_name: str_auction_house_npc_name_926
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 927
+    _level: 9
+    _ceo_idx: 730000006d000000f7030000
+    _ceo_lv: 070000000800000002000000
+    _use_coin: 060000000600000003000000
+    _npc_name: str_auction_house_npc_name_927
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 928
+    _level: 9
+    _ceo_idx: 6900000065000000ec030000
+    _ceo_lv: 050000000500000002000000
+    _use_coin: 040000000500000003000000
+    _npc_name: str_auction_house_npc_name_928
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 929
+    _level: 9
+    _ceo_idx: 6600000074000000f3030000
+    _ceo_lv: 080000000800000003000000
+    _use_coin: 040000000600000006000000
+    _npc_name: str_auction_house_npc_name_929
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 930
+    _level: 9
+    _ceo_idx: 6f00000065000000f8030000
+    _ceo_lv: 080000000800000003000000
+    _use_coin: 080000000800000002000000
+    _npc_name: str_auction_house_npc_name_930
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 801
+    _level: 8
+    _ceo_idx: 670000006a000000ef030000
+    _ceo_lv: 080000000800000004000000
+    _use_coin: 070000000700000007000000
+    _npc_name: str_auction_house_npc_name_801
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 802
+    _level: 8
+    _ceo_idx: 710000006e000000f0030000
+    _ceo_lv: 080000000800000004000000
+    _use_coin: 060000000700000006000000
+    _npc_name: str_auction_house_npc_name_802
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 803
+    _level: 8
+    _ceo_idx: 6c00000071000000f0030000
+    _ceo_lv: 070000000c00000004000000
+    _use_coin: 070000000700000008000000
+    _npc_name: str_auction_house_npc_name_803
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 804
+    _level: 8
+    _ceo_idx: 6f00000067000000eb030000
+    _ceo_lv: 080000000800000006000000
+    _use_coin: 08000000050000000b000000
+    _npc_name: str_auction_house_npc_name_804
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 805
+    _level: 8
+    _ceo_idx: 6900000073000000f3030000
+    _ceo_lv: 0c0000000b00000005000000
+    _use_coin: 060000000700000009000000
+    _npc_name: str_auction_house_npc_name_805
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 806
+    _level: 8
+    _ceo_idx: 7000000067000000f3030000
+    _ceo_lv: 070000000800000005000000
+    _use_coin: 070000000500000006000000
+    _npc_name: str_auction_house_npc_name_806
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 807
+    _level: 8
+    _ceo_idx: 670000006f000000ec030000
+    _ceo_lv: 0b0000000c00000005000000
+    _use_coin: 060000000900000008000000
+    _npc_name: str_auction_house_npc_name_807
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 808
+    _level: 8
+    _ceo_idx: 7100000069000000ee030000
+    _ceo_lv: 070000000a00000006000000
+    _use_coin: 050000000a0000000a000000
+    _npc_name: str_auction_house_npc_name_808
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 809
+    _level: 8
+    _ceo_idx: 740000006a000000ef030000
+    _ceo_lv: 0b0000000900000006000000
+    _use_coin: 070000000700000006000000
+    _npc_name: str_auction_house_npc_name_809
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 810
+    _level: 8
+    _ceo_idx: 6c00000074000000f3030000
+    _ceo_lv: 080000000b00000006000000
+    _use_coin: 08000000060000000a000000
+    _npc_name: str_auction_house_npc_name_810
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 811
+    _level: 8
+    _ceo_idx: 6a00000072000000f3030000
+    _ceo_lv: 0a0000000a00000006000000
+    _use_coin: 090000000900000008000000
+    _npc_name: str_auction_house_npc_name_811
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 812
+    _level: 8
+    _ceo_idx: 710000006c000000e9030000
+    _ceo_lv: 090000000b00000005000000
+    _use_coin: 090000000700000007000000
+    _npc_name: str_auction_house_npc_name_812
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 813
+    _level: 8
+    _ceo_idx: 6d0000006c000000f2030000
+    _ceo_lv: 090000000a00000004000000
+    _use_coin: 050000000700000006000000
+    _npc_name: str_auction_house_npc_name_813
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 814
+    _level: 8
+    _ceo_idx: 6e00000071000000f1030000
+    _ceo_lv: 080000000700000005000000
+    _use_coin: 060000000600000009000000
+    _npc_name: str_auction_house_npc_name_814
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 815
+    _level: 8
+    _ceo_idx: 6a0000006a000000f8030000
+    _ceo_lv: 070000000b00000004000000
+    _use_coin: 060000000800000006000000
+    _npc_name: str_auction_house_npc_name_815
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 816
+    _level: 8
+    _ceo_idx: 6a00000070000000f5030000
+    _ceo_lv: 090000000c00000006000000
+    _use_coin: 090000000b00000006000000
+    _npc_name: str_auction_house_npc_name_816
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 817
+    _level: 8
+    _ceo_idx: 6900000074000000f7030000
+    _ceo_lv: 0c0000000a00000006000000
+    _use_coin: 0a0000000700000008000000
+    _npc_name: str_auction_house_npc_name_817
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 818
+    _level: 8
+    _ceo_idx: 7400000073000000ed030000
+    _ceo_lv: 0c0000000b00000004000000
+    _use_coin: 070000000600000008000000
+    _npc_name: str_auction_house_npc_name_818
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 819
+    _level: 8
+    _ceo_idx: 6600000065000000f1030000
+    _ceo_lv: 0b0000000700000005000000
+    _use_coin: 090000000600000009000000
+    _npc_name: str_auction_house_npc_name_819
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 820
+    _level: 8
+    _ceo_idx: 7100000073000000f4030000
+    _ceo_lv: 0c0000000900000006000000
+    _use_coin: 0b0000000700000006000000
+    _npc_name: str_auction_house_npc_name_820
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 821
+    _level: 8
+    _ceo_idx: 6c0000006d000000f7030000
+    _ceo_lv: 0a0000000b00000004000000
+    _use_coin: 070000000500000007000000
+    _npc_name: str_auction_house_npc_name_821
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 822
+    _level: 8
+    _ceo_idx: 680000006d000000eb030000
+    _ceo_lv: 0a0000000700000003000000
+    _use_coin: 060000000700000006000000
+    _npc_name: str_auction_house_npc_name_822
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 823
+    _level: 8
+    _ceo_idx: 7200000067000000f4030000
+    _ceo_lv: 0b0000000900000004000000
+    _use_coin: 090000000900000008000000
+    _npc_name: str_auction_house_npc_name_823
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 824
+    _level: 8
+    _ceo_idx: 730000006d000000f0030000
+    _ceo_lv: 070000000c00000005000000
+    _use_coin: 070000000c00000006000000
+    _npc_name: str_auction_house_npc_name_824
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 825
+    _level: 8
+    _ceo_idx: 6800000073000000f1030000
+    _ceo_lv: 080000000800000005000000
+    _use_coin: 08000000060000000a000000
+    _npc_name: str_auction_house_npc_name_825
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 826
+    _level: 8
+    _ceo_idx: 6c0000006a000000f1030000
+    _ceo_lv: 0a0000000700000003000000
+    _use_coin: 0a0000000500000006000000
+    _npc_name: str_auction_house_npc_name_826
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 827
+    _level: 8
+    _ceo_idx: 6900000068000000ed030000
+    _ceo_lv: 0a0000000900000005000000
+    _use_coin: 0a0000000900000008000000
+    _npc_name: str_auction_house_npc_name_827
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 828
+    _level: 8
+    _ceo_idx: 6d0000006c000000ec030000
+    _ceo_lv: 080000000900000006000000
+    _use_coin: 08000000070000000c000000
+    _npc_name: str_auction_house_npc_name_828
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 829
+    _level: 8
+    _ceo_idx: 6700000066000000f5030000
+    _ceo_lv: 080000000900000006000000
+    _use_coin: 05000000070000000b000000
+    _npc_name: str_auction_house_npc_name_829
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 830
+    _level: 8
+    _ceo_idx: 6d00000073000000ea030000
+    _ceo_lv: 090000000900000005000000
+    _use_coin: 050000000900000009000000
+    _npc_name: str_auction_house_npc_name_830
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 701
+    _level: 7
+    _ceo_idx: 6a0000006c000000f4030000
+    _ceo_lv: 0f0000001000000006000000
+    _use_coin: 0d000000100000000c000000
+    _npc_name: str_auction_house_npc_name_701
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 702
+    _level: 7
+    _ceo_idx: 6e00000067000000f1030000
+    _ceo_lv: 0e0000001000000005000000
+    _use_coin: 0e000000100000000a000000
+    _npc_name: str_auction_house_npc_name_702
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 703
+    _level: 7
+    _ceo_idx: 730000006a000000ef030000
+    _ceo_lv: 100000001000000007000000
+    _use_coin: 0c000000100000000c000000
+    _npc_name: str_auction_house_npc_name_703
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 704
+    _level: 7
+    _ceo_idx: 6a0000006e000000eb030000
+    _ceo_lv: 0d0000000f00000006000000
+    _use_coin: 0b0000000f0000000c000000
+    _npc_name: str_auction_house_npc_name_704
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 705
+    _level: 7
+    _ceo_idx: 6c0000006e000000eb030000
+    _ceo_lv: 0b0000000b00000006000000
+    _use_coin: 0b0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_705
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 706
+    _level: 7
+    _ceo_idx: 710000006b000000ee030000
+    _ceo_lv: 0d0000000f00000005000000
+    _use_coin: 0c0000000d0000000a000000
+    _npc_name: str_auction_house_npc_name_706
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 707
+    _level: 7
+    _ceo_idx: 730000006d000000ed030000
+    _ceo_lv: 0e0000000e00000006000000
+    _use_coin: 0d0000000e0000000a000000
+    _npc_name: str_auction_house_npc_name_707
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 708
+    _level: 7
+    _ceo_idx: 6900000065000000f4030000
+    _ceo_lv: 0d0000001000000008000000
+    _use_coin: 0c0000000d0000000d000000
+    _npc_name: str_auction_house_npc_name_708
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 709
+    _level: 7
+    _ceo_idx: 7400000071000000ee030000
+    _ceo_lv: 0d0000000c00000007000000
+    _use_coin: 0c0000000c0000000c000000
+    _npc_name: str_auction_house_npc_name_709
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 710
+    _level: 7
+    _ceo_idx: 6500000071000000f0030000
+    _ceo_lv: 0b0000000f00000008000000
+    _use_coin: 0b0000000d0000000f000000
+    _npc_name: str_auction_house_npc_name_710
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 711
+    _level: 7
+    _ceo_idx: 7100000065000000f0030000
+    _ceo_lv: 0b0000000d00000008000000
+    _use_coin: 0b0000000c0000000b000000
+    _npc_name: str_auction_house_npc_name_711
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 712
+    _level: 7
+    _ceo_idx: 6700000066000000f1030000
+    _ceo_lv: 0c0000000d00000005000000
+    _use_coin: 0b0000000c0000000a000000
+    _npc_name: str_auction_house_npc_name_712
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 713
+    _level: 7
+    _ceo_idx: 690000006a000000ee030000
+    _ceo_lv: 0c0000000b00000006000000
+    _use_coin: 0b0000000b0000000c000000
+    _npc_name: str_auction_house_npc_name_713
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 714
+    _level: 7
+    _ceo_idx: 6c00000068000000ed030000
+    _ceo_lv: 0e0000000b00000005000000
+    _use_coin: 0b0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_714
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 715
+    _level: 7
+    _ceo_idx: 6f0000006a000000f5030000
+    _ceo_lv: 0e0000000e00000006000000
+    _use_coin: 0d0000000b0000000b000000
+    _npc_name: str_auction_house_npc_name_715
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 716
+    _level: 7
+    _ceo_idx: 730000006f000000f5030000
+    _ceo_lv: 0b0000000c00000007000000
+    _use_coin: 0b0000000b0000000d000000
+    _npc_name: str_auction_house_npc_name_716
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 717
+    _level: 7
+    _ceo_idx: 6800000069000000e9030000
+    _ceo_lv: 0c0000000c00000006000000
+    _use_coin: 0c0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_717
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 718
+    _level: 7
+    _ceo_idx: 6b0000006c000000ea030000
+    _ceo_lv: 0f0000000d00000008000000
+    _use_coin: 0d0000000c0000000c000000
+    _npc_name: str_auction_house_npc_name_718
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 719
+    _level: 7
+    _ceo_idx: 6b00000070000000ea030000
+    _ceo_lv: 0c0000000d00000008000000
+    _use_coin: 0b0000000c0000000c000000
+    _npc_name: str_auction_house_npc_name_719
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 720
+    _level: 7
+    _ceo_idx: 6c00000074000000e9030000
+    _ceo_lv: 0f0000000b00000007000000
+    _use_coin: 0e0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_720
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 721
+    _level: 7
+    _ceo_idx: 710000006d000000f2030000
+    _ceo_lv: 0f0000000f00000007000000
+    _use_coin: 0e0000000f0000000d000000
+    _npc_name: str_auction_house_npc_name_721
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 722
+    _level: 7
+    _ceo_idx: 6500000070000000ea030000
+    _ceo_lv: 0f0000000c00000008000000
+    _use_coin: 0b0000000c0000000d000000
+    _npc_name: str_auction_house_npc_name_722
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 723
+    _level: 7
+    _ceo_idx: 6b0000006f000000f7030000
+    _ceo_lv: 0b0000001000000005000000
+    _use_coin: 0b0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_723
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 724
+    _level: 7
+    _ceo_idx: 7300000065000000ec030000
+    _ceo_lv: 0d0000000b00000005000000
+    _use_coin: 0d0000000b0000000a000000
+    _npc_name: str_auction_house_npc_name_724
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 725
+    _level: 7
+    _ceo_idx: 7400000073000000f6030000
+    _ceo_lv: 100000000c00000008000000
+    _use_coin: 100000000c0000000d000000
+    _npc_name: str_auction_house_npc_name_725
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 726
+    _level: 7
+    _ceo_idx: 7100000068000000ec030000
+    _ceo_lv: 0e0000000d00000006000000
+    _use_coin: 0e0000000d0000000a000000
+    _npc_name: str_auction_house_npc_name_726
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 727
+    _level: 7
+    _ceo_idx: 6700000065000000f2030000
+    _ceo_lv: 0b0000000e00000006000000
+    _use_coin: 0b0000000e0000000c000000
+    _npc_name: str_auction_house_npc_name_727
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 728
+    _level: 7
+    _ceo_idx: 6900000073000000f7030000
+    _ceo_lv: 100000000f00000006000000
+    _use_coin: 0b0000000b0000000c000000
+    _npc_name: str_auction_house_npc_name_728
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 729
+    _level: 7
+    _ceo_idx: 6900000068000000ea030000
+    _ceo_lv: 100000001000000008000000
+    _use_coin: 0e0000000b00000010000000
+    _npc_name: str_auction_house_npc_name_729
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 730
+    _level: 7
+    _ceo_idx: 7300000074000000ed030000
+    _ceo_lv: 0c0000001000000007000000
+    _use_coin: 0b0000000c0000000c000000
+    _npc_name: str_auction_house_npc_name_730
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 601
+    _level: 6
+    _ceo_idx: 6f0000006c000000ee030000
+    _ceo_lv: 14000000120000000a000000
+    _use_coin: 100000000f0000000f000000
+    _npc_name: str_auction_house_npc_name_601
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 602
+    _level: 6
+    _ceo_idx: 6b0000006c000000eb030000
+    _ceo_lv: 130000001000000009000000
+    _use_coin: 130000000f00000010000000
+    _npc_name: str_auction_house_npc_name_602
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 603
+    _level: 6
+    _ceo_idx: 730000006a000000f3030000
+    _ceo_lv: 110000001400000009000000
+    _use_coin: 110000000f00000012000000
+    _npc_name: str_auction_house_npc_name_603
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 604
+    _level: 6
+    _ceo_idx: 7100000069000000f4030000
+    _ceo_lv: 120000001000000009000000
+    _use_coin: 0f0000001000000011000000
+    _npc_name: str_auction_house_npc_name_604
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 605
+    _level: 6
+    _ceo_idx: 660000006a000000f4030000
+    _ceo_lv: 0f000000130000000a000000
+    _use_coin: 0f0000001000000010000000
+    _npc_name: str_auction_house_npc_name_605
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 606
+    _level: 6
+    _ceo_idx: 7100000066000000ef030000
+    _ceo_lv: 100000000f00000007000000
+    _use_coin: 0f0000000f0000000e000000
+    _npc_name: str_auction_house_npc_name_606
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 607
+    _level: 6
+    _ceo_idx: 7300000070000000f2030000
+    _ceo_lv: 100000001000000008000000
+    _use_coin: 10000000100000000e000000
+    _npc_name: str_auction_house_npc_name_607
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 608
+    _level: 6
+    _ceo_idx: 6d0000006b000000f4030000
+    _ceo_lv: 140000001400000008000000
+    _use_coin: 14000000140000000e000000
+    _npc_name: str_auction_house_npc_name_608
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 609
+    _level: 6
+    _ceo_idx: 680000006f000000ef030000
+    _ceo_lv: 0f0000001100000007000000
+    _use_coin: 0f000000110000000e000000
+    _npc_name: str_auction_house_npc_name_609
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 610
+    _level: 6
+    _ceo_idx: 6d0000006b000000f0030000
+    _ceo_lv: 140000000f00000009000000
+    _use_coin: 100000000f00000012000000
+    _npc_name: str_auction_house_npc_name_610
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 611
+    _level: 6
+    _ceo_idx: 6600000070000000ea030000
+    _ceo_lv: 140000001400000008000000
+    _use_coin: 11000000120000000e000000
+    _npc_name: str_auction_house_npc_name_611
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 612
+    _level: 6
+    _ceo_idx: 6f00000071000000f1030000
+    _ceo_lv: 0f000000120000000a000000
+    _use_coin: 0f0000001100000010000000
+    _npc_name: str_auction_house_npc_name_612
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 613
+    _level: 6
+    _ceo_idx: 7400000065000000ef030000
+    _ceo_lv: 10000000120000000a000000
+    _use_coin: 100000001100000012000000
+    _npc_name: str_auction_house_npc_name_613
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 614
+    _level: 6
+    _ceo_idx: 6600000067000000ea030000
+    _ceo_lv: 12000000120000000a000000
+    _use_coin: 120000001200000012000000
+    _npc_name: str_auction_house_npc_name_614
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 615
+    _level: 6
+    _ceo_idx: 710000006f000000f8030000
+    _ceo_lv: 130000001100000008000000
+    _use_coin: 100000000f00000010000000
+    _npc_name: str_auction_house_npc_name_615
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 616
+    _level: 6
+    _ceo_idx: 7300000066000000ea030000
+    _ceo_lv: 11000000110000000a000000
+    _use_coin: 110000000f0000000e000000
+    _npc_name: str_auction_house_npc_name_616
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 617
+    _level: 6
+    _ceo_idx: 7100000072000000eb030000
+    _ceo_lv: 110000000f00000009000000
+    _use_coin: 100000000f00000011000000
+    _npc_name: str_auction_house_npc_name_617
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 618
+    _level: 6
+    _ceo_idx: 7000000070000000f5030000
+    _ceo_lv: 14000000140000000a000000
+    _use_coin: 0f000000130000000f000000
+    _npc_name: str_auction_house_npc_name_618
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 619
+    _level: 6
+    _ceo_idx: 6d0000006e000000f3030000
+    _ceo_lv: 140000000f00000007000000
+    _use_coin: 130000000f0000000e000000
+    _npc_name: str_auction_house_npc_name_619
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 620
+    _level: 6
+    _ceo_idx: 6f00000069000000e9030000
+    _ceo_lv: 130000000f0000000a000000
+    _use_coin: 0f0000000f00000011000000
+    _npc_name: str_auction_house_npc_name_620
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 621
+    _level: 6
+    _ceo_idx: 6800000071000000ee030000
+    _ceo_lv: 120000001400000009000000
+    _use_coin: 100000001400000010000000
+    _npc_name: str_auction_house_npc_name_621
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 622
+    _level: 6
+    _ceo_idx: 6c00000074000000f7030000
+    _ceo_lv: 110000001300000007000000
+    _use_coin: 0f000000130000000e000000
+    _npc_name: str_auction_house_npc_name_622
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 623
+    _level: 6
+    _ceo_idx: 6e0000006a000000f3030000
+    _ceo_lv: 14000000130000000a000000
+    _use_coin: 100000001300000013000000
+    _npc_name: str_auction_house_npc_name_623
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 624
+    _level: 6
+    _ceo_idx: 6c00000065000000ee030000
+    _ceo_lv: 0f0000001200000009000000
+    _use_coin: 0f0000001100000010000000
+    _npc_name: str_auction_house_npc_name_624
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 625
+    _level: 6
+    _ceo_idx: 6900000072000000f0030000
+    _ceo_lv: 0f0000000f00000007000000
+    _use_coin: 0f0000000f0000000e000000
+    _npc_name: str_auction_house_npc_name_625
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 626
+    _level: 6
+    _ceo_idx: 680000006d000000ef030000
+    _ceo_lv: 130000000f00000008000000
+    _use_coin: 130000000f00000010000000
+    _npc_name: str_auction_house_npc_name_626
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 627
+    _level: 6
+    _ceo_idx: 7200000066000000f6030000
+    _ceo_lv: 100000001300000007000000
+    _use_coin: 10000000110000000e000000
+    _npc_name: str_auction_house_npc_name_627
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 628
+    _level: 6
+    _ceo_idx: 6c00000065000000ed030000
+    _ceo_lv: 0f0000001000000009000000
+    _use_coin: 0f000000100000000e000000
+    _npc_name: str_auction_house_npc_name_628
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 629
+    _level: 6
+    _ceo_idx: 6a0000006c000000ee030000
+    _ceo_lv: 120000001300000009000000
+    _use_coin: 12000000100000000e000000
+    _npc_name: str_auction_house_npc_name_629
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 630
+    _level: 6
+    _ceo_idx: 6900000067000000ef030000
+    _ceo_lv: 120000001100000007000000
+    _use_coin: 100000000f0000000e000000
+    _npc_name: str_auction_house_npc_name_630
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 501
+    _level: 5
+    _ceo_idx: ee030000ee030000ee030000
+    _ceo_lv: 0a0000000a0000000c000000
+    _use_coin: 140000001200000012000000
+    _npc_name: str_auction_house_npc_name_501
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 502
+    _level: 5
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 090000000c0000000c000000
+    _use_coin: 120000001200000015000000
+    _npc_name: str_auction_house_npc_name_502
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 503
+    _level: 5
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0b0000000a00000009000000
+    _use_coin: 120000001300000012000000
+    _npc_name: str_auction_house_npc_name_503
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 504
+    _level: 5
+    _ceo_idx: ee030000ee030000ee030000
+    _ceo_lv: 0a0000000c0000000c000000
+    _use_coin: 130000001400000013000000
+    _npc_name: str_auction_house_npc_name_504
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 505
+    _level: 5
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 090000000b0000000b000000
+    _use_coin: 120000001200000015000000
+    _npc_name: str_auction_house_npc_name_505
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 506
+    _level: 5
+    _ceo_idx: f2030000e9030000f8030000
+    _ceo_lv: 0a0000000c0000000a000000
+    _use_coin: 140000001500000013000000
+    _npc_name: str_auction_house_npc_name_506
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 507
+    _level: 5
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0c0000000c0000000a000000
+    _use_coin: 120000001600000014000000
+    _npc_name: str_auction_house_npc_name_507
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 508
+    _level: 5
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 0a000000090000000c000000
+    _use_coin: 130000001200000017000000
+    _npc_name: str_auction_house_npc_name_508
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 509
+    _level: 5
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0c000000090000000b000000
+    _use_coin: 150000001200000015000000
+    _npc_name: str_auction_house_npc_name_509
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 510
+    _level: 5
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 0c0000000c0000000c000000
+    _use_coin: 120000001400000014000000
+    _npc_name: str_auction_house_npc_name_510
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 511
+    _level: 5
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 090000000c0000000b000000
+    _use_coin: 120000001800000016000000
+    _npc_name: str_auction_house_npc_name_511
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 512
+    _level: 5
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 090000000900000009000000
+    _use_coin: 120000001200000012000000
+    _npc_name: str_auction_house_npc_name_512
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 513
+    _level: 5
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0b0000000a0000000b000000
+    _use_coin: 150000001300000012000000
+    _npc_name: str_auction_house_npc_name_513
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 514
+    _level: 5
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0b0000000b0000000c000000
+    _use_coin: 140000001300000015000000
+    _npc_name: str_auction_house_npc_name_514
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 515
+    _level: 5
+    _ceo_idx: f5030000f3030000eb030000
+    _ceo_lv: 0c0000000b00000009000000
+    _use_coin: 120000001300000012000000
+    _npc_name: str_auction_house_npc_name_515
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 516
+    _level: 5
+    _ceo_idx: f0030000ec030000f1030000
+    _ceo_lv: 0b0000000b0000000c000000
+    _use_coin: 150000001300000018000000
+    _npc_name: str_auction_house_npc_name_516
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 517
+    _level: 5
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 0c000000090000000c000000
+    _use_coin: 170000001200000012000000
+    _npc_name: str_auction_house_npc_name_517
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 518
+    _level: 5
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 0a0000000a00000009000000
+    _use_coin: 130000001400000012000000
+    _npc_name: str_auction_house_npc_name_518
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 519
+    _level: 5
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 09000000090000000c000000
+    _use_coin: 120000001200000017000000
+    _npc_name: str_auction_house_npc_name_519
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 520
+    _level: 5
+    _ceo_idx: f2030000f2030000f2030000
+    _ceo_lv: 0c000000090000000b000000
+    _use_coin: 140000001200000014000000
+    _npc_name: str_auction_house_npc_name_520
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 521
+    _level: 5
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 0c0000000a0000000c000000
+    _use_coin: 160000001200000016000000
+    _npc_name: str_auction_house_npc_name_521
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 522
+    _level: 5
+    _ceo_idx: f4030000ee030000ec030000
+    _ceo_lv: 0a000000090000000a000000
+    _use_coin: 120000001200000013000000
+    _npc_name: str_auction_house_npc_name_522
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 523
+    _level: 5
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0c0000000c0000000a000000
+    _use_coin: 130000001500000012000000
+    _npc_name: str_auction_house_npc_name_523
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 524
+    _level: 5
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 0b0000000b0000000c000000
+    _use_coin: 150000001500000016000000
+    _npc_name: str_auction_house_npc_name_524
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 525
+    _level: 5
+    _ceo_idx: ee030000eb030000ec030000
+    _ceo_lv: 0c0000000b00000009000000
+    _use_coin: 160000001200000012000000
+    _npc_name: str_auction_house_npc_name_525
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 526
+    _level: 5
+    _ceo_idx: f4030000eb030000f0030000
+    _ceo_lv: 0c000000090000000c000000
+    _use_coin: 130000001200000017000000
+    _npc_name: str_auction_house_npc_name_526
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 527
+    _level: 5
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0a0000000b0000000c000000
+    _use_coin: 130000001300000013000000
+    _npc_name: str_auction_house_npc_name_527
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 528
+    _level: 5
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0b0000000b0000000c000000
+    _use_coin: 150000001400000016000000
+    _npc_name: str_auction_house_npc_name_528
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 529
+    _level: 5
+    _ceo_idx: ef030000f4030000eb030000
+    _ceo_lv: 0a0000000b0000000c000000
+    _use_coin: 140000001400000016000000
+    _npc_name: str_auction_house_npc_name_529
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 530
+    _level: 5
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0a0000000c0000000a000000
+    _use_coin: 130000001400000013000000
+    _npc_name: str_auction_house_npc_name_530
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 401
+    _level: 4
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0b0000000b0000000b000000
+    _use_coin: 160000001600000016000000
+    _npc_name: str_auction_house_npc_name_401
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 402
+    _level: 4
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 0d0000000d0000000c000000
+    _use_coin: 1a0000001700000018000000
+    _npc_name: str_auction_house_npc_name_402
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 403
+    _level: 4
+    _ceo_idx: f3030000ec030000f5030000
+    _ceo_lv: 0e0000000e0000000e000000
+    _use_coin: 190000001c00000017000000
+    _npc_name: str_auction_house_npc_name_403
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 404
+    _level: 4
+    _ceo_idx: f0030000f0030000f0030000
+    _ceo_lv: 0b0000000d0000000d000000
+    _use_coin: 160000001700000017000000
+    _npc_name: str_auction_house_npc_name_404
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 405
+    _level: 4
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0e0000000b0000000d000000
+    _use_coin: 160000001600000018000000
+    _npc_name: str_auction_house_npc_name_405
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 406
+    _level: 4
+    _ceo_idx: ec030000f0030000f3030000
+    _ceo_lv: 0c0000000e0000000c000000
+    _use_coin: 180000001a00000016000000
+    _npc_name: str_auction_house_npc_name_406
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 407
+    _level: 4
+    _ceo_idx: ef030000f5030000f2030000
+    _ceo_lv: 0b0000000c0000000e000000
+    _use_coin: 160000001800000016000000
+    _npc_name: str_auction_house_npc_name_407
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 408
+    _level: 4
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 0b0000000e0000000d000000
+    _use_coin: 160000001b00000018000000
+    _npc_name: str_auction_house_npc_name_408
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 409
+    _level: 4
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0e0000000d0000000c000000
+    _use_coin: 180000001800000016000000
+    _npc_name: str_auction_house_npc_name_409
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 410
+    _level: 4
+    _ceo_idx: f0030000f0030000f0030000
+    _ceo_lv: 0b0000000e0000000c000000
+    _use_coin: 160000001600000018000000
+    _npc_name: str_auction_house_npc_name_410
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 411
+    _level: 4
+    _ceo_idx: f8030000ef030000eb030000
+    _ceo_lv: 0e0000000e0000000c000000
+    _use_coin: 160000001b00000017000000
+    _npc_name: str_auction_house_npc_name_411
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 412
+    _level: 4
+    _ceo_idx: f4030000f6030000f0030000
+    _ceo_lv: 0e0000000e0000000d000000
+    _use_coin: 18000000190000001a000000
+    _npc_name: str_auction_house_npc_name_412
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 413
+    _level: 4
+    _ceo_idx: f1030000f1030000f1030000
+    _ceo_lv: 0d0000000c0000000c000000
+    _use_coin: 180000001700000016000000
+    _npc_name: str_auction_house_npc_name_413
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 414
+    _level: 4
+    _ceo_idx: f6030000ec030000f5030000
+    _ceo_lv: 0b0000000d0000000c000000
+    _use_coin: 160000001900000017000000
+    _npc_name: str_auction_house_npc_name_414
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 415
+    _level: 4
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0b0000000c0000000d000000
+    _use_coin: 160000001700000016000000
+    _npc_name: str_auction_house_npc_name_415
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 416
+    _level: 4
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0b0000000e0000000d000000
+    _use_coin: 160000001c00000018000000
+    _npc_name: str_auction_house_npc_name_416
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 417
+    _level: 4
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0d0000000d0000000b000000
+    _use_coin: 180000001800000016000000
+    _npc_name: str_auction_house_npc_name_417
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 418
+    _level: 4
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 0b0000000e0000000e000000
+    _use_coin: 160000001700000018000000
+    _npc_name: str_auction_house_npc_name_418
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 419
+    _level: 4
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0b0000000d0000000d000000
+    _use_coin: 160000001600000016000000
+    _npc_name: str_auction_house_npc_name_419
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 420
+    _level: 4
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0d0000000b0000000b000000
+    _use_coin: 180000001600000016000000
+    _npc_name: str_auction_house_npc_name_420
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 421
+    _level: 4
+    _ceo_idx: e9030000eb030000f5030000
+    _ceo_lv: 0c0000000d0000000b000000
+    _use_coin: 170000001600000016000000
+    _npc_name: str_auction_house_npc_name_421
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 422
+    _level: 4
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 0b0000000e0000000e000000
+    _use_coin: 16000000190000001c000000
+    _npc_name: str_auction_house_npc_name_422
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 423
+    _level: 4
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0d0000000c0000000e000000
+    _use_coin: 170000001600000019000000
+    _npc_name: str_auction_house_npc_name_423
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 424
+    _level: 4
+    _ceo_idx: f7030000ed030000f3030000
+    _ceo_lv: 0d0000000d0000000e000000
+    _use_coin: 160000001900000017000000
+    _npc_name: str_auction_house_npc_name_424
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 425
+    _level: 4
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 0c0000000b0000000c000000
+    _use_coin: 160000001600000018000000
+    _npc_name: str_auction_house_npc_name_425
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 426
+    _level: 4
+    _ceo_idx: f1030000f0030000ee030000
+    _ceo_lv: 0d0000000b0000000e000000
+    _use_coin: 17000000160000001c000000
+    _npc_name: str_auction_house_npc_name_426
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 427
+    _level: 4
+    _ceo_idx: eb030000eb030000ed030000
+    _ceo_lv: 0c0000000c0000000b000000
+    _use_coin: 160000001700000016000000
+    _npc_name: str_auction_house_npc_name_427
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 428
+    _level: 4
+    _ceo_idx: f4030000f0030000f3030000
+    _ceo_lv: 0c0000000d0000000d000000
+    _use_coin: 160000001a00000018000000
+    _npc_name: str_auction_house_npc_name_428
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 429
+    _level: 4
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0c0000000c0000000b000000
+    _use_coin: 160000001600000016000000
+    _npc_name: str_auction_house_npc_name_429
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 430
+    _level: 4
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 0b0000000c0000000e000000
+    _use_coin: 160000001700000019000000
+    _npc_name: str_auction_house_npc_name_430
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 301
+    _level: 3
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 0f0000001000000010000000
+    _use_coin: 1d0000001f00000020000000
+    _npc_name: str_auction_house_npc_name_301
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 302
+    _level: 3
+    _ceo_idx: f7030000f0030000eb030000
+    _ceo_lv: 0d0000000f0000000d000000
+    _use_coin: 1a0000001b0000001a000000
+    _npc_name: str_auction_house_npc_name_302
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 303
+    _level: 3
+    _ceo_idx: f0030000f1030000f3030000
+    _ceo_lv: 0e0000000e0000000f000000
+    _use_coin: 1a0000001a0000001e000000
+    _npc_name: str_auction_house_npc_name_303
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 304
+    _level: 3
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0d0000000f0000000f000000
+    _use_coin: 1a0000001c0000001c000000
+    _npc_name: str_auction_house_npc_name_304
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 305
+    _level: 3
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 100000000d0000000e000000
+    _use_coin: 200000001a0000001b000000
+    _npc_name: str_auction_house_npc_name_305
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 306
+    _level: 3
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 0f0000001000000010000000
+    _use_coin: 1e0000001d0000001b000000
+    _npc_name: str_auction_house_npc_name_306
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 307
+    _level: 3
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0e0000000f0000000d000000
+    _use_coin: 1b0000001c0000001a000000
+    _npc_name: str_auction_house_npc_name_307
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 308
+    _level: 3
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 0e0000000f0000000d000000
+    _use_coin: 1a0000001b0000001a000000
+    _npc_name: str_auction_house_npc_name_308
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 309
+    _level: 3
+    _ceo_idx: f2030000f2030000f2030000
+    _ceo_lv: 0f0000000f0000000d000000
+    _use_coin: 1c0000001e0000001a000000
+    _npc_name: str_auction_house_npc_name_309
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 310
+    _level: 3
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 100000000e00000010000000
+    _use_coin: 1f0000001b0000001b000000
+    _npc_name: str_auction_house_npc_name_310
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 311
+    _level: 3
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 100000000e0000000e000000
+    _use_coin: 1a0000001c0000001a000000
+    _npc_name: str_auction_house_npc_name_311
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 312
+    _level: 3
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 100000000f0000000e000000
+    _use_coin: 1b0000001d0000001a000000
+    _npc_name: str_auction_house_npc_name_312
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 313
+    _level: 3
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 0d000000100000000d000000
+    _use_coin: 1a0000001c0000001a000000
+    _npc_name: str_auction_house_npc_name_313
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 314
+    _level: 3
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 0e000000100000000d000000
+    _use_coin: 1b0000001e0000001a000000
+    _npc_name: str_auction_house_npc_name_314
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 315
+    _level: 3
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0f0000000d0000000d000000
+    _use_coin: 1c0000001a0000001a000000
+    _npc_name: str_auction_house_npc_name_315
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 316
+    _level: 3
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 100000000e0000000e000000
+    _use_coin: 1a0000001b0000001c000000
+    _npc_name: str_auction_house_npc_name_316
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 317
+    _level: 3
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 0e0000000e00000010000000
+    _use_coin: 1c0000001a0000001d000000
+    _npc_name: str_auction_house_npc_name_317
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 318
+    _level: 3
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 0f0000000e0000000f000000
+    _use_coin: 1a0000001c0000001b000000
+    _npc_name: str_auction_house_npc_name_318
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 319
+    _level: 3
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 0e000000100000000d000000
+    _use_coin: 1a0000001c0000001a000000
+    _npc_name: str_auction_house_npc_name_319
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 320
+    _level: 3
+    _ceo_idx: f5030000f0030000f8030000
+    _ceo_lv: 0f0000000f0000000e000000
+    _use_coin: 1d0000001e0000001a000000
+    _npc_name: str_auction_house_npc_name_320
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 321
+    _level: 3
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 100000000d0000000d000000
+    _use_coin: 1e0000001a0000001a000000
+    _npc_name: str_auction_house_npc_name_321
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 322
+    _level: 3
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 0d0000000f0000000f000000
+    _use_coin: 1a0000001a0000001e000000
+    _npc_name: str_auction_house_npc_name_322
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 323
+    _level: 3
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 0f0000000f0000000e000000
+    _use_coin: 1d0000001e0000001a000000
+    _npc_name: str_auction_house_npc_name_323
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 324
+    _level: 3
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0f0000000e0000000e000000
+    _use_coin: 1d0000001a0000001c000000
+    _npc_name: str_auction_house_npc_name_324
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 325
+    _level: 3
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 100000000d0000000e000000
+    _use_coin: 1c0000001a0000001a000000
+    _npc_name: str_auction_house_npc_name_325
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 326
+    _level: 3
+    _ceo_idx: f5030000f3030000f1030000
+    _ceo_lv: 100000000f0000000e000000
+    _use_coin: 1e0000001b0000001c000000
+    _npc_name: str_auction_house_npc_name_326
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 327
+    _level: 3
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 100000000f0000000e000000
+    _use_coin: 200000001e0000001c000000
+    _npc_name: str_auction_house_npc_name_327
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 328
+    _level: 3
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 100000000d0000000f000000
+    _use_coin: 1f0000001a0000001d000000
+    _npc_name: str_auction_house_npc_name_328
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 329
+    _level: 3
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 100000000f0000000f000000
+    _use_coin: 1a0000001a0000001b000000
+    _npc_name: str_auction_house_npc_name_329
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 330
+    _level: 3
+    _ceo_idx: ea030000ea030000ea030000
+    _ceo_lv: 0e0000000d0000000e000000
+    _use_coin: 1c0000001a0000001b000000
+    _npc_name: str_auction_house_npc_name_330
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 201
+    _level: 2
+    _ceo_idx: f8030000ec030000f4030000
+    _ceo_lv: 100000001000000011000000
+    _use_coin: 1f0000001f0000001f000000
+    _npc_name: str_auction_house_npc_name_201
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 202
+    _level: 2
+    _ceo_idx: f0030000f0030000f0030000
+    _ceo_lv: 100000001000000011000000
+    _use_coin: 1f0000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_202
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 203
+    _level: 2
+    _ceo_idx: f3030000f3030000f3030000
+    _ceo_lv: 0f000000120000000f000000
+    _use_coin: 1e0000001f0000001e000000
+    _npc_name: str_auction_house_npc_name_203
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 204
+    _level: 2
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 0f0000001200000012000000
+    _use_coin: 1e0000002300000021000000
+    _npc_name: str_auction_house_npc_name_204
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 205
+    _level: 2
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 100000001000000011000000
+    _use_coin: 200000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_205
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 206
+    _level: 2
+    _ceo_idx: f1030000f1030000f1030000
+    _ceo_lv: 0f0000000f00000012000000
+    _use_coin: 1e0000001e00000022000000
+    _npc_name: str_auction_house_npc_name_206
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 207
+    _level: 2
+    _ceo_idx: f3030000f3030000f3030000
+    _ceo_lv: 0f0000001200000011000000
+    _use_coin: 1e0000001e00000022000000
+    _npc_name: str_auction_house_npc_name_207
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 208
+    _level: 2
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 100000000f0000000f000000
+    _use_coin: 1e0000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_208
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 209
+    _level: 2
+    _ceo_idx: ee030000ea030000ed030000
+    _ceo_lv: 110000001200000012000000
+    _use_coin: 220000001f0000001f000000
+    _npc_name: str_auction_house_npc_name_209
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 210
+    _level: 2
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 120000000f00000010000000
+    _use_coin: 230000001e00000020000000
+    _npc_name: str_auction_house_npc_name_210
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 211
+    _level: 2
+    _ceo_idx: ec030000ec030000ec030000
+    _ceo_lv: 12000000110000000f000000
+    _use_coin: 21000000220000001e000000
+    _npc_name: str_auction_house_npc_name_211
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 212
+    _level: 2
+    _ceo_idx: f3030000f3030000f3030000
+    _ceo_lv: 0f0000001000000012000000
+    _use_coin: 1e0000001e00000023000000
+    _npc_name: str_auction_house_npc_name_212
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 213
+    _level: 2
+    _ceo_idx: f8030000eb030000f1030000
+    _ceo_lv: 10000000110000000f000000
+    _use_coin: 20000000210000001e000000
+    _npc_name: str_auction_house_npc_name_213
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 214
+    _level: 2
+    _ceo_idx: ed030000f7030000f5030000
+    _ceo_lv: 120000001100000011000000
+    _use_coin: 230000001f00000020000000
+    _npc_name: str_auction_house_npc_name_214
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 215
+    _level: 2
+    _ceo_idx: f2030000f2030000f2030000
+    _ceo_lv: 120000001100000010000000
+    _use_coin: 230000002200000020000000
+    _npc_name: str_auction_house_npc_name_215
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 216
+    _level: 2
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 0f000000120000000f000000
+    _use_coin: 1e000000240000001e000000
+    _npc_name: str_auction_house_npc_name_216
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 217
+    _level: 2
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 120000001200000012000000
+    _use_coin: 21000000210000001f000000
+    _npc_name: str_auction_house_npc_name_217
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 218
+    _level: 2
+    _ceo_idx: f1030000f1030000f1030000
+    _ceo_lv: 110000001200000012000000
+    _use_coin: 210000002000000024000000
+    _npc_name: str_auction_house_npc_name_218
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 219
+    _level: 2
+    _ceo_idx: f4030000f4030000f0030000
+    _ceo_lv: 10000000120000000f000000
+    _use_coin: 200000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_219
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 220
+    _level: 2
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 110000001000000012000000
+    _use_coin: 1f000000200000001f000000
+    _npc_name: str_auction_house_npc_name_220
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 221
+    _level: 2
+    _ceo_idx: f7030000ed030000f3030000
+    _ceo_lv: 0f0000001100000010000000
+    _use_coin: 1e000000200000001e000000
+    _npc_name: str_auction_house_npc_name_221
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 222
+    _level: 2
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 12000000100000000f000000
+    _use_coin: 200000001f0000001e000000
+    _npc_name: str_auction_house_npc_name_222
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 223
+    _level: 2
+    _ceo_idx: f5030000eb030000ef030000
+    _ceo_lv: 0f000000120000000f000000
+    _use_coin: 1e000000220000001e000000
+    _npc_name: str_auction_house_npc_name_223
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 224
+    _level: 2
+    _ceo_idx: f3030000ec030000f8030000
+    _ceo_lv: 0f0000001000000012000000
+    _use_coin: 1e0000001f00000020000000
+    _npc_name: str_auction_house_npc_name_224
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 225
+    _level: 2
+    _ceo_idx: f0030000ea030000f5030000
+    _ceo_lv: 100000001200000010000000
+    _use_coin: 1f0000002200000020000000
+    _npc_name: str_auction_house_npc_name_225
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 226
+    _level: 2
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 110000000f0000000f000000
+    _use_coin: 1e0000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_226
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 227
+    _level: 2
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 0f0000001000000012000000
+    _use_coin: 1e0000002000000021000000
+    _npc_name: str_auction_house_npc_name_227
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 228
+    _level: 2
+    _ceo_idx: f4030000f4030000f4030000
+    _ceo_lv: 120000000f00000012000000
+    _use_coin: 200000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_228
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 229
+    _level: 2
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 100000000f00000010000000
+    _use_coin: 1e0000001e0000001f000000
+    _npc_name: str_auction_house_npc_name_229
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 230
+    _level: 2
+    _ceo_idx: ef030000f8030000ea030000
+    _ceo_lv: 10000000110000000f000000
+    _use_coin: 200000001e0000001e000000
+    _npc_name: str_auction_house_npc_name_230
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 101
+    _level: 1
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 110000001400000011000000
+    _use_coin: 220000002200000022000000
+    _npc_name: str_auction_house_npc_name_101
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 102
+    _level: 1
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 130000001200000013000000
+    _use_coin: 240000002300000025000000
+    _npc_name: str_auction_house_npc_name_102
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 103
+    _level: 1
+    _ceo_idx: f8030000f7030000f8030000
+    _ceo_lv: 130000001300000013000000
+    _use_coin: 260000002500000023000000
+    _npc_name: str_auction_house_npc_name_103
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 104
+    _level: 1
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 110000001200000012000000
+    _use_coin: 220000002200000022000000
+    _npc_name: str_auction_house_npc_name_104
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 105
+    _level: 1
+    _ceo_idx: ef030000ef030000ef030000
+    _ceo_lv: 120000001100000012000000
+    _use_coin: 220000002200000023000000
+    _npc_name: str_auction_house_npc_name_105
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 106
+    _level: 1
+    _ceo_idx: ee030000ee030000ee030000
+    _ceo_lv: 130000001100000011000000
+    _use_coin: 240000002200000022000000
+    _npc_name: str_auction_house_npc_name_106
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 107
+    _level: 1
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 110000001200000013000000
+    _use_coin: 220000002400000025000000
+    _npc_name: str_auction_house_npc_name_107
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 108
+    _level: 1
+    _ceo_idx: ed030000e9030000f0030000
+    _ceo_lv: 120000001400000014000000
+    _use_coin: 230000002200000023000000
+    _npc_name: str_auction_house_npc_name_108
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 109
+    _level: 1
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 130000001100000011000000
+    _use_coin: 260000002200000022000000
+    _npc_name: str_auction_house_npc_name_109
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 110
+    _level: 1
+    _ceo_idx: f0030000f0030000f0030000
+    _ceo_lv: 120000001300000014000000
+    _use_coin: 240000002400000024000000
+    _npc_name: str_auction_house_npc_name_110
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 111
+    _level: 1
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 140000001300000012000000
+    _use_coin: 250000002600000023000000
+    _npc_name: str_auction_house_npc_name_111
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 112
+    _level: 1
+    _ceo_idx: eb030000f3030000f7030000
+    _ceo_lv: 140000001200000014000000
+    _use_coin: 240000002300000026000000
+    _npc_name: str_auction_house_npc_name_112
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 113
+    _level: 1
+    _ceo_idx: ee030000ee030000ee030000
+    _ceo_lv: 110000001200000011000000
+    _use_coin: 220000002300000022000000
+    _npc_name: str_auction_house_npc_name_113
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 114
+    _level: 1
+    _ceo_idx: ef030000f8030000f0030000
+    _ceo_lv: 140000001300000011000000
+    _use_coin: 220000002600000022000000
+    _npc_name: str_auction_house_npc_name_114
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 115
+    _level: 1
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 110000001400000013000000
+    _use_coin: 220000002600000024000000
+    _npc_name: str_auction_house_npc_name_115
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 116
+    _level: 1
+    _ceo_idx: f5030000f5030000f5030000
+    _ceo_lv: 120000001300000014000000
+    _use_coin: 240000002500000028000000
+    _npc_name: str_auction_house_npc_name_116
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 117
+    _level: 1
+    _ceo_idx: f8030000ee030000f1030000
+    _ceo_lv: 120000001300000012000000
+    _use_coin: 220000002400000022000000
+    _npc_name: str_auction_house_npc_name_117
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 118
+    _level: 1
+    _ceo_idx: f3030000f1030000e9030000
+    _ceo_lv: 110000001300000014000000
+    _use_coin: 220000002500000024000000
+    _npc_name: str_auction_house_npc_name_118
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 119
+    _level: 1
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 110000001100000012000000
+    _use_coin: 220000002200000024000000
+    _npc_name: str_auction_house_npc_name_119
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 120
+    _level: 1
+    _ceo_idx: f7030000ef030000f5030000
+    _ceo_lv: 140000001300000011000000
+    _use_coin: 270000002400000022000000
+    _npc_name: str_auction_house_npc_name_120
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 121
+    _level: 1
+    _ceo_idx: f3030000f4030000f1030000
+    _ceo_lv: 120000001100000011000000
+    _use_coin: 230000002200000022000000
+    _npc_name: str_auction_house_npc_name_121
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 122
+    _level: 1
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 130000001300000013000000
+    _use_coin: 220000002600000023000000
+    _npc_name: str_auction_house_npc_name_122
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 123
+    _level: 1
+    _ceo_idx: e9030000e9030000e9030000
+    _ceo_lv: 140000001200000014000000
+    _use_coin: 270000002400000024000000
+    _npc_name: str_auction_house_npc_name_123
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 124
+    _level: 1
+    _ceo_idx: f8030000f8030000f8030000
+    _ceo_lv: 120000001100000011000000
+    _use_coin: 230000002200000022000000
+    _npc_name: str_auction_house_npc_name_124
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 125
+    _level: 1
+    _ceo_idx: f6030000f6030000f6030000
+    _ceo_lv: 140000001100000014000000
+    _use_coin: 230000002200000026000000
+    _npc_name: str_auction_house_npc_name_125
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 126
+    _level: 1
+    _ceo_idx: ed030000ed030000ed030000
+    _ceo_lv: 120000001300000011000000
+    _use_coin: 220000002500000022000000
+    _npc_name: str_auction_house_npc_name_126
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 127
+    _level: 1
+    _ceo_idx: f7030000f7030000f7030000
+    _ceo_lv: 110000001100000011000000
+    _use_coin: 220000002200000022000000
+    _npc_name: str_auction_house_npc_name_127
+    _npc_img: Info_Tuto_Cha_CEO_3
+  - _idx: 128
+    _level: 1
+    _ceo_idx: f0030000f1030000ef030000
+    _ceo_lv: 140000001300000013000000
+    _use_coin: 280000002200000026000000
+    _npc_name: str_auction_house_npc_name_128
+    _npc_img: Info_Tuto_Cha_CEO_1
+  - _idx: 129
+    _level: 1
+    _ceo_idx: f2030000f2030000f2030000
+    _ceo_lv: 130000001200000013000000
+    _use_coin: 240000002200000023000000
+    _npc_name: str_auction_house_npc_name_129
+    _npc_img: Info_Tuto_Cha_CEO_2
+  - _idx: 130
+    _level: 1
+    _ceo_idx: eb030000eb030000eb030000
+    _ceo_lv: 140000001100000014000000
+    _use_coin: 230000002200000028000000
+    _npc_name: str_auction_house_npc_name_130
+    _npc_img: Info_Tuto_Cha_CEO_3

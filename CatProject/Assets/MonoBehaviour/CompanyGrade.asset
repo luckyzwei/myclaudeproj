@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1016537367, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: CompanyGrade
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  mSecondKey: []
+  mDataList:
+  - _grade: 1
+    _max_level: 3
+    _contract_time: 10800
+    _contract_cost_value: 6009000080250000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000
+    _need_desk: 4
+    _need_grade_lvcount: ffffff/fffffff/fffffff/f
+    _strike_ceo_lv: 00000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 2400
+  - _grade: 2
+    _max_level: 3
+    _contract_time: 28800
+    _contract_cost_value: 983a000060ea0000f8240100f8240100f8240100f8240100f8240100f8240100f8240100f8240100
+    _need_desk: 6
+    _need_grade_lvcount: ffffff/f
+    _strike_ceo_lv: 00000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 15000
+  - _grade: 3
+    _max_level: 4
+    _contract_time: 28800
+    _contract_cost_value: 80a9030000a60e00804f120000f9150080a21900004c1d0080f52000009f24008048280000f22b00
+    _need_desk: 8
+    _need_grade_lvcount: ffffff/f
+    _strike_ceo_lv: 00000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 240000
+  - _grade: 4
+    _max_level: 6
+    _contract_time: 43200
+    _contract_cost_value: 407e050000f9150040771b0080f52000c073260000f22b004070310080ee3600c06c3c0000eb4100
+    _need_desk: 12
+    _need_grade_lvcount: ffffff/f
+    _strike_ceo_lv: 00000000010000000300000005000000060000000700000008000000090000000a0000000b0000000c000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 360000
+  - _grade: 5
+    _max_level: 7
+    _contract_time: 86400
+    _contract_cost_value: 804f1200003e4900808d5b0000dd6d00802c8000007c920080cba400001bb700806ac90000badb00
+    _need_desk: 20
+    _need_grade_lvcount: 040000000300000004000000
+    _strike_ceo_lv: 00000000020000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 1200000
+  - _grade: 6
+    _max_level: 7
+    _contract_time: 86400
+    _contract_cost_value: 009f2400007c9200001bb70000badb000059000100f824010097490100366e0100d592010074b701
+    _need_desk: 20
+    _need_grade_lvcount: 050000000300000005000000
+    _strike_ceo_lv: 000000000300000005000000060000000700000008000000090000000a0000000b0000000b0000000c000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 2400000
+  - _grade: 7
+    _max_level: 7
+    _contract_time: 86400
+    _contract_cost_value: c0c62d00001bb700c0e1e40080a81201406f400100366e01c0fc9b0180c3c901408af70100512502
+    _need_desk: 20
+    _need_grade_lvcount: 060000000300000007000000
+    _strike_ceo_lv: 000000000400000005000000060000000700000008000000090000000a0000000b0000000b0000000c000000
+    _exp_per_s: 0
+    _reward_type: 1
+    _reward_idx: 1
+    _reward_value: 3000000

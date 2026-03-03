@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1693649350, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: CouponInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - VA0
+  mSecondKey: []
+  mDataList:
+  - _coupon_code: VA0
+    _name: str_coupon_name_VA0
+    _desc: str_coupon_desc_VA0
+    _start_date: 2024-01-01 0:00:00
+    _end_date: 2100-12-21 0:00:00
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 50

@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1701525164, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: DailyQuestList
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  mSecondKey: []
+  mDataList:
+  - _order: 1
+    _show_order: 3
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_1
+    _mission_value: 30
+    _reward_value: 10
+    _short_cut: 0
+  - _order: 2
+    _show_order: 4
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_2
+    _mission_value: 3
+    _reward_value: 10
+    _short_cut: 0
+  - _order: 3
+    _show_order: 5
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_3
+    _mission_value: 1
+    _reward_value: 5
+    _short_cut: 1
+  - _order: 4
+    _show_order: 6
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_4
+    _mission_value: 3
+    _reward_value: 10
+    _short_cut: 0
+  - _order: 5
+    _show_order: 7
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_5
+    _mission_value: 5
+    _reward_value: 10
+    _short_cut: 0
+  - _order: 6
+    _show_order: 8
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_6
+    _mission_value: 10
+    _reward_value: 20
+    _short_cut: 0
+  - _order: 7
+    _show_order: 9
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_7
+    _mission_value: 2
+    _reward_value: 25
+    _short_cut: 1
+  - _order: 8
+    _show_order: 10
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_8
+    _mission_value: 1
+    _reward_value: 25
+    _short_cut: 1
+  - _order: 9
+    _show_order: 11
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_9
+    _mission_value: 3
+    _reward_value: 15
+    _short_cut: 0
+  - _order: 10
+    _show_order: 12
+    _show_region: 01000000ffffff/fffffff/f
+    _desc: str_quest_desc_10
+    _mission_value: 3
+    _reward_value: 10
+    _short_cut: 1
+  - _order: 11
+    _show_order: 13
+    _show_region: 01000000ffffff/fffffff/f
+    _desc: str_quest_desc_11
+    _mission_value: 1
+    _reward_value: 10
+    _short_cut: 1
+  - _order: 12
+    _show_order: 2
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_12
+    _mission_value: 600
+    _reward_value: 20
+    _short_cut: 0
+  - _order: 13
+    _show_order: 1
+    _show_region: 010000000100000001000000
+    _desc: str_quest_desc_13
+    _mission_value: 3
+    _reward_value: 20
+    _short_cut: 1

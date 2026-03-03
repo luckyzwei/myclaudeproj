@@ -1,0 +1,641 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2000115825, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SeasonalRankReward
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 10001
+  - 10001
+  - 10001
+  - 10001
+  - 10001
+  - 10001
+  - 10001
+  - 10002
+  - 10002
+  - 10002
+  - 10002
+  - 10002
+  - 10002
+  - 10002
+  - 10002
+  - 11001
+  - 11001
+  - 11001
+  - 11001
+  - 11001
+  - 11001
+  - 11001
+  - 11001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  - 12001
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  mDataList:
+  - _theme: 10001
+    _idx: 1
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 10001
+    _idx: 2
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 10001
+    _idx: 3
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 10001
+    _idx: 4
+    _rank_type: 2
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: 112700001127000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: 6500000066000000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 10001
+    _idx: 5
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000ca000000
+    _reward_value: 32000000a0860100102700000a000000
+  - _theme: 10001
+    _idx: 6
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000ca000000
+    _reward_value: 0f00000050c30000401f000005000000
+  - _theme: 10001
+    _idx: 7
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000112700001127000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 020000006700000068000000c9000000
+    _reward_value: 05000000204e0000881300000a000000
+  - _theme: 10001
+    _idx: 8
+    _rank_type: 3
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: 112700001127000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: 6500000066000000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 10002
+    _idx: 1
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 10002
+    _idx: 2
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 10002
+    _idx: 3
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 10002
+    _idx: 4
+    _rank_type: 2
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: 122700001227000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: c9000000ca000000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 10002
+    _idx: 5
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000ca000000
+    _reward_value: 32000000a0860100102700000a000000
+  - _theme: 10002
+    _idx: 6
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000ca000000
+    _reward_value: 0f00000050c30000401f000005000000
+  - _theme: 10002
+    _idx: 7
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000122700001227000000000000
+    _reward_type: 01000000030000000400000003000000
+    _reward_idx: 02000000cb000000cc000000c9000000
+    _reward_value: 05000000204e0000881300000a000000
+  - _theme: 10002
+    _idx: 8
+    _rank_type: 3
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: 122700001227000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: c9000000ca000000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 11001
+    _idx: 1
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 11001
+    _idx: 2
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 11001
+    _idx: 3
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 11001
+    _idx: 4
+    _rank_type: 2
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 11001
+    _idx: 5
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 32000000a0860100102700000a000000
+  - _theme: 11001
+    _idx: 6
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 0f00000050c30000401f000005000000
+  - _theme: 11001
+    _idx: 7
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 05000000204e0000881300000a000000
+  - _theme: 11001
+    _idx: 8
+    _rank_type: 3
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 1
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 2
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 3
+    _rank_type: 2
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 4
+    _rank_type: 2
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 5
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 6
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 7
+    _rank_type: 3
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 8
+    _rank_type: 3
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 9
+    _rank_type: 4
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 10
+    _rank_type: 4
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 11
+    _rank_type: 4
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 12
+    _rank_type: 4
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 13
+    _rank_type: 5
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 14
+    _rank_type: 5
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 15
+    _rank_type: 5
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 16
+    _rank_type: 5
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 17
+    _rank_type: 6
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 18
+    _rank_type: 6
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 19
+    _rank_type: 6
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 20
+    _rank_type: 6
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 21
+    _rank_type: 7
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 22
+    _rank_type: 7
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 23
+    _rank_type: 7
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 24
+    _rank_type: 7
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000
+  - _theme: 12001
+    _idx: 25
+    _rank_type: 8
+    _rank_img: Seasonal_Icon_Rank_Grade_1
+    _rank_high: 1
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 64000000a0860100204e00000a000000
+  - _theme: 12001
+    _idx: 26
+    _rank_type: 8
+    _rank_img: Seasonal_Icon_Rank_Grade_2
+    _rank_high: 2
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000ca000000
+    _reward_value: 1e00000050c30000983a000005000000
+  - _theme: 12001
+    _idx: 27
+    _rank_type: 8
+    _rank_img: Seasonal_Icon_Rank_Grade_3
+    _rank_high: 3
+    _rank_low: -1
+    _reward_region: 00000000f92a0000f92a000000000000
+    _reward_type: 01000000030000000900000003000000
+    _reward_idx: 02000000eb030000ec030000c9000000
+    _reward_value: 0a000000204e0000102700000a000000
+  - _theme: 12001
+    _idx: 28
+    _rank_type: 8
+    _rank_img:
+    _rank_high: 4
+    _rank_low: 6
+    _reward_region: f92a0000f92a000000000000
+    _reward_type: 010000000200000003000000
+    _reward_idx: e9030000ea030000c9000000
+    _reward_value: c0270900c027090005000000

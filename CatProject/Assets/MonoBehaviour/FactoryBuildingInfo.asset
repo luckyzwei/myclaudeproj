@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 480456481, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: FactoryBuildingInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _name: str_name_factory_workplace_1
+    _description: str_desc_factory_workplace_1
+    _need_workplace_idx: -1
+    _type: 1
+    _need_cost: 0
+    _need_time: 1
+    _value: 800
+    _value_increase: 250
+    _upgrade_cost: 9150000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 10
+    _newfactory_img: Factory_Img_Workplace_1
+  - _idx: 2
+    _name: str_name_factory_workplace_2
+    _description: str_desc_factory_workplace_1
+    _need_workplace_idx: 1
+    _type: 1
+    _need_cost: 6000000
+    _need_time: 10
+    _value: 800
+    _value_increase: 250
+    _upgrade_cost: 9150000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 10
+    _newfactory_img: Factory_Img_Workplace_1
+  - _idx: 3
+    _name: str_name_factory_workplace_5
+    _description: str_desc_factory_workplace_1
+    _need_workplace_idx: 4
+    _type: 1
+    _need_cost: 6000000
+    _need_time: 7200
+    _value: 800
+    _value_increase: 250
+    _upgrade_cost: 9150000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 10
+    _newfactory_img: Factory_Img_Workplace_1
+  - _idx: 4
+    _name: str_name_factory_workplace_3
+    _description: str_desc_factory_workplace_2
+    _need_workplace_idx: 2
+    _type: 2
+    _need_cost: 10500000
+    _need_time: 7200
+    _value: 250
+    _value_increase: 250
+    _upgrade_cost: 13125000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 20
+    _newfactory_img: Factory_Img_Workplace_2
+  - _idx: 5
+    _name: str_name_factory_workplace_4
+    _description: str_desc_factory_workplace_2
+    _need_workplace_idx: 4
+    _type: 2
+    _need_cost: 10500000
+    _need_time: 7200
+    _value: 250
+    _value_increase: 250
+    _upgrade_cost: 13125000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 20
+    _newfactory_img: Factory_Img_Workplace_2
+  - _idx: 6
+    _name: str_name_factory_workplace_6
+    _description: str_desc_factory_workplace_2
+    _need_workplace_idx: 5
+    _type: 2
+    _need_cost: 10500000
+    _need_time: 7200
+    _value: 250
+    _value_increase: 250
+    _upgrade_cost: 13125000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 20
+    _newfactory_img: Factory_Img_Workplace_2
+  - _idx: 7
+    _name: str_name_factory_workplace_7
+    _description: str_desc_factory_workplace_2
+    _need_workplace_idx: 5
+    _type: 2
+    _need_cost: 10500000
+    _need_time: 7200
+    _value: 250
+    _value_increase: 250
+    _upgrade_cost: 13125000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 20
+    _newfactory_img: Factory_Img_Workplace_2
+  - _idx: 8
+    _name: str_name_factory_workplace_8
+    _description: str_desc_factory_workplace_3
+    _need_workplace_idx: 5
+    _type: 3
+    _need_cost: 22785000
+    _need_time: 14400
+    _value: 125
+    _value_increase: 125
+    _upgrade_cost: 28481250
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 40
+    _newfactory_img: Factory_Img_Workplace_3
+  - _idx: 9
+    _name: str_name_factory_workplace_9
+    _description: str_desc_factory_workplace_3
+    _need_workplace_idx: 8
+    _type: 3
+    _need_cost: 22785000
+    _need_time: 14400
+    _value: 125
+    _value_increase: 125
+    _upgrade_cost: 28481250
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 40
+    _newfactory_img: Factory_Img_Workplace_3
+  - _idx: 10
+    _name: str_name_factory_workplace_10
+    _description: str_desc_factory_workplace_3
+    _need_workplace_idx: 9
+    _type: 3
+    _need_cost: 22785000
+    _need_time: 14400
+    _value: 125
+    _value_increase: 125
+    _upgrade_cost: 28481250
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 40
+    _newfactory_img: Factory_Img_Workplace_3
+  - _idx: 11
+    _name: str_name_factory_workplace_11
+    _description: str_desc_factory_workplace_3
+    _need_workplace_idx: 9
+    _type: 3
+    _need_cost: 22785000
+    _need_time: 14400
+    _value: 125
+    _value_increase: 125
+    _upgrade_cost: 28481250
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 80
+    _change_cost: 108
+    _max_lv: 40
+    _newfactory_img: Factory_Img_Workplace_3
+  - _idx: 12
+    _name: str_title_factory_supply
+    _description: str_title_factory_supply_clear
+    _need_workplace_idx: -1
+    _type: 4
+    _need_cost: -1
+    _need_time: -1
+    _value: 45000
+    _value_increase: 120
+    _upgrade_cost: 10125000
+    _cost_increase: 125
+    _change_lv: 10
+    _value_change: 120
+    _change_cost: 250
+    _max_lv: 15
+    _newfactory_img: Factory_Img_Workplace_4

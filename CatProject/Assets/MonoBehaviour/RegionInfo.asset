@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1625201408, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: RegionInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _name: str_name_region_1
+    _need_lv: 0
+    _description: str_desc_region_1
+    _icon: WorldMap_Img_Region_01
+    _stage_img:
+  - _idx: 2
+    _name: str_name_region_2
+    _need_lv: 800
+    _description: str_desc_region_2
+    _icon: WorldMap_Img_Region_02
+    _stage_img: Info_Img_NextCity_2
+  - _idx: 3
+    _name: str_name_region_3
+    _need_lv: 1700
+    _description: str_desc_region_3
+    _icon: WorldMap_Img_Region_03
+    _stage_img: Info_Img_NextCity_3
+  - _idx: 4
+    _name: str_name_region_4
+    _need_lv: 2600
+    _description: str_desc_region_4
+    _icon: WorldMap_Img_Region_04
+    _stage_img: Info_Img_NextCity_4
+  - _idx: 5
+    _name: str_name_region_5
+    _need_lv: 3500
+    _description: str_desc_region_5
+    _icon: WorldMap_Img_Region_05
+    _stage_img: Info_Img_NextCity_5
+  - _idx: 6
+    _name: str_name_region_6
+    _need_lv: -1
+    _description: str_desc_region_6
+    _icon: WorldMap_Img_Region_06
+    _stage_img: Info_Img_NextCity_6
+  - _idx: 7
+    _name: str_name_region_7
+    _need_lv: -2
+    _description: str_desc_region_7
+    _icon: WorldMap_Img_Region_07
+    _stage_img: Info_Img_NextCity_7
+  - _idx: 8
+    _name: str_name_region_8
+    _need_lv: -2
+    _description: str_desc_region_8
+    _icon: WorldMap_Img_Region_08
+    _stage_img: Info_Img_NextCity_8
+  - _idx: 9
+    _name: str_name_region_9
+    _need_lv: -2
+    _description: str_desc_region_9
+    _icon: WorldMap_Img_Region_09
+    _stage_img: Info_Img_NextCity_9
+  - _idx: 10
+    _name: str_name_region_10
+    _need_lv: -2
+    _description: str_desc_region_10
+    _icon: WorldMap_Img_Region_10
+    _stage_img: Info_Img_NextCity_10

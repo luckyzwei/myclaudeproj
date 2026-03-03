@@ -1,0 +1,617 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1519009861, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: StageSet
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 10001
+  - 20001
+  - 30001
+  - 40001
+  - 50001
+  - 60001
+  - 70001
+  - 80001
+  - 90001
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  mSecondKey:
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+  - 60000
+  - 70000
+  - 80000
+  - 90000
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  mDataList:
+  - _stage: 10001
+    _region: 10000
+    _stage_name: str_name_stage10001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event1_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 020000000000000001000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 10001
+    _card_auto_level: 0
+  - _stage: 20001
+    _region: 20000
+    _stage_name: str_name_stage20001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event2_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 20001
+    _card_auto_level: 0
+  - _stage: 30001
+    _region: 30000
+    _stage_name: str_name_stage30001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event3_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 30001
+    _card_auto_level: 0
+  - _stage: 40001
+    _region: 40000
+    _stage_name: str_name_stage40001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event4_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 40001
+    _card_auto_level: 0
+  - _stage: 50001
+    _region: 50000
+    _stage_name: str_name_stage50001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event5_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 7
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 50001
+    _card_auto_level: 0
+  - _stage: 60001
+    _region: 60000
+    _stage_name: str_name_stage60001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event6_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 8
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 60001
+    _card_auto_level: 0
+  - _stage: 70001
+    _region: 70000
+    _stage_name: str_name_stage70001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event7_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 70001
+    _card_auto_level: 0
+  - _stage: 80001
+    _region: 80000
+    _stage_name: str_name_stage80001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event8_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 80001
+    _card_auto_level: 0
+  - _stage: 90001
+    _region: 90000
+    _stage_name: str_name_stage90001
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_Event9_1
+    _crew2_prefab:
+    _machine_max_lv: 1000
+    _machine_slot_max: 4
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: 10
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 90001
+    _card_auto_level: 0
+  - _stage: 1
+    _region: 1
+    _stage_name: str_name_stage1
+    _stage_icon: WorldMap_Icon_Hospital_01
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 25
+    _machine_slot_max: 2
+    _bonus_gem: -1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: ffffff/fffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 1
+    _card_auto_level: 2
+  - _stage: 2
+    _region: 1
+    _stage_name: str_name_stage2
+    _stage_icon: WorldMap_Icon_Hospital_02
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 50
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 2
+    _card_auto_level: 2
+  - _stage: 3
+    _region: 1
+    _stage_name: str_name_stage3
+    _stage_icon: WorldMap_Icon_Hospital_03
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 75
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 3
+    _card_auto_level: 2
+  - _stage: 4
+    _region: 1
+    _stage_name: str_name_stage4
+    _stage_icon: WorldMap_Icon_Hospital_04
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 4
+    _card_auto_level: 2
+  - _stage: 5
+    _region: 1
+    _stage_name: str_name_stage5
+    _stage_icon: WorldMap_Icon_Hospital_05
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 5
+    _card_auto_level: 2
+  - _stage: 6
+    _region: 1
+    _stage_name: str_name_stage6
+    _stage_icon: WorldMap_Icon_Hospital_06
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 20
+    _prefab_idx: 6
+    _card_auto_level: 2
+  - _stage: 7
+    _region: 1
+    _stage_name: str_name_stage7
+    _stage_icon: WorldMap_Icon_Hospital_07
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 250
+    _machine_slot_max: 4
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 0500000001000000
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 7
+    _card_auto_level: 2
+  - _stage: 8
+    _region: 2
+    _stage_name: str_name_stage8
+    _stage_icon: WorldMap_Icon_Hospital_08
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 25
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 8
+    _card_auto_level: 3
+  - _stage: 9
+    _region: 2
+    _stage_name: str_name_stage9
+    _stage_icon: WorldMap_Icon_Hospital_09
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 50
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 9
+    _card_auto_level: 3
+  - _stage: 10
+    _region: 2
+    _stage_name: str_name_stage10
+    _stage_icon: WorldMap_Icon_Hospital_10
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 75
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 10
+    _card_auto_level: 3
+  - _stage: 11
+    _region: 2
+    _stage_name: str_name_stage11
+    _stage_icon: WorldMap_Icon_Hospital_11
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 11
+    _card_auto_level: 3
+  - _stage: 12
+    _region: 2
+    _stage_name: str_name_stage12
+    _stage_icon: WorldMap_Icon_Hospital_12
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 12
+    _card_auto_level: 3
+  - _stage: 13
+    _region: 2
+    _stage_name: str_name_stage13
+    _stage_icon: WorldMap_Icon_Hospital_13
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 20
+    _prefab_idx: 13
+    _card_auto_level: 3
+  - _stage: 14
+    _region: 2
+    _stage_name: str_name_stage14
+    _stage_icon: WorldMap_Icon_Hospital_14
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 250
+    _machine_slot_max: 4
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 0500000001000000
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 14
+    _card_auto_level: 3
+  - _stage: 15
+    _region: 3
+    _stage_name: str_name_stage15
+    _stage_icon: WorldMap_Icon_Hospital_15
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 25
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 15
+    _card_auto_level: 4
+  - _stage: 16
+    _region: 3
+    _stage_name: str_name_stage16
+    _stage_icon: WorldMap_Icon_Hospital_16
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 50
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 16
+    _card_auto_level: 4
+  - _stage: 17
+    _region: 3
+    _stage_name: str_name_stage17
+    _stage_icon: WorldMap_Icon_Hospital_17
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 75
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 17
+    _card_auto_level: 4
+  - _stage: 18
+    _region: 3
+    _stage_name: str_name_stage18
+    _stage_icon: WorldMap_Icon_Hospital_18
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 2
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 0
+    _prefab_idx: 18
+    _card_auto_level: 4
+  - _stage: 19
+    _region: 3
+    _stage_name: str_name_stage19
+    _stage_icon: WorldMap_Icon_Hospital_19
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 19
+    _card_auto_level: 4
+  - _stage: 20
+    _region: 3
+    _stage_name: str_name_stage20
+    _stage_icon: WorldMap_Icon_Hospital_20
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 150
+    _machine_slot_max: 3
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 05000000ffffff/f
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 20
+    _prefab_idx: 20
+    _card_auto_level: 4
+  - _stage: 21
+    _region: 3
+    _stage_name: str_name_stage21
+    _stage_icon: WorldMap_Icon_Hospital_21
+    _type: 1
+    _crew1_prefab: Character_Cashier_1
+    _crew2_prefab:
+    _machine_max_lv: 250
+    _machine_slot_max: 4
+    _bonus_gem: 1
+    _clear_reward_type: ffffff/fffffff/f
+    _clear_reward_idx: ffffff/fffffff/f
+    _clear_reward_count: 0500000001000000
+    _specific_customer_count: -1
+    _customers: 010000000000000000000000
+    _sewing_customer_theme: 5
+    _prefab_idx: 21
+    _card_auto_level: 4

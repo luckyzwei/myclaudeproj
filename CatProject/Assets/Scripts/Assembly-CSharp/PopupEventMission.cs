@@ -1,0 +1,67 @@
+using System.Collections.Generic;
+using Treeplla;
+using UniRx;
+using UnityEngine;
+using UnityEngine.UI;
+
+[UIPath("UI/Popup/PopupEventMission", false, false)]
+public class PopupEventMission : UIBase, IHUDTopInfo
+{
+	[SerializeField]
+	private HUDTopInfo HUDTopInfo;
+
+	[SerializeField]
+	private ScrollRect SlotScrollRect;
+
+	[SerializeField]
+	private GameObject MissionSlotPrefab;
+
+	[SerializeField]
+	private TimeComponent DailyResetTimer;
+
+	[SerializeField]
+	private TimeComponent EventEndTimer;
+
+	[SerializeField]
+	private GameObject EventPlayObj;
+
+	[SerializeField]
+	private GameObject EventEndObj;
+
+	private CurrencyHUDComponent AnniversaryTicketHUDComponent;
+
+	private E_ContentsMissionType MissionContentType;
+
+	private List<ItemEventMission> MissionSlots;
+
+	private CompositeDisposable Disposables;
+
+	protected override void Awake()
+	{
+	}
+
+	private void OnDestroy()
+	{
+	}
+
+	public void Init(E_ContentsMissionType contentType)
+	{
+	}
+
+	private void UpdateMissionSlots()
+	{
+	}
+
+	private void SetDailyResetTimer()
+	{
+	}
+
+	private void SetEventEndLayout()
+	{
+	}
+
+	public HUDTopInfo GetHUDTopInfo()
+	{
+		return null;
+	}
+}

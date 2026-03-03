@@ -1,0 +1,1005 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1989148727, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ShopGoods
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 4001
+  - 4002
+  - 4003
+  - 5001
+  - 5002
+  - 5003
+  - 6001
+  - 6002
+  - 6003
+  - 6004
+  - 7001
+  - 7002
+  - 7003
+  - 7004
+  - 7005
+  - 7006
+  - 7007
+  - 9001
+  - 9002
+  - 9003
+  - 10001
+  - 10002
+  - 11101
+  - 11102
+  - 11103
+  - 11201
+  - 11202
+  - 11203
+  - 11204
+  - 11251
+  - 11252
+  - 11253
+  - 20001
+  - 20002
+  - 20003
+  - 30001
+  - 40001
+  - 20011
+  - 20012
+  - 20013
+  - 30011
+  - 40011
+  - 20101
+  - 20102
+  - 20103
+  - 30101
+  - 40101
+  - 20201
+  - 20202
+  - 20203
+  - 30201
+  - 40201
+  mSecondKey: []
+  mDataList:
+  - _idx: 4001
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000ffffff/f
+    _reward_idx: 01000000ffffff/fffffff/fffffff/fffffff/fffffff/f
+    _reward_region: 00000000ffffff/fffffff/fffffff/fffffff/fffffff/f
+    _reward_value: 08070000ffffff/fffffff/fffffff/fffffff/fffffff/f
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 50
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_4001
+    _img: DynamicShop_Icon_Money_01_
+    _product_id:
+  - _idx: 4002
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 01000000
+    _reward_region: 00000000
+    _reward_value: 80700000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 250
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_4002
+    _img: DynamicShop_Icon_Money_02_
+    _product_id:
+  - _idx: 4003
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 01000000
+    _reward_region: 00000000
+    _reward_value: 00a30200
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 1000
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_4003
+    _img: DynamicShop_Icon_Money_03_
+    _product_id:
+  - _idx: 5001
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: ffffff/f
+    _reward_value: 100e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 100
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_5001
+    _img: DynamicShop_Icon_Exp_01
+    _product_id:
+  - _idx: 5002
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: ffffff/f
+    _reward_value: 40380000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 250
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_5002
+    _img: DynamicShop_Icon_Exp_02
+    _product_id:
+  - _idx: 5003
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: ffffff/f
+    _reward_value: 80510100
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 1000
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_5003
+    _img: DynamicShop_Icon_Exp_03
+    _product_id:
+  - _idx: 6001
+    _shop_type: 1
+    _group: -1
+    _type: 2
+    _reward_type: 03000000
+    _reward_idx: 65000000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 3
+    _cost_region: -1
+    _cost_value: 14400
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_6001
+    _img: DynamicShop_Icon_Plant_Supplies_01
+    _product_id:
+  - _idx: 6002
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 65000000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 50
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_6002
+    _img: DynamicShop_Icon_Plant_Supplies_01
+    _product_id:
+  - _idx: 6003
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 66000000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 150
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_6003
+    _img: DynamicShop_Icon_Plant_Supplies_02
+    _product_id:
+  - _idx: 6004
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 67000000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 400
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_6004
+    _img: DynamicShop_Icon_Plant_Supplies_03
+    _product_id:
+  - _idx: 7001
+    _shop_type: 1
+    _group: -1
+    _type: 2
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 0a000000
+    _cost_type: 3
+    _cost_region: -1
+    _cost_value: 86400
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_7001
+    _img: DynamicShop_Icon_package_Free
+    _product_id:
+  - _idx: 7002
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 2c010000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 1
+    _name: str_shop_name_7002
+    _img: DynamicShop_Icon_package_gem01
+    _product_id: officecat_shop_currency_gem_300
+  - _idx: 7003
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 08070000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 1
+    _name: str_shop_name_7003
+    _img: DynamicShop_Icon_package_gem02
+    _product_id: officecat_shop_currency_gem_1800
+  - _idx: 7004
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 100e0000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 1
+    _name: str_shop_name_7004
+    _img: DynamicShop_Icon_package_gem03
+    _product_id: officecat_shop_currency_gem_3600
+  - _idx: 7005
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 88130000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 2
+    _name: str_shop_name_7005
+    _img: DynamicShop_Icon_package_gem04
+    _product_id: officecat_shop_currency_gem_5000
+  - _idx: 7006
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: e02e0000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 2
+    _name: str_shop_name_7006
+    _img: DynamicShop_Icon_package_gem05
+    _product_id: officecat_shop_currency_gem_12000
+  - _idx: 7007
+    _shop_type: 1
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 30750000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 3
+    _name: str_shop_name_7007
+    _img: DynamicShop_Icon_package_gem06
+    _product_id: officecat_shop_currency_gem_30000
+  - _idx: 9001
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 0600000003000000
+    _reward_idx: 01000000c9000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 4
+    _cost_region: -1
+    _cost_value: 3
+    _purchase_limit: -1
+    _manager_variety_max: 1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_manager_shop_briefcase_1
+    _img: DynamicShop_Icon_Box_Free
+    _product_id:
+  - _idx: 9002
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 0600000003000000
+    _reward_idx: 01000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0300000001000000
+    _cost_type: 5
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: 3
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_manager_shop_briefcase_2
+    _img: DynamicShop_Icon_Box_Nor
+    _product_id:
+  - _idx: 9003
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 06000000
+    _reward_idx: 02000000
+    _reward_region: ffffff/f
+    _reward_value: 02000000
+    _cost_type: 6
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: 2
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_manager_shop_briefcase_3
+    _img: DynamicShop_Icon_Box_Pre
+    _product_id:
+  - _idx: 10001
+    _shop_type: 2
+    _group: -1
+    _type: -1
+    _reward_type: 03000000
+    _reward_idx: c9000000
+    _reward_region: ffffff/f
+    _reward_value: 0c000000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_10001
+    _img: DynamicShop_Icon_Goods_Key_01
+    _product_id: officecat_shop_key_normal
+  - _idx: 10002
+    _shop_type: 2
+    _group: -1
+    _type: -1
+    _reward_type: 03000000
+    _reward_idx: ca000000
+    _reward_region: ffffff/f
+    _reward_value: 0c000000
+    _cost_type: 1
+    _cost_region: -1
+    _cost_value: -1
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_10002
+    _img: DynamicShop_Icon_Goods_Key_02
+    _product_id: officecat_shop_key_premium
+  - _idx: 11101
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 0f000000
+    _reward_region: ffffff/f
+    _reward_value: 08070000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 90
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_reinforce_goods_11101
+    _img: DynamicShop_Icon_ReinStone_01
+    _product_id:
+  - _idx: 11102
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 0f000000
+    _reward_region: ffffff/f
+    _reward_value: 100e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 180
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_reinforce_goods_11102
+    _img: DynamicShop_Icon_ReinStone_02
+    _product_id:
+  - _idx: 11103
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 01000000
+    _reward_idx: 0f000000
+    _reward_region: ffffff/f
+    _reward_value: 201c0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 360
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_reinforce_goods_11103
+    _img: DynamicShop_Icon_ReinStone_03
+    _product_id:
+  - _idx: 11201
+    _shop_type: 2
+    _group: -1
+    _type: 2
+    _reward_type: 03000000
+    _reward_idx: 91010000
+    _reward_region: ffffff/f
+    _reward_value: 0a000000
+    _cost_type: 7
+    _cost_region: 1
+    _cost_value: 200000
+    _purchase_limit: 1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_normal_skillstone_goods_11204
+    _img: Dynamic_Icon_SkillStone_Normal
+    _product_id:
+  - _idx: 11202
+    _shop_type: 2
+    _group: -1
+    _type: 2
+    _reward_type: 03000000
+    _reward_idx: 91010000
+    _reward_region: ffffff/f
+    _reward_value: 0a000000
+    _cost_type: 7
+    _cost_region: 2
+    _cost_value: 800000
+    _purchase_limit: 1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_normal_skillstone_goods_11204
+    _img: Dynamic_Icon_SkillStone_Normal
+    _product_id:
+  - _idx: 11203
+    _shop_type: 2
+    _group: -1
+    _type: 2
+    _reward_type: 03000000
+    _reward_idx: 91010000
+    _reward_region: ffffff/f
+    _reward_value: 0a000000
+    _cost_type: 7
+    _cost_region: 3
+    _cost_value: 1000000
+    _purchase_limit: 1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_normal_skillstone_goods_11204
+    _img: Dynamic_Icon_SkillStone_Normal
+    _product_id:
+  - _idx: 11204
+    _shop_type: 2
+    _group: -1
+    _type: 2
+    _reward_type: 03000000
+    _reward_idx: 91010000
+    _reward_region: ffffff/f
+    _reward_value: 0a000000
+    _cost_type: 7
+    _cost_region: 4
+    _cost_value: 1200000
+    _purchase_limit: 1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_normal_skillstone_goods_11204
+    _img: Dynamic_Icon_SkillStone_Normal
+    _product_id:
+  - _idx: 11251
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 92010000
+    _reward_region: ffffff/f
+    _reward_value: 32000000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 160
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: 22
+    _double_chance_count: 0
+    _name: str_premium_skillstone_goods_11251
+    _img: DynamicShop_Icon_SkillStone_01
+    _product_id:
+  - _idx: 11252
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 92010000
+    _reward_region: ffffff/f
+    _reward_value: b9000000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 590
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: 22
+    _double_chance_count: 0
+    _name: str_premium_skillstone_goods_11252
+    _img: DynamicShop_Icon_SkillStone_02
+    _product_id:
+  - _idx: 11253
+    _shop_type: 2
+    _group: -1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: 92010000
+    _reward_region: ffffff/f
+    _reward_value: 72010000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 1180
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: 22
+    _double_chance_count: 0
+    _name: str_premium_skillstone_goods_11253
+    _img: DynamicShop_Icon_SkillStone_03
+    _product_id:
+  - _idx: 20001
+    _shop_type: -1
+    _group: 1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 10270000
+    _cost_type: 4
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20001
+    _img: DynamicShop_Icon_Seasonal_Coin_01
+    _product_id:
+  - _idx: 20002
+    _shop_type: -1
+    _group: 2
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 204e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 80
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20002
+    _img: DynamicShop_Icon_Seasonal_Coin_02
+    _product_id:
+  - _idx: 20003
+    _shop_type: -1
+    _group: 3
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a0860100
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 350
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20003
+    _img: DynamicShop_Icon_Seasonal_Coin_03
+    _product_id:
+  - _idx: 30001
+    _shop_type: -1
+    _group: 4
+    _type: 1
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 10270000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 200
+    _purchase_limit: 10
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_30001
+    _img: DynamicShop_Icon_Seasonal_Skill_01
+    _product_id:
+  - _idx: 40001
+    _shop_type: -1
+    _group: 5
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 00dd6d00
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 60
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_40001
+    _img: DynamicShop_Icon_Seasonal_Heart_01
+    _product_id:
+  - _idx: 20011
+    _shop_type: -1
+    _group: 1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 12270000
+    _reward_value: 10270000
+    _cost_type: 4
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20001
+    _img: DynamicShop_Icon_Seasonal_Coin_01
+    _product_id:
+  - _idx: 20012
+    _shop_type: -1
+    _group: 2
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 12270000
+    _reward_value: 204e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 80
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20002
+    _img: DynamicShop_Icon_Seasonal_Coin_02
+    _product_id:
+  - _idx: 20013
+    _shop_type: -1
+    _group: 3
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 12270000
+    _reward_value: a0860100
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 350
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20003
+    _img: DynamicShop_Icon_Seasonal_Coin_03
+    _product_id:
+  - _idx: 30011
+    _shop_type: -1
+    _group: 4
+    _type: 1
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 12270000
+    _reward_value: 10270000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 200
+    _purchase_limit: 10
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_30001
+    _img: DynamicShop_Icon_Seasonal_Skill_01
+    _product_id:
+  - _idx: 40011
+    _shop_type: -1
+    _group: 5
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: 12270000
+    _reward_value: 00dd6d00
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 60
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_40001
+    _img: DynamicShop_Icon_Seasonal_Heart_01
+    _product_id:
+  - _idx: 20101
+    _shop_type: -1
+    _group: 1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 10270000
+    _cost_type: 4
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20001
+    _img: DynamicShop_Icon_Seasonal_Coin_01
+    _product_id:
+  - _idx: 20102
+    _shop_type: -1
+    _group: 2
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 204e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 80
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20002
+    _img: DynamicShop_Icon_Seasonal_Coin_02
+    _product_id:
+  - _idx: 20103
+    _shop_type: -1
+    _group: 3
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a0860100
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 350
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20003
+    _img: DynamicShop_Icon_Seasonal_Coin_03
+    _product_id:
+  - _idx: 30101
+    _shop_type: -1
+    _group: 4
+    _type: 1
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 10270000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 150
+    _purchase_limit: 3
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_30101
+    _img: DynamicShop_Icon_Seasonal_Skill_02
+    _product_id:
+  - _idx: 40101
+    _shop_type: -1
+    _group: 5
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 00dd6d00
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 60
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_40001
+    _img: DynamicShop_Icon_Seasonal_Heart_01
+    _product_id:
+  - _idx: 20201
+    _shop_type: -1
+    _group: 1
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: 10270000
+    _cost_type: 4
+    _cost_region: -1
+    _cost_value: 10
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20001
+    _img: DynamicShop_Icon_Seasonal_Coin_01
+    _product_id:
+  - _idx: 20202
+    _shop_type: -1
+    _group: 2
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: 204e0000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 80
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20002
+    _img: DynamicShop_Icon_Seasonal_Coin_02
+    _product_id:
+  - _idx: 20203
+    _shop_type: -1
+    _group: 3
+    _type: 1
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a0860100
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 350
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_20003
+    _img: DynamicShop_Icon_Seasonal_Coin_03
+    _product_id:
+  - _idx: 30201
+    _shop_type: -1
+    _group: 4
+    _type: 1
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: 10270000
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 150
+    _purchase_limit: 3
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_30101
+    _img: DynamicShop_Icon_Seasonal_Skill_02
+    _product_id:
+  - _idx: 40201
+    _shop_type: -1
+    _group: 5
+    _type: 1
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: 00dd6d00
+    _cost_type: 2
+    _cost_region: -1
+    _cost_value: 60
+    _purchase_limit: -1
+    _manager_variety_max: -1
+    _sale: -1
+    _double_chance_count: 0
+    _name: str_shop_name_40001
+    _img: DynamicShop_Icon_Seasonal_Heart_01
+    _product_id:

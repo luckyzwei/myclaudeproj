@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1333747343, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: MiniGameData
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 101
+  - 201
+  - 301
+  - 401
+  mSecondKey: []
+  mDataList:
+  - _idx: 101
+    _name: str_minigame_title_101
+    _desc: str_minigame_desc_101
+    _hud_icon:
+    _bgm:
+    _bg_img:
+    _use_currency_idx: 101
+    _mission_count: 10
+  - _idx: 201
+    _name: str_minigame_title_201
+    _desc: str_minigame_desc_201
+    _hud_icon:
+    _bgm:
+    _bg_img:
+    _use_currency_idx: 0
+    _mission_count: 0
+  - _idx: 301
+    _name: str_minigame_title_301
+    _desc: str_minigame_desc_301
+    _hud_icon:
+    _bgm:
+    _bg_img:
+    _use_currency_idx: 0
+    _mission_count: 0
+  - _idx: 401
+    _name: str_minigame_title_401
+    _desc: str_minigame_desc_401
+    _hud_icon:
+    _bgm:
+    _bg_img:
+    _use_currency_idx: 0
+    _mission_count: 0

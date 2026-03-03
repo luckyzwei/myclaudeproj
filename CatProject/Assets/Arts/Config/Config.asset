@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1598915159, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: Config
+  m_EditorClassIdentifier:
+  mainfont: {fileID: 12800000, guid: 2873e109d3dbd174fbc2913d5f989bbb, type: 3}
+  _fontDefines:
+  - country: 2
+    font: {fileID: 12800000, guid: b11df76a1bd94ca4a887fadda6ebdedc, type: 3}
+  - country: 4
+    font: {fileID: 12800000, guid: efce4838fdfc7504eaaa84e7b923f2eb, type: 3}
+  _textColorDefines:
+  - key_string: Default_Desc
+    color: {r: 0.54509807, g: 0.6745098, b: 0.7372549, a: 1}
+  - key_string: Default_Point
+    color: {r: 0.32941177, g: 0.49411765, b: 0.5882353, a: 1}
+  - key_string: Default_White
+    color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
+  - key_string: Default_White50
+    color: {r: 0.9843137, g: 0.99215686, b: 1, a: 0.90588236}
+  - key_string: Default_Black
+    color: {r: 0.05490196, g: 0.043387324, b: 0.14117648, a: 0.78431374}
+  - key_string: Default_Blue
+    color: {r: 0.2627451, g: 0.67058825, b: 1, a: 1}
+  - key_string: Default_Red
+    color: {r: 0.8490566, g: 0.19624422, b: 0.30781165, a: 1}
+  - key_string: Default_Orange
+    color: {r: 1, g: 0.35636783, b: 0, a: 1}
+  - key_string: Default_Yellow
+    color: {r: 1, g: 0.6736357, b: 0, a: 1}
+  - key_string: Default_LightGreen
+    color: {r: 0.5686275, g: 0.8039216, b: 0, a: 1}
+  - key_string: Default_Green
+    color: {r: 0.17755428, g: 0.6603774, b: 0.5413717, a: 1}
+  - key_string: Default_Purple
+    color: {r: 0.4245283, g: 0.19424173, b: 0.35031682, a: 1}
+  - key_string: Default_Gray
+    color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  - key_string: HUD_Currency
+    color: {r: 0.5566038, g: 0.38069597, b: 0.38069597, a: 1}
+  - key_string: Default_DarkBlue
+    color: {r: 0.44535422, g: 0.6702495, b: 0.6792453, a: 1}
+  - key_string: Default_Beige
+    color: {r: 0.68235296, g: 0.3647059, b: 0.19215687, a: 1}
+  - key_string: Popup_Title
+    color: {r: 0.093716644, g: 0.35627496, b: 0.509434, a: 1}
+  - key_string: Default_BlueGray
+    color: {r: 0.34117648, g: 0.43529412, b: 0.5764706, a: 1}
+  - key_string: Default_Pink
+    color: {r: 0.91764706, g: 0.14509805, b: 0.6627451, a: 1}
+  - key_string: TextColor_Green
+    color: {r: 0.09011215, g: 0.4245283, b: 0.24927019, a: 1}
+  - key_string: TextColor_White
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - key_string: Default_Brown
+    color: {r: 0.36078432, g: 0.18431373, b: 0.16862746, a: 1}
+  _eventTextColorDefines: []
+  ImgGrayMat: {fileID: 2100000, guid: ec6164989767b3e46821516998e196bc, type: 2}
+  ImgEmptyMat: {fileID: 2100000, guid: 2595247754fe8f045aa1e11c13a12381, type: 2}
+  _imageColorDefines:
+  - key_string: Default_Brown
+    color: {r: 0.6901961, g: 0.5372549, b: 0.454902, a: 1}
+  - key_string: Default_White
+    color: {r: 1, g: 0.9852878, b: 0.9843137, a: 1}
+  - key_string: Default_Begie
+    color: {r: 0.92156863, g: 0.84313726, b: 0.8, a: 1}
+  - key_string: Default_WhitePink
+    color: {r: 0.7698469, g: 0.88747054, b: 0.9433962, a: 1}
+  - key_string: Default_Blue
+    color: {r: 0.20518868, g: 0.5457147, b: 0.8207547, a: 1}
+  - key_string: Default_Navy
+    color: {r: 0.19215687, g: 0.36862746, b: 0.67058825, a: 1}
+  - key_string: Default_Red
+    color: {r: 0.9056604, g: 0.12388753, b: 0.27011842, a: 1}
+  - key_string: Default_Purple
+    color: {r: 0.3962264, g: 0.25231397, b: 0.37729058, a: 1}
+  - key_string: Default_Gray
+    color: {r: 0.8, g: 0.7764706, b: 0.7764706, a: 1}
+  - key_string: Company_Grade_D
+    color: {r: 0.4666667, g: 0.5372549, b: 0.6784314, a: 1}
+  - key_string: Company_Grade_C
+    color: {r: 0.18823531, g: 0.67058825, b: 0.6901961, a: 1}
+  - key_string: Company_Grade_B
+    color: {r: 0.18039216, g: 0.58431375, b: 0.8470589, a: 1}
+  - key_string: Company_Grade_A
+    color: {r: 0.6156863, g: 0.38823533, b: 0.9294118, a: 1}
+  - key_string: Company_Grade_S
+    color: {r: 0.8490566, g: 0.77326787, b: 0.41251338, a: 1}
+  - key_string: Company_Grade_SS
+    color: {r: 0.9215687, g: 0.5568628, b: 0.28235295, a: 1}
+  - key_string: Company_Grade_SSS
+    color: {r: 0.9215687, g: 0.36862746, b: 0.3019608, a: 1}
+  - key_string: Mood_Red
+    color: {r: 0.9803922, g: 0.3803922, b: 0.37647063, a: 1}
+  - key_string: Mood_Yellow
+    color: {r: 1, g: 0.81960785, b: 0.27058825, a: 1}
+  - key_string: Mood_Green
+    color: {r: 0.0627451, g: 0.8, b: 0.5764706, a: 1}
+  - key_string: Mood_Blue
+    color: {r: 0.2901961, g: 0.7372549, b: 0.8352942, a: 1}
+  - key_string: Default_Dim
+    color: {r: 0, g: 0, b: 0, a: 0.43137255}
+  - key_string: Shop_Normal
+    color: {r: 1, g: 0.8745098, b: 0.38431373, a: 1}
+  - key_string: Shop_Expensive
+    color: {r: 1, g: 0.35686275, b: 0, a: 1}
+  - key_string: Shop_MostExpensive
+    color: {r: 0.6666667, g: 0.003921569, b: 1, a: 1}
+  - key_string: Shop_NewOffice
+    color: {r: 1, g: 0.8156863, b: 0, a: 1}
+  - key_string: Shop_SpecialCompany
+    color: {r: 0.19215687, g: 0.5529412, b: 1, a: 1}
+  - key_string: Shop_NewCity
+    color: {r: 1, g: 0.7647059, b: 0.09019608, a: 1}
+  - key_string: Shop_1st_Free
+    color: {r: 1, g: 0.5803922, b: 0.74509805, a: 1}
+  - key_string: Shop_1st_Purchase
+    color: {r: 1, g: 0.5411765, b: 0, a: 1}
+  - key_string: Manager_Grade_Normal
+    color: {r: 0.61960787, g: 0.8509804, b: 1, a: 1}
+  - key_string: Manager_Grade_Premium
+    color: {r: 0.627451, g: 0, b: 1, a: 1}
+  - key_string: Manager_Grade_Special
+    color: {r: 1, g: 0.654902, b: 0, a: 1}
+  - key_string: Manager_Grade_Legend
+    color: {r: 0.83137256, g: 0.15294118, b: 0.63529414, a: 1}
+  - key_string: OneTimeEvent_1
+    color: {r: 0.33333334, g: 0.74509805, b: 1, a: 1}
+  - key_string: SpecialEvent_1
+    color: {r: 0.42352942, g: 0.11764706, b: 0.6117647, a: 1}
+  - key_string: SpecialEvent_2
+    color: {r: 0.9254902, g: 0.48235294, b: 0.5529412, a: 1}
+  - key_string: SpecialEvent_3
+    color: {r: 1, g: 0.57254905, b: 0.7607843, a: 1}
+  - key_string: SpecialEvent_4
+    color: {r: 1, g: 0.5707547, b: 0.82239765, a: 1}
+  - key_string: SpecialEvent_5
+    color: {r: 0.56078434, g: 0.9372549, b: 0.9098039, a: 1}
+  - key_string: Event_1
+    color: {r: 0.98823535, g: 0.57254905, b: 0.8235295, a: 1}
+  - key_string: Seasonal_10001
+    color: {r: 0.15294118, g: 0.9254902, b: 0.8666667, a: 1}
+  _eventImgaeColorDefines: []
+  _specialDayColorDefines:
+  - key_string: SpecialDay_Window_01_01
+    color: {r: 0.5058824, g: 1, b: 0.84705883, a: 1}
+  - key_string: SpecialDay_Window_01_02
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - key_string: SpecialDay_Window_01_03
+    color: {r: 0, g: 1, b: 0, a: 1}
+  - key_string: SpecialDay_Window_01_04
+    color: {r: 0, g: 0, b: 0.84705883, a: 1}

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -974367539, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: OfficeTypeInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  mSecondKey: []
+  mDataList:
+  - _office_type: 1
+    _activity: -1
+    _debuff: -1
+    _speachbubble_room_open: -1
+    _speachbubble_text:
+    _activity_icon:
+    _effect_room: effect_office_typing
+  - _office_type: 2
+    _activity: 1
+    _debuff: 1
+    _speachbubble_room_open: -1
+    _speachbubble_text:
+    _activity_icon: Dynamic_Icon_Activity_Toilet
+    _effect_room: effect_washroom
+  - _office_type: 3
+    _activity: -1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_meeting_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Meeting
+    _effect_room: effect_meeting_room
+  - _office_type: 4
+    _activity: -1
+    _debuff: -1
+    _speachbubble_room_open: -1
+    _speachbubble_text:
+    _activity_icon:
+    _effect_room: effect_technical_room
+  - _office_type: 5
+    _activity: -1
+    _debuff: -1
+    _speachbubble_room_open: -1
+    _speachbubble_text:
+    _activity_icon:
+    _effect_room: effect_ceo_room
+  - _office_type: 6
+    _activity: -1
+    _debuff: -1
+    _speachbubble_room_open: -1
+    _speachbubble_text:
+    _activity_icon:
+    _effect_room: effect_power_room
+  - _office_type: 7
+    _activity: 1
+    _debuff: 1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_break_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Lounge
+    _effect_room: effect_lounge
+  - _office_type: 8
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_recreation_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Recreation
+    _effect_room: effect_recreation_room
+  - _office_type: 9
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_fitness_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Gym
+    _effect_room: effect_fitness_room
+  - _office_type: 10
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_sleeping_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Sleeping
+    _effect_room: effect_sleeping_room
+  - _office_type: 11
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_supply_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Supply
+    _effect_room: effect_supply_room
+  - _office_type: 12
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_restaurant_text_1
+    _activity_icon: Dynamic_Icon_Activity_Restaurant
+    _effect_room: effect_restaurant
+  - _office_type: 13
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_phonebooth_text_1
+    _activity_icon: Dynamic_Icon_Activity_PhoneBooth
+    _effect_room: effect_phonebooth
+  - _office_type: 14
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_music_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Music
+    _effect_room: effect_music_room
+  - _office_type: 15
+    _activity: 1
+    _debuff: -1
+    _speachbubble_room_open: 1
+    _speachbubble_text: str_waiting_cafe_room_text_1
+    _activity_icon: Dynamic_Icon_Activity_Cafeteria
+    _effect_room: effect_cafe_room

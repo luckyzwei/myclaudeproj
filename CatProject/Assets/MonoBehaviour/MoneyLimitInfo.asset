@@ -1,0 +1,1043 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1470254205, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: MoneyLimitInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  mSecondKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  mDataList:
+  - _region_idx: 1
+    _bank_lv: 1
+    _limit_money: 60e316
+    _need_playerlv: 0
+  - _region_idx: 1
+    _bank_lv: 2
+    _limit_money: 003e49
+    _need_playerlv: 40
+  - _region_idx: 1
+    _bank_lv: 3
+    _limit_money: 00dd6d
+    _need_playerlv: 80
+  - _region_idx: 1
+    _bank_lv: 4
+    _limit_money: 40548900
+    _need_playerlv: 90
+  - _region_idx: 1
+    _bank_lv: 5
+    _limit_money: 80cba400
+    _need_playerlv: 100
+  - _region_idx: 1
+    _bank_lv: 6
+    _limit_money: c0fc9b01
+    _need_playerlv: 130
+  - _region_idx: 1
+    _bank_lv: 7
+    _limit_money: 40a5ae02
+    _need_playerlv: 150
+  - _region_idx: 1
+    _bank_lv: 8
+    _limit_money: 80d1f008
+    _need_playerlv: 200
+  - _region_idx: 1
+    _bank_lv: 9
+    _limit_money: 00a3e111
+    _need_playerlv: 250
+  - _region_idx: 1
+    _bank_lv: 10
+    _limit_money: 0046c323
+    _need_playerlv: 290
+  - _region_idx: 1
+    _bank_lv: 11
+    _limit_money: 00e9a435
+    _need_playerlv: 320
+  - _region_idx: 1
+    _bank_lv: 12
+    _limit_money: 008c8647
+    _need_playerlv: 340
+  - _region_idx: 1
+    _bank_lv: 13
+    _limit_money: 002f6859
+    _need_playerlv: 380
+  - _region_idx: 1
+    _bank_lv: 14
+    _limit_money: 005ed0b200
+    _need_playerlv: 400
+  - _region_idx: 1
+    _bank_lv: 15
+    _limit_money: 00bca06501
+    _need_playerlv: 450
+  - _region_idx: 1
+    _bank_lv: 16
+    _limit_money: 00d6117e03
+    _need_playerlv: 480
+  - _region_idx: 1
+    _bank_lv: 17
+    _limit_money: 00ac23fc06
+    _need_playerlv: 500
+  - _region_idx: 1
+    _bank_lv: 18
+    _limit_money: 00ac23fc06
+    _need_playerlv: 800
+  - _region_idx: 2
+    _bank_lv: 1
+    _limit_money: 808d5b
+    _need_playerlv: 0
+  - _region_idx: 2
+    _bank_lv: 2
+    _limit_money: 00f82401
+    _need_playerlv: 875
+  - _region_idx: 2
+    _bank_lv: 3
+    _limit_money: 0074b701
+    _need_playerlv: 950
+  - _region_idx: 2
+    _bank_lv: 4
+    _limit_money: 00512502
+    _need_playerlv: 980
+  - _region_idx: 2
+    _bank_lv: 5
+    _limit_money: 002e9302
+    _need_playerlv: 1000
+  - _region_idx: 2
+    _bank_lv: 6
+    _limit_money: 00f36f06
+    _need_playerlv: 1020
+  - _region_idx: 2
+    _bank_lv: 7
+    _limit_money: 0095ba0a
+    _need_playerlv: 1040
+  - _region_idx: 2
+    _bank_lv: 8
+    _limit_money: 0046c323
+    _need_playerlv: 1086
+  - _region_idx: 2
+    _bank_lv: 9
+    _limit_money: 008c8647
+    _need_playerlv: 1130
+  - _region_idx: 2
+    _bank_lv: 10
+    _limit_money: 00180d8f00
+    _need_playerlv: 1190
+  - _region_idx: 2
+    _bank_lv: 11
+    _limit_money: 00a493d600
+    _need_playerlv: 1210
+  - _region_idx: 2
+    _bank_lv: 12
+    _limit_money: 00301a1e01
+    _need_playerlv: 1230
+  - _region_idx: 2
+    _bank_lv: 13
+    _limit_money: 00bca06501
+    _need_playerlv: 1250
+  - _region_idx: 2
+    _bank_lv: 14
+    _limit_money: 007841cb02
+    _need_playerlv: 1270
+  - _region_idx: 2
+    _bank_lv: 15
+    _limit_money: 00f0829605
+    _need_playerlv: 1290
+  - _region_idx: 2
+    _bank_lv: 16
+    _limit_money: 005847f80d
+    _need_playerlv: 1310
+  - _region_idx: 2
+    _bank_lv: 17
+    _limit_money: 00b08ef01b
+    _need_playerlv: 1400
+  - _region_idx: 3
+    _bank_lv: 1
+    _limit_money: e07072
+    _need_playerlv: 0
+  - _region_idx: 3
+    _bank_lv: 2
+    _limit_money: 00366e01
+    _need_playerlv: 1775
+  - _region_idx: 3
+    _bank_lv: 3
+    _limit_money: 00512502
+    _need_playerlv: 1850
+  - _region_idx: 3
+    _bank_lv: 4
+    _limit_money: 40a5ae02
+    _need_playerlv: 1880
+  - _region_idx: 3
+    _bank_lv: 5
+    _limit_money: 80f93703
+    _need_playerlv: 1900
+  - _region_idx: 3
+    _bank_lv: 6
+    _limit_money: c0ef0b08
+    _need_playerlv: 1920
+  - _region_idx: 3
+    _bank_lv: 7
+    _limit_money: 403a690d
+    _need_playerlv: 1940
+  - _region_idx: 3
+    _bank_lv: 8
+    _limit_money: 8017b42c
+    _need_playerlv: 1986
+  - _region_idx: 3
+    _bank_lv: 9
+    _limit_money: 002f6859
+    _need_playerlv: 2030
+  - _region_idx: 3
+    _bank_lv: 10
+    _limit_money: 005ed0b200
+    _need_playerlv: 2090
+  - _region_idx: 3
+    _bank_lv: 11
+    _limit_money: 008d380c01
+    _need_playerlv: 2110
+  - _region_idx: 3
+    _bank_lv: 12
+    _limit_money: 00bca06501
+    _need_playerlv: 2130
+  - _region_idx: 3
+    _bank_lv: 13
+    _limit_money: 00eb08bf01
+    _need_playerlv: 2150
+  - _region_idx: 3
+    _bank_lv: 14
+    _limit_money: 00d6117e03
+    _need_playerlv: 2170
+  - _region_idx: 3
+    _bank_lv: 15
+    _limit_money: 00ac23fc06
+    _need_playerlv: 2190
+  - _region_idx: 3
+    _bank_lv: 16
+    _limit_money: 002e597611
+    _need_playerlv: 2210
+  - _region_idx: 3
+    _bank_lv: 17
+    _limit_money: 005cb2ec22
+    _need_playerlv: 2300
+  - _region_idx: 4
+    _bank_lv: 1
+    _limit_money: 40548900
+    _need_playerlv: 0
+  - _region_idx: 4
+    _bank_lv: 2
+    _limit_money: 0074b701
+    _need_playerlv: 2675
+  - _region_idx: 4
+    _bank_lv: 3
+    _limit_money: 002e9302
+    _need_playerlv: 2750
+  - _region_idx: 4
+    _bank_lv: 4
+    _limit_money: 80f93703
+    _need_playerlv: 2780
+  - _region_idx: 4
+    _bank_lv: 5
+    _limit_money: 00c5dc03
+    _need_playerlv: 2800
+  - _region_idx: 4
+    _bank_lv: 6
+    _limit_money: 80eca709
+    _need_playerlv: 2820
+  - _region_idx: 4
+    _bank_lv: 7
+    _limit_money: 80df1710
+    _need_playerlv: 2840
+  - _region_idx: 4
+    _bank_lv: 8
+    _limit_money: 00e9a435
+    _need_playerlv: 2886
+  - _region_idx: 4
+    _bank_lv: 9
+    _limit_money: 00d2496b
+    _need_playerlv: 2930
+  - _region_idx: 4
+    _bank_lv: 10
+    _limit_money: 00a493d600
+    _need_playerlv: 2990
+  - _region_idx: 4
+    _bank_lv: 11
+    _limit_money: 0076dd4101
+    _need_playerlv: 3010
+  - _region_idx: 4
+    _bank_lv: 12
+    _limit_money: 004827ad01
+    _need_playerlv: 3030
+  - _region_idx: 4
+    _bank_lv: 13
+    _limit_money: 001a711802
+    _need_playerlv: 3050
+  - _region_idx: 4
+    _bank_lv: 14
+    _limit_money: 0034e23004
+    _need_playerlv: 3070
+  - _region_idx: 4
+    _bank_lv: 15
+    _limit_money: 0068c46108
+    _need_playerlv: 3090
+  - _region_idx: 4
+    _bank_lv: 16
+    _limit_money: 00046bf414
+    _need_playerlv: 3110
+  - _region_idx: 4
+    _bank_lv: 17
+    _limit_money: 0008d6e829
+    _need_playerlv: 3200
+  - _region_idx: 5
+    _bank_lv: 1
+    _limit_money: a037a000
+    _need_playerlv: 0
+  - _region_idx: 5
+    _bank_lv: 2
+    _limit_money: 00b20002
+    _need_playerlv: 3575
+  - _region_idx: 5
+    _bank_lv: 3
+    _limit_money: 000b0103
+    _need_playerlv: 3650
+  - _region_idx: 5
+    _bank_lv: 4
+    _limit_money: c04dc103
+    _need_playerlv: 3680
+  - _region_idx: 5
+    _bank_lv: 5
+    _limit_money: 80908104
+    _need_playerlv: 3700
+  - _region_idx: 5
+    _bank_lv: 6
+    _limit_money: 40e9430b
+    _need_playerlv: 3720
+  - _region_idx: 5
+    _bank_lv: 7
+    _limit_money: c084c612
+    _need_playerlv: 3740
+  - _region_idx: 5
+    _bank_lv: 8
+    _limit_money: 80ba953e
+    _need_playerlv: 3786
+  - _region_idx: 5
+    _bank_lv: 9
+    _limit_money: 00752b7d
+    _need_playerlv: 3830
+  - _region_idx: 5
+    _bank_lv: 10
+    _limit_money: 00ea56fa00
+    _need_playerlv: 3890
+  - _region_idx: 5
+    _bank_lv: 11
+    _limit_money: 005f827701
+    _need_playerlv: 3910
+  - _region_idx: 5
+    _bank_lv: 12
+    _limit_money: 00d4adf401
+    _need_playerlv: 3930
+  - _region_idx: 5
+    _bank_lv: 13
+    _limit_money: 0049d97102
+    _need_playerlv: 3950
+  - _region_idx: 5
+    _bank_lv: 14
+    _limit_money: 0092b2e304
+    _need_playerlv: 3970
+  - _region_idx: 5
+    _bank_lv: 15
+    _limit_money: 002465c709
+    _need_playerlv: 3990
+  - _region_idx: 5
+    _bank_lv: 16
+    _limit_money: 00da7c7218
+    _need_playerlv: 4010
+  - _region_idx: 5
+    _bank_lv: 17
+    _limit_money: 00b4f9e430
+    _need_playerlv: 4100
+  - _region_idx: 6
+    _bank_lv: 1
+    _limit_money: 001bb700
+    _need_playerlv: 0
+  - _region_idx: 6
+    _bank_lv: 2
+    _limit_money: 00f04902
+    _need_playerlv: 4475
+  - _region_idx: 6
+    _bank_lv: 3
+    _limit_money: 00e86e03
+    _need_playerlv: 4550
+  - _region_idx: 6
+    _bank_lv: 4
+    _limit_money: 00a24a04
+    _need_playerlv: 4580
+  - _region_idx: 6
+    _bank_lv: 5
+    _limit_money: 005c2605
+    _need_playerlv: 4600
+  - _region_idx: 6
+    _bank_lv: 6
+    _limit_money: 00e6df0c
+    _need_playerlv: 4620
+  - _region_idx: 6
+    _bank_lv: 7
+    _limit_money: 002a7515
+    _need_playerlv: 4640
+  - _region_idx: 6
+    _bank_lv: 8
+    _limit_money: 008c8647
+    _need_playerlv: 4686
+  - _region_idx: 6
+    _bank_lv: 9
+    _limit_money: 00180d8f00
+    _need_playerlv: 4730
+  - _region_idx: 6
+    _bank_lv: 10
+    _limit_money: 00301a1e01
+    _need_playerlv: 4790
+  - _region_idx: 6
+    _bank_lv: 11
+    _limit_money: 004827ad01
+    _need_playerlv: 4810
+  - _region_idx: 6
+    _bank_lv: 12
+    _limit_money: 0060343c02
+    _need_playerlv: 4830
+  - _region_idx: 6
+    _bank_lv: 13
+    _limit_money: 007841cb02
+    _need_playerlv: 4850
+  - _region_idx: 6
+    _bank_lv: 14
+    _limit_money: 00f0829605
+    _need_playerlv: 4870
+  - _region_idx: 6
+    _bank_lv: 15
+    _limit_money: 00e0052d0b
+    _need_playerlv: 4890
+  - _region_idx: 6
+    _bank_lv: 16
+    _limit_money: 00b08ef01b
+    _need_playerlv: 4910
+  - _region_idx: 6
+    _bank_lv: 17
+    _limit_money: 00601de137
+    _need_playerlv: 5000
+  - _region_idx: 7
+    _bank_lv: 1
+    _limit_money: 60fecd00
+    _need_playerlv: 0
+  - _region_idx: 7
+    _bank_lv: 2
+    _limit_money: 002e9302
+    _need_playerlv: 5375
+  - _region_idx: 7
+    _bank_lv: 3
+    _limit_money: 00c5dc03
+    _need_playerlv: 5450
+  - _region_idx: 7
+    _bank_lv: 4
+    _limit_money: 40f6d304
+    _need_playerlv: 5480
+  - _region_idx: 7
+    _bank_lv: 5
+    _limit_money: 8027cb05
+    _need_playerlv: 5500
+  - _region_idx: 7
+    _bank_lv: 6
+    _limit_money: c0e27b0e
+    _need_playerlv: 5520
+  - _region_idx: 7
+    _bank_lv: 7
+    _limit_money: 40cf2318
+    _need_playerlv: 5540
+  - _region_idx: 7
+    _bank_lv: 8
+    _limit_money: 805d7750
+    _need_playerlv: 5586
+  - _region_idx: 7
+    _bank_lv: 9
+    _limit_money: 00bbeea000
+    _need_playerlv: 5630
+  - _region_idx: 7
+    _bank_lv: 10
+    _limit_money: 0076dd4101
+    _need_playerlv: 5690
+  - _region_idx: 7
+    _bank_lv: 11
+    _limit_money: 0031cce201
+    _need_playerlv: 5710
+  - _region_idx: 7
+    _bank_lv: 12
+    _limit_money: 00ecba8302
+    _need_playerlv: 5730
+  - _region_idx: 7
+    _bank_lv: 13
+    _limit_money: 00a7a92403
+    _need_playerlv: 5750
+  - _region_idx: 7
+    _bank_lv: 14
+    _limit_money: 004e534906
+    _need_playerlv: 5770
+  - _region_idx: 7
+    _bank_lv: 15
+    _limit_money: 009ca6920c
+    _need_playerlv: 5790
+  - _region_idx: 7
+    _bank_lv: 16
+    _limit_money: 0086a06e1f
+    _need_playerlv: 5810
+  - _region_idx: 7
+    _bank_lv: 17
+    _limit_money: 000c41dd3e
+    _need_playerlv: 5900
+  - _region_idx: 8
+    _bank_lv: 1
+    _limit_money: c0e1e400
+    _need_playerlv: 0
+  - _region_idx: 8
+    _bank_lv: 2
+    _limit_money: 006cdc02
+    _need_playerlv: 6275
+  - _region_idx: 8
+    _bank_lv: 3
+    _limit_money: 00a24a04
+    _need_playerlv: 6350
+  - _region_idx: 8
+    _bank_lv: 4
+    _limit_money: 804a5d05
+    _need_playerlv: 6380
+  - _region_idx: 8
+    _bank_lv: 5
+    _limit_money: 00f36f06
+    _need_playerlv: 6400
+  - _region_idx: 8
+    _bank_lv: 6
+    _limit_money: 80df1710
+    _need_playerlv: 6420
+  - _region_idx: 8
+    _bank_lv: 7
+    _limit_money: 8074d21a
+    _need_playerlv: 6440
+  - _region_idx: 8
+    _bank_lv: 8
+    _limit_money: 002f6859
+    _need_playerlv: 6486
+  - _region_idx: 8
+    _bank_lv: 9
+    _limit_money: 005ed0b200
+    _need_playerlv: 6530
+  - _region_idx: 8
+    _bank_lv: 10
+    _limit_money: 00bca06501
+    _need_playerlv: 6590
+  - _region_idx: 8
+    _bank_lv: 11
+    _limit_money: 001a711802
+    _need_playerlv: 6610
+  - _region_idx: 8
+    _bank_lv: 12
+    _limit_money: 007841cb02
+    _need_playerlv: 6630
+  - _region_idx: 8
+    _bank_lv: 13
+    _limit_money: 00d6117e03
+    _need_playerlv: 6650
+  - _region_idx: 8
+    _bank_lv: 14
+    _limit_money: 00ac23fc06
+    _need_playerlv: 6670
+  - _region_idx: 8
+    _bank_lv: 15
+    _limit_money: 005847f80d
+    _need_playerlv: 6690
+  - _region_idx: 8
+    _bank_lv: 16
+    _limit_money: 005cb2ec22
+    _need_playerlv: 6710
+  - _region_idx: 8
+    _bank_lv: 17
+    _limit_money: 00b864d945
+    _need_playerlv: 6800
+  - _region_idx: 9
+    _bank_lv: 1
+    _limit_money: 20c5fb00
+    _need_playerlv: 0
+  - _region_idx: 9
+    _bank_lv: 2
+    _limit_money: 00aa2503
+    _need_playerlv: 7175
+  - _region_idx: 9
+    _bank_lv: 3
+    _limit_money: 007fb804
+    _need_playerlv: 7250
+  - _region_idx: 9
+    _bank_lv: 4
+    _limit_money: c09ee605
+    _need_playerlv: 7280
+  - _region_idx: 9
+    _bank_lv: 5
+    _limit_money: 80be1407
+    _need_playerlv: 7300
+  - _region_idx: 9
+    _bank_lv: 6
+    _limit_money: 40dcb311
+    _need_playerlv: 7320
+  - _region_idx: 9
+    _bank_lv: 7
+    _limit_money: c019811d
+    _need_playerlv: 7340
+  - _region_idx: 9
+    _bank_lv: 8
+    _limit_money: 80005962
+    _need_playerlv: 7386
+  - _region_idx: 9
+    _bank_lv: 9
+    _limit_money: 0001b2c400
+    _need_playerlv: 7430
+  - _region_idx: 9
+    _bank_lv: 10
+    _limit_money: 0002648901
+    _need_playerlv: 7490
+  - _region_idx: 9
+    _bank_lv: 11
+    _limit_money: 0003164e02
+    _need_playerlv: 7510
+  - _region_idx: 9
+    _bank_lv: 12
+    _limit_money: 0004c81203
+    _need_playerlv: 7530
+  - _region_idx: 9
+    _bank_lv: 13
+    _limit_money: 00057ad703
+    _need_playerlv: 7550
+  - _region_idx: 9
+    _bank_lv: 14
+    _limit_money: 000af4ae07
+    _need_playerlv: 7570
+  - _region_idx: 9
+    _bank_lv: 15
+    _limit_money: 0014e85d0f
+    _need_playerlv: 7590
+  - _region_idx: 9
+    _bank_lv: 16
+    _limit_money: 0032c46a26
+    _need_playerlv: 7610
+  - _region_idx: 9
+    _bank_lv: 17
+    _limit_money: 006488d54c
+    _need_playerlv: 7700
+  - _region_idx: 10
+    _bank_lv: 1
+    _limit_money: 80a81201
+    _need_playerlv: 0
+  - _region_idx: 10
+    _bank_lv: 2
+    _limit_money: 00e86e03
+    _need_playerlv: 8075
+  - _region_idx: 10
+    _bank_lv: 3
+    _limit_money: 005c2605
+    _need_playerlv: 8150
+  - _region_idx: 10
+    _bank_lv: 4
+    _limit_money: 00f36f06
+    _need_playerlv: 8180
+  - _region_idx: 10
+    _bank_lv: 5
+    _limit_money: 008ab907
+    _need_playerlv: 8200
+  - _region_idx: 10
+    _bank_lv: 6
+    _limit_money: 00d94f13
+    _need_playerlv: 8220
+  - _region_idx: 10
+    _bank_lv: 7
+    _limit_money: 00bf2f20
+    _need_playerlv: 8240
+  - _region_idx: 10
+    _bank_lv: 8
+    _limit_money: 00d2496b
+    _need_playerlv: 8286
+  - _region_idx: 10
+    _bank_lv: 9
+    _limit_money: 00a493d600
+    _need_playerlv: 8330
+  - _region_idx: 10
+    _bank_lv: 10
+    _limit_money: 004827ad01
+    _need_playerlv: 8390
+  - _region_idx: 10
+    _bank_lv: 11
+    _limit_money: 00ecba8302
+    _need_playerlv: 8410
+  - _region_idx: 10
+    _bank_lv: 12
+    _limit_money: 00904e5a03
+    _need_playerlv: 8430
+  - _region_idx: 10
+    _bank_lv: 13
+    _limit_money: 0034e23004
+    _need_playerlv: 8450
+  - _region_idx: 10
+    _bank_lv: 14
+    _limit_money: 0068c46108
+    _need_playerlv: 8470
+  - _region_idx: 10
+    _bank_lv: 15
+    _limit_money: 00d088c310
+    _need_playerlv: 8490
+  - _region_idx: 10
+    _bank_lv: 16
+    _limit_money: 0008d6e829
+    _need_playerlv: 8510
+  - _region_idx: 10
+    _bank_lv: 17
+    _limit_money: 0010acd153
+    _need_playerlv: 8600

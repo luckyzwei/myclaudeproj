@@ -1,0 +1,497 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -331059209, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: HouseInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 4
+  - 6
+  - 14
+  - 17
+  - 31
+  - 33
+  - 39
+  - 42
+  - 50
+  - 53
+  - 59
+  - 63
+  - 72
+  - 75
+  - 81
+  - 85
+  - 94
+  - 97
+  - 103
+  - 107
+  - 116
+  - 119
+  - 125
+  - 129
+  - 138
+  - 141
+  - 147
+  - 151
+  - 160
+  - 163
+  - 169
+  - 173
+  - 182
+  - 185
+  - 191
+  - 195
+  - 204
+  - 207
+  - 213
+  - 217
+  mSecondKey: []
+  mDataList:
+  - _building_idx: 4
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_04
+    _catstagram_bg_img: Catstargram_BG_House_04
+    _catstagram_tag: str_catstagram_house_tag_4
+    _product_idx: -1
+    _add_point: 5
+    _reward_type: -1
+    _reward_idx: -1
+    _reward_value: -1
+  - _building_idx: 6
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_06
+    _catstagram_bg_img: Catstargram_BG_House_06
+    _catstagram_tag: str_catstagram_house_tag_6
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: -1
+    _reward_idx: -1
+    _reward_value: -1
+  - _building_idx: 14
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_14
+    _catstagram_bg_img: Catstargram_BG_House_14
+    _catstagram_tag: str_catstagram_house_tag_14
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 17
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_17
+    _catstagram_bg_img: Catstargram_BG_House_17
+    _catstagram_tag: str_catstagram_house_tag_17
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 31
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_31
+    _catstagram_bg_img: Catstargram_BG_House_31
+    _catstagram_tag: str_catstagram_house_tag_31
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 33
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_33
+    _catstagram_bg_img: Catstargram_BG_House_33
+    _catstagram_tag: str_catstagram_house_tag_33
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 39
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_39
+    _catstagram_bg_img: Catstargram_BG_House_39
+    _catstagram_tag: str_catstagram_house_tag_39
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 42
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_42
+    _catstagram_bg_img: Catstargram_BG_House_42
+    _catstagram_tag: str_catstagram_house_tag_42
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 50
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_50
+    _catstagram_bg_img: Catstargram_BG_House_50
+    _catstagram_tag: str_catstagram_house_tag_50
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 53
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_53
+    _catstagram_bg_img: Catstargram_BG_House_53
+    _catstagram_tag: str_catstagram_house_tag_53
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 59
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_59
+    _catstagram_bg_img: Catstargram_BG_House_59
+    _catstagram_tag: str_catstagram_house_tag_59
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 63
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_63
+    _catstagram_bg_img: Catstargram_BG_House_63
+    _catstagram_tag: str_catstagram_house_tag_63
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 72
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_72
+    _catstagram_bg_img: Catstargram_BG_House_72
+    _catstagram_tag: str_catstagram_house_tag_72
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 75
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_75
+    _catstagram_bg_img: Catstargram_BG_House_75
+    _catstagram_tag: str_catstagram_house_tag_75
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 81
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_81
+    _catstagram_bg_img: Catstargram_BG_House_81
+    _catstagram_tag: str_catstagram_house_tag_81
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 85
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_85
+    _catstagram_bg_img: Catstargram_BG_House_85
+    _catstagram_tag: str_catstagram_house_tag_85
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 94
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_94
+    _catstagram_bg_img: Catstargram_BG_House_94
+    _catstagram_tag: str_catstagram_house_tag_94
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 97
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_97
+    _catstagram_bg_img: Catstargram_BG_House_97
+    _catstagram_tag: str_catstagram_house_tag_97
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 103
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_103
+    _catstagram_bg_img: Catstargram_BG_House_103
+    _catstagram_tag: str_catstagram_house_tag_103
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 107
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_107
+    _catstagram_bg_img: Catstargram_BG_House_107
+    _catstagram_tag: str_catstagram_house_tag_107
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 116
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_116
+    _catstagram_bg_img: Catstargram_BG_House_116
+    _catstagram_tag: str_catstagram_house_tag_116
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 119
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_119
+    _catstagram_bg_img: Catstargram_BG_House_119
+    _catstagram_tag: str_catstagram_house_tag_119
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 125
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_125
+    _catstagram_bg_img: Catstargram_BG_House_125
+    _catstagram_tag: str_catstagram_house_tag_125
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 129
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_129
+    _catstagram_bg_img: Catstargram_BG_House_129
+    _catstagram_tag: str_catstagram_house_tag_129
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 138
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_138
+    _catstagram_bg_img: Catstargram_BG_House_138
+    _catstagram_tag: str_catstagram_house_tag_138
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 141
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_141
+    _catstagram_bg_img: Catstargram_BG_House_141
+    _catstagram_tag: str_catstagram_house_tag_141
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 147
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_147
+    _catstagram_bg_img: Catstargram_BG_House_147
+    _catstagram_tag: str_catstagram_house_tag_147
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 151
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_151
+    _catstagram_bg_img: Catstargram_BG_House_151
+    _catstagram_tag: str_catstagram_house_tag_151
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 160
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_160
+    _catstagram_bg_img: Catstargram_BG_House_160
+    _catstagram_tag: str_catstagram_house_tag_160
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 163
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_163
+    _catstagram_bg_img: Catstargram_BG_House_163
+    _catstagram_tag: str_catstagram_house_tag_163
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 169
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_169
+    _catstagram_bg_img: Catstargram_BG_House_169
+    _catstagram_tag: str_catstagram_house_tag_169
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 173
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_173
+    _catstagram_bg_img: Catstargram_BG_House_173
+    _catstagram_tag: str_catstagram_house_tag_173
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 182
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_182
+    _catstagram_bg_img: Catstargram_BG_House_182
+    _catstagram_tag: str_catstagram_house_tag_182
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 185
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_185
+    _catstagram_bg_img: Catstargram_BG_House_185
+    _catstagram_tag: str_catstagram_house_tag_185
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 191
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_191
+    _catstagram_bg_img: Catstargram_BG_House_191
+    _catstagram_tag: str_catstagram_house_tag_191
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 195
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_195
+    _catstagram_bg_img: Catstargram_BG_House_195
+    _catstagram_tag: str_catstagram_house_tag_195
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 204
+    _reward_garage: 1
+    _reward_point: 45
+    _img: WorldMap_Icon_House_204
+    _catstagram_bg_img: Catstargram_BG_House_204
+    _catstagram_tag: str_catstagram_house_tag_204
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 207
+    _reward_garage: 3
+    _reward_point: 321
+    _img: WorldMap_Icon_House_207
+    _catstagram_bg_img: Catstargram_BG_House_207
+    _catstagram_tag: str_catstagram_house_tag_207
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 213
+    _reward_garage: 6
+    _reward_point: 5121
+    _img: WorldMap_Icon_House_213
+    _catstagram_bg_img: Catstargram_BG_House_213
+    _catstagram_tag: str_catstagram_house_tag_213
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1
+  - _building_idx: 217
+    _reward_garage: 10
+    _reward_point: 42121
+    _img: WorldMap_Icon_House_217
+    _catstagram_bg_img: Catstargram_BG_House_217
+    _catstagram_tag: str_catstagram_house_tag_217
+    _product_idx: -1
+    _add_point: -1
+    _reward_type: 3
+    _reward_idx: 202
+    _reward_value: 1

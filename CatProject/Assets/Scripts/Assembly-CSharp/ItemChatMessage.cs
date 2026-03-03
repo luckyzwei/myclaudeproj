@@ -1,0 +1,69 @@
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ItemChatMessage : MonoBehaviour
+{
+	[Header("Audience")]
+	[SerializeField]
+	private GameObject AudienceRoot;
+
+	[SerializeField]
+	private Image Icon;
+
+	[SerializeField]
+	private Text Text;
+
+	[SerializeField]
+	private GameObject MsgRoot;
+
+	[SerializeField]
+	private GameObject WritingObj;
+
+	[SerializeField]
+	private GameObject RewardRoot;
+
+	[SerializeField]
+	private Button RewardBtn;
+
+	[SerializeField]
+	private GameObject ReceivedObj;
+
+	[Header("User")]
+	[SerializeField]
+	private GameObject UserRoot;
+
+	[SerializeField]
+	private Image UserIcon;
+
+	[SerializeField]
+	private Text UserText;
+
+	public Action GetRewardAction;
+
+	private int Group;
+
+	private int Idx;
+
+	private int Order;
+
+	private void Awake()
+	{
+	}
+
+	public void Set(int group, int idx, int order)
+	{
+	}
+
+	public void UpdateReward()
+	{
+	}
+
+	public void ShowWriting(bool isShowWriting = true)
+	{
+	}
+
+	private void OnClickReward()
+	{
+	}
+}

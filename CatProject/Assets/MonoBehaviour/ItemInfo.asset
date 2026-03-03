@@ -1,0 +1,255 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 25344771, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ItemInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 101
+  - 102
+  - 103
+  - 201
+  - 202
+  - 211
+  - 212
+  - 301
+  - 401
+  - 402
+  - 501
+  - 502
+  - 503
+  - 504
+  - 506
+  - 507
+  - 601
+  - 602
+  - 603
+  - 701
+  - 702
+  - 703
+  - 704
+  - 705
+  - 706
+  - 801
+  - 901
+  - 902
+  - 903
+  - 904
+  mSecondKey: []
+  mDataList:
+  - _idx: 1
+    _name: str_item_name_1
+    _desc:
+    _icon: Factory_Icon_UseItem_01
+    _guide_prefab_idx: ffffff/fffffff/fffffff/fffffff/fffffff/fffffff/f
+    _use_value: -1
+  - _idx: 2
+    _name: str_item_name_2
+    _desc:
+    _icon: Factory_Icon_UseItem_02
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 3
+    _name: str_item_name_3
+    _desc:
+    _icon: Factory_Icon_UseItem_03
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 4
+    _name: str_item_name_4
+    _desc:
+    _icon: Factory_Icon_UseItem_04
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 101
+    _name: str_item_name_101
+    _desc: str_item_desc_101
+    _icon: Dynamic_Icon_Plant_Supplies_01
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 102
+    _name: str_item_name_102
+    _desc: str_item_desc_102
+    _icon: Dynamic_Icon_Plant_Supplies_02
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 103
+    _name: str_item_name_103
+    _desc: str_item_desc_103
+    _icon: Dynamic_Icon_Plant_Supplies_03
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 201
+    _name: str_item_name_201
+    _desc:
+    _icon: DynamicShop_Icon_Goods_Key_01
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 202
+    _name: str_item_name_202
+    _desc:
+    _icon: DynamicShop_Icon_Goods_Key_02
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 211
+    _name: str_item_name_211
+    _desc:
+    _icon:
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 212
+    _name: str_item_name_212
+    _desc:
+    _icon:
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 301
+    _name: str_item_name_301
+    _desc: str_item_desc_301
+    _icon: Dynamic_Icon_Piece_Special
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 401
+    _name: str_item_name_401
+    _desc:
+    _icon: Dynamic_Icon_SkillStone_Normal
+    _guide_prefab_idx: c90000000300000002000000
+    _use_value: -1
+  - _idx: 402
+    _name: str_item_name_402
+    _desc:
+    _icon: Dynamic_Icon_SkillStone_Premium
+    _guide_prefab_idx: 2d0100000300000002000000
+    _use_value: -1
+  - _idx: 501
+    _name: str_item_name_501
+    _desc:
+    _icon: Manager_Icon_Legend_3001
+    _guide_prefab_idx: 9101000092010000
+    _use_value: -1
+  - _idx: 502
+    _name: str_item_name_502
+    _desc:
+    _icon: Manager_Icon_Legend_3002
+    _guide_prefab_idx: fa01000003000000
+    _use_value: -1
+  - _idx: 503
+    _name: str_item_name_503
+    _desc:
+    _icon: Manager_Icon_Legend_3003
+    _guide_prefab_idx: 93010000
+    _use_value: -1
+  - _idx: 504
+    _name: str_item_name_504
+    _desc:
+    _icon: Manager_Icon_Legend_3004
+    _guide_prefab_idx: 9501000003000000
+    _use_value: -1
+  - _idx: 506
+    _name: str_item_name_506
+    _desc:
+    _icon: Manager_Icon_Legend_3006
+    _guide_prefab_idx: 94010000
+    _use_value: -1
+  - _idx: 507
+    _name: str_item_name_507
+    _desc:
+    _icon: Manager_Icon_Legend_3007
+    _guide_prefab_idx: 9601000003000000
+    _use_value: -1
+  - _idx: 601
+    _name: str_item_name_601
+    _desc:
+    _icon: Dynamic_Icon_Goods_BoostTicket_01
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 602
+    _name: str_item_name_602
+    _desc:
+    _icon: Dynamic_Icon_Goods_BoostTicket_02
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 603
+    _name: str_item_name_603
+    _desc:
+    _icon: Dynamic_Icon_Goods_BoostTicket_03
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 701
+    _name: str_item_name_701
+    _desc: str_item_desc_701
+    _icon: Dynamic_Icon_ExpTicket_01
+    _guide_prefab_idx: f8010000f5010000f6010000f7010000f9010000fa010000
+    _use_value: 5000
+  - _idx: 702
+    _name: str_item_name_702
+    _desc: str_item_desc_702
+    _icon: Dynamic_Icon_ExpTicket_02
+    _guide_prefab_idx: ffffff/f
+    _use_value: 10000
+  - _idx: 703
+    _name: str_item_name_703
+    _desc: str_item_desc_703
+    _icon: Dynamic_Icon_ExpTicket_03
+    _guide_prefab_idx: ffffff/f
+    _use_value: 50000
+  - _idx: 704
+    _name: str_item_name_704
+    _desc: str_item_desc_704
+    _icon: Dynamic_Icon_ExpTicket_04
+    _guide_prefab_idx: ffffff/f
+    _use_value: 100000
+  - _idx: 705
+    _name: str_item_name_705
+    _desc: str_item_desc_705
+    _icon: Dynamic_Icon_ExpTicket_05
+    _guide_prefab_idx: ffffff/f
+    _use_value: 1000000
+  - _idx: 706
+    _name: str_item_name_706
+    _desc: str_item_desc_706
+    _icon: Dynamic_Icon_ExpTicket_06
+    _guide_prefab_idx: ffffff/f
+    _use_value: 10000000
+  - _idx: 801
+    _name: str_item_name_801
+    _desc:
+    _icon:
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 901
+    _name: str_item_name_901
+    _desc:
+    _icon:
+    _guide_prefab_idx: ffffff/f
+    _use_value: -1
+  - _idx: 902
+    _name: str_item_name_902
+    _desc:
+    _icon:
+    _guide_prefab_idx:
+    _use_value: 0
+  - _idx: 903
+    _name: str_item_name_903
+    _desc:
+    _icon:
+    _guide_prefab_idx:
+    _use_value: 0
+  - _idx: 904
+    _name: str_item_name_904
+    _desc:
+    _icon:
+    _guide_prefab_idx:
+    _use_value: 0

@@ -1,0 +1,163 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+public class InGameWorldmap : OutGameMode
+{
+	[CompilerGenerated]
+	private sealed class _003CDelayLoadEnd_003Ed__3 : IEnumerator<object>, IEnumerator, IDisposable
+	{
+		private int _003C_003E1__state;
+
+		private object _003C_003E2__current;
+
+		object IEnumerator<object>.Current
+		{
+			[DebuggerHidden]
+			get
+			{
+				return null;
+			}
+		}
+
+		object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get
+			{
+				return null;
+			}
+		}
+
+		[DebuggerHidden]
+		public _003CDelayLoadEnd_003Ed__3(int _003C_003E1__state)
+		{
+		}
+
+		[DebuggerHidden]
+		void IDisposable.Dispose()
+		{
+		}
+
+		private bool MoveNext()
+		{
+			return false;
+		}
+
+		bool IEnumerator.MoveNext()
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+			return this.MoveNext();
+		}
+
+		[DebuggerHidden]
+		void IEnumerator.Reset()
+		{
+		}
+	}
+
+	[CompilerGenerated]
+	private sealed class _003CWaitRegion_003Ed__8 : IEnumerator<object>, IEnumerator, IDisposable
+	{
+		private int _003C_003E1__state;
+
+		private object _003C_003E2__current;
+
+		public InGameWorldmap _003C_003E4__this;
+
+		public Action waitCb;
+
+		object IEnumerator<object>.Current
+		{
+			[DebuggerHidden]
+			get
+			{
+				return null;
+			}
+		}
+
+		object IEnumerator.Current
+		{
+			[DebuggerHidden]
+			get
+			{
+				return null;
+			}
+		}
+
+		[DebuggerHidden]
+		public _003CWaitRegion_003Ed__8(int _003C_003E1__state)
+		{
+		}
+
+		[DebuggerHidden]
+		void IDisposable.Dispose()
+		{
+		}
+
+		private bool MoveNext()
+		{
+			return false;
+		}
+
+		bool IEnumerator.MoveNext()
+		{
+			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
+			return this.MoveNext();
+		}
+
+		[DebuggerHidden]
+		void IEnumerator.Reset()
+		{
+		}
+	}
+
+	[SerializeField]
+	private Transform Root;
+
+	[HideInInspector]
+	public InGameWorldmapRegion Region;
+
+	public override void Load()
+	{
+	}
+
+	[IteratorStateMachine(typeof(_003CDelayLoadEnd_003Ed__3))]
+	private IEnumerator DelayLoadEnd()
+	{
+		return null;
+	}
+
+	public void AddRegionWorld(int region_idx, Action Cb)
+	{
+	}
+
+	public void FocusToZone(int zone, bool showArrow = false)
+	{
+	}
+
+	public void SetGuideStage(int stage)
+	{
+	}
+
+	public void WaitRegionCb(Action Cb)
+	{
+	}
+
+	[IteratorStateMachine(typeof(_003CWaitRegion_003Ed__8))]
+	private IEnumerator WaitRegion(Action waitCb)
+	{
+		return null;
+	}
+
+	protected override void LoadUI()
+	{
+	}
+
+	public override void UnLoad()
+	{
+	}
+}

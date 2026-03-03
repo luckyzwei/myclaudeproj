@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1110599491, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: CatBankReward
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 3
+  - 5
+  - 7
+  mSecondKey: []
+  mDataList:
+  - _level: 3
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 100
+    _reward_icon: Dynamic_Icon_Piggy_Reward_01
+    _info: -1
+  - _level: 5
+    _reward_type: 1
+    _reward_idx: 2
+    _reward_value: 150
+    _reward_icon: Dynamic_Icon_Piggy_Reward_02
+    _info: -1
+  - _level: 7
+    _reward_type: 4
+    _reward_idx: 6
+    _reward_value: 1
+    _reward_icon: Dynamic_Icon_Piggy_Reward_03
+    _info: 1

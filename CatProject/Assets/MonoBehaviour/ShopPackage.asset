@@ -1,0 +1,6593 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -134947574, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ShopPackage
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 500
+  - 501
+  - 502
+  - 503
+  - 504
+  - 505
+  - 506
+  - 509
+  - 510
+  - 511
+  - 512
+  - 513
+  - 514
+  - 515
+  - 516
+  - 517
+  - 518
+  - 519
+  - 520
+  - 521
+  - 522
+  - 523
+  - 524
+  - 525
+  - 526
+  - 527
+  - 528
+  - 529
+  - 530
+  - 531
+  - 532
+  - 533
+  - 534
+  - 535
+  - 536
+  - 537
+  - 538
+  - 539
+  - 540
+  - 541
+  - 542
+  - 543
+  - 544
+  - 600
+  - 601
+  - 602
+  - 603
+  - 604
+  - 610
+  - 611
+  - 612
+  - 613
+  - 614
+  - 615
+  - 620
+  - 621
+  - 622
+  - 623
+  - 624
+  - 625
+  - 626
+  - 627
+  - 628
+  - 629
+  - 630
+  - 631
+  - 632
+  - 633
+  - 634
+  - 635
+  - 636
+  - 637
+  - 638
+  - 639
+  - 640
+  - 641
+  - 642
+  - 643
+  - 644
+  - 645
+  - 646
+  - 647
+  - 648
+  - 649
+  - 650
+  - 651
+  - 701
+  - 702
+  - 703
+  - 704
+  - 705
+  - 706
+  - 707
+  - 708
+  - 709
+  - 751
+  - 752
+  - 753
+  - 754
+  - 755
+  - 756
+  - 757
+  - 758
+  - 759
+  - 760
+  - 761
+  - 762
+  - 763
+  - 764
+  - 765
+  - 766
+  - 767
+  - 768
+  - 769
+  - 770
+  - 771
+  - 772
+  - 773
+  - 774
+  - 775
+  - 776
+  - 777
+  - 778
+  - 779
+  - 780
+  - 781
+  - 782
+  - 783
+  - 784
+  - 785
+  - 803
+  - 804
+  - 805
+  - 806
+  - 830
+  - 831
+  - 832
+  - 833
+  - 834
+  - 835
+  - 836
+  - 837
+  - 838
+  - 839
+  - 840
+  - 841
+  - 842
+  - 843
+  - 844
+  - 845
+  - 846
+  - 847
+  - 848
+  - 849
+  - 850
+  - 851
+  - 852
+  - 853
+  - 854
+  - 855
+  - 856
+  - 857
+  - 858
+  - 859
+  - 860
+  - 861
+  - 862
+  - 863
+  - 864
+  - 865
+  - 866
+  - 867
+  - 868
+  - 869
+  - 870
+  - 871
+  - 872
+  - 873
+  - 874
+  - 875
+  - 876
+  - 877
+  - 878
+  - 879
+  - 880
+  - 881
+  - 882
+  - 883
+  - 884
+  - 885
+  - 886
+  - 887
+  - 888
+  - 889
+  - 890
+  - 891
+  - 892
+  - 893
+  - 894
+  - 895
+  - 896
+  - 897
+  - 898
+  - 899
+  - 900
+  - 901
+  - 902
+  - 903
+  - 904
+  - 905
+  - 906
+  - 907
+  - 908
+  - 909
+  - 1001
+  - 12001
+  - 12002
+  - 12003
+  - 12004
+  - 12005
+  - 12101
+  - 12102
+  - 12103
+  - 12104
+  - 12105
+  - 12111
+  - 12112
+  - 12113
+  - 12114
+  - 12115
+  - 12121
+  - 12122
+  - 12123
+  - 12124
+  - 12125
+  - 12301
+  - 12302
+  - 12303
+  - 12304
+  - 12305
+  - 12306
+  - 12307
+  - 12308
+  - 12309
+  - 12401
+  - 12402
+  - 12403
+  - 12501
+  - 12311
+  - 12312
+  - 12313
+  - 12314
+  - 12315
+  - 12316
+  - 12317
+  - 12318
+  - 12319
+  - 12400
+  - 12321
+  - 12322
+  - 12323
+  - 12324
+  - 12325
+  - 12326
+  - 12327
+  - 12328
+  - 12329
+  - 12404
+  - 15001
+  - 15002
+  - 30001
+  - 30002
+  - 30003
+  - 31001
+  mSecondKey: []
+  mDataList:
+  - _idx: 500
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 14
+    _show_type: -1
+    _package_type: 1
+    _package_group: 1
+    _reward_type: 0100000001000000ffffff/fffffff/f
+    _reward_idx: 0100000002000000ffffff/fffffff/f
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: 403800009001000000000000ffffff/f
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 84
+    _name: str_shop_name_500
+    _hud_icon:
+    _prefab:
+    _bg_color: Shop_Normal
+    _img: DynamicShop_Bg_Package_01
+    _sale_count: -1
+    _product_id: officecat_shop_startpack_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 501
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 14
+    _show_type: -1
+    _package_type: 1
+    _package_group: 1
+    _reward_type: 010000000100000004000000
+    _reward_idx: 010000000200000005000000
+    _reward_region: 01000000ffffff/fffffff/f
+    _reward_value: 80700000e803000001000000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 89
+    _name: str_shop_name_501
+    _hud_icon: HUD_Icon_Package_01
+    _prefab: Package_Starter
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_02
+    _sale_count: -1
+    _product_id: officecat_shop_startpack_2
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 502
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 14
+    _show_type: -1
+    _package_type: 1
+    _package_group: 1
+    _reward_type: 01000000010000000400000005000000
+    _reward_idx: 01000000020000000500000001000000
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: a08c0000e80300000100000001000000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 85
+    _name: str_shop_name_502
+    _hud_icon: HUD_Icon_Package_01
+    _prefab: Package_Starter
+    _bg_color: Shop_MostExpensive
+    _img: DynamicShop_Bg_Package_03
+    _sale_count: -1
+    _product_id: officecat_shop_startpack_3
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 503
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 18
+    _show_type: 3
+    _package_type: 1
+    _package_group: 100
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 01000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 55
+    _name: str_shop_name_503
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_04
+    _sale_count: -1
+    _product_id: officecat_503_movepack_st3
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 504
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 19
+    _show_type: 3
+    _package_type: 1
+    _package_group: 100
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 01000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 56
+    _name: str_shop_name_504
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_05
+    _sale_count: -1
+    _product_id: officecat_504_movepack_st4
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 505
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 20
+    _show_type: 3
+    _package_type: 1
+    _package_group: 100
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_505
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_06
+    _sale_count: -1
+    _product_id: officecat_505_movepack_st5
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 506
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 38
+    _show_type: 3
+    _package_type: 1
+    _package_group: 100
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_506
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_06
+    _sale_count: -1
+    _product_id: officecat_506_movepack_st6
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 509
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 40
+    _show_type: 3
+    _package_type: 1
+    _package_group: 101
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 02000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 55
+    _name: str_shop_name_509
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_09
+    _sale_count: -1
+    _product_id: officecat_509_movepack_st9
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 510
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 45
+    _show_type: 3
+    _package_type: 1
+    _package_group: 101
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 02000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 56
+    _name: str_shop_name_510
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_15
+    _sale_count: -1
+    _product_id: officecat_510_movepack_st10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 511
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 48
+    _show_type: 3
+    _package_type: 1
+    _package_group: 101
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 02000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_511
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_17
+    _sale_count: -1
+    _product_id: officecat_511_movepack_st11
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 512
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 50
+    _show_type: 3
+    _package_type: 1
+    _package_group: 101
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 02000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_512
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_17
+    _sale_count: -1
+    _product_id: officecat_512_movepack_st12
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 513
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 63
+    _show_type: 3
+    _package_type: 1
+    _package_group: 102
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 55
+    _name: str_shop_name_513
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_513_movepack_st15
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 514
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 64
+    _show_type: 3
+    _package_type: 1
+    _package_group: 102
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 56
+    _name: str_shop_name_514
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_21
+    _sale_count: -1
+    _product_id: officecat_514_movepack_st16
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 515
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 65
+    _show_type: 3
+    _package_type: 1
+    _package_group: 102
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 03000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_515
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_22
+    _sale_count: -1
+    _product_id: officecat_515_movepack_st17
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 516
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 66
+    _show_type: 3
+    _package_type: 1
+    _package_group: 102
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 03000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_516
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_22
+    _sale_count: -1
+    _product_id: officecat_516_movepack_st18
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 517
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 107
+    _show_type: 3
+    _package_type: 1
+    _package_group: 103
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 55
+    _name: str_shop_name_517
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 518
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 108
+    _show_type: 3
+    _package_type: 1
+    _package_group: 103
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 56
+    _name: str_shop_name_518
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 519
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 109
+    _show_type: 3
+    _package_type: 1
+    _package_group: 103
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 04000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_519
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 520
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 110
+    _show_type: 3
+    _package_type: 1
+    _package_group: 103
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 04000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_520
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 521
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 148
+    _show_type: 3
+    _package_type: 1
+    _package_group: 104
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_521
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 522
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 149
+    _show_type: 3
+    _package_type: 1
+    _package_group: 104
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_522
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 523
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 150
+    _show_type: 3
+    _package_type: 1
+    _package_group: 104
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 05000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_523
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 524
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 151
+    _show_type: 3
+    _package_type: 1
+    _package_group: 104
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 05000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_524
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 525
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 152
+    _show_type: 3
+    _package_type: 1
+    _package_group: 105
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_525
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 526
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 153
+    _show_type: 3
+    _package_type: 1
+    _package_group: 105
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_526
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 527
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 154
+    _show_type: 3
+    _package_type: 1
+    _package_group: 105
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 06000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_527
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 528
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 155
+    _show_type: 3
+    _package_type: 1
+    _package_group: 105
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 06000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_528
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 529
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 156
+    _show_type: 3
+    _package_type: 1
+    _package_group: 106
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_529
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 530
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 157
+    _show_type: 3
+    _package_type: 1
+    _package_group: 106
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_530
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 531
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 158
+    _show_type: 3
+    _package_type: 1
+    _package_group: 106
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 07000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_531
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 532
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 159
+    _show_type: 3
+    _package_type: 1
+    _package_group: 106
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 07000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_532
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 533
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 160
+    _show_type: 3
+    _package_type: 1
+    _package_group: 107
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_533
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 534
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 161
+    _show_type: 3
+    _package_type: 1
+    _package_group: 107
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_534
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 535
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 162
+    _show_type: 3
+    _package_type: 1
+    _package_group: 107
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 08000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_535
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 536
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 163
+    _show_type: 3
+    _package_type: 1
+    _package_group: 107
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 08000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_536
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 537
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 164
+    _show_type: 3
+    _package_type: 1
+    _package_group: 108
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_537
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 538
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 165
+    _show_type: 3
+    _package_type: 1
+    _package_group: 108
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_538
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 539
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 166
+    _show_type: 3
+    _package_type: 1
+    _package_group: 108
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 09000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_539
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 540
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 167
+    _show_type: 3
+    _package_type: 1
+    _package_group: 108
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 09000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_540
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 541
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 168
+    _show_type: 3
+    _package_type: 1
+    _package_group: 109
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 40380000e8030000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_541
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 542
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 169
+    _show_type: 3
+    _package_type: 1
+    _package_group: 109
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 80700000e80300000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_542
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_4
+    _sale_count: -1
+    _product_id: officecat_shop_08
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 543
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 170
+    _show_type: 3
+    _package_type: 1
+    _package_group: 109
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 0a000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_543
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 544
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 171
+    _show_type: 3
+    _package_type: 1
+    _package_group: 109
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 0a000000ffffff/fffffff/fffffff/f
+    _reward_value: c0a80000e8030000403800000a000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 58
+    _name: str_shop_name_544
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_move_5
+    _sale_count: -1
+    _product_id: officecat_shop_10
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 600
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 28
+    _show_type: 3
+    _package_type: 2
+    _package_group: 1000
+    _reward_type: 060000000300000001000000
+    _reward_idx: 65000000c900000002000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 0500000014000000c8000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 60
+    _name: str_shop_name_600
+    _hud_icon: HUD_Icon_Package_05
+    _prefab: Package_Manager
+    _bg_color: Manager_Grade_Normal
+    _img: Manager_Character_101
+    _sale_count: -1
+    _product_id: officecat_ceo_openpack_normal
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 601
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 28
+    _show_type: 3
+    _package_type: 2
+    _package_group: 1000
+    _reward_type: 060000000300000001000000
+    _reward_idx: e9030000ca00000002000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 030000000a00000058020000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 62
+    _name: str_shop_name_601
+    _hud_icon: HUD_Icon_Package_05
+    _prefab: Package_Manager
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1001
+    _sale_count: -1
+    _product_id: officecat_ceo_openpack_premium
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 602
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 28
+    _show_type: 3
+    _package_type: 3
+    _package_group: 1000
+    _reward_type: 6600000066000000
+    _reward_idx: 5802000059020000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 70
+    _name: str_shop_name_602
+    _hud_icon: HUD_Icon_Package_05
+    _prefab: Package_Manager
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1002
+    _sale_count: -1
+    _product_id: officecat_ceo_openpack_all
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 603
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 41
+    _show_type: 3
+    _package_type: 1
+    _package_group: -1
+    _reward_type: 0300000003000000
+    _reward_idx: c9000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 140000000a000000
+    _cost_type: 1
+    _limit_time: 86400
+    _sale: 66
+    _name: str_shop_name_603
+    _hud_icon: HUD_Icon_Package_10
+    _prefab: ContentFrontPackage_09
+    _bg_color: Shop_MostExpensive
+    _img: DynamicShop_Bg_Package_11
+    _sale_count: 1
+    _product_id: officecat_603_ceo_room
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 604
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 42
+    _show_type: 3
+    _package_type: 1
+    _package_group: -1
+    _reward_type: 03000000
+    _reward_idx: ca000000
+    _reward_region: ffffff/f
+    _reward_value: 64000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 75
+    _name: str_shop_name_604
+    _hud_icon: HUD_Icon_Package_11
+    _prefab: ContentFrontPackage_10
+    _bg_color: Shop_MostExpensive
+    _img: DynamicShop_Bg_Package_12
+    _sale_count: 1
+    _product_id: officecat_604_ceo_tierup
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 610
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 31
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 640000000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 22
+    _name: str_shop_name_610
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_2
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 611
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 32
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: fa0000000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 18
+    _name: str_shop_name_611
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_3
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_2
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 612
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 33
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 900100000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 16
+    _name: str_shop_name_612
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_4
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_3
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 613
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 34
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 580200000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 18
+    _name: str_shop_name_613
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_5
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_4
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 614
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 35
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: e80300000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 31
+    _name: str_shop_name_614
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_6
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_5
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 615
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 36
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1001
+    _reward_type: 0100000003000000
+    _reward_idx: 02000000ca000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: dc0500000a000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 41
+    _name: str_shop_name_615
+    _hud_icon: HUD_Icon_Package_06
+    _prefab: Package_Desk
+    _bg_color: Shop_Expensive
+    _img: Furniture_Icon_Office_Item_107_7
+    _sale_count: 1
+    _product_id: officecat_ceo_deskpack_6
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 620
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: e903000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1001
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 621
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: ea03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1002
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 622
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: eb03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1003
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 623
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: ec03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1004
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 624
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: ed03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1005
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 625
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: ee03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1006
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 626
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: ef03000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1007
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 627
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f003000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1008
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 628
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f103000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1009
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 629
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f203000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1010
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 630
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f303000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1011
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 631
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f403000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1012
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 632
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f503000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1013
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 633
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f603000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1014
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 634
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f703000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1015
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 635
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: f803000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_1016
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 636
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d107000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2001
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 637
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d207000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2002
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 638
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d307000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2003
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 639
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d407000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2004
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 640
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d507000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2005
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 641
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d607000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2006
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 642
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d707000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2007
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 643
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d807000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2008
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 644
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: d907000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2009
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 645
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: da07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2010
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 646
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: db07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2011
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 647
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: dc07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2012
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 648
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: dd07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2013
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 649
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: de07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2014
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 650
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: df07000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2015
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 651
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 37
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1002
+    _reward_type: 0600000001000000
+    _reward_idx: e007000002000000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0a00000064000000
+    _cost_type: 1
+    _limit_time: 1800
+    _sale: 86
+    _name: str_shop_name_620
+    _hud_icon: HUD_Icon_Package_07
+    _prefab: Package_Growth
+    _bg_color: Manager_Grade_Premium
+    _img: Manager_Character_2016
+    _sale_count: 1
+    _product_id: officecat_ceo_levelup_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 701
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 39
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 670000006700000067000000670000000100000001000000
+    _reward_idx: 9e080000a40800006d090000c50900000100000002000000
+    _reward_region: ffffff/fffffff/fffffff/fffffff/f02000000ffffff/f
+    _reward_value: 010000000100000001000000010000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 62
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_08
+    _prefab: Package_NewCity
+    _bg_color: Shop_NewCity
+    _img:
+    _sale_count: -1
+    _product_id: officecat_701_newcitypack
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 702
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 67
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f03000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_21
+    _prefab: Package_NewCity2
+    _bg_color: Shop_NewCity
+    _img:
+    _sale_count: -1
+    _product_id: officecat_702_newcitypack
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 703
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 111
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f04000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 704
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 142
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f05000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 705
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 143
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f06000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 706
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 144
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f07000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 707
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 145
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f08000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 708
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 146
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f09000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 709
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 147
+    _show_type: 3
+    _package_type: 1
+    _package_group: 2000
+    _reward_type: 01000000010000000100000001000000
+    _reward_idx: 0a0000000b0000000100000002000000
+    _reward_region: ffffff/fffffff/f0a000000ffffff/f
+    _reward_value: 0a000000050000004038000090010000
+    _cost_type: 1
+    _limit_time: 259200
+    _sale: 64
+    _name: str_newcitypack_title
+    _hud_icon: HUD_Icon_Package_newcity
+    _prefab: Package_NewCity3
+    _bg_color: Shop_NewCity
+    _img: DynamicShop_Bg_Package_newcity
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 751
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 46
+    _show_type: 3
+    _package_type: 1
+    _package_group: 501
+    _reward_type: 6700000067000000
+    _reward_idx: 2b0a0000950a0000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 45
+    _name: str_shop_name_751
+    _hud_icon: HUD_Icon_Package_14
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_16
+    _sale_count: -1
+    _product_id: officecat_751_specialcompanypack_1
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 752
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 49
+    _show_type: 3
+    _package_type: 1
+    _package_group: 501
+    _reward_type: 67000000
+    _reward_idx: ab0a0000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_752
+    _hud_icon: HUD_Icon_Package_16
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_18
+    _sale_count: -1
+    _product_id: officecat_752_specialcompanypack_2
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 753
+    _show_game_type: 0
+    _Region: 2
+    _contents_open: 51
+    _show_type: 3
+    _package_type: 1
+    _package_group: 501
+    _reward_type: 67000000
+    _reward_idx: b50a0000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_753
+    _hud_icon: HUD_Icon_Package_17
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_19
+    _sale_count: -1
+    _product_id: officecat_753_specialcompanypack_3
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 754
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 63
+    _show_type: 3
+    _package_type: 1
+    _package_group: 502
+    _reward_type: 67000000
+    _reward_idx: b90d0000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_22
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_23
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 755
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 64
+    _show_type: 3
+    _package_type: 1
+    _package_group: 502
+    _reward_type: 6700000067000000
+    _reward_idx: 220e0000a20e0000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_23
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_24
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 756
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 65
+    _show_type: 3
+    _package_type: 1
+    _package_group: 502
+    _reward_type: 67000000
+    _reward_idx: a30e0000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_25
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_26
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 757
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 66
+    _show_type: 3
+    _package_type: 1
+    _package_group: 502
+    _reward_type: 67000000
+    _reward_idx: a40e0000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_26
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_27
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 758
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 107
+    _show_type: 3
+    _package_type: 1
+    _package_group: 503
+    _reward_type: 67000000
+    _reward_idx: a1110000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_27
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_28
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 759
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 108
+    _show_type: 3
+    _package_type: 1
+    _package_group: 503
+    _reward_type: 6700000067000000
+    _reward_idx: 0a12000070120000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_28
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_29
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 760
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 109
+    _show_type: 3
+    _package_type: 1
+    _package_group: 503
+    _reward_type: 67000000
+    _reward_idx: 7e120000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_30
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_31
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 761
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 110
+    _show_type: 3
+    _package_type: 1
+    _package_group: 503
+    _reward_type: 67000000
+    _reward_idx: 8c120000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_31
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_32
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 762
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 148
+    _show_type: 3
+    _package_type: 1
+    _package_group: 504
+    _reward_type: 67000000
+    _reward_idx: 89150000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_32
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_33
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 763
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 149
+    _show_type: 3
+    _package_type: 1
+    _package_group: 504
+    _reward_type: 6700000067000000
+    _reward_idx: f215000058160000
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_33
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_34
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 764
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 150
+    _show_type: 3
+    _package_type: 1
+    _package_group: 504
+    _reward_type: 67000000
+    _reward_idx: 66160000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_34
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_35
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 765
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 151
+    _show_type: 3
+    _package_type: 1
+    _package_group: 504
+    _reward_type: 67000000
+    _reward_idx: 74160000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon: HUD_Icon_Package_35
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img: DynamicShop_Bg_Package_36
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 766
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 152
+    _show_type: 3
+    _package_type: 1
+    _package_group: 505
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 767
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 153
+    _show_type: 3
+    _package_type: 1
+    _package_group: 505
+    _reward_type: 6700000067000000
+    _reward_idx:
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 768
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 154
+    _show_type: 3
+    _package_type: 1
+    _package_group: 505
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 769
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 155
+    _show_type: 3
+    _package_type: 1
+    _package_group: 505
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 770
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 156
+    _show_type: 3
+    _package_type: 1
+    _package_group: 506
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 771
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 157
+    _show_type: 3
+    _package_type: 1
+    _package_group: 506
+    _reward_type: 6700000067000000
+    _reward_idx:
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 772
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 158
+    _show_type: 3
+    _package_type: 1
+    _package_group: 506
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 773
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 159
+    _show_type: 3
+    _package_type: 1
+    _package_group: 506
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 774
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 160
+    _show_type: 3
+    _package_type: 1
+    _package_group: 507
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 775
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 161
+    _show_type: 3
+    _package_type: 1
+    _package_group: 507
+    _reward_type: 6700000067000000
+    _reward_idx:
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 776
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 162
+    _show_type: 3
+    _package_type: 1
+    _package_group: 507
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 777
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 163
+    _show_type: 3
+    _package_type: 1
+    _package_group: 507
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 778
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 164
+    _show_type: 3
+    _package_type: 1
+    _package_group: 508
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 779
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 165
+    _show_type: 3
+    _package_type: 1
+    _package_group: 508
+    _reward_type: 6700000067000000
+    _reward_idx:
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 780
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 166
+    _show_type: 3
+    _package_type: 1
+    _package_group: 508
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 781
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 167
+    _show_type: 3
+    _package_type: 1
+    _package_group: 508
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 782
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 168
+    _show_type: 3
+    _package_type: 1
+    _package_group: 509
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 783
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 169
+    _show_type: 3
+    _package_type: 1
+    _package_group: 509
+    _reward_type: 6700000067000000
+    _reward_idx:
+    _reward_region: ffffff/fffffff/f
+    _reward_value: 0100000001000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_06
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 784
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 170
+    _show_type: 3
+    _package_type: 1
+    _package_group: 509
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 785
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 171
+    _show_type: 3
+    _package_type: 1
+    _package_group: 509
+    _reward_type: 67000000
+    _reward_idx:
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 33
+    _name: str_shop_name_SpecialCompany
+    _hud_icon:
+    _prefab: Package_SpecialCompany
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 803
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 18
+    _show_type: 3
+    _package_type: 1
+    _package_group: 201
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 01000000ffffff/fffffff/f
+    _reward_value: a08c0000e8030000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 50
+    _name: str_shop_name_803
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_04
+    _sale_count: -1
+    _product_id: officecat_803_movepack_special_st3
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 804
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 19
+    _show_type: 3
+    _package_type: 1
+    _package_group: 201
+    _reward_type: 010000000100000003000000
+    _reward_idx: 010000000200000067000000
+    _reward_region: 01000000ffffff/fffffff/f
+    _reward_value: e8cb0000e803000005000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 50
+    _name: str_shop_name_804
+    _hud_icon: HUD_Icon_Package_move_4
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_05
+    _sale_count: -1
+    _product_id: officecat_804_movepack_special_st4
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 805
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 20
+    _show_type: 3
+    _package_type: 1
+    _package_group: 201
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: 00e10000e80300004038000005000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 50
+    _name: str_shop_name_805
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_06
+    _sale_count: -1
+    _product_id: officecat_805_movepack_special_st5
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 806
+    _show_game_type: 0
+    _Region: 1
+    _contents_open: 38
+    _show_type: 3
+    _package_type: 1
+    _package_group: 201
+    _reward_type: 01000000010000000200000003000000
+    _reward_idx: 0100000002000000ffffff/f67000000
+    _reward_region: 01000000ffffff/fffffff/fffffff/f
+    _reward_value: 00e10000e80300004038000005000000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 50
+    _name: str_shop_name_806
+    _hud_icon: HUD_Icon_Package_move_5
+    _prefab: Package_Move
+    _bg_color: Shop_NewOffice
+    _img: DynamicShop_Bg_Package_06
+    _sale_count: -1
+    _product_id: officecat_806_movepack_special_st6
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 830
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 68
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_830_st15
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_830_devpack_st15
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 831
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 69
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_831_st15
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_831_devpack_st15
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 832
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 70
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_832_st16
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_832_devpack_st16
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 833
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 71
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_833_st16
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_833_devpack_st16
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 834
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 72
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_834_st17
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_834_devpack_st17
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 835
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 73
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_835_st17
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_835_devpack_st17
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 836
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 74
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_836_st17
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_836_devpack_st17
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 837
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 75
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_837_st18
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_837_devpack_st18
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 838
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 76
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_838_st18
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_838_devpack_st18
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 839
+    _show_game_type: 0
+    _Region: 3
+    _contents_open: 77
+    _show_type: 3
+    _package_type: 1
+    _package_group: 204
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 03000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_839_st18
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_20
+    _sale_count: -1
+    _product_id: officecat_839_devpack_st18
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 840
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 112
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_840_st21
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 841
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 113
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_841_st21
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 842
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 114
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_842_st22
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 843
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 115
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_843_st22
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 844
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 116
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_844_st23
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 845
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 117
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_845_st23
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 846
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 118
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_846_st23
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 847
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 119
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_847_st24
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 848
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 120
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_848_st24
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 849
+    _show_game_type: 0
+    _Region: 4
+    _contents_open: 121
+    _show_type: 3
+    _package_type: 1
+    _package_group: 205
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 04000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_849_st24
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 850
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 172
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_850_st27
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 851
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 173
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_851_st27
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 852
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 174
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_852_st28
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 853
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 175
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_853_st28
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 854
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 176
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_854_st29
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 855
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 177
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_855_st29
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 856
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 178
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_856_st29
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 857
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 179
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_857_st30
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 858
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 180
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_858_st30
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 859
+    _show_game_type: 0
+    _Region: 5
+    _contents_open: 181
+    _show_type: 3
+    _package_type: 1
+    _package_group: 206
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 05000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_859_st30
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 860
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 182
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_860_st33
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 861
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 183
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_861_st33
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 862
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 184
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_862_st34
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 863
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 185
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_863_st34
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 864
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 186
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_864_st35
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 865
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 187
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_865_st35
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 866
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 188
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_866_st35
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 867
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 189
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_867_st36
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 868
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 190
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_868_st36
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 869
+    _show_game_type: 0
+    _Region: 6
+    _contents_open: 191
+    _show_type: 3
+    _package_type: 1
+    _package_group: 207
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 06000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_869_st36
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 870
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 192
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_870_st39
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 871
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 193
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_871_st39
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 872
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 194
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_872_st40
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 873
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 195
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_873_st40
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 874
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 196
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_874_st41
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 875
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 197
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_875_st41
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 876
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 198
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_876_st41
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 877
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 199
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_877_st42
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 878
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 200
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_878_st42
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 879
+    _show_game_type: 0
+    _Region: 7
+    _contents_open: 201
+    _show_type: 3
+    _package_type: 1
+    _package_group: 208
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 07000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_879_st42
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 880
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 202
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_880_st45
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 881
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 203
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_881_st45
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 882
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 204
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_882_st46
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 883
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 205
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_883_st46
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 884
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 206
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_884_st47
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 885
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 207
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_885_st47
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 886
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 208
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_886_st47
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 887
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 209
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_887_st48
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 888
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 210
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_888_st48
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 889
+    _show_game_type: 0
+    _Region: 8
+    _contents_open: 211
+    _show_type: 3
+    _package_type: 1
+    _package_group: 209
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 08000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_889_st48
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 890
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 212
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_890_st51
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 891
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 213
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_891_st51
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 892
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 214
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_892_st52
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 893
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 215
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_893_st52
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 894
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 216
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_894_st53
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 895
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 217
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_895_st53
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 896
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 218
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_896_st53
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 897
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 219
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_897_st54
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 898
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 220
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_898_st54
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 899
+    _show_game_type: 0
+    _Region: 9
+    _contents_open: 221
+    _show_type: 3
+    _package_type: 1
+    _package_group: 210
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 09000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_899_st54
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 900
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 222
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_900_st57
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 901
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 223
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 201c0000f4010000201c0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_901_st57
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 902
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 224
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_902_st58
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 903
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 225
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 40380000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_903_st58
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_04
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 904
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 226
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_904_st59
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 905
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 227
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_905_st59
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 906
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 228
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_906_st59
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 907
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 229
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_907_st60
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 908
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 230
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_908_st60
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 909
+    _show_game_type: 0
+    _Region: 10
+    _contents_open: 231
+    _show_type: 3
+    _package_type: 1
+    _package_group: 211
+    _reward_type: 010000000100000002000000
+    _reward_idx: 0100000002000000ffffff/f
+    _reward_region: 0a000000ffffff/fffffff/f
+    _reward_value: 70620000f4010000302a0000
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 52
+    _name: str_shop_name_devpack_909_st60
+    _hud_icon: HUD_Icon_Package_move_3
+    _prefab: Package_Devpack
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_move_3
+    _sale_count: -1
+    _product_id: officecat_shop_05
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 1001
+    _show_game_type: 2
+    _Region: -1
+    _contents_open: 43
+    _show_type: 3
+    _package_type: 2
+    _package_group: -1
+    _reward_type: 69000000
+    _reward_idx: 06000000
+    _reward_region: ffffff/f
+    _reward_value: 01000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 60
+    _name: str_shop_factoryslot_title_box_1
+    _hud_icon: HUD_Icon_Package_12
+    _prefab: ContentFrontPackage_11
+    _bg_color: Shop_Expensive
+    _img: DynamicShop_Bg_Package_14
+    _sale_count: -1
+    _product_id: officecat_shop_factoryslot_1
+    _hud_display_name: str_shop_factoryslot_hud
+    _purchase_limit: -1
+  - _idx: 12001
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 58
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 400d0300
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 47
+    _name: str_shop_name_12001
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_1
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12002
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 59
+    _show_type: 3
+    _package_type: 2
+    _package_group: 1003
+    _reward_type: 0300000001000000
+    _reward_idx: ffffff/f02000000
+    _reward_region: 1127000000000000
+    _reward_value: a0860100c8000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 53
+    _name: str_shop_name_12002
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_2
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12003
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 60
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 0400000002000000
+    _reward_idx: ffffff/fffffff/f
+    _reward_region: 1127000011270000
+    _reward_value: c8af000000badb00
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 30
+    _name: str_shop_name_12003
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_3
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12004
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 78
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 0300000002000000
+    _reward_idx: ffffff/fffffff/f
+    _reward_region: 1127000011270000
+    _reward_value: c0d4010000badb00
+    _cost_type: 1
+    _limit_time: 3600
+    _sale: 29
+    _name: str_shop_name_12004
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_4
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12005
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 84
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: 400d0300
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 47
+    _name: str_shop_name_12001
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_5
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12101
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 79
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000400000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: 112700001127000000000000
+    _reward_value: 90d00300983a00002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_101
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12102
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 80
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000400000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: 112700001127000000000000
+    _reward_value: 400d0300a86100002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_102
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12103
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 81
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000400000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: 112700001127000000000000
+    _reward_value: e09304003075000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 42
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_103
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12104
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 82
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000400000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: 112700001127000000000000
+    _reward_value: 30570500b888000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_104
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12105
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 83
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000400000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: 112700001127000000000000
+    _reward_value: 20a10700c8af0000f4010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 45
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_105
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12111
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 79
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: f92a0000f92a000000000000
+    _reward_value: 90d00300983a00002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_101
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12112
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 80
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: f92a0000f92a000000000000
+    _reward_value: 400d0300a86100002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_102
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12113
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 81
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: f92a0000f92a000000000000
+    _reward_value: e09304003075000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 42
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_103
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12114
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 82
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: f92a0000f92a000000000000
+    _reward_value: 30570500b888000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_104
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12115
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 83
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: f92a0000f92a000000000000
+    _reward_value: 20a10700c8af0000f4010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 45
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_105
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12121
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 79
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: e12e0000e12e000000000000
+    _reward_value: 90d00300983a00002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_101
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12122
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 80
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: e12e0000e12e000000000000
+    _reward_value: 400d0300a86100002c010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 38
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_102
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12123
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 81
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: e12e0000e12e000000000000
+    _reward_value: e09304003075000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 42
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_103
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12124
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 82
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: e12e0000e12e000000000000
+    _reward_value: 30570500b888000090010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_104
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12125
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 83
+    _show_type: 3
+    _package_type: 2
+    _package_group: 300
+    _reward_type: 030000000900000001000000
+    _reward_idx: ffffff/fffffff/f02000000
+    _reward_region: e12e0000e12e000000000000
+    _reward_value: 20a10700c8af0000f4010000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 45
+    _name: str_shop_name_12101
+    _hud_icon: Seasonal_Icon_Package_Inone
+    _prefab: SeasonalContentFrontPackage_02
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_seasonal_package_105
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12301
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 89
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12302
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 90
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12303
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 91
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12304
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 92
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12305
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 93
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12306
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 94
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12307
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 95
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12308
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 96
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12309
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 97
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12401
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 98
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 0074b701
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 41
+    _name: str_shop_name_12401
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_01
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12402
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 99
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 00e86e03
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 41
+    _name: str_shop_name_12402
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12403
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 100
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 02000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: 005c2605
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 41
+    _name: str_shop_name_12403
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12501
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 84
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 03000000
+    _reward_idx: ffffff/f
+    _reward_region: f92a0000
+    _reward_value: f0490200
+    _cost_type: 1
+    _limit_time: 7200
+    _sale: 53
+    _name: str_shop_name_12501
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12311
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 123
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12312
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 124
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12313
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 125
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12314
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 126
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12315
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 127
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12316
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 128
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12317
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 129
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12318
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 130
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12319
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 131
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 04000000
+    _reward_idx: ffffff/f
+    _reward_region: 11270000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12311
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12400
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 132
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 0300000002000000
+    _reward_idx: ffffff/fffffff/f
+    _reward_region: f92a0000f92a0000
+    _reward_value: c0d4010000badb00
+    _cost_type: 1
+    _limit_time: 3600
+    _sale: 29
+    _name: str_shop_name_12400
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 12321
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 89
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12322
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 90
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12323
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 91
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12324
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 92
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12325
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 93
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12326
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 94
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12327
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 95
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12328
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 96
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12329
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 97
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 09000000
+    _reward_idx: ffffff/f
+    _reward_region: e12e0000
+    _reward_value: a8610000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 43
+    _name: str_shop_name_12301
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 12404
+    _show_game_type: 1
+    _Region: -1
+    _contents_open: 132
+    _show_type: 3
+    _package_type: 1
+    _package_group: 1003
+    _reward_type: 0300000002000000
+    _reward_idx: ffffff/fffffff/f
+    _reward_region: e12e0000e12e0000
+    _reward_value: c0d4010000badb00
+    _cost_type: 1
+    _limit_time: 3600
+    _sale: 29
+    _name: str_shop_name_12400
+    _hud_icon: Seasonal_Icon_Package_All
+    _prefab: SeasonalContentFrontPackage_01
+    _bg_color: Shop_SpecialCompany
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 15001
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 136
+    _show_type: 4
+    _package_type: 2
+    _package_group: 2001
+    _reward_type: 060000000100000003000000
+    _reward_idx: bc0b00000f000000f8010000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 14000000100e0000b9000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 92
+    _name: str_shop_name_15001
+    _hud_icon: Acquisition_Icon_Package_37
+    _prefab: ContentFrontPackage_18
+    _bg_color: Manager_Grade_Legend
+    _img: DynamicShop_Bg_Package_37
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name: str_hud_text_all_in_one
+    _purchase_limit: 1
+  - _idx: 15002
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 137
+    _show_type: 4
+    _package_type: 2
+    _package_group: 2001
+    _reward_type: 060000000100000003000000
+    _reward_idx: bf0b00000f000000fb010000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 14000000100e0000b9000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 92
+    _name: str_shop_name_15002
+    _hud_icon: Acquisition_Icon_Package_38
+    _prefab: ContentFrontPackage_18
+    _bg_color: Manager_Grade_Legend
+    _img: DynamicShop_Bg_Package_38
+    _sale_count: -1
+    _product_id: officecat_shop_07
+    _hud_display_name: str_hud_text_all_in_one
+    _purchase_limit: 1
+  - _idx: 30001
+    _show_game_type: -1
+    _Region: -1
+    _contents_open: 238
+    _show_type: -1
+    _package_type: 2
+    _package_group: -1
+    _reward_type: 6600000001000000
+    _reward_idx: 200000000c000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 0100000064000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 50
+    _name: str_shop_name_30001
+    _hud_icon:
+    _prefab:
+    _bg_color:
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_03
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 30002
+    _show_game_type: -1
+    _Region: -1
+    _contents_open: 240
+    _show_type: -1
+    _package_type: 2
+    _package_group: -1
+    _reward_type: 0300000066000000
+    _reward_idx: 0c00000020000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 6400000001000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 90
+    _name: str_shop_name_30002
+    _hud_icon:
+    _prefab:
+    _bg_color:
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: 1
+  - _idx: 30003
+    _show_game_type: -1
+    _Region: -1
+    _contents_open: 241
+    _show_type: -1
+    _package_type: 2
+    _package_group: -1
+    _reward_type: 03000000
+    _reward_idx: 0c000000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: e8030000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 30
+    _name: str_shop_name_30003
+    _hud_icon:
+    _prefab:
+    _bg_color:
+    _img:
+    _sale_count: 1
+    _product_id: officecat_shop_07
+    _hud_display_name:
+    _purchase_limit: -1
+  - _idx: 31001
+    _show_game_type: 0
+    _Region: -1
+    _contents_open: 242
+    _show_type: 3
+    _package_type: 2
+    _package_group: 3001
+    _reward_type: 0300000003000000
+    _reward_idx: c1020000c2020000
+    _reward_region: ffffff/fffffff/fffffff/f
+    _reward_value: 0a00000005000000
+    _cost_type: 1
+    _limit_time: -1
+    _sale: 76
+    _name: str_shop_name_31001
+    _hud_icon: HUD_Icon_SeasonalReward
+    _prefab: ContentFrontPackage_21
+    _bg_color: Shop_Normal
+    _img:
+    _sale_count: -1
+    _product_id: officecat_shop_02
+    _hud_display_name:
+    _purchase_limit: 1

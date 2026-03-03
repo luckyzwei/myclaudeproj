@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1808830483, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: OutGameConversation
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 5
+  - 5
+  - 6
+  mSecondKey:
+  - 1
+  - 2
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 4
+  - 1
+  mDataList:
+  - _situation: 1
+    _order: 1
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_1_1
+  - _situation: 1
+    _order: 2
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_1_2
+  - _situation: 2
+    _order: 1
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_2_1
+  - _situation: 3
+    _order: 1
+    _char_idx: 5
+    _salesman_speech: str_car_salesman_desc_3_1
+  - _situation: 4
+    _order: 1
+    _char_idx: 5
+    _salesman_speech: str_car_salesman_desc_4_1
+  - _situation: 5
+    _order: 1
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_5_1
+  - _situation: 5
+    _order: 2
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_5_2
+  - _situation: 5
+    _order: 4
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_5_4
+  - _situation: 6
+    _order: 1
+    _char_idx: 4
+    _salesman_speech: str_house_salesman_desc_6_1

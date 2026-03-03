@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1765279847, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ShopExchangeInfo
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 63001
+  - 63002
+  - 63003
+  - 63004
+  - 63005
+  - 63006
+  - 63007
+  - 3501
+  - 3502
+  - 3503
+  - 3504
+  - 3505
+  - 3506
+  - 3507
+  mSecondKey: []
+  mDataList:
+  - _idx: 63001
+    _contents_open: 1b000000ffffff/f
+    _reward_type: 6
+    _reward_idx: 3001
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63001
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3001
+    _trade_ticket: 150
+  - _idx: 63002
+    _contents_open: f7000000f4000000
+    _reward_type: 6
+    _reward_idx: 3002
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63002
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3002
+    _trade_ticket: 150
+  - _idx: 63003
+    _contents_open: f3000000f4000000
+    _reward_type: 6
+    _reward_idx: 3003
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63003
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3003
+    _trade_ticket: 150
+  - _idx: 63004
+    _contents_open: 88000000f4000000
+    _reward_type: 6
+    _reward_idx: 3004
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63004
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3004
+    _trade_ticket: 150
+  - _idx: 63005
+    _contents_open: f8000000f6000000
+    _reward_type: 6
+    _reward_idx: 3005
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63005
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3005
+    _trade_ticket: 150
+  - _idx: 63006
+    _contents_open: f5000000f6000000
+    _reward_type: 6
+    _reward_idx: 3006
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63006
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3006
+    _trade_ticket: 150
+  - _idx: 63007
+    _contents_open: 89000000f6000000
+    _reward_type: 6
+    _reward_idx: 3007
+    _reward_region: -1
+    _reward_value: 1
+    _icon:
+    _name: str_shop_exchange_name_63007
+    _need_trade_ticket: 600
+    _trade_open_condition: 1
+    _trade_open_target_idx: 3007
+    _trade_ticket: 150
+  - _idx: 3501
+    _contents_open: 1b000000ffffff/f
+    _reward_type: 3
+    _reward_idx: 501
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3001
+    _name: str_shop_exchange_name_3501
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3001
+    _trade_ticket: 1
+  - _idx: 3502
+    _contents_open: f7000000f4000000
+    _reward_type: 3
+    _reward_idx: 502
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3002
+    _name: str_shop_exchange_name_3502
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3002
+    _trade_ticket: 1
+  - _idx: 3503
+    _contents_open: f3000000f4000000
+    _reward_type: 3
+    _reward_idx: 503
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3003
+    _name: str_shop_exchange_name_3503
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3003
+    _trade_ticket: 1
+  - _idx: 3504
+    _contents_open: 88000000f4000000
+    _reward_type: 3
+    _reward_idx: 504
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3004
+    _name: str_shop_exchange_name_3504
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3004
+    _trade_ticket: 1
+  - _idx: 3505
+    _contents_open: f8000000f6000000
+    _reward_type: 3
+    _reward_idx: 505
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3005
+    _name: str_shop_exchange_name_3505
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3005
+    _trade_ticket: 1
+  - _idx: 3506
+    _contents_open: f5000000f6000000
+    _reward_type: 3
+    _reward_idx: 506
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3006
+    _name: str_shop_exchange_name_3506
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3006
+    _trade_ticket: 1
+  - _idx: 3507
+    _contents_open: 89000000f6000000
+    _reward_type: 3
+    _reward_idx: 507
+    _reward_region: -1
+    _reward_value: 1
+    _icon: Manager_Icon_Legend_3007
+    _name: str_shop_exchange_name_3507
+    _need_trade_ticket: 6
+    _trade_open_condition: 2
+    _trade_open_target_idx: 3007
+    _trade_ticket: 1

@@ -1,0 +1,575 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1731204662, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: SeasonalCurrency
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 101
+  - 102
+  - 103
+  - 104
+  - 105
+  - 106
+  - 107
+  - 108
+  - 109
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 201
+  - 202
+  - 203
+  - 204
+  - 205
+  - 206
+  - 207
+  - 208
+  - 209
+  - 210
+  - 211
+  - 212
+  - 213
+  - 214
+  - 215
+  - 216
+  - 217
+  - 1001
+  - 1002
+  - 1003
+  - 1004
+  - 1005
+  - 1006
+  - 1007
+  - 1008
+  - 1009
+  - 1010
+  - 1011
+  - 1012
+  - 1013
+  - 1014
+  - 2001
+  - 2002
+  - 2003
+  - 2004
+  - 2005
+  - 2006
+  - 2007
+  - 2008
+  - 2009
+  - 2010
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  mSecondKey: []
+  mDataList:
+  - _idx: 101
+    _type: 1
+    _name: str_seasonal_currency_101
+    _icon_1: Seasonal_Icon_Goods_Money
+    _icon_2: DynamicShop_Icon_Seasonal_Money_02
+    _icon_3: DynamicShop_Icon_Seasonal_Money_03
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Money_Seasonal
+  - _idx: 102
+    _type: 2
+    _name: str_seasonal_currency_102
+    _icon_1: Seasonal_Icon_Goods_Heart
+    _icon_2: DynamicShop_Icon_Seasonal_Heart_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Heart
+  - _idx: 103
+    _type: 3
+    _name: str_seasonal_currency_103
+    _icon_1: Seasonal_Icon_Goods_Roulette
+    _icon_2: DynamicShop_Icon_Seasonal_Coin_01
+    _icon_3: DynamicShop_Icon_Seasonal_Coin_02
+    _icon_4: DynamicShop_Icon_Seasonal_Coin_03
+    _backend_icon: Dynamic_Icon_Reward_Roulette
+  - _idx: 104
+    _type: 4
+    _name: str_seasonal_currency_104
+    _icon_1: Seasonal_Icon_Goods_Random
+    _icon_2: DynamicShop_Icon_Seasonal_Skill_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Skill01
+  - _idx: 105
+    _type: 5
+    _name: str_seasonal_currency_105
+    _icon_1: Seasonal_Icon_Skill_Building
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 106
+    _type: 6
+    _name: str_seasonal_currency_106
+    _icon_1: Seasonal_Icon_Skill_Heart
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 107
+    _type: 7
+    _name: str_seasonal_currency_107
+    _icon_1: Seasonal_Icon_Skill_Money
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 108
+    _type: 1001
+    _name: str_seasonal_currency_108
+    _icon_1: Seasonal_Icon_Product_Seashell
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 109
+    _type: 1001
+    _name: str_seasonal_currency_109
+    _icon_1: Seasonal_Icon_Product_Shrimp
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 110
+    _type: 1001
+    _name: str_seasonal_currency_110
+    _icon_1: Seasonal_Icon_Product_Anchovy
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 111
+    _type: 1001
+    _name: str_seasonal_currency_111
+    _icon_1: Seasonal_Icon_Product_Octopus
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 112
+    _type: 1001
+    _name: str_seasonal_currency_112
+    _icon_1: Seasonal_Icon_Product_Crap
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 113
+    _type: 1001
+    _name: str_seasonal_currency_113
+    _icon_1: Seasonal_Icon_Product_Tuna
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 114
+    _type: 1001
+    _name: str_seasonal_currency_114
+    _icon_1: Seasonal_Icon_Product_SeaFood
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 115
+    _type: 2001
+    _name: str_seasonal_currency_115
+    _icon_1: Seasonal_Icon_Coin_Dc
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 116
+    _type: 2002
+    _name: str_seasonal_currency_116
+    _icon_1: Seasonal_Icon_TopMission_DC
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 117
+    _type: 8
+    _name: str_seasonal_currency_117
+    _icon_1: Seasonal_Icon_Food
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 201
+    _type: 1
+    _name: str_seasonal_currency_101
+    _icon_1: Seasonal_Icon_Goods_Money
+    _icon_2: DynamicShop_Icon_Seasonal_Money_02
+    _icon_3: DynamicShop_Icon_Seasonal_Money_03
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Money_Seasonal
+  - _idx: 202
+    _type: 2
+    _name: str_seasonal_currency_102
+    _icon_1: Seasonal_Icon_Goods_Heart
+    _icon_2: DynamicShop_Icon_Seasonal_Heart_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Heart
+  - _idx: 203
+    _type: 3
+    _name: str_seasonal_currency_103
+    _icon_1: Seasonal_Icon_Goods_Roulette
+    _icon_2: DynamicShop_Icon_Seasonal_Coin_01
+    _icon_3: DynamicShop_Icon_Seasonal_Coin_02
+    _icon_4: DynamicShop_Icon_Seasonal_Coin_03
+    _backend_icon: Dynamic_Icon_Reward_Roulette
+  - _idx: 204
+    _type: 4
+    _name: str_seasonal_currency_104
+    _icon_1: Seasonal_Icon_Goods_Random
+    _icon_2: DynamicShop_Icon_Seasonal_Skill_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Skill01
+  - _idx: 205
+    _type: 5
+    _name: str_seasonal_currency_105
+    _icon_1: Seasonal_Icon_Skill_Building
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 206
+    _type: 6
+    _name: str_seasonal_currency_106
+    _icon_1: Seasonal_Icon_Skill_Heart
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 207
+    _type: 7
+    _name: str_seasonal_currency_107
+    _icon_1: Seasonal_Icon_Skill_Money
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 208
+    _type: 1001
+    _name: str_seasonal_currency_108
+    _icon_1: Seasonal_Icon_Product_Seashell
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 209
+    _type: 1001
+    _name: str_seasonal_currency_109
+    _icon_1: Seasonal_Icon_Product_Shrimp
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 210
+    _type: 1001
+    _name: str_seasonal_currency_110
+    _icon_1: Seasonal_Icon_Product_Anchovy
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 211
+    _type: 1001
+    _name: str_seasonal_currency_111
+    _icon_1: Seasonal_Icon_Product_Octopus
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 212
+    _type: 1001
+    _name: str_seasonal_currency_112
+    _icon_1: Seasonal_Icon_Product_Crap
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 213
+    _type: 1001
+    _name: str_seasonal_currency_113
+    _icon_1: Seasonal_Icon_Product_Tuna
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 214
+    _type: 1001
+    _name: str_seasonal_currency_114
+    _icon_1: Seasonal_Icon_Product_SeaFood
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 215
+    _type: 2001
+    _name: str_seasonal_currency_115
+    _icon_1: Seasonal_Icon_Coin_Dc
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 216
+    _type: 2002
+    _name: str_seasonal_currency_116
+    _icon_1: Seasonal_Icon_TopMission_DC
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 217
+    _type: 8
+    _name: str_seasonal_currency_117
+    _icon_1: Seasonal_Icon_Food
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1001
+    _type: 1
+    _name: str_seasonal_currency_101
+    _icon_1: Seasonal_Icon_Goods_Money
+    _icon_2: DynamicShop_Icon_Seasonal_Money_02
+    _icon_3: DynamicShop_Icon_Seasonal_Money_03
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Money_Seasonal
+  - _idx: 1002
+    _type: 2
+    _name: str_seasonal_currency_102
+    _icon_1: Seasonal_Icon_Goods_Heart
+    _icon_2: DynamicShop_Icon_Seasonal_Heart_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Heart
+  - _idx: 1003
+    _type: 3
+    _name: str_seasonal_currency_103
+    _icon_1: Seasonal_Icon_Goods_Roulette
+    _icon_2: DynamicShop_Icon_Seasonal_Coin_01
+    _icon_3: DynamicShop_Icon_Seasonal_Coin_02
+    _icon_4: DynamicShop_Icon_Seasonal_Coin_03
+    _backend_icon: Dynamic_Icon_Reward_Roulette
+  - _idx: 1004
+    _type: 9
+    _name: str_seasonal_currency_1004
+    _icon_1: Seasonal_Icon_Goods_Skill_02
+    _icon_2: DynamicShop_Icon_Seasonal_Skill_02
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Skill02
+  - _idx: 1005
+    _type: 1001
+    _name: str_seasonal_currency_1005
+    _icon_1: Seasonal_Icon_Product_Wheat
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1006
+    _type: 1001
+    _name: str_seasonal_currency_1006
+    _icon_1: Seasonal_Icon_Product_Beans
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1007
+    _type: 1001
+    _name: str_seasonal_currency_1007
+    _icon_1: Seasonal_Icon_Product_Flour
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1008
+    _type: 1001
+    _name: str_seasonal_currency_1008
+    _icon_1: Seasonal_Icon_Product_SoyMilk
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1009
+    _type: 1001
+    _name: str_seasonal_currency_1009
+    _icon_1: Seasonal_Icon_Product_Apple
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1010
+    _type: 1001
+    _name: str_seasonal_currency_1010
+    _icon_1: Seasonal_Icon_Product_AppleJam
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1011
+    _type: 1001
+    _name: str_seasonal_currency_1011
+    _icon_1: Seasonal_Icon_Product_ApplePie
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1012
+    _type: 2001
+    _name: str_seasonal_currency_115
+    _icon_1: Seasonal_Icon_Coin_Dc
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1013
+    _type: 2002
+    _name: str_seasonal_currency_116
+    _icon_1: Seasonal_Icon_TopMission_DC
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 1014
+    _type: 8
+    _name: str_seasonal_currency_117
+    _icon_1: Seasonal_Icon_Food
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2001
+    _type: 1
+    _name: str_seasonal_currency_101
+    _icon_1: Seasonal_Icon_Goods_Money
+    _icon_2: DynamicShop_Icon_Seasonal_Money_02
+    _icon_3: DynamicShop_Icon_Seasonal_Money_03
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Money_Seasonal
+  - _idx: 2002
+    _type: 2
+    _name: str_seasonal_currency_102
+    _icon_1: Seasonal_Icon_Goods_Heart
+    _icon_2: DynamicShop_Icon_Seasonal_Heart_01
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Heart
+  - _idx: 2003
+    _type: 3
+    _name: str_seasonal_currency_103
+    _icon_1: Seasonal_Icon_Goods_Roulette
+    _icon_2: DynamicShop_Icon_Seasonal_Coin_01
+    _icon_3: DynamicShop_Icon_Seasonal_Coin_02
+    _icon_4: DynamicShop_Icon_Seasonal_Coin_03
+    _backend_icon: Dynamic_Icon_Reward_Roulette
+  - _idx: 2004
+    _type: 9
+    _name: str_seasonal_currency_1004
+    _icon_1: Seasonal_Icon_Goods_Skill_02
+    _icon_2: DynamicShop_Icon_Seasonal_Skill_02
+    _icon_3:
+    _icon_4:
+    _backend_icon: Dynamic_Icon_Reward_Skill02
+  - _idx: 2005
+    _type: 1001
+    _name: str_seasonal_currency_2005
+    _icon_1: Seasonal_Icon_Product_SilverOre
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2006
+    _type: 1001
+    _name: str_seasonal_currency_2006
+    _icon_1: Seasonal_Icon_Product_GoldOre
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2007
+    _type: 1001
+    _name: str_seasonal_currency_2007
+    _icon_1: Seasonal_Icon_Product_SilverIngot
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2008
+    _type: 1001
+    _name: str_seasonal_currency_2008
+    _icon_1: Seasonal_Icon_Product_GoldIngot
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2009
+    _type: 1001
+    _name: str_seasonal_currency_2009
+    _icon_1: Seasonal_Icon_Product_DiamondOre
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2010
+    _type: 1001
+    _name: str_seasonal_currency_2010
+    _icon_1: Seasonal_Icon_Product_Diamond
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2011
+    _type: 1001
+    _name: str_seasonal_currency_2011
+    _icon_1: Seasonal_Icon_Product_DiamondRing
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2012
+    _type: 2001
+    _name: str_seasonal_currency_115
+    _icon_1: Seasonal_Icon_Coin_Dc
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2013
+    _type: 2002
+    _name: str_seasonal_currency_116
+    _icon_1: Seasonal_Icon_TopMission_DC
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:
+  - _idx: 2014
+    _type: 8
+    _name: str_seasonal_currency_117
+    _icon_1: Seasonal_Icon_Food
+    _icon_2:
+    _icon_3:
+    _icon_4:
+    _backend_icon:

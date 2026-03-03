@@ -1,0 +1,3047 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1643066646, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ManagerForce
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  mSecondKey:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
+  - 56
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
+  - 79
+  - 80
+  - 81
+  - 82
+  - 83
+  - 84
+  - 85
+  - 86
+  - 87
+  - 88
+  - 89
+  - 90
+  - 91
+  - 92
+  - 93
+  - 94
+  - 95
+  - 96
+  - 97
+  - 98
+  - 99
+  - 100
+  mDataList:
+  - _ceo_grade: 1
+    _reinforce_lv: 0
+    _need_ceo_lv: 0
+    _skillup_cost_value: 0
+    _cost_type: -1
+    _cost_idx: -1
+    _cost_value: -1
+    _force: 15
+  - _ceo_grade: 1
+    _reinforce_lv: 1
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 50
+    _force: 20
+  - _ceo_grade: 1
+    _reinforce_lv: 2
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 100
+    _force: 40
+  - _ceo_grade: 1
+    _reinforce_lv: 3
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 150
+    _force: 60
+  - _ceo_grade: 1
+    _reinforce_lv: 4
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 200
+    _force: 80
+  - _ceo_grade: 1
+    _reinforce_lv: 5
+    _need_ceo_lv: 2
+    _skillup_cost_value: 20
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 300
+    _force: 100
+  - _ceo_grade: 1
+    _reinforce_lv: 6
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 400
+    _force: 120
+  - _ceo_grade: 1
+    _reinforce_lv: 7
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 500
+    _force: 140
+  - _ceo_grade: 1
+    _reinforce_lv: 8
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 600
+    _force: 160
+  - _ceo_grade: 1
+    _reinforce_lv: 9
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 700
+    _force: 180
+  - _ceo_grade: 1
+    _reinforce_lv: 10
+    _need_ceo_lv: 4
+    _skillup_cost_value: 130
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1200
+    _force: 200
+  - _ceo_grade: 1
+    _reinforce_lv: 11
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1700
+    _force: 220
+  - _ceo_grade: 1
+    _reinforce_lv: 12
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2200
+    _force: 240
+  - _ceo_grade: 1
+    _reinforce_lv: 13
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2700
+    _force: 260
+  - _ceo_grade: 1
+    _reinforce_lv: 14
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 3200
+    _force: 280
+  - _ceo_grade: 1
+    _reinforce_lv: 15
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 4200
+    _force: 300
+  - _ceo_grade: 1
+    _reinforce_lv: 16
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 5200
+    _force: 320
+  - _ceo_grade: 1
+    _reinforce_lv: 17
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 6200
+    _force: 340
+  - _ceo_grade: 1
+    _reinforce_lv: 18
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 7200
+    _force: 360
+  - _ceo_grade: 1
+    _reinforce_lv: 19
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 8200
+    _force: 380
+  - _ceo_grade: 1
+    _reinforce_lv: 20
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 10200
+    _force: 400
+  - _ceo_grade: 1
+    _reinforce_lv: 21
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 12200
+    _force: 420
+  - _ceo_grade: 1
+    _reinforce_lv: 22
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 14200
+    _force: 440
+  - _ceo_grade: 1
+    _reinforce_lv: 23
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 16200
+    _force: 460
+  - _ceo_grade: 1
+    _reinforce_lv: 24
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 18200
+    _force: 480
+  - _ceo_grade: 1
+    _reinforce_lv: 25
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 20200
+    _force: 500
+  - _ceo_grade: 1
+    _reinforce_lv: 26
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 22200
+    _force: 520
+  - _ceo_grade: 1
+    _reinforce_lv: 27
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 24200
+    _force: 540
+  - _ceo_grade: 1
+    _reinforce_lv: 28
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 26200
+    _force: 560
+  - _ceo_grade: 1
+    _reinforce_lv: 29
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 28200
+    _force: 580
+  - _ceo_grade: 1
+    _reinforce_lv: 30
+    _need_ceo_lv: 7
+    _skillup_cost_value: 500
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 32200
+    _force: 600
+  - _ceo_grade: 1
+    _reinforce_lv: 31
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 36200
+    _force: 620
+  - _ceo_grade: 1
+    _reinforce_lv: 32
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 40200
+    _force: 640
+  - _ceo_grade: 1
+    _reinforce_lv: 33
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 44200
+    _force: 660
+  - _ceo_grade: 1
+    _reinforce_lv: 34
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 48200
+    _force: 680
+  - _ceo_grade: 1
+    _reinforce_lv: 35
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 52200
+    _force: 700
+  - _ceo_grade: 1
+    _reinforce_lv: 36
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 56200
+    _force: 720
+  - _ceo_grade: 1
+    _reinforce_lv: 37
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 60200
+    _force: 740
+  - _ceo_grade: 1
+    _reinforce_lv: 38
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 64200
+    _force: 760
+  - _ceo_grade: 1
+    _reinforce_lv: 39
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 68200
+    _force: 780
+  - _ceo_grade: 1
+    _reinforce_lv: 40
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 74200
+    _force: 800
+  - _ceo_grade: 1
+    _reinforce_lv: 41
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 80200
+    _force: 820
+  - _ceo_grade: 1
+    _reinforce_lv: 42
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 86200
+    _force: 840
+  - _ceo_grade: 1
+    _reinforce_lv: 43
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 92200
+    _force: 860
+  - _ceo_grade: 1
+    _reinforce_lv: 44
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 98200
+    _force: 880
+  - _ceo_grade: 1
+    _reinforce_lv: 45
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 104200
+    _force: 900
+  - _ceo_grade: 1
+    _reinforce_lv: 46
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 110200
+    _force: 920
+  - _ceo_grade: 1
+    _reinforce_lv: 47
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 116200
+    _force: 940
+  - _ceo_grade: 1
+    _reinforce_lv: 48
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 122200
+    _force: 960
+  - _ceo_grade: 1
+    _reinforce_lv: 49
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 128200
+    _force: 980
+  - _ceo_grade: 1
+    _reinforce_lv: 50
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 138200
+    _force: 1000
+  - _ceo_grade: 1
+    _reinforce_lv: 51
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 148200
+    _force: 1020
+  - _ceo_grade: 1
+    _reinforce_lv: 52
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 158200
+    _force: 1040
+  - _ceo_grade: 1
+    _reinforce_lv: 53
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 168200
+    _force: 1060
+  - _ceo_grade: 1
+    _reinforce_lv: 54
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 178200
+    _force: 1080
+  - _ceo_grade: 1
+    _reinforce_lv: 55
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 188200
+    _force: 1100
+  - _ceo_grade: 1
+    _reinforce_lv: 56
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 198200
+    _force: 1120
+  - _ceo_grade: 1
+    _reinforce_lv: 57
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 208200
+    _force: 1140
+  - _ceo_grade: 1
+    _reinforce_lv: 58
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 218200
+    _force: 1160
+  - _ceo_grade: 1
+    _reinforce_lv: 59
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 228200
+    _force: 1180
+  - _ceo_grade: 1
+    _reinforce_lv: 60
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 238200
+    _force: 1200
+  - _ceo_grade: 1
+    _reinforce_lv: 61
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 248200
+    _force: 1220
+  - _ceo_grade: 1
+    _reinforce_lv: 62
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 258200
+    _force: 1240
+  - _ceo_grade: 1
+    _reinforce_lv: 63
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 268200
+    _force: 1260
+  - _ceo_grade: 1
+    _reinforce_lv: 64
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 278200
+    _force: 1280
+  - _ceo_grade: 1
+    _reinforce_lv: 65
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 288200
+    _force: 1300
+  - _ceo_grade: 1
+    _reinforce_lv: 66
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 298200
+    _force: 1320
+  - _ceo_grade: 1
+    _reinforce_lv: 67
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 308200
+    _force: 1340
+  - _ceo_grade: 1
+    _reinforce_lv: 68
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 318200
+    _force: 1360
+  - _ceo_grade: 1
+    _reinforce_lv: 69
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 328200
+    _force: 1380
+  - _ceo_grade: 1
+    _reinforce_lv: 70
+    _need_ceo_lv: 14
+    _skillup_cost_value: 1200
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 338200
+    _force: 1400
+  - _ceo_grade: 1
+    _reinforce_lv: 71
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 348200
+    _force: 1420
+  - _ceo_grade: 1
+    _reinforce_lv: 72
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 358200
+    _force: 1440
+  - _ceo_grade: 1
+    _reinforce_lv: 73
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 368200
+    _force: 1460
+  - _ceo_grade: 1
+    _reinforce_lv: 74
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 378200
+    _force: 1480
+  - _ceo_grade: 1
+    _reinforce_lv: 75
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 388200
+    _force: 1500
+  - _ceo_grade: 1
+    _reinforce_lv: 76
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 398200
+    _force: 1520
+  - _ceo_grade: 1
+    _reinforce_lv: 77
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 408200
+    _force: 1540
+  - _ceo_grade: 1
+    _reinforce_lv: 78
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 418200
+    _force: 1560
+  - _ceo_grade: 1
+    _reinforce_lv: 79
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 428200
+    _force: 1580
+  - _ceo_grade: 1
+    _reinforce_lv: 80
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 443200
+    _force: 1600
+  - _ceo_grade: 1
+    _reinforce_lv: 81
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 458200
+    _force: 1620
+  - _ceo_grade: 1
+    _reinforce_lv: 82
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 473200
+    _force: 1640
+  - _ceo_grade: 1
+    _reinforce_lv: 83
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 488200
+    _force: 1660
+  - _ceo_grade: 1
+    _reinforce_lv: 84
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 503200
+    _force: 1680
+  - _ceo_grade: 1
+    _reinforce_lv: 85
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 518200
+    _force: 1700
+  - _ceo_grade: 1
+    _reinforce_lv: 86
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 533200
+    _force: 1720
+  - _ceo_grade: 1
+    _reinforce_lv: 87
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 548200
+    _force: 1740
+  - _ceo_grade: 1
+    _reinforce_lv: 88
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 563200
+    _force: 1760
+  - _ceo_grade: 1
+    _reinforce_lv: 89
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 578200
+    _force: 1780
+  - _ceo_grade: 1
+    _reinforce_lv: 90
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 593200
+    _force: 1800
+  - _ceo_grade: 1
+    _reinforce_lv: 91
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 608200
+    _force: 1820
+  - _ceo_grade: 1
+    _reinforce_lv: 92
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 623200
+    _force: 1840
+  - _ceo_grade: 1
+    _reinforce_lv: 93
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 638200
+    _force: 1860
+  - _ceo_grade: 1
+    _reinforce_lv: 94
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 653200
+    _force: 1880
+  - _ceo_grade: 1
+    _reinforce_lv: 95
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 668200
+    _force: 1900
+  - _ceo_grade: 1
+    _reinforce_lv: 96
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 683200
+    _force: 1920
+  - _ceo_grade: 1
+    _reinforce_lv: 97
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 698200
+    _force: 1940
+  - _ceo_grade: 1
+    _reinforce_lv: 98
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 713200
+    _force: 1960
+  - _ceo_grade: 1
+    _reinforce_lv: 99
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 728200
+    _force: 1980
+  - _ceo_grade: 1
+    _reinforce_lv: 100
+    _need_ceo_lv: 19
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 743200
+    _force: 2000
+  - _ceo_grade: 2
+    _reinforce_lv: 0
+    _need_ceo_lv: 0
+    _skillup_cost_value: 0
+    _cost_type: -1
+    _cost_idx: -1
+    _cost_value: -1
+    _force: 45
+  - _ceo_grade: 2
+    _reinforce_lv: 1
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 50
+    _force: 60
+  - _ceo_grade: 2
+    _reinforce_lv: 2
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 100
+    _force: 80
+  - _ceo_grade: 2
+    _reinforce_lv: 3
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 150
+    _force: 100
+  - _ceo_grade: 2
+    _reinforce_lv: 4
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 200
+    _force: 120
+  - _ceo_grade: 2
+    _reinforce_lv: 5
+    _need_ceo_lv: 2
+    _skillup_cost_value: 20
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 300
+    _force: 140
+  - _ceo_grade: 2
+    _reinforce_lv: 6
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 400
+    _force: 160
+  - _ceo_grade: 2
+    _reinforce_lv: 7
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 500
+    _force: 180
+  - _ceo_grade: 2
+    _reinforce_lv: 8
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 600
+    _force: 200
+  - _ceo_grade: 2
+    _reinforce_lv: 9
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 700
+    _force: 220
+  - _ceo_grade: 2
+    _reinforce_lv: 10
+    _need_ceo_lv: 4
+    _skillup_cost_value: 130
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1200
+    _force: 240
+  - _ceo_grade: 2
+    _reinforce_lv: 11
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1700
+    _force: 260
+  - _ceo_grade: 2
+    _reinforce_lv: 12
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2200
+    _force: 280
+  - _ceo_grade: 2
+    _reinforce_lv: 13
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2700
+    _force: 300
+  - _ceo_grade: 2
+    _reinforce_lv: 14
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 3200
+    _force: 320
+  - _ceo_grade: 2
+    _reinforce_lv: 15
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 4200
+    _force: 340
+  - _ceo_grade: 2
+    _reinforce_lv: 16
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 5200
+    _force: 360
+  - _ceo_grade: 2
+    _reinforce_lv: 17
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 6200
+    _force: 380
+  - _ceo_grade: 2
+    _reinforce_lv: 18
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 7200
+    _force: 400
+  - _ceo_grade: 2
+    _reinforce_lv: 19
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 8200
+    _force: 420
+  - _ceo_grade: 2
+    _reinforce_lv: 20
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 10200
+    _force: 440
+  - _ceo_grade: 2
+    _reinforce_lv: 21
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 12200
+    _force: 460
+  - _ceo_grade: 2
+    _reinforce_lv: 22
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 14200
+    _force: 480
+  - _ceo_grade: 2
+    _reinforce_lv: 23
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 16200
+    _force: 500
+  - _ceo_grade: 2
+    _reinforce_lv: 24
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 18200
+    _force: 520
+  - _ceo_grade: 2
+    _reinforce_lv: 25
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 20200
+    _force: 540
+  - _ceo_grade: 2
+    _reinforce_lv: 26
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 22200
+    _force: 560
+  - _ceo_grade: 2
+    _reinforce_lv: 27
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 24200
+    _force: 580
+  - _ceo_grade: 2
+    _reinforce_lv: 28
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 26200
+    _force: 600
+  - _ceo_grade: 2
+    _reinforce_lv: 29
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 28200
+    _force: 620
+  - _ceo_grade: 2
+    _reinforce_lv: 30
+    _need_ceo_lv: 7
+    _skillup_cost_value: 500
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 32200
+    _force: 640
+  - _ceo_grade: 2
+    _reinforce_lv: 31
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 36200
+    _force: 660
+  - _ceo_grade: 2
+    _reinforce_lv: 32
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 40200
+    _force: 680
+  - _ceo_grade: 2
+    _reinforce_lv: 33
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 44200
+    _force: 700
+  - _ceo_grade: 2
+    _reinforce_lv: 34
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 48200
+    _force: 720
+  - _ceo_grade: 2
+    _reinforce_lv: 35
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 52200
+    _force: 740
+  - _ceo_grade: 2
+    _reinforce_lv: 36
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 56200
+    _force: 760
+  - _ceo_grade: 2
+    _reinforce_lv: 37
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 60200
+    _force: 780
+  - _ceo_grade: 2
+    _reinforce_lv: 38
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 64200
+    _force: 800
+  - _ceo_grade: 2
+    _reinforce_lv: 39
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 68200
+    _force: 820
+  - _ceo_grade: 2
+    _reinforce_lv: 40
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 74200
+    _force: 840
+  - _ceo_grade: 2
+    _reinforce_lv: 41
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 80200
+    _force: 860
+  - _ceo_grade: 2
+    _reinforce_lv: 42
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 86200
+    _force: 880
+  - _ceo_grade: 2
+    _reinforce_lv: 43
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 92200
+    _force: 900
+  - _ceo_grade: 2
+    _reinforce_lv: 44
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 98200
+    _force: 920
+  - _ceo_grade: 2
+    _reinforce_lv: 45
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 104200
+    _force: 940
+  - _ceo_grade: 2
+    _reinforce_lv: 46
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 110200
+    _force: 960
+  - _ceo_grade: 2
+    _reinforce_lv: 47
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 116200
+    _force: 980
+  - _ceo_grade: 2
+    _reinforce_lv: 48
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 122200
+    _force: 1000
+  - _ceo_grade: 2
+    _reinforce_lv: 49
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 128200
+    _force: 1020
+  - _ceo_grade: 2
+    _reinforce_lv: 50
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 138200
+    _force: 1040
+  - _ceo_grade: 2
+    _reinforce_lv: 51
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 148200
+    _force: 1060
+  - _ceo_grade: 2
+    _reinforce_lv: 52
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 158200
+    _force: 1080
+  - _ceo_grade: 2
+    _reinforce_lv: 53
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 168200
+    _force: 1100
+  - _ceo_grade: 2
+    _reinforce_lv: 54
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 178200
+    _force: 1120
+  - _ceo_grade: 2
+    _reinforce_lv: 55
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 188200
+    _force: 1140
+  - _ceo_grade: 2
+    _reinforce_lv: 56
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 198200
+    _force: 1160
+  - _ceo_grade: 2
+    _reinforce_lv: 57
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 208200
+    _force: 1180
+  - _ceo_grade: 2
+    _reinforce_lv: 58
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 218200
+    _force: 1200
+  - _ceo_grade: 2
+    _reinforce_lv: 59
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 228200
+    _force: 1220
+  - _ceo_grade: 2
+    _reinforce_lv: 60
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 238200
+    _force: 1240
+  - _ceo_grade: 2
+    _reinforce_lv: 61
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 248200
+    _force: 1260
+  - _ceo_grade: 2
+    _reinforce_lv: 62
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 258200
+    _force: 1280
+  - _ceo_grade: 2
+    _reinforce_lv: 63
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 268200
+    _force: 1300
+  - _ceo_grade: 2
+    _reinforce_lv: 64
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 278200
+    _force: 1320
+  - _ceo_grade: 2
+    _reinforce_lv: 65
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 288200
+    _force: 1340
+  - _ceo_grade: 2
+    _reinforce_lv: 66
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 298200
+    _force: 1360
+  - _ceo_grade: 2
+    _reinforce_lv: 67
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 308200
+    _force: 1380
+  - _ceo_grade: 2
+    _reinforce_lv: 68
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 318200
+    _force: 1400
+  - _ceo_grade: 2
+    _reinforce_lv: 69
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 328200
+    _force: 1420
+  - _ceo_grade: 2
+    _reinforce_lv: 70
+    _need_ceo_lv: 14
+    _skillup_cost_value: 1200
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 338200
+    _force: 1440
+  - _ceo_grade: 2
+    _reinforce_lv: 71
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 348200
+    _force: 1460
+  - _ceo_grade: 2
+    _reinforce_lv: 72
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 358200
+    _force: 1480
+  - _ceo_grade: 2
+    _reinforce_lv: 73
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 368200
+    _force: 1500
+  - _ceo_grade: 2
+    _reinforce_lv: 74
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 378200
+    _force: 1520
+  - _ceo_grade: 2
+    _reinforce_lv: 75
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 388200
+    _force: 1540
+  - _ceo_grade: 2
+    _reinforce_lv: 76
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 398200
+    _force: 1560
+  - _ceo_grade: 2
+    _reinforce_lv: 77
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 408200
+    _force: 1580
+  - _ceo_grade: 2
+    _reinforce_lv: 78
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 418200
+    _force: 1600
+  - _ceo_grade: 2
+    _reinforce_lv: 79
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 428200
+    _force: 1620
+  - _ceo_grade: 2
+    _reinforce_lv: 80
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 443200
+    _force: 1640
+  - _ceo_grade: 2
+    _reinforce_lv: 81
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 458200
+    _force: 1660
+  - _ceo_grade: 2
+    _reinforce_lv: 82
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 473200
+    _force: 1680
+  - _ceo_grade: 2
+    _reinforce_lv: 83
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 488200
+    _force: 1700
+  - _ceo_grade: 2
+    _reinforce_lv: 84
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 503200
+    _force: 1720
+  - _ceo_grade: 2
+    _reinforce_lv: 85
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 518200
+    _force: 1740
+  - _ceo_grade: 2
+    _reinforce_lv: 86
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 533200
+    _force: 1760
+  - _ceo_grade: 2
+    _reinforce_lv: 87
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 548200
+    _force: 1780
+  - _ceo_grade: 2
+    _reinforce_lv: 88
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 563200
+    _force: 1800
+  - _ceo_grade: 2
+    _reinforce_lv: 89
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 578200
+    _force: 1820
+  - _ceo_grade: 2
+    _reinforce_lv: 90
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 593200
+    _force: 1840
+  - _ceo_grade: 2
+    _reinforce_lv: 91
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 608200
+    _force: 1860
+  - _ceo_grade: 2
+    _reinforce_lv: 92
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 623200
+    _force: 1880
+  - _ceo_grade: 2
+    _reinforce_lv: 93
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 638200
+    _force: 1900
+  - _ceo_grade: 2
+    _reinforce_lv: 94
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 653200
+    _force: 1920
+  - _ceo_grade: 2
+    _reinforce_lv: 95
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 668200
+    _force: 1940
+  - _ceo_grade: 2
+    _reinforce_lv: 96
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 683200
+    _force: 1960
+  - _ceo_grade: 2
+    _reinforce_lv: 97
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 698200
+    _force: 1980
+  - _ceo_grade: 2
+    _reinforce_lv: 98
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 713200
+    _force: 2000
+  - _ceo_grade: 2
+    _reinforce_lv: 99
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 728200
+    _force: 2020
+  - _ceo_grade: 2
+    _reinforce_lv: 100
+    _need_ceo_lv: 19
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 743200
+    _force: 2040
+  - _ceo_grade: 3
+    _reinforce_lv: 0
+    _need_ceo_lv: 0
+    _skillup_cost_value: 0
+    _cost_type: -1
+    _cost_idx: -1
+    _cost_value: -1
+    _force: 65
+  - _ceo_grade: 3
+    _reinforce_lv: 1
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 50
+    _force: 80
+  - _ceo_grade: 3
+    _reinforce_lv: 2
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 100
+    _force: 100
+  - _ceo_grade: 3
+    _reinforce_lv: 3
+    _need_ceo_lv: 1
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 150
+    _force: 120
+  - _ceo_grade: 3
+    _reinforce_lv: 4
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 200
+    _force: 140
+  - _ceo_grade: 3
+    _reinforce_lv: 5
+    _need_ceo_lv: 2
+    _skillup_cost_value: 20
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 300
+    _force: 160
+  - _ceo_grade: 3
+    _reinforce_lv: 6
+    _need_ceo_lv: 2
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 400
+    _force: 180
+  - _ceo_grade: 3
+    _reinforce_lv: 7
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 500
+    _force: 200
+  - _ceo_grade: 3
+    _reinforce_lv: 8
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 600
+    _force: 220
+  - _ceo_grade: 3
+    _reinforce_lv: 9
+    _need_ceo_lv: 3
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 700
+    _force: 240
+  - _ceo_grade: 3
+    _reinforce_lv: 10
+    _need_ceo_lv: 4
+    _skillup_cost_value: 130
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1200
+    _force: 260
+  - _ceo_grade: 3
+    _reinforce_lv: 11
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 1700
+    _force: 280
+  - _ceo_grade: 3
+    _reinforce_lv: 12
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2200
+    _force: 300
+  - _ceo_grade: 3
+    _reinforce_lv: 13
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 2700
+    _force: 320
+  - _ceo_grade: 3
+    _reinforce_lv: 14
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 3200
+    _force: 340
+  - _ceo_grade: 3
+    _reinforce_lv: 15
+    _need_ceo_lv: 4
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 4200
+    _force: 360
+  - _ceo_grade: 3
+    _reinforce_lv: 16
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 5200
+    _force: 380
+  - _ceo_grade: 3
+    _reinforce_lv: 17
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 6200
+    _force: 400
+  - _ceo_grade: 3
+    _reinforce_lv: 18
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 7200
+    _force: 420
+  - _ceo_grade: 3
+    _reinforce_lv: 19
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 8200
+    _force: 440
+  - _ceo_grade: 3
+    _reinforce_lv: 20
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 10200
+    _force: 460
+  - _ceo_grade: 3
+    _reinforce_lv: 21
+    _need_ceo_lv: 5
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 12200
+    _force: 480
+  - _ceo_grade: 3
+    _reinforce_lv: 22
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 14200
+    _force: 500
+  - _ceo_grade: 3
+    _reinforce_lv: 23
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 16200
+    _force: 520
+  - _ceo_grade: 3
+    _reinforce_lv: 24
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 18200
+    _force: 540
+  - _ceo_grade: 3
+    _reinforce_lv: 25
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 20200
+    _force: 560
+  - _ceo_grade: 3
+    _reinforce_lv: 26
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 22200
+    _force: 580
+  - _ceo_grade: 3
+    _reinforce_lv: 27
+    _need_ceo_lv: 6
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 24200
+    _force: 600
+  - _ceo_grade: 3
+    _reinforce_lv: 28
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 26200
+    _force: 620
+  - _ceo_grade: 3
+    _reinforce_lv: 29
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 28200
+    _force: 640
+  - _ceo_grade: 3
+    _reinforce_lv: 30
+    _need_ceo_lv: 7
+    _skillup_cost_value: 500
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 32200
+    _force: 660
+  - _ceo_grade: 3
+    _reinforce_lv: 31
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 36200
+    _force: 680
+  - _ceo_grade: 3
+    _reinforce_lv: 32
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 40200
+    _force: 700
+  - _ceo_grade: 3
+    _reinforce_lv: 33
+    _need_ceo_lv: 7
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 44200
+    _force: 720
+  - _ceo_grade: 3
+    _reinforce_lv: 34
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 48200
+    _force: 740
+  - _ceo_grade: 3
+    _reinforce_lv: 35
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 52200
+    _force: 760
+  - _ceo_grade: 3
+    _reinforce_lv: 36
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 56200
+    _force: 780
+  - _ceo_grade: 3
+    _reinforce_lv: 37
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 60200
+    _force: 800
+  - _ceo_grade: 3
+    _reinforce_lv: 38
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 64200
+    _force: 820
+  - _ceo_grade: 3
+    _reinforce_lv: 39
+    _need_ceo_lv: 8
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 68200
+    _force: 840
+  - _ceo_grade: 3
+    _reinforce_lv: 40
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 74200
+    _force: 860
+  - _ceo_grade: 3
+    _reinforce_lv: 41
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 80200
+    _force: 880
+  - _ceo_grade: 3
+    _reinforce_lv: 42
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 86200
+    _force: 900
+  - _ceo_grade: 3
+    _reinforce_lv: 43
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 92200
+    _force: 920
+  - _ceo_grade: 3
+    _reinforce_lv: 44
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 98200
+    _force: 940
+  - _ceo_grade: 3
+    _reinforce_lv: 45
+    _need_ceo_lv: 9
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 104200
+    _force: 960
+  - _ceo_grade: 3
+    _reinforce_lv: 46
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 110200
+    _force: 980
+  - _ceo_grade: 3
+    _reinforce_lv: 47
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 116200
+    _force: 1000
+  - _ceo_grade: 3
+    _reinforce_lv: 48
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 122200
+    _force: 1020
+  - _ceo_grade: 3
+    _reinforce_lv: 49
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 128200
+    _force: 1040
+  - _ceo_grade: 3
+    _reinforce_lv: 50
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 138200
+    _force: 1060
+  - _ceo_grade: 3
+    _reinforce_lv: 51
+    _need_ceo_lv: 10
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 148200
+    _force: 1080
+  - _ceo_grade: 3
+    _reinforce_lv: 52
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 158200
+    _force: 1100
+  - _ceo_grade: 3
+    _reinforce_lv: 53
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 168200
+    _force: 1120
+  - _ceo_grade: 3
+    _reinforce_lv: 54
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 178200
+    _force: 1140
+  - _ceo_grade: 3
+    _reinforce_lv: 55
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 188200
+    _force: 1160
+  - _ceo_grade: 3
+    _reinforce_lv: 56
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 198200
+    _force: 1180
+  - _ceo_grade: 3
+    _reinforce_lv: 57
+    _need_ceo_lv: 11
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 208200
+    _force: 1200
+  - _ceo_grade: 3
+    _reinforce_lv: 58
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 218200
+    _force: 1220
+  - _ceo_grade: 3
+    _reinforce_lv: 59
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 228200
+    _force: 1240
+  - _ceo_grade: 3
+    _reinforce_lv: 60
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 238200
+    _force: 1260
+  - _ceo_grade: 3
+    _reinforce_lv: 61
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 248200
+    _force: 1280
+  - _ceo_grade: 3
+    _reinforce_lv: 62
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 258200
+    _force: 1300
+  - _ceo_grade: 3
+    _reinforce_lv: 63
+    _need_ceo_lv: 12
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 268200
+    _force: 1320
+  - _ceo_grade: 3
+    _reinforce_lv: 64
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 278200
+    _force: 1340
+  - _ceo_grade: 3
+    _reinforce_lv: 65
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 288200
+    _force: 1360
+  - _ceo_grade: 3
+    _reinforce_lv: 66
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 298200
+    _force: 1380
+  - _ceo_grade: 3
+    _reinforce_lv: 67
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 308200
+    _force: 1400
+  - _ceo_grade: 3
+    _reinforce_lv: 68
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 318200
+    _force: 1420
+  - _ceo_grade: 3
+    _reinforce_lv: 69
+    _need_ceo_lv: 13
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 328200
+    _force: 1440
+  - _ceo_grade: 3
+    _reinforce_lv: 70
+    _need_ceo_lv: 14
+    _skillup_cost_value: 1200
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 338200
+    _force: 1460
+  - _ceo_grade: 3
+    _reinforce_lv: 71
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 348200
+    _force: 1480
+  - _ceo_grade: 3
+    _reinforce_lv: 72
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 358200
+    _force: 1500
+  - _ceo_grade: 3
+    _reinforce_lv: 73
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 368200
+    _force: 1520
+  - _ceo_grade: 3
+    _reinforce_lv: 74
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 378200
+    _force: 1540
+  - _ceo_grade: 3
+    _reinforce_lv: 75
+    _need_ceo_lv: 14
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 388200
+    _force: 1560
+  - _ceo_grade: 3
+    _reinforce_lv: 76
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 398200
+    _force: 1580
+  - _ceo_grade: 3
+    _reinforce_lv: 77
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 408200
+    _force: 1600
+  - _ceo_grade: 3
+    _reinforce_lv: 78
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 418200
+    _force: 1620
+  - _ceo_grade: 3
+    _reinforce_lv: 79
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 428200
+    _force: 1640
+  - _ceo_grade: 3
+    _reinforce_lv: 80
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 443200
+    _force: 1660
+  - _ceo_grade: 3
+    _reinforce_lv: 81
+    _need_ceo_lv: 15
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 458200
+    _force: 1680
+  - _ceo_grade: 3
+    _reinforce_lv: 82
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 473200
+    _force: 1700
+  - _ceo_grade: 3
+    _reinforce_lv: 83
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 488200
+    _force: 1720
+  - _ceo_grade: 3
+    _reinforce_lv: 84
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 503200
+    _force: 1740
+  - _ceo_grade: 3
+    _reinforce_lv: 85
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 518200
+    _force: 1760
+  - _ceo_grade: 3
+    _reinforce_lv: 86
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 533200
+    _force: 1780
+  - _ceo_grade: 3
+    _reinforce_lv: 87
+    _need_ceo_lv: 16
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 548200
+    _force: 1800
+  - _ceo_grade: 3
+    _reinforce_lv: 88
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 563200
+    _force: 1820
+  - _ceo_grade: 3
+    _reinforce_lv: 89
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 578200
+    _force: 1840
+  - _ceo_grade: 3
+    _reinforce_lv: 90
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 593200
+    _force: 1860
+  - _ceo_grade: 3
+    _reinforce_lv: 91
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 608200
+    _force: 1880
+  - _ceo_grade: 3
+    _reinforce_lv: 92
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 623200
+    _force: 1900
+  - _ceo_grade: 3
+    _reinforce_lv: 93
+    _need_ceo_lv: 17
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 638200
+    _force: 1920
+  - _ceo_grade: 3
+    _reinforce_lv: 94
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 653200
+    _force: 1940
+  - _ceo_grade: 3
+    _reinforce_lv: 95
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 668200
+    _force: 1960
+  - _ceo_grade: 3
+    _reinforce_lv: 96
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 683200
+    _force: 1980
+  - _ceo_grade: 3
+    _reinforce_lv: 97
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 698200
+    _force: 2000
+  - _ceo_grade: 3
+    _reinforce_lv: 98
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 713200
+    _force: 2020
+  - _ceo_grade: 3
+    _reinforce_lv: 99
+    _need_ceo_lv: 18
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 728200
+    _force: 2040
+  - _ceo_grade: 3
+    _reinforce_lv: 100
+    _need_ceo_lv: 19
+    _skillup_cost_value: 0
+    _cost_type: 1
+    _cost_idx: 15
+    _cost_value: 743200
+    _force: 2060

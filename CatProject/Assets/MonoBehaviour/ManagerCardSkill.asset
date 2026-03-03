@@ -1,0 +1,513 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1839421637, guid: 20f2a2683455452b88c70685afae874d, type: 3}
+  m_Name: ManagerCardSkill
+  m_EditorClassIdentifier:
+  mFirstKey:
+  - 1101
+  - 1102
+  - 1103
+  - 1104
+  - 1105
+  - 1106
+  - 1107
+  - 1201
+  - 1202
+  - 1203
+  - 1204
+  - 1205
+  - 1206
+  - 1207
+  - 1301
+  - 1302
+  - 1303
+  - 1304
+  - 1305
+  - 1306
+  - 1307
+  - 2101
+  - 2102
+  - 2103
+  - 2104
+  - 2105
+  - 2106
+  - 2107
+  - 2108
+  - 2201
+  - 2202
+  - 2203
+  - 2204
+  - 2205
+  - 2206
+  - 2207
+  - 2208
+  - 2301
+  - 2302
+  - 2303
+  - 2304
+  - 2305
+  - 2306
+  - 2307
+  - 3101
+  - 3102
+  - 3103
+  - 3104
+  - 3105
+  - 3106
+  - 3107
+  - 3108
+  - 3201
+  - 3202
+  - 3203
+  - 3204
+  - 3205
+  - 3206
+  - 3207
+  - 3208
+  - 3301
+  - 3301
+  mSecondKey: []
+  mDataList:
+  - _idx: 1101
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 6400000064000000640000006400000064000000
+    _ability_idx: 20001
+    _ability_value: 0100000002000000030000000400000005000000
+    _skill_bubble:
+  - _idx: 1102
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20005
+    _ability_value: 0100000002000000030000000400000005000000
+    _skill_bubble:
+  - _idx: 1103
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20004
+    _ability_value: 0100000002000000030000000400000005000000
+    _skill_bubble:
+  - _idx: 1104
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20008
+    _ability_value: 0100000002000000030000000400000005000000
+    _skill_bubble:
+  - _idx: 1105
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20010
+    _ability_value: 020000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 1106
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20009
+    _ability_value: 020000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 1107
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20002
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 1201
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20001
+    _ability_value: 020000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 1202
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20005
+    _ability_value: 020000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 1203
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20004
+    _ability_value: 04000000080000000c0000001000000014000000
+    _skill_bubble:
+  - _idx: 1204
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20008
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 1205
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20010
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 1206
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20009
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 1207
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20002
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble:
+  - _idx: 1301
+    _buff_type: -1
+    _activation_type: 1
+    _skill_ratio: 64000000
+    _ability_idx: 20001
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble:
+  - _idx: 1302
+    _buff_type: -1
+    _activation_type: 1
+    _skill_ratio: 64000000
+    _ability_idx: 20005
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble:
+  - _idx: 1303
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20006
+    _ability_value: 0100000002000000030000000400000005000000
+    _skill_bubble:
+  - _idx: 1304
+    _buff_type: -1
+    _activation_type: 1
+    _skill_ratio: 64000000
+    _ability_idx: 20004
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble:
+  - _idx: 1305
+    _buff_type: -1
+    _activation_type: 1
+    _skill_ratio: 64000000
+    _ability_idx: 20002
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble:
+  - _idx: 1306
+    _buff_type: -1
+    _activation_type: 1
+    _skill_ratio: 64000000
+    _ability_idx: 20003
+    _ability_value: 020000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 1307
+    _buff_type: -1
+    _activation_type: 2
+    _skill_ratio: 64000000
+    _ability_idx: 20007
+    _ability_value: 030000000400000006000000080000000a000000
+    _skill_bubble:
+  - _idx: 2101
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21008
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble: str_skill_bubble_2101
+  - _idx: 2102
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21004
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble: str_skill_bubble_2102
+  - _idx: 2103
+    _buff_type: 0
+    _activation_type: 102
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21009
+    _ability_value: 0100000001000000010000000100000001000000
+    _skill_bubble: str_skill_bubble_2103
+  - _idx: 2104
+    _buff_type: 1
+    _activation_type: 104
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21010
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2104
+  - _idx: 2105
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21006
+    _ability_value: 0f00000014000000190000001e00000023000000
+    _skill_bubble: str_skill_bubble_2105
+  - _idx: 2106
+    _buff_type: 2
+    _activation_type: 103
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21005
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble: str_skill_bubble_2106
+  - _idx: 2107
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21002
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2107
+  - _idx: 2108
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 0a000000140000001e0000002800000032000000
+    _ability_idx: 21011
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2108
+  - _idx: 2201
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21008
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble: str_skill_bubble_2201
+  - _idx: 2202
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21004
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble: str_skill_bubble_2202
+  - _idx: 2203
+    _buff_type: 0
+    _activation_type: 102
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21009
+    _ability_value: 0100000001000000010000000100000001000000
+    _skill_bubble: str_skill_bubble_2203
+  - _idx: 2204
+    _buff_type: 1
+    _activation_type: 104
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21010
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2204
+  - _idx: 2205
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21006
+    _ability_value: 1e00000023000000280000002d00000032000000
+    _skill_bubble: str_skill_bubble_2205
+  - _idx: 2206
+    _buff_type: 2
+    _activation_type: 103
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21005
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble: str_skill_bubble_2206
+  - _idx: 2207
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21002
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2207
+  - _idx: 2208
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 1e00000028000000320000003c00000046000000
+    _ability_idx: 21011
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2208
+  - _idx: 2301
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 64000000
+    _ability_idx: 21001
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble: str_skill_bubble_2301
+  - _idx: 2302
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 3c00000046000000500000005a00000064000000
+    _ability_idx: 21002
+    _ability_value: 00000000
+    _skill_bubble: str_skill_bubble_2302
+  - _idx: 2303
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 64000000
+    _ability_idx: 21006
+    _ability_value: 3c00000046000000500000005a00000064000000
+    _skill_bubble: str_skill_bubble_2303
+  - _idx: 2304
+    _buff_type: 1
+    _activation_type: 101
+    _skill_ratio: 64000000
+    _ability_idx: 21004
+    _ability_value: 0f00000014000000190000001e00000023000000
+    _skill_bubble: str_skill_bubble_2304
+  - _idx: 2305
+    _buff_type: 2
+    _activation_type: 103
+    _skill_ratio: 64000000
+    _ability_idx: 21005
+    _ability_value: 0f00000014000000190000001e00000023000000
+    _skill_bubble: str_skill_bubble_2305
+  - _idx: 2306
+    _buff_type: 2
+    _activation_type: 101
+    _skill_ratio: 64000000
+    _ability_idx: 21003
+    _ability_value: 0a0000000f00000014000000190000001e000000
+    _skill_bubble: str_skill_bubble_2306
+  - _idx: 2307
+    _buff_type: 0
+    _activation_type: 103
+    _skill_ratio: 64000000
+    _ability_idx: 21007
+    _ability_value: 6400000096000000c8000000fa0000002c010000
+    _skill_bubble: str_skill_bubble_2307
+  - _idx: 3101
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22001
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3102
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22002
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3103
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22003
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3104
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22004
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3105
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22005
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3106
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22006
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3107
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22007
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3108
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22008
+    _ability_value: 050000000a0000000f0000001400000019000000
+    _skill_bubble:
+  - _idx: 3201
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22001
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3202
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22002
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3203
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22003
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3204
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22004
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3205
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22005
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3206
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22006
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3207
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22007
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3208
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22008
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3301
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22009
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
+  - _idx: 3301
+    _buff_type: -1
+    _activation_type: 201
+    _skill_ratio: 64000000
+    _ability_idx: 22010
+    _ability_value: 0a000000140000001e0000002800000032000000
+    _skill_bubble:
