@@ -697,6 +697,8 @@ public class GameRoot : Singleton<GameRoot>
 		AbilitySystem = new AbilitySystem();
 		AbilitySystem.Init();
 		GameNotification = new GameNotificationSystem();
+		ManagerCardSystem = new ManagerCardSystem();
+		ManagerCardSystem.Init();
 		SystemHolder = new List<SystemBase>();
 		AdsContentsList = new List<IAdTimeContents>();
 		PauseActions = new Queue<Action>();

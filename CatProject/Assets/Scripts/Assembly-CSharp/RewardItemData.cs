@@ -31,26 +31,30 @@ public class RewardItemData : IRewardItemData
 
 	public bool IsSameReward(IRewardItemData other)
 	{
+		if (other is RewardItemData otherReward)
+		{
+			return rewardType == otherReward.rewardType && rewardIdx == otherReward.rewardIdx;
+		}
 		return false;
 	}
 
 	public bool IsSameReward(int type, int idx)
 	{
-		return false;
+		return rewardType == type && rewardIdx == idx;
 	}
 
 	public bool IsSameReward(int type, int idx, int region)
 	{
-		return false;
+		return rewardType == type && rewardIdx == idx && rewardRegion == region;
 	}
 
 	public bool IsCompanyExpReward()
 	{
-		return false;
+		return rewardType == (int)Config.RewardType.Exp;
 	}
 
 	public bool EnableReward()
 	{
-		return false;
+		return rewardValue > 0;
 	}
 }

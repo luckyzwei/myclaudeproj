@@ -30,6 +30,8 @@ public class FactoryOrderSlotData : IReadOnlyData, ICloneable
 
 	public void SetOrderCharacter(int characterIconIdx, int characterTalkIdx)
 	{
+		CharacterIconIdx = characterIconIdx;
+		CharacterTalkIdx = characterTalkIdx;
 	}
 
 	public void Create()
