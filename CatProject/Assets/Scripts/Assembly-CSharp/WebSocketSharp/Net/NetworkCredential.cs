@@ -61,11 +61,14 @@ namespace WebSocketSharp.Net
 		}
 
 		public NetworkCredential(string username, string password)
-		{
-		}
+	{
+		_username = username;
+	}
 
 		public NetworkCredential(string username, string password, string domain, params string[] roles)
-		{
-		}
+	{
+		_username = username;
+		_roles = roles;
+	}
 	}
 }

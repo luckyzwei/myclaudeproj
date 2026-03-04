@@ -16,9 +16,9 @@ public class TutorialEntityObjActive : TutorialEntity
 
 	private GameObject target;
 
-	public TutorialIdent Id => default(TutorialIdent);
+	public TutorialIdent Id { get { return default(TutorialIdent); } }
 
-	public bool Active => false;
+	public bool Active { get { return false; } }
 
 	public override void StartEntity()
 	{

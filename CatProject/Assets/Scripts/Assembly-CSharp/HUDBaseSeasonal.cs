@@ -89,11 +89,11 @@ public class HUDBaseSeasonal : HUDAniBase, IHUDTopInfo, IScreenAction
 
 	private List<Tween> ScreenActionTweens;
 
-	public HUDType[] HudType => null;
+	public HUDType[] HudType { get { return null; } }
 
-	public bool IsAppear => false;
+	public bool IsAppear { get { return false; } }
 
-	public bool IsScreenAction => false;
+	public bool IsScreenAction { get { return false; } }
 
 	public WaitUntil WaitHUDAppear { get; set; }
 
@@ -118,7 +118,7 @@ public class HUDBaseSeasonal : HUDAniBase, IHUDTopInfo, IScreenAction
 	[IteratorStateMachine(typeof(_003CWaitComebackCo_003Ed__24))]
 	private IEnumerator WaitComebackCo(bool value)
 	{
-		return null;
+		yield break;
 	}
 
 	public void ScreenAction(bool value)

@@ -18,6 +18,10 @@ public class BuildingData : IReadOnlyData, ICloneable
 
 	public BuildingData(int idx, int lv, int time, BigInteger value)
 	{
+		Idx = idx;
+		Level = lv;
+		Time = time;
+		Value = new ReactiveProperty<BigInteger>(value);
 	}
 
 	public void LevelUp()
@@ -26,10 +30,14 @@ public class BuildingData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		Value = new ReactiveProperty<BigInteger>();
+		RemainNextRewardTime = new ReactiveProperty<int>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		BuildingData clone = (BuildingData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

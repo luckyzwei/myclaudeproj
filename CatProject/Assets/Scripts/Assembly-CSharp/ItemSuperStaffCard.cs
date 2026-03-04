@@ -49,7 +49,7 @@ public class ItemSuperStaffCard : MonoBehaviour
 
 	private CompositeDisposable disposables;
 
-	public int CurManagerIdx => 0;
+	public int CurManagerIdx { get { return 0; } }
 
 	private void Awake()
 	{

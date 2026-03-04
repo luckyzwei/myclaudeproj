@@ -10,5 +10,8 @@ public class BaseGameFindObjectParams : TpCommandParams
 
 	public BaseGameFindObjectParams(List<BoundCondition> objectConditions, List<BoundCondition> cameraConditions, bool enabled)
 	{
+		this.objectConditions = objectConditions;
+		this.cameraConditions = cameraConditions;
+		this.enabled = enabled;
 	}
 }

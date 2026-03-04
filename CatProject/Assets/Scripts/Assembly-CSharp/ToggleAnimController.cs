@@ -115,6 +115,6 @@ public class ToggleAnimController : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CEndFrameUpdate_003Ed__13))]
 	private IEnumerator EndFrameUpdate(bool immediateSet)
 	{
-		return null;
+		yield break;
 	}
 }

@@ -4,7 +4,7 @@ public class TpRecvallException : TpAutomationException
 	{
 	}
 
-	public TpRecvallException(string message)
+	public TpRecvallException(string message) : base(message)
 	{
 	}
 }

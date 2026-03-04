@@ -180,7 +180,7 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 	[IteratorStateMachine(typeof(_003CWaitParticleEnd_003Ed__34))]
 	private IEnumerator WaitParticleEnd()
 	{
-		return null;
+		yield break;
 	}
 
 	public void CallHideAction()

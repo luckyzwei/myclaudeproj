@@ -100,7 +100,7 @@ public class PagePlayerLvPass : UIBase
 
 	private bool IsNoAds;
 
-	public Image OneTimeCurrencyIcon => null;
+	public Image OneTimeCurrencyIcon { get { return null; } }
 
 	protected override void Awake()
 	{

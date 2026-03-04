@@ -169,7 +169,7 @@ public class PageGacha : UIBase
 	[IteratorStateMachine(typeof(_003CPlayRewardAnimation_003Ed__30))]
 	private IEnumerator PlayRewardAnimation()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickOpen()

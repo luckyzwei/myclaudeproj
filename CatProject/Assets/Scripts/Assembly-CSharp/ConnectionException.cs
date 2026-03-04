@@ -5,6 +5,7 @@ public class ConnectionException : TpAutomationException
 	}
 
 	public ConnectionException(string message)
+		: base(message)
 	{
 	}
 }

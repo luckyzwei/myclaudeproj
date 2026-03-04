@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using BizAcqDef;
 using UniRx;
@@ -159,6 +160,10 @@ public class BizAcqBattleSystem : SystemBase
 
 	public override void InitSystem()
 	{
+		BattleSpeedList = new List<int>();
+		OnBattleStart = new Subject<bool>();
+		OnBattleEnd = new Subject<bool>();
+		OnClaimIdleRewardEvent = new Subject<bool>();
 	}
 
 	private void InitUserData()

@@ -10,5 +10,7 @@ public class ManagerSkillData
 
 	public ManagerSkillData(int skillIdx, Config.ManagerSkillContentsType skillContentsType)
 	{
+		SkillIdx = skillIdx;
+		SkillContentsType = skillContentsType;
 	}
 }

@@ -25,7 +25,7 @@ public class SeasonalMissionData
 
 	public IDisposable Disposable_CompleteCondition;
 
-	public bool bReadyToComplete => false;
+	public bool bReadyToComplete { get { return false; } }
 
 	~SeasonalMissionData()
 	{

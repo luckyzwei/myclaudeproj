@@ -4,7 +4,7 @@ public class NoAppConnectedException : ConnectionException
 	{
 	}
 
-	public NoAppConnectedException(string message)
+	public NoAppConnectedException(string message) : base(message)
 	{
 	}
 }

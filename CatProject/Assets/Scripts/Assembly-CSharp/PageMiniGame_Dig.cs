@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -310,13 +312,13 @@ public class PageMiniGame_Dig : UIBase
 	[IteratorStateMachine(typeof(_003CWaitBlockCoroutine_003Ed__59))]
 	private IEnumerator WaitBlockCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitAndStageClearCoroutine_003Ed__60))]
 	private IEnumerator WaitAndStageClearCoroutine(bool isGameClear)
 	{
-		return null;
+		yield break;
 	}
 
 	private void GetBonusMoney(Vector2Int cellPos)

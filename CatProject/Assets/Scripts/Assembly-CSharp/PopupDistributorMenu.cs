@@ -131,7 +131,7 @@ public class PopupDistributorMenu : UIBase
 	[IteratorStateMachine(typeof(_003CCheckFocusAfterScrolled_Delayed_003Ed__20))]
 	private IEnumerator CheckFocusAfterScrolled_Delayed()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnFocusAfterScrolled(Vector2 value)

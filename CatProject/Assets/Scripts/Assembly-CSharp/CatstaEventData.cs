@@ -16,6 +16,8 @@ public class CatstaEventData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		CatstaEventData clone = (CatstaEventData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

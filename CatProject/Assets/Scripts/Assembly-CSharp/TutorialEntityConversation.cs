@@ -88,7 +88,7 @@ public class TutorialEntityConversation : TutorialEntity
 	[IteratorStateMachine(typeof(_003CStartScript_003Ed__5))]
 	public IEnumerator StartScript()
 	{
-		return null;
+		yield break;
 	}
 
 	protected virtual void Update()

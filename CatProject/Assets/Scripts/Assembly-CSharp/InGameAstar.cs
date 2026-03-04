@@ -22,7 +22,7 @@ public class InGameAstar : MonoBehaviour
 
 		public int H;
 
-		public int F => 0;
+		public int F { get { return 0; } }
 
 		public Node(bool _isObstacle, int _x, int _y, Vector3 _worldPos)
 		{
@@ -75,7 +75,7 @@ public class InGameAstar : MonoBehaviour
 
 	public Vector3 WorldTopRight { get; private set; }
 
-	public Vector2 MapSize => default(Vector2);
+	public Vector2 MapSize { get { return default(Vector2); } }
 
 	public Grid GetMapGrid()
 	{

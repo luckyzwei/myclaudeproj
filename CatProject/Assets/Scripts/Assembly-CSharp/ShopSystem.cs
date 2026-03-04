@@ -201,7 +201,7 @@ public class ShopSystem
 
 	public Subject<(int purchaseIdx, int count)> OnPurchaseSuccess;
 
-	public bool NoAds => false;
+	public bool NoAds { get { return false; } }
 
 	public ShopState state { get; private set; }
 
@@ -233,9 +233,9 @@ public class ShopSystem
 
 	public int shop_ceo_box_premium_key_1_gem_price { get; private set; }
 
-	public int shop_ceo_box_normal_case_gem_price => 0;
+	public int shop_ceo_box_normal_case_gem_price { get { return 0; } }
 
-	public int shop_ceo_box_premium_case_gem_price => 0;
+	public int shop_ceo_box_premium_case_gem_price { get { return 0; } }
 
 	public int CurShopSaleIdx { get; private set; }
 

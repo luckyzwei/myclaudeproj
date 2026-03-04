@@ -16,11 +16,11 @@ public class HouseBuilding : MonoBehaviour
 		[SerializeField]
 		private GameObject lockObj;
 
-		public int Idx => 0;
+		public int Idx { get { return 0; } }
 
-		public Transform Transform => null;
+		public Transform Transform { get { return null; } }
 
-		public GameObject LockObj => null;
+		public GameObject LockObj { get { return null; } }
 
 		public InGameTouchInfoUI TouchInfoUI { get; set; }
 	}

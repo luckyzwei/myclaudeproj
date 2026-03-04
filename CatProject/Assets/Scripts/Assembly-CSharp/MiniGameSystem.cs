@@ -25,9 +25,9 @@ public class MiniGameSystem : SystemBase
 
 	public MiniGameScheduleInfo NextMiniGameScheduleInfo { get; private set; }
 
-	public int NowScheduleIdx => 0;
+	public int NowScheduleIdx { get { return 0; } }
 
-	public int NowEventIdx => 0;
+	public int NowEventIdx { get { return 0; } }
 
 	public int UseCurrencyIdx { get; private set; }
 
@@ -35,6 +35,8 @@ public class MiniGameSystem : SystemBase
 
 	public override void InitSystem()
 	{
+		EventRemainTimeSec = new ReactiveProperty<int>();
+		OnChangeNowScheduleInfo = new Subject<int>();
 	}
 
 	public override void OnChangeScene()

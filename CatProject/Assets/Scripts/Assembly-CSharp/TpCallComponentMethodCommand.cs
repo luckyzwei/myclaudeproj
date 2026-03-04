@@ -5,7 +5,7 @@ public class TpCallComponentMethodCommand : TpBaseFindObjectsCommand<string>
 	private readonly string methodName;
 
 	public TpCallComponentMethodCommand(TpCallComponentMethodParams cmdParams)
-		: base((BaseGameFindObjectParams)null)
+		: base(cmdParams)
 	{
 	}
 

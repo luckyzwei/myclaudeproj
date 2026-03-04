@@ -297,9 +297,9 @@ public class FreecashSystem
 
 	private string mediaSource;
 
-	public IObservable<Unit> OnInitObservable => null;
+	public IObservable<Unit> OnInitObservable { get { return null; } }
 
-	public IObservable<bool> OnRecvIsLinkedResObservable => null;
+	public IObservable<bool> OnRecvIsLinkedResObservable { get { return null; } }
 
 	public void Init(string _account)
 	{

@@ -26,7 +26,7 @@ public class LineRenderer : MaskableGraphic
 	[Range(30f, 180f)]
 	public float CriticalAngle;
 
-	public override Texture mainTexture => null;
+	public override Texture mainTexture { get { return null; } }
 
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{

@@ -4,7 +4,7 @@ public class NotFoundException : TpAutomationException
 	{
 	}
 
-	public NotFoundException(string message)
+	public NotFoundException(string message) : base(message)
 	{
 	}
 }

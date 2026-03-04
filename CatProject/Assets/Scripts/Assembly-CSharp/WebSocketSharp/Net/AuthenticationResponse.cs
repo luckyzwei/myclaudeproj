@@ -40,8 +40,9 @@ namespace WebSocketSharp.Net
 		public string UserName => null;
 
 		private AuthenticationResponse(AuthenticationSchemes scheme, NameValueCollection parameters)
-		{
-		}
+	{
+		_scheme = scheme;
+	}
 
 		internal AuthenticationResponse(NetworkCredential credentials)
 		{
@@ -52,8 +53,9 @@ namespace WebSocketSharp.Net
 		}
 
 		internal AuthenticationResponse(AuthenticationSchemes scheme, NameValueCollection parameters, NetworkCredential credentials, uint nonceCount)
-		{
-		}
+	{
+		_scheme = scheme;
+	}
 
 		private static string createA1(string username, string password, string realm)
 		{

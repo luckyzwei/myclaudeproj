@@ -13,36 +13,21 @@ public class ConversionValuesParams
 	[JsonProperty(PropertyName = "value")]
 	public int Value
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return _value; }
+		set { _value = value; }
 	}
 
 	[JsonProperty(PropertyName = "coarse")]
 	public int Coarse
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return _coarse; }
+		set { _coarse = value; }
 	}
 
 	[JsonProperty(PropertyName = "lock")]
 	public bool Lock
 	{
-		get
-		{
-			return false;
-		}
-		set
-		{
-		}
+		get { return _lock; }
+		set { _lock = value; }
 	}
 }

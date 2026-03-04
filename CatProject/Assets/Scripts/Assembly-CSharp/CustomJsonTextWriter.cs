@@ -6,7 +6,7 @@ public class CustomJsonTextWriter : JsonTextWriter
 	public int CurrentDepth { get; private set; }
 
 	public CustomJsonTextWriter(TextWriter textWriter)
-		: base(null)
+		: base(textWriter)
 	{
 	}
 

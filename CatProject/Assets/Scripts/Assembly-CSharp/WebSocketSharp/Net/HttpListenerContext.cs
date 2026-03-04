@@ -26,38 +26,23 @@ namespace WebSocketSharp.Net
 
 		internal string ErrorMessage
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _errorMessage; }
+		set { _errorMessage = value; }
+	}
 
 		internal int ErrorStatusCode
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _errorStatusCode; }
+		set { _errorStatusCode = value; }
+	}
 
 		internal bool HasErrorMessage => false;
 
 		internal HttpListener Listener
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _listener; }
+		set { _listener = value; }
+	}
 
 		public HttpListenerRequest Request => null;
 

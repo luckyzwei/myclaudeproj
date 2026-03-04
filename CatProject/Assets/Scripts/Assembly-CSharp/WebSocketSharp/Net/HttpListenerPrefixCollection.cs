@@ -16,8 +16,9 @@ namespace WebSocketSharp.Net
 		public bool IsSynchronized => false;
 
 		internal HttpListenerPrefixCollection(HttpListener listener)
-		{
-		}
+	{
+		_listener = listener;
+	}
 
 		public void Add(string uriPrefix)
 		{

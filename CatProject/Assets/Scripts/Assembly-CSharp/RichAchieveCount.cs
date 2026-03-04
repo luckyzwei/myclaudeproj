@@ -6,5 +6,7 @@ public class RichAchieveCount : IClientData
 
 	public RichAchieveCount(int regionIdx, int count)
 	{
+		regionIdx = regionIdx;
+		count = count;
 	}
 }

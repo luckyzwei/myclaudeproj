@@ -12,5 +12,9 @@ public class PlacedItemInfo
 
 	public PlacedItemInfo(int id, int index, Vector2Int position, Vector2Int size)
 	{
+		Id = id;
+		Index = index;
+		Position = position;
+		Size = size;
 	}
 }

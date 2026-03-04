@@ -17,8 +17,9 @@ namespace WebSocketSharp.Server
 		public IPrincipal User => null;
 
 		internal HttpRequestEventArgs(HttpListenerContext context, string documentRootPath)
-		{
-		}
+	{
+		_context = context;
+	}
 
 		private string createFilePath(string childPath)
 		{

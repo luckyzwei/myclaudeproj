@@ -18,6 +18,9 @@ public class BoosterBuffUserData
 
 	public BoosterBuffUserData(int boosterIdx, int totalUseCount, bool boosterTicketUseActive)
 	{
+		BoosterIdx = boosterIdx;
+		BoosterTotalUseCount = totalUseCount;
+		BoosterTicketUseActive = boosterTicketUseActive;
 	}
 
 	public bool IsFree()
@@ -27,7 +30,10 @@ public class BoosterBuffUserData
 
 	public static BoosterBuffUserData FromFlatBuffer(BoosterBuffData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = (BoosterBuffUserData)new BoosterBuffUserData(0, 0, false).MemberwiseClone();
+		return result;
 	}
 
 	public static Offset<BoosterBuffData> ToFlatBuffer(FlatBufferBuilder builder, BoosterBuffUserData data)

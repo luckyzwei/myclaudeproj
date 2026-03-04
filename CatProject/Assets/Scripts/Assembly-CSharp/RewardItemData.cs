@@ -20,6 +20,13 @@ public class RewardItemData : IRewardItemData
 
 	public RewardItemData(int _type, int _idx, BigInteger _count, int region = -1, string res = "", Config.AtlasType atlas = Config.AtlasType.None, bool bTimeRevenue = true)
 	{
+		rewardType = _type;
+		rewardIdx = _idx;
+		rewardValue = _count;
+		rewardRegion = region;
+		resImg = res;
+		atlasType = atlas;
+		isTimeRevenue = bTimeRevenue;
 	}
 
 	public bool IsSameReward(IRewardItemData other)

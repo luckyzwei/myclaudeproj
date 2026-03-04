@@ -1,4 +1,5 @@
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using SeasonalDef;
 using UniRx;
 using UnityEngine;

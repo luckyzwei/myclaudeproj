@@ -14,61 +14,37 @@ namespace WebSocketSharp.Net
 
 		public HttpStreamAsyncResult AsyncResult
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _asyncResult; }
+		set { _asyncResult = value; }
+	}
 
 		public byte[] Buffer
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _buffer; }
+		set { _buffer = value; }
+	}
 
 		public int Count
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _count; }
+		set { _count = value; }
+	}
 
 		public int InitialCount
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _initialCount; }
+		set { _initialCount = value; }
+	}
 
 		public int Offset
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _offset; }
+		set { _offset = value; }
+	}
 
 		public ReadBufferState(byte[] buffer, int offset, int count, HttpStreamAsyncResult asyncResult)
-		{
-		}
+	{
+		_buffer = buffer;
+	}
 	}
 }

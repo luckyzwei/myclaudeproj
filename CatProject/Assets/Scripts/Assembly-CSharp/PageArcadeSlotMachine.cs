@@ -53,11 +53,11 @@ public class PageArcadeSlotMachine : UIBase
 
 	private bool bTryLoadComponent;
 
-	public HUDTopInfo GetHUDTopInfo => null;
+	public HUDTopInfo GetHUDTopInfo { get { return null; } }
 
-	public Transform GetRewardEffectStartTr => null;
+	public Transform GetRewardEffectStartTr { get { return null; } }
 
-	public Transform GetSkillBookEffectEndTr => null;
+	public Transform GetSkillBookEffectEndTr { get { return null; } }
 
 	protected override void Awake()
 	{

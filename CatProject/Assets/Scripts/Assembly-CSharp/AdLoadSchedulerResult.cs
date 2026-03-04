@@ -12,6 +12,10 @@ public class AdLoadSchedulerResult
 
 	private AdLoadSchedulerResult(string adUnitId, bool isSuccess, AdType adType, MaxSdkBase.AdInfo adInfo = null, MaxSdkBase.ErrorInfo errorInfo = null)
 	{
+		AdUnitId = adUnitId;
+		this.AdType = AdType;
+		AdInfo = adInfo;
+		ErrorInfo = errorInfo;
 	}
 
 	public static AdLoadSchedulerResult Success(string adUnitId, AdType adType, MaxSdkBase.AdInfo adInfo)

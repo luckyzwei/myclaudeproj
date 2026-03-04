@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -229,7 +230,7 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	[IteratorStateMachine(typeof(_003CDelayEndActionQueue_003Ed__47))]
 	private IEnumerator DelayEndActionQueue(Action onEndAction)
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateContentsOpen()

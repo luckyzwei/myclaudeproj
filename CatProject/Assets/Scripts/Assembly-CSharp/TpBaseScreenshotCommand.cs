@@ -74,7 +74,7 @@ public abstract class TpBaseScreenshotCommand<TParams, TResult> : TpCommand<TPar
 	[IteratorStateMachine(typeof(TpBaseScreenshotCommand<, >._003CSendPNGScreenshotCoroutine_003Ed__4))]
 	protected IEnumerator SendPNGScreenshotCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private string getPNGScreenshot()

@@ -29,6 +29,8 @@ public class CarData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		CarData clone = (CarData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

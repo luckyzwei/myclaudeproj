@@ -5,7 +5,7 @@ public class PropertyEqualsCondition : SelectorCondition
 	public string PropertyValue { get; set; }
 
 	public PropertyEqualsCondition(string selector)
-		: base(null, default(SelectorType))
+		: base(selector, default(SelectorType))
 	{
 	}
 }

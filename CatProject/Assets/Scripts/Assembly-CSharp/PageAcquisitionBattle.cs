@@ -183,7 +183,7 @@ public class PageAcquisitionBattle : FullScreenUI
 	[IteratorStateMachine(typeof(_003CStartAnimEndCheck_003Ed__32))]
 	private IEnumerator StartAnimEndCheck(Action onComplete)
 	{
-		return null;
+		yield break;
 	}
 
 	private void CheckAndPlayBattleSpeedTutorial(Action onComplete)

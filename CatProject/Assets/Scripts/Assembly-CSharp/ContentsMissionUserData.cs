@@ -21,11 +21,13 @@ public class ContentsMissionUserData
 
 	public ContentsMissionUserData(ContentsMissionData contentsMissionData)
 	{
+		ContentType = contentsMissionData.ContentType;
 	}
 
 	public static ContentsMissionUserData FromFlatBuffer(Treeplla.Data.ContentsMissionData data)
 	{
-		return null;
+		var result = new ContentsMissionUserData();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(Dictionary<E_ContentsMissionType, ContentsMissionUserData> source, FlatBufferBuilder builder)

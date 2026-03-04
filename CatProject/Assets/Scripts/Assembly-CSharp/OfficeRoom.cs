@@ -11,7 +11,7 @@ public class OfficeRoom : Room
 
 	private BoosterOfficeEffect BoosterOfficeEffect;
 
-	public Transform ManagerDeskTrans => null;
+	public Transform ManagerDeskTrans { get { return null; } }
 
 	private void Awake()
 	{

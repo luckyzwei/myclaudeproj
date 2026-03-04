@@ -22,6 +22,8 @@ public class BizAcqCharacterSkillData
 
 	public BizAcqCharacterSkillData(int skillIdx, int skillLevel)
 	{
+		SkillIdx = skillIdx;
+		SkillLevel = skillLevel;
 	}
 
 	public void UpdateSkillData(int skillLevel)

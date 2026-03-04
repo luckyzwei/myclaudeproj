@@ -15,9 +15,9 @@ public class SubMissionGroupData
 
 	public IDisposable Disposable_OpenCondition;
 
-	public bool bCompleteGroup => false;
+	public bool bCompleteGroup { get { return false; } }
 
-	public SubMissionStepData CurMissionData => null;
+	public SubMissionStepData CurMissionData { get { return null; } }
 
 	~SubMissionGroupData()
 	{

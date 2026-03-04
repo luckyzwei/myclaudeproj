@@ -4,7 +4,7 @@ public class InvalidParameterTypeException : TpAutomationException
 	{
 	}
 
-	public InvalidParameterTypeException(string message)
+	public InvalidParameterTypeException(string message) : base(message)
 	{
 	}
 }

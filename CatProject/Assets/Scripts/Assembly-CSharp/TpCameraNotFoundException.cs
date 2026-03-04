@@ -4,7 +4,7 @@ public class TpCameraNotFoundException : TpAutomationException
 	{
 	}
 
-	public TpCameraNotFoundException(string message)
+	public TpCameraNotFoundException(string message) : base(message)
 	{
 	}
 }

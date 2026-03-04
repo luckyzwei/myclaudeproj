@@ -29,14 +29,9 @@ namespace WebSocketSharp.Net
 
 		internal bool EndCalled
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _endCalled; }
+		set { _endCalled = value; }
+	}
 
 		internal object SyncRoot => null;
 
@@ -49,8 +44,9 @@ namespace WebSocketSharp.Net
 		public bool IsCompleted => false;
 
 		internal HttpListenerAsyncResult(AsyncCallback callback, object state, Logger log)
-		{
-		}
+	{
+		_callback = callback;
+	}
 
 		private void complete()
 		{

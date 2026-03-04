@@ -107,13 +107,13 @@ public class UserSegmentSystem
 
 	private Dictionary<string, bool> dataReady;
 
-	public bool IsAdsTestSegment => false;
+	public bool IsAdsTestSegment { get { return false; } }
 
-	public bool IsIAASegment => false;
+	public bool IsIAASegment { get { return false; } }
 
-	public bool IsInterstitialSegment => false;
+	public bool IsInterstitialSegment { get { return false; } }
 
-	public bool IsOfferWallSegment => false;
+	public bool IsOfferWallSegment { get { return false; } }
 
 	public void ClearUserDataParam()
 	{

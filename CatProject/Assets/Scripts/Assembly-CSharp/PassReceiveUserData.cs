@@ -27,7 +27,10 @@ public class PassReceiveUserData
 
 	public static PassReceiveUserData FromFlatBuffer(PassReceiveData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = new PassReceiveUserData();
+		return result;
 	}
 
 	public static Offset<PassReceiveData> ToFlatBuffer(FlatBufferBuilder builder, PassReceiveUserData data)

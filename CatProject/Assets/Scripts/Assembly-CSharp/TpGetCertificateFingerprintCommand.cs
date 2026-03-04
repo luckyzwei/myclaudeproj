@@ -1,7 +1,7 @@
 public class TpGetCertificateFingerprintCommand : TpCommand<TpGetCertificateFingerprintParams, string>
 {
 	public TpGetCertificateFingerprintCommand(TpGetCertificateFingerprintParams cmdHandler)
-		: base((TpGetCertificateFingerprintParams)default(_00210))
+		: base(cmdHandler)
 	{
 	}
 

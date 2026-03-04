@@ -104,12 +104,14 @@ namespace WebSocketSharp
 		}
 
 		internal PayloadData(byte[] data)
-		{
-		}
+	{
+		_data = data;
+	}
 
 		internal PayloadData(byte[] data, long length)
-		{
-		}
+	{
+		_data = data;
+	}
 
 		internal PayloadData(ushort code, string reason)
 		{

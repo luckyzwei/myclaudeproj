@@ -167,7 +167,7 @@ public class PopupFactoryOrder : UIBase
 	[IteratorStateMachine(typeof(_003CFocusOrderSlot_003Ed__32))]
 	private IEnumerator FocusOrderSlot()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateOrder()

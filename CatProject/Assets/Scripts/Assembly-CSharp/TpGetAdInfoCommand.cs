@@ -1,7 +1,7 @@
 public class TpGetAdInfoCommand : TpCommand<TpGetAdInfoParams, string>
 {
 	public TpGetAdInfoCommand(TpGetAdInfoParams cmdHandler)
-		: base((TpGetAdInfoParams)default(_00210))
+		: base(cmdHandler)
 	{
 	}
 

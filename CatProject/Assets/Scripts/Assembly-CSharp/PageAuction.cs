@@ -294,7 +294,7 @@ public class PageAuction : UIBase
 	[IteratorStateMachine(typeof(_003CStartGame_003Ed__55))]
 	private IEnumerator StartGame()
 	{
-		return null;
+		yield break;
 	}
 
 	private void SetManager()
@@ -312,7 +312,7 @@ public class PageAuction : UIBase
 	[IteratorStateMachine(typeof(_003CEndTrial2xCoroutine_003Ed__59))]
 	private IEnumerator EndTrial2xCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private void LoadMyChar()

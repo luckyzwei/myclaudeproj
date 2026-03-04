@@ -359,7 +359,7 @@ public class PluginSystem
 
 	public bool IsInitFacebook { get; private set; }
 
-	public bool InitAdmob => false;
+	public bool InitAdmob { get { return false; } }
 
 	public void Init()
 	{
@@ -415,13 +415,13 @@ public class PluginSystem
 	[IteratorStateMachine(typeof(_003CPostInviteFriend_003Ed__43))]
 	private IEnumerator PostInviteFriend(string user_id)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CGetFriendCount_003Ed__45))]
 	public IEnumerator GetFriendCount(Action callBack = null)
 	{
-		return null;
+		yield break;
 	}
 
 	private void InitTapjoyCallbackMgr()
@@ -435,7 +435,7 @@ public class PluginSystem
 	[IteratorStateMachine(typeof(_003CcoEndReview_003Ed__49))]
 	private IEnumerator coEndReview()
 	{
-		return null;
+		yield break;
 	}
 
 	public void StartReview()
@@ -445,13 +445,13 @@ public class PluginSystem
 	[IteratorStateMachine(typeof(_003CReviewInProgressBefore_003Ed__51))]
 	private IEnumerator ReviewInProgressBefore()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CReviewInProgressAfter_003Ed__52))]
 	private IEnumerator ReviewInProgressAfter()
 	{
-		return null;
+		yield break;
 	}
 
 	private void InitCallback()

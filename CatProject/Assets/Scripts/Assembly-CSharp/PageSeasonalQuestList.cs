@@ -97,7 +97,7 @@ public class PageSeasonalQuestList : FullScreenUI
 	[IteratorStateMachine(typeof(_003CFocusActiveItem_003Ed__9))]
 	private IEnumerator FocusActiveItem()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickMove()

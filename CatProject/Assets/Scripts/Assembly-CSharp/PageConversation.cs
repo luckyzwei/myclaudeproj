@@ -107,7 +107,7 @@ public class PageConversation : UIBase
 	[IteratorStateMachine(typeof(_003CStartConversation_003Ed__10))]
 	private IEnumerator StartConversation()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickNext()

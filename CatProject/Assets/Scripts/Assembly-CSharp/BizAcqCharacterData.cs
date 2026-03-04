@@ -27,6 +27,14 @@ public class BizAcqCharacterData
 
 	public BizAcqCharacterData(TeamType teamType, int ceoIdx, int teamIdx, int power, int maxHp, int skillIdx, int skillLevel)
 	{
+		TeamType = teamType;
+		CeoIdx = ceoIdx;
+		TeamIdx = teamIdx;
+		DealPower_Origin = power;
+		MaxHp_Origin = maxHp;
+		CurrentHp = maxHp;
+		SkillData = new BizAcqCharacterSkillData(0, 0);
+		StatusEffectList = new List<BizAcqCharacterStatusEffectData>();
 	}
 
 	public void UpdateCharacterData(int power, int maxHp, int skillLevel)

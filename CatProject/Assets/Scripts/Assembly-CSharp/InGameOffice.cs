@@ -122,9 +122,9 @@ public class InGameOffice : InGameMode
 
 	public Subject<bool> OnAllLoadComplete;
 
-	public List<BuffObjectComponent> BuffObjects => null;
+	public List<BuffObjectComponent> BuffObjects { get { return null; } }
 
-	public InGameOfficeStage Stage => null;
+	public InGameOfficeStage Stage { get { return null; } }
 
 	public BizAcqStage BizAcqStage { get; private set; }
 
@@ -229,7 +229,7 @@ public class InGameOffice : InGameMode
 	[IteratorStateMachine(typeof(_003CWaitAllWorkOff_Coroutine_003Ed__57))]
 	private IEnumerator WaitAllWorkOff_Coroutine(Action Cb)
 	{
-		return null;
+		yield break;
 	}
 
 	public void WorkOffEmployee()

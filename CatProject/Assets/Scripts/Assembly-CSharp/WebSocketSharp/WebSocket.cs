@@ -211,14 +211,9 @@ namespace WebSocketSharp
 
 		internal bool IgnoreExtensions
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _ignoreExtensions; }
+		set { _ignoreExtensions = value; }
+	}
 
 		public CompressionMethod Compression
 		{
@@ -244,25 +239,15 @@ namespace WebSocketSharp
 
 		public bool EmitOnPing
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _emitOnPing; }
+		set { _emitOnPing = value; }
+	}
 
 		public bool EnableRedirection
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _enableRedirection; }
+		set { _enableRedirection = value; }
+	}
 
 		public string Extensions => null;
 
@@ -283,14 +268,9 @@ namespace WebSocketSharp
 
 		public string Origin
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _origin; }
+		set { _origin = value; }
+	}
 
 		public string Protocol
 		{
@@ -373,16 +353,19 @@ namespace WebSocketSharp
 		}
 
 		internal WebSocket(HttpListenerWebSocketContext context, string protocol)
-		{
-		}
+	{
+		_context = context;
+	}
 
 		internal WebSocket(TcpListenerWebSocketContext context, string protocol)
-		{
-		}
+	{
+		_context = context;
+	}
 
 		public WebSocket(string url, params string[] protocols)
-		{
-		}
+	{
+		_protocols = protocols;
+	}
 
 		private void abort(string reason, Exception exception)
 		{

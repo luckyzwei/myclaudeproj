@@ -35,10 +35,21 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 
 	public FactoryBuildingData(int idx, int level, int product, DateTime opentime, DateTime batterytime)
 	{
+		Idx = idx;
+		Level = level;
+		MakeProduct = new ReactiveProperty<int>(product);
+		OpenEndTime = opentime;
+		EndBatteryTime = batterytime;
 	}
 
 	public void Create()
 	{
+		LevelProperty = new ReactiveProperty<int>();
+		OpenRemainTime = new ReactiveProperty<int>();
+		RemainBatteryTime = new ReactiveProperty<int>();
+		MakeProduct = new ReactiveProperty<int>();
+		IsLack = new ReactiveProperty<bool>();
+		IsFull = new ReactiveProperty<bool>();
 	}
 
 	public void UpdateProductionTime()
@@ -71,6 +82,8 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		FactoryBuildingData clone = (FactoryBuildingData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

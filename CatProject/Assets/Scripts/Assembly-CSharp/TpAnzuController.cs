@@ -156,6 +156,6 @@ public class TpAnzuController : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CRestoreColorAfterDelay_003Ed__24))]
 	private IEnumerator RestoreColorAfterDelay()
 	{
-		return null;
+		yield break;
 	}
 }

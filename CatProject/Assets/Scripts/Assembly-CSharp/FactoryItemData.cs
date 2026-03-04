@@ -11,14 +11,19 @@ public class FactoryItemData : IReadOnlyData, ICloneable
 
 	public FactoryItemData(int idx, int count)
 	{
+		Idx = idx;
+		Count = count;
 	}
 
 	public void Create()
 	{
+		CountProperty = new ReactiveProperty<int>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		FactoryItemData clone = (FactoryItemData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

@@ -167,7 +167,7 @@ public class ItemShopEndless : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CPlayUnlockAnim_003Ed__44))]
 	private IEnumerator PlayUnlockAnim()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickBuyBtn()

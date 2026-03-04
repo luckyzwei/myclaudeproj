@@ -52,8 +52,9 @@ namespace WebSocketSharp.Net
 		}
 
 		internal WebHeaderCollection(HttpHeaderType state, bool internallyUsed)
-		{
-		}
+	{
+		_state = state;
+	}
 
 		protected WebHeaderCollection(SerializationInfo serializationInfo, StreamingContext streamingContext)
 		{

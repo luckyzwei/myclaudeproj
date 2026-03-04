@@ -1,7 +1,7 @@
 public class TpGetCurrentSceneCommand : TpCommand<TpGetCurrentSceneParams, TpObject>
 {
 	public TpGetCurrentSceneCommand(TpGetCurrentSceneParams cmdParams)
-		: base((TpGetCurrentSceneParams)default(_00210))
+		: base(cmdParams)
 	{
 	}
 

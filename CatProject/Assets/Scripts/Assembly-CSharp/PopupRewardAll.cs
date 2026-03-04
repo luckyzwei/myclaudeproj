@@ -97,7 +97,7 @@ public class PopupRewardAll : UIBase
 	[IteratorStateMachine(typeof(_003CAnimateRewardSlot_003Ed__9))]
 	private IEnumerator AnimateRewardSlot()
 	{
-		return null;
+		yield break;
 	}
 
 	private void SetAllRewardSlot()

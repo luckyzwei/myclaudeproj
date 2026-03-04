@@ -138,6 +138,6 @@ public class ItemCommonManagerCard : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CPrefabActiveNextFrame_003Ed__23))]
 	private IEnumerator PrefabActiveNextFrame()
 	{
-		return null;
+		yield break;
 	}
 }

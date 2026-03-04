@@ -142,6 +142,6 @@ public class ItemAttendance : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CProcessRewardWithDelay_003Ed__22))]
 	private IEnumerator ProcessRewardWithDelay(RewardItemData rewardItemData)
 	{
-		return null;
+		yield break;
 	}
 }

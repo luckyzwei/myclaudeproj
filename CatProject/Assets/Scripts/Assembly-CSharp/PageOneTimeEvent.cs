@@ -27,13 +27,13 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 		[SerializeField]
 		private GameObject roof;
 
-		public int Idx => 0;
+		public int Idx { get { return 0; } }
 
-		public List<ItemOnetimeFloor> ItemOnetimeFloors => null;
+		public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return null; } }
 
-		public GameObject BodyR => null;
+		public GameObject BodyR { get { return null; } }
 
-		public GameObject Roof => null;
+		public GameObject Roof { get { return null; } }
 	}
 
 	[CompilerGenerated]
@@ -226,9 +226,9 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 
 	private bool IsOnSimpleMode;
 
-	public Animator CharactersAnimator => null;
+	public Animator CharactersAnimator { get { return null; } }
 
-	public Button ScreenTouch => null;
+	public Button ScreenTouch { get { return null; } }
 
 	public bool OnRewarding { get; set; }
 
@@ -287,7 +287,7 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 	[IteratorStateMachine(typeof(_003CRandomMessage_003Ed__68))]
 	private IEnumerator RandomMessage()
 	{
-		return null;
+		yield break;
 	}
 
 	private void ShowGuideArrow()

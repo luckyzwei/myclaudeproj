@@ -22,8 +22,9 @@ namespace WebSocketSharp
 		public string Message => null;
 
 		internal LogData(LogLevel level, StackFrame caller, string message)
-		{
-		}
+	{
+		_level = level;
+	}
 
 		public override string ToString()
 		{

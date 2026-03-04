@@ -212,7 +212,7 @@ public class RecycleScrollRect : ScrollRect
 
 	public int lineCount { get; private set; }
 
-	public int DIV => 0;
+	public int DIV { get { return 0; } }
 
 	protected override void Awake()
 	{
@@ -297,7 +297,7 @@ public class RecycleScrollRect : ScrollRect
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__52))]
 	private IEnumerator FocusToIndexCoroutine(Vector2 anchoredPosition)
 	{
-		return null;
+		yield break;
 	}
 
 	public void RemoveFirstItemWithAnimation(AnimParams animParams)
@@ -307,7 +307,7 @@ public class RecycleScrollRect : ScrollRect
 	[IteratorStateMachine(typeof(_003CRemoveFirstItemAnimation_003Ed__54))]
 	private IEnumerator RemoveFirstItemAnimation(AnimParams animParams)
 	{
-		return null;
+		yield break;
 	}
 
 	private Vector3 CalculateTargetPosition(GameObject slot, int slotIndex, bool isRemovingFirst)

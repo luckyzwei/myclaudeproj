@@ -12,7 +12,7 @@ public class InGameOpenSlotBonus : InGameFloatingUI
 	[SerializeField]
 	private Text textValue;
 
-	public Image GetIcon => null;
+	public Image GetIcon { get { return null; } }
 
 	public void Init(Vector2 pos)
 	{

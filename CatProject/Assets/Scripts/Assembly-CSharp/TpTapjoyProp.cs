@@ -32,7 +32,7 @@ public class TpTapjoyProp : MonoBehaviour
 
 	private int _reuseCount;
 
-	private int ReuseCount => 0;
+	private int ReuseCount { get { return 0; } }
 
 	public void Awake()
 	{

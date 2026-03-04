@@ -30,7 +30,7 @@ public class PopupMission : UIBase, ITabToggleGroup
 
 	public Action OnGoNaviHide;
 
-	public ItemMissionTab GetMissionTab => null;
+	public ItemMissionTab GetMissionTab { get { return null; } }
 
 	public void Init(Tab openTab = Tab.None)
 	{

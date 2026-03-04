@@ -10,10 +10,11 @@ public class CeoData : IClientData
 	{
 		get
 		{
-			return null;
+			return _CeoName;
 		}
 		set
 		{
+			_CeoName = value;
 		}
 	}
 
@@ -21,10 +22,11 @@ public class CeoData : IClientData
 	{
 		get
 		{
-			return null;
+			return _CompanyName;
 		}
 		set
 		{
+			_CompanyName = value;
 		}
 	}
 }

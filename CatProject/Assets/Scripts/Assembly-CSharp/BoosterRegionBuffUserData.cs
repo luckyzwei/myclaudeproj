@@ -24,11 +24,16 @@ public class BoosterRegionBuffUserData
 
 	public BoosterRegionBuffUserData(int boosterIdx, int boosterActiveRegionIdx)
 	{
+		BoosterIdx = boosterIdx;
+		BoosterActiveRegionIdx = boosterActiveRegionIdx;
 	}
 
 	public static BoosterRegionBuffUserData FromFlatBuffer(BoosterRegionBuffData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = (BoosterRegionBuffUserData)new BoosterRegionBuffUserData(0, 0).MemberwiseClone();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<BoosterRegionBuffUserData> dataList)

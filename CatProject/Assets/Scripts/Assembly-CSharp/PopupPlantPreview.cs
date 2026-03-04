@@ -81,6 +81,6 @@ public class PopupPlantPreview : UIBase
 	[IteratorStateMachine(typeof(_003CFocusOnTargetIndex_003Ed__4))]
 	private IEnumerator FocusOnTargetIndex(GameObject target)
 	{
-		return null;
+		yield break;
 	}
 }

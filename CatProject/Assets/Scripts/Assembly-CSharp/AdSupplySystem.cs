@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UniRx;
 using UnityEngine;
 
@@ -92,7 +93,7 @@ public class AdSupplySystem
 
 	public int ExpUpCompany { get; private set; }
 
-	public int AdSupplyBankSaveMaxCnt => 0;
+	public int AdSupplyBankSaveMaxCnt { get { return 0; } }
 
 	public void Init()
 	{
@@ -104,6 +105,12 @@ public class AdSupplySystem
 
 	public void Create()
 	{
+		AdSupplyProperty = new ReactiveProperty<Status>();
+		RemainTimeProperty = new ReactiveProperty<int>();
+		GemAdSupplyProperty = new ReactiveProperty<Status>();
+		GemRemainTimeProperty = new ReactiveProperty<int>();
+		NightSkipProperty = new ReactiveProperty<Status>();
+		ExpSupplyProperty = new ReactiveProperty<Status>();
 	}
 
 	private void ResetGemAdsCount()

@@ -44,8 +44,9 @@ namespace WebSocketSharp.Server
 		}
 
 		protected WebSocketServiceHost(string path, Logger log)
-		{
-		}
+	{
+		_path = path;
+	}
 
 		internal void Start()
 		{

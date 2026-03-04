@@ -177,7 +177,7 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private bool IsOnSimpleMode;
 
-	public Button ScreenTouch => null;
+	public Button ScreenTouch { get { return null; } }
 
 	public bool OnRewarding { get; set; }
 
@@ -252,7 +252,7 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 	[IteratorStateMachine(typeof(_003CRandomMessage_003Ed__60))]
 	private IEnumerator RandomMessage()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickUseCurrency()

@@ -4,7 +4,7 @@ public class TpInputModuleException : TpAutomationException
 	{
 	}
 
-	public TpInputModuleException(string message)
+	public TpInputModuleException(string message) : base(message)
 	{
 	}
 }

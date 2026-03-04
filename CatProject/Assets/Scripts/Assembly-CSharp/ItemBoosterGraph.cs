@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -111,7 +113,7 @@ public class ItemBoosterGraph : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CAnimateGraph_003Ed__16))]
 	private IEnumerator AnimateGraph()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateLineGraph()

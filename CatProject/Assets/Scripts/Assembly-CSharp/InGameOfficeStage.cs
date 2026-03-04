@@ -439,7 +439,7 @@ public class InGameOfficeStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSet_003Ed__52))]
 	public IEnumerator Set(Action compCb)
 	{
-		return null;
+		yield break;
 	}
 
 	private void InitRooms(List<StageOfficeData> roomList)
@@ -613,7 +613,7 @@ public class InGameOfficeStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CUpdateSpecialTheme_003Ed__92))]
 	public IEnumerator UpdateSpecialTheme()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateBoosterOfficeEffect()
@@ -635,7 +635,7 @@ public class InGameOfficeStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CFocusCeoCoroutine_003Ed__97))]
 	private IEnumerator FocusCeoCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnDestroy()

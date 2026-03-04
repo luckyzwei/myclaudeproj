@@ -297,13 +297,13 @@ public class TutorialSystem
 	[IteratorStateMachine(typeof(_003CWaitAndStartTutorialCoroutine_003Ed__63))]
 	private IEnumerator WaitAndStartTutorialCoroutine(int _key, GameType gameType, bool initCallback = false)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWait_003Ed__64))]
 	private IEnumerator Wait()
 	{
-		return null;
+		yield break;
 	}
 
 	public void TutoClear(int _key)

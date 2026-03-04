@@ -239,13 +239,13 @@ public class PageAuctionPass : UIBase
 	[IteratorStateMachine(typeof(_003CFirstShowPlayCoroutine_003Ed__31))]
 	private IEnumerator FirstShowPlayCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusCurrentItemCoroutine_003Ed__32))]
 	private IEnumerator FocusCurrentItemCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	public Transform GetStaminaTransform()

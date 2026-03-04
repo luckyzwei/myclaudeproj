@@ -168,7 +168,7 @@ public class InGameSystem
 	[IteratorStateMachine(typeof(_003CGotoOutGame_Coroutin_003Ed__36))]
 	private IEnumerator GotoOutGame_Coroutin(GameType gameType, Action Cb = null)
 	{
-		return null;
+		yield break;
 	}
 
 	public void CheatGoToGameStage(int stageIdx)

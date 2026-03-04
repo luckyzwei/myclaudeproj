@@ -149,7 +149,7 @@ public class PopupListRecontract : UIBase
 	[IteratorStateMachine(typeof(_003CFocusOffsetSlot_003Ed__9))]
 	private IEnumerator FocusOffsetSlot()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnScrolled(Vector2 value)
@@ -159,6 +159,6 @@ public class PopupListRecontract : UIBase
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__11))]
 	private IEnumerator CheckInput()
 	{
-		return null;
+		yield break;
 	}
 }

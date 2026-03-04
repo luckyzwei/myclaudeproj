@@ -166,13 +166,13 @@ public class UserDataSystem
 
 	public DataState DataState { get; private set; }
 
-	public bool IsMainState => false;
+	public bool IsMainState { get { return DataState == DataState.Main; } }
 
 	public int ABTestValue { get; set; }
 
 	public ManagerKeyAddData ManagerKeyAddData { get; private set; }
 
-	public UserDataEvent CurEventData => null;
+	public UserDataEvent CurEventData { get { return eventData; } }
 
 	public void Update()
 	{
@@ -180,16 +180,45 @@ public class UserDataSystem
 
 	public string GetSaveFilePath()
 	{
-		return null;
+		return UnityEngine.Application.persistentDataPath + "/" + dataFileName;
 	}
 
 	public string GetBackUpSaveFilePath(string backupformat)
 	{
-		return null;
+		return UnityEngine.Application.persistentDataPath + "/" + string.Format(backupformat, System.DateTime.Now.ToString("yyyyMMdd"));
 	}
 
 	public void InitDataState()
 	{
+		HUDMoney = new ReactiveProperty<BigInteger>();
+		HUDCash = new ReactiveProperty<int>();
+		HUDPower = new ReactiveProperty<int>();
+		HUDPermission = new ReactiveProperty<int>();
+		Cash = new ReactiveProperty<int>();
+		Permission = new ReactiveProperty<int>();
+		Level = new ReactiveProperty<int>();
+		BuyInappIds = new ReactiveCollection<string>();
+		GameNotifications = new ReactiveCollection<string>();
+		ItemData = new ReactiveCollection<ItemData>();
+		CurrencyDataList = new ReactiveCollection<CurrencyUserData>();
+		PlantData = new ReactiveCollection<PlantData>();
+		SuperStaffData = new ReactiveCollection<SuperStaffCardData>();
+		ManagerData = new ReactiveCollection<ManagerCardData>();
+		Tutorial = new List<string>();
+		RecordCount = new Dictionary<string, int>();
+		RecordValue = new Dictionary<string, long>();
+		RewardSetDelegateMap = new Dictionary<int, RewardSetDelegate>();
+		RandomSeeds = new Queue<int>();
+		CouponList = new List<string>();
+		CatstaData = new List<CatstaData>();
+		CatstaEventData = new List<CatstaEventData>();
+		SubMissionSaveDataMap = new Dictionary<int, SubMissionSaveData>();
+		BuyParkingLotData = new List<BuyParkingLotData>();
+		BoosterBuffDataList = new List<BoosterBuffUserData>();
+		OneTimeEventHistoryData = new List<OneTimeEventHistoryData>();
+		AttendanceEventList = new List<AttendanceEventData>();
+		ContentsMissionDataMap = new Dictionary<E_ContentsMissionType, ContentsMissionUserData>();
+		DataState = DataState.Main;
 	}
 
 	public void Load()
@@ -218,6 +247,7 @@ public class UserDataSystem
 
 	public void ChangeDataMode(DataState state)
 	{
+		DataState = state;
 	}
 
 	private void SnycCollectionToDB<T, U>(IList<T> db, IEnumerable<U> collector) where T : class
@@ -230,32 +260,51 @@ public class UserDataSystem
 
 	public void SetRecordValue(Config.RecordKeys key, long value, params object[] objs)
 	{
+		if (RecordValue == null) RecordValue = new Dictionary<string, long>();
+		string k = key.ToString();
+		if (objs != null && objs.Length > 0) k += "_" + string.Join("_", objs);
+		RecordValue[k] = value;
 	}
 
 	public long GetRecordValue(Config.RecordKeys key, params object[] objs)
 	{
-		return 0L;
+		if (RecordValue == null) return 0L;
+		string k = key.ToString();
+		if (objs != null && objs.Length > 0) k += "_" + string.Join("_", objs);
+		long v;
+		return RecordValue.TryGetValue(k, out v) ? v : 0L;
 	}
 
 	public void ResetRecordCount(Config.RecordCountKeys idx, params object[] objs)
 	{
+		SetRecordCount(idx, 0, objs);
 	}
 
 	public void AddRecordCount(Config.RecordCountKeys idx, int count, params object[] objs)
 	{
+		SetRecordCount(idx, GetRecordCount(idx, objs) + count, objs);
 	}
 
 	public void SubtractRecordCount(Config.RecordCountKeys idx, int count, params object[] objs)
 	{
+		SetRecordCount(idx, GetRecordCount(idx, objs) - count, objs);
 	}
 
 	public int GetRecordCount(Config.RecordCountKeys idx, params object[] objs)
 	{
-		return 0;
+		if (RecordCount == null) return 0;
+		string k = idx.ToString();
+		if (objs != null && objs.Length > 0) k += "_" + string.Join("_", objs);
+		int v;
+		return RecordCount.TryGetValue(k, out v) ? v : 0;
 	}
 
 	public void SetRecordCount(Config.RecordCountKeys idx, int count, params object[] objs)
 	{
+		if (RecordCount == null) RecordCount = new Dictionary<string, int>();
+		string k = idx.ToString();
+		if (objs != null && objs.Length > 0) k += "_" + string.Join("_", objs);
+		RecordCount[k] = count;
 	}
 
 	public void SyncHUDCurrency(int currencyID = -1)
@@ -293,14 +342,30 @@ public class UserDataSystem
 
 	public void AddUpdateRewardNotify(in int rewardType, in RewardSetDelegate callBack)
 	{
+		if (RewardSetDelegateMap == null) RewardSetDelegateMap = new Dictionary<int, RewardSetDelegate>();
+		if (RewardSetDelegateMap.ContainsKey(rewardType))
+			RewardSetDelegateMap[rewardType] += callBack;
+		else
+			RewardSetDelegateMap[rewardType] = callBack;
 	}
 
 	public void RemoveUpdateRewardNotify(in int rewardType, in RewardSetDelegate callBack)
 	{
+		if (RewardSetDelegateMap == null) return;
+		if (RewardSetDelegateMap.ContainsKey(rewardType))
+		{
+			RewardSetDelegateMap[rewardType] -= callBack;
+			if (RewardSetDelegateMap[rewardType] == null)
+				RewardSetDelegateMap.Remove(rewardType);
+		}
 	}
 
 	private void NotifySetReward(in int rewardType, in int rewardIdx, in BigInteger rewardCnt, in BigInteger resultCnt)
 	{
+		if (RewardSetDelegateMap == null) return;
+		RewardSetDelegate del;
+		if (RewardSetDelegateMap.TryGetValue(rewardType, out del))
+			del?.Invoke(rewardType, rewardIdx, rewardCnt, resultCnt);
 	}
 
 	private void NotifySetItem(int itemIdx)

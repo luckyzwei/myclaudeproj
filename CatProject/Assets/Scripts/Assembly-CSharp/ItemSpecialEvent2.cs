@@ -22,7 +22,7 @@ public class ItemSpecialEvent2 : MonoBehaviour
 
 	private int curCnt;
 
-	public int DecoIdx => 0;
+	public int DecoIdx { get { return 0; } }
 
 	public void Init(int idx)
 	{

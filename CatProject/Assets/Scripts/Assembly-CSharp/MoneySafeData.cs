@@ -13,6 +13,8 @@ public class MoneySafeData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		MoneySafeData clone = (MoneySafeData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

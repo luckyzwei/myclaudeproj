@@ -13,7 +13,7 @@ public class BottomComponent : MonoBehaviour
 
 	private bool lockState;
 
-	public bool LockState => false;
+	public bool LockState { get { return false; } }
 
 	public void Set(bool _lockState)
 	{

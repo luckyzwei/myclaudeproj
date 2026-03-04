@@ -65,14 +65,24 @@ public class BuffSystem
 
 		public BuffInfo(int buffIdx, BuffType buffType, BuffTarget target, int tidx, float value, bool infinity, DateTime endTime)
 		{
+			BuffIdx = buffIdx;
+			BuffType = buffType;
+			TargetType = target;
+			TargetIdx = tidx;
+			Value = value;
+			Infinity = infinity;
+			EndTime = endTime;
+			RemainTime = new ReactiveProperty<int>();
 		}
 
 		public void SetValue(float value)
 		{
+			Value = value;
 		}
 
 		public void SetEndTime(DateTime value)
 		{
+			EndTime = value;
 		}
 	}
 
@@ -80,10 +90,12 @@ public class BuffSystem
 
 	private CompositeDisposable disposables;
 
-	public IReactiveCollection<BuffInfo> BuffList => null;
+	public IReactiveCollection<BuffInfo> BuffList { get { return buffInfos; } }
 
 	public void Create()
 	{
+		buffInfos = new ReactiveCollection<BuffInfo>();
+		disposables = new CompositeDisposable();
 	}
 
 	public void UpdateBoostBuff()

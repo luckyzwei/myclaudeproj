@@ -118,11 +118,11 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	private CompositeDisposable disposables;
 
-	public Image OneTimeCurrencyIcon => null;
+	public Image OneTimeCurrencyIcon { get { return null; } }
 
-	public int CurCurrency => 0;
+	public int CurCurrency { get { return 0; } }
 
-	public bool IsActive => false;
+	public bool IsActive { get { return false; } }
 
 	private void Awake()
 	{
@@ -167,7 +167,7 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitHUD_003Ed__33))]
 	private IEnumerator WaitHUD(Action<Vector3> waitCb)
 	{
-		return null;
+		yield break;
 	}
 
 	public void ShowOneTimeGetEffectHUD(Vector3 startPos)

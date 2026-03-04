@@ -11,6 +11,9 @@ public class CeoCostumeData
 
 	public CeoCostumeData(int costumeIdx, bool isOwned, bool showRedDot)
 	{
+		CostumeIdx = costumeIdx;
+		IsOwned = isOwned;
+		ShowRedDot = showRedDot;
 	}
 
 	public void SetOwned(bool isOwned)
@@ -23,7 +26,10 @@ public class CeoCostumeData
 
 	public static CeoCostumeData FromFlatBuffer(Treeplla.Data.CeoCostumeData? fbData)
 	{
-		return null;
+		if (!fbData.HasValue) return null;
+		var d = fbData.Value;
+		var result = (CeoCostumeData)new CeoCostumeData(0, false, false).MemberwiseClone();
+		return result;
 	}
 
 	public Offset<Treeplla.Data.CeoCostumeData> ToFlatBuffer(FlatBufferBuilder builder)

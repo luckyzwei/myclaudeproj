@@ -27,12 +27,14 @@ namespace WebSocketSharp.Net
 		public string Stale => null;
 
 		private AuthenticationChallenge(AuthenticationSchemes scheme, NameValueCollection parameters)
-		{
-		}
+	{
+		_scheme = scheme;
+	}
 
 		internal AuthenticationChallenge(AuthenticationSchemes scheme, string realm)
-		{
-		}
+	{
+		_scheme = scheme;
+	}
 
 		internal static AuthenticationChallenge CreateBasicChallenge(string realm)
 		{

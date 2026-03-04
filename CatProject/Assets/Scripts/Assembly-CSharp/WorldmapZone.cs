@@ -31,9 +31,9 @@ public class WorldmapZone : MonoBehaviour
 
 	public int Idx { get; private set; }
 
-	public InGameZoneUI ZoneUI => null;
+	public InGameZoneUI ZoneUI { get { return null; } }
 
-	public Transform ZoneTrans => null;
+	public Transform ZoneTrans { get { return null; } }
 
 	public void Init(int zoneidx, bool notopen = false)
 	{

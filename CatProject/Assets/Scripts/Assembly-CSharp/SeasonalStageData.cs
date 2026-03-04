@@ -97,7 +97,7 @@ public class SeasonalStageData
 
 	public DateTime GameStartDateTime { get; private set; }
 
-	public bool IsFirstEnter => false;
+	public bool IsFirstEnter { get { return false; } }
 
 	public SeasonalStageData()
 	{
@@ -105,6 +105,7 @@ public class SeasonalStageData
 
 	public SeasonalStageData(int seasonInfoIdx)
 	{
+		SeasonInfoIdx = seasonInfoIdx;
 	}
 
 	public void UpdateData(Treeplla.Data.SeasonalStageData stageFBData)

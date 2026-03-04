@@ -45,7 +45,7 @@ public class ItemManagerCardMin : MonoBehaviour
 
 	private Action onClickCb;
 
-	public GameObject ManagerSelect => null;
+	public GameObject ManagerSelect { get { return null; } }
 
 	private void Awake()
 	{

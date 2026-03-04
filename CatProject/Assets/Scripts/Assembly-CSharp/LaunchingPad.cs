@@ -152,12 +152,12 @@ public class LaunchingPad : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitDelay_003Ed__12))]
 	private IEnumerator WaitDelay()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitInit_003Ed__13))]
 	private IEnumerator WaitInit()
 	{
-		return null;
+		yield break;
 	}
 }

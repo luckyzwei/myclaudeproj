@@ -35,9 +35,9 @@ public class RouletteSystem
 
 	public int roulette_confirmed_reward { get; private set; }
 
-	public int FinalRouletteNeedGem => 0;
+	public int FinalRouletteNeedGem { get { return 0; } }
 
-	public int FinalLuckyDrawCnt => 0;
+	public int FinalLuckyDrawCnt { get { return 0; } }
 
 	public void Init()
 	{

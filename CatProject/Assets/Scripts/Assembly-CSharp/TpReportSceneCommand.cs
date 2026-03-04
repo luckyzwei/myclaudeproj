@@ -1,7 +1,7 @@
 public class TpReportSceneCommand : TpCommand<TpReportSceneParams, string>
 {
 	public TpReportSceneCommand(TpReportSceneParams cmdParams)
-		: base((TpReportSceneParams)default(_00210))
+		: base(cmdParams)
 	{
 	}
 

@@ -1,7 +1,7 @@
 public class TpIsInteractableCommand : TpCommand<TpIsInteractableParams, bool>
 {
 	public TpIsInteractableCommand(TpIsInteractableParams cmdParams)
-		: base((TpIsInteractableParams)default(_00210))
+		: base(cmdParams)
 	{
 	}
 

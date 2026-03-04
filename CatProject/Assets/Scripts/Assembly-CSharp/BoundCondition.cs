@@ -12,5 +12,7 @@ public class BoundCondition
 
 	public BoundCondition(string selector, BoundType type)
 	{
+		Selector = selector;
+		Type = type;
 	}
 }

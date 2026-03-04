@@ -123,7 +123,7 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 	[IteratorStateMachine(typeof(_003CStart_003Ed__20))]
 	private IEnumerator Start()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnEnable()

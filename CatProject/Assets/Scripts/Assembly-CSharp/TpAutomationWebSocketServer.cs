@@ -21,10 +21,13 @@ public class TpAutomationWebSocketServer
 
 	public Subject<TpAutomationWebSocketBehaviourErrorArgs> OnErrorStream;
 
-	public bool IsAlive => false;
+	public bool IsAlive { get { return false; } }
 
 	public TpAutomationWebSocketServer(string host, int port, string path)
 	{
+		this.host = host;
+		this.port = port;
+		this.path = path;
 	}
 
 	public void Listen()

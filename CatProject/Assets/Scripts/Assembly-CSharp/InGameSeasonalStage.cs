@@ -183,7 +183,7 @@ public class InGameSeasonalStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSet_003Ed__25))]
 	public IEnumerator Set(InGameSeasonal inGameSeasonalMode)
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnDestroy()

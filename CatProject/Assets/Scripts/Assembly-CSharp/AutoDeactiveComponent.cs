@@ -85,6 +85,6 @@ public class AutoDeactiveComponent : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CAutoDeactive_003Ed__6))]
 	private IEnumerator AutoDeactive()
 	{
-		return null;
+		yield break;
 	}
 }

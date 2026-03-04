@@ -31,7 +31,10 @@ public class MiniGameDigTreasureHuntUserData
 
 	public static MiniGameDigTreasureHuntUserData FromFlatBuffer(DigTreasureHuntData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = new MiniGameDigTreasureHuntUserData();
+		return result;
 	}
 
 	public static Offset<DigTreasureHuntData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameDigTreasureHuntUserData userData)

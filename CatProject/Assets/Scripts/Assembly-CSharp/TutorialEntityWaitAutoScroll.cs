@@ -89,6 +89,6 @@ public class TutorialEntityWaitAutoScroll : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitPopup_003Ed__8))]
 	private IEnumerator WaitPopup()
 	{
-		return null;
+		yield break;
 	}
 }

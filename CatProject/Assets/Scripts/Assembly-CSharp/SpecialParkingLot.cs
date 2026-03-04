@@ -9,7 +9,7 @@ public class SpecialParkingLot : MonoBehaviour
 
 	private GameObject CarObj;
 
-	public GameObject GetLockObj => null;
+	public GameObject GetLockObj { get { return null; } }
 
 	public int Idx { get; private set; }
 

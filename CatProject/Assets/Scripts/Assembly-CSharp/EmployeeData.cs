@@ -22,11 +22,15 @@ public class EmployeeData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		CriticalExpValue = new ReactiveProperty<int>();
+		MoodStatus = new ReactiveProperty<EmployeeMoodSystem.Mood>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		EmployeeData clone = (EmployeeData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 
 	public string GetNameKey()

@@ -125,7 +125,7 @@ public class PopupBuildFast : UIBase
 	[IteratorStateMachine(typeof(_003CUpdateTimer_003Ed__20))]
 	private IEnumerator UpdateTimer()
 	{
-		return null;
+		yield break;
 	}
 
 	public void UpdateRemainTime(int remainTimeSec)

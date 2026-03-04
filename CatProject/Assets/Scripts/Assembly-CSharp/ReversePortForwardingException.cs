@@ -6,11 +6,11 @@ public class ReversePortForwardingException : TpAutomationException
 	{
 	}
 
-	public ReversePortForwardingException(string message)
+	public ReversePortForwardingException(string message) : base(message)
 	{
 	}
 
-	public ReversePortForwardingException(string message, Exception inner)
+	public ReversePortForwardingException(string message, Exception inner) : base(message, inner)
 	{
 	}
 }

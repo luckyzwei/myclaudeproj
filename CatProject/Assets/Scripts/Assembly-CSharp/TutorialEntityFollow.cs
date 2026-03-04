@@ -90,7 +90,7 @@ public class TutorialEntityFollow : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitVip_003Ed__9))]
 	private IEnumerator WaitVip()
 	{
-		return null;
+		yield break;
 	}
 
 	private void Update()

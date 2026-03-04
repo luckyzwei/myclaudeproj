@@ -159,7 +159,7 @@ public class LoadingBasic : Loading
 	[IteratorStateMachine(typeof(_003CWaitStageLoad_003Ed__31))]
 	private IEnumerator WaitStageLoad(Action action)
 	{
-		return null;
+		yield break;
 	}
 
 	private bool CheckShowLoadingAds()

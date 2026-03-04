@@ -128,7 +128,7 @@ public class InGameWorldmap : OutGameMode
 	[IteratorStateMachine(typeof(_003CDelayLoadEnd_003Ed__3))]
 	private IEnumerator DelayLoadEnd()
 	{
-		return null;
+		yield break;
 	}
 
 	public void AddRegionWorld(int region_idx, Action Cb)
@@ -150,7 +150,7 @@ public class InGameWorldmap : OutGameMode
 	[IteratorStateMachine(typeof(_003CWaitRegion_003Ed__8))]
 	private IEnumerator WaitRegion(Action waitCb)
 	{
-		return null;
+		yield break;
 	}
 
 	protected override void LoadUI()

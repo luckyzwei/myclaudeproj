@@ -12,8 +12,12 @@ public class MiniGameShopUserData
 
 	public List<ExchangeShopUserData> ExchangeItemDataList { get; private set; }
 
+	private MiniGameShopUserData() { }
+
 	public MiniGameShopUserData(int scheduleIdx, int eventIdx)
 	{
+		ScheduleIdx = scheduleIdx;
+		EventIdx = eventIdx;
 	}
 
 	public static MiniGameShopUserData MakeDefaultData(int scheduleIdx, int eventIdx)
@@ -23,7 +27,8 @@ public class MiniGameShopUserData
 
 	public static MiniGameShopUserData FromFlatBuffer(MiniGameShopData data)
 	{
-		return null;
+		var result = new MiniGameShopUserData();
+		return result;
 	}
 
 	public static Offset<MiniGameShopData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameShopUserData userData)

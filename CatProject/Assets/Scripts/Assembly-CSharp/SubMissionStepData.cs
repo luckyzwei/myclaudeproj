@@ -20,7 +20,7 @@ public class SubMissionStepData
 
 	public IDisposable Disposable_CompleteCondition;
 
-	public bool bReadyToComplete => false;
+	public bool bReadyToComplete { get { return false; } }
 
 	~SubMissionStepData()
 	{

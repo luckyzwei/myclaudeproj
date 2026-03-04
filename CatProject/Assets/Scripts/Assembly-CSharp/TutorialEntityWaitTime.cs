@@ -71,6 +71,6 @@ public class TutorialEntityWaitTime : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__2))]
 	private IEnumerator WaitTime()
 	{
-		return null;
+		yield break;
 	}
 }

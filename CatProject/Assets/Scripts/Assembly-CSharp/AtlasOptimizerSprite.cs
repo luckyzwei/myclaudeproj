@@ -88,7 +88,7 @@ public class AtlasOptimizerSprite : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSetSprite_003Ed__6))]
 	private IEnumerator SetSprite()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnDestroy()

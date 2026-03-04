@@ -46,14 +46,9 @@ namespace WebSocketSharp.Net
 
 		internal bool ReuseAddress
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _reuseAddress; }
+		set { _reuseAddress = value; }
+	}
 
 		public AuthenticationSchemes AuthenticationSchemes
 		{
@@ -90,14 +85,9 @@ namespace WebSocketSharp.Net
 
 		public bool IgnoreWriteExceptions
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _ignoreWriteExceptions; }
+		set { _ignoreWriteExceptions = value; }
+	}
 
 		public bool IsListening => false;
 
@@ -109,14 +99,9 @@ namespace WebSocketSharp.Net
 
 		public string Realm
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _realm; }
+		set { _realm = value; }
+	}
 
 		public ServerSslConfiguration SslConfiguration => null;
 

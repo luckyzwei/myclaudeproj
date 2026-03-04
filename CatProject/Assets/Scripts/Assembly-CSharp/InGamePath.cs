@@ -11,7 +11,7 @@ public class InGamePath : MonoBehaviour
 
 	private bool slot;
 
-	public float TotalDuration => 0f;
+	public float TotalDuration { get { return 0f; } }
 
 	public void SetPath(PathCreator path)
 	{

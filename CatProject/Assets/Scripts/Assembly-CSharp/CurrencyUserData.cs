@@ -15,11 +15,14 @@ public class CurrencyUserData
 
 	public CurrencyUserData(Config.CurrencyID currencyId, BigInteger value)
 	{
+		CurrencyId = currencyId;
+		Value = value;
 	}
 
 	public static CurrencyUserData FromFlatBuffer(CurrencyData data)
 	{
-		return null;
+		var result = new CurrencyUserData();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<CurrencyUserData> dataList)

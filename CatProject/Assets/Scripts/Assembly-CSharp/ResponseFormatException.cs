@@ -6,7 +6,7 @@ public class ResponseFormatException : TpAutomationException
 	{
 	}
 
-	public ResponseFormatException(Type t, string data)
+	public ResponseFormatException(Type t, string data) : base($"Type: {t}, Data: {data}")
 	{
 	}
 }

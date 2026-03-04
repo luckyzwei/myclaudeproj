@@ -104,6 +104,6 @@ public class FBWindowsLoginManager : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CLoadPictureFromUrl_003Ed__10))]
 	private IEnumerator LoadPictureFromUrl(string url, RawImage itemImage)
 	{
-		return null;
+		yield break;
 	}
 }

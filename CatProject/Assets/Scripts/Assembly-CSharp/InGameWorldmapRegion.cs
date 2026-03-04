@@ -177,7 +177,7 @@ public class InGameWorldmapRegion : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitArrowUI_003Ed__19))]
 	private IEnumerator WaitArrowUI(Action Cb)
 	{
-		return null;
+		yield break;
 	}
 
 	public void WaitInfoUI(Action Cb)
@@ -187,7 +187,7 @@ public class InGameWorldmapRegion : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitUI_003Ed__21))]
 	private IEnumerator WaitUI(Action Cb)
 	{
-		return null;
+		yield break;
 	}
 
 	private void LoadArrow(Action loadCb = null)

@@ -1,7 +1,7 @@
 public class TpGetFirebaseIDCommand : TpCommand<TpGetFirebaseIDParams, string>
 {
 	public TpGetFirebaseIDCommand(TpGetFirebaseIDParams cmdHandler)
-		: base((TpGetFirebaseIDParams)default(_00210))
+		: base(cmdHandler)
 	{
 	}
 

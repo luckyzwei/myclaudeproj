@@ -111,7 +111,7 @@ public class InGameFloatingUI : MonoBehaviour, IFloatingUI
 	[IteratorStateMachine(typeof(_003CWaitOneFrame_003Ed__14))]
 	private IEnumerator WaitOneFrame(Action Callback)
 	{
-		return null;
+		yield break;
 	}
 
 	public virtual GameType GetGameType()

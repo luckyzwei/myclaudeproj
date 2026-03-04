@@ -1,7 +1,7 @@
 public class TpStopStatsCommand : TpCommand<TpStopStatsParams, string>
 {
 	public TpStopStatsCommand(TpStopStatsParams commandParams)
-		: base((TpStopStatsParams)default(_00210))
+		: base(commandParams)
 	{
 	}
 

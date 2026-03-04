@@ -20,6 +20,7 @@ public class SingleMissionUserData
 
 	public SingleMissionUserData(SingleMissionBase mission)
 	{
+		MissionIdx = mission != null ? mission.MissionIdx : 0;
 	}
 
 	public void CopyFrom(SingleMissionBase source)
@@ -28,7 +29,8 @@ public class SingleMissionUserData
 
 	public static SingleMissionUserData FromFlatBuffer(SingleMissionData data)
 	{
-		return null;
+		var result = new SingleMissionUserData();
+		return result;
 	}
 
 	public static Offset<SingleMissionData> ToFlatBuffer(SingleMissionUserData source, FlatBufferBuilder builder)

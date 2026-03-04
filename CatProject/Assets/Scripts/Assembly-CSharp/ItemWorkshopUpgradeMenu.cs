@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using UniRx;
 using UnityEngine;
@@ -162,6 +163,6 @@ public class ItemWorkshopUpgradeMenu : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CUpdateUpgradeTime_003Ed__30))]
 	private IEnumerator UpdateUpgradeTime()
 	{
-		return null;
+		yield break;
 	}
 }

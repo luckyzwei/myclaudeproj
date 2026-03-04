@@ -6,8 +6,9 @@ public class TpBaseFindObjectsCommand<T> : TpCommand<BaseGameFindObjectParams, T
 	protected readonly BaseGameFindObjectParams FindObjectsParams;
 
 	protected TpBaseFindObjectsCommand(BaseGameFindObjectParams cmdParams)
-		: base((BaseGameFindObjectParams)default(T))
+		: base(cmdParams)
 	{
+		FindObjectsParams = cmdParams;
 	}
 
 	public override T Execute()

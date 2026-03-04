@@ -8,7 +8,7 @@ public class TestSlot : MonoBehaviour
 
 	private int index;
 
-	public int Index => 0;
+	public int Index { get { return 0; } }
 
 	public void Set(int _value, int _index)
 	{

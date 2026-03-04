@@ -9,18 +9,21 @@ public class BizAcqTeamData
 
 	public TeamType TeamType { get; private set; }
 
-	public IReadOnlyList<BizAcqCharacterData> Characters => null;
+	public IReadOnlyList<BizAcqCharacterData> Characters { get { return null; } }
 
 	public int CurrentIndex { get; private set; }
 
-	public BizAcqCharacterData CurrentCharacter => null;
+	public BizAcqCharacterData CurrentCharacter { get { return null; } }
 
 	public BizAcqTeamData(TeamType teamType)
 	{
+		TeamType = teamType;
 	}
 
 	public BizAcqTeamData(TeamType teamType, List<BizAcqCharacterData> characters)
 	{
+		TeamType = teamType;
+		this.characters = characters;
 	}
 
 	public bool TryAdd(BizAcqCharacterData character)

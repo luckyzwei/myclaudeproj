@@ -135,7 +135,7 @@ public class PopupOneTimeEventOpen : UIBase
 	[IteratorStateMachine(typeof(_003CShowOneTimeHUDEffect_003Ed__20))]
 	private IEnumerator ShowOneTimeHUDEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	public void KillProcess()

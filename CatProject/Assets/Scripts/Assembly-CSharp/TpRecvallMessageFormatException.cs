@@ -4,7 +4,7 @@ public class TpRecvallMessageFormatException : TpRecvallException
 	{
 	}
 
-	public TpRecvallMessageFormatException(string message)
+	public TpRecvallMessageFormatException(string message) : base(message)
 	{
 	}
 }

@@ -131,7 +131,7 @@ public class PageCompanyLevelUp : UIBase
 	[IteratorStateMachine(typeof(_003CPlayLevelUpSequence_003Ed__19))]
 	private IEnumerator PlayLevelUpSequence()
 	{
-		return null;
+		yield break;
 	}
 
 	public Vector3 GetLevelPos()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
@@ -85,6 +86,6 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 	[IteratorStateMachine(typeof(_003CSetAndWaitTime_003Ed__6))]
 	private IEnumerator SetAndWaitTime()
 	{
-		return null;
+		yield break;
 	}
 }

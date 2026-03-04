@@ -198,7 +198,7 @@ public class PopupInvest : UIBase
 	[IteratorStateMachine(typeof(_003CWaitEndFrameCallback_003Ed__41))]
 	private IEnumerator WaitEndFrameCallback(Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnDestroy()

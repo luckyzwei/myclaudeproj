@@ -147,7 +147,7 @@ public class SquareRouletteComponent : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSpinRoulette_003Ed__28))]
 	private IEnumerator SpinRoulette()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnSpinComplete()

@@ -29,15 +29,15 @@ public class UserDataMain : IUserDataMode
 
 	public int ActiveRegion { get; set; }
 
-	public StageData StageData => null;
+	public StageData StageData { get { return null; } }
 
-	public RegionData RegionData => null;
+	public RegionData RegionData { get { return null; } }
 
 	public DateTime CompanyRefreshTime { get; set; }
 
-	public int MaxRegion => 0;
+	public int MaxRegion { get { return 0; } }
 
-	public RegionData MaxRegionData => null;
+	public RegionData MaxRegionData { get { return null; } }
 
 	public InGameSeasonalData SeasonalData { get; set; }
 }

@@ -67,6 +67,6 @@ public class TutorialEntityWaitNothing : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWait_003Ed__1))]
 	private IEnumerator Wait()
 	{
-		return null;
+		yield break;
 	}
 }

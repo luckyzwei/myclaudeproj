@@ -73,6 +73,6 @@ public class TutorialEntityDefineWait : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__2))]
 	private IEnumerator WaitTime(float time)
 	{
-		return null;
+		yield break;
 	}
 }

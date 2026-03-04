@@ -4,7 +4,7 @@ public class PropertyNotFoundException : TpAutomationException
 	{
 	}
 
-	public PropertyNotFoundException(string message)
+	public PropertyNotFoundException(string message) : base(message)
 	{
 	}
 }

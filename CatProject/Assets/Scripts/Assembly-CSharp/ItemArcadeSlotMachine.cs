@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -301,7 +302,7 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	public bool bPlayingSlotMachine { get; private set; }
 
-	public Transform GetPlaySlotMachineTextTr => null;
+	public Transform GetPlaySlotMachineTextTr { get { return null; } }
 
 	private void Awake()
 	{
@@ -440,13 +441,13 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitForAnimation_003Ed__103))]
 	private IEnumerator WaitForAnimation(Animator anim, string stateName)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003COnAnimationComplete_003Ed__104))]
 	private IEnumerator OnAnimationComplete()
 	{
-		return null;
+		yield break;
 	}
 
 	private void ShowRewardGoodsEffect(Dictionary<int, BigInteger> rewards)

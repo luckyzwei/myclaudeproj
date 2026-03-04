@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 using Treeplla;
 using UniRx;
 using UnityEngine;
@@ -406,7 +408,7 @@ public class PopupOfficeUpgrade : UIBase
 
 	private bool CachedActiveLevelUpAllBtn;
 
-	public OnetimeCurrencyComponent OneTimeComponent => null;
+	public OnetimeCurrencyComponent OneTimeComponent { get { return null; } }
 
 	public int selectItem { get; private set; }
 

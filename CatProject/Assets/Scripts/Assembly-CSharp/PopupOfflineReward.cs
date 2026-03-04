@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using Treeplla;
 using UnityEngine;
 using UnityEngine.UI;
@@ -110,7 +111,7 @@ public class PopupOfflineReward : UIBase
 
 	private int GEM_USE_COST_MULTIPLY;
 
-	public OnetimeCurrencyComponent OneTimeComponent => null;
+	public OnetimeCurrencyComponent OneTimeComponent { get { return null; } }
 
 	protected override void Awake()
 	{

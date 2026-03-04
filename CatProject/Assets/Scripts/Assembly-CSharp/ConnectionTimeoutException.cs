@@ -5,6 +5,7 @@ public class ConnectionTimeoutException : ConnectionException
 	}
 
 	public ConnectionTimeoutException(string message)
+		: base(message)
 	{
 	}
 }

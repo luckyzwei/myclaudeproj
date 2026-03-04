@@ -8,5 +8,8 @@ public class RichAchieveRegionData
 
 	public RichAchieveRegionData(int regionIdx, int startIdx, int endIdx)
 	{
+		regionIdx = regionIdx;
+		startIdx = startIdx;
+		endIdx = endIdx;
 	}
 }

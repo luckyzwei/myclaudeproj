@@ -4,7 +4,7 @@ public class MethodWithGivenParametersNotFoundException : TpAutomationException
 	{
 	}
 
-	public MethodWithGivenParametersNotFoundException(string message)
+	public MethodWithGivenParametersNotFoundException(string message) : base(message)
 	{
 	}
 }

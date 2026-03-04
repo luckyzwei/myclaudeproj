@@ -19,8 +19,9 @@ namespace WebSocketSharp.Net
 		public bool IsResponse => false;
 
 		internal HttpHeaderInfo(string headerName, HttpHeaderType headerType)
-		{
-		}
+	{
+		_headerName = headerName;
+	}
 
 		public bool IsMultiValue(bool response)
 		{

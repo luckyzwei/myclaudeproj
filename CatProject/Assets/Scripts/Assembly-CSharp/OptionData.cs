@@ -19,6 +19,6 @@ public class OptionData : IReadOnlyData, ICloneable
 
 	public object Clone()
 	{
-		return null;
+		return MemberwiseClone();
 	}
 }

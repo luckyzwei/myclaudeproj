@@ -4,7 +4,7 @@ public class WrongTpObjectTypeException : TpAutomationException
 	{
 	}
 
-	public WrongTpObjectTypeException(string message)
+	public WrongTpObjectTypeException(string message) : base(message)
 	{
 	}
 }

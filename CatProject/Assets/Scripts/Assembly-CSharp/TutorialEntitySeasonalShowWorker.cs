@@ -71,6 +71,6 @@ public class TutorialEntitySeasonalShowWorker : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitAndHide_003Ed__2))]
 	private IEnumerator WaitAndHide()
 	{
-		return null;
+		yield break;
 	}
 }

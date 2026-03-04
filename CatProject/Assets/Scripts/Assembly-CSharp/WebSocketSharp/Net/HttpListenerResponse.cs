@@ -124,27 +124,17 @@ namespace WebSocketSharp.Net
 
 		internal bool CloseConnection
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _closeConnection; }
+		set { _closeConnection = value; }
+	}
 
 		internal WebHeaderCollection FullHeaders => null;
 
 		internal bool HeadersSent
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _headersSent; }
+		set { _headersSent = value; }
+	}
 
 		internal string ObjectName => null;
 
@@ -152,14 +142,9 @@ namespace WebSocketSharp.Net
 
 		public Encoding ContentEncoding
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _contentEncoding; }
+		set { _contentEncoding = value; }
+	}
 
 		public long ContentLength64
 		{
@@ -174,47 +159,27 @@ namespace WebSocketSharp.Net
 
 		public string ContentType
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _contentType; }
+		set { _contentType = value; }
+	}
 
 		public CookieCollection Cookies
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _cookies; }
+		set { _cookies = value; }
+	}
 
 		public WebHeaderCollection Headers
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _headers; }
+		set { _headers = value; }
+	}
 
 		public bool KeepAlive
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _keepAlive; }
+		set { _keepAlive = value; }
+	}
 
 		public Stream OutputStream => null;
 
@@ -222,47 +187,27 @@ namespace WebSocketSharp.Net
 
 		public string RedirectLocation
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _redirectLocation != null ? _redirectLocation.ToString() : null; }
+		set { _redirectLocation = value != null ? new Uri(value) : null; }
+	}
 
 		public bool SendChunked
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _sendChunked; }
+		set { _sendChunked = value; }
+	}
 
 		public int StatusCode
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _statusCode; }
+		set { _statusCode = value; }
+	}
 
 		public string StatusDescription
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _statusDescription; }
+		set { _statusDescription = value; }
+	}
 
 		static HttpListenerResponse()
 		{

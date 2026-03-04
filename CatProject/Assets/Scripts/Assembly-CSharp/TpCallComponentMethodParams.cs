@@ -8,7 +8,9 @@ public class TpCallComponentMethodParams : BaseGameFindObjectParams
 	public string methodName;
 
 	public TpCallComponentMethodParams(List<BoundCondition> objectConditions, List<BoundCondition> cameraConditions, bool enabled, string componentName, string methodName)
-		: base(null, null, enabled: false)
+		: base(objectConditions, cameraConditions, enabled)
 	{
+		this.componentName = componentName;
+		this.methodName = methodName;
 	}
 }

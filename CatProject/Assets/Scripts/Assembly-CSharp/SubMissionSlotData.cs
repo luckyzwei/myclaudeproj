@@ -8,5 +8,5 @@ public class SubMissionSlotData
 
 	public List<List<SubMissionGroupData>> MissionPriorityGroups;
 
-	public List<SubMissionGroupData> LastActiveMissionGroup => null;
+	public List<SubMissionGroupData> LastActiveMissionGroup { get { return null; } }
 }

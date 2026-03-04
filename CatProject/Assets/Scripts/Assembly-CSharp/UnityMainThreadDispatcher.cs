@@ -84,7 +84,7 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CActionWrapper_003Ed__5))]
 	private IEnumerator ActionWrapper(Action a)
 	{
-		return null;
+		yield break;
 	}
 
 	private void Awake()

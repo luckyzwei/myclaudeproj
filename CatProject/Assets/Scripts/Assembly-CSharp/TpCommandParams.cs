@@ -13,5 +13,7 @@ public class TpCommandParams
 	[JsonConstructor]
 	public TpCommandParams(string commandName, string messageId)
 	{
+		this.commandName = commandName;
+		this.messageId = messageId;
 	}
 }

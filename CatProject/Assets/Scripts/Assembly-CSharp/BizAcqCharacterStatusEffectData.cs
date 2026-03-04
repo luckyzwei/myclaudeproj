@@ -12,5 +12,7 @@ public class BizAcqCharacterStatusEffectData
 
 	public BizAcqCharacterStatusEffectData(SkillStatusEffectType effectType, float effectValue)
 	{
+		EffectType = effectType;
+		EffectValue = effectValue;
 	}
 }

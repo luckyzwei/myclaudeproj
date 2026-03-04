@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UnityEngine;
 
 public class NavigatorSystem

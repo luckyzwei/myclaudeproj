@@ -35,7 +35,7 @@ public class ItemStageChapter : MonoBehaviour
 
 	public int Chapter { get; private set; }
 
-	public int MoveTransCount => 0;
+	public int MoveTransCount { get { return 0; } }
 
 	private void Awake()
 	{

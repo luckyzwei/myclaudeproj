@@ -88,6 +88,6 @@ public class TpInput : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CtapClickElementLifeCycle_003Ed__1))]
 	internal static IEnumerator tapClickElementLifeCycle(GameObject target, int count, float interval, bool tap)
 	{
-		return null;
+		yield break;
 	}
 }

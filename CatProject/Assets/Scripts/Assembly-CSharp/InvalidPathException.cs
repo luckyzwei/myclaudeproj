@@ -4,7 +4,7 @@ public class InvalidPathException : TpAutomationException
 	{
 	}
 
-	public InvalidPathException(string message)
+	public InvalidPathException(string message) : base(message)
 	{
 	}
 }

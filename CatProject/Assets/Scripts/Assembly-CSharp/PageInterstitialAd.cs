@@ -79,6 +79,6 @@ public class PageInterstitialAd : UIBase
 	[IteratorStateMachine(typeof(_003CWaitHideTime_003Ed__4))]
 	private IEnumerator WaitHideTime()
 	{
-		return null;
+		yield break;
 	}
 }

@@ -172,7 +172,7 @@ public class SeasonalEmployeeSystem
 	[IteratorStateMachine(typeof(_003CWaitAndPlayRestaurantActivity_003Ed__36))]
 	private IEnumerator WaitAndPlayRestaurantActivity(WorkshopEmployee employee)
 	{
-		return null;
+		yield break;
 	}
 
 	private void PlayRestaurantActivity(WorkshopEmployee employee)

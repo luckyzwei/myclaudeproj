@@ -200,9 +200,9 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private List<Tween> ScreenActionTweens;
 
-	public HUDType[] HudType => null;
+	public HUDType[] HudType { get { return null; } }
 
-	public bool IsScreenAction => false;
+	public bool IsScreenAction { get { return false; } }
 
 	protected override void Awake()
 	{
@@ -332,7 +332,7 @@ public class HUDFactory : HUDBase, IScreenAction
 	[IteratorStateMachine(typeof(_003CWaitComebackCo_003Ed__77))]
 	private IEnumerator WaitComebackCo(bool value)
 	{
-		return null;
+		yield break;
 	}
 
 	public void ScreenAction(bool value)

@@ -4,7 +4,7 @@ public class AppDisconnectedException : ConnectionException
 	{
 	}
 
-	public AppDisconnectedException(string message)
+	public AppDisconnectedException(string message) : base(message)
 	{
 	}
 }

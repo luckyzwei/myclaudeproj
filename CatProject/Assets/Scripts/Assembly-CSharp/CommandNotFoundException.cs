@@ -5,6 +5,7 @@ public class CommandNotFoundException : TpAutomationException
 	}
 
 	public CommandNotFoundException(string message)
+		: base(message)
 	{
 	}
 }

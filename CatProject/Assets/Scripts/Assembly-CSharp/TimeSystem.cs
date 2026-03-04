@@ -75,21 +75,39 @@ public class TimeSystem
 	[IteratorStateMachine(typeof(_003CGetGoogleTime_003Ed__2))]
 	public static IEnumerator GetGoogleTime(Action onLoad)
 	{
-		return null;
+		return new _003CGetGoogleTime_003Ed__2(0) { onLoad = onLoad };
 	}
 
 	public static DateTime GetCurTime()
 	{
-		return default(DateTime);
+		if (standardTime == default(DateTime))
+			return DateTime.UtcNow;
+		return standardTime + (DateTime.UtcNow - standardTime);
 	}
 
 	public static DateTime GetConvertUSTimeFromString(string strTime)
 	{
+		if (string.IsNullOrEmpty(strTime)) return default(DateTime);
+		DateTime result;
+		if (DateTime.TryParse(strTime, System.Globalization.CultureInfo.GetCultureInfo("en-US"), System.Globalization.DateTimeStyles.None, out result))
+			return result;
 		return default(DateTime);
 	}
 
 	public static DateTime GetConvertInvariantTimeFromString(string timeStr, string format = null)
 	{
+		if (string.IsNullOrEmpty(timeStr)) return default(DateTime);
+		DateTime result;
+		if (format != null)
+		{
+			if (DateTime.TryParseExact(timeStr, format, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+				return result;
+		}
+		else
+		{
+			if (DateTime.TryParse(timeStr, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+				return result;
+		}
 		return default(DateTime);
 	}
 }

@@ -6,11 +6,11 @@ public class TpAutomationException : Exception
 	{
 	}
 
-	public TpAutomationException(string message)
+	public TpAutomationException(string message) : base(message)
 	{
 	}
 
-	public TpAutomationException(string message, Exception inner)
+	public TpAutomationException(string message, Exception inner) : base(message, inner)
 	{
 	}
 }

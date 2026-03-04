@@ -45,8 +45,10 @@ namespace WebSocketSharp.Net
 		}
 
 		internal RequestStream(Stream innerStream, byte[] initialBuffer, int offset, int count, long contentLength)
-		{
-		}
+	{
+		_innerStream = innerStream;
+		_initialBuffer = initialBuffer;
+	}
 
 		private int fillFromInitialBuffer(byte[] buffer, int offset, int count)
 		{

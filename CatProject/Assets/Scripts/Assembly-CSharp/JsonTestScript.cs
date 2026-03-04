@@ -8,6 +8,7 @@ public class JsonTestScript
 
 	public JsonTestScript(TextMesh text)
 	{
+		_text = text;
 	}
 
 	public void SerializeVector3()

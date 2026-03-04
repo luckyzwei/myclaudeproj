@@ -15,7 +15,8 @@ namespace WebSocketSharp
 		public bool WasClean => false;
 
 		internal CloseEventArgs(PayloadData payloadData, bool clean)
-		{
-		}
+	{
+		_payloadData = payloadData;
+	}
 	}
 }

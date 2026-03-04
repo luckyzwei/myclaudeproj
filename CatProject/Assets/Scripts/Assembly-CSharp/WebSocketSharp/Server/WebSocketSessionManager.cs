@@ -206,14 +206,9 @@ namespace WebSocketSharp.Server
 
 		public bool KeepClean
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _keepClean; }
+		set { _keepClean = value; }
+	}
 
 		public IEnumerable<IWebSocketSession> Sessions => null;
 
@@ -233,8 +228,9 @@ namespace WebSocketSharp.Server
 		}
 
 		internal WebSocketSessionManager(Logger log)
-		{
-		}
+	{
+		_log = log;
+	}
 
 		private void broadcast(Opcode opcode, byte[] data, Action completed)
 		{

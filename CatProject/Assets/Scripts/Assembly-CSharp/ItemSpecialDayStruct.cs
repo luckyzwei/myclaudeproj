@@ -32,17 +32,17 @@ public class ItemSpecialDayStruct : MonoBehaviour
 	[SerializeField]
 	private ParticleSystem currencyParticle;
 
-	public int Idx => 0;
+	public int Idx { get { return 0; } }
 
-	public List<ItemOnetimeFloor> ItemOnetimeFloors => null;
+	public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return null; } }
 
-	public List<DoTweenScriptComponent> FloorDoTweens => null;
+	public List<DoTweenScriptComponent> FloorDoTweens { get { return null; } }
 
-	public float CharacterTerm => 0f;
+	public float CharacterTerm { get { return 0f; } }
 
-	public Transform ExitT => null;
+	public Transform ExitT { get { return null; } }
 
-	public ParticleSystem CurrencyParticle => null;
+	public ParticleSystem CurrencyParticle { get { return null; } }
 
 	public void UpdateRewards()
 	{

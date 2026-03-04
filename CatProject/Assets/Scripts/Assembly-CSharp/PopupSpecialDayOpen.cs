@@ -135,7 +135,7 @@ public class PopupSpecialDayOpen : UIBase
 	[IteratorStateMachine(typeof(_003CShowSpecialDayHUDEffect_003Ed__20))]
 	private IEnumerator ShowSpecialDayHUDEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	public void KillProcess()

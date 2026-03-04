@@ -57,7 +57,7 @@ public class PageDailyQuestList : UIBase
 
 	private CompositeDisposable disposables;
 
-	public Image OneTimeCurrencyIcon => null;
+	public Image OneTimeCurrencyIcon { get { return null; } }
 
 	protected override void Awake()
 	{

@@ -13,36 +13,21 @@ public class SingularLinkParams
 	[JsonProperty(PropertyName = "deeplink")]
 	public string Deeplink
 	{
-		get
-		{
-			return null;
-		}
-		set
-		{
-		}
+		get { return _deeplink; }
+		set { _deeplink = value; }
 	}
 
 	[JsonProperty(PropertyName = "passthrough")]
 	public string Passthrough
 	{
-		get
-		{
-			return null;
-		}
-		set
-		{
-		}
+		get { return _passthrough; }
+		set { _passthrough = value; }
 	}
 
 	[JsonProperty(PropertyName = "is_deferred")]
 	public bool IsDeferred
 	{
-		get
-		{
-			return false;
-		}
-		set
-		{
-		}
+		get { return _isDeferred; }
+		set { _isDeferred = value; }
 	}
 }

@@ -9,6 +9,7 @@ public class TpContractResolver : DefaultContractResolver
 
 	public TpContractResolver(Func<bool> includeProperty)
 	{
+		_includeProperty = includeProperty;
 	}
 
 	protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)

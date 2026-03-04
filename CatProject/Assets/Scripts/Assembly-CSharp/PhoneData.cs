@@ -9,7 +9,7 @@ public class PhoneData : IClientData
 
 	public Dictionary<int, BigInteger> LimitMoneys;
 
-	public BigInteger LimitMoney => default(BigInteger);
+	public BigInteger LimitMoney { get { return default(BigInteger); } }
 
 	public void Init()
 	{

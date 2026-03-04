@@ -150,12 +150,17 @@ namespace WebSocketSharp
 		}
 
 		internal WebSocketFrame(Fin fin, Opcode opcode, byte[] data, bool compressed, bool mask)
-		{
-		}
+	{
+		_fin = fin;
+		_opcode = Opcode;
+	}
 
 		internal WebSocketFrame(Fin fin, Opcode opcode, PayloadData payloadData, bool compressed, bool mask)
-		{
-		}
+	{
+		_fin = fin;
+		_opcode = Opcode;
+		_payloadData = PayloadData;
+	}
 
 		private static byte[] createMaskingKey()
 		{

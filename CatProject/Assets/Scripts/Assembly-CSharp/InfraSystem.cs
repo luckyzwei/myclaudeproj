@@ -16,7 +16,7 @@ public class InfraSystem
 
 	public int first_infra_building { get; private set; }
 
-	public int InfraRewardTime => 0;
+	public int InfraRewardTime { get { return 0; } }
 
 	public void Init()
 	{

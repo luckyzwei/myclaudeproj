@@ -1,7 +1,7 @@
 public class TpCommentCommand : TpCommand<TpCommentParams, string>
 {
 	public TpCommentCommand(TpCommentParams cmdParams)
-		: base((TpCommentParams)default(_00210))
+		: base(cmdParams)
 	{
 	}
 

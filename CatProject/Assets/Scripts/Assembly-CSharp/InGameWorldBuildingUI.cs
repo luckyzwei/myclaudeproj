@@ -62,7 +62,7 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	private bool prev_open;
 
-	public int BuildingIdx => 0;
+	public int BuildingIdx { get { return 0; } }
 
 	private void Awake()
 	{

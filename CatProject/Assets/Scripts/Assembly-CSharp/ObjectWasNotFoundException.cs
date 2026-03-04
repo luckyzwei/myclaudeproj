@@ -4,7 +4,7 @@ public class ObjectWasNotFoundException : TpAutomationException
 	{
 	}
 
-	public ObjectWasNotFoundException(string message)
+	public ObjectWasNotFoundException(string message) : base(message)
 	{
 	}
 }

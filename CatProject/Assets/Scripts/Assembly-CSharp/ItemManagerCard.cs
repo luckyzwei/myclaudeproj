@@ -95,11 +95,11 @@ public class ItemManagerCard : MonoBehaviour
 
 	public Action InfoCloseCb;
 
-	public string CurManagerName => null;
+	public string CurManagerName { get { return null; } }
 
-	public Color CurFrameColor => default(Color);
+	public Color CurFrameColor { get { return default(Color); } }
 
-	public int CurManagerIdx => 0;
+	public int CurManagerIdx { get { return 0; } }
 
 	private void Awake()
 	{

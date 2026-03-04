@@ -78,6 +78,6 @@ public class PageInterstitialAds : UIBase
 	[IteratorStateMachine(typeof(_003CWaitInterstitial_003Ed__3))]
 	private IEnumerator WaitInterstitial()
 	{
-		return null;
+		yield break;
 	}
 }

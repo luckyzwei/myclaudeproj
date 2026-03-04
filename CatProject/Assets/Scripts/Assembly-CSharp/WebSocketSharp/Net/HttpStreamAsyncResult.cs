@@ -27,25 +27,15 @@ namespace WebSocketSharp.Net
 
 		internal byte[] Buffer
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _buffer; }
+		set { _buffer = value; }
+	}
 
 		internal int Count
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _count; }
+		set { _count = value; }
+	}
 
 		internal Exception Exception => null;
 
@@ -53,25 +43,15 @@ namespace WebSocketSharp.Net
 
 		internal int Offset
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _offset; }
+		set { _offset = value; }
+	}
 
 		internal int SyncRead
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _syncRead; }
+		set { _syncRead = value; }
+	}
 
 		public object AsyncState => null;
 
@@ -82,8 +62,9 @@ namespace WebSocketSharp.Net
 		public bool IsCompleted => false;
 
 		internal HttpStreamAsyncResult(AsyncCallback callback, object state)
-		{
-		}
+	{
+		_callback = callback;
+	}
 
 		internal void Complete()
 		{

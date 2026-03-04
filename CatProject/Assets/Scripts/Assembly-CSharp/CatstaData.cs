@@ -18,6 +18,8 @@ public class CatstaData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		CatstaData clone = (CatstaData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

@@ -4,7 +4,7 @@ public class NullReferenceException : TpAutomationException
 	{
 	}
 
-	public NullReferenceException(string message)
+	public NullReferenceException(string message) : base(message)
 	{
 	}
 }

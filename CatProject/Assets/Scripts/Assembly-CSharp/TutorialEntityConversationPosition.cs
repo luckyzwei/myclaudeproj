@@ -117,7 +117,7 @@ public class TutorialEntityConversationPosition : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__20))]
 	private IEnumerator WaitFrame()
 	{
-		return null;
+		yield break;
 	}
 
 	private void Update()

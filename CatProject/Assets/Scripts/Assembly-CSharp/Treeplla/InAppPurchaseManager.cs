@@ -395,9 +395,9 @@ namespace Treeplla
 
 		[IteratorStateMachine(typeof(_003CWaitTime_003Ed__91))]
 		public IEnumerator WaitTime(float time, Action End)
-		{
-			return null;
-		}
+	{
+		yield break;
+	}
 
 		public bool checkItemBought(string productId)
 		{
@@ -482,9 +482,9 @@ namespace Treeplla
 
 		[IteratorStateMachine(typeof(_003CPostJson_003Ed__111))]
 		private IEnumerator PostJson(string jsonSendData, ISendData data, string serverURL, Action OnSuccess, Action<ReceiptValidationError> OnFail = null, bool log = true)
-		{
-			return null;
-		}
+	{
+		yield break;
+	}
 
 		public void PopulateConfigurationBuilder(ref ConfigurationBuilder builder, ProductCatalog catalog)
 		{

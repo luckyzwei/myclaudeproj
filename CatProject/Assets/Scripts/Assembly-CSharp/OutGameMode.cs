@@ -15,9 +15,9 @@ public abstract class OutGameMode : MonoBehaviour, IInGameMode
 	[HideInInspector]
 	public GameType Type { get; protected set; }
 
-	public PanAndZoom IngameCamera => null;
+	public PanAndZoom IngameCamera { get { return null; } }
 
-	public Camera MainCamera => null;
+	public Camera MainCamera { get { return null; } }
 
 	public float CamPixelWidth { get; private set; }
 

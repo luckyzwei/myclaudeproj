@@ -6,6 +6,8 @@ public class SelectorCondition
 
 	public SelectorCondition(string selector, SelectorType type)
 	{
+		Selector = selector;
+		Type = type;
 	}
 
 	protected static PropertyType GetPropertyType(string property)

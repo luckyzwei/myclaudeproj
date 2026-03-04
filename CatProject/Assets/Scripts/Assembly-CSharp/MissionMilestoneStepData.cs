@@ -8,5 +8,5 @@ public class MissionMilestoneStepData
 
 	public int TotalNeedCount;
 
-	public int PrevTotalCount => 0;
+	public int PrevTotalCount { get { return 0; } }
 }

@@ -443,7 +443,7 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSkillAnimationCoroutine_003Ed__80))]
 	private IEnumerator SkillAnimationCoroutine(Action endCallback)
 	{
-		return null;
+		yield break;
 	}
 
 	public void PlayAttackAnimation(bool isKill, Action endCallback)
@@ -461,7 +461,7 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CEvadeAnimationCoroutine_003Ed__84))]
 	private IEnumerator EvadeAnimationCoroutine(Action endCallback)
 	{
-		return null;
+		yield break;
 	}
 
 	public void PlayDeadAnimation(Action endCallback)
@@ -475,7 +475,7 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CChangeCeoAnimation_003Ed__87))]
 	private IEnumerator ChangeCeoAnimation(Action endCallback)
 	{
-		return null;
+		yield break;
 	}
 
 	public void PlayBuffEffect(BattleCommand command, List<BizAcqCharacterData> targetList)

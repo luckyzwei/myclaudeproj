@@ -116,7 +116,7 @@ public class PopupSeasonalOpen : UIBase
 	[IteratorStateMachine(typeof(_003CPlaySeasonalStartHUDEffect_003Ed__15))]
 	public IEnumerator PlaySeasonalStartHUDEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	public override void OnHideAfter()

@@ -4,7 +4,7 @@ public class TpPathNotFoundException : TpAutomationException
 	{
 	}
 
-	public TpPathNotFoundException(string message)
+	public TpPathNotFoundException(string message) : base(message)
 	{
 	}
 }

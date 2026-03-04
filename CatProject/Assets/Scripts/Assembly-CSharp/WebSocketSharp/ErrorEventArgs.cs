@@ -13,11 +13,14 @@ namespace WebSocketSharp
 		public string Message => null;
 
 		internal ErrorEventArgs(string message)
-		{
-		}
+	{
+		_message = message;
+	}
 
 		internal ErrorEventArgs(string message, Exception exception)
-		{
-		}
+	{
+		_message = message;
+		_exception = Exception;
+	}
 	}
 }

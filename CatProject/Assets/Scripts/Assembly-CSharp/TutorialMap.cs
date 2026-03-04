@@ -96,7 +96,7 @@ public class TutorialMap : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CRun_003Ed__11))]
 	private IEnumerator Run()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickSkip()

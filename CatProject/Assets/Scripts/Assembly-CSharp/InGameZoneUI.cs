@@ -38,7 +38,7 @@ public class InGameZoneUI : InGameFloatingUI
 
 	private CompositeDisposable disposables;
 
-	public int ZoneIdx => 0;
+	public int ZoneIdx { get { return 0; } }
 
 	private void Awake()
 	{

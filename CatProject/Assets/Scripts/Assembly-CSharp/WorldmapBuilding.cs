@@ -98,7 +98,7 @@ public class WorldmapBuilding : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitUICloseAndOpen_003Ed__15))]
 	private IEnumerator WaitUICloseAndOpen()
 	{
-		return null;
+		yield break;
 	}
 
 	private void LoadSignUI()

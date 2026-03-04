@@ -141,7 +141,7 @@ public class PageShop : FullScreenUI
 	[IteratorStateMachine(typeof(_003CFocusCoroutine_003Ed__18))]
 	private IEnumerator FocusCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	public void UpdateGem()

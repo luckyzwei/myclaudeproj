@@ -14,14 +14,9 @@ namespace WebSocketSharp
 
 		public string File
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _file; }
+		set { _file = value; }
+	}
 
 		public LogLevel Level
 		{
@@ -50,12 +45,15 @@ namespace WebSocketSharp
 		}
 
 		public Logger(LogLevel level)
-		{
-		}
+	{
+		_level = level;
+	}
 
 		public Logger(LogLevel level, string file, Action<LogData, string> output)
-		{
-		}
+	{
+		_level = level;
+		_output = output;
+	}
 
 		private static void defaultOutput(LogData data, string path)
 		{

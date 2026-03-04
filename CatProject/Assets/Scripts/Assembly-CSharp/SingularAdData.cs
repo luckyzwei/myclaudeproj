@@ -49,6 +49,11 @@ public class SingularAdData : Dictionary<string, object>
 
 	public SingularAdData(string adPlatform, string currency, double revenue)
 	{
+		SetValue(ADMON_AD_PLATFORM, adPlatform);
+		SetValue(REVENUE_CURRENCY_KEY, currency);
+		SetValue(REVENUE_AMOUNT_KEY, revenue);
+		SetValue(ADMON_IS_ADMON_REVENUE, true);
+		SetValue(IS_REVENUE_EVENT_KEY, true);
 	}
 
 	public SingularAdData WithNetworkName(string networkName)

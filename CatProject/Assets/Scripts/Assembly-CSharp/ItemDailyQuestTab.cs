@@ -58,7 +58,7 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	private Action OnGotoNavi;
 
-	public Image OneTimeCurrencyIcon => null;
+	public Image OneTimeCurrencyIcon { get { return null; } }
 
 	public void InitTab(Action onGotoNavi)
 	{

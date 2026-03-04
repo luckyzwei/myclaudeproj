@@ -13,7 +13,7 @@ public class SeasonalWorkshopManagerData
 
 	public BigInteger LevelUpNeedCost;
 
-	public bool IsMaxLevel => false;
+	public bool IsMaxLevel { get { return false; } }
 
 	public BigInteger GetManagerAbility_PerMile(E_WorkshopManagerAbilityType abilityType)
 	{

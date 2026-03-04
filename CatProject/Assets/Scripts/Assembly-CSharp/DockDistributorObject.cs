@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using UniRx;
 using UnityEngine;
@@ -142,7 +143,7 @@ public class DockDistributorObject : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CUpdateProgressUI_003Ed__29))]
 	private IEnumerator UpdateProgressUI()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateDistributeInfo()

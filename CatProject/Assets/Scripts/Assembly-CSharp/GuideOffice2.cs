@@ -178,13 +178,13 @@ public class GuideOffice2 : UIBase
 	[IteratorStateMachine(typeof(_003CStartGuide_003Ed__10))]
 	public IEnumerator StartGuide()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitButton_003Ed__11))]
 	private IEnumerator WaitButton(Action cb)
 	{
-		return null;
+		yield break;
 	}
 
 	protected override void OnEnable()

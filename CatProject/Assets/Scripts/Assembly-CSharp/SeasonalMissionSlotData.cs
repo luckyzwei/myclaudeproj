@@ -11,7 +11,7 @@ public class SeasonalMissionSlotData
 
 	public Dictionary<int, IDisposable> Disposable_MissionGroupOpen;
 
-	public List<SeasonalMissionGroupData> LastActiveMissionGroup => null;
+	public List<SeasonalMissionGroupData> LastActiveMissionGroup { get { return null; } }
 
 	~SeasonalMissionSlotData()
 	{

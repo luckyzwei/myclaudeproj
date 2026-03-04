@@ -40,8 +40,9 @@ namespace WebSocketSharp.Net
 		public bool WantsMore => false;
 
 		public ChunkStream(WebHeaderCollection headers)
-		{
-		}
+	{
+		_headers = headers;
+	}
 
 		private int read(byte[] buffer, int offset, int count)
 		{

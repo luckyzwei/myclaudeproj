@@ -106,7 +106,7 @@ public class EndlessOfferComponent_Scroll : EndlessOfferComponentBase
 	[IteratorStateMachine(typeof(_003CFinishAnimate_003Ed__12))]
 	private IEnumerator FinishAnimate()
 	{
-		return null;
+		yield break;
 	}
 
 	private void PurchaseItem(int orderIdx, Action<bool> callback)

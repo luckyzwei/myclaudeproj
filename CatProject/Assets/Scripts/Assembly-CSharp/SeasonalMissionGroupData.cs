@@ -23,9 +23,9 @@ public class SeasonalMissionGroupData
 
 	public IDisposable Disposable_OpenCondition;
 
-	public bool bCompleteGroup => false;
+	public bool bCompleteGroup { get { return false; } }
 
-	public SeasonalMissionData CurMissionData => null;
+	public SeasonalMissionData CurMissionData { get { return null; } }
 
 	~SeasonalMissionGroupData()
 	{

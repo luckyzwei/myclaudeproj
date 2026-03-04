@@ -47,145 +47,80 @@ namespace Treeplla
 
 		public int idx
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _idx; }
+		set { _idx = value; }
+	}
 
 		public string name
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _name; }
+		set { _name = value; }
+	}
 
 		public string campaign_name
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _campaign_name; }
+		set { _campaign_name = value; }
+	}
 
 		public int active
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _active; }
+		set { _active = value; }
+	}
 
 		public string onelink
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _onelink; }
+		set { _onelink = value; }
+	}
 
 		public string onelink_id
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _onelink_id; }
+		set { _onelink_id = value; }
+	}
 
 		public int genre
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _genre; }
+		set { _genre = value; }
+	}
 
 		public int order
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _order; }
+		set { _order = value; }
+	}
 
 		public int pre_register
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
-		}
+		get { return _pre_register; }
+		set { _pre_register = value; }
+	}
 
 		public string scheme
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _scheme; }
+		set { _scheme = value; }
+	}
 
 		public string package_id
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _package_id; }
+		set { _package_id = value; }
+	}
 
 		public string icon
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _icon; }
+		set { _icon = value; }
+	}
 
 		public string img
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _img; }
+		set { _img = value; }
+	}
 	}
 }

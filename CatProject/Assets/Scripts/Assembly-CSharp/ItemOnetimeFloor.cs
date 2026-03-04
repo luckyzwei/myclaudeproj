@@ -24,7 +24,7 @@ public class ItemOnetimeFloor : MonoBehaviour
 	[SerializeField]
 	private GameObject StarParticle;
 
-	public List<DoTweenScriptComponent> TouchLights => null;
+	public List<DoTweenScriptComponent> TouchLights { get { return null; } }
 
 	private void Awake()
 	{

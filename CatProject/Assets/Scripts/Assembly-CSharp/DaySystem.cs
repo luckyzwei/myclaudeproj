@@ -55,6 +55,10 @@ public class DaySystem
 
 	public void Init()
 	{
+		CurTimeStatus = new ReactiveProperty<DayStatus>(DayStatus.NotSet);
+		TimeSubscribe = new Dictionary<int, Action>();
+		CompanyTimeSubscribe = new Dictionary<int, Action>();
+		StatusSeconds = new Dictionary<DayStatus, int>();
 	}
 
 	public void CalcCurTime()
@@ -63,23 +67,30 @@ public class DaySystem
 
 	public void CompanySubscribe(int time, Action timeevent)
 	{
+		if (CompanyTimeSubscribe == null) CompanyTimeSubscribe = new Dictionary<int, Action>();
+		CompanyTimeSubscribe[time] = timeevent;
 	}
 
 	public void ResetCompanySubscirbe()
 	{
+		if (CompanyTimeSubscribe != null) CompanyTimeSubscribe.Clear();
 	}
 
 	public void Subscribe(int time, Action timeevent)
 	{
+		if (TimeSubscribe == null) TimeSubscribe = new Dictionary<int, Action>();
+		TimeSubscribe[time] = timeevent;
 	}
 
 	public void SetDayFirstStart()
 	{
+		CurDayStartTime = TimeSystem.GetCurTime();
 	}
 
 	public bool isWorkTime()
 	{
-		return false;
+		var status = CurTimeStatus != null ? CurTimeStatus.Value : DayStatus.NotSet;
+		return status == DayStatus.InWork || status == DayStatus.InWorkSunset || status == DayStatus.InWorkNight;
 	}
 
 	private void ResetTime()

@@ -58,7 +58,7 @@ public class ItemPackageGroup : MonoBehaviour
 
 	protected int packageIdx;
 
-	public int PackageIdx => 0;
+	public int PackageIdx { get { return 0; } }
 
 	private void Awake()
 	{

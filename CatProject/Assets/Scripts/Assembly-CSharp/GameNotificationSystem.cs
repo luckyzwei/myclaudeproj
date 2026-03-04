@@ -179,6 +179,10 @@ public class GameNotificationSystem
 
 	public void Create()
 	{
+		notifications = new Dictionary<NotificationCategory, List<NotificationData>>();
+		disposables = new CompositeDisposable();
+		ScheduledCategories = new Dictionary<int, HashSet<NotificationCategory>>();
+		ScheduledEvent = new Dictionary<int, Subject<int>>();
 	}
 
 	public void UpdateNotification(NotificationCategory category)

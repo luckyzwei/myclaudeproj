@@ -22,9 +22,9 @@ public class InGameSeasonalData
 
 	public ReadOnlyDictionary<int, SeasonalShopData> SeasonalShopDataMap { get; private set; }
 
-	public SeasonalStageData SeasonalStageData => null;
+	public SeasonalStageData SeasonalStageData { get { return null; } }
 
-	public SeasonalShopData SeasonalShopData => null;
+	public SeasonalShopData SeasonalShopData { get { return null; } }
 
 	public void Init(SeasonalData? seasonalData)
 	{

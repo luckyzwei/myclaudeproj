@@ -59,14 +59,9 @@ namespace WebSocketSharp.Server
 
 		public bool EmitOnPing
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _emitOnPing; }
+		set { _emitOnPing = value; }
+	}
 
 		public Func<string, bool> HostValidator
 		{
@@ -83,14 +78,9 @@ namespace WebSocketSharp.Server
 
 		public bool IgnoreExtensions
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _ignoreExtensions; }
+		set { _ignoreExtensions = value; }
+	}
 
 		public Func<string, bool> OriginValidator
 		{
@@ -105,14 +95,9 @@ namespace WebSocketSharp.Server
 
 		public string Protocol
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _protocol; }
+		set { _protocol = value; }
+	}
 
 		public DateTime StartTime => default(DateTime);
 

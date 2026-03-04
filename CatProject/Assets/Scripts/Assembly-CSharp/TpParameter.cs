@@ -11,7 +11,7 @@ public sealed class TpParameter
 
 	private string _strvalue;
 
-	public string _str => null;
+	public string _str { get { return null; } }
 
 	public TpParameter(string key, long value)
 	{

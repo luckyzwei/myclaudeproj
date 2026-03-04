@@ -26,8 +26,12 @@ public class ManagerCardData
 
 	public ManagerSkillData DispatchSkillData { get; private set; }
 
+	private ManagerCardData() { }
+
 	public ManagerCardData(int managerIdx, int managerLevel)
 	{
+		ManagerIdx = managerIdx;
+		ManagerLevel = new ReactiveProperty<int>(managerLevel);
 	}
 
 	public int GetSkillIdx(Config.ManagerSkillContentsType skillContentsType)
@@ -37,7 +41,10 @@ public class ManagerCardData
 
 	public static ManagerCardData FromFlatBuffer(ManagerData? managerData)
 	{
-		return null;
+		if (!managerData.HasValue) return null;
+		var d = managerData.Value;
+		var result = new ManagerCardData();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<ManagerCardData> managerDataList)

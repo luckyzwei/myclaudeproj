@@ -131,13 +131,13 @@ public class PanAndZoom : MonoBehaviour
 	[SerializeField]
 	private bool allowMove;
 
-	public bool IsZoomOutOver => false;
+	public bool IsZoomOutOver { get { return false; } }
 
-	public float ZoomSize => 0f;
+	public float ZoomSize { get { return 0f; } }
 
 	public bool isTouching { get; private set; }
 
-	public Vector2 touchPosition => default(Vector2);
+	public Vector2 touchPosition { get { return default(Vector2); } }
 
 	public Vector3 DefaltCenter { get; private set; }
 

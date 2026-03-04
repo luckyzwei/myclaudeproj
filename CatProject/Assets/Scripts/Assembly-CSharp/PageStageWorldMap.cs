@@ -266,13 +266,13 @@ public class PageStageWorldMap : UIBase
 	[IteratorStateMachine(typeof(_003CStartChapterClear_003Ed__34))]
 	private IEnumerator StartChapterClear()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CStartClearEffect_003Ed__35))]
 	private IEnumerator StartClearEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	public Image GetFadeWhite()

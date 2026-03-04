@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -199,7 +200,7 @@ public class PopupExpAccelerate : UIBase
 	[IteratorStateMachine(typeof(_003CDelayEndAction_003Ed__41))]
 	private IEnumerator DelayEndAction(Action action)
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickUseGem()

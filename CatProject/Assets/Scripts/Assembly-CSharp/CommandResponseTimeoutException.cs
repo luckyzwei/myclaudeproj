@@ -5,6 +5,7 @@ public class CommandResponseTimeoutException : TpAutomationException
 	}
 
 	public CommandResponseTimeoutException(string message)
+		: base(message)
 	{
 	}
 }

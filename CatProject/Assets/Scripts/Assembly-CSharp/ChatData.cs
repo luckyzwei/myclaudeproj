@@ -21,6 +21,8 @@ public class ChatData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		ChatData clone = (ChatData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

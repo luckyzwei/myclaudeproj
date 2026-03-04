@@ -328,25 +328,25 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 	[IteratorStateMachine(typeof(_003CAnimateItemShift_003Ed__24))]
 	private IEnumerator AnimateItemShift()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateItemScaleOut_003Ed__25))]
 	private IEnumerator AnimateItemScaleOut(ItemShopEndless item)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateSnakeShift_003Ed__26))]
 	private IEnumerator AnimateSnakeShift()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CMoveItemToPositionWithOvershoot_003Ed__27))]
 	private IEnumerator MoveItemToPositionWithOvershoot(ItemShopEndless item, Vector3 targetPosition)
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateItemList()

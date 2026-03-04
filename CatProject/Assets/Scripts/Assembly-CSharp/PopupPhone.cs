@@ -412,7 +412,7 @@ public class PopupPhone : UIBase
 	[IteratorStateMachine(typeof(_003CStartChat_003Ed__100))]
 	private IEnumerator StartChat()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateUserInfo()

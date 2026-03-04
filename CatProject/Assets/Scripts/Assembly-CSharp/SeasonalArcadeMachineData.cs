@@ -16,7 +16,7 @@ public class SeasonalArcadeMachineData
 
 	public int FirstFreeChanceCheckCount;
 
-	public bool IsMaxLevel => false;
+	public bool IsMaxLevel { get { return false; } }
 
 	public void AddRouletteCount(int value)
 	{

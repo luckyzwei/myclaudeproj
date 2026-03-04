@@ -21,6 +21,8 @@ public class CompanyListRefreshUserData
 
 	public CompanyListRefreshUserData(int remainCnt, DateTime lastChargeTime)
 	{
+		RemainCnt = remainCnt;
+		LastChargeTime = lastChargeTime;
 	}
 
 	public void SetDefine()
@@ -51,7 +53,10 @@ public class CompanyListRefreshUserData
 
 	public static CompanyListRefreshUserData FromFlatBuffer(CompanyListRefreshData? fbData)
 	{
-		return null;
+		if (!fbData.HasValue) return null;
+		var d = fbData.Value;
+		var result = new CompanyListRefreshUserData();
+		return result;
 	}
 
 	public static Offset<CompanyListRefreshData> ToFlatBuffer(FlatBufferBuilder builder, CompanyListRefreshUserData data)

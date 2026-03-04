@@ -1,4 +1,5 @@
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;

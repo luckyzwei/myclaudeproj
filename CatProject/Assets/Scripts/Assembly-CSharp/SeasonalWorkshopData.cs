@@ -28,7 +28,7 @@ public class SeasonalWorkshopData : SeasonalBuildingData
 
 	public List<int> ProductionOutputIdxList { get; private set; }
 
-	public bool IsWorkshopActive => false;
+	public bool IsWorkshopActive { get { return false; } }
 
 	public override void Init(Treeplla.SeasonalBuildingData buildingTable)
 	{

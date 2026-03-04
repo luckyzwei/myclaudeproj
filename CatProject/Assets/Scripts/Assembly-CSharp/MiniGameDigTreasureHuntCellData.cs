@@ -9,7 +9,8 @@ public class MiniGameDigTreasureHuntCellData
 
 	public static MiniGameDigTreasureHuntCellData FromFlatBuffer(DigTreasureHuntCellData data)
 	{
-		return null;
+		var result = new MiniGameDigTreasureHuntCellData();
+		return result;
 	}
 
 	public static Offset<DigTreasureHuntCellData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameDigTreasureHuntCellData cellData)

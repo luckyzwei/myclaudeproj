@@ -11,7 +11,7 @@ public class DotRenderer : MaskableGraphic
 
 	public Sprite dotSprite;
 
-	public override Texture mainTexture => null;
+	public override Texture mainTexture { get { return null; } }
 
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{

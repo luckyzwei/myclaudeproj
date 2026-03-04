@@ -56,14 +56,9 @@ namespace WebSocketSharp.Net
 
 		internal string SameSite
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _sameSite; }
+		set { _sameSite = value; }
+	}
 
 		public string Comment
 		{
@@ -100,14 +95,9 @@ namespace WebSocketSharp.Net
 
 		public string Domain
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _domain; }
+		set { _domain = value; }
+	}
 
 		public bool Expired
 		{
@@ -133,36 +123,21 @@ namespace WebSocketSharp.Net
 
 		public bool HttpOnly
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _httpOnly; }
+		set { _httpOnly = value; }
+	}
 
 		public string Name
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _name; }
+		set { _name = value; }
+	}
 
 		public string Path
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _path; }
+		set { _path = value; }
+	}
 
 		public string Port
 		{
@@ -177,27 +152,17 @@ namespace WebSocketSharp.Net
 
 		public bool Secure
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _secure; }
+		set { _secure = value; }
+	}
 
 		public DateTime TimeStamp => default(DateTime);
 
 		public string Value
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _value; }
+		set { _value = value; }
+	}
 
 		public int Version
 		{

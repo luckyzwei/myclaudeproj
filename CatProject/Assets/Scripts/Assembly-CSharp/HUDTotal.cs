@@ -543,23 +543,23 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	private List<Tween> ScreenActionTweens;
 
-	public HUDType[] HudType => null;
+	public HUDType[] HudType { get { return null; } }
 
-	public bool IsAppear => false;
+	public bool IsAppear { get { return false; } }
 
-	public bool IsScreenAction => false;
+	public bool IsScreenAction { get { return false; } }
 
 	public WaitUntil WaitHUDAppear { get; set; }
 
-	public HudMissionItem GetHudMissionItem => null;
+	public HudMissionItem GetHudMissionItem { get { return null; } }
 
-	public Button GetMissionBtn => null;
+	public Button GetMissionBtn { get { return null; } }
 
-	public Button GetOneTimeBtn => null;
+	public Button GetOneTimeBtn { get { return null; } }
 
-	public OnetimeCurrencyComponent GetOneTimeComponent => null;
+	public OnetimeCurrencyComponent GetOneTimeComponent { get { return null; } }
 
-	public GameObject OneTimeReddot => null;
+	public GameObject OneTimeReddot { get { return null; } }
 
 	public bool OfferwallReddot { get; set; }
 
@@ -820,7 +820,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	[IteratorStateMachine(typeof(_003CShowCrossPromotionEffect_003Ed__220))]
 	private IEnumerator ShowCrossPromotionEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickCrossPromotion()
@@ -1102,7 +1102,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	[IteratorStateMachine(typeof(_003CWaitComebackCo_003Ed__291))]
 	private IEnumerator WaitComebackCo(bool value)
 	{
-		return null;
+		yield break;
 	}
 
 	public void ScreenAction(bool value)

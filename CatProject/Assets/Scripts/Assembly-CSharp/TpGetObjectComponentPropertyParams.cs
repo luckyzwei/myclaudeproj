@@ -12,5 +12,10 @@ public class TpGetObjectComponentPropertyParams : BaseTpObjectParams
 	public TpGetObjectComponentPropertyParams(TpObject TpObject, string component, string property, string assembly, int maxDepth)
 		: base(null)
 	{
+		TpObject = TpObject;
+		component = component;
+		property = property;
+		assembly = assembly;
+		maxDepth = maxDepth;
 	}
 }

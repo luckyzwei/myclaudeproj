@@ -22,7 +22,8 @@ public class AttendanceData
 
 	public static AttendanceData FromFlatBuffer(Treeplla.Data.AttendanceData data)
 	{
-		return null;
+		var result = new AttendanceData();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(List<AttendanceData> source, FlatBufferBuilder builder)

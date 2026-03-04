@@ -33,9 +33,9 @@ public class HUD : UIBase, IScreenAction
 
 	private bool screenAction;
 
-	public HUDType[] HudType => null;
+	public HUDType[] HudType { get { return null; } }
 
-	public bool IsScreenAction => false;
+	public bool IsScreenAction { get { return false; } }
 
 	protected override void Awake()
 	{

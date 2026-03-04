@@ -167,13 +167,13 @@ public class GuideSeasonal10001 : UIBase
 	[IteratorStateMachine(typeof(_003CStartGuide_003Ed__9))]
 	public IEnumerator StartGuide()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitPopup_003Ed__10))]
 	private IEnumerator WaitPopup(Action cb)
 	{
-		return null;
+		yield break;
 	}
 
 	protected override void OnEnable()

@@ -38,7 +38,10 @@ public class CeoCostumeUserData
 
 	public static CeoCostumeUserData FromFlatBuffer(CeoCostumeOwnedData? fbData)
 	{
-		return null;
+		if (!fbData.HasValue) return null;
+		var d = fbData.Value;
+		var result = new CeoCostumeUserData();
+		return result;
 	}
 
 	public Offset<CeoCostumeOwnedData> ToFlatBuffer(FlatBufferBuilder builder, CeoCostumeUserData data)

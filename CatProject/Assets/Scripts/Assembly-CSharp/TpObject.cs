@@ -30,5 +30,19 @@ public class TpObject
 
 	public TpObject(string name, int id = 0, int x = 0, int y = 0, int z = 0, int mobileY = 0, string type = "", bool enabled = true, float worldX = 0f, float worldY = 0f, float worldZ = 0f, int idCamera = 0, int transformParentId = 0, int transformId = 0)
 	{
+		name = name;
+		id = id;
+		x = x;
+		y = y;
+		z = z;
+		mobileY = mobileY;
+		type = type;
+		enabled = enabled;
+		worldX = worldX;
+		worldY = worldY;
+		worldZ = worldZ;
+		idCamera = idCamera;
+		transformParentId = transformParentId;
+		transformId = transformId;
 	}
 }

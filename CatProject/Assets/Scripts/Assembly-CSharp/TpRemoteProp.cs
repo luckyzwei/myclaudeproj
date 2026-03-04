@@ -117,7 +117,7 @@ public class TpRemoteProp
 	[IteratorStateMachine(typeof(_003CFetchRemote_003Ed__2))]
 	public static IEnumerator FetchRemote()
 	{
-		return null;
+		yield break;
 	}
 
 	public static List<string> getRemoteKeys()

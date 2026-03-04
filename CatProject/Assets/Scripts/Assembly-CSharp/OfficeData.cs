@@ -55,11 +55,28 @@ public class OfficeData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		CompanyIdx = new ReactiveProperty<int>();
+		Level = new ReactiveProperty<int>();
+		Exp = new ReactiveProperty<int>();
+		IsOpen = new ReactiveProperty<bool>();
+		OpenRemainTime = new ReactiveProperty<int>();
+		CompanyRemainTime = new ReactiveProperty<int>();
+		MaintenanceRemainTime = new ReactiveProperty<int>();
+		RepaireGuardRemainTime = new ReactiveProperty<int>();
+		inMaintenance = new ReactiveProperty<bool>();
+		inRepair = new ReactiveProperty<bool>();
+		Manager = new ReactiveProperty<int>();
+		EnableStrike = new ReactiveProperty<bool>();
+		OnNegotiation = new ReactiveProperty<bool>();
+		Items = new ReactiveCollection<OfficeItemData>();
+		OnEndCompanyContract = new Subject<bool>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		OfficeData clone = (OfficeData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 
 	public bool IsOnStrike()

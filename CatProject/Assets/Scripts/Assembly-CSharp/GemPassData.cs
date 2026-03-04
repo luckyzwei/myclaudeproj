@@ -13,6 +13,8 @@ public class GemPassData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		GemPassData clone = (GemPassData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

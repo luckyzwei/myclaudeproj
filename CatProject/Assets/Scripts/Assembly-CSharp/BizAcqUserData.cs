@@ -65,7 +65,10 @@ public class BizAcqUserData
 
 	public static BizAcqUserData FromFlatBuffer(BizAcqData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = new BizAcqUserData();
+		return result;
 	}
 
 	public static Offset<BizAcqData> ToFlatBuffer(FlatBufferBuilder builder, BizAcqUserData data)

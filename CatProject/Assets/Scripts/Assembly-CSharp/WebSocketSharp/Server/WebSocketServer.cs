@@ -5,6 +5,9 @@ using System.Security.Principal;
 using System.Threading;
 using WebSocketSharp.Net;
 using WebSocketSharp.Net.WebSockets;
+using AuthenticationSchemes = WebSocketSharp.Net.AuthenticationSchemes;
+using HttpListener = WebSocketSharp.Net.HttpListener;
+using HttpListenerContext = WebSocketSharp.Net.HttpListenerContext;
 
 namespace WebSocketSharp.Server
 {
@@ -82,25 +85,15 @@ namespace WebSocketSharp.Server
 
 		public string Realm
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _realm; }
+		set { _realm = value; }
+	}
 
 		public bool ReuseAddress
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _reuseAddress; }
+		set { _reuseAddress = value; }
+	}
 
 		public ServerSslConfiguration SslConfiguration => null;
 
@@ -137,24 +130,28 @@ namespace WebSocketSharp.Server
 		}
 
 		public WebSocketServer(int port)
-		{
-		}
+	{
+		_port = port;
+	}
 
 		public WebSocketServer(string url)
 		{
 		}
 
 		public WebSocketServer(int port, bool secure)
-		{
-		}
+	{
+		_port = port;
+	}
 
 		public WebSocketServer(IPAddress address, int port)
-		{
-		}
+	{
+		_address = address;
+	}
 
 		public WebSocketServer(IPAddress address, int port, bool secure)
-		{
-		}
+	{
+		_address = address;
+	}
 
 		private void abort()
 		{

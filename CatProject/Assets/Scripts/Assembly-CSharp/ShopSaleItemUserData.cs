@@ -17,13 +17,17 @@ public class ShopSaleItemUserData
 
 	public Config.E_ShopSaleItemResetType ResetType;
 
+	private ShopSaleItemUserData() { }
+
 	public ShopSaleItemUserData(int itemIdx)
 	{
+		ItemIdx = itemIdx;
 	}
 
 	public static ShopSaleItemUserData FromFlatBuffer(KeyValueLong data)
 	{
-		return null;
+		var result = new ShopSaleItemUserData();
+		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, Dictionary<int, ShopSaleItemUserData> data)

@@ -53,8 +53,9 @@ namespace WebSocketSharp.Net
 		}
 
 		internal ResponseStream(Stream innerStream, HttpListenerResponse response, bool ignoreWriteExceptions)
-		{
-		}
+	{
+		_innerStream = innerStream;
+	}
 
 		private bool flush(bool closing)
 		{

@@ -9,8 +9,9 @@ namespace WebSocketSharp.Net
 		public int ReadLeft => 0;
 
 		public Chunk(byte[] data)
-		{
-		}
+	{
+		_data = data;
+	}
 
 		public int Read(byte[] buffer, int offset, int count)
 		{

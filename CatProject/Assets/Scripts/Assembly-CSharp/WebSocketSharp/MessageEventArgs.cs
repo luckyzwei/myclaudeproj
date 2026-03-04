@@ -29,8 +29,10 @@ namespace WebSocketSharp
 		}
 
 		internal MessageEventArgs(Opcode opcode, byte[] rawData)
-		{
-		}
+	{
+		_opcode = opcode;
+		_rawData = rawData;
+	}
 
 		private void setData()
 		{

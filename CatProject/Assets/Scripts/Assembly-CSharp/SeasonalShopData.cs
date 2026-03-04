@@ -35,6 +35,7 @@ public class SeasonalShopData
 
 	public SeasonalShopData(int seasonInfoIdx)
 	{
+		SeasonInfoIdx = seasonInfoIdx;
 	}
 
 	public void UpdateData(Treeplla.Data.SeasonalShopData seasonalShopData)

@@ -20,6 +20,10 @@ public class EffectSystem
 
 	public void Clear()
 	{
+		if (EffectDic == null) EffectDic = new Dictionary<Type, Effect>();
+		if (MultiEffectDic == null) MultiEffectDic = new Dictionary<Type, List<Effect>>();
+		EffectDic.Clear();
+		MultiEffectDic.Clear();
 	}
 
 	public void ReturnMultiEffect<T>(T target) where T : Effect
@@ -36,6 +40,10 @@ public class EffectSystem
 
 	public T Get<T>() where T : Effect
 	{
+		if (EffectDic == null) return null;
+		Effect e;
+		if (EffectDic.TryGetValue(typeof(T), out e))
+			return e as T;
 		return null;
 	}
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UnityEngine;
 
 public class UtilityInGame

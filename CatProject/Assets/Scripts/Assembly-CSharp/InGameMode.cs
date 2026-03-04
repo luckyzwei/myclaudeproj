@@ -12,9 +12,9 @@ public abstract class InGameMode : MonoBehaviour, IInGameMode
 
 	private bool zoomOut;
 
-	public PanAndZoom IngameCamera => null;
+	public PanAndZoom IngameCamera { get { return null; } }
 
-	public Camera MainCamera => null;
+	public Camera MainCamera { get { return null; } }
 
 	public float CamPixelWidth { get; private set; }
 

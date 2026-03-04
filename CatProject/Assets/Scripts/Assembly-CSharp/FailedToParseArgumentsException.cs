@@ -5,6 +5,7 @@ public class FailedToParseArgumentsException : TpAutomationException
 	}
 
 	public FailedToParseArgumentsException(string message)
+		: base(message)
 	{
 	}
 }

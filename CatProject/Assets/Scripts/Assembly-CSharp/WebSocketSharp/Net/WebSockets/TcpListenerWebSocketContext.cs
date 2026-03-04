@@ -153,8 +153,9 @@ namespace WebSocketSharp.Net.WebSockets
 		public override WebSocket WebSocket => null;
 
 		internal TcpListenerWebSocketContext(TcpClient tcpClient, string protocol, bool secure, ServerSslConfiguration sslConfig, Logger log)
-		{
-		}
+	{
+		_tcpClient = tcpClient;
+	}
 
 		internal void Close()
 		{

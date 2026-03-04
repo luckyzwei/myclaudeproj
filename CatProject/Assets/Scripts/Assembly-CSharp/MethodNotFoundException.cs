@@ -4,7 +4,7 @@ public class MethodNotFoundException : TpAutomationException
 	{
 	}
 
-	public MethodNotFoundException(string message)
+	public MethodNotFoundException(string message) : base(message)
 	{
 	}
 }

@@ -73,9 +73,9 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 
 	private CompositeDisposable disposables;
 
-	public int GetParkingZone => 0;
+	public int GetParkingZone { get { return 0; } }
 
-	public int GetParkingSpace => 0;
+	public int GetParkingSpace { get { return 0; } }
 
 	protected override void Awake()
 	{

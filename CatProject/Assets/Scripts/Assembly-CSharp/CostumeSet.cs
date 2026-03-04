@@ -10,7 +10,7 @@ public class CostumeSet : MonoBehaviour
 	[SerializeField]
 	private string keyGrade;
 
-	public int CostumeKey => 0;
+	public int CostumeKey { get { return 0; } }
 
-	public int CostumeGrade => 0;
+	public int CostumeGrade { get { return 0; } }
 }

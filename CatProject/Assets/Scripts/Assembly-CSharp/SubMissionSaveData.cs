@@ -20,6 +20,7 @@ public class SubMissionSaveData
 
 	public static SubMissionSaveData FromFlatBuffer(SubMissionData data)
 	{
-		return null;
+		var result = new SubMissionSaveData();
+		return result;
 	}
 }

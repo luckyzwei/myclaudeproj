@@ -523,9 +523,9 @@ public class GameRoot : Singleton<GameRoot>
 
 	private bool isLastVersionCheck;
 
-	public GameObject _CheatWindow => null;
+	public GameObject _CheatWindow { get { return CheatWindow; } }
 
-	public RectTransform GetMainCanvasTR => null;
+	public RectTransform GetMainCanvasTR { get { return MainCanvas != null ? MainCanvas.GetComponent<RectTransform>() : null; } }
 
 	public UISystem UISystem { get; private set; }
 
@@ -639,11 +639,12 @@ public class GameRoot : Singleton<GameRoot>
 
 	public static bool IsInit()
 	{
-		return false;
+		return InitTry;
 	}
 
 	public static void Load()
 	{
+		InitTry = true;
 	}
 
 	private void Update()
@@ -657,13 +658,13 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CStart_003Ed__251))]
 	private IEnumerator Start()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CLoadGameData_003Ed__255))]
 	private IEnumerator LoadGameData()
 	{
-		return null;
+		yield break;
 	}
 
 	private void GiveBackHouseAddPoint()
@@ -684,6 +685,23 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void InitSystem()
 	{
+		UserData = new UserDataSystem();
+		UserData.InitDataState();
+		TimeSystem = new TimeSystem();
+		TimerSystem = new TimerSystem();
+		DaySystem = new DaySystem();
+		DaySystem.Init();
+		BuffSystem = new BuffSystem();
+		BuffSystem.Create();
+		EffectSystem = new EffectSystem();
+		AbilitySystem = new AbilitySystem();
+		AbilitySystem.Init();
+		GameNotification = new GameNotificationSystem();
+		SystemHolder = new List<SystemBase>();
+		AdsContentsList = new List<IAdTimeContents>();
+		PauseActions = new Queue<Action>();
+		GamePlayTimeSec = new ReactiveProperty<int>();
+		LoadComplete = true;
 	}
 
 	private void OnAtlasRequest(string tag, Action<SpriteAtlas> callback)
@@ -709,25 +727,25 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CwaitEndFrame_003Ed__266))]
 	private IEnumerator waitEndFrame(Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitTimeAndCallback_003Ed__267))]
 	private IEnumerator waitTimeAndCallback(float time, Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitCustomYieldInstruction_003Ed__268))]
 	private IEnumerator waitCustomYieldInstruction(CustomYieldInstruction cyi, Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitStageAndCallback_003Ed__269))]
 	private IEnumerator waitStageAndCallback(float time, Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitAndOpenUICoroutine_003Ed__270<>))]
@@ -739,31 +757,32 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CwaitGameIdleStateCoroutine_003Ed__271))]
 	private IEnumerator waitGameIdleStateCoroutine(Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	public void WaitEndFrameCallback(Action callback)
 	{
+		StartCoroutine(waitEndFrame(callback));
 	}
 
 	public Coroutine WaitTimeAndCallback(float time, Action callback)
 	{
-		return null;
+		return StartCoroutine(waitTimeAndCallback(time, callback));
 	}
 
 	public Coroutine WaitCustomYieldInstruction(CustomYieldInstruction cyi, Action callback)
 	{
-		return null;
+		return StartCoroutine(waitCustomYieldInstruction(cyi, callback));
 	}
 
 	public Coroutine WaitAndOpenUICoroutine<T>(Action<T> OnLoad = null, Action OnClose = null, bool caching = true, int targetEventStage = -1) where T : UIBase
 	{
-		return null;
+		return StartCoroutine(waitAndOpenUICoroutine<T>(OnLoad, OnClose, caching, targetEventStage));
 	}
 
 	public Coroutine WaitGameIdleStateCoroutine(Action callback)
 	{
-		return null;
+		return StartCoroutine(waitGameIdleStateCoroutine(callback));
 	}
 
 	public void RefreshHUD(HUDBase.E_RefreshType refreshType)
@@ -791,6 +810,7 @@ public class GameRoot : Singleton<GameRoot>
 
 	public void SetUserSegmentType(SegmentType type)
 	{
+		if (UserData != null) UserData.UserSegmentType = type;
 	}
 
 	public void CheatCall_OnApplicationPause(bool bPause)

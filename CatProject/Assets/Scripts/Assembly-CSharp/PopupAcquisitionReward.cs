@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UnityEngine;
@@ -218,7 +219,7 @@ public class PopupAcquisitionReward : UIBase
 	[IteratorStateMachine(typeof(_003CSetRewardItemsCoroutine_003Ed__29))]
 	private IEnumerator SetRewardItemsCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnConfirmButtonClick()
@@ -240,7 +241,7 @@ public class PopupAcquisitionReward : UIBase
 	[IteratorStateMachine(typeof(_003CCheckAndShowAutoPlayPopup_003Ed__34))]
 	private IEnumerator CheckAndShowAutoPlayPopup()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickAutoPlayBtn()

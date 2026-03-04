@@ -14,7 +14,7 @@ public class Distributor : BuildingBase
 	[SerializeField]
 	private List<DockDistributorObject> DistributorObjectList;
 
-	public List<DockDistributorObject> GetDistributorObjectList => null;
+	public List<DockDistributorObject> GetDistributorObjectList { get { return null; } }
 
 	public override void Init(in int buildingIdx)
 	{

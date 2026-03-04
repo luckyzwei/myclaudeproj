@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using UniRx;
 using UnityEngine;
@@ -152,7 +153,7 @@ public class ItemMissionFactoryTab : MonoBehaviour, ITabToggleTab
 	[IteratorStateMachine(typeof(_003CFocusOrderSlot_003Ed__26))]
 	private IEnumerator FocusOrderSlot()
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateOrder()

@@ -24,10 +24,14 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public BigInteger Exp { get; private set; }
 
-	public int Grade => 0;
+	public int Grade { get { return 0; } }
 
 	public CompanyData(int idx, int level, BigInteger exp, bool maxreward)
 	{
+		Idx = idx;
+		Level = level;
+		Exp = exp;
+		MaxReward = maxreward;
 	}
 
 	public void UpdateExp(int targetRegion = -1, bool forceStrikeMood = false)
@@ -51,6 +55,9 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		LevelProperty = new ReactiveProperty<int>(Level);
+		ExpProperty = new ReactiveProperty<BigInteger>(Exp);
+		IncreaseExp = new ReactiveProperty<int>();
 	}
 
 	public bool IsFirstMaxLevel()
@@ -65,6 +72,8 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		CompanyData clone = (CompanyData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

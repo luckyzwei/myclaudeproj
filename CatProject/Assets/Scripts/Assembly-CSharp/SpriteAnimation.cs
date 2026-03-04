@@ -133,7 +133,7 @@ public class SpriteAnimation : MonoBehaviour
 
 	public Action<Sprite> OnChangeSprite;
 
-	public string CurAniName => null;
+	public string CurAniName { get { return null; } }
 
 	public void Awake()
 	{
@@ -181,7 +181,7 @@ public class SpriteAnimation : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitOneFrame_003Ed__30))]
 	private IEnumerator WaitOneFrame(Action callback)
 	{
-		return null;
+		yield break;
 	}
 
 	public float GetAniPlayTime(string aniName)

@@ -28,7 +28,7 @@ public class ParkingSpace : MonoBehaviour
 
 	private bool isInit;
 
-	public Transform ParkingTrans => null;
+	public Transform ParkingTrans { get { return null; } }
 
 	private void Awake()
 	{

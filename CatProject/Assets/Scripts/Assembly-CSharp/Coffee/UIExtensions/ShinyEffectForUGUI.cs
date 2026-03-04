@@ -245,9 +245,9 @@ namespace Coffee.UIExtensions
 
 		[IteratorStateMachine(typeof(_003CCoPlay_003Ed__40))]
 		private IEnumerator CoPlay(float duration, AnimatorUpdateMode updateMode = AnimatorUpdateMode.Normal)
-		{
-			return null;
-		}
+	{
+		yield break;
+	}
 
 		private static float _PackToFloat(float x, float y, float z, float w)
 		{

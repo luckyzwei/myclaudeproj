@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -184,7 +185,7 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CInitVisibility_Delay_003Ed__24))]
 	private IEnumerator InitVisibility_Delay(bool bShow)
 	{
-		return null;
+		yield break;
 	}
 
 	private void UpdateHasProductValue(BigInteger hasValue_PerMile)
@@ -210,7 +211,7 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CPopupFocusToProduct_Delay_003Ed__30))]
 	private IEnumerator PopupFocusToProduct_Delay(UIBase popupMenu)
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickedBoxVisibilityToggleBtn()

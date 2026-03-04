@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using SeasonalDef;
 using UniRx;
 using UnityEngine.Events;
@@ -109,13 +110,13 @@ public class SeasonalSystem
 
 	public int seasonal_rank_period { get; private set; }
 
-	public int Seasonal_Office_BuildCost_Skip_Time => 0;
+	public int Seasonal_Office_BuildCost_Skip_Time { get { return 0; } }
 
-	public int Seasonal_Office_BuildCost_Skip_Cash => 0;
+	public int Seasonal_Office_BuildCost_Skip_Cash { get { return 0; } }
 
-	public int Seasonal_statue_buff_slot_count => 0;
+	public int Seasonal_statue_buff_slot_count { get { return 0; } }
 
-	public int Seasonal_statue_buff_reward_skill_book => 0;
+	public int Seasonal_statue_buff_reward_skill_book { get { return 0; } }
 
 	public bool bNeedForceUpdate { get; private set; }
 

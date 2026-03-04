@@ -4,7 +4,7 @@ public class MultipleDriversTryingToConnectException : ConnectionException
 	{
 	}
 
-	public MultipleDriversTryingToConnectException(string message)
+	public MultipleDriversTryingToConnectException(string message) : base(message)
 	{
 	}
 }

@@ -134,7 +134,7 @@ public class ItemFactoryProduct : MonoBehaviour
 	[IteratorStateMachine(typeof(_003COnFinishUnlock_003Ed__29))]
 	private IEnumerator OnFinishUnlock()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickBtn()

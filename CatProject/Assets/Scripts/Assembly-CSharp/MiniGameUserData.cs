@@ -34,7 +34,10 @@ public class MiniGameUserData
 
 	public static MiniGameUserData FromFlatBuffer(MiniGameData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = new MiniGameUserData();
+		return result;
 	}
 
 	public static Offset<MiniGameData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameUserData userData)

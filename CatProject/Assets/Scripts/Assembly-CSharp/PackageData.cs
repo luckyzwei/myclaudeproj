@@ -19,6 +19,9 @@ public class PackageData : IReadOnlyData, ICloneable
 
 	public PackageData(int idx, long datetime, int count)
 	{
+		PackageIdx = idx;
+		EndTime = System.DateTimeOffset.FromUnixTimeMilliseconds(datetime).DateTime;
+		BuyCount = count;
 	}
 
 	public virtual void Create()
@@ -27,6 +30,8 @@ public class PackageData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		PackageData clone = (PackageData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

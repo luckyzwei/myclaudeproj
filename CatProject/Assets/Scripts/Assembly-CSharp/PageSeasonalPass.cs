@@ -111,7 +111,7 @@ public class PageSeasonalPass : UIBase
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__15))]
 	private IEnumerator FocusToIndexCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private void Update()

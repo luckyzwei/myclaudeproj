@@ -9,6 +9,8 @@ public class ExchangeShopUserData
 
 	public ExchangeShopUserData(int itemIdx, int itemBuyCount)
 	{
+		ItemIdx = itemIdx;
+		ItemBuyCount = itemBuyCount;
 	}
 
 	public void AddItemBuyCount(int buyCount)
@@ -17,7 +19,8 @@ public class ExchangeShopUserData
 
 	public static ExchangeShopUserData FromFlatBuffer(ExchangeShopData data)
 	{
-		return null;
+		var result = (ExchangeShopUserData)new ExchangeShopUserData(0, 0).MemberwiseClone();
+		return result;
 	}
 
 	public static Offset<ExchangeShopData> ToFlatBuffer(FlatBufferBuilder builder, ExchangeShopUserData userData)

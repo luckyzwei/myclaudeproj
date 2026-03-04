@@ -5,7 +5,7 @@ public class IndexerCondition : SelectorCondition
 	public int CurrentIndexCountDown { get; set; }
 
 	public IndexerCondition(string selector)
-		: base(null, default(SelectorType))
+		: base(selector, default(SelectorType))
 	{
 	}
 }

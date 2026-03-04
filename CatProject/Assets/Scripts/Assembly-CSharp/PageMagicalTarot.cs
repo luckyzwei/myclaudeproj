@@ -338,7 +338,7 @@ public class PageMagicalTarot : UIBase
 	[IteratorStateMachine(typeof(_003CPlayCards_003Ed__74))]
 	private IEnumerator PlayCards(ItemTarotCard.AniClip clip, Action cb = null)
 	{
-		return null;
+		yield break;
 	}
 
 	protected override void OnEnable()

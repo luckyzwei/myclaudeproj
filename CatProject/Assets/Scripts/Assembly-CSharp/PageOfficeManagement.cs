@@ -260,7 +260,7 @@ public class PageOfficeManagement : UIBase
 	[IteratorStateMachine(typeof(_003CFocusOffsetSlot_003Ed__42))]
 	private IEnumerator FocusOffsetSlot()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnScrolled(Vector2 value)
@@ -270,7 +270,7 @@ public class PageOfficeManagement : UIBase
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__44))]
 	private IEnumerator CheckInput()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnClickChangeTab(Tab tab, bool isInit = false)

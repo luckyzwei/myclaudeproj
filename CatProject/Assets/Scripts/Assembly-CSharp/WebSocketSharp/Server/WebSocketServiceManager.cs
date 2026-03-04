@@ -25,14 +25,9 @@ namespace WebSocketSharp.Server
 
 		public bool KeepClean
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
-		}
+		get { return _keepClean; }
+		set { _keepClean = value; }
+	}
 
 		public IEnumerable<string> Paths => null;
 
@@ -48,8 +43,9 @@ namespace WebSocketSharp.Server
 		}
 
 		internal WebSocketServiceManager(Logger log)
-		{
-		}
+	{
+		_log = log;
+	}
 
 		private bool canSet()
 		{

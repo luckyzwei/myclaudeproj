@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using Treeplla;
 using UniRx;
 using UnityEngine;
@@ -211,7 +212,7 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private IDisposable SkillBookEnableDisposable;
 
-	public Vector3 GetQuestBtnPos => default(Vector3);
+	public Vector3 GetQuestBtnPos { get { return default(Vector3); } }
 
 	protected override void Awake()
 	{

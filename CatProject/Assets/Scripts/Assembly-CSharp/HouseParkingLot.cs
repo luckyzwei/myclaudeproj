@@ -22,7 +22,7 @@ public class HouseParkingLot : MonoBehaviour
 
 	private int OriginHouseIdx;
 
-	public Transform Trans => null;
+	public Transform Trans { get { return null; } }
 
 	public Transform ParkingTrans(int order)
 	{

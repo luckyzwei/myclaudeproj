@@ -17,6 +17,9 @@ public class SpecialPackageData : IReadOnlyData, ICloneable
 
 	public SpecialPackageData(int idx, bool expire = false, DateTime limitTime = default(DateTime))
 	{
+		Idx = idx;
+		Expire = expire;
+		LimitTime = limitTime;
 	}
 
 	public void Create()
@@ -25,7 +28,9 @@ public class SpecialPackageData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		SpecialPackageData clone = (SpecialPackageData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 
 	public void BuyPackage()

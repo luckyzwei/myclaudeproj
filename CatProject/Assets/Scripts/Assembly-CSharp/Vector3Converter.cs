@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 public class Vector3Converter : JsonConverter
 {
-	public override bool CanRead => false;
+	public override bool CanRead { get { return false; } }
 
 	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 	{

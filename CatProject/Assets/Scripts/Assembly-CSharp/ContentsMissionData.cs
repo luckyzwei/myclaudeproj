@@ -38,6 +38,13 @@ public class ContentsMissionData
 
 	public ContentsMissionData(E_ContentsMissionType contentType, int missionGroupIdx, int missionCount, DateTime startTime, DateTime endTime, int resetHour, int resetCost)
 	{
+		ContentType = contentType;
+		MissionGroupIdx = missionGroupIdx;
+		MissionCount = missionCount;
+		MissionStartTime = startTime;
+		MissionEndTime = endTime;
+		MissionResetHour = resetHour;
+		MissionResetCost = resetCost;
 	}
 
 	public void SetMissionSetTime(DateTime setTime)

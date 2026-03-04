@@ -69,6 +69,6 @@ public class PageEventDim : UIBase
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__1))]
 	private IEnumerator WaitFrame()
 	{
-		return null;
+		yield break;
 	}
 }

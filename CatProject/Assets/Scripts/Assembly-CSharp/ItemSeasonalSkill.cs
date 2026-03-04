@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using SeasonalDef;
 using Treeplla;
 using UniRx;
@@ -62,13 +63,13 @@ public class ItemSeasonalSkill : MonoBehaviour
 
 	private BigInteger NeedValue_PerMile;
 
-	public Button GetSkillUnlockBtn => null;
+	public Button GetSkillUnlockBtn { get { return null; } }
 
 	public E_SkillBookAbilityType SkillAbilityType { get; private set; }
 
-	public bool GetMaxLevel => false;
+	public bool GetMaxLevel { get { return false; } }
 
-	public bool GetEnoughCost => false;
+	public bool GetEnoughCost { get { return false; } }
 
 	private void Awake()
 	{

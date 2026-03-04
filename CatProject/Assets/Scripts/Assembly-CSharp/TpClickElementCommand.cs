@@ -1,7 +1,7 @@
 internal class TpClickElementCommand : TpCommandWithWait<TpClickElementParams, TpObject>
 {
 	public TpClickElementCommand(ITpCommandHandler handler, TpClickElementParams cmdParams, string socketID)
-		: base((TpClickElementParams)default(_00210), (ITpCommandHandler)null, (string)null, false)
+		: base(default(TpClickElementParams), (ITpCommandHandler)null, (string)null, false)
 	{
 	}
 

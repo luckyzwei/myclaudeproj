@@ -7,7 +7,7 @@ public class FunctionCondition : SelectorCondition
 	public FunctionType Function { get; private set; }
 
 	public FunctionCondition(string selector)
-		: base(null, default(SelectorType))
+		: base(selector, default(SelectorType))
 	{
 	}
 }

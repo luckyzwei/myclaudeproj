@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class TpKillGameObjectsParams : BaseGameFindObjectParams
 {
 	public TpKillGameObjectsParams(List<BoundCondition> objectConditions, List<BoundCondition> cameraConditions, bool enabled)
-		: base(null, null, enabled: false)
+		: base(objectConditions, cameraConditions, enabled)
 	{
 	}
 }

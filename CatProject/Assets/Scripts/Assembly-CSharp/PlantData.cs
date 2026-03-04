@@ -34,6 +34,9 @@ public class PlantData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		LevelProperty = new ReactiveProperty<int>();
+		ExpProperty = new ReactiveProperty<float>();
+		RemainNextAbilityUseTime = new ReactiveProperty<int>();
 	}
 
 	public void LevelUp(Action cb = null)
@@ -50,6 +53,8 @@ public class PlantData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		PlantData clone = (PlantData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

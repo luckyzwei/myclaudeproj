@@ -9,13 +9,16 @@ public class EffectPathAttribute : Attribute
 
 	private bool worldUI;
 
-	public string Path => null;
+	public string Path { get { return null; } }
 
-	public bool InUI => false;
+	public bool InUI { get { return false; } }
 
-	public bool InWorldUI => false;
+	public bool InWorldUI { get { return false; } }
 
 	public EffectPathAttribute(string name, bool _ui = false, bool _worldUI = false)
 	{
+		path = name;
+		ui = _ui;
+		worldUI = _worldUI;
 	}
 }

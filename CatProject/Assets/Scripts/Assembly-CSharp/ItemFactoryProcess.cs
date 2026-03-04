@@ -82,6 +82,6 @@ public class ItemFactoryProcess : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__5))]
 	private IEnumerator CheckInput()
 	{
-		return null;
+		yield break;
 	}
 }

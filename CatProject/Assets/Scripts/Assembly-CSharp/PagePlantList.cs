@@ -69,7 +69,7 @@ public class PagePlantList : UIBase
 
 	private List<int> PlantSortList;
 
-	public Transform CashRootTransform => null;
+	public Transform CashRootTransform { get { return null; } }
 
 	protected override void Awake()
 	{

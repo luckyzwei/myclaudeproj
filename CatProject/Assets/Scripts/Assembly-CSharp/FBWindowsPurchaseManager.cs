@@ -88,7 +88,7 @@ public class FBWindowsPurchaseManager : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CLoadPictureFromUrl_003Ed__6))]
 	private IEnumerator LoadPictureFromUrl(string url, RawImage itemImage)
 	{
-		return null;
+		yield break;
 	}
 
 	private void ProcessPurchase(IPurchaseResult result)

@@ -104,7 +104,7 @@ public class PopupMiniGameOpen : UIBase
 	[IteratorStateMachine(typeof(_003CPlayMiniGameOpenEffect_003Ed__8))]
 	public IEnumerator PlayMiniGameOpenEffect()
 	{
-		return null;
+		yield break;
 	}
 
 	public override void OnHideAfter()

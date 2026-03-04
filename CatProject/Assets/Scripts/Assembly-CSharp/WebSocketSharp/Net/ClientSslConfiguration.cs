@@ -75,18 +75,14 @@ namespace WebSocketSharp.Net
 
 		public string TargetHost
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
-		}
+		get { return _targetHost; }
+		set { _targetHost = value; }
+	}
 
 		public ClientSslConfiguration(string targetHost)
-		{
-		}
+	{
+		_targetHost = targetHost;
+	}
 
 		public ClientSslConfiguration(ClientSslConfiguration configuration)
 		{

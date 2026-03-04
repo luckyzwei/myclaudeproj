@@ -5,6 +5,7 @@ public class CouldNotPerformOperationException : TpAutomationException
 	}
 
 	public CouldNotPerformOperationException(string message)
+		: base(message)
 	{
 	}
 }

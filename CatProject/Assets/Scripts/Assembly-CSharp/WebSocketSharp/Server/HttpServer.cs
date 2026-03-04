@@ -5,6 +5,9 @@ using System.Security.Principal;
 using System.Threading;
 using WebSocketSharp.Net;
 using WebSocketSharp.Net.WebSockets;
+using AuthenticationSchemes = WebSocketSharp.Net.AuthenticationSchemes;
+using HttpListener = WebSocketSharp.Net.HttpListener;
+using HttpListenerContext = WebSocketSharp.Net.HttpListenerContext;
 
 namespace WebSocketSharp.Server
 {
@@ -222,24 +225,28 @@ namespace WebSocketSharp.Server
 		}
 
 		public HttpServer(int port)
-		{
-		}
+	{
+		_port = port;
+	}
 
 		public HttpServer(string url)
 		{
 		}
 
 		public HttpServer(int port, bool secure)
-		{
-		}
+	{
+		_port = port;
+	}
 
 		public HttpServer(IPAddress address, int port)
-		{
-		}
+	{
+		_address = address;
+	}
 
 		public HttpServer(IPAddress address, int port, bool secure)
-		{
-		}
+	{
+		_address = address;
+	}
 
 		private void abort()
 		{

@@ -13,14 +13,20 @@ public class OfficeItemData : IReadOnlyData, ICloneable
 
 	public OfficeItemData(int type, int idx, int level)
 	{
+		Type = type;
+		Idx = idx;
+		Level = level;
 	}
 
 	public void Create()
 	{
+		LevelProperty = new ReactiveProperty<int>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		OfficeItemData clone = (OfficeItemData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

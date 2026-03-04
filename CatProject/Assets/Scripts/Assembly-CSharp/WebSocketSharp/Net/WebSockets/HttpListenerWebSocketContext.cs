@@ -134,8 +134,9 @@ namespace WebSocketSharp.Net.WebSockets
 		public override WebSocket WebSocket => null;
 
 		internal HttpListenerWebSocketContext(HttpListenerContext context, string protocol)
-		{
-		}
+	{
+		_context = context;
+	}
 
 		internal void Close()
 		{

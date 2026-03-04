@@ -12,6 +12,8 @@ public class FactoryAdsItemData : IReadOnlyData, ICloneable
 
 	public virtual object Clone()
 	{
-		return null;
+		FactoryAdsItemData clone = (FactoryAdsItemData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

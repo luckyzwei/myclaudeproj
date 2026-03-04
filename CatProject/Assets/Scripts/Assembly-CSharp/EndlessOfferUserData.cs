@@ -20,7 +20,8 @@ public class EndlessOfferUserData
 
 	public static EndlessOfferUserData FromFlatBuffer(EndlessOfferData data)
 	{
-		return null;
+		var result = new EndlessOfferUserData();
+		return result;
 	}
 
 	private static Offset<EndlessOfferData> ToFlatBuffer(FlatBufferBuilder builder, EndlessOfferUserData data)

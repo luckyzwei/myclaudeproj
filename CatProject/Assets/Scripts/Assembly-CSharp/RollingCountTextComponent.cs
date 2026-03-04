@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -98,6 +99,6 @@ public class RollingCountTextComponent : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CPlayCountCoroutine_003Ed__4))]
 	private IEnumerator PlayCountCoroutine(BigInteger startCount, BigInteger targetCount, float duration, bool useThousandsSeparator, int updateCountPerSec)
 	{
-		return null;
+		yield break;
 	}
 }

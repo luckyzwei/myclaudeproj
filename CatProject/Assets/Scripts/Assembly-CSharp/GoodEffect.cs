@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -118,6 +120,6 @@ public class GoodEffect : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__16))]
 	private IEnumerator WaitFrame()
 	{
-		return null;
+		yield break;
 	}
 }

@@ -104,7 +104,7 @@ public class PageMilestone : UIBase
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__12))]
 	private IEnumerator FocusToIndexCoroutine()
 	{
-		return null;
+		yield break;
 	}
 
 	private void Update()

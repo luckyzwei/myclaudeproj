@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -157,7 +158,7 @@ public class ItemManagerHireList : MonoBehaviour
 
 	public Action<int> UpgradeCb;
 
-	public int CurOfficeIdx => 0;
+	public int CurOfficeIdx { get { return 0; } }
 
 	private void Awake()
 	{

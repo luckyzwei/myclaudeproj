@@ -21,6 +21,11 @@ public class FactoryOrderSlotData : IReadOnlyData, ICloneable
 
 	public FactoryOrderSlotData(int idx, bool open, int product, int count, DateTime time)
 	{
+		Idx = idx;
+		IsOpen = open;
+		OrderProduct = product;
+		OrderCount = count;
+		RefreshTime = time;
 	}
 
 	public void SetOrderCharacter(int characterIconIdx, int characterTalkIdx)
@@ -29,10 +34,13 @@ public class FactoryOrderSlotData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		RemainRefreshTime = new ReactiveProperty<int>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		FactoryOrderSlotData clone = (FactoryOrderSlotData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

@@ -4,5 +4,6 @@ public class BaseTpObjectParams : TpCommandParams
 
 	public BaseTpObjectParams(TpObject TpObject)
 	{
+		TpObject = TpObject;
 	}
 }

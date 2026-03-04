@@ -4,7 +4,7 @@ public class WaitTimeOutException : TpAutomationException
 	{
 	}
 
-	public WaitTimeOutException(string message)
+	public WaitTimeOutException(string message) : base(message)
 	{
 	}
 }

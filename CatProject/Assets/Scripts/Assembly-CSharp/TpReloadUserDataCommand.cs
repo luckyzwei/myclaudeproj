@@ -1,7 +1,7 @@
 public class TpReloadUserDataCommand : TpCommand<TpReloadUserDataParams, string>
 {
 	public TpReloadUserDataCommand(TpReloadUserDataParams cmdParams)
-		: base((TpReloadUserDataParams)default(_00210))
+		: base(cmdParams)
 	{
 	}
 

@@ -5,5 +5,5 @@ public class WorkerItem : MonoBehaviour
 	[SerializeField]
 	private SpriteRenderer spriteRenderer;
 
-	public SpriteRenderer SpriteRenderer => null;
+	public SpriteRenderer SpriteRenderer { get { return null; } }
 }

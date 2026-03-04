@@ -11,18 +11,25 @@ public class ItemData : IReadOnlyData, ICloneable
 
 	public ItemData(int idx, int count)
 	{
+		ItemIdx = idx;
+		ItemCount = count;
 	}
 
 	public void AddCount(int cnt)
 	{
+		ItemCount += cnt;
+		if (CountProperty != null) CountProperty.Value = ItemCount;
 	}
 
 	public void Create()
 	{
+		CountProperty = new ReactiveProperty<int>(ItemCount);
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		ItemData clone = (ItemData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

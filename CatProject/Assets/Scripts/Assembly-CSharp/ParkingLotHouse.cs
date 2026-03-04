@@ -18,11 +18,11 @@ public class ParkingLotHouse : MonoBehaviour
 
 		private List<Transform> ParkingTrans;
 
-		public GameObject GetHouseRoot => null;
+		public GameObject GetHouseRoot { get { return null; } }
 
-		public GameObject GetParkingRoot => null;
+		public GameObject GetParkingRoot { get { return null; } }
 
-		public List<Transform> GetParkingTrans => null;
+		public List<Transform> GetParkingTrans { get { return null; } }
 
 		public void Init(Action onClickHouse)
 		{

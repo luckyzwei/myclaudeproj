@@ -36,9 +36,9 @@ public class SeasonalBuildingData
 
 	public int MaxLevel { get; private set; }
 
-	public bool IsMaxLevel => false;
+	public bool IsMaxLevel { get { return false; } }
 
-	public SeasonalBuildingFacilityData BuildingMainFacilityData => null;
+	public SeasonalBuildingFacilityData BuildingMainFacilityData { get { return null; } }
 
 	public SeasonalBuildingWorkerData WorkerData { get; protected set; }
 

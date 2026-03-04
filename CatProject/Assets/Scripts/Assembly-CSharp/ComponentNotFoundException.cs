@@ -5,6 +5,7 @@ public class ComponentNotFoundException : TpAutomationException
 	}
 
 	public ComponentNotFoundException(string message)
+		: base(message)
 	{
 	}
 }

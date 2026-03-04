@@ -4,7 +4,7 @@ public class AssemblyNotFoundException : TpAutomationException
 	{
 	}
 
-	public AssemblyNotFoundException(string message)
+	public AssemblyNotFoundException(string message) : base(message)
 	{
 	}
 }

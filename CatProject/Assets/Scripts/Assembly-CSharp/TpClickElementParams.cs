@@ -10,5 +10,9 @@ public class TpClickElementParams : BaseTpObjectParams
 	public TpClickElementParams(TpObject TpObject, int count, float interval, bool wait)
 		: base(null)
 	{
+		TpObject = TpObject;
+		count = count;
+		interval = interval;
+		wait = wait;
 	}
 }

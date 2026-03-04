@@ -130,7 +130,7 @@ public class SliderTextComponent : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CAnimateSliderValue_003Ed__16))]
 	private IEnumerator AnimateSliderValue(float startValue, float targetValue, E_AnimationType animationType)
 	{
-		return null;
+		yield break;
 	}
 
 	private float GetEasedProgress(float progress, E_AnimationType animationType)

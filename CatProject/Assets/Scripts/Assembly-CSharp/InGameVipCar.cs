@@ -27,7 +27,7 @@ public class InGameVipCar : MonoBehaviour
 
 	private Status CurStatus;
 
-	private AdSupplyVIP AdSupplyVIP => null;
+	private AdSupplyVIP AdSupplyVIP { get { return null; } }
 
 	private void Awake()
 	{

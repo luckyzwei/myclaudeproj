@@ -4,7 +4,7 @@ public class UnknownErrorException : TpAutomationException
 	{
 	}
 
-	public UnknownErrorException(string message)
+	public UnknownErrorException(string message) : base(message)
 	{
 	}
 }

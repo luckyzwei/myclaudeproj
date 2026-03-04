@@ -67,6 +67,6 @@ public class TutorialEntityWaitHUD : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitHUD_003Ed__1))]
 	private IEnumerator WaitHUD()
 	{
-		return null;
+		yield break;
 	}
 }

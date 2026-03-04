@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -76,9 +77,9 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 
 	private Action OnGotoNavi;
 
-	public OnetimeCurrencyComponent OneTimeComponent => null;
+	public OnetimeCurrencyComponent OneTimeComponent { get { return null; } }
 
-	public Transform OneTimeCurrencyIconT => null;
+	public Transform OneTimeCurrencyIconT { get { return null; } }
 
 	private void Awake()
 	{

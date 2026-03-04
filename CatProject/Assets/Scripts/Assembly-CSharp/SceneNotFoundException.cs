@@ -4,7 +4,7 @@ public class SceneNotFoundException : TpAutomationException
 	{
 	}
 
-	public SceneNotFoundException(string message)
+	public SceneNotFoundException(string message) : base(message)
 	{
 	}
 }

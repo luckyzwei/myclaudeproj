@@ -45,6 +45,11 @@ public class AbilitySystem
 
 	public void Init()
 	{
+		AbilityValues = new Dictionary<AbilityType, BigInteger>();
+		disposables = new CompositeDisposable();
+		OnChangeBoosterState = new Subject<AbilityType>();
+		OnUseBooster = new Subject<int>();
+		InitBooster();
 	}
 
 	private void InitBooster()

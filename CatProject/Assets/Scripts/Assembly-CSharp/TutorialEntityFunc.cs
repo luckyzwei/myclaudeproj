@@ -272,24 +272,24 @@ public class TutorialEntityFunc : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitFactory_003Ed__3))]
 	private IEnumerator WaitFactory()
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitRepair_003Ed__4))]
 	private IEnumerator WaitRepair(int officeIdx)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__5))]
 	private IEnumerator WaitTime(float time)
 	{
-		return null;
+		yield break;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitCeo_003Ed__6))]
 	private IEnumerator WaitCeo()
 	{
-		return null;
+		yield break;
 	}
 }

@@ -24,9 +24,13 @@ public class SeasonalDistributorProductData
 
 	public IReactiveProperty<bool> isUpgradeOpen;
 
-	public bool IsMaxLevel => false;
+	public bool IsMaxLevel { get { return false; } }
 
 	public SeasonalDistributorProductData(int themeIdx, int idx, int sortOrder, DateTime lastSellingTime = default(DateTime))
 	{
+		// themeIdx is not stored as a field directly
+		productIdx = idx;
+		productSortOrder = sortOrder;
+		lastSellingDataTime = lastSellingTime;
 	}
 }

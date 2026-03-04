@@ -14,14 +14,20 @@ public class MissionData : IReadOnlyData, ICloneable
 
 	public MissionData(int slot, int idx, BigInteger value)
 	{
+		Slot = slot;
+		Idx = idx;
+		Value = new ReactiveProperty<BigInteger>(value);
 	}
 
 	public void Create()
 	{
+		Value = new ReactiveProperty<BigInteger>();
 	}
 
 	public virtual object Clone()
 	{
-		return null;
+		MissionData clone = (MissionData)MemberwiseClone();
+		clone.Create();
+		return clone;
 	}
 }

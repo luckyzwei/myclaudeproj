@@ -27,7 +27,10 @@ public class AnniversaryEventData
 
 	public static AnniversaryEventData FromFlatBuffer(Treeplla.Data.AnniversaryEventData? eventDataPtr)
 	{
-		return null;
+		if (!eventDataPtr.HasValue) return null;
+		var d = eventDataPtr.Value;
+		var result = new AnniversaryEventData();
+		return result;
 	}
 
 	public static Offset<Treeplla.Data.AnniversaryEventData> ToFlatBuffer(AnniversaryEventData source, FlatBufferBuilder builder)

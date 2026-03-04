@@ -12,6 +12,9 @@ public class AdsViewUserData
 
 	public AdsViewUserData(int itemIdx, int viewCount, DateTime lastViewTime)
 	{
+		ItemIdx = itemIdx;
+		ViewCount = viewCount;
+		LastViewTime = lastViewTime;
 	}
 
 	public void OnViewAds()
@@ -20,7 +23,10 @@ public class AdsViewUserData
 
 	public static AdsViewUserData FromFlatBuffer(AdsFreeViewData? data)
 	{
-		return null;
+		if (!data.HasValue) return null;
+		var d = data.Value;
+		var result = (AdsViewUserData)new AdsViewUserData(0, 0, default(DateTime)).MemberwiseClone();
+		return result;
 	}
 
 	public static Offset<AdsFreeViewData> ToFlatBuffer(FlatBufferBuilder builder, AdsViewUserData userData)

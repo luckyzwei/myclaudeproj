@@ -1,4 +1,5 @@
 using System.Numerics;
+using Vector3 = UnityEngine.Vector3;
 using Treeplla;
 using UniRx;
 using UnityEngine;
@@ -80,7 +81,7 @@ public class PopupAdsSupply : UIBase
 
 	private int MULTIPLE_REWARD_COST;
 
-	public BigInteger CurAdsupplyCollectMoney => default(BigInteger);
+	public BigInteger CurAdsupplyCollectMoney { get { return default(BigInteger); } }
 
 	public int CurAdsupplySaveCnt
 	{

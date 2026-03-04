@@ -125,7 +125,7 @@ public class PopupShop : HUDAniBase
 	[IteratorStateMachine(typeof(_003CWaitOneFrame_003Ed__21))]
 	private IEnumerator WaitOneFrame()
 	{
-		return null;
+		yield break;
 	}
 
 	public IShopContents GetContents(ShopTab shopidx)

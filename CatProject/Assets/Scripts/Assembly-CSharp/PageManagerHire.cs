@@ -108,6 +108,6 @@ public class PageManagerHire : UIBase
 	[IteratorStateMachine(typeof(_003CShowHire_003Ed__13))]
 	private IEnumerator ShowHire()
 	{
-		return null;
+		yield break;
 	}
 }

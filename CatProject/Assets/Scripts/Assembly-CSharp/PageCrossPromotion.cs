@@ -71,9 +71,9 @@ public class PageCrossPromotion : UIBase
 
 	public CPTab CurTab { get; set; }
 
-	public bool IsCreateSlot => false;
+	public bool IsCreateSlot { get { return false; } }
 
-	public List<CrossPromotionComponent> GetListItems => null;
+	public List<CrossPromotionComponent> GetListItems { get { return null; } }
 
 	public void Set(APP_IDX _appMyIdx, Action _onReward, Sprite rewardIcon = null)
 	{

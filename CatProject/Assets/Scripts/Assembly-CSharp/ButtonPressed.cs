@@ -117,7 +117,7 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 	[IteratorStateMachine(typeof(_003CStart_003Ed__23))]
 	private IEnumerator Start()
 	{
-		return null;
+		yield break;
 	}
 
 	private void OnEnable()

@@ -1,7 +1,7 @@
 public class TpQueryStatsCommand : TpCommand<TpQueryStatsParams, string>
 {
 	public TpQueryStatsCommand(TpQueryStatsParams commandParams)
-		: base((TpQueryStatsParams)default(_00210))
+		: base(commandParams)
 	{
 	}
 
