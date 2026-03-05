@@ -28,29 +28,59 @@ public class InGameFindManagerUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		disposable = new CompositeDisposable();
+		if (Btn != null)
+			Btn.onClick.AddListener(OnClickBtn);
+		isOpen = false;
+		curManagerIdx = -1;
 	}
 
 	public void Set(int officeIdx, int itemIdx = 1)
 	{
+		curOfficeIdx = officeIdx;
+		curOfficeItemIdx = itemIdx;
+		isOpen = true;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Check if manager is assigned to this office
+		SetActive(curManagerIdx);
 	}
 
 	private void SetActive(int managerIdx)
 	{
+		curManagerIdx = managerIdx;
+		bool hasManager = managerIdx >= 0;
+		if (DefaultObj != null)
+			DefaultObj.SetActive(hasManager);
+		if (PlusObj != null)
+			PlusObj.SetActive(!hasManager);
 	}
 
 	public void UpdatePlusObj()
 	{
+		bool hasManager = curManagerIdx >= 0;
+		if (PlusObj != null)
+			PlusObj.SetActive(!hasManager);
 	}
 
 	private void OnClickBtn()
 	{
+		// Open manager assignment popup for this office
 	}
 
 	private void OnDisable()
 	{
+		if (disposable != null)
+			disposable.Clear();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposable != null)
+		{
+			disposable.Dispose();
+			disposable = null;
+		}
 	}
 }

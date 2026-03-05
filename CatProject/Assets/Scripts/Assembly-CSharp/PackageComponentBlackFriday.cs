@@ -56,49 +56,94 @@ public class PackageComponentBlackFriday : PackageComponent
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		onToggles = new List<int>();
+		Page1ItemPackageGroups = new List<ItemPackageGroup>();
+		Page2ItemPackageGroups = new List<ItemPackageGroup>();
+		CurPage = 0;
+
+		if (CashBtn != null)
+			CashBtn.onClick.AddListener(OnClickCashShop);
+
+		if (PageToggles != null)
+		{
+			for (int i = 0; i < PageToggles.Count; i++)
+			{
+				int pageIdx = i;
+				if (PageToggles[i] != null)
+					PageToggles[i].onValueChanged.AddListener((isOn) => { if (isOn) SetPage(pageIdx); });
+			}
+		}
 	}
 
 	public override void SetSaleList(int packageIdx)
 	{
+		SetPage1();
+		SetPage(0);
+		if (ToggleRoot != null)
+			ToggleRoot.SetActive(Page2ItemPackageGroups != null && Page2ItemPackageGroups.Count > 0);
 	}
 
 	private void SetPage1()
 	{
+		UpdatePage1Layout();
 	}
 
 	private void SetPage2()
 	{
+		if (Page2Root != null)
+			Page2Root.SetActive(true);
 	}
 
 	private void SetPage(int page)
 	{
+		CurPage = page;
+		bool isPage1 = page == 0;
+		if (Page1Row1Root != null) Page1Row1Root.SetActive(isPage1);
+		if (Page1Row2Root != null) Page1Row2Root.SetActive(isPage1);
+		if (Page2Root != null) Page2Root.SetActive(!isPage1);
 	}
 
 	private void UpdatePage1Layout()
 	{
+		if (Page1Row1Root != null)
+			Page1Row1Root.SetActive(true);
+		if (Page1Row2Root != null)
+			Page1Row2Root.SetActive(Page1PackagesCount > 3);
 	}
 
 	private void OnEnable()
 	{
+		SubscribeCash();
 	}
 
 	private void SubscribeCash()
 	{
+		// Subscribe to cash currency changes to update display
 	}
 
 	private void OnClickCashShop()
 	{
+		// Open cash shop page
 	}
 
 	public override void OnBuySuccess(int idx)
 	{
+		SetSaleList(idx);
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null)
+			disposables.Clear();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 }

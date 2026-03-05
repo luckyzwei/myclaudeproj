@@ -212,121 +212,607 @@ public class RecycleScrollRect : ScrollRect
 
 	public int lineCount { get; private set; }
 
-	public int DIV { get { return 0; } }
+	public int DIV
+	{
+		get
+		{
+			return (DivCnt > 0) ? DivCnt : 1;
+		}
+	}
 
 	protected override void Awake()
 	{
+		base.Awake();
+		SlotList = new LinkedList<GameObject>();
+		onValueChanged.AddListener(delegate
+		{
+			// Scroll value changed - handled in LateUpdate
+		});
 	}
 
 	public void GenerateList(int _dataSize)
 	{
+		dataSize = _dataSize;
+		Init();
 	}
 
 	public void SetSlotObject(GameObject _slot, int _dataSize)
 	{
+		SlotObjectT = _slot;
+		dataSize = _dataSize;
+		Init();
 	}
 
 	private void Init()
 	{
+		// Clear existing slots
+		if (SlotList == null)
+		{
+			SlotList = new LinkedList<GameObject>();
+		}
+		foreach (GameObject slot in SlotList)
+		{
+			if (slot != null)
+			{
+				Destroy(slot);
+			}
+		}
+		SlotList.Clear();
+
+		// Determine the slot template
+		GameObject slotTemplate = (SlotObjectT != null) ? SlotObjectT : SlotObject;
+		if (slotTemplate == null)
+		{
+			return;
+		}
+
+		// Calculate slot dimensions
+		if (SlotSize != Vector2.zero)
+		{
+			slotWidth = SlotSize.x;
+			slotHeight = SlotSize.y;
+		}
+		else
+		{
+			RectTransform slotRect = slotTemplate.GetComponent<RectTransform>();
+			if (slotRect != null)
+			{
+				slotWidth = slotRect.rect.width;
+				slotHeight = slotRect.rect.height;
+			}
+		}
+
+		// Calculate how many slots fit in the viewport
+		RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
+		float viewWidth = viewportRect.rect.width;
+		float viewHeight = viewportRect.rect.height;
+
+		int div = DIV;
+		horizontalCnt = div;
+		verticalCnt = Mathf.CeilToInt(viewHeight / (slotHeight + heightSpace)) + 1;
+
+		// Calculate line count
+		lineCount = Mathf.CeilToInt((float)dataSize / div);
+
+		// Create enough slots to fill viewport plus buffer
+		int totalSlots = horizontalCnt * (verticalCnt + 1);
+		if (totalSlots > dataSize)
+		{
+			totalSlots = dataSize;
+		}
+
+		dataIndex = 0;
+
+		for (int i = 0; i < totalSlots; i++)
+		{
+			GameObject slot = Instantiate(slotTemplate, content);
+			slot.SetActive(true);
+			RectTransform rt = slot.GetComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0f, 1f);
+			rt.anchorMax = new Vector2(0f, 1f);
+			rt.pivot = new Vector2(0f, 1f);
+			rt.sizeDelta = new Vector2(slotWidth, slotHeight);
+			SlotList.AddLast(slot);
+
+			// Add click listener
+			Button btn = slot.GetComponent<Button>();
+			if (btn != null)
+			{
+				GameObject captured = slot;
+				btn.onClick.AddListener(delegate
+				{
+					if (OnClickSlot != null)
+					{
+						OnClickSlot(captured);
+					}
+				});
+			}
+		}
+
+		// Set content size
+		CalculatePosition(true);
+
+		// Position all slots
+		SetPosition();
+
+		// Invoke callbacks for visible slots
+		SlotAllEvent();
 	}
 
 	public void CalculatePosition(bool forceUpdate = false)
 	{
+		int div = DIV;
+		lineCount = Mathf.CeilToInt((float)dataSize / div);
+
+		float contentHeight = startHeightSpace + lineCount * (slotHeight + heightSpace) - heightSpace + BottomYPadding;
+		float contentWidth = startWidthSpace * 2f + div * (slotWidth + widthSpace) - widthSpace;
+
+		RectTransform contentRect = content;
+		if (contentRect != null)
+		{
+			contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, contentHeight);
+		}
 	}
 
 	public Vector2 GetContentsAnchoredPosition()
 	{
-		return default(Vector2);
+		return content.anchoredPosition;
 	}
 
 	public void SetContentsAnchoredPosition(Vector2 anchoredPosition)
 	{
+		content.anchoredPosition = anchoredPosition;
 	}
 
 	private void SetPosition()
 	{
+		if (SlotList == null || SlotList.Count == 0)
+		{
+			return;
+		}
+
+		int div = DIV;
+		int index = dataIndex;
+		LinkedListNode<GameObject> node = SlotList.First;
+
+		while (node != null)
+		{
+			int col = index % div;
+			int row = index / div;
+
+			float xPos;
+			if (childAlignment == TextAnchor.MiddleCenter || childAlignment == TextAnchor.UpperCenter || childAlignment == TextAnchor.LowerCenter)
+			{
+				RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
+				float totalWidth = div * slotWidth + (div - 1) * widthSpace;
+				float offsetX = (viewportRect.rect.width - totalWidth) * 0.5f;
+				xPos = offsetX + col * (slotWidth + widthSpace);
+			}
+			else
+			{
+				xPos = startWidthSpace + col * (slotWidth + widthSpace);
+			}
+
+			float yPos;
+			if (Reverse)
+			{
+				yPos = -(startHeightSpace + (lineCount - 1 - row) * (slotHeight + heightSpace));
+			}
+			else
+			{
+				yPos = -(startHeightSpace + row * (slotHeight + heightSpace));
+			}
+
+			RectTransform rt = node.Value.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector2(xPos, yPos);
+			node.Value.SetActive(index < dataSize);
+
+			index++;
+			node = node.Next;
+		}
 	}
 
 	protected override void LateUpdate()
 	{
+		base.LateUpdate();
+
+		if (SlotList == null || SlotList.Count == 0 || IsAnimating)
+		{
+			return;
+		}
+
+		int div = DIV;
+		float scrollY = content.anchoredPosition.y;
+
+		// Check if we need to recycle slots from top to bottom (scrolling down)
+		while (SlotList.First != null)
+		{
+			LinkedListNode<GameObject> firstNode = SlotList.First;
+			RectTransform firstRT = firstNode.Value.GetComponent<RectTransform>();
+			float slotTop = firstRT.anchoredPosition.y + scrollY;
+
+			if (slotTop > slotHeight + heightSpace)
+			{
+				// This slot is above the viewport, recycle to bottom
+				int lastIndex = dataIndex + SlotList.Count;
+				if (lastIndex >= dataSize)
+				{
+					break;
+				}
+
+				dataIndex += div;
+
+				// Move div slots from front to back
+				for (int i = 0; i < div; i++)
+				{
+					if (SlotList.First == null)
+					{
+						break;
+					}
+					LinkedListNode<GameObject> moveNode = SlotList.First;
+					SlotList.RemoveFirst();
+					SlotList.AddLast(moveNode.Value);
+				}
+
+				// Reposition and rebind
+				SetPosition();
+				SlotAllEvent();
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		// Check if we need to recycle slots from bottom to top (scrolling up)
+		while (SlotList.Last != null && dataIndex > 0)
+		{
+			LinkedListNode<GameObject> firstNode = SlotList.First;
+			RectTransform firstRT = firstNode.Value.GetComponent<RectTransform>();
+			float slotTop = firstRT.anchoredPosition.y + scrollY;
+
+			if (slotTop < -(slotHeight))
+			{
+				break;
+			}
+
+			if (slotTop < 0)
+			{
+				break;
+			}
+
+			// First visible slot is still in view, check if we can bring slots from below
+			LinkedListNode<GameObject> lastNode = SlotList.Last;
+			RectTransform lastRT = lastNode.Value.GetComponent<RectTransform>();
+			RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
+			float viewHeight = viewportRect.rect.height;
+			float slotBottom = -(lastRT.anchoredPosition.y + scrollY);
+
+			if (slotBottom > viewHeight + slotHeight + heightSpace)
+			{
+				// Last slot is below viewport, recycle to top
+				dataIndex -= div;
+				if (dataIndex < 0)
+				{
+					dataIndex = 0;
+				}
+
+				// Move div slots from back to front
+				for (int i = 0; i < div; i++)
+				{
+					if (SlotList.Last == null)
+					{
+						break;
+					}
+					LinkedListNode<GameObject> moveNode = SlotList.Last;
+					SlotList.RemoveLast();
+					SlotList.AddFirst(moveNode.Value);
+				}
+
+				SetPosition();
+				SlotAllEvent();
+			}
+			else
+			{
+				break;
+			}
+		}
 	}
 
 	public void AddListener(Action<int, GameObject> _action)
 	{
+		OnDragIndex = _action;
 	}
 
 	public void AddClickListener(Action<GameObject> _action)
 	{
+		OnClickSlot = _action;
 	}
 
 	public GameObject GetSlot(int index)
 	{
+		if (SlotList == null)
+		{
+			return null;
+		}
+		LinkedListNode<GameObject> node = SlotList.First;
+		int curIdx = dataIndex;
+		while (node != null)
+		{
+			if (curIdx == index)
+			{
+				return node.Value;
+			}
+			curIdx++;
+			node = node.Next;
+		}
 		return null;
 	}
 
 	public LinkedList<GameObject> GetSlotList()
 	{
-		return null;
+		return SlotList;
 	}
 
 	public void Refresh()
 	{
+		SlotAllEvent();
 	}
 
 	public void ResetData()
 	{
+		dataIndex = 0;
+		if (content != null)
+		{
+			content.anchoredPosition = Vector2.zero;
+		}
+		SetPosition();
+		SlotAllEvent();
 	}
 
 	private void SlotAllEvent()
 	{
+		if (OnDragIndex == null || SlotList == null)
+		{
+			return;
+		}
+		LinkedListNode<GameObject> node = SlotList.First;
+		int index = dataIndex;
+		while (node != null)
+		{
+			if (index < dataSize)
+			{
+				OnDragIndex(index, node.Value);
+			}
+			index++;
+			node = node.Next;
+		}
 	}
 
 	public void FocusToIndex(int dataIndex)
 	{
+		Vector2 targetPos = CalculateFocusToIndexPosition(dataIndex);
+		SetContentsAnchoredPosition(targetPos);
+		this.dataIndex = 0;
+		// Recalculate which slots should be visible
+		int div = DIV;
+		int row = dataIndex / div;
+		this.dataIndex = row * div;
+		if (this.dataIndex < 0)
+		{
+			this.dataIndex = 0;
+		}
+		SetPosition();
+		SlotAllEvent();
 	}
 
 	public void FocusToIndexCoroutine(int dataIndex)
 	{
+		Vector2 targetPos = CalculateFocusToIndexPosition(dataIndex);
+		StartCoroutine(FocusToIndexCoroutine(targetPos));
 	}
 
 	private Vector2 CalculateFocusToIndexPosition(int dataIndex)
 	{
-		return default(Vector2);
+		int div = DIV;
+		int row = dataIndex / div;
+		float yPos = startHeightSpace + row * (slotHeight + heightSpace);
+
+		// Clamp to valid content range
+		RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
+		float viewHeight = viewportRect.rect.height;
+		float maxY = content.sizeDelta.y - viewHeight;
+		if (maxY < 0f)
+		{
+			maxY = 0f;
+		}
+		yPos = Mathf.Clamp(yPos, 0f, maxY);
+
+		return new Vector2(content.anchoredPosition.x, yPos);
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__52))]
 	private IEnumerator FocusToIndexCoroutine(Vector2 anchoredPosition)
 	{
-		yield break;
+		float elapsedTime = 0f;
+		float duration = 0.3f;
+		Vector2 startPos = content.anchoredPosition;
+		while (elapsedTime < duration)
+		{
+			elapsedTime += Time.deltaTime;
+			float t = EaseInOutSine(Mathf.Clamp01(elapsedTime / duration));
+			content.anchoredPosition = Vector2.Lerp(startPos, anchoredPosition, t);
+			yield return null;
+		}
+		content.anchoredPosition = anchoredPosition;
 	}
 
 	public void RemoveFirstItemWithAnimation(AnimParams animParams)
 	{
+		if (IsAnimating)
+		{
+			return;
+		}
+		if (AnimationCoroutine != null)
+		{
+			StopCoroutine(AnimationCoroutine);
+		}
+		AnimationCoroutine = StartCoroutine(RemoveFirstItemAnimation(animParams));
 	}
 
 	[IteratorStateMachine(typeof(_003CRemoveFirstItemAnimation_003Ed__54))]
 	private IEnumerator RemoveFirstItemAnimation(AnimParams animParams)
 	{
-		yield break;
+		IsAnimating = true;
+
+		// Store original positions and calculate target positions
+		List<Vector3> originalPositions = new List<Vector3>();
+		List<Vector3> targetPositions = new List<Vector3>();
+		LinkedListNode<GameObject> slot = SlotList.First;
+		int slotIdx = 0;
+
+		while (slot != null)
+		{
+			originalPositions.Add(slot.Value.GetComponent<RectTransform>().localPosition);
+			targetPositions.Add(CalculateTargetPosition(slot.Value, slotIdx, true));
+			slot = slot.Next;
+			slotIdx++;
+		}
+
+		// Play first slot disappear animation
+		if (SlotList.First != null)
+		{
+			Animator animator = SlotList.First.Value.GetComponent<Animator>();
+			if (animator != null && !string.IsNullOrEmpty(animParams.ItemMoveSound))
+			{
+				// Trigger animation
+			}
+		}
+
+		if (animParams.FirstDelay > 0f)
+		{
+			yield return new WaitForSeconds(animParams.FirstDelay);
+		}
+
+		// Animate remaining slots to their new positions
+		float elapsedTime = 0f;
+		float duration = animParams.PlayDuration;
+		if (duration <= 0f)
+		{
+			duration = 0.3f;
+		}
+
+		while (elapsedTime < duration)
+		{
+			elapsedTime += Time.deltaTime;
+			float progress = Mathf.Clamp01(elapsedTime / duration);
+			float easedProgress = EaseInOutSine(progress);
+
+			slot = SlotList.First;
+			int i = 0;
+			while (slot != null && i < originalPositions.Count)
+			{
+				Vector3 newPos;
+				if (animParams.OverShootValue > 0f)
+				{
+					newPos = CalculateOvershootPosition(originalPositions[i], targetPositions[i], easedProgress, animParams.OverShootValue);
+				}
+				else
+				{
+					newPos = Vector3.Lerp(originalPositions[i], targetPositions[i], easedProgress);
+				}
+				slot.Value.GetComponent<RectTransform>().localPosition = newPos;
+				slot = slot.Next;
+				i++;
+			}
+
+			yield return null;
+		}
+
+		// Finalize positions
+		slot = SlotList.First;
+		int idx = 0;
+		while (slot != null && idx < targetPositions.Count)
+		{
+			slot.Value.GetComponent<RectTransform>().localPosition = targetPositions[idx];
+			slot = slot.Next;
+			idx++;
+		}
+
+		// Update data
+		if (animParams.DataUpdateAction != null)
+		{
+			animParams.DataUpdateAction();
+		}
+
+		// Refresh
+		CalculatePosition(true);
+		SetPosition();
+		SlotAllEvent();
+
+		IsAnimating = false;
+
+		if (animParams.OnComplete != null)
+		{
+			animParams.OnComplete();
+		}
 	}
 
 	private Vector3 CalculateTargetPosition(GameObject slot, int slotIndex, bool isRemovingFirst)
 	{
-		return default(Vector3);
+		int div = DIV;
+		int targetIndex = isRemovingFirst ? slotIndex - 1 : slotIndex;
+		if (targetIndex < 0)
+		{
+			targetIndex = 0;
+		}
+
+		int adjustedDataIndex = dataIndex + targetIndex;
+		int col = adjustedDataIndex % div;
+		int row = adjustedDataIndex / div;
+
+		float xPos;
+		if (childAlignment == TextAnchor.MiddleCenter || childAlignment == TextAnchor.UpperCenter || childAlignment == TextAnchor.LowerCenter)
+		{
+			RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
+			float totalWidth = div * slotWidth + (div - 1) * widthSpace;
+			float offsetX = (viewportRect.rect.width - totalWidth) * 0.5f;
+			xPos = offsetX + col * (slotWidth + widthSpace);
+		}
+		else
+		{
+			xPos = startWidthSpace + col * (slotWidth + widthSpace);
+		}
+
+		float yPos = -(startHeightSpace + row * (slotHeight + heightSpace));
+
+		return new Vector3(xPos, yPos, 0f);
 	}
 
 	private Vector3 CalculateOvershootPosition(Vector3 originalPos, Vector3 targetPos, float progress, float overshootValue)
 	{
-		return default(Vector3);
+		// Overshoot: go past the target then come back
+		float overshoot;
+		if (progress < 0.7f)
+		{
+			float t = progress / 0.7f;
+			overshoot = Mathf.Lerp(0f, 1f + overshootValue, EaseInSine(t));
+		}
+		else
+		{
+			float t = (progress - 0.7f) / 0.3f;
+			overshoot = Mathf.Lerp(1f + overshootValue, 1f, EaseInOutSine(t));
+		}
+		return Vector3.LerpUnclamped(originalPos, targetPos, overshoot);
 	}
 
 	private float EaseInOutSine(float x)
 	{
-		return 0f;
+		return -(Mathf.Cos(Mathf.PI * x) - 1f) / 2f;
 	}
 
 	private float EaseInSine(float x)
 	{
-		return 0f;
+		return 1f - Mathf.Cos(x * Mathf.PI / 2f);
 	}
 }

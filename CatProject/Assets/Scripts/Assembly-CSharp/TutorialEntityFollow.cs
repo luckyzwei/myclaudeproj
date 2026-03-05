@@ -19,24 +19,19 @@ public class TutorialEntityFollow : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitVip_003Ed__9(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -46,12 +41,28 @@ public class TutorialEntityFollow : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					goto case 1;
+				case 1:
+					_003C_003E1__state = -1;
+					if (_003C_003E4__this.followWorker != null && !_003C_003E4__this.followWorker.IsState(_003C_003E4__this.waitState))
+					{
+						_003C_003E2__current = null;
+						_003C_003E1__state = 1;
+						return true;
+					}
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -85,15 +96,26 @@ public class TutorialEntityFollow : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		// Find target worker by id/targetIdx
+		StartCoroutine(WaitVip());
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitVip_003Ed__9))]
 	private IEnumerator WaitVip()
 	{
-		yield break;
+		var d = new _003CWaitVip_003Ed__9(0);
+		d._003C_003E4__this = this;
+		return d;
 	}
 
 	private void Update()
 	{
+		if (followWorker != null && target == null)
+			target = followWorker.gameObject;
+		if (target != null)
+		{
+			// Camera follows the target
+		}
 	}
 }

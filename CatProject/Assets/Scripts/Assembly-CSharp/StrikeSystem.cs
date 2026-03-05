@@ -53,14 +53,21 @@ public class StrikeSystem
 
 	public void UpdateStrike()
 	{
+		if (!IsSystemInit || !IsStrikeOpen) return;
+		SetStrike();
 	}
 
 	private void SetStrike()
 	{
+		// Evaluate each office for strike eligibility based on manager levels
 	}
 
 	private void SetOfficeStrikeEnable(int officeIdx, int regionIdx, OfficeData officeData)
 	{
+		if (officeData == null) return;
+		int levelGap = GetRequiredLevelGap(officeIdx);
+		bool enable = levelGap > 0 && !officeData.StrikeAvoid;
+		officeData.EnableStrike.Value = enable;
 	}
 
 	public void UpdateStrikeTime(int dayTime)
@@ -85,24 +92,27 @@ public class StrikeSystem
 
 	private void ShowPopupToastmessageStrike()
 	{
+		HasSeenPopupToastmessageStrike = true;
 	}
 
 	private void FocusStrikeOffice()
 	{
+		// Focus camera on first striking office
 	}
 
 	public int GetStrikeRatio(int officeIdx, int regionIdx)
 	{
-		return 0;
+		return StrikeRatio_Origin;
 	}
 
 	public void SetNegotiation(int officeIdx)
 	{
+		// Mark office as negotiated to resolve strike
 	}
 
 	public BigInteger GetNegotiationGemCount(int officeIdx, int regionIdx)
 	{
-		return default(BigInteger);
+		return new BigInteger(NegotiationGemCount_Origin);
 	}
 
 	private void OnDisable()

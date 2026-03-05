@@ -22,7 +22,7 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -31,13 +31,14 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CActionWrapper_003Ed__5(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -47,12 +48,19 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					a?.Invoke();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -62,36 +70,75 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 		}
 	}
 
-	private static readonly Queue<Action> _executionQueue;
+	private static readonly Queue<Action> _executionQueue = new Queue<Action>();
 
 	public void Update()
 	{
+		lock (_executionQueue)
+		{
+			while (_executionQueue.Count > 0)
+			{
+				var action = _executionQueue.Dequeue();
+				action?.Invoke();
+			}
+		}
 	}
 
 	public void Enqueue(IEnumerator action)
 	{
+		lock (_executionQueue)
+		{
+			_executionQueue.Enqueue(() => StartCoroutine(action));
+		}
 	}
 
 	public void Enqueue(Action action)
 	{
+		lock (_executionQueue)
+		{
+			_executionQueue.Enqueue(action);
+		}
 	}
 
 	public Task EnqueueAsync(Action action)
 	{
-		return null;
+		var tcs = new TaskCompletionSource<bool>();
+		lock (_executionQueue)
+		{
+			_executionQueue.Enqueue(() =>
+			{
+				try
+				{
+					action?.Invoke();
+					tcs.TrySetResult(true);
+				}
+				catch (Exception e)
+				{
+					tcs.TrySetException(e);
+				}
+			});
+		}
+		return tcs.Task;
 	}
 
 	[IteratorStateMachine(typeof(_003CActionWrapper_003Ed__5))]
 	private IEnumerator ActionWrapper(Action a)
 	{
-		yield break;
+		var d = new _003CActionWrapper_003Ed__5(0);
+		d.a = a;
+		return d;
 	}
 
 	private void Awake()
 	{
+		// Ensure only one instance
 	}
 
 	private void OnDestroy()
 	{
+		lock (_executionQueue)
+		{
+			_executionQueue.Clear();
+		}
 	}
 }

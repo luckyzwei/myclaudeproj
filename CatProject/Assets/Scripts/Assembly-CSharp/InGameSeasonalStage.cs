@@ -183,60 +183,132 @@ public class InGameSeasonalStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSet_003Ed__25))]
 	public IEnumerator Set(InGameSeasonal inGameSeasonalMode)
 	{
-		yield break;
+		InGameSeasonalMode = new WeakReference<InGameSeasonal>(inGameSeasonalMode);
+		Disposables = new CompositeDisposable();
+		InitBuildingInfos();
+		InitStatue();
+		yield return null;
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public InGameAstar GetStageAstar()
 	{
-		return null;
+		return Astar;
 	}
 
 	public BuildingBase FindBuilding(E_BuildingType buildingType, int buildingIdx)
 	{
+		if (StageBuildingList == null) return null;
+		for (int i = 0; i < StageBuildingList.Count; i++)
+		{
+			if (StageBuildingList[i] != null &&
+			    StageBuildingList[i].BuildingType == buildingType &&
+			    StageBuildingList[i].BuildingIdx == buildingIdx)
+				return StageBuildingList[i];
+		}
 		return null;
 	}
 
 	public Transform FindWorkshopEmployeeTransform(int workshopIdx, int workshopTransformIdx)
 	{
-		return null;
+		if (WorkshopList == null || workshopIdx < 0 || workshopIdx >= WorkshopList.Count) return null;
+		var workshop = WorkshopList[workshopIdx];
+		if (workshop == null) return null;
+		return workshop.transform;
 	}
 
 	public Transform FindRestaurantEmployeeTransform(int workshopNumber, int workshopTransformIdx)
 	{
-		return null;
+		if (Restaurant == null) return null;
+		return Restaurant.transform;
 	}
 
 	public List<InGameAstar.Node> GetVipPathNodes()
 	{
-		return null;
+		if (Astar == null) return null;
+		if (VipEnterTrans == null || VipEndTrans == null) return null;
+		return Astar.FindPath(VipEnterTrans.position, VipEndTrans.position);
 	}
 
 	public Vector3 EndVipPos()
 	{
+		if (VipEndTrans != null)
+			return VipEndTrans.position;
 		return default(Vector3);
 	}
 
 	private void InitBuildingInfos()
 	{
+		StageBuildingList = new List<BuildingBase>();
+		if (WorkshopList != null)
+		{
+			for (int i = 0; i < WorkshopList.Count; i++)
+			{
+				if (WorkshopList[i] != null)
+					StageBuildingList.Add(WorkshopList[i]);
+			}
+		}
+		if (DormitoryList != null)
+		{
+			for (int i = 0; i < DormitoryList.Count; i++)
+			{
+				if (DormitoryList[i] != null)
+					StageBuildingList.Add(DormitoryList[i]);
+			}
+		}
+		if (Distributor != null)
+			StageBuildingList.Add(Distributor);
+		if (Restaurant != null)
+			StageBuildingList.Add(Restaurant);
+		if (ArcadeMachine != null)
+			StageBuildingList.Add(ArcadeMachine);
 	}
 
 	private void UpdateNightSkipProperty(AdSupplySystem.Status status)
 	{
+		if (NightSkipTrans != null)
+			NightSkipTrans.gameObject.SetActive(status == AdSupplySystem.Status.Show);
 	}
 
 	public void UpdateDayViewState(DaySystem.DayStatus dayStatus, float changeTime)
 	{
+		if (DayFilter == null || DayFilterInfos == null) return;
+		for (int i = 0; i < DayFilterInfos.Count; i++)
+		{
+			if (DayFilterInfos[i].status == dayStatus)
+			{
+				DayFilter.color = DayFilterInfos[i].color;
+				DayFilter.sortingOrder = DayFilterInfos[i].sortingOrder;
+				break;
+			}
+		}
+		UpdateFarsightedObjs(dayStatus);
 	}
 
 	private void UpdateFarsightedObjs(DaySystem.DayStatus dayStatus)
 	{
+		if (FarsightedObjs == null) return;
+		for (int i = 0; i < FarsightedObjs.Count; i++)
+		{
+			var fObj = FarsightedObjs[i];
+			if (fObj == null || fObj.obj == null) continue;
+			bool active = fObj.time != null && fObj.time.Contains(dayStatus);
+			fObj.obj.SetActive(active);
+			fObj.On = active;
+		}
 	}
 
 	private void InitStatue()
 	{
+		if (Statue != null)
+			Statue.Init();
 	}
 }

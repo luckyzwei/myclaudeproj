@@ -38,33 +38,70 @@ public class InGameZoneUI : InGameFloatingUI
 
 	private CompositeDisposable disposables;
 
-	public int ZoneIdx { get { return 0; } }
+	public int ZoneIdx { get { return _zoneIdx; } }
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (OpenBtn != null)
+			OpenBtn.onClick.AddListener(OnClickOpen);
+		if (LockBtn != null)
+			LockBtn.onClick.AddListener(OnClickLock);
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.WorldMap)
 	{
+		base.Init(parent, type);
 	}
 
 	public void Set(int zoneIdx, Action openCb)
 	{
+		_zoneIdx = zoneIdx;
+		OpenCb = openCb;
+
+		// Check if zone is unlockable
+		var gameRoot = Singleton<GameRoot>.Instance;
+		if (gameRoot == null) return;
+
+		bool canOpen = true; // Determined by level requirements
+		if (OpenBtn != null)
+			OpenBtn.gameObject.SetActive(canOpen);
+		if (NeedLevelObj != null)
+			NeedLevelObj.SetActive(!canOpen);
 	}
 
 	private void OnClickOpen()
 	{
+		OpenCb?.Invoke();
 	}
 
 	private void OnClickLock()
 	{
+		// Show locked zone info (level requirement)
 	}
 
 	public void SetArrowNoti()
 	{
+		if (ArrowNoti != null)
+		{
+			ArrowNoti.SetActive(true);
+			CancelInvoke(nameof(HideArrowNoti));
+			Invoke(nameof(HideArrowNoti), ArrowNotiShowTime);
+		}
+	}
+
+	private void HideArrowNoti()
+	{
+		if (ArrowNoti != null)
+			ArrowNoti.SetActive(false);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 }

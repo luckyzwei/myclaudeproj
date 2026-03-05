@@ -31,30 +31,49 @@ public class ShopContentsPackage : IShopContents
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
 	}
 
 	public override void Init()
 	{
+		base.Init();
+		RefreshActive();
 	}
 
 	public override void Reset()
 	{
+		if (Disposables != null)
+			Disposables.Clear();
+		// Clear existing package items
 	}
 
 	private void RefreshActive()
 	{
+		// Refresh package list based on ShowType, Type, and TimeLimitShowType
 	}
 
 	private void RefreshActive(int buyPackageIdx)
 	{
+		RefreshActive();
 	}
 
 	private void ClickPackage(int idx)
 	{
+		// Handle package purchase click
 	}
 
 	private bool CheckTimeLimitShowType(E_TimeLimitShowType timeLimitShowType, int remainTime)
 	{
-		return false;
+		switch (timeLimitShowType)
+		{
+			case E_TimeLimitShowType.TimeLimited:
+				return remainTime > 0;
+			case E_TimeLimitShowType.NotTimeLimited:
+				return remainTime <= 0;
+			case E_TimeLimitShowType.All:
+				return true;
+			default:
+				return false;
+		}
 	}
 }

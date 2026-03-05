@@ -22,24 +22,19 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CSetAndWaitTime_003Ed__6(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -49,12 +44,25 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Set distributor time to tutorial value
+					_003C_003E2__current = new WaitForSeconds(_003C_003E4__this.WaitTimeSec);
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -77,15 +85,21 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		ZoomDistributorObj();
+		StartCoroutine(SetAndWaitTime());
 	}
 
 	private void ZoomDistributorObj()
 	{
+		// Zoom camera to distributor building with CamOffset
 	}
 
 	[IteratorStateMachine(typeof(_003CSetAndWaitTime_003Ed__6))]
 	private IEnumerator SetAndWaitTime()
 	{
-		yield break;
+		var d = new _003CSetAndWaitTime_003Ed__6(0);
+		d._003C_003E4__this = this;
+		return d;
 	}
 }

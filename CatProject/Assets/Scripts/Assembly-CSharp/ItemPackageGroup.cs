@@ -58,37 +58,61 @@ public class ItemPackageGroup : MonoBehaviour
 
 	protected int packageIdx;
 
-	public int PackageIdx { get { return 0; } }
+	public int PackageIdx { get { return packageIdx; } }
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (buyBtn != null)
+			buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	public virtual void Set(int packageIdx)
 	{
+		this.packageIdx = packageIdx;
 	}
 
 	private void SetBgColor(string color)
 	{
+		if (bgImg != null && !string.IsNullOrEmpty(color))
+		{
+			Color c;
+			if (ColorUtility.TryParseHtmlString(color, out c))
+				bgImg.color = c;
+		}
 	}
 
 	public void SetSale(bool value)
 	{
+		if (saleObj != null)
+			saleObj.SetActive(value);
+		if (bgSale != null)
+			bgSale.SetActive(value);
 	}
 
 	public virtual void OnBuySuccess()
 	{
+		Set(packageIdx);
 	}
 
 	protected virtual void OnClickBuy()
 	{
+		ClickCb?.Invoke(packageIdx);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null)
+			disposables.Clear();
+		HideCb?.Invoke();
 	}
 }

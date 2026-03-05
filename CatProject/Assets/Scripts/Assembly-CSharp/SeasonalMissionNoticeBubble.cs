@@ -27,25 +27,51 @@ public class SeasonalMissionNoticeBubble : MonoBehaviour
 
 	private void Awake()
 	{
+		ActiveMissionSlot = -1;
+		MissionIdx = -1;
+		if (RewardClaimBtn != null)
+			RewardClaimBtn.onClick.AddListener(OnClickedMissionRewardClaimBtn);
 	}
 
 	private void UpdateBubble()
 	{
+		if (ActiveMissionSlot < 0)
+		{
+			gameObject.SetActive(false);
+			return;
+		}
+		gameObject.SetActive(true);
+		if (BubbleAnimator != null)
+			BubbleAnimator.SetTrigger("Show");
 	}
 
 	private void OnMissionReadyToComplete(int slotIdx, SeasonalMissionData missionData)
 	{
+		if (missionData == null) return;
+		ActiveMissionSlot = slotIdx;
+		MissionIdx = missionData.MissionIdx;
+		if (MissionDescriptionText != null)
+			MissionDescriptionText.text = "";
+		UpdateBubble();
 	}
 
 	private void Reset()
 	{
+		ActiveMissionSlot = -1;
+		MissionIdx = -1;
+		gameObject.SetActive(false);
 	}
 
 	private void OnClickedMissionRewardClaimBtn()
 	{
+		if (ActiveMissionSlot < 0) return;
+		// Claim mission reward via system
+		Reset();
 	}
 
 	private void ShowRewardEffect(Dictionary<int, BigInteger> rewards)
 	{
+		if (rewards == null || GoodsEffectStartTr == null || GoodsEffectEndTr == null) return;
+		// Show reward effect for each item in rewards dictionary
 	}
 }

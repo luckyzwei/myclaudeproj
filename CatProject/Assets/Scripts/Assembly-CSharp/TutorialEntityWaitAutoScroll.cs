@@ -28,24 +28,19 @@ public class TutorialEntityWaitAutoScroll : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitPopup_003Ed__8(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -55,12 +50,39 @@ public class TutorialEntityWaitAutoScroll : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Wait for delay
+					if (_003C_003E4__this.delay > 0f)
+					{
+						_003C_003E2__current = new WaitForSeconds(_003C_003E4__this.delay);
+						_003C_003E1__state = 1;
+						return true;
+					}
+					goto case 1;
+				case 1:
+					_003C_003E1__state = -1;
+					// Auto scroll to target
+					if (_003C_003E4__this.scrollRect != null && _003C_003E4__this.TargetTr != null)
+					{
+						// Scroll to target position
+					}
+					_003C_003E2__current = new WaitForSeconds(_003C_003E4__this.duration);
+					_003C_003E1__state = 2;
+					return true;
+				case 2:
+					_003C_003E1__state = -1;
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -84,11 +106,15 @@ public class TutorialEntityWaitAutoScroll : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		StartCoroutine(WaitPopup());
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitPopup_003Ed__8))]
 	private IEnumerator WaitPopup()
 	{
-		yield break;
+		var d = new _003CWaitPopup_003Ed__8(0);
+		d._003C_003E4__this = this;
+		return d;
 	}
 }

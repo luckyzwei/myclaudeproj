@@ -21,24 +21,19 @@ public class TutorialEntityDefineWait : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitTime_003Ed__2(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -48,12 +43,24 @@ public class TutorialEntityDefineWait : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					_003C_003E2__current = new WaitForSeconds(time);
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -68,11 +75,18 @@ public class TutorialEntityDefineWait : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		// Get wait time from define key
+		float time = 1f;
+		StartCoroutine(WaitTime(time));
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__2))]
 	private IEnumerator WaitTime(float time)
 	{
-		yield break;
+		var d = new _003CWaitTime_003Ed__2(0);
+		d._003C_003E4__this = this;
+		d.time = time;
+		return d;
 	}
 }

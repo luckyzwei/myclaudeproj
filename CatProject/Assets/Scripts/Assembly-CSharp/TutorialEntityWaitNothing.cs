@@ -18,24 +18,19 @@ public class TutorialEntityWaitNothing : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWait_003Ed__1(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -45,12 +40,20 @@ public class TutorialEntityWaitNothing : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Wait nothing - immediately complete
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -62,11 +65,15 @@ public class TutorialEntityWaitNothing : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		StartCoroutine(Wait());
 	}
 
 	[IteratorStateMachine(typeof(_003CWait_003Ed__1))]
 	private IEnumerator Wait()
 	{
-		yield break;
+		var d = new _003CWait_003Ed__1(0);
+		d._003C_003E4__this = this;
+		return d;
 	}
 }

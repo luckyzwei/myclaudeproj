@@ -47,25 +47,112 @@ public class SeasonalBus : MonoBehaviour
 
 	public void Init()
 	{
+		Disposables = new CompositeDisposable();
+		CurStatus = Status.None;
+		DeltaTime = 0f;
+		WaitTime = 2f;
+		bPlayGame = false;
+		audio = GetComponent<AudioSource>();
+
+		if (Path != null)
+		{
+			StopIndex = Path.GetRatioByIdx(StopTrans.position);
+		}
+		SetVisibleBus(false);
 	}
 
 	public void StartBus(bool bWorkOn, Action endCallback)
 	{
+		EndCallback = endCallback;
+		DeltaTime = 0f;
+		bPlayGame = true;
+		SetVisibleBus(true);
+
+		if (bWorkOn)
+		{
+			CurStatus = Status.Enter_WorkOn;
+			TargetIndex = 0;
+		}
+		else
+		{
+			CurStatus = Status.Enter_WorkOff;
+			TargetIndex = 0;
+		}
 	}
 
 	public void ExitBus()
 	{
+		CurStatus = Status.Wait_Exit;
+		DeltaTime = 0f;
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	private void Update()
 	{
+		if (!bPlayGame) return;
+		if (Path == null) return;
+
+		DeltaTime += Time.deltaTime;
+
+		switch (CurStatus)
+		{
+			case Status.Enter_WorkOn:
+			case Status.Enter_WorkOff:
+			{
+				Vector3 pos = Path.GetPathByTime(DeltaTime);
+				transform.position = pos;
+				int curIdx = Path.GetPathIdxAtTime(DeltaTime);
+				if (curIdx >= StopIndex)
+				{
+					transform.position = StopTrans.position;
+					DeltaTime = 0f;
+					CurStatus = (CurStatus == Status.Enter_WorkOn) ? Status.Wait_WorkOn : Status.Wait_WorkOff;
+					EndCallback?.Invoke();
+					EndCallback = null;
+				}
+				break;
+			}
+			case Status.Wait_WorkOn:
+			case Status.Wait_WorkOff:
+				// Waiting at stop for passengers
+				break;
+			case Status.Wait_Exit:
+			{
+				if (DeltaTime >= WaitTime)
+				{
+					CurStatus = Status.Exit;
+					DeltaTime = Path.GetTimebyIdx(StopIndex);
+				}
+				break;
+			}
+			case Status.Exit:
+			{
+				DeltaTime += Time.deltaTime;
+				Vector3 pos = Path.GetPathByTime(DeltaTime);
+				transform.position = pos;
+				float ratio = Path.GetPathRatioByTime(DeltaTime);
+				if (ratio >= 1f)
+				{
+					bPlayGame = false;
+					CurStatus = Status.None;
+					SetVisibleBus(false);
+				}
+				break;
+			}
+		}
 	}
 
 	private void SetVisibleBus(bool bActive)
 	{
+		if (Bus != null)
+			Bus.gameObject.SetActive(bActive);
 	}
 }

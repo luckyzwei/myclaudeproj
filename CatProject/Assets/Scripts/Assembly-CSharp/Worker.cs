@@ -142,18 +142,30 @@ public class Worker : MonoBehaviour
 
 	protected virtual void UpdateFloor()
 	{
+		if (transform.position.y > 0)
+			Floor = Mathf.FloorToInt(transform.position.y / 3f);
 	}
 
 	protected void LoadRepairProgress()
 	{
+		if (ProgressTrans != null && RepairProgress == null)
+		{
+			RepairProgress = ProgressTrans.GetComponentInChildren<InGameProgress>(true);
+		}
 	}
 
 	protected void SetAni(E_State state, E_Direction dir)
 	{
+		SetAni(state.ToString(), dir);
 	}
 
 	protected void SetAni(string state, E_Direction dir)
 	{
+		if (CharAni == null) return;
+		string aniName = state + "_" + dir.ToString();
+		if (aniName == LastAni) return;
+		LastAni = aniName;
+		CharAni.Play(aniName);
 	}
 
 	protected void UpdatWorkDir(Transform trans, out E_Direction dir)
@@ -166,10 +178,16 @@ public class Worker : MonoBehaviour
 
 	public virtual void WorkOut(int order, bool outcompany = false)
 	{
+		isOut = true;
+		ChangeState(E_State.Workoff);
+		if (outcompany)
+			GotoWorkOffBus(order);
 	}
 
 	protected void GotoWorkOffBus(int order = 0)
 	{
+		ChangeState(E_State.Workoff);
+		// Walk to bus stop then call Return
 	}
 
 	public int GetRepairRoomIdx()
@@ -188,10 +206,21 @@ public class Worker : MonoBehaviour
 
 	public virtual void GotoRepairOffice(int OfficeIdx)
 	{
+		TargetOffice = OfficeIdx;
+		ChangeState(E_State.Repairing);
+		LoadRepairProgress();
+		RepairStart();
 	}
 
 	private void RepairStart()
 	{
+		if (RepairProgress != null)
+		{
+			RepairProgress.gameObject.SetActive(true);
+			RepairProgress.Show();
+		}
+		d_repair = 0f;
+		RepairTime = OriginRepairTime;
 	}
 
 	protected E_Direction GetDir(Vector2 curPos, Vector2 nextPos)
@@ -207,5 +236,56 @@ public class Worker : MonoBehaviour
 
 	protected virtual void Update()
 	{
+		switch (state)
+		{
+			case E_State.Move:
+			case E_State.WalkToWorkOn:
+			case E_State.Run:
+			{
+				if (CurTargetNode == null && MoveNodeList != null && MoveNodeList.Count > 0)
+					CurTargetNode = MoveNodeList.Dequeue();
+				if (CurTargetNode != null)
+				{
+					float spd = (state == E_State.Run) ? RunSpeed : Speed;
+					Vector2 targetPos = new Vector2(CurTargetNode.WorldPos.x, CurTargetNode.WorldPos.y);
+					Vector2 curPos = new Vector2(transform.position.x, transform.position.y);
+					dir = GetDir(curPos, targetPos);
+					SetAni(state, dir);
+					transform.position = Vector3.MoveTowards(transform.position, CurTargetNode.WorldPos, spd * Time.deltaTime);
+					if (Vector2.Distance(curPos, targetPos) < 0.05f)
+					{
+						CurTargetNode = null;
+						if (MoveNodeList == null || MoveNodeList.Count == 0)
+						{
+							if (NextAction != null)
+							{
+								var action = NextAction;
+								NextAction = null;
+								action.Invoke();
+							}
+						}
+					}
+				}
+				break;
+			}
+			case E_State.Repairing:
+			{
+				if (RepairTime > 0f)
+				{
+					d_repair += Time.deltaTime;
+					if (RepairProgress != null)
+						RepairProgress.UpdateValue(d_repair / RepairTime);
+					if (d_repair >= RepairTime)
+					{
+						if (RepairProgress != null)
+							RepairProgress.Hide();
+						if (TargetRepairRoom != null)
+							TargetRepairRoom.EndRepairing();
+						ChangeState(E_State.Idle);
+					}
+				}
+				break;
+			}
+		}
 	}
 }

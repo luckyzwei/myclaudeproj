@@ -42,29 +42,41 @@ public class BuildingBase : MonoBehaviour
 
 	public virtual void OnSelectedBuilding(Action onSelectedBuilding)
 	{
+		PlayBuildingMenuSound();
+		onSelectedBuilding?.Invoke();
 	}
 
 	public virtual void UnselectBuilding(bool bHideUI)
 	{
+		// Override in subclasses to hide building-specific UI
 	}
 
 	protected virtual void OnReleaseBuilding()
 	{
+		// Override in subclasses to clean up building resources
 	}
 
 	protected void PlayBuildingMenuSound()
 	{
+		if (!string.IsNullOrEmpty(BuildingMenuSoundName))
+		{
+			// Play sound via SoundSystem
+		}
 	}
 
 	public void OnClickedBuilding()
 	{
+		if (!bFocusable) return;
+		FocusToBuilding();
 	}
 
 	public void FocusToBuilding()
 	{
+		// Focus camera to building position with xOffset, yOffset, zoomSize
 	}
 
 	private void FocusOut()
 	{
+		// Return camera to default position
 	}
 }

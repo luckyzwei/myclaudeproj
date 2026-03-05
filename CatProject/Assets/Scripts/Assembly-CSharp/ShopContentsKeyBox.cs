@@ -39,38 +39,59 @@ public class ShopContentsKeyBox : IShopContents
 
 	private void Awake()
 	{
+		if (BuyBtn != null)
+			BuyBtn.onClick.AddListener(OnClickBtn);
 	}
 
 	public override void Init()
 	{
+		base.Init();
+		IsSpecialPackage = false;
+		var result = GetShopGoodsIdx(KeyItemIdx);
+		ShopGoodsIdx = result.Item1;
+		ShopSpecialIdx = result.Item2;
+		SetShopGoods(ShopGoodsIdx);
+		SetBannerColor(KeyItemIdx);
 	}
 
 	public void SetSpecialPackage(int specialIdx)
 	{
+		IsSpecialPackage = true;
+		ShopSpecialIdx = specialIdx;
 	}
 
 	private void SetShopGoods(int shopGoodsIdx)
 	{
+		ShopGoodsIdx = shopGoodsIdx;
+		if (SaleRoot != null)
+			SaleRoot.SetActive(false);
 	}
 
 	private void SetBannerColor(Config.ItemIdx itemIdx)
 	{
+		// Set banner background color based on key item type
 	}
 
 	public void OnClickBtn()
 	{
+		if (IsSpecialPackage)
+			PurchasePackage();
+		else
+			PurchaseShopGoods();
 	}
 
 	private void PurchasePackage()
 	{
+		ProjectUtility.ShowPagePackage(InAppPurchaseLocation, ShopSpecialIdx);
 	}
 
 	private void PurchaseShopGoods()
 	{
+		// Purchase key box goods
 	}
 
 	private (int, int) GetShopGoodsIdx(Config.ItemIdx itemIdx)
 	{
-		return default((int, int));
+		return ((int)itemIdx, 0);
 	}
 }

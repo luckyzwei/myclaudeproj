@@ -35,30 +35,70 @@ public class HUDSpecialDaySurprise : MonoBehaviour
 
 	private void Awake()
 	{
+		if (SurpriseBtn != null)
+			SurpriseBtn.onClick.AddListener(() =>
+			{
+				Hide();
+				// Open surprise reward popup
+			});
+
+		var rt = GetComponent<RectTransform>();
+		if (rt != null)
+		{
+			minWidth = WidthPadding;
+			maxWidth = (int)Screen.width - WidthPadding;
+			minHeight = HeightRange;
+			maxHeight = (int)Screen.height - HeightRange;
+		}
 	}
 
 	public void Show()
 	{
+		gameObject.SetActive(true);
+		SetPosition();
+		SetMove();
+		if (SurpriseAnimator != null)
+			SurpriseAnimator.SetTrigger("Show");
 	}
 
 	private void SetPosition()
 	{
+		isRight = Random.value > 0.5f;
+		float x = isRight ? maxWidth : minWidth;
+		float y = Random.Range(minHeight, maxHeight);
+		transform.position = new Vector3(x, y, 0f);
 	}
 
 	private void SetMove()
 	{
+		if (sequence != null)
+		{
+			sequence.Kill();
+			sequence = null;
+		}
+		float targetX = isRight ? minWidth : maxWidth;
+		sequence = DOTween.Sequence();
+		sequence.Append(DoMove(targetX));
+		sequence.OnComplete(() => Hide());
 	}
 
 	private Tween DoMove(float targetX)
 	{
-		return null;
+		return transform.DOMoveX(targetX, Duration).SetEase(Ease.Linear);
 	}
 
 	public void Hide()
 	{
+		if (sequence != null)
+		{
+			sequence.Kill();
+			sequence = null;
+		}
+		gameObject.SetActive(false);
 	}
 
 	public void HideByTutorial()
 	{
+		Hide();
 	}
 }

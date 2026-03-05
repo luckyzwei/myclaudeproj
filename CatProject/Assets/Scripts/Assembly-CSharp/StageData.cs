@@ -33,48 +33,51 @@ public class StageData : IClientData
 
 	public List<InvestData> AbilityInvestData { get; set; }
 
+	private DateTime _stageStartTime;
+	private long _stagePlayTime;
+	private long _mainStagePlayTime;
+
 	public DateTime StageStartTime
 	{
-		get
-		{
-			return default(DateTime);
-		}
-		set
-		{
-		}
+		get { return _stageStartTime; }
+		set { _stageStartTime = value; }
 	}
 
 	public long StagePlayTime
 	{
-		get
-		{
-			return 0L;
-		}
-		set
-		{
-		}
+		get { return _stagePlayTime; }
+		set { _stagePlayTime = value; }
 	}
 
 	public long MainStagePlayTime
 	{
-		get
-		{
-			return 0L;
-		}
-		set
-		{
-		}
+		get { return _mainStagePlayTime; }
+		set { _mainStagePlayTime = value; }
 	}
 
 	public void Init(int idx)
 	{
+		StageIdx = idx;
+		Money = new ReactiveProperty<BigInteger>(BigInteger.Zero);
+		Power = new ReactiveProperty<int>(0);
+		Point = new ReactiveProperty<int>(0);
+		Offices = new Dictionary<int, OfficeData>();
+		UnLockCompanyList = new ReactiveCollection<int>();
+		CompanyList = new List<int>();
+		Companies = new ReactiveCollection<CompanyData>();
+		AbilityInvestData = new List<InvestData>();
+		_stageStartTime = DateTime.UtcNow;
+		_stagePlayTime = 0L;
+		_mainStagePlayTime = 0L;
 	}
 
 	public void UpgradeStageIdx()
 	{
+		StageIdx++;
 	}
 
 	public void SetStageIdx(int idx)
 	{
+		StageIdx = idx;
 	}
 }

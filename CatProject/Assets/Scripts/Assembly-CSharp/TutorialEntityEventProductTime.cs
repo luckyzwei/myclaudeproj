@@ -20,24 +20,19 @@ public class TutorialEntityEventProductTime : TutorialEntity
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitTime_003Ed__2(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -47,12 +42,24 @@ public class TutorialEntityEventProductTime : TutorialEntity
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					_003C_003E2__current = new UnityEngine.WaitForSeconds(waitTime);
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					_003C_003E4__this.Done();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -66,11 +73,17 @@ public class TutorialEntityEventProductTime : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		// Set event product time
+		StartCoroutine(WaitTime(Time));
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__2))]
 	private IEnumerator WaitTime(float waitTime)
 	{
-		yield break;
+		var d = new _003CWaitTime_003Ed__2(0);
+		d._003C_003E4__this = this;
+		d.waitTime = waitTime;
+		return d;
 	}
 }

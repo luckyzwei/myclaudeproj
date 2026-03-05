@@ -10,9 +10,27 @@ public class TutorialEntity : MonoBehaviour
 
 	public virtual void StartEntity()
 	{
+		Complete = false;
+		if (activeList != null)
+		{
+			for (int i = 0; i < activeList.Count; i++)
+			{
+				if (activeList[i] != null)
+					activeList[i].SetActive(true);
+			}
+		}
 	}
 
 	protected virtual void Done()
 	{
+		Complete = true;
+		if (activeList != null)
+		{
+			for (int i = 0; i < activeList.Count; i++)
+			{
+				if (activeList[i] != null)
+					activeList[i].SetActive(false);
+			}
+		}
 	}
 }

@@ -90,49 +90,90 @@ public class CompanyBookDetailPopup : MonoBehaviour
 
 	private void Awake()
 	{
+		if (CloseBtn != null)
+			CloseBtn.onClick.AddListener(OnClickClose);
+		if (RentalFeeInfoBtn != null)
+			RentalFeeInfoBtn.onClick.AddListener(OnClickRentalFeeInfo);
+		if (InfoBubbleCloseBtn != null)
+			InfoBubbleCloseBtn.onClick.AddListener(OnClickRentalFeeInfoClose);
+		if (MaxRewardBtn != null)
+			MaxRewardBtn.onClick.AddListener(OnClickMaxReward);
+		if (LevelUpCashBtn != null)
+			LevelUpCashBtn.onClick.AddListener(OnClickLevelUpCash);
+		if (CompanyLevelUpBtn != null)
+			CompanyLevelUpBtn.onClick.AddListener(OnClickCompanyLevelUp);
+
+		Disposables = new CompositeDisposable();
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		IsOpen = false;
+		if (InfoBubble != null)
+			InfoBubble.SetActive(false);
+		if (FocusArrowObj != null)
+			FocusArrowObj.SetActive(false);
 	}
 
 	public void Show(int company)
 	{
+		CompanyIdx = company;
+		IsOpen = true;
+		gameObject.SetActive(true);
+		UpdateLevelUpCashInfo();
 	}
 
 	public void ShowLevelupFocusArrow(int needLevel)
 	{
+		GuideLevel = needLevel;
+		if (FocusArrowObj != null)
+			FocusArrowObj.SetActive(true);
 	}
 
 	private void UpdateLevelUpCashInfo()
 	{
+		// Update level up cost information
 	}
 
 	private void OnClickMaxReward()
 	{
+		GetMaxRewardCb?.Invoke();
 	}
 
 	private void OnClickClose()
 	{
+		IsOpen = false;
+		gameObject.SetActive(false);
 	}
 
 	private void OnClickRentalFeeInfo()
 	{
+		if (InfoBubble != null)
+			InfoBubble.SetActive(true);
 	}
 
 	private void OnClickRentalFeeInfoClose()
 	{
+		if (InfoBubble != null)
+			InfoBubble.SetActive(false);
 	}
 
 	private void OnClickLevelUpCash()
 	{
+		// Purchase level up with cash
 	}
 
 	private void OnClickCompanyLevelUp()
 	{
+		// Level up company
 	}
 }

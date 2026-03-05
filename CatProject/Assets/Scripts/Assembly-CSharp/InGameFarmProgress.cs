@@ -39,29 +39,56 @@ public class InGameFarmProgress : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (FacilityUIBtn != null)
+			FacilityUIBtn.onClick.AddListener(OnClickBtn);
 	}
 
 	public void UpdateValue(float value)
 	{
+		float clamped = Mathf.Clamp01(value);
+		if (auto)
+		{
+			if (autoProgressImg != null)
+				autoProgressImg.fillAmount = clamped;
+		}
+		else
+		{
+			if (progressImg != null)
+				progressImg.fillAmount = clamped;
+		}
 	}
 
 	public void SetProductImg(Sprite img)
 	{
+		if (productImg != null)
+			productImg.sprite = img;
 	}
 
 	public void SetPrice(string value)
 	{
+		if (productPrice != null)
+			productPrice.text = value;
 	}
 
 	public void SetAuto(bool value)
 	{
+		auto = value;
+		if (AutoObject != null)
+			AutoObject.SetActive(auto);
+		if (NonAutoObject != null)
+			NonAutoObject.SetActive(!auto);
 	}
 
 	public void SetLvUpEnable(int step)
 	{
+		if (LvUpObj != null)
+			LvUpObj.SetActive(step > 0);
+		if (FullLvUpObj != null)
+			FullLvUpObj.SetActive(step >= 2);
 	}
 
 	private void OnClickBtn()
 	{
+		clickAction?.Invoke();
 	}
 }
