@@ -116,104 +116,191 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		RouletteMultipleIndex = 0;
+		RouletteMultipleList = new List<int> { 1, 3, 5 };
+		RouletteList = new List<SpecialDayRouletteData>();
+		RouletteProbabilityMap = new Dictionary<int, (int startWeight, int endWeight)>();
+
+		if (RoulettePlayButton != null) RoulettePlayButton.onClick.AddListener(OnClickRoulettePlayButton);
+		if (RouletteMultipleBtn != null) RouletteMultipleBtn.onClick.AddListener(OnClickRouletteMultipleButton);
+		if (RouletteBonusBtn != null) RouletteBonusBtn.onClick.AddListener(OnClickRouletteBonusButton);
+		if (RouletteRatioBtn != null) RouletteRatioBtn.onClick.AddListener(OnClickRouletteRatioButton);
+		if (EventInfoBtn != null) EventInfoBtn.onClick.AddListener(OnClickEventInfoButton);
+		if (AttendanceBtn != null) AttendanceBtn.onClick.AddListener(OnClickAttendanceButton);
+		if (PackageBtn != null) PackageBtn.onClick.AddListener(OnClickPackageButton);
+		if (MissionBtn != null) MissionBtn.onClick.AddListener(OnClickMissionButton);
 	}
 
 	protected void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
+		if (PackageRemainTimeDisposable != null) { PackageRemainTimeDisposable.Dispose(); PackageRemainTimeDisposable = null; }
 	}
 
 	protected void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public TabToggleGroup GetTabToggleGroup()
 	{
-		return null;
+		return MainTabToggleGroup;
 	}
 
 	public void OnTabChanged(int index)
 	{
+		// Handle tab changes between roulette, shop, etc.
 	}
 
 	public override void OnShowBefore()
 	{
+		SetRouletteInfo();
+		UpdateRoulettePlayCountProgress();
+		UpdateRoulettePlayButtonInteractable();
+		SetPlayDimmed(false);
+
+		if (PackageObj != null) PackageObj.SetActive(IsEnabledPackage());
 	}
 
 	public void SetRouletteInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Load roulette data and set items
+		UpdateRouletteMultipleText();
+		UpdateRoulettePlayCountProgress();
 	}
 
 	private void UpdateRouletteMultipleText()
 	{
+		if (RouletteMultipleText == null) return;
+		int multiple = RouletteMultipleList != null && RouletteMultipleIndex < RouletteMultipleList.Count
+			? RouletteMultipleList[RouletteMultipleIndex] : 1;
+		RouletteMultipleText.text = "x" + multiple;
 	}
 
 	private void UpdateRouletteCurrencyValueText(int hasValue, int needValue)
 	{
+		if (NeedCurrencyValueText != null)
+			NeedCurrencyValueText.text = needValue.ToString();
 	}
 
 	private void UpdateRoulettePlayCountProgress()
 	{
+		if (RoulettePlayCountSlider == null) return;
+		RoulettePlayCountSlider.value = 0f;
+		if (RoulettePlayCountText != null) RoulettePlayCountText.text = "0";
 	}
 
 	private void UpdateRoulettePlayButtonInteractable()
 	{
+		if (RoulettePlayButton != null)
+			RoulettePlayButton.interactable = true;
 	}
 
 	private void OnClickRoulettePlayButton()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Start roulette spin
+		int winIdx = GetRandomWinningIndex();
+		OnStartSpin();
+		if (SquareRouletteComponent != null)
+		{
+			// Start spin animation with winning index
+		}
 	}
 
 	private void OnClickRouletteMultipleButton()
 	{
+		if (RouletteMultipleList == null || RouletteMultipleList.Count == 0) return;
+		RouletteMultipleIndex = (RouletteMultipleIndex + 1) % RouletteMultipleList.Count;
+		UpdateRouletteMultipleText();
 	}
 
 	private void OnClickRouletteBonusButton()
 	{
+		// Open roulette bonus popup
 	}
 
 	private void OnClickRouletteRatioButton()
 	{
+		// Show roulette ratio info popup
 	}
 
 	private void OnClickEventInfoButton()
 	{
+		// Show event info popup
 	}
 
 	private void OnClickAttendanceButton()
 	{
+		// Open attendance check popup
 	}
 
 	private void OnClickPackageButton()
 	{
+		// Open event package shop
 	}
 
 	private void OnClickMissionButton()
 	{
+		// Open event mission popup
 	}
 
 	private void OnStartSpin()
 	{
+		SetPlayDimmed(true);
+		if (BlockObject != null) BlockObject.SetActive(true);
 	}
 
 	private void SetPlayDimmed(bool bShow)
 	{
+		if (PlayDimObject != null) PlayDimObject.SetActive(bShow);
 	}
 
 	private void OnCompleteSpin(int winningIndex)
 	{
+		SetPlayDimmed(false);
+		if (BlockObject != null) BlockObject.SetActive(false);
+
+		int multiple = RouletteMultipleList != null && RouletteMultipleIndex < RouletteMultipleList.Count
+			? RouletteMultipleList[RouletteMultipleIndex] : 1;
+		GetMultipleReward(multiple);
+
+		UpdateRoulettePlayCountProgress();
+		UpdateRoulettePlayButtonInteractable();
 	}
 
 	private void GetMultipleReward(int multipleCount)
 	{
+		// Apply reward with multiplier
+		if (MatchFxObj != null) MatchFxObj.SetActive(true);
 	}
 
 	private int GetRandomWinningIndex()
 	{
+		if (RouletteProbabilityMap == null || RouletteProbabilityMap.Count == 0) return 0;
+		int totalWeight = 0;
+		foreach (var kv in RouletteProbabilityMap)
+			totalWeight = Mathf.Max(totalWeight, kv.Value.endWeight);
+		int rand = UnityEngine.Random.Range(0, totalWeight);
+		foreach (var kv in RouletteProbabilityMap)
+		{
+			if (rand >= kv.Value.startWeight && rand < kv.Value.endWeight)
+				return kv.Key;
+		}
 		return 0;
 	}
 
 	private bool IsEnabledPackage()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if event package is available
 		return false;
 	}
 }

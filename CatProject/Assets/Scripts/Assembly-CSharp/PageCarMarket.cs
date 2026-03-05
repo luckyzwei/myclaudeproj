@@ -73,75 +73,132 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 
 	private CompositeDisposable disposables;
 
-	public int GetParkingZone { get { return 0; } }
+	public int GetParkingZone { get { return ParkingZone; } }
 
-	public int GetParkingSpace { get { return 0; } }
+	public int GetParkingSpace { get { return ParkingSpace; } }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (OptionBtn != null) OptionBtn.onClick.AddListener(OnClickOption);
+		if (RichPointInfoBtn != null) RichPointInfoBtn.onClick.AddListener(OnClickRichPointInfo);
+		if (LevelBtn != null) LevelBtn.onClick.AddListener(OnClickLevelInfo);
+		if (PrevBtn != null) PrevBtn.onClick.AddListener(OnClickPrev);
+		if (NextBtn != null) NextBtn.onClick.AddListener(OnClickNext);
 	}
 
 	public override void OnShowBefore()
 	{
+		SetDayTime();
+		SetMoneyHud();
+		SetRichPoint();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	public void RefreshText()
 	{
+		SetRichPoint();
+		SetMoneyHud();
 	}
 
 	public void SetBuilding(int building, int parkingZone = -1, int parkingSpace = -1, bool showConversation = true)
 	{
+		BuildingIdx = building;
+		ParkingZone = parkingZone;
+		ParkingSpace = parkingSpace;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Set building/car market info
+		if (MarketName != null) MarketName.text = "";
+		if (LevelText != null) LevelText.text = "";
+
+		// Set navigation buttons
+		if (PrevBtn != null) PrevBtn.gameObject.SetActive(BuildingIdx > 0);
+		if (NextBtn != null) NextBtn.gameObject.SetActive(true);
 	}
 
 	private void Update()
 	{
+		UpdateDayTime();
 	}
 
 	private void SetDayTime()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+		UpdateDayStatus(root.DaySystem.CurrentStatus);
+		UpdateDayTime();
 	}
 
 	private void UpdateDayStatus(DaySystem.DayStatus status)
 	{
+		// Update day/night icon
 	}
 
 	private void UpdateDayTime()
 	{
+		if (TimeText == null) return;
+		var now = DateTime.Now;
+		TimeText.text = now.ToString("HH:mm");
 	}
 
 	private void SetMoneyHud()
 	{
+		if (MoneyHud == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set money HUD values
+		for (int i = 0; i < MoneyHud.Count; i++)
+		{
+			if (MoneyHud[i] == null || MoneyHud[i].Root == null) continue;
+			MoneyHud[i].Root.SetActive(true);
+			if (MoneyHud[i].Count != null) MoneyHud[i].Count.text = "0";
+		}
 	}
 
 	private void SetRichPoint()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (RichPointText != null) RichPointText.text = "0";
 	}
 
 	private void OnClickOption()
 	{
+		// Open option/settings popup
 	}
 
 	private void OnClickRichPointInfo()
 	{
+		// Show rich point info popup
 	}
 
 	private void OnClickLevelInfo()
 	{
+		// Show car market level info
 	}
 
 	private void OnClickPrev()
 	{
+		if (BuildingIdx > 0)
+			SetBuilding(BuildingIdx - 1, ParkingZone, ParkingSpace);
 	}
 
 	private void OnClickNext()
 	{
+		SetBuilding(BuildingIdx + 1, ParkingZone, ParkingSpace);
 	}
 }

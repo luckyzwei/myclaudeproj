@@ -158,85 +158,170 @@ public class ItemManagerHireList : MonoBehaviour
 
 	public Action<int> UpgradeCb;
 
-	public int CurOfficeIdx { get { return 0; } }
+	public int CurOfficeIdx { get { return curOfficeIdx; } }
 
 	private void Awake()
 	{
+		company_exp_disposables = new CompositeDisposable();
+		company_lv_disposables = new CompositeDisposable();
+		onTuto = false;
+		doneTuto = false;
+		isZeroDesk = false;
+
+		if (ManagerHireBtn != null) ManagerHireBtn.onClick.AddListener(OnClickHire);
+		if (ManagerChangeBtn != null) ManagerChangeBtn.onClick.AddListener(OnClickChange);
+		if (ManagerDeskPurchaseBtn != null) ManagerDeskPurchaseBtn.onClick.AddListener(OnClickPurchase);
+		if (LevelWarningBtn != null) LevelWarningBtn.onClick.AddListener(OnClickLevelWarning);
 	}
 
 	public void UpdateAll(int officeIdx, int regionIdx = -1)
 	{
+		curOfficeIdx = officeIdx;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Get office and company data
+		UpdateArrow();
+		UpdateLevelWarning();
 	}
 
 	public void UpdateSelected(bool value)
 	{
+		if (SelectObj != null) SelectObj.SetActive(value);
 	}
 
 	private void UpdateOffice(int stageIdx, OfficeData officeData, int regionIdx = -1)
 	{
+		if (officeData == null) return;
+		if (OfficeNameText != null) OfficeNameText.text = "";
+
+		// Set company info
+		bool hasCompany = false;
+		if (CompanyNullObj != null) CompanyNullObj.SetActive(!hasCompany);
+		if (CompanyNameText != null) CompanyNameText.text = "";
+
+		// Set exp gauge
+		if (LevelProgress != null) LevelProgress.value = 0f;
 	}
 
 	private void UpdateCompanyExp(BigInteger exp)
 	{
+		if (company_exp_disposables != null)
+		{
+			company_exp_disposables.Dispose();
+			company_exp_disposables = new CompositeDisposable();
+		}
+		// Update exp display
+		if (ExpPerText != null) ExpPerText.text = ProjectUtility.GetThousandCommaText(exp);
 	}
 
 	private void UpdateCompanyLevel(int companyLevel)
 	{
+		if (CompanyLevels != null)
+		{
+			for (int i = 0; i < CompanyLevels.Count; i++)
+			{
+				if (CompanyLevels[i] != null)
+					CompanyLevels[i].gameObject.SetActive(i < companyLevel);
+			}
+		}
 	}
 
 	private void UpdateManagerDesk(OfficeItemData data)
 	{
+		if (data == null)
+		{
+			if (ManagerDeskNullObj != null) ManagerDeskNullObj.SetActive(true);
+			if (ManagerDeskLevelUpObj != null) ManagerDeskLevelUpObj.SetActive(false);
+			isZeroDesk = true;
+			return;
+		}
+		isZeroDesk = false;
+		if (ManagerDeskNullObj != null) ManagerDeskNullObj.SetActive(false);
+		if (ManagerDeskLevelUpObj != null) ManagerDeskLevelUpObj.SetActive(true);
 	}
 
 	private void UpdateManager(int managerIdx)
 	{
+		curManagerIdx = managerIdx;
+		bool hasManager = managerIdx > 0;
+		if (ManagerHireRootObj != null) ManagerHireRootObj.SetActive(!hasManager);
+		if (ManagerFireRootObj != null) ManagerFireRootObj.SetActive(hasManager);
 	}
 
 	private void OnClickManager()
 	{
+		// Show manager detail popup
 	}
 
 	private void UpdateArrow()
 	{
+		if (ArrowHire != null) ArrowHire.SetActive(false);
+		if (ArrowUpgrade != null) ArrowUpgrade.SetActive(false);
 	}
 
 	public void ShowUpgradeArrow()
 	{
+		if (ArrowUpgrade != null) ArrowUpgrade.SetActive(true);
 	}
 
 	private void UpdateLevelWarning()
 	{
+		if (BadObj != null) BadObj.SetActive(false);
+		if (LevelUpNoti != null) LevelUpNoti.SetActive(false);
+		// Check if office has level warnings
 	}
 
 	private void LevelUpByCashItem()
 	{
+		// Level up using cash item
+		UpgradeCb?.Invoke(curOfficeIdx);
 	}
 
 	private void OnClickPurchase()
 	{
+		// Purchase manager desk
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpgradeCb?.Invoke(curOfficeIdx);
 	}
 
 	private void OnClickHire()
 	{
+		// Open manager hire popup for this office
 	}
 
 	private void OnClickChange()
 	{
+		// Open manager change popup for this office
 	}
 
 	private void OnClickLevelWarning()
 	{
+		// Show level warning detail
 	}
 
 	private void Reset()
 	{
+		if (company_exp_disposables != null)
+		{
+			company_exp_disposables.Dispose();
+			company_exp_disposables = new CompositeDisposable();
+		}
+		if (company_lv_disposables != null)
+		{
+			company_lv_disposables.Dispose();
+			company_lv_disposables = new CompositeDisposable();
+		}
 	}
 
 	private void OnDisable()
 	{
+		Reset();
 	}
 
 	private void OnDestroy()
 	{
+		if (company_exp_disposables != null) { company_exp_disposables.Dispose(); company_exp_disposables = null; }
+		if (company_lv_disposables != null) { company_lv_disposables.Dispose(); company_lv_disposables = null; }
 	}
 }
