@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
+using DG.Tweening;
 using Treeplla;
 using UniRx;
 using UnityEngine;
@@ -424,7 +426,7 @@ public class HUDSeasonal : HUDBaseSeasonal
 	private void SetOvertimeWorkState(bool bActiveOvertimeWork)
 	{
 		if (OvertimeWorkToggle != null)
-			OvertimeWorkToggle.SetToggle(bActiveOvertimeWork);
+			OvertimeWorkToggle.Toggle(bActiveOvertimeWork);
 	}
 
 	private void OnClickStatue()

@@ -124,7 +124,7 @@ public class ItemDistributorProduct : MonoBehaviour
 		if (FocusFxTween != null)
 		{
 			if (bActive) FocusFxTween.Play();
-			else FocusFxTween.Stop();
+			else FocusFxTween.Pause();
 		}
 	}
 
