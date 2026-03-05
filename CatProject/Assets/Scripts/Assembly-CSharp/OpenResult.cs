@@ -8,13 +8,13 @@ public readonly struct OpenResult
 
 	public OpenResult(OpenResultStatus status, int hitItemIndex = -1, bool isItemCompleted = false)
 	{
-		Status = default(OpenResultStatus);
-		HitItemIndex = 0;
-		IsItemCompleted = false;
+		Status = status;
+		HitItemIndex = hitItemIndex;
+		IsItemCompleted = isItemCompleted;
 	}
 
 	public bool IsSuccessOpen()
 	{
-		return false;
+		return Status == OpenResultStatus.HitEmpty || Status == OpenResultStatus.HitItem;
 	}
 }

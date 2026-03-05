@@ -11,9 +11,23 @@ public class SeasonalMissionSlotData
 
 	public Dictionary<int, IDisposable> Disposable_MissionGroupOpen;
 
-	public List<SeasonalMissionGroupData> LastActiveMissionGroup { get { return null; } }
+	public List<SeasonalMissionGroupData> LastActiveMissionGroup
+	{
+		get
+		{
+			if (MissionPriorityGroups == null || LastActiveMissionGroupIndex < 0 || LastActiveMissionGroupIndex >= MissionPriorityGroups.Count)
+				return null;
+			return MissionPriorityGroups[LastActiveMissionGroupIndex];
+		}
+	}
 
 	~SeasonalMissionSlotData()
 	{
+		if (Disposable_MissionGroupOpen != null)
+		{
+			foreach (var kvp in Disposable_MissionGroupOpen)
+				kvp.Value?.Dispose();
+			Disposable_MissionGroupOpen.Clear();
+		}
 	}
 }

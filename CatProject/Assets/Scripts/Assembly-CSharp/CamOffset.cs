@@ -12,13 +12,13 @@ public struct CamOffset
 
 	public CamOffset(float xOffset, float yOffset, float zoomSize)
 	{
-		this.xOffset = 0f;
-		this.yOffset = 0f;
-		this.zoomSize = 0f;
+		this.xOffset = xOffset;
+		this.yOffset = yOffset;
+		this.zoomSize = zoomSize;
 	}
 
 	public Vector3 ToVector()
 	{
-		return default(Vector3);
+		return new Vector3(xOffset, yOffset, 0f);
 	}
 }

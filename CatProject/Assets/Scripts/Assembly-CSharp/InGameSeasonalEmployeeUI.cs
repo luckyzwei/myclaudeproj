@@ -39,37 +39,59 @@ public class InGameSeasonalEmployeeUI : InGameFloatingUI
 
 	public void SetAttachEmployee(WorkshopEmployee employee)
 	{
+		if (employee == null) return;
+		WorkerIdx = employee.WorkerIdx;
+		Disposables = new CompositeDisposable();
+		ShowDuration = 3f;
+		ElapsedShowCoolTime = 0f;
 	}
 
 	public void ShowMealNotice()
 	{
+		if (MealObj != null) MealObj.SetActive(true);
+		Show();
 	}
 
 	public void ShowMoodNotice()
 	{
+		if (MealObj != null) MealObj.SetActive(false);
+		UpdateMood();
+		Show();
 	}
 
 	private void UpdateMood()
 	{
+		SetMoodBgImage(WorkerMoodState);
 	}
 
 	private void SetMessageIcon(string iconKey)
 	{
+		// Set mood icon from atlas
 	}
 
 	private void SetMoodBgImage(E_EmployeeMoodState moodState)
 	{
+		// Set background color based on mood state
 	}
 
 	private void SetMoodMessageText(string localizeKey)
 	{
+		if (MoodMessageText != null)
+			MoodMessageText.text = localizeKey;
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
+		if (MealObj != null) MealObj.SetActive(false);
 	}
 }

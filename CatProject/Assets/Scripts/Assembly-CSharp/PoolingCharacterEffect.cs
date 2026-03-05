@@ -20,9 +20,9 @@ public class PoolingCharacterEffect : MonoBehaviour
 
 		public BurningArgs(Transform character, bool isCritical, EmployeeMoodSystem.Mood mood = EmployeeMoodSystem.Mood.Bad)
 		{
-			this.character = null;
-			this.isCritical = false;
-			this.mood = default(EmployeeMoodSystem.Mood);
+			this.character = character;
+			this.isCritical = isCritical;
+			this.mood = mood;
 		}
 	}
 

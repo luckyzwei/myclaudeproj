@@ -99,88 +99,155 @@ public class SliderTextComponent : MonoBehaviour
 
 	public void SetValue<T>(T initValue, T maxValue, bool isForceSet = false)
 	{
+		SetGaugeValue(initValue, maxValue);
+		if (isForceSet)
+			SetGaugeSlider(initValue, maxValue);
+		else
+			SetGaugeSliderWithSmartAnimation(initValue, maxValue);
 	}
 
 	public void SetValueFrontOnly<T>(T initValue, T maxValue, bool isForceSet = false)
 	{
+		if (isForceSet)
+			SetGaugeSlider(initValue, maxValue);
+		else
+			SetGaugeSliderWithSmartAnimation(initValue, maxValue);
 	}
 
 	public void SetPlaySpeed(float speed)
 	{
+		PlaySpeed = speed;
 	}
 
 	public bool IsFull()
 	{
-		return false;
+		return GaugeSlider != null && GaugeSlider.value >= 1f;
 	}
 
 	public float GetAnimationDuration()
 	{
-		return 0f;
+		return AnimationDuration;
 	}
 
 	private void SetGaugeSlider<T>(T curValue, T maxValue)
 	{
+		if (GaugeSlider == null) return;
+		float cur = System.Convert.ToSingle(curValue);
+		float max = System.Convert.ToSingle(maxValue);
+		GaugeSlider.value = max > 0f ? Mathf.Clamp01(cur / max) : 0f;
 	}
 
 	private void SetGaugeSliderWithSmartAnimation<T>(T curValue, T maxValue)
 	{
+		if (GaugeSlider == null) return;
+		float cur = System.Convert.ToSingle(curValue);
+		float max = System.Convert.ToSingle(maxValue);
+		float targetValue = max > 0f ? Mathf.Clamp01(cur / max) : 0f;
+		float startValue = GaugeSlider.value;
+		E_AnimationType animType = targetValue > startValue ? IncreaseAnimationType : DecreaseAnimationType;
+		if (animType == E_AnimationType.None)
+		{
+			GaugeSlider.value = targetValue;
+			return;
+		}
+		StopCurrentAnimation();
+		CurrentAnimationCoroutine = StartCoroutine(AnimateSliderValue(startValue, targetValue, animType));
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateSliderValue_003Ed__16))]
 	private IEnumerator AnimateSliderValue(float startValue, float targetValue, E_AnimationType animationType)
 	{
-		yield break;
+		float elapsedTime = 0f;
+		float duration = AnimationDuration > 0f ? AnimationDuration : 0.3f;
+		float speed = PlaySpeed > 0f ? PlaySpeed : 1f;
+		while (elapsedTime < duration)
+		{
+			elapsedTime += Time.deltaTime * speed;
+			float t = Mathf.Clamp01(elapsedTime / duration);
+			float easedT = GetEasedProgress(t, animationType);
+			if (GaugeSlider != null)
+				GaugeSlider.value = Mathf.Lerp(startValue, targetValue, easedT);
+			yield return null;
+		}
+		if (GaugeSlider != null)
+			GaugeSlider.value = targetValue;
+		CurrentAnimationCoroutine = null;
+		OnAnimationEndEvent?.Invoke();
 	}
 
 	private float GetEasedProgress(float progress, E_AnimationType animationType)
 	{
-		return 0f;
+		switch (animationType)
+		{
+			case E_AnimationType.Linear: return GetLinearProgress(progress);
+			case E_AnimationType.EaseIn: return GetEaseInProgress(progress);
+			case E_AnimationType.EaseOut: return GetEaseOutProgress(progress);
+			case E_AnimationType.EaseInOut: return GetEaseInOutProgress(progress);
+			case E_AnimationType.Bounce: return GetBounceProgress(progress);
+			case E_AnimationType.Elastic: return GetElasticProgress(progress);
+			default: return progress;
+		}
 	}
 
 	private float GetLinearProgress(float t)
 	{
-		return 0f;
+		return t;
 	}
 
 	private float GetEaseInProgress(float t)
 	{
-		return 0f;
+		return t * t;
 	}
 
 	private float GetEaseOutProgress(float t)
 	{
-		return 0f;
+		return 1f - (1f - t) * (1f - t);
 	}
 
 	private float GetEaseInOutProgress(float t)
 	{
-		return 0f;
+		return t < 0.5f ? 2f * t * t : 1f - Mathf.Pow(-2f * t + 2f, 2f) / 2f;
 	}
 
 	private float GetBounceProgress(float t)
 	{
-		return 0f;
+		if (t < 1f / 2.75f) return 7.5625f * t * t;
+		if (t < 2f / 2.75f) { t -= 1.5f / 2.75f; return 7.5625f * t * t + 0.75f; }
+		if (t < 2.5f / 2.75f) { t -= 2.25f / 2.75f; return 7.5625f * t * t + 0.9375f; }
+		t -= 2.625f / 2.75f;
+		return 7.5625f * t * t + 0.984375f;
 	}
 
 	private float GetElasticProgress(float t)
 	{
-		return 0f;
+		if (t <= 0f) return 0f;
+		if (t >= 1f) return 1f;
+		return Mathf.Pow(2f, -10f * t) * Mathf.Sin((t - 0.075f) * (2f * Mathf.PI) / 0.3f) + 1f;
 	}
 
 	private void StopCurrentAnimation()
 	{
+		if (CurrentAnimationCoroutine != null)
+		{
+			StopCoroutine(CurrentAnimationCoroutine);
+			CurrentAnimationCoroutine = null;
+		}
 	}
 
 	private void SetGaugeValue<T>(T curValue, T maxValue)
 	{
+		if (GaugeValueText != null)
+			GaugeValueText.text = curValue.ToString() + "/" + maxValue.ToString();
 	}
 
 	private void SetGaugeValue<T>(T value)
 	{
+		if (GaugeValueText != null)
+			GaugeValueText.text = value.ToString();
 	}
 
 	private void OnDisable()
 	{
+		StopCurrentAnimation();
 	}
 }

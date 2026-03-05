@@ -60,37 +60,99 @@ public class OfficeBus : MonoBehaviour
 
 	public void Init()
 	{
+		CurStatus = Status.Idle;
+		DeltaTime = 0f;
+		WaitDeltaTime = 0f;
+		WaitTime = 2f;
+		WorkOffWaitTime = 3f;
+		WorkOffCountStart = false;
+		StopIndex = 0;
+		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+		LoadCar();
 	}
 
 	private void LoadCar()
 	{
+		// Load car visual for the bus
 	}
 
 	public void StartBus()
 	{
+		CurStatus = Status.Enter;
+		DeltaTime = 0f;
+		if (Path != null)
+		{
+			TargetTime = Path.TotalDuration;
+		}
 	}
 
 	public void StartWorkOffBus()
 	{
+		CurStatus = Status.WorkOffEnter;
+		DeltaTime = 0f;
+		WorkOffCountStart = false;
 	}
 
 	public void StartWaitCounting()
 	{
+		WorkOffCountStart = true;
+		WaitDeltaTime = 0f;
 	}
 
 	public void Return()
 	{
+		CurStatus = Status.Idle;
+		DeltaTime = 0f;
+		WaitDeltaTime = 0f;
+		WorkOffCountStart = false;
 	}
 
 	private void Update()
 	{
+		switch (CurStatus)
+		{
+			case Status.Enter:
+				DeltaTime += Time.deltaTime;
+				break;
+			case Status.Wait:
+				WaitDeltaTime += Time.deltaTime;
+				if (WaitDeltaTime >= WaitTime)
+				{
+					CurStatus = Status.Exit;
+					DeltaTime = 0f;
+				}
+				break;
+			case Status.Exit:
+				DeltaTime += Time.deltaTime;
+				break;
+			case Status.WorkOffEnter:
+				DeltaTime += Time.deltaTime;
+				break;
+			case Status.WorkOffWait:
+				if (WorkOffCountStart)
+				{
+					WaitDeltaTime += Time.deltaTime;
+					if (WaitDeltaTime >= WorkOffWaitTime)
+					{
+						CurStatus = Status.WorkOffExit;
+						DeltaTime = 0f;
+					}
+				}
+				break;
+			case Status.WorkOffExit:
+				DeltaTime += Time.deltaTime;
+				break;
+		}
 	}
 
 	public void UpdateSpecialTheme(bool isSpecialTheme)
 	{
+		// Update bus visual for special theme events
 	}
 
 	private void OnDestroy()
 	{
+		if (CarObj != null)
+			Destroy(CarObj);
 	}
 }

@@ -26,37 +26,57 @@ public class InGameSeasonal : InGameMode
 
 	public override void Load()
 	{
+		// Load seasonal game mode
+		LoadUI();
 	}
 
 	public override void UnLoad()
 	{
+		AdsupplyMoneyVip = null;
+		NightSkipVip = null;
+		SeasonalStage = null;
 	}
 
 	public override void LoadUI()
 	{
+		// Load seasonal HUD and UI elements
 	}
 
 	public void LoadWorkshopEmployee(Action<WorkshopEmployee> CompCb)
 	{
+		// Instantiate workshop employee from prefab at CharacterRoot
+		CompCb?.Invoke(null);
 	}
 
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
 	{
+		// Load ad supply VIP object
+		CompCb?.Invoke(AdsupplyMoneyVip);
 	}
 
 	public void LoadNightSkipVip(Action<NightSkipVIP> CompCb)
 	{
+		// Load night skip VIP object
+		CompCb?.Invoke(NightSkipVip);
 	}
 
 	public void FocusToObject(GameObject target, CamOffset camOffset)
 	{
+		if (target == null || IngameCamera == null) return;
+		Vector3 pos = target.transform.position + camOffset.ToVector();
+		IngameCamera.FocusPosition(pos, camOffset.zoomSize);
 	}
 
 	public void FocusToBuilding(GameObject target, CamOffset camOffset)
 	{
+		if (target == null || IngameCamera == null) return;
+		Vector3 pos = target.transform.position + camOffset.ToVector();
+		IngameCamera.FocusPosition(pos, camOffset.zoomSize);
 	}
 
 	public void FocusOut()
 	{
+		if (IngameCamera != null)
+			IngameCamera.FocusOut();
 	}
 }

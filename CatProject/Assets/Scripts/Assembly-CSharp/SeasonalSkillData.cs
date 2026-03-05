@@ -20,5 +20,5 @@ public class SeasonalSkillData
 
 	public int UpgradeNeedValue_PerMile;
 
-	public bool IsOpen { get { return false; } }
+	public bool IsOpen { get { return CurLevel > 0 || MaxLevel > 0; } }
 }

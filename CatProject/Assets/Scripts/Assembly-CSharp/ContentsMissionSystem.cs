@@ -252,7 +252,7 @@ public class ContentsMissionSystem
 	{
 		SingleMissionInitParams initParams = new SingleMissionInitParams();
 		initParams.ContentType = contentType;
-		initParams.SlotId = slotId;
+		initParams.SlotIdx = slotId;
 		initParams.MissionIdx = missionIdx;
 		initParams.CurrentValue = currentValue;
 		initParams.IsCompleted = isCompleted;

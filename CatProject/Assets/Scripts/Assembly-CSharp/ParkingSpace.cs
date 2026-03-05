@@ -28,41 +28,62 @@ public class ParkingSpace : MonoBehaviour
 
 	private bool isInit;
 
-	public Transform ParkingTrans { get { return null; } }
+	public Transform ParkingTrans { get { return CarTrans; } }
 
 	private void Awake()
 	{
+		isInit = false;
+		IsOpen = false;
+		CarIdx = -1;
 	}
 
 	public void Set(int zone, int order)
 	{
+		ParkingZone = zone;
+		ParkingOrder = order;
+		isInit = true;
+		UpdateOpen();
 	}
 
 	private void LoadEditUI()
 	{
+		// Load parking edit UI at CarTrans position
 	}
 
 	public void UpdateEditMode()
 	{
+		if (EditUI != null)
+			EditUI.gameObject.SetActive(IsOpen);
 	}
 
 	public void UpdateOpen()
 	{
+		if (LockObj != null) LockObj.SetActive(!IsOpen);
+		if (ParkingObj != null) ParkingObj.SetActive(IsOpen);
 	}
 
 	private void OnClickParkingSpace()
 	{
+		ClickAction?.Invoke(ParkingOrder);
 	}
 
 	public void UpdateCar()
 	{
+		// Refresh car visual based on current car data
 	}
 
 	private void DestroyCar()
 	{
+		if (CarObj != null)
+		{
+			Destroy(CarObj);
+			CarObj = null;
+		}
+		CarIdx = -1;
 	}
 
 	private void OnDestroy()
 	{
+		DestroyCar();
 	}
 }

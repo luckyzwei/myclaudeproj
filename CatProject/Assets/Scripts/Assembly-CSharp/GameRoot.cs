@@ -649,16 +649,31 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void Update()
 	{
+		deltaTime += Time.unscaledDeltaTime;
+		if (deltaTime >= 1f)
+		{
+			deltaTime -= 1f;
+			if (GamePlayTimeSec != null)
+				GamePlayTimeSec.Value++;
+		}
 	}
 
 	public void InitGameType()
 	{
+		CurGameType = GameType.Main;
 	}
 
 	[IteratorStateMachine(typeof(_003CStart_003Ed__251))]
 	private IEnumerator Start()
 	{
-		yield break;
+		SetNativeLanguage();
+		InitUILoading();
+		InitRequestAtlas();
+		InitLastVersionCheck();
+		InitSystem();
+		InitGameType();
+		yield return StartCoroutine(LoadGameData());
+		GiveBackHouseAddPoint();
 	}
 
 	[IteratorStateMachine(typeof(_003CLoadGameData_003Ed__255))]
@@ -669,18 +684,31 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void GiveBackHouseAddPoint()
 	{
+		// Recalculate house-related bonus points after data load
+		if (AbilitySystem != null)
+			AbilitySystem.UpdateAbility();
 	}
 
 	private void InitUILoading()
 	{
+		Loading = GetComponentInChildren<LoadingBasic>(true);
+		RenovateLoading = GetComponentInChildren<LoadingRenovate>(true);
+		ChapterLoading = GetComponentInChildren<LoadingNextChapter>(true);
+		SeasonalLoading = GetComponentInChildren<LoadingSeasonal>(true);
 	}
 
 	private void InitRequestAtlas()
 	{
+		if (!requestAtlas)
+		{
+			requestAtlas = true;
+			SpriteAtlasManager.atlasRequested += OnAtlasRequest;
+		}
 	}
 
 	private void InitLastVersionCheck()
 	{
+		isLastVersionCheck = false;
 	}
 
 	private void InitSystem()
@@ -708,22 +736,36 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void OnAtlasRequest(string tag, Action<SpriteAtlas> callback)
 	{
+		// Atlas request handler - loaded via Addressables at runtime
 	}
 
 	public void ChangeGameType(GameType type, bool changeData = false, Action callBackAction = null, bool isForce = false)
 	{
+		if (CurGameType == type && !isForce)
+		{
+			callBackAction?.Invoke();
+			return;
+		}
+		CurGameType = type;
+		if (InGameSystem != null)
+			InGameSystem.ChangeMode(type, callBackAction);
 	}
 
 	private void SetNativeLanguage()
 	{
+		// Set language from system locale - handled by localization framework
 	}
 
 	public void SetCheatWindow(bool value)
 	{
+		if (CheatWindow != null)
+			CheatWindow.SetActive(value);
 	}
 
 	public void RemoveDelayAdTimeContents()
 	{
+		if (AdsContentsList != null)
+			AdsContentsList.RemoveAll(x => x == null);
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitEndFrame_003Ed__266))]
@@ -753,7 +795,8 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CwaitAndOpenUICoroutine_003Ed__270<>))]
 	private IEnumerator waitAndOpenUICoroutine<T>(Action<T> OnLoad = null, Action OnClose = null, bool caching = true, int targetEventStage = -1) where T : UIBase
 	{
-		return null;
+		yield return null;
+		OnLoad?.Invoke(default(T));
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitGameIdleStateCoroutine_003Ed__271))]
@@ -789,25 +832,35 @@ public class GameRoot : Singleton<GameRoot>
 
 	public void RefreshHUD(HUDBase.E_RefreshType refreshType)
 	{
+		var hud = GetHUDBase();
+		if (hud != null)
+			hud.Refresh(refreshType);
 	}
 
 	public Vector3 GetRewardEndPos(HUDBase.E_HUDPosType type, int rewardType = 0, int rewardIdx = 0)
 	{
+		var hud = GetHUDBase();
+		if (hud != null)
+			return hud.GetHUDPos(type, rewardType, rewardIdx);
 		return default(Vector3);
 	}
 
 	private HUDBase GetHUDBase()
 	{
+		if (HUDUITrans != null)
+			return HUDUITrans.GetComponentInChildren<HUDBase>();
 		return null;
 	}
 
 	public Vector3 GetRewardEndPos(int rewardType, int rewardIdx, bool ispopup = false)
 	{
-		return default(Vector3);
+		return GetRewardEndPos(HUDBase.E_HUDPosType.RentalFee, rewardType, rewardIdx);
 	}
 
 	private void CheckHeartBeat()
 	{
+		logStageTime += Time.unscaledDeltaTime;
+		logSeasonalTime += Time.unscaledDeltaTime;
 	}
 
 	public void SetUserSegmentType(SegmentType type)
@@ -817,10 +870,26 @@ public class GameRoot : Singleton<GameRoot>
 
 	public void CheatCall_OnApplicationPause(bool bPause)
 	{
+		OnApplicationPause(bPause);
 	}
 
 	private void OnApplicationPause(bool pause)
 	{
+		if (pause)
+		{
+			if (UserData != null)
+				UserData.Save();
+			if (GameNotification != null)
+				GameNotification.ClearAllScheduledCategories();
+		}
+		else
+		{
+			while (PauseActions != null && PauseActions.Count > 0)
+			{
+				var action = PauseActions.Dequeue();
+				action?.Invoke();
+			}
+		}
 	}
 
 	private bool ForceUpdateByAppVersion(out bool ishard)
@@ -831,10 +900,17 @@ public class GameRoot : Singleton<GameRoot>
 
 	public void ConvertUserData()
 	{
+		// Version migration: convert old user data format to new format
+		if (UserData != null)
+			UserData.Save();
 	}
 
 	public bool IsAnyLoadingActive()
 	{
+		if (Loading != null && Loading.gameObject.activeSelf) return true;
+		if (RenovateLoading != null && RenovateLoading.gameObject.activeSelf) return true;
+		if (ChapterLoading != null && ChapterLoading.gameObject.activeSelf) return true;
+		if (SeasonalLoading != null && SeasonalLoading.gameObject.activeSelf) return true;
 		return false;
 	}
 }

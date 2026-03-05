@@ -24,13 +24,19 @@ public class SeasonalDistributorProductData
 
 	public IReactiveProperty<bool> isUpgradeOpen;
 
-	public bool IsMaxLevel { get { return false; } }
+	public bool IsMaxLevel { get { return maxLevel > 0 && productLevel >= maxLevel; } }
 
 	public SeasonalDistributorProductData(int themeIdx, int idx, int sortOrder, DateTime lastSellingTime = default(DateTime))
 	{
-		// themeIdx is not stored as a field directly
 		productIdx = idx;
 		productSortOrder = sortOrder;
+		productLevel = 0;
 		lastSellingDataTime = lastSellingTime;
+		isSelling = new ReactiveProperty<bool>(false);
+		isPauseSelling = new ReactiveProperty<bool>(false);
+		isUpgradeOpen = new ReactiveProperty<bool>(false);
+		unlockCost = BigInteger.Zero;
+		unlock_level = 0;
+		maxLevel = 0;
 	}
 }

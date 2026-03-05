@@ -21,5 +21,13 @@ public class OneTimeEventData : IClientData
 
 	public void Init(int idx)
 	{
+		OneTimeIdx = new ReactiveProperty<int>(idx);
+		OneTimeCurrency = new ReactiveProperty<int>(0);
+		OneTimeLevel = 0;
+		OneTimeLevelExp = 0;
+		OneTimeReceiveLevel = 0;
+		OneTimeCompanyResetCount = 0;
+		OneTimeCompanyResetTime = DateTime.MinValue;
+		IsActiveBonusOneTime = false;
 	}
 }

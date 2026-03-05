@@ -62,45 +62,67 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	private bool prev_open;
 
-	public int BuildingIdx { get { return 0; } }
+	public int BuildingIdx { get { return buildingIdx; } }
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
+		if (RevenueBtn != null) RevenueBtn.onClick.AddListener(OnClickGetRevenue);
+		prev_open = false;
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.WorldMap)
 	{
+		base.Init(parent, type);
 	}
 
 	public override void Show()
 	{
+		base.Show();
 	}
 
 	public void Set(int idx)
 	{
+		buildingIdx = idx;
+		SetReddot();
+		UpdateRevenue();
 	}
 
 	private void SetReddot()
 	{
+		// Configure reddot notification for this building
 	}
 
 	public void UpdateRevenue()
 	{
+		if (RevenueRoot != null)
+		{
+			// Show/hide revenue UI based on building state
+		}
 	}
 
 	public void ShowOpenState()
 	{
+		prev_open = true;
+		if (SignAni != null) SignAni.Play("Open");
 	}
 
 	private void OnClickBtn()
 	{
+		clickAction?.Invoke(buildingIdx);
 	}
 
 	public void OnClickGetRevenue()
 	{
+		// Collect revenue from this building
 	}
 
 	public void SetArrowNoti()
 	{
+		if (ArrowNoti != null)
+		{
+			ArrowNoti.SetActive(true);
+			// Auto-hide after ArrowNotiShowTime
+		}
 	}
 }

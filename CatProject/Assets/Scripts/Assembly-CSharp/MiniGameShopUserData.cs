@@ -22,17 +22,21 @@ public class MiniGameShopUserData
 
 	public static MiniGameShopUserData MakeDefaultData(int scheduleIdx, int eventIdx)
 	{
-		return null;
+		var data = new MiniGameShopUserData(scheduleIdx, eventIdx);
+		data.ExchangeItemDataList = new List<ExchangeShopUserData>();
+		return data;
 	}
 
 	public static MiniGameShopUserData FromFlatBuffer(MiniGameShopData data)
 	{
 		var result = new MiniGameShopUserData();
+		result.ExchangeItemDataList = new List<ExchangeShopUserData>();
 		return result;
 	}
 
 	public static Offset<MiniGameShopData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameShopUserData userData)
 	{
+		if (userData == null) return default(Offset<MiniGameShopData>);
 		return default(Offset<MiniGameShopData>);
 	}
 }

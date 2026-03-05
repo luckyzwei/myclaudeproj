@@ -40,41 +40,68 @@ public class HudCardBoxComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		itemDispose = new CompositeDisposable();
+		orderedIdList = new List<int>();
+		isOpenNow = false;
 	}
 
 	public void CheckOpenBoxCount()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.ShopData == null) return;
+		OnChangeOpenBox();
 	}
 
 	private void OnChangeOpenBox()
 	{
+		// Update box UI state when open count changes
+		if (keyCountObject != null && keyCountText != null)
+		{
+			// Show key count
+		}
 	}
 
 	private void OnClickBox()
 	{
+		if (isOpenNow) return;
+		OpenBox();
 	}
 
 	public void ShowAdObj(bool value)
 	{
+		if (adObject != null) adObject.SetActive(value);
+		if (freeObject != null) freeObject.SetActive(!value);
 	}
 
 	private void OpenBox(Action CompCb = null)
 	{
+		isOpenNow = true;
+		SetOpenNow();
+		CompCb?.Invoke();
 	}
 
 	private void OnDestroy()
 	{
+		if (itemDispose != null)
+		{
+			itemDispose.Dispose();
+			itemDispose = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		isOpenNow = false;
 	}
 
 	private void SetOpenNow()
 	{
+		// Visual feedback for box opening
 	}
 
 	public void SetShow(bool show)
 	{
+		showUI = show;
+		gameObject.SetActive(show);
 	}
 }

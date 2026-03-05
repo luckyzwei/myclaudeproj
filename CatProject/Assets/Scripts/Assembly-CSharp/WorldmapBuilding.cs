@@ -81,48 +81,72 @@ public class WorldmapBuilding : MonoBehaviour
 
 	public void Init(int idx)
 	{
+		BuildingIdx = idx;
+		disposable = new CompositeDisposable();
+		WaitBuildingUIHide = new WaitUntil(() => buildingUI == null || !buildingUI.gameObject.activeSelf);
+		LoadSignUI();
 	}
 
 	public void SetOpened(bool isOpen)
 	{
+		if (isOpen)
+			ShowBuildingUI(true);
 	}
 
 	public void ShowGuide()
 	{
+		isInGuide = true;
+		ShowBuildingUI(true);
 	}
 
 	public void ShowBuildingUI(bool value)
 	{
+		if (buildingUI != null)
+			buildingUI.gameObject.SetActive(value);
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitUICloseAndOpen_003Ed__15))]
 	private IEnumerator WaitUICloseAndOpen()
 	{
-		yield break;
+		yield return WaitBuildingUIHide;
+		ShowBuildingUI(true);
 	}
 
 	private void LoadSignUI()
 	{
+		// Load building sign UI via resource system at Trans position
 	}
 
 	private void OnClickBuilding(int building)
 	{
+		if (building != BuildingIdx) return;
+		ShowBuildingInfo(ShopSystem.InAppPurchaseLocation.other);
 	}
 
 	public void WaitAndShowBuildingInfo(ShopSystem.InAppPurchaseLocation location)
 	{
+		if (buildingUI != null && buildingUI.gameObject.activeSelf)
+			StartCoroutine(WaitUICloseAndOpen());
+		else
+			ShowBuildingInfo(location);
 	}
 
 	private void ShowBuildingInfo(ShopSystem.InAppPurchaseLocation location)
 	{
+		// Show building info popup for this building
 	}
 
 	public Transform GetUITrans()
 	{
-		return null;
+		return Trans;
 	}
 
 	private void OnDestroy()
 	{
+		if (disposable != null)
+		{
+			disposable.Dispose();
+			disposable = null;
+		}
 	}
 }

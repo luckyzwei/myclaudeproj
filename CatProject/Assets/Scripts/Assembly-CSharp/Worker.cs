@@ -111,19 +111,33 @@ public class Worker : MonoBehaviour
 
 	public bool IsState(E_State _st)
 	{
-		return false;
+		return state == _st;
 	}
 
 	protected void WorkerInit()
 	{
+		state = E_State.None;
+		MoveNodeList = new Queue<InGameAstar.Node>();
+		Speed = 2f;
+		RunSpeed = 4f;
+		isOut = false;
+		CancelCurStatus = false;
 	}
 
 	protected virtual void ChangeState(E_State _state, bool isForce = false)
 	{
+		if (state == _state && !isForce) return;
+		state = _state;
 	}
 
 	public void UnloadChar()
 	{
+		if (CharLoadObj != null)
+		{
+			CharLoadObj.Release();
+			CharLoadObj = null;
+		}
+		CharAni = null;
 	}
 
 	protected virtual void UpdateFloor()
@@ -144,7 +158,10 @@ public class Worker : MonoBehaviour
 
 	protected void UpdatWorkDir(Transform trans, out E_Direction dir)
 	{
-		dir = default(E_Direction);
+		if (trans != null && MySeatTrans != null)
+			dir = GetDir(transform.position, MySeatTrans.position);
+		else
+			dir = E_Direction.Front;
 	}
 
 	public virtual void WorkOut(int order, bool outcompany = false)
@@ -157,11 +174,16 @@ public class Worker : MonoBehaviour
 
 	public int GetRepairRoomIdx()
 	{
+		if (TargetRepairRoom != null)
+			return TargetRepairRoom.OfficeIdx;
 		return 0;
 	}
 
 	public virtual void Return()
 	{
+		ChangeState(E_State.None);
+		isOut = false;
+		UnloadChar();
 	}
 
 	public virtual void GotoRepairOffice(int OfficeIdx)
@@ -174,7 +196,13 @@ public class Worker : MonoBehaviour
 
 	protected E_Direction GetDir(Vector2 curPos, Vector2 nextPos)
 	{
-		return default(E_Direction);
+		float dx = nextPos.x - curPos.x;
+		float dy = nextPos.y - curPos.y;
+		if (Mathf.Abs(dx) < 0.01f)
+			return dy > 0 ? E_Direction.Back : E_Direction.Front;
+		if (dx > 0)
+			return dy > 0 ? E_Direction.Back_Right : E_Direction.Front_Right;
+		return dy > 0 ? E_Direction.Back_Left : E_Direction.Front_Left;
 	}
 
 	protected virtual void Update()

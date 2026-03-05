@@ -15,19 +15,32 @@ public class RichAchieveSystem
 
 	public void Init()
 	{
+		dic_RichAchieveRigion = new Dictionary<int, RichAchieveRegionData>();
+		dic_RichAchieveCount = new Dictionary<int, int>();
+		InitRichAchieveCount();
 	}
 
 	public void InitRichAchieveCount()
 	{
+		if (dic_RichAchieveCount != null)
+			dic_RichAchieveCount.Clear();
 	}
 
 	public int GetRichAchieveCount(E_RichAchieveMissionActiveRegion region)
 	{
+		if (dic_RichAchieveCount != null && dic_RichAchieveCount.TryGetValue((int)region, out int count))
+			return count;
 		return 0;
 	}
 
 	public void AddRichAchieveCount(E_RichAchieveMissionActiveRegion region)
 	{
+		if (dic_RichAchieveCount == null) return;
+		int key = (int)region;
+		if (dic_RichAchieveCount.ContainsKey(key))
+			dic_RichAchieveCount[key]++;
+		else
+			dic_RichAchieveCount[key] = 1;
 	}
 
 	public void SetMissionIdx()

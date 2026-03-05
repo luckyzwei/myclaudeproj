@@ -25,13 +25,19 @@ public class SeasonalMissionData
 
 	public IDisposable Disposable_CompleteCondition;
 
-	public bool bReadyToComplete { get { return false; } }
+	public bool bReadyToComplete { get { return bComplete && TargetCurValue != null && TargetCurValue.Value >= TargetRequireValue; } }
 
 	~SeasonalMissionData()
 	{
+		DisposeSubscribe();
 	}
 
 	public void DisposeSubscribe()
 	{
+		if (Disposable_CompleteCondition != null)
+		{
+			Disposable_CompleteCondition.Dispose();
+			Disposable_CompleteCondition = null;
+		}
 	}
 }

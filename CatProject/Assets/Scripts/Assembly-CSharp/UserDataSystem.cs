@@ -176,6 +176,13 @@ public class UserDataSystem
 
 	public void Update()
 	{
+		if (saving) return;
+		deltaTime += UnityEngine.Time.deltaTime;
+		if (deltaTime >= saveWaitStandardTime)
+		{
+			deltaTime = 0f;
+			Save();
+		}
 	}
 
 	public string GetSaveFilePath()
@@ -309,6 +316,15 @@ public class UserDataSystem
 
 	public void SyncHUDCurrency(int currencyID = -1)
 	{
+		if (CurMode == null) return;
+		if (currencyID < 0 || currencyID == (int)Config.CurrencyID.Cash)
+		{
+			if (Cash != null && HUDCash != null) HUDCash.Value = Cash.Value;
+		}
+		if (currencyID < 0 || currencyID == (int)Config.CurrencyID.Permission)
+		{
+			if (Permission != null && HUDPermission != null) HUDPermission.Value = Permission.Value;
+		}
 	}
 
 	public void SetReward(IRewardItemData rewardItemData, bool hudRefresh = true, bool limitignore = false)
@@ -334,10 +350,13 @@ public class UserDataSystem
 
 	public void ResetDaily()
 	{
+		ResetRecordCount(Config.RecordCountKeys.DailyAdWatchCount);
+		WatchCount = 0;
 	}
 
 	public void RemoveEventData()
 	{
+		eventData = null;
 	}
 
 	public void AddUpdateRewardNotify(in int rewardType, in RewardSetDelegate callBack)

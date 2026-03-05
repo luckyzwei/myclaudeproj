@@ -122,74 +122,167 @@ public class Catstagram : MonoBehaviour
 
 	private void Awake()
 	{
+		if (MainBtn != null) MainBtn.onClick.AddListener(OnClickMain);
+		if (EventBtn != null) EventBtn.onClick.AddListener(OnClickEvent);
+		if (BackBtn != null) BackBtn.onClick.AddListener(OnClickBack);
+		if (LikeBtn != null) LikeBtn.onClick.AddListener(OnClickHeart);
+		if (CommentBtn != null) CommentBtn.onClick.AddListener(OnClickComment);
 	}
 
 	public void Init()
 	{
+		CurCatstagramType = E_CatstagramType.MAIN;
+		SelectCatsta = -1;
+		SetCommon();
+		SetCatstagram();
 	}
 
 	private void SetCommon()
 	{
+		SetCommonCount();
 	}
 
 	private void SetCommonCount()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		int mainCount = root.UserData.CatstaData != null ? root.UserData.CatstaData.Count : 0;
+		if (ListCountText != null)
+			ListCountText.text = mainCount.ToString();
 	}
 
 	private void SetCatstagram()
 	{
+		if (MainRoot != null) MainRoot.SetActive(true);
+		if (EventRoot != null) EventRoot.SetActive(false);
+		if (DetailRoot != null) DetailRoot.SetActive(false);
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		bool hasCatsta = root.UserData.CatstaData != null && root.UserData.CatstaData.Count > 0;
+		if (NoCatstaObj != null) NoCatstaObj.SetActive(!hasCatsta);
 	}
 
 	private void SetEventCatstagram()
 	{
+		if (MainRoot != null) MainRoot.SetActive(false);
+		if (EventRoot != null) EventRoot.SetActive(true);
+		if (DetailRoot != null) DetailRoot.SetActive(false);
 	}
 
 	private bool CanReceiveReward(CatstagramInfoData info)
 	{
-		return false;
+		if (info == null) return false;
+		return info.LikeRewardType > 0 && info.LikeRewardValue > 0;
 	}
 
 	private void SetDetailPopup()
 	{
+		if (DetailRoot != null) DetailRoot.SetActive(true);
+		if (MainDetailRoot != null) MainDetailRoot.SetActive(true);
+		if (EventDetailRoot != null) EventDetailRoot.SetActive(false);
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.CatstaData == null) return;
+		if (SelectCatsta < 0 || SelectCatsta >= root.UserData.CatstaData.Count) return;
+		var data = root.UserData.CatstaData[SelectCatsta];
+		if (data == null) return;
+		SetHeart();
 	}
 
 	private void SetEventDetailPopup()
 	{
+		if (DetailRoot != null) DetailRoot.SetActive(true);
+		if (MainDetailRoot != null) MainDetailRoot.SetActive(false);
+		if (EventDetailRoot != null) EventDetailRoot.SetActive(true);
+		SetEventHeart();
 	}
 
 	private void CloseDetailPopup()
 	{
+		if (DetailRoot != null) DetailRoot.SetActive(false);
+		SelectCatsta = -1;
 	}
 
 	private void OnClickItem(int order)
 	{
+		SelectCatsta = order;
+		if (CurCatstagramType == E_CatstagramType.MAIN)
+			SetDetailPopup();
+		else
+			SetEventDetailPopup();
 	}
 
 	private void OnClickBack()
 	{
+		if (DetailRoot != null && DetailRoot.activeSelf)
+		{
+			CloseDetailPopup();
+			return;
+		}
+		GotoMainAction?.Invoke();
 	}
 
 	private void OnClickHeart()
 	{
+		if (CurCatstagramType == E_CatstagramType.MAIN)
+		{
+			var root = Singleton<GameRoot>.Instance;
+			if (root == null || root.UserData == null || root.UserData.CatstaData == null) return;
+			if (SelectCatsta < 0 || SelectCatsta >= root.UserData.CatstaData.Count) return;
+			var data = root.UserData.CatstaData[SelectCatsta];
+			if (data == null || data.Like) return;
+			data.Like = true;
+			SetHeart();
+		}
+		else
+		{
+			var root = Singleton<GameRoot>.Instance;
+			if (root == null || root.UserData == null || root.UserData.CatstaEventData == null) return;
+			if (SelectCatsta < 0 || SelectCatsta >= root.UserData.CatstaEventData.Count) return;
+			var data = root.UserData.CatstaEventData[SelectCatsta];
+			if (data == null || data.Like) return;
+			data.Like = true;
+			SetEventHeart();
+		}
 	}
 
 	private void SetHeart()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.CatstaData == null) return;
+		if (SelectCatsta < 0 || SelectCatsta >= root.UserData.CatstaData.Count) return;
+		var data = root.UserData.CatstaData[SelectCatsta];
+		bool liked = data != null && data.Like;
+		if (HeartOnObj != null) HeartOnObj.SetActive(liked);
+		if (HeartFx != null) HeartFx.SetActive(liked);
 	}
 
 	private void SetEventHeart()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.CatstaEventData == null) return;
+		if (SelectCatsta < 0 || SelectCatsta >= root.UserData.CatstaEventData.Count) return;
+		var data = root.UserData.CatstaEventData[SelectCatsta];
+		bool liked = data != null && data.Like;
+		if (HeartOnObj != null) HeartOnObj.SetActive(liked);
+		if (HeartFx != null) HeartFx.SetActive(liked);
 	}
 
 	private void OnClickComment()
 	{
+		// Open comment popup for current catsta
 	}
 
 	private void OnClickMain()
 	{
+		CurCatstagramType = E_CatstagramType.MAIN;
+		CloseDetailPopup();
+		SetCatstagram();
 	}
 
 	private void OnClickEvent()
 	{
+		CurCatstagramType = E_CatstagramType.EVENT;
+		CloseDetailPopup();
+		SetEventCatstagram();
 	}
 }

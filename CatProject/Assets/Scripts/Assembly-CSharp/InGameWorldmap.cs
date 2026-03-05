@@ -123,34 +123,56 @@ public class InGameWorldmap : OutGameMode
 
 	public override void Load()
 	{
+		base.Load();
+		Type = GameType.WorldMap;
+		StartCoroutine(DelayLoadEnd());
 	}
 
 	[IteratorStateMachine(typeof(_003CDelayLoadEnd_003Ed__3))]
 	private IEnumerator DelayLoadEnd()
 	{
-		yield break;
+		yield return null;
+		// Delay one frame to allow all world objects to initialize
 	}
 
 	public void AddRegionWorld(int region_idx, Action Cb)
 	{
+		if (Region != null)
+		{
+			Region.Init(region_idx);
+			Cb?.Invoke();
+		}
 	}
 
 	public void FocusToZone(int zone, bool showArrow = false)
 	{
+		if (Region != null)
+		{
+			Region.FocusCamera(zone);
+			if (showArrow)
+				Region.ShowArrow(zone);
+		}
 	}
 
 	public void SetGuideStage(int stage)
 	{
+		if (Region != null)
+			Region.FocusCamera(stage);
 	}
 
 	public void WaitRegionCb(Action Cb)
 	{
+		if (Region != null)
+			Cb?.Invoke();
+		else
+			StartCoroutine(WaitRegion(Cb));
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitRegion_003Ed__8))]
 	private IEnumerator WaitRegion(Action waitCb)
 	{
-		yield break;
+		yield return new WaitUntil(() => Region != null);
+		waitCb?.Invoke();
 	}
 
 	protected override void LoadUI()
@@ -159,5 +181,9 @@ public class InGameWorldmap : OutGameMode
 
 	public override void UnLoad()
 	{
+		base.UnLoad();
+		if (Region != null)
+			Destroy(Region.gameObject);
+		Region = null;
 	}
 }

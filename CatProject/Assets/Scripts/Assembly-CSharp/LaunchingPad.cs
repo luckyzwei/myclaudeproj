@@ -139,25 +139,51 @@ public class LaunchingPad : MonoBehaviour
 
 	public void Shot(Action moveCallback)
 	{
+		MoveCallback = moveCallback;
+		StartCoroutine(WaitDelay());
 	}
 
 	public void SetEnable(bool value)
 	{
+		// 그레이스케일 / 컬러 전환
+		if (targetSRs == null) return;
+		for (int i = 0; i < targetSRs.Count; i++)
+		{
+			if (targetSRs[i] == null) continue;
+			targetSRs[i].material = value ? originMat : grayScaleMat;
+		}
 	}
 
 	private void Awake()
 	{
+		// 원본 머티리얼 저장
+		if (targetSRs != null && targetSRs.Count > 0 && targetSRs[0] != null)
+		{
+			originMat = targetSRs[0].material;
+		}
+		StartCoroutine(WaitInit());
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitDelay_003Ed__12))]
 	private IEnumerator WaitDelay()
 	{
-		yield break;
+		// 딜레이 후 애니메이션 재생
+		if (delayTime > 0f)
+			yield return new WaitForSeconds(delayTime);
+		if (ani != null)
+			ani.Play();
+		// 애니메이션 완료 후 콜백
+		if (ani != null && ani.clip != null)
+			yield return new WaitForSeconds(ani.clip.length);
+		MoveCallback?.Invoke();
+		MoveCallback = null;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitInit_003Ed__13))]
 	private IEnumerator WaitInit()
 	{
-		yield break;
+		yield return null;
+		// 초기화 대기 후 활성화 상태 설정
+		SetEnable(true);
 	}
 }

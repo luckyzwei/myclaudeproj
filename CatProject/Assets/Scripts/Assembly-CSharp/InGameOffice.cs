@@ -122,9 +122,9 @@ public class InGameOffice : InGameMode
 
 	public Subject<bool> OnAllLoadComplete;
 
-	public List<BuffObjectComponent> BuffObjects { get { return null; } }
+	public List<BuffObjectComponent> BuffObjects { get { return buffObjects; } }
 
-	public InGameOfficeStage Stage { get { return null; } }
+	public InGameOfficeStage Stage { get { return stage; } }
 
 	public BizAcqStage BizAcqStage { get; private set; }
 
@@ -132,19 +132,36 @@ public class InGameOffice : InGameMode
 
 	public override void Load()
 	{
+		EmployeeList = new List<Employee>();
+		ManagerList = new List<Manager>();
+		EngineerList = new List<Engineer>();
+		CurEmployeeCnt = new Dictionary<int, int>();
+		buffObjects = new List<BuffObjectComponent>();
+		CurEngineerCount = 0;
+		OnAllLoadComplete = new Subject<bool>();
 	}
 
 	public BuffObjectComponent GetBuffObject(int idx)
 	{
+		if (buffObjects == null) return null;
+		for (int i = 0; i < buffObjects.Count; i++)
+		{
+			if (buffObjects[i] != null && buffObjects[i].BuffObjectIdx == idx)
+				return buffObjects[i];
+		}
 		return null;
 	}
 
 	public void AddBuffObject(BuffObjectComponent component)
 	{
+		if (buffObjects != null && component != null)
+			buffObjects.Add(component);
 	}
 
 	public void RemoveBuffObject(BuffObjectComponent component)
 	{
+		if (buffObjects != null && component != null)
+			buffObjects.Remove(component);
 	}
 
 	public void UpdateStatues()
@@ -173,10 +190,28 @@ public class InGameOffice : InGameMode
 
 	public void ReturnEmployees(bool clearEmployeeList = false)
 	{
+		if (EmployeeList == null) return;
+		for (int i = EmployeeList.Count - 1; i >= 0; i--)
+		{
+			if (EmployeeList[i] != null)
+				EmployeeList[i].Return();
+		}
+		if (clearEmployeeList)
+			EmployeeList.Clear();
 	}
 
 	public void ReturnAllEmployee()
 	{
+		ReturnEmployees(true);
+		if (ManagerList != null)
+		{
+			for (int i = ManagerList.Count - 1; i >= 0; i--)
+			{
+				if (ManagerList[i] != null)
+					ManagerList[i].Return();
+			}
+			ManagerList.Clear();
+		}
 	}
 
 	public void LoadEmployee(int office, int seat, Worker.E_AppearType appearType, int order, Action CompCb)
@@ -201,29 +236,46 @@ public class InGameOffice : InGameMode
 
 	public bool HaveToLoadChar()
 	{
-		return false;
+		if (EmployeeList == null) return false;
+		return EmployeeList.Count > 0;
 	}
 
 	public bool HaveToLoadChar(int office_idx)
 	{
+		if (EmployeeList == null) return false;
+		for (int i = 0; i < EmployeeList.Count; i++)
+		{
+			if (EmployeeList[i] != null && EmployeeList[i].OfficeIdx == office_idx)
+				return true;
+		}
 		return false;
 	}
 
 	public int GetOfficeCatCount(int office)
 	{
+		if (CurEmployeeCnt != null && CurEmployeeCnt.TryGetValue(office, out int cnt))
+			return cnt;
 		return 0;
 	}
 
 	public void WorkOffStartBus()
 	{
+		WorkOffEmployee();
 	}
 
 	public void WorkStartEmployee(int office)
 	{
+		if (EmployeeList == null) return;
+		for (int i = 0; i < EmployeeList.Count; i++)
+		{
+			if (EmployeeList[i] != null && EmployeeList[i].OfficeIdx == office)
+				EmployeeList[i].WorkStart();
+		}
 	}
 
 	public void WaitAllWorkOff(Action Cb)
 	{
+		StartCoroutine(WaitAllWorkOff_Coroutine(Cb));
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitAllWorkOff_Coroutine_003Ed__57))]
@@ -234,53 +286,118 @@ public class InGameOffice : InGameMode
 
 	public void WorkOffEmployee()
 	{
+		if (EmployeeList == null) return;
+		for (int i = 0; i < EmployeeList.Count; i++)
+		{
+			if (EmployeeList[i] != null)
+				EmployeeList[i].WorkOut(i);
+		}
 	}
 
 	public void CompanyOutEmployee(int office, bool isListPage)
 	{
+		if (EmployeeList == null) return;
+		for (int i = EmployeeList.Count - 1; i >= 0; i--)
+		{
+			if (EmployeeList[i] != null && EmployeeList[i].OfficeIdx == office)
+			{
+				EmployeeList[i].WorkOut(i, true);
+			}
+		}
 	}
 
 	public List<Employee> GetEmployees(int office = -1)
 	{
-		return null;
+		if (EmployeeList == null) return null;
+		if (office < 0) return EmployeeList;
+		var result = new List<Employee>();
+		for (int i = 0; i < EmployeeList.Count; i++)
+		{
+			if (EmployeeList[i] != null && EmployeeList[i].OfficeIdx == office)
+				result.Add(EmployeeList[i]);
+		}
+		return result;
 	}
 
 	public int GetEngineerCount()
 	{
-		return 0;
+		return CurEngineerCount;
 	}
 
 	public Engineer GetEngineer(int seat)
 	{
+		if (EngineerList == null) return null;
+		for (int i = 0; i < EngineerList.Count; i++)
+		{
+			if (EngineerList[i] != null && EngineerList[i].SeatIdx == seat)
+				return EngineerList[i];
+		}
 		return null;
 	}
 
 	public List<Engineer> GetEngineers()
 	{
-		return null;
+		return EngineerList;
 	}
 
 	public void RemoveSecretary()
 	{
+		if (Secretary != null)
+		{
+			Secretary.Return();
+			Secretary = null;
+		}
 	}
 
 	public void WorkOffManager(int managerIdx)
 	{
+		if (ManagerList == null) return;
+		for (int i = ManagerList.Count - 1; i >= 0; i--)
+		{
+			if (ManagerList[i] != null && ManagerList[i].ManagerIdx == managerIdx)
+			{
+				ManagerList[i].WorkOut(i, false);
+				ManagerList.RemoveAt(i);
+				break;
+			}
+		}
 	}
 
 	public override void UnLoad()
 	{
+		UnLoadChar();
+		if (buffObjects != null) buffObjects.Clear();
+		if (OnAllLoadComplete != null) OnAllLoadComplete.Dispose();
 	}
 
 	public void UnLoadChar()
 	{
+		ReturnAllEmployee();
+		RemoveSecretary();
+		if (EngineerList != null)
+		{
+			for (int i = 0; i < EngineerList.Count; i++)
+			{
+				if (EngineerList[i] != null)
+					EngineerList[i].Return();
+			}
+			EngineerList.Clear();
+		}
+		CurEngineerCount = 0;
+		if (Ceo != null)
+		{
+			Ceo.Return();
+			Ceo = null;
+		}
 	}
 
 	public override void LoadUI()
 	{
+		// UI loading for office mode handled by stage
 	}
 
 	private void OnDestroy()
 	{
+		UnLoad();
 	}
 }

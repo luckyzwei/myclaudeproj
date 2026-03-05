@@ -363,6 +363,15 @@ public class PluginSystem
 
 	public void Init()
 	{
+		IsInitAppsflyer = false;
+		IsIAAUser = false;
+		WaitUserData = false;
+		onReview = false;
+		appOpenAvailable = false;
+		initMax = false;
+		initAdmob = false;
+		InitCallback();
+		InitAppOpenAvailable();
 	}
 
 	private void InitTapjoy()
@@ -472,6 +481,8 @@ public class PluginSystem
 
 	public void OnApplicationPause(bool value)
 	{
+		if (!value)
+			ShowAppOpenAdIfAvailable();
 	}
 
 	public void ShowAppOpenAdIfAvailable()
@@ -480,5 +491,6 @@ public class PluginSystem
 
 	private void InitAppOpenAvailable()
 	{
+		appOpenAvailable = true;
 	}
 }

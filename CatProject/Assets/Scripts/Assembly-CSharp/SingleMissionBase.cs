@@ -34,50 +34,75 @@ public abstract class SingleMissionBase
 
 	public SingleMissionBase()
 	{
+		Disposables = new CompositeDisposable();
+		CurrentValue = new ReactiveProperty<BigInteger>(BigInteger.Zero);
+		IsCompleted = new ReactiveProperty<bool>(false);
+		IsRewarded = new ReactiveProperty<bool>(false);
+		OnMissionActivated = new Subject<bool>();
 	}
 
 	public SingleMissionBase Init(SingleMissionInitParams data)
 	{
-		return null;
+		if (data == null) return this;
+		SlotIdx = data.SlotIdx;
+		MissionIdx = data.MissionIdx;
+		MissionType = data.MissionType;
+		TargetValue = data.TargetValue;
+		ContentType = data.ContentType;
+		MissionDescriptionKey = data.DescriptionKey;
+		RewardItem = data.RewardItem;
+		Args = data.Args;
+		CurrentValue.Value = data.CurrentValue;
+		IsCompleted.Value = data.IsCompleted;
+		IsRewarded.Value = data.IsRewarded;
+		OnInitAfter();
+		Subscribe();
+		return this;
 	}
 
 	public void Reset()
 	{
+		Unsubscribe();
+		CurrentValue.Value = BigInteger.Zero;
+		IsCompleted.Value = false;
+		IsRewarded.Value = false;
 	}
 
 	public virtual string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 
 	public virtual string GetMissionProgressText_CurrentValue()
 	{
-		return null;
+		return CurrentValue.Value.ToString();
 	}
 
 	public virtual string GetMissionProgressText_TargetValue()
 	{
-		return null;
+		return TargetValue.ToString();
 	}
 
 	public virtual string GetMissionProgressText()
 	{
-		return null;
+		return $"{GetMissionProgressText_CurrentValue()}/{GetMissionProgressText_TargetValue()}";
 	}
 
 	public virtual float GetMissionProgressValue()
 	{
-		return 0f;
+		if (TargetValue <= 0) return 1f;
+		float progress = (float)CurrentValue.Value / TargetValue;
+		return progress > 1f ? 1f : progress;
 	}
 
 	public virtual bool IsPossibleShortCut()
 	{
-		return false;
+		return bPossibleShortCut;
 	}
 
 	public virtual bool IsActiveMission()
 	{
-		return false;
+		return !IsCompleted.Value && !IsRewarded.Value;
 	}
 
 	public virtual bool IsExistOpenCondition()
@@ -91,6 +116,11 @@ public abstract class SingleMissionBase
 
 	protected void OnCurrentValueChanged(BigInteger value)
 	{
+		if (IsCompleted.Value || IsRewarded.Value) return;
+		if (value >= TargetValue)
+		{
+			IsCompleted.Value = true;
+		}
 	}
 
 	protected MissionTypeData GetMissionTypeData()
@@ -100,17 +130,22 @@ public abstract class SingleMissionBase
 
 	protected string GetMissionTypeDescription()
 	{
-		return null;
+		var data = GetMissionTypeData();
+		if (data == null) return "";
+		return data.DescriptionKey ?? "";
 	}
 
 	protected string GetMissionTypeDescription(params object[] args)
 	{
-		return null;
+		string desc = GetMissionTypeDescription();
+		if (string.IsNullOrEmpty(desc) || args == null || args.Length == 0) return desc;
+		return string.Format(desc, args);
 	}
 
 	public abstract void Subscribe();
 
 	protected virtual void Unsubscribe()
 	{
+		Disposables?.Clear();
 	}
 }

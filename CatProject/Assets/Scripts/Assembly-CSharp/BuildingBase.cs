@@ -35,6 +35,9 @@ public class BuildingBase : MonoBehaviour
 
 	public virtual void Init(in int buildingIdx)
 	{
+		BuildingIdx = buildingIdx;
+		bFocusable = true;
+		IsConstructableBuilding = false;
 	}
 
 	public virtual void OnSelectedBuilding(Action onSelectedBuilding)

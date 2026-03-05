@@ -26,9 +26,14 @@ public class InGameSeasonalProgress : InGameFloatingUI
 
 	public void UpdateValue(float value)
 	{
+		if (progressImg != null)
+			progressImg.fillAmount = UnityEngine.Mathf.Clamp01(value);
 	}
 
 	public void SetProgressState(E_ProgressState progressState)
 	{
+		ProgressState = progressState;
+		if (ProgressObj != null) ProgressObj.SetActive(progressState == E_ProgressState.Progress);
+		if (PauseObj != null) PauseObj.SetActive(progressState == E_ProgressState.Pause);
 	}
 }

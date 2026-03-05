@@ -35,6 +35,20 @@ public class StrikeSystem
 
 	public void Init()
 	{
+		Disposables = new CompositeDisposable();
+		ManagerLevelDisposables = new Dictionary<int, IDisposable>();
+		OnStrikeAlertTime = new ReactiveProperty<bool>(false);
+		OnStrikeEnable = new ReactiveProperty<bool>(false);
+		OnStrikeTime = new ReactiveProperty<bool>(false);
+		StrikeAlertTime = 3600;
+		StrikeStartTime = 0;
+		StrikeEndTime = 7200;
+		StrikeOfflineDebuff = 50;
+		StrikeRatio_Origin = 100;
+		NegotiationGemCount_Origin = 10;
+		HasSeenPopupToastmessageStrike = false;
+		IsStrikeOpen = false;
+		IsSystemInit = true;
 	}
 
 	public void UpdateStrike()
@@ -51,11 +65,17 @@ public class StrikeSystem
 
 	public void UpdateStrikeTime(int dayTime)
 	{
+		bool alertTime = dayTime >= StrikeAlertTime && dayTime < StrikeStartTime;
+		bool strikeTime = dayTime >= StrikeStartTime && dayTime < StrikeEndTime;
+		OnStrikeAlertTime.Value = alertTime;
+		OnStrikeTime.Value = strikeTime;
+		if (strikeTime && !HasSeenPopupToastmessageStrike)
+			ShowPopupToastmessageStrike();
 	}
 
 	public int GetRemainStrikeAlertSecond()
 	{
-		return 0;
+		return StrikeStartTime - StrikeAlertTime;
 	}
 
 	public int GetRequiredLevelGap(int officeKey)
@@ -87,10 +107,18 @@ public class StrikeSystem
 
 	private void OnDisable()
 	{
+		if (Disposables != null) Disposables.Clear();
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) Disposables.Dispose();
+		if (ManagerLevelDisposables != null)
+		{
+			foreach (var d in ManagerLevelDisposables.Values)
+				d?.Dispose();
+			ManagerLevelDisposables.Clear();
+		}
 	}
 
 	public void LogStrikeResolve(int officeIdx, int companyGrade, int needValue, int type)

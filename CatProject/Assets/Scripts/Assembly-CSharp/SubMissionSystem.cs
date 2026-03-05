@@ -11,16 +11,27 @@ public class SubMissionSystem
 
 	public void Init()
 	{
+		MissionSlotDataMap = new Dictionary<int, SubMissionSlotData>();
+		SlotDisplayMissionDataList = new List<SubMissionStepData>();
 	}
 
 	public (int, SubMissionStepData) GetReadyToCompleteMission()
 	{
-		return default((int, SubMissionStepData));
+		if (SlotDisplayMissionDataList == null) return (-1, null);
+		for (int i = 0; i < SlotDisplayMissionDataList.Count; i++)
+		{
+			var data = SlotDisplayMissionDataList[i];
+			if (data != null && data.bReadyToComplete)
+				return (i, data);
+		}
+		return (-1, null);
 	}
 
 	public SubMissionStepData GetSlotMission(int slotIdx)
 	{
-		return null;
+		if (SlotDisplayMissionDataList == null || slotIdx < 0 || slotIdx >= SlotDisplayMissionDataList.Count)
+			return null;
+		return SlotDisplayMissionDataList[slotIdx];
 	}
 
 	public SubMissionGroupData FindMissionGroupData(int slotIdx, int missionIdx, out int groupIndex)
