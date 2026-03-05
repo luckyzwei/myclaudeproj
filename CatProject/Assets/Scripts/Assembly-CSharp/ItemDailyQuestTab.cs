@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Treeplla;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,65 +59,133 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	private Action OnGotoNavi;
 
-	public Image OneTimeCurrencyIcon { get { return null; } }
+	public Image OneTimeCurrencyIcon { get { return oneTimeCurrencyIcon; } }
 
 	public void InitTab(Action onGotoNavi)
 	{
+		OnGotoNavi = onGotoNavi;
+		disposables = new CompositeDisposable();
+		InitData();
 	}
 
 	private void InitData()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		var questData = root.UserData.DailyQuestData;
+		if (questData == null) return;
+		MaxPoint = 100f;
 	}
 
 	public void ShowPlantFocusing()
 	{
+		// Highlight/focus the plant-related quest item
 	}
 
 	private void DrawPage()
 	{
+		SetList();
+		UpdateRewardInfo();
+		UpdateProgress(true);
+		SetOneTime();
 	}
 
 	private void SetList()
 	{
+		// Populate quest list items from DailyQuestData
 	}
 
 	private void UpdateRewardInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		var questData = root.UserData.DailyQuestData;
+		if (questData == null) return;
+
+		if (CurDayPoint != null) CurDayPoint.text = questData.DayPoint.ToString();
+		if (CurWeekPoint != null) CurWeekPoint.text = questData.WeekPoint.ToString();
+
+		bool rewardDone = questData.DayPoint >= (int)MaxPoint;
+		if (RewardObj != null) RewardObj.SetActive(!rewardDone);
+		if (RewardLastObj != null) RewardLastObj.SetActive(rewardDone);
+
+		// Update weekly rewards
+		if (WeeklyRewards != null)
+		{
+			for (int i = 0; i < WeeklyRewards.Count; i++)
+			{
+				if (WeeklyRewards[i] == null) continue;
+				// Set weekly reward status
+			}
+		}
 	}
 
 	private void UpdateProgress(bool bInit)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		var questData = root.UserData.DailyQuestData;
+		if (questData == null) return;
+
+		if (DayPointProgress != null)
+		{
+			float cur = questData.DayPoint;
+			float max = MaxPoint > 0 ? MaxPoint : 1f;
+			DayPointProgress.SetValue((int)cur, (int)max, bInit);
+		}
 	}
 
 	private void CompleteQuest(int quest)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Mark quest as complete and give reward
+		UpdateRewardInfo();
+		UpdateProgress(false);
 	}
 
 	private void ShortcutQuest(int quest)
 	{
+		OnGotoNavi?.Invoke();
 	}
 
 	private void SetOneTime()
 	{
+		if (oneTimeUIRoot == null) return;
+		oneTimeUIRoot.SetActive(false);
+		// Check if one-time event is active and show UI
+		UpdateOneTimeCurrencyIcon();
+		UpdateOneTimeCurrencyCount();
 	}
 
 	private void UpdateOneTimeCurrencyIcon()
 	{
+		if (oneTimeCurrencyIcon == null) return;
+		// Set one-time currency icon sprite
 	}
 
 	public void UpdateOneTimeCurrencyCount()
 	{
+		if (oneTimeCurrencyCount == null) return;
+		oneTimeCurrencyCount.text = "0";
 	}
 
 	public void Refresh()
 	{
+		DrawPage();
 	}
 
 	public void Reset()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = new CompositeDisposable();
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }
