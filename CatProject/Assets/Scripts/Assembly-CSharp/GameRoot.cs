@@ -771,25 +771,29 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CwaitEndFrame_003Ed__266))]
 	private IEnumerator waitEndFrame(Action callback)
 	{
-		yield break;
+		yield return new WaitForEndOfFrame();
+		callback?.Invoke();
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitTimeAndCallback_003Ed__267))]
 	private IEnumerator waitTimeAndCallback(float time, Action callback)
 	{
-		yield break;
+		yield return new WaitForSeconds(time);
+		callback?.Invoke();
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitCustomYieldInstruction_003Ed__268))]
 	private IEnumerator waitCustomYieldInstruction(CustomYieldInstruction cyi, Action callback)
 	{
-		yield break;
+		yield return cyi;
+		callback?.Invoke();
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitStageAndCallback_003Ed__269))]
 	private IEnumerator waitStageAndCallback(float time, Action callback)
 	{
-		yield break;
+		yield return new WaitForSeconds(time);
+		callback?.Invoke();
 	}
 
 	[IteratorStateMachine(typeof(_003CwaitAndOpenUICoroutine_003Ed__270<>))]
