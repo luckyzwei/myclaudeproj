@@ -243,114 +243,230 @@ public class PageMiniGame_Dig : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		ItemObjList = new List<ItemMiniGame_DigTreasure>();
+		HintItemObjList = new List<ItemMiniGame_DigTreasureHint>();
+		MoneyGetFxList = new List<ItemMiniGameRewardMoney>();
+		FloorRemoveFxList = new List<GameObject>();
+		BubbleTextQueue = new Queue<(string, E_SpeakerType)>();
+		EmptyFloorBubbleText = new List<string>();
+
+		if (InfoButton != null) InfoButton.onClick.AddListener(OnClickInfo);
+		if (MissionBtn != null) MissionBtn.onClick.AddListener(OnClickMission);
+		if (ShopBtn != null) ShopBtn.onClick.AddListener(OnClickShop);
+		if (ExchangeShopBtn != null) ExchangeShopBtn.onClick.AddListener(OnClickExchangeShop);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		InitDefine();
+		LoadCeo();
+		SetRemainTimeText();
+		MakeUpStage();
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	private void Update()
 	{
+		// Update bubble text timer
+		if (BubbleTextRemainTime > 0f)
+		{
+			BubbleTextRemainTime -= Time.deltaTime;
+			if (BubbleTextRemainTime <= 0f)
+			{
+				if (MotherBubble != null) MotherBubble.PlayHide();
+				if (CeoBubble != null) CeoBubble.PlayHide();
+
+				if (BubbleTextQueue.Count > 0)
+				{
+					var next = BubbleTextQueue.Dequeue();
+					var bubble = next.Item2 == E_SpeakerType.Mother ? MotherBubble : CeoBubble;
+					if (bubble != null) bubble.PlayShowImmediately();
+					BubbleTextRemainTime = BUBBLE_TEXT_SHOW_TIME;
+				}
+			}
+		}
 	}
 
 	private void InitDefine()
 	{
+		if (IsInitDefine) return;
+		IsInitDefine = true;
+		// Load mini game define data
 	}
 
 	private void LoadCeo()
 	{
+		// Load CEO character model into MyCeoRoot
 	}
 
 	private void SetRemainTimeText()
 	{
+		if (RemainTimeText != null) RemainTimeText.text = "";
 	}
 
 	private void SetCurrencyInfo(int eventIdx)
 	{
+		EventIdx = eventIdx;
+		UpdateHasCurrencyValue();
 	}
 
 	private void UpdateHasCurrencyValue()
 	{
+		// Update UseCurrencyItem display with current currency amount
 	}
 
 	private void MakeUpStage()
 	{
+		RestoreItemPool();
+		TryLoadFloor(FloorPathBase);
+		CreateNeedItem();
+		SetHintItems();
+		PlaceTreasureItems();
 	}
 
 	private void CreateNeedItem()
 	{
+		// Create treasure item objects from pool
+		ItemObjList.Clear();
 	}
 
 	private void SetHintItems()
 	{
+		// Create hint item displays
+		HintItemObjList.Clear();
 	}
 
 	private void RestoreItemPool()
 	{
+		// Return items to pool
+		for (int i = 0; i < ItemObjList.Count; i++)
+		{
+			if (ItemObjList[i] != null)
+				ItemObjList[i].transform.SetParent(ItemPoolTr);
+		}
+		ItemObjList.Clear();
 	}
 
 	private void TryLoadFloor(string floorPath)
 	{
+		// Load floor grid from addressable
 	}
 
 	private void PlaceTreasureItems()
 	{
+		// Place treasure items on the grid
 	}
 
 	private void OnClickedCell(Vector2Int position)
 	{
+		if (ScreenCoverObj != null && ScreenCoverObj.activeSelf) return;
+		// Dig at position
+		if (ScreenCoverObj != null) ScreenCoverObj.SetActive(true);
+		StartCoroutine(WaitBlockCoroutine());
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitBlockCoroutine_003Ed__59))]
 	private IEnumerator WaitBlockCoroutine()
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		if (ScreenCoverObj != null) ScreenCoverObj.SetActive(false);
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitAndStageClearCoroutine_003Ed__60))]
 	private IEnumerator WaitAndStageClearCoroutine(bool isGameClear)
 	{
-		yield break;
+		yield return new WaitForSeconds(1f);
+		if (isGameClear)
+		{
+			SetBubbleTextQueue(E_SpeechType.ClearStage, 0);
+		}
 	}
 
 	private void GetBonusMoney(Vector2Int cellPos)
 	{
+		// Spawn money get effect at cell position
+		PlayFloorRemoveFx(cellPos);
 	}
 
 	private void PlayFloorRemoveFx(Vector2Int cellPos)
 	{
+		if (FloorRemoveFxRefAsset == null || FxPoolTr == null) return;
+		GameObject fx = null;
+		if (FloorRemoveFxList.Count > 0)
+		{
+			fx = FloorRemoveFxList[FloorRemoveFxList.Count - 1];
+			FloorRemoveFxList.RemoveAt(FloorRemoveFxList.Count - 1);
+		}
+		if (fx == null)
+			fx = UnityEngine.Object.Instantiate(FloorRemoveFxRefAsset, FxPoolTr);
+		fx.SetActive(true);
 	}
 
 	private void SetBubbleTextQueue(E_SpeechType speechType, int findItemIdx)
 	{
+		switch (speechType)
+		{
+			case E_SpeechType.EmptyFloor:
+				if (EmptyFloorBubbleText != null && EmptyFloorBubbleText.Count > 0)
+				{
+					int randIdx = UnityEngine.Random.Range(0, EmptyFloorBubbleText.Count);
+					BubbleTextQueue.Enqueue((EmptyFloorBubbleText[randIdx], E_SpeakerType.Mother));
+				}
+				break;
+			case E_SpeechType.FindItem:
+				BubbleTextQueue.Enqueue(("", E_SpeakerType.Ceo));
+				break;
+			case E_SpeechType.ClearStage:
+				if (!string.IsNullOrEmpty(StageClearBubbleText))
+					BubbleTextQueue.Enqueue((StageClearBubbleText, E_SpeakerType.Mother));
+				break;
+		}
+		if (BubbleTextRemainTime <= 0f && BubbleTextQueue.Count > 0)
+		{
+			var next = BubbleTextQueue.Dequeue();
+			var bubble = next.Item2 == E_SpeakerType.Mother ? MotherBubble : CeoBubble;
+			if (bubble != null) bubble.PlayShowImmediately();
+			BubbleTextRemainTime = BUBBLE_TEXT_SHOW_TIME;
+		}
 	}
 
 	private void OnClickInfo()
 	{
+		// Show dig game info popup
 	}
 
 	private void OnClickMission()
 	{
+		// Show mission popup
 	}
 
 	private void OnClickShop()
 	{
+		// Show shop popup
 	}
 
 	private void OnClickExchangeShop()
 	{
+		// Show exchange shop popup
 	}
 
 	public static float GetInverseScaleFactor(Vector2 size, float minSize, float maxSize, float minScale, float maxScale)
 	{
-		return 0f;
+		float t = Mathf.InverseLerp(minSize, maxSize, Mathf.Max(size.x, size.y));
+		return Mathf.Lerp(maxScale, minScale, t);
 	}
 }

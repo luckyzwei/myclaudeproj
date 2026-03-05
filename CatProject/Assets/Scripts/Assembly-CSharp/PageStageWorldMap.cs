@@ -229,95 +229,147 @@ public class PageStageWorldMap : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (EnterBtn != null) EnterBtn.onClick.AddListener(OnClickStageEnter);
+		if (PrevBtn != null) PrevBtn.onClick.AddListener(OnClickPrevChapter);
+		if (NextBtn != null) NextBtn.onClick.AddListener(OnClickNextChapter);
+		if (BackGroundBtn != null) BackGroundBtn.onClick.AddListener(OnClickEmpty);
+		if (Scroll != null) Scroll.onValueChanged.AddListener(OnScrollValueChange);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		isClear = false;
+		UpdateCurChapter(0);
+		UpdateChapterBtn();
 	}
 
 	public override void OnShowAfter()
 	{
+		SetFocus();
+		if (isClear)
+		{
+			SetClearStatus();
+		}
 	}
 
 	private void SetClearStatus()
 	{
+		if (ClearStatusAction != null)
+		{
+			ClearStatusAction.Invoke();
+			ClearStatusAction = null;
+		}
 	}
 
 	private void LoadChapterItem(int chapter, Action loadComp = null)
 	{
+		// Load chapter prefab and configure spots
+		loadComp?.Invoke();
 	}
 
 	private void UpdateCurChapter(int chapter)
 	{
+		if (regionText != null) regionText.text = "";
+		LoadChapterItem(chapter);
 	}
 
 	private void SetFocus()
 	{
+		if (Scroll != null)
+			Scroll.normalizedPosition = new Vector2(focusValue, 0f);
 	}
 
 	public void SetClearMode(bool value)
 	{
+		isClear = value;
 	}
 
 	public void ChangeNextChapter()
 	{
+		StartCoroutine(StartChapterClear());
 	}
 
 	[IteratorStateMachine(typeof(_003CStartChapterClear_003Ed__34))]
 	private IEnumerator StartChapterClear()
 	{
-		yield break;
+		yield return StartClearEffect();
 	}
 
 	[IteratorStateMachine(typeof(_003CStartClearEffect_003Ed__35))]
 	private IEnumerator StartClearEffect()
 	{
-		yield break;
+		yield return null;
+		// Play clear effect animation sequence
 	}
 
 	public Image GetFadeWhite()
 	{
-		return null;
+		return FadeWhite;
 	}
 
 	public PageWhite GetPageWhite()
 	{
-		return null;
+		return white;
 	}
 
 	private void OnScrollValueChange(Vector2 delta)
 	{
+		// Handle scroll for parallax or chapter transitions
 	}
 
 	private void UpdateChapterBtn()
 	{
+		if (PrevBtn != null) PrevBtn.gameObject.SetActive(PrevChapter != null);
+		if (NextBtn != null) NextBtn.gameObject.SetActive(NextChapter != null);
 	}
 
 	public override void Hide()
 	{
+		Unload();
+		base.Hide();
 	}
 
 	private void OnClickPrevChapter()
 	{
+		if (PrevChapter == null) return;
+		// Navigate to previous chapter
 	}
 
 	private void OnClickNextChapter()
 	{
+		if (NextChapter == null) return;
+		// Navigate to next chapter
 	}
 
 	private void OnClickStageEnter()
 	{
+		// Enter selected stage
+		if (EnterUI != null) EnterUI.SetActive(false);
 	}
 
 	private void OnClickStageSpot(int stage, Transform trans)
 	{
+		targetStage = stage;
+		if (EnterUI != null)
+		{
+			EnterUI.SetActive(true);
+			EnterUI.transform.position = trans.position;
+		}
 	}
 
 	private void OnClickEmpty()
 	{
+		if (EnterUI != null) EnterUI.SetActive(false);
 	}
 
 	private void Unload()
 	{
+		PrevChapter = null;
+		CurChapter = null;
+		NextChapter = null;
 	}
 }
