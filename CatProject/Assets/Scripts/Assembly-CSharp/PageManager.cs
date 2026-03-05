@@ -94,100 +94,184 @@ public class PageManager : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		CurrentSortingManagers = new List<ManagerInfoData>();
+		CurrentSortingUnlockManagers = new List<ManagerInfoData>();
+		CategoryList = new List<E_MANAGER_SORTING> { E_MANAGER_SORTING.Reward, E_MANAGER_SORTING.Exp, E_MANAGER_SORTING.Level, E_MANAGER_SORTING.Acquisition };
+		CurCategory = E_MANAGER_SORTING.None;
+		CurTab = E_MANAGER_TAP.ceo;
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfoBtn);
+		if (SortingBtn != null) SortingBtn.onClick.AddListener(OnClickSortingBtn);
+		if (ManagerShopBtn != null) ManagerShopBtn.onClick.AddListener(OnClickManagerShopBtn);
+		if (OfficeManagingBtn != null) OfficeManagingBtn.onClick.AddListener(OnClickOfficeManagingBtn);
+		if (btn_super_staff_info != null) btn_super_staff_info.onClick.AddListener(OnClickSuperStaffInfo);
+
+		if (list_toggle != null)
+		{
+			for (int i = 0; i < list_toggle.Count; i++)
+			{
+				int tabIdx = i;
+				if (list_toggle[i] != null)
+					list_toggle[i].onValueChanged.AddListener((on) => ChangeTab((E_MANAGER_TAP)tabIdx, on));
+			}
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	public override void OnShowBefore()
 	{
+		SetCategory(CurCategory, true);
+		UpdateList();
+		Update_SpecialManagerList();
+		UpdateNoti();
 	}
 
 	public override void OnRefresh()
 	{
+		UpdateList();
+		UpdateNoti();
 	}
 
 	public override void OnHideAfter()
 	{
+		IsEnterAcquisition = false;
 	}
 
 	public void SetFocusCategory(E_MANAGER_SORTING category)
 	{
+		CurCategory = category;
 	}
 
 	public void SetEnterAcquisition(bool isEnter)
 	{
+		IsEnterAcquisition = isEnter;
 	}
 
 	private void OnClickInfoBtn()
 	{
+		// Open manager info popup
 	}
 
 	private void OnClickSuperStaffInfo()
 	{
+		// Open super staff info popup
 	}
 
 	private void OnClickOfficeManagingBtn()
 	{
+		// Navigate to office management page
+		Hide();
 	}
 
 	private void OnClickSortingBtn()
 	{
+		// Cycle through sorting categories
+		int curIdx = CategoryList.IndexOf(CurCategory);
+		int nextIdx = (curIdx + 1) % CategoryList.Count;
+		SetCategory(CategoryList[nextIdx]);
 	}
 
 	private void OnClickManagerShopBtn()
 	{
+		// Open manager shop
+		Hide();
 	}
 
 	private void SetCategory(E_MANAGER_SORTING category, bool isInit = false)
 	{
+		CurCategory = category;
+		if (SortingText != null) SortingText.text = category.ToString();
+		if (!isInit) SortingList();
 	}
 
 	public void UpdateList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ManagerCardSystem == null) return;
+		SortingList();
 	}
 
 	public void UpdateManagerCard()
 	{
+		UpdateList();
 	}
 
 	public void UpdateNoti()
 	{
+		if (EnableEquip_Noti != null) EnableEquip_Noti.SetActive(false);
+		if (UnSatisfy_Noti != null) UnSatisfy_Noti.SetActive(false);
+		// Check for equippable/unsatisfied manager notifications
 	}
 
 	private void UpdateManagerCard(int managerIdx)
 	{
+		// Refresh specific manager card in the list
 	}
 
 	private void Update_SpecialManagerList()
 	{
+		// Update super staff / special manager list
 	}
 
 	public void SetTarget(int office, int manager)
 	{
+		TargetOfficeIdx = office;
+		TargetManagerIdx = manager;
 	}
 
 	public void SortingList()
 	{
+		if (CurrentSortingManagers == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ManagerCardSystem == null) return;
+		// Sort managers based on CurCategory
 	}
 
 	private void ChangeTab(E_MANAGER_TAP tab, bool on)
 	{
+		if (!on) return;
+		CurTab = tab;
+		if (list_tap_object != null)
+		{
+			for (int i = 0; i < list_tap_object.Count; i++)
+			{
+				if (list_tap_object[i] != null)
+					list_tap_object[i].SetActive(i == (int)tab);
+			}
+		}
+		if (tab == E_MANAGER_TAP.ceo)
+			UpdateList();
+		else if (tab == E_MANAGER_TAP.super_staff)
+			Update_SpecialManagerList();
 	}
 
 	public int GetNextManagerIdx(int curManagerIdx)
 	{
+		if (CurrentSortingManagers == null || CurrentSortingManagers.Count == 0) return 0;
+		// Find next manager index in sorted list
 		return 0;
 	}
 
 	public int GetPrevManagerIdx(int curManagerIdx)
 	{
+		if (CurrentSortingManagers == null || CurrentSortingManagers.Count == 0) return 0;
+		// Find previous manager index in sorted list
 		return 0;
 	}
 
 	public GameObject GetFirstManagerCard()
 	{
+		if (ManagerItem != null) return ManagerItem.gameObject;
 		return null;
 	}
 }

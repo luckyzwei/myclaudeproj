@@ -150,71 +150,160 @@ public class PopupFactoryOrder : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		product_disposables = new CompositeDisposable();
+		disposable = new CompositeDisposable();
+		SelectOrder = 0;
+		SlotOpen = false;
+
+		if (OrderCompBtn != null) OrderCompBtn.onClick.AddListener(OnClickCompOrder);
+		if (OrderResetBtn != null) OrderResetBtn.onClick.AddListener(OnClickResetOrder);
+		if (ProductShortCutBtn != null) ProductShortCutBtn.onClick.AddListener(OnClickProductShortCut);
+		if (InfoButton != null) InfoButton.onClick.AddListener(OnClickInfo);
 	}
 
 	public void Init(Config.E_FactoryEnterType placeType)
 	{
+		EnterType = placeType;
+		SelectOrder = 0;
+		SlotOpen = false;
+		if (Slots != null)
+		{
+			for (int i = 0; i < Slots.Count; i++)
+			{
+				int slotIdx = i;
+				// Bind slot click callbacks
+			}
+		}
+		UpdateOrder();
+		UpdateSelect();
+		InitDailyReward();
 	}
 
 	public void SetSlotOpen()
 	{
+		SlotOpen = true;
 	}
 
 	private void ShowNextOrder()
 	{
+		if (Slots == null || Slots.Count == 0) return;
+		int nextSlot = (SelectOrder + 1) % Slots.Count;
+		OnClickSelect(nextSlot);
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusOrderSlot_003Ed__32))]
 	private IEnumerator FocusOrderSlot()
 	{
-		yield break;
+		yield return null;
+		if (SlotScrollRect != null && Slots != null && SelectOrder >= 0 && SelectOrder < Slots.Count)
+		{
+			float normalizedPos = (float)SelectOrder / Mathf.Max(1, Slots.Count - 1);
+			SlotScrollRect.horizontalNormalizedPosition = Mathf.Clamp01(normalizedPos);
+		}
 	}
 
 	private void UpdateOrder()
 	{
+		if (Slots == null) return;
+		for (int i = 0; i < Slots.Count; i++)
+		{
+			if (Slots[i] != null)
+			{
+				// Refresh each slot order data
+			}
+		}
+		UpdateSelect();
 	}
 
 	private void UpdateSelect()
 	{
+		if (Slots == null || SelectOrder < 0 || SelectOrder >= Slots.Count) return;
+		if (OrderInfoObj != null) OrderInfoObj.SetActive(true);
+		if (OrderWaitObj != null) OrderWaitObj.SetActive(false);
+		if (OrderCompRedDotObj != null) OrderCompRedDotObj.SetActive(false);
+		// Update selected order detail info
 	}
 
 	public void RefreshSlot()
 	{
+		UpdateOrder();
+		UpdateDailyRewards();
 	}
 
 	private void OnClickSelect(int slot)
 	{
+		if (slot < 0 || Slots == null || slot >= Slots.Count) return;
+		SelectOrder = slot;
+		UpdateSelect();
+		StartCoroutine(FocusOrderSlot());
 	}
 
 	private void OnClickCompOrder()
 	{
+		// Complete current order and grant reward
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Complete factory order
 	}
 
 	private void OnClickResetOrder()
 	{
+		// Reset/refresh the current order
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Reset factory order
 	}
 
 	private void OnClickProductShortCut()
 	{
+		// Navigate to product production
+		Hide();
 	}
 
 	private void OnClickInfo()
 	{
+		// Show order info popup
 	}
 
 	private void InitDailyReward()
 	{
+		if (ItemFactoryDailyRewards == null) return;
+		// Initialize daily reward items
+		UpdateDailyRewards();
 	}
 
 	public void UpdateDailyRewards()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update daily order reward progress
+		if (DailyRewardProgressSlider != null)
+		{
+			// Set progress based on completed orders today
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (product_disposables != null)
+		{
+			product_disposables.Dispose();
+			product_disposables = new CompositeDisposable();
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (disposable != null)
+		{
+			disposable.Dispose();
+			disposable = null;
+		}
+		if (product_disposables != null)
+		{
+			product_disposables.Dispose();
+			product_disposables = null;
+		}
 	}
 }

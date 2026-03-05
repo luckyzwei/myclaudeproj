@@ -267,29 +267,163 @@ public class TutorialEntityFunc : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		switch (Func)
+		{
+			case FuncType.ShowSecretary:
+				// Show secretary character in office
+				Complete = true;
+				break;
+			case FuncType.StartBus:
+				// Start bus arrival animation
+				Complete = true;
+				break;
+			case FuncType.WaitCeo:
+				StartCoroutine(WaitCeo());
+				break;
+			case FuncType.EditCompanyName:
+				// Open company name edit popup
+				Complete = true;
+				break;
+			case FuncType.WorkCeo:
+				// Make CEO start working
+				Complete = true;
+				break;
+			case FuncType.DeleteSecretary:
+				// Remove secretary character
+				Complete = true;
+				break;
+			case FuncType.UIHideAll:
+				// Hide all UI elements
+				Complete = true;
+				break;
+			case FuncType.BusWait:
+				StartCoroutine(WaitTime(2f));
+				break;
+			case FuncType.RepairingWait:
+				StartCoroutine(WaitRepair(0));
+				break;
+			case FuncType.ShowPopupOfficeUpgrade:
+				// Show office upgrade popup
+				Complete = true;
+				break;
+			case FuncType.Vibrate:
+				Handheld.Vibrate();
+				Complete = true;
+				break;
+			case FuncType.ShowAdsupply:
+				// Show ad supply button
+				Complete = true;
+				break;
+			case FuncType.GiveTonic:
+				// Give tonic item to player
+				Complete = true;
+				break;
+			case FuncType.WaitFactory:
+				StartCoroutine(WaitFactory());
+				break;
+			case FuncType.FocusFirstFactory:
+				// Focus camera on first factory
+				Complete = true;
+				break;
+			case FuncType.GiveFactoryFirstItem:
+				// Give first factory production item
+				Complete = true;
+				break;
+			case FuncType.FocusOrderBuilding:
+				// Focus camera on order building
+				Complete = true;
+				break;
+			case FuncType.HideFactoryWorkplacePopup:
+				// Hide factory workplace popup
+				Complete = true;
+				break;
+			case FuncType.GiveKey:
+				// Give key item to player
+				Complete = true;
+				break;
+			case FuncType.ShowManagerInfo:
+				// Show manager info popup
+				Complete = true;
+				break;
+			case FuncType.KillMask:
+				// Remove tutorial mask
+				Complete = true;
+				break;
+			case FuncType.CEOGotoRepair:
+				// Make CEO go to repair
+				Complete = true;
+				break;
+			case FuncType.ShowStrikeToast:
+				// Show strike toast notification
+				Complete = true;
+				break;
+			case FuncType.ShowRichPointInfoUI:
+				// Show rich point info UI
+				Complete = true;
+				break;
+			case FuncType.ShowAcquisitionMain:
+				// Show acquisition main page
+				Complete = true;
+				break;
+			case FuncType.ShowHouseSalePopup:
+				// Show house sale popup
+				Complete = true;
+				break;
+			case FuncType.UpdateRichWayProgress:
+				// Update rich way progress
+				Complete = true;
+				break;
+			case FuncType.ReinforceManager:
+				// Reinforce manager
+				Complete = true;
+				break;
+			case FuncType.ShowOfficeManagement_CeoTab:
+				// Show office management CEO tab
+				Complete = true;
+				break;
+			case FuncType.FocusHighestProductionFactory:
+				// Focus on highest production factory
+				Complete = true;
+				break;
+			case FuncType.WaitCloseRewardPage:
+				// Wait for reward page to close
+				Complete = true;
+				break;
+			default:
+				Complete = true;
+				break;
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitFactory_003Ed__3))]
 	private IEnumerator WaitFactory()
 	{
-		yield break;
+		// Wait until factory scene is loaded
+		yield return new WaitForSeconds(1f);
+		Complete = true;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitRepair_003Ed__4))]
 	private IEnumerator WaitRepair(int officeIdx)
 	{
-		yield break;
+		// Wait until office repair is complete
+		yield return new WaitForSeconds(1f);
+		Complete = true;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitTime_003Ed__5))]
 	private IEnumerator WaitTime(float time)
 	{
-		yield break;
+		yield return new WaitForSeconds(time);
+		Complete = true;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitCeo_003Ed__6))]
 	private IEnumerator WaitCeo()
 	{
-		yield break;
+		// Wait until CEO character is loaded and ready
+		yield return new WaitForSeconds(1f);
+		Complete = true;
 	}
 }

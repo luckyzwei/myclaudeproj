@@ -171,113 +171,224 @@ public class PopupFactoryWorkPlace : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		need_disposables = new CompositeDisposable();
+		battery_disposables = new CompositeDisposable();
+		ProductItems = new List<ItemFactoryProduct>();
+		SelectProduct = 0;
+
+		if (SelectBtn != null) SelectBtn.onClick.AddListener(OnClickMakeSelect);
+		if (DeSelectBtn != null) DeSelectBtn.onClick.AddListener(() => OnClickMakeSelect());
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgrade);
+		if (UseItemBtn != null) UseItemBtn.onClick.AddListener(OnClickUseItem);
+		if (MoveBeforeBtn != null) MoveBeforeBtn.onClick.AddListener(OnClickPrevMove);
+		if (MoveAfterBtn != null) MoveAfterBtn.onClick.AddListener(OnClickNextMove);
+		if (RecipeBtn != null) RecipeBtn.onClick.AddListener(OnClickRecipe);
+		if (SelectNeedShortCutBtn != null) SelectNeedShortCutBtn.onClick.AddListener(() => OnClickSelectNeedShortCut(0));
+		if (SelectNeedShortCutBtn2 != null) SelectNeedShortCutBtn2.onClick.AddListener(() => OnClickSelectNeedShortCut(1));
 	}
 
 	private void Update()
 	{
+		UpdateUseBattery();
 	}
 
 	public void Set(int idx, Tab tab = Tab.Product)
 	{
+		FactoryIdx = idx;
+		SelectProduct = 0;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+
+		if (FactoryName != null) FactoryName.text = "";
+		UpdateList();
+		UpdateSelectItem();
+		UpdateUpgrade();
+		UpdateMoveBtn();
+		UpdateBattery();
+		ChangeTab(tab);
 	}
 
 	public void ChangeTab(Tab tab)
 	{
+		if (ProductRoot != null) ProductRoot.SetActive(tab == Tab.Product);
+		if (UpgradeRoot != null) UpgradeRoot.SetActive(tab == Tab.Upgrade);
 	}
 
 	public void ShowProductGuideArrow(int productIdx)
 	{
+		GuideProductIdx = productIdx;
+		if (ProductGuideArrow != null) ProductGuideArrow.SetActive(true);
 	}
 
 	public void HideProductGuideArrow()
 	{
+		if (ProductGuideArrow != null) ProductGuideArrow.SetActive(false);
 	}
 
 	public void ShowUpgradeGuideArrow(bool bShow)
 	{
+		if (UpgradeGuideArrow != null) UpgradeGuideArrow.SetActive(bShow);
 	}
 
 	public override void OnHideAfter()
 	{
+		HideProductGuideArrow();
+		ShowUpgradeGuideArrow(false);
 	}
 
 	private void UpdateMoveBtn()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Determine previous/next factory indices
+		if (MoveBeforeBtn != null) MoveBeforeBtn.gameObject.SetActive(PrevFactoryIdx >= 0);
+		if (MoveAfterBtn != null) MoveAfterBtn.gameObject.SetActive(NextFactoryIdx >= 0);
 	}
 
 	private void UpdateBattery()
 	{
+		if (BatteryRoot == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) { BatteryRoot.SetActive(false); return; }
+		// Check if factory has battery boost active
+		BatteryRoot.SetActive(false);
 	}
 
 	private void UpdateUseBattery()
 	{
+		// Update battery progress timer each frame
+		if (BatteryRemainTime == null || BatteryRoot == null || !BatteryRoot.activeSelf) return;
 	}
 
 	private void UpdateList()
 	{
+		if (ProductItems == null) ProductItems = new List<ItemFactoryProduct>();
+		// Populate product item list from factory data
+		if (NewProductRedDotObj != null) NewProductRedDotObj.SetActive(false);
 	}
 
 	private void ShowUnlockProducts()
 	{
+		// Show newly unlocked product items with animation
 	}
 
 	private void UpdateSelectItem()
 	{
+		if (ProductItems == null) return;
+		// Update selected product info
+		UpdateNeedProduct();
 	}
 
 	private void UpdateNeedProduct()
 	{
+		if (need_disposables != null)
+		{
+			need_disposables.Dispose();
+			need_disposables = new CompositeDisposable();
+		}
+		// Show needed materials for selected product
+		bool hasNeeds = false;
+		if (SelectNeedObj != null) SelectNeedObj.SetActive(hasNeeds);
+		if (SelectNeedNothing != null) SelectNeedNothing.SetActive(!hasNeeds);
 	}
 
 	private void UpdateUpgrade()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Update factory upgrade UI
+		bool isMaxLevel = false;
+		if (UpgradeNeedObj != null) UpgradeNeedObj.SetActive(!isMaxLevel);
+		if (UpgradeMaxObj != null) UpgradeMaxObj.SetActive(isMaxLevel);
+		if (UpgradeMaxBtn != null) UpgradeMaxBtn.SetActive(isMaxLevel);
 	}
 
 	private void UpdateNeedLack(bool isLack)
 	{
+		if (SelectNeedBG != null)
+			SelectNeedBG.color = isLack ? Color.red : Color.white;
 	}
 
 	private void OnClickSelectItem(int product)
 	{
+		SelectProduct = product;
+		UpdateSelectItem();
 	}
 
 	private void OnClickMakeSelect()
 	{
+		// Start/stop production of selected product
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
 	}
 
 	private void OnClickUpgrade()
 	{
+		// Upgrade factory level
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		UpdateUpgrade();
 	}
 
 	private void OnClickUseItem()
 	{
+		// Use item to boost factory
 	}
 
 	private void GotoFactory(int idx)
 	{
+		FactoryIdx = idx;
+		Set(idx);
 	}
 
 	private void OnClickNextMove()
 	{
+		if (NextFactoryIdx >= 0) GotoFactory(NextFactoryIdx);
 	}
 
 	private void OnClickPrevMove()
 	{
+		if (PrevFactoryIdx >= 0) GotoFactory(PrevFactoryIdx);
 	}
 
 	private void OnClickRecipe()
 	{
+		// Show product recipe popup
 	}
 
 	private void OnClickSelectNeedShortCut(int idx)
 	{
+		// Navigate to the needed material's factory
+		Hide();
 	}
 
 	private void OnDestroy()
 	{
+		if (need_disposables != null)
+		{
+			need_disposables.Dispose();
+			need_disposables = null;
+		}
+		if (battery_disposables != null)
+		{
+			battery_disposables.Dispose();
+			battery_disposables = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (need_disposables != null)
+		{
+			need_disposables.Dispose();
+			need_disposables = new CompositeDisposable();
+		}
+		if (battery_disposables != null)
+		{
+			battery_disposables.Dispose();
+			battery_disposables = new CompositeDisposable();
+		}
 	}
 }

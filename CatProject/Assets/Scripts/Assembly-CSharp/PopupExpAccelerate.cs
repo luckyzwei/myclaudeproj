@@ -139,87 +139,179 @@ public class PopupExpAccelerate : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		ItemExpTicketList = new List<ItemCompanyExpTicket>();
+		HasItemList = new List<(Config.ItemIdx, int)>();
+		ActionQueue = new ActionQueue();
+
+		if (UseItemButton != null) UseItemButton.onClick.AddListener(OnClickUseItem);
+		if (UseGemButton != null) UseGemButton.onClick.AddListener(OnClickUseGem);
+		if (BoostShortcutButton != null) BoostShortcutButton.onClick.AddListener(OnClickBoostShortcut);
 	}
 
 	public override void OnShowBefore()
 	{
+		// Called when popup becomes visible
 	}
 
 	public override void OnHideBefore()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	public override void OnRefresh()
 	{
+		UpdateCompanyExpInfo();
+		SetHasItemInfo();
 	}
 
 	public void Init(int companyIdx)
 	{
+		CompanyIdx = companyIdx;
+		SelectedItemIdx = 0;
+		UseItemCnt = 0;
+		UseItemExp = BigInteger.Zero;
+		Reset();
+		SetCompanyInfo(companyIdx);
+		SetHasItemInfo();
+		UpdateCompanyExpInfo();
 	}
 
 	private void Reset()
 	{
+		UseItemCnt = 0;
+		UseItemExp = BigInteger.Zero;
+		TicketAddExp = BigInteger.Zero;
+		if (LevelUpNotiObj != null) LevelUpNotiObj.SetActive(false);
+		if (ItemControls != null) ItemControls.gameObject.SetActive(false);
 	}
 
 	private void SetHasItemInfo()
 	{
+		HasItemList.Clear();
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Get exp ticket items from user data
 	}
 
 	private void SetCompanyInfo(int companyIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Get company current exp and needed exp
+		UpdateCompanyExpInfo();
 	}
 
 	private void UpdateCompanyExpInfo()
 	{
+		if (CompanyExpText != null)
+			CompanyExpText.text = ProjectUtility.GetThousandCommaText(CompanyCurExp) + "/" + ProjectUtility.GetThousandCommaText(CompanyNeedExp);
+
+		float progress = CompanyNeedExp > 0 ? (float)((double)CompanyCurExp / (double)CompanyNeedExp) : 0f;
+		if (CompanyExpSlider != null) CompanyExpSlider.value = Mathf.Clamp01(progress);
+
+		float totalProgress = CompanyNeedExp > 0 ? (float)((double)(CompanyCurExp + UseItemExp) / (double)CompanyNeedExp) : 0f;
+		if (CompanyExpTotalFill != null) CompanyExpTotalFill.fillAmount = Mathf.Clamp01(totalProgress);
+
+		if (CompanyAddExpText != null)
+		{
+			CompanyAddExpText.gameObject.SetActive(UseItemExp > 0);
+			CompanyAddExpText.text = "+" + ProjectUtility.GetThousandCommaText(UseItemExp);
+		}
+
+		bool willLevelUp = CompanyCurExp + UseItemExp >= CompanyNeedExp;
+		if (LevelUpNotiObj != null) LevelUpNotiObj.SetActive(willLevelUp);
+
+		UpdateCompanyLevelUpCashText();
 	}
 
 	private void UpdateCompanyLevelUpCashText()
 	{
+		if (UseGemNeedText == null) return;
+		// Calculate gem cost for instant level up
+		UseGemNeedText.text = "0";
 	}
 
 	private void SetSelectedItemInfo(int itemIdx)
 	{
+		SelectedItemIdx = itemIdx;
+		if (ItemControls != null) ItemControls.gameObject.SetActive(true);
 	}
 
 	private void UpdateUseItemCount(int useCnt)
 	{
+		UseItemCnt = useCnt;
+		// Recalculate total exp from selected items
+		UseItemExp = TicketAddExp * useCnt;
+		UpdateCompanyExpInfo();
 	}
 
 	private void OnSelectItemButtonClick(int itemIdx)
 	{
+		SetSelectedItemInfo(itemIdx);
 	}
 
 	private void OnClickUseItem()
 	{
+		if (UseItemCnt <= 0) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Use exp tickets to level up company
+		EndActionQueue(() =>
+		{
+			OnRefresh();
+		});
 	}
 
 	private void EndActionQueue(Action action)
 	{
+		StartCoroutine(DelayEndAction(action));
 	}
 
 	[IteratorStateMachine(typeof(_003CDelayEndAction_003Ed__41))]
 	private IEnumerator DelayEndAction(Action action)
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		action?.Invoke();
 	}
 
 	private void OnClickUseGem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Use gems to instantly level up company
 	}
 
 	private void OpenExpTicketReturnPopup(Dictionary<Config.ItemIdx, int> returnItemList, Action onComplete)
 	{
+		if (returnItemList == null || returnItemList.Count == 0)
+		{
+			onComplete?.Invoke();
+			return;
+		}
+		// Show popup listing returned items
+		onComplete?.Invoke();
 	}
 
 	private void CheckAndOpenExpPackage(Action onComplete)
 	{
+		// Check if any exp package should open after use
+		onComplete?.Invoke();
 	}
 
 	private void OnItemControlsValueChanged(int value)
 	{
+		UpdateUseItemCount(value);
 	}
 
 	private void OnClickBoostShortcut()
 	{
+		// Navigate to boost shop
+		Hide();
 	}
 }
