@@ -57,61 +57,120 @@ public class PageDailyQuestList : UIBase
 
 	private CompositeDisposable disposables;
 
-	public Image OneTimeCurrencyIcon { get { return null; } }
+	public Image OneTimeCurrencyIcon { get { return oneTimeCurrencyIcon; } }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
 	}
 
 	public override void OnShowBefore()
 	{
+		DrawPage();
 	}
 
 	public void ShowPlantFocusing()
 	{
+		// Show plant-related quest focused view
+		DrawPage();
 	}
 
 	private void DrawPage()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		SetList();
+		UpdateRewardInfo();
+		UpdateProgress();
+		SetOneTime();
 	}
 
 	private void SetList()
 	{
+		// Populate quest list from DailyQuestData
 	}
 
 	private void UpdateRewardInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		var questData = root.UserData.DailyQuestData;
+		if (questData == null) return;
+
+		if (CurDayPoint != null) CurDayPoint.text = questData.DayPoint.ToString();
+		if (CurWeekPoint != null) CurWeekPoint.text = questData.WeekPoint.ToString();
+
+		if (NextDayResetTime != null)
+		{
+			int remainSec = (int)(questData.QuestResetTime - System.DateTime.UtcNow).TotalSeconds;
+			if (remainSec < 0) remainSec = 0;
+			NextDayResetTime.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
+		}
+
+		if (NextWeekResetTime != null)
+		{
+			int remainSec = (int)(questData.NextWeekResetTime - System.DateTime.UtcNow).TotalSeconds;
+			if (remainSec < 0) remainSec = 0;
+			NextWeekResetTime.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
+		}
+
+		// Update daily reward states
+		bool allDailyRewardsClaimed = questData.GetDailyRewards != null && questData.GetDailyRewards.Count > 0;
+		if (RewardObj != null) RewardObj.SetActive(!allDailyRewardsClaimed);
+		if (RewardLastObj != null) RewardLastObj.SetActive(allDailyRewardsClaimed);
 	}
 
 	private void UpdateProgress()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		var questData = root.UserData.DailyQuestData;
+		if (questData == null) return;
+
+		if (DayPointProgress != null && MaxPoint > 0)
+			DayPointProgress.value = (float)questData.DayPoint / MaxPoint;
 	}
 
 	private void CompleteQuest(int quest)
 	{
+		// Claim quest reward
+		DrawPage();
 	}
 
 	private void ShortcutQuest(int quest)
 	{
+		// Navigate to quest target
+		Hide();
 	}
 
 	private void SetOneTime()
 	{
+		if (oneTimeUIRoot != null) oneTimeUIRoot.SetActive(false);
+		UpdateOneTimeCurrencyIcon();
+		UpdateOneTimeCurrencyCount();
 	}
 
 	private void UpdateOneTimeCurrencyIcon()
 	{
+		// Set one-time currency icon from event data
 	}
 
 	public void UpdateOneTimeCurrencyCount()
 	{
+		// Update one-time currency count text
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

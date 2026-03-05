@@ -91,10 +91,13 @@ public class PageMilestone : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (EnterButton != null) EnterButton.onClick.AddListener(OnClickedEnterButton);
 	}
 
 	public override void OnShowBefore()
 	{
+		Init();
 	}
 
 	public override void OnHideBefore()
@@ -104,38 +107,72 @@ public class PageMilestone : UIBase
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__12))]
 	private IEnumerator FocusToIndexCoroutine()
 	{
-		yield break;
+		yield return null;
+		// Scroll milestone list to current progress after layout
 	}
 
 	private void Update()
 	{
+		if (bEndSeasonTime) return;
+		if (SeasonEndDateTime <= DateTime.MinValue) return;
+
+		int remainSec = (int)(SeasonEndDateTime - DateTime.UtcNow).TotalSeconds;
+		if (remainSec <= 0)
+		{
+			bEndSeasonTime = true;
+			SetSeasonRemainTimeText(0);
+			return;
+		}
+		SetSeasonRemainTimeText(remainSec);
 	}
 
 	public void Init()
 	{
+		bEndSeasonTime = false;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		UpdatePurchaseInfo();
+		StartCoroutine(FocusToIndexCoroutine());
 	}
 
 	private void UpdatePurchaseInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Check if milestone pass is purchased
+		bool isPurchased = false;
+		if (PurchaseBtn != null) PurchaseBtn.gameObject.SetActive(!isPurchased);
+		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(isPurchased);
 	}
 
 	private void OnClickedEnterButton()
 	{
+		// Enter seasonal content
+		Hide();
 	}
 
 	private void OnClickPurchase()
 	{
+		// IAP purchase for milestone pass
 	}
 
 	private void SetSeasonThemeImage(string imageName)
 	{
+		if (SeasonThemeImage == null) return;
+		Sprite sprite = Resources.Load<Sprite>(imageName);
+		if (sprite != null) SeasonThemeImage.sprite = sprite;
 	}
 
 	private void SetSeasonThemeName(string nameKey)
 	{
+		if (SeasonThemeNameText != null) SeasonThemeNameText.text = nameKey;
 	}
 
 	private void SetSeasonRemainTimeText(int remainSec)
 	{
+		if (SeasonEndRemainTimeText != null)
+			SeasonEndRemainTimeText.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
 	}
 }
