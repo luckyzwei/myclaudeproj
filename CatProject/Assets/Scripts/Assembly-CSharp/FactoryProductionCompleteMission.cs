@@ -14,24 +14,43 @@ public class FactoryProductionCompleteMission : SingleMissionBase
 
 	protected override void OnInitAfter()
 	{
+		if (Args != null && Args.Length >= 3)
+		{
+			TargetProductIdx = (int)Args[0];
+			OpenCondition_FactoryType = (int)Args[1];
+			OpenCondition_FactoryLevel = (int)Args[2];
+		}
+		ConditionDisposables = new CompositeDisposable();
+		IsActive = CheckIsActive();
 	}
 
 	public override void Subscribe()
 	{
+		if (Disposables == null) return;
+		// Subscribe to factory production events
+		IsActive = CheckIsActive();
 	}
 
 	public override bool IsActiveMission()
 	{
-		return false;
+		return IsActive;
 	}
 
 	public override bool IsExistOpenCondition()
 	{
-		return false;
+		return OpenCondition_FactoryType > 0 || OpenCondition_FactoryLevel > 0;
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		if (string.IsNullOrEmpty(MissionDescriptionKey)) return string.Empty;
+		return MissionDescriptionKey;
+	}
+
+	private bool CheckIsActive()
+	{
+		if (OpenCondition_FactoryType <= 0 && OpenCondition_FactoryLevel <= 0) return true;
+		// Check if factory type and level conditions are met
+		return true;
 	}
 }

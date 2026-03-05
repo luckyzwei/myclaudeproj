@@ -25,7 +25,7 @@ public class GameObjectPool : MonoBehaviour
 
 	private class EmptyDisposable : IDisposable
 	{
-		public static EmptyDisposable Instance;
+		public static EmptyDisposable Instance = new EmptyDisposable();
 
 		private EmptyDisposable()
 		{
@@ -42,11 +42,14 @@ public class GameObjectPool : MonoBehaviour
 
 		public ReturnObservable(T value)
 		{
+			this.value = value;
 		}
 
 		public IDisposable Subscribe(IObserver<T> observer)
 		{
-			return null;
+			observer.OnNext(value);
+			observer.OnCompleted();
+			return EmptyDisposable.Instance;
 		}
 	}
 
@@ -74,7 +77,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			this.MoveNext();
 		}
 
@@ -85,7 +87,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
 			this.SetStateMachine(stateMachine);
 		}
 	}
@@ -110,7 +111,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			this.MoveNext();
 		}
 
@@ -121,7 +121,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
 			this.SetStateMachine(stateMachine);
 		}
 	}
@@ -148,7 +147,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			this.MoveNext();
 		}
 
@@ -159,7 +157,6 @@ public class GameObjectPool : MonoBehaviour
 
 		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
 			this.SetStateMachine(stateMachine);
 		}
 	}
@@ -175,19 +172,40 @@ public class GameObjectPool : MonoBehaviour
 
 	private void Start()
 	{
+		pools = new Dictionary<string, PoolData>();
+		poolObjectToken = new Dictionary<int, string>();
+		lastCleanupTime = Time.time;
 	}
 
 	private void OnLowMemory()
 	{
+		CleanupPools();
 	}
 
 	private void Update()
 	{
+		if (cleanupInterval > 0f && Time.time - lastCleanupTime >= cleanupInterval)
+		{
+			CleanupPools();
+			lastCleanupTime = Time.time;
+		}
 	}
 
 	private PoolData RegisterPrefabInternal(AssetReference assetRef)
 	{
-		return null;
+		if (assetRef == null) return null;
+		string key = assetRef.RuntimeKey.ToString();
+		if (pools.TryGetValue(key, out var existing))
+			return existing;
+		var pool = new PoolData
+		{
+			AvailableObjects = new Queue<GameObject>(),
+			UsedObjects = new HashSet<GameObject>(),
+			AssetRef = assetRef,
+			Parent = transform
+		};
+		pools[key] = pool;
+		return pool;
 	}
 
 	[AsyncStateMachine(typeof(_003CBarrow_003Ed__9))]
@@ -204,25 +222,48 @@ public class GameObjectPool : MonoBehaviour
 
 	public IObservable<GameObject> BarrowAsObservable(AssetReference assetReference)
 	{
-		return null;
+		var subject = new AsyncSubject<GameObject>();
+		Fire(subject, Barrow(assetReference));
+		return subject;
 	}
 
 	public void Return(Component instance)
 	{
+		if (instance != null)
+			Return(instance.gameObject);
 	}
 
 	public void Return(GameObject instance)
 	{
+		if (instance == null) return;
+		int id = instance.GetInstanceID();
+		if (poolObjectToken.TryGetValue(id, out var poolKey))
+		{
+			if (pools.TryGetValue(poolKey, out var pool))
+			{
+				pool.UsedObjects.Remove(instance);
+				instance.SetActive(false);
+				instance.transform.SetParent(pool.Parent);
+				pool.AvailableObjects.Enqueue(instance);
+			}
+			poolObjectToken.Remove(id);
+		}
+		else
+		{
+			Destroy(instance);
+		}
 	}
 
 	public static GameObjectPool From(Component component)
 	{
-		return null;
+		if (component == null) return null;
+		return component.GetComponentInParent<GameObjectPool>();
 	}
 
 	public static GameObjectPool From(GameObject gameObject)
 	{
-		return null;
+		if (gameObject == null) return null;
+		return gameObject.GetComponentInParent<GameObjectPool>();
 	}
 
 	[AsyncStateMachine(typeof(_003CCreateNewInstance_003Ed__18))]
@@ -233,18 +274,53 @@ public class GameObjectPool : MonoBehaviour
 
 	private void CleanupPools()
 	{
+		if (pools == null) return;
+		foreach (var kvp in pools)
+		{
+			CleanupPool(kvp.Value);
+		}
 	}
 
 	private void CleanupPool(PoolData pool)
 	{
+		if (pool == null || pool.AvailableObjects == null) return;
+		int targetSize = GetLargestPowerOfTwo(pool.UsedObjects != null ? pool.UsedObjects.Count : 0);
+		while (pool.AvailableObjects.Count > targetSize)
+		{
+			var obj = pool.AvailableObjects.Dequeue();
+			if (obj != null)
+				Destroy(obj);
+		}
 	}
 
 	private int GetLargestPowerOfTwo(int n)
 	{
-		return 0;
+		if (n <= 0) return 1;
+		int result = 1;
+		while (result <= n)
+			result <<= 1;
+		return result;
 	}
 
 	private void OnDestroy()
 	{
+		if (pools != null)
+		{
+			foreach (var kvp in pools)
+			{
+				var pool = kvp.Value;
+				if (pool == null) continue;
+				if (pool.AvailableObjects != null)
+				{
+					while (pool.AvailableObjects.Count > 0)
+					{
+						var obj = pool.AvailableObjects.Dequeue();
+						if (obj != null) Destroy(obj);
+					}
+				}
+			}
+			pools.Clear();
+		}
+		poolObjectToken?.Clear();
 	}
 }

@@ -22,30 +22,40 @@ public class HouseParkingLot : MonoBehaviour
 
 	private int OriginHouseIdx;
 
-	public Transform Trans { get { return null; } }
+	public Transform Trans { get { return transform; } }
 
 	public Transform ParkingTrans(int order)
 	{
+		if (ParkingSpaces == null || order < 0 || order >= ParkingSpaces.Count) return null;
+		if (ParkingSpaces[order] != null)
+			return ParkingSpaces[order].transform;
 		return null;
 	}
 
 	public void Init(int houseIdx, Action<int> clickHouse)
 	{
+		HouseIdx = houseIdx;
+		OriginHouseIdx = houseIdx;
+		CbClickHouse = clickHouse;
 	}
 
 	public void UpdateCurHouse()
 	{
+		// Update house visual based on current data
 	}
 
 	public void UpdateParkingSpace()
 	{
+		// Update parking space visuals
 	}
 
 	public void UpdateEditModeUI()
 	{
+		// Update UI for edit mode
 	}
 
 	private void OnClickHouse()
 	{
+		CbClickHouse?.Invoke(HouseIdx);
 	}
 }

@@ -31,18 +31,39 @@ public class ImageColorSetting : MonoBehaviour
 
 	private void Start()
 	{
+		UpdateColor();
 	}
 
 	public void UpdateColor()
 	{
+		if (string.IsNullOrEmpty(keyColor)) return;
+		Color color;
+		if (ColorUtility.TryParseHtmlString(keyColor, out color))
+			SetImageColor(color);
 	}
 
 	public void SetImageColor(Color color)
 	{
+		TrySetColorTo<UnityEngine.UI.Image>(color);
+		TrySetColorTo<SpriteRenderer>(color);
+		TrySetColorTo<Renderer>(color);
 	}
 
 	protected bool TrySetColorTo<T>(Color color)
 	{
-		return false;
+		var comp = GetComponent<T>();
+		if (comp == null) return false;
+		if (comp is UnityEngine.UI.Image img)
+			img.color = color;
+		else if (comp is SpriteRenderer sr)
+			sr.color = color;
+		else if (comp is Renderer rd)
+		{
+			if (rd.material != null)
+				rd.material.color = color;
+		}
+		else
+			return false;
+		return true;
 	}
 }

@@ -5,16 +5,21 @@ public static class EndlessOfferHelper
 {
 	public static string GetHudImageName(EndlessOfferInfoData offerInfo)
 	{
-		return null;
+		if (offerInfo == null) return string.Empty;
+		return string.Empty;
 	}
 
 	public static string GetMainImageName(EndlessOfferInfoData offerInfo)
 	{
-		return null;
+		if (offerInfo == null) return string.Empty;
+		return string.Empty;
 	}
 
 	public static int GetMainImageIndex(DateTime startTime, DateTime nowTime, int imgCount)
 	{
-		return 0;
+		if (imgCount <= 0) return 0;
+		var elapsed = nowTime - startTime;
+		int days = (int)elapsed.TotalDays;
+		return days % imgCount;
 	}
 }

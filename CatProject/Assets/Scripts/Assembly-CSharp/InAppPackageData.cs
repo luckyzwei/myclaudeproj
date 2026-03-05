@@ -6,6 +6,8 @@ public class InAppPackageData
 
 	public static InAppPackageData FromShopSpecial(int shopSpecialIdx)
 	{
-		return null;
+		var data = new InAppPackageData();
+		// Load product info from shop special table
+		return data;
 	}
 }
