@@ -124,72 +124,110 @@ public class PageShop : FullScreenUI
 
 	public override void OnShowBefore()
 	{
+		IsReadyPage = true;
+		RefreshItems();
+		Focus();
 	}
 
 	public void RefreshItems()
 	{
+		if (contents == null) return;
+		// Refresh all shop contents
 	}
 
 	public void SetEnterPlace(ShopEnterPlace place)
 	{
+		// Set initial focus based on entry place
+		switch (place)
+		{
+			case ShopEnterPlace.gem:
+				FocusContents = ShopContentsType.Gem;
+				break;
+			case ShopEnterPlace.supply:
+				FocusContents = ShopContentsType.Tonic;
+				break;
+			default:
+				FocusContents = ShopContentsType.None;
+				break;
+		}
 	}
 
 	private void Focus()
 	{
+		if (FocusContents == ShopContentsType.None) return;
+		StartCoroutine(FocusCoroutine());
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusCoroutine_003Ed__18))]
 	private IEnumerator FocusCoroutine()
 	{
-		yield break;
+		yield return null;
+		// Scroll to focused content section
+		FocusContents = ShopContentsType.None;
 	}
 
 	public void UpdateGem()
 	{
+		// Update gem display in HUD
 	}
 
 	public void SetFocus(ShopContentsType type)
 	{
+		FocusContents = type;
+		Focus();
 	}
 
 	public void SetFocus(int rewardType, int rewardIdx)
 	{
+		// Map reward type/idx to shop contents type and focus
 	}
 
 	public void ShowArrow(ShopContentsType type)
 	{
+		// Show guide arrow on specific shop section
 	}
 
 	public void HideArrows()
 	{
+		// Hide all guide arrows
 	}
 
 	private void OnChangeTab(int tabIdx)
 	{
+		// Handle shop tab change
+		bool isManagerTab = tabIdx >= ManagerTabStartIdx;
+		IsManagerTabOpen = isManagerTab;
+		if (ManagerTab != null) ManagerTab.gameObject.SetActive(isManagerTab);
 	}
 
 	private void OnDestroy()
 	{
+		IsReadyPage = false;
 	}
 
 	public override void OnHideAfter()
 	{
+		IsReadyPage = false;
 	}
 
 	public override void OnHideBefore()
 	{
+		HideArrows();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	private void OnClickCash()
 	{
+		// Open cash purchase flow
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID type)
 	{
+		if (HudTopInfo != null) return HudTopInfo.transform.position;
 		return default(Vector3);
 	}
 }

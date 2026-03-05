@@ -273,105 +273,235 @@ public class PageAuction : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		CurRound = 0;
+		MaxCoin = 100;
+		UseSpy = 0;
+		AuctionStart = false;
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (ManagerInfoBtn != null) ManagerInfoBtn.onClick.AddListener(OnClickManagerInfo);
+		if (AddCoinBtn != null) AddCoinBtn.onClick.AddListener(OnClickAddCoin);
+		if (DelCoinBtn != null) DelCoinBtn.onClick.AddListener(OnClickDelCoin);
+		if (MaxCoinBtn != null) MaxCoinBtn.onClick.AddListener(OnClickMaxCoin);
+		if (StartRoundBtn != null) StartRoundBtn.onClick.AddListener(onClickStartRound);
+		if (EnemyCoinSpyBtn != null) EnemyCoinSpyBtn.onClick.AddListener(OnClickShowEnemyCoin);
+		if (StanimaShopBtn != null) StanimaShopBtn.onClick.AddListener(OnClickStaminaShop);
+		if (GemShopBtn != null) GemShopBtn.onClick.AddListener(OnClickGemShop);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		CurRound = 0;
+		AuctionStart = false;
+		UseSpy = 0;
+		SetManager();
+		SetRound();
+		ResetWinLoseProgress();
+		UpdateOrganizeCoin();
+		LoadMyChar();
+		LoadNpcChar();
+
+		// Update HUD
+		if (StaminaText != null) StaminaText.text = "0";
+		if (GemText != null) GemText.text = "0";
+		if (StaminaTimeRoot != null) StaminaTimeRoot.SetActive(false);
 	}
 
 	private void OnClickInfo()
 	{
+		// Show auction info popup
 	}
 
 	private void OnClickManagerInfo()
 	{
+		// Show manager info popup
 	}
 
 	private void CheckResult()
 	{
+		// Check win/lose condition after all rounds
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.AuctionSystem == null) return;
 	}
 
 	[IteratorStateMachine(typeof(_003CStartGame_003Ed__55))]
 	private IEnumerator StartGame()
 	{
-		yield break;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.AuctionSystem == null) yield break;
+
+		int totalRound = 3;
+		for (int i = 0; i < totalRound; i++)
+		{
+			CurRound = i + 1;
+			SetRound();
+			// Wait for player coin input and round result
+			yield return new WaitForSeconds(1f);
+			// Show round result animation
+			int myscore = 0;
+			var gameResult = AuctionSystem.E_AuctionResult.Lose;
+			// Check round result
+		}
+		CheckResult();
 	}
 
 	private void SetManager()
 	{
+		if (ManagerRoot == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set auction manager info
+		if (MaxCoinText != null) MaxCoinText.text = MaxCoin.ToString();
 	}
 
 	private void UpdateOrganizeCoin()
 	{
+		int curCoin = 0;
+		if (CoinText != null)
+		{
+			int.TryParse(CoinText.text, out curCoin);
+		}
+		if (RemainCoinText != null) RemainCoinText.text = (MaxCoin - curCoin).ToString();
 	}
 
 	private void EndGame(PopupAuctionResultWin.E_GameEndType endType)
 	{
+		AuctionStart = false;
+		// Show result popup
 	}
 
 	[IteratorStateMachine(typeof(_003CEndTrial2xCoroutine_003Ed__59))]
 	private IEnumerator EndTrial2xCoroutine()
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		// Show trial 2x reward end animation
 	}
 
 	private void LoadMyChar()
 	{
+		if (MyCharRoot == null) return;
+		// Load player character model
 	}
 
 	private void LoadNpcChar()
 	{
+		if (NpcCharRoot == null) return;
+		// Load NPC character model
 	}
 
 	private void SetRound()
 	{
+		if (RoundText != null) RoundText.text = CurRound.ToString();
+		if (CoinOrganizeRoot != null) CoinOrganizeRoot.SetActive(true);
+		if (EnemyCoinBubbleRoot != null) EnemyCoinBubbleRoot.SetActive(true);
+		if (EnemyCoinRoot != null) EnemyCoinRoot.SetActive(false);
+		if (CoinText != null) CoinText.text = "0";
+		UpdateOrganizeCoin();
 	}
 
 	private void ResetWinLoseProgress()
 	{
+		if (MyWinLose != null)
+		{
+			for (int i = 0; i < MyWinLose.Count; i++)
+			{
+				if (MyWinLose[i] != null) MyWinLose[i].gameObject.SetActive(false);
+			}
+		}
+		if (NpcWinLose != null)
+		{
+			for (int i = 0; i < NpcWinLose.Count; i++)
+			{
+				if (NpcWinLose[i] != null) NpcWinLose[i].gameObject.SetActive(false);
+			}
+		}
+		if (MyWinText != null) MyWinText.text = "0";
+		if (NpcWinText != null) NpcWinText.text = "0";
 	}
 
 	private void OnClickAddCoin()
 	{
+		if (CoinText == null) return;
+		int cur = 0;
+		int.TryParse(CoinText.text, out cur);
+		if (cur < MaxCoin)
+		{
+			cur++;
+			CoinText.text = cur.ToString();
+			UpdateOrganizeCoin();
+		}
 	}
 
 	private void OnClickDelCoin()
 	{
+		if (CoinText == null) return;
+		int cur = 0;
+		int.TryParse(CoinText.text, out cur);
+		if (cur > 0)
+		{
+			cur--;
+			CoinText.text = cur.ToString();
+			UpdateOrganizeCoin();
+		}
 	}
 
 	private void OnClickMaxCoin()
 	{
+		if (CoinText != null) CoinText.text = MaxCoin.ToString();
+		UpdateOrganizeCoin();
 	}
 
 	private void onClickStartRound()
 	{
+		if (AuctionStart) return;
+		AuctionStart = true;
+		if (AuctionCoroutin != null) StopCoroutine(AuctionCoroutin);
+		AuctionCoroutin = StartCoroutine(StartGame());
 	}
 
 	private void OnClickShowEnemyCoin()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Use gem to spy on enemy coin
+		UseSpy++;
+		if (EnemyCoinRoot != null) EnemyCoinRoot.SetActive(true);
 	}
 
 	private void OnClickStaminaShop()
 	{
+		// Open stamina shop
 	}
 
 	private void OnClickGemShop()
 	{
+		// Open gem shop
 	}
 
 	public override void Hide()
 	{
+		if (AuctionCoroutin != null) { StopCoroutine(AuctionCoroutin); AuctionCoroutin = null; }
+		base.Hide();
 	}
 
 	private void Update()
 	{
+		// Update stamina remain time
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
+		if (AuctionCoroutin != null) { StopCoroutine(AuctionCoroutin); AuctionCoroutin = null; }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

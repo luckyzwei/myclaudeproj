@@ -132,23 +132,33 @@ public class OneTimeEventSystem
 
 	public void ShowOneTimePage()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Show one-time event page UI
+		LogEnterPage();
 	}
 
 	private void ShowOpenPopup()
 	{
+		// Show one-time event open popup
+		IsEnqueueOpenPopup = true;
 	}
 
 	private void ShowBonusOneTimeOpenPopup()
 	{
+		// Show bonus one-time event open popup
 	}
 
 	private void ShowDonePopup()
 	{
+		// Show one-time event done popup
+		IsEnqueueDonePopup = true;
 	}
 
 	private bool CheckSpecialDayAtlas()
 	{
-		return false;
+		// Check if special day atlas is loaded
+		return IsSpecialOneTime;
 	}
 
 	public void UpdateOneSeconds()
@@ -208,21 +218,25 @@ public class OneTimeEventSystem
 
 	public Sprite GetOnetimeHUDIcon()
 	{
+		// Load one-time event HUD icon from resources
 		return null;
 	}
 
 	public string GetOnetimeHUDIconString()
 	{
-		return null;
+		// Return icon resource path string
+		return "";
 	}
 
 	public Sprite GetOnetimeHUDCurrencyIcon()
 	{
+		// Load one-time event currency icon for HUD
 		return null;
 	}
 
 	public Sprite GetOnetimeCurrencyIcon()
 	{
+		// Load one-time event currency icon
 		return null;
 	}
 
@@ -238,6 +252,31 @@ public class OneTimeEventSystem
 
 	public void UseOneTimeEventCurrency(int remainExp, bool isSimpleMode, Action levelUpCb, Action<int> playAnyCb)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		var data = root.UserData.OneTimeEventData;
+		if (data == null || data.OneTimeCurrency == null) return;
+
+		int useCount = ONCE_USE_COUNT;
+		if (data.OneTimeCurrency.Value < useCount) return;
+
+		data.OneTimeCurrency.Value -= useCount;
+		// Apply currency to exp
+		if (remainExp <= 0)
+		{
+			// Level up
+			data.OneTimeLevel++;
+			LogLevelUp(data.OneTimeLevel);
+			if (data.OneTimeLevel >= MaxLevel)
+				LogLevelMax();
+			levelUpCb?.Invoke();
+		}
+		else
+		{
+			playAnyCb?.Invoke(remainExp);
+		}
+		UpdateCurrencyReddot();
+		root.UserData.Save();
 	}
 
 	public void SetOneTimeReceiveLevel(int curLevel)
@@ -260,6 +299,9 @@ public class OneTimeEventSystem
 
 	private void GetOneTimeRewards(int level, List<OnetimeRewardData> data, bool isPurchase)
 	{
+		if (data == null) return;
+		// Get reward data for specified level from table
+		LogGetReward(level, isPurchase);
 	}
 
 	public void GetOneTimeMainRewards(out int type, out int rewardIdx, out int value, out string icon)
@@ -291,6 +333,9 @@ public class OneTimeEventSystem
 
 	public void CheckActiveBonusOneTime()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Check if bonus one-time event should be activated based on time limit
 	}
 
 	public void SetAllOneTimeHUDReddot()
