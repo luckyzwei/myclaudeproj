@@ -74,41 +74,100 @@ public class ItemEventMission : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (RefreshButton != null)
+			RefreshButton.onClick.AddListener(OnClickRefreshBtn);
+		if (ShortCutButton != null)
+			ShortCutButton.onClick.AddListener(OnClickShortCutBtn);
+		if (ClaimButton != null)
+			ClaimButton.onClick.AddListener(OnClickClaimBtn);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public void Init(SingleMissionBase mission)
 	{
+		MissionData = mission;
+		if (MissionData == null) return;
+		if (DescriptionText != null)
+			DescriptionText.text = MissionData.GetMissionDescriptionText();
+		UpdateProgressInfo();
+		SubscribeEvents();
+		bool isCompleted = MissionData.IsCompleted != null && MissionData.IsCompleted.Value;
+		bool isRewarded = MissionData.IsRewarded != null && MissionData.IsRewarded.Value;
+		UpdateLayout(isCompleted, isRewarded);
 	}
 
 	private void SubscribeEvents()
 	{
+		if (MissionData == null) return;
+		if (MissionData.CurrentValue != null)
+		{
+			MissionData.CurrentValue.Subscribe(_ => UpdateProgressInfo()).AddTo(Disposables);
+		}
+		if (MissionData.IsCompleted != null)
+		{
+			MissionData.IsCompleted.Subscribe(v => UpdateLayout(v, MissionData.IsRewarded != null && MissionData.IsRewarded.Value)).AddTo(Disposables);
+		}
+		if (MissionData.IsRewarded != null)
+		{
+			MissionData.IsRewarded.Subscribe(v => UpdateLayout(MissionData.IsCompleted != null && MissionData.IsCompleted.Value, v)).AddTo(Disposables);
+		}
 	}
 
 	private void UpdateLayout(bool isCompleted, bool isRewarded)
 	{
+		if (ProgressObj != null) ProgressObj.SetActive(!isCompleted && !isRewarded);
+		if (NotCompleteObj != null) NotCompleteObj.SetActive(!isCompleted && !isRewarded);
+		if (CompleteObj != null) CompleteObj.SetActive(isCompleted && !isRewarded);
+		if (RewardedObj != null) RewardedObj.SetActive(isRewarded);
+		if (ClaimBtnObj != null) ClaimBtnObj.SetActive(isCompleted && !isRewarded);
+		if (ShortCutBtnObj != null) ShortCutBtnObj.SetActive(!isCompleted && !isRewarded);
+		if (LayoutElement != null)
+			LayoutElement.preferredHeight = isRewarded ? RewardedHeight : NormalHeight;
 	}
 
 	private void UpdateProgressInfo()
 	{
+		if (MissionData == null) return;
+		string progressText = MissionData.GetMissionProgressText();
+		if (ProgressSlider != null && MissionData.TargetValue > 0)
+		{
+			float cur = MissionData.CurrentValue != null ? (float)(double)MissionData.CurrentValue.Value : 0f;
+			ProgressSlider.value = Mathf.Clamp01(cur / MissionData.TargetValue);
+		}
 	}
 
 	private void OnClickRefreshBtn()
 	{
+		// Refresh mission with gem cost
 	}
 
 	private void OnClickShortCutBtn()
 	{
+		if (IsReqShortCut) return;
+		IsReqShortCut = true;
+		// Navigate to mission shortcut target
 	}
 
 	private void OnClickClaimBtn()
 	{
+		// Claim mission reward
 	}
 }

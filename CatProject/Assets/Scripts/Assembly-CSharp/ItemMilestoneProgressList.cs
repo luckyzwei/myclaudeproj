@@ -27,37 +27,57 @@ public class ItemMilestoneProgressList : MonoBehaviour
 
 	private void Awake()
 	{
+		MilestoneRewardSlotList = new List<ItemMilestoneReward>();
 	}
 
 	public void Init()
 	{
+		SetMilestoneRewardList();
 	}
 
 	public void FocusToIndex(int idx)
 	{
+		if (MilestoneRewardListObj == null || MilestoneRewardSlotList == null) return;
+		if (idx < 0 || idx >= MilestoneRewardSlotList.Count) return;
+		float normalizedPos = MilestoneRewardSlotList.Count > 1 ? (float)idx / (MilestoneRewardSlotList.Count - 1) : 0f;
+		MilestoneRewardListObj.horizontalNormalizedPosition = normalizedPos;
 	}
 
 	public void OnActivePremium()
 	{
+		if (MilestoneRewardSlotList == null) return;
+		for (int i = 0; i < MilestoneRewardSlotList.Count; i++)
+		{
+			if (MilestoneRewardSlotList[i] != null)
+				MilestoneRewardSlotList[i].OnActivePremium();
+		}
 	}
 
 	private void SetSeasonMainIcon(string iconKey)
 	{
+		// Set season main icon sprite
 	}
 
 	private void SetMilestoneProgressInfo(int curStep, int maxStep)
 	{
+		SetMilestoneProgressText(curStep, maxStep);
+		SetMilestoneProgressSlider(curStep, maxStep);
 	}
 
 	private void SetMilestoneProgressText(int curStep, int maxStep)
 	{
+		if (MilestoneProgressText != null)
+			MilestoneProgressText.text = curStep + "/" + maxStep;
 	}
 
 	private void SetMilestoneProgressSlider(int curStep, int maxStep)
 	{
+		if (MilestoneProgressSlider != null)
+			MilestoneProgressSlider.value = maxStep > 0 ? Mathf.Clamp01((float)curStep / maxStep) : 0f;
 	}
 
 	private void SetMilestoneRewardList()
 	{
+		// Create milestone reward slots from reward data
 	}
 }

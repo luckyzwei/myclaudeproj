@@ -100,32 +100,95 @@ public class ItemBoosterGraph : MonoBehaviour
 
 	public void SetGraph(int pointCount, List<BigInteger> revenueGraphValues)
 	{
+		PointCount = pointCount;
+		RevenueGraphValues = revenueGraphValues;
+		XStep = BoxSize.x / Mathf.Max(1, pointCount - 1);
+		OriginPoints = new List<Vector2>();
+		PrevPoints = new List<Vector2>();
+		CurrentPoints = new List<Vector2>();
+		CalcOriginPoints();
+		UpdateLineGraph();
+		if (RevenueGraphValues != null && RevenueGraphValues.Count > 0)
+			UpdateDotPoint(CurrentPoints[CurrentPoints.Count - 1]);
 	}
 
 	public void UpdateGraph(List<BigInteger> revenueGraphValues, bool isShift)
 	{
+		RevenueGraphValues = revenueGraphValues;
+		if (PrevPoints != null)
+		{
+			PrevPoints.Clear();
+			PrevPoints.AddRange(CurrentPoints);
+		}
+		CalcOriginPoints();
+		StartCoroutine(AnimateGraph());
 	}
 
 	private void CalcOriginPoints()
 	{
+		if (RevenueGraphValues == null || RevenueGraphValues.Count == 0) return;
+		BigInteger maxValue = BigInteger.Zero;
+		for (int i = 0; i < RevenueGraphValues.Count; i++)
+		{
+			if (RevenueGraphValues[i] > maxValue)
+				maxValue = RevenueGraphValues[i];
+		}
+		CurrentPoints.Clear();
+		for (int i = 0; i < RevenueGraphValues.Count && i < PointCount; i++)
+		{
+			float x = i * XStep;
+			float y = maxValue > BigInteger.Zero ? (float)PreciseDivide(RevenueGraphValues[i], maxValue) * BoxSize.y : 0f;
+			CurrentPoints.Add(new Vector2(x, y));
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateGraph_003Ed__16))]
 	private IEnumerator AnimateGraph()
 	{
-		yield break;
+		if (PrevPoints == null || PrevPoints.Count == 0 || AnimDuration <= 0f)
+		{
+			UpdateLineGraph();
+			yield break;
+		}
+		float elapsedTime = 0f;
+		var interpPoints = new List<Vector2>();
+		while (elapsedTime < AnimDuration)
+		{
+			elapsedTime += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsedTime / AnimDuration);
+			interpPoints.Clear();
+			int count = Mathf.Min(PrevPoints.Count, CurrentPoints.Count);
+			for (int i = 0; i < count; i++)
+				interpPoints.Add(Vector2.Lerp(PrevPoints[i], CurrentPoints[i], t));
+			if (LineGraph != null)
+				LineGraph.SetPoints(interpPoints);
+			if (interpPoints.Count > 0)
+				UpdateDotPoint(interpPoints[interpPoints.Count - 1]);
+			yield return null;
+		}
+		UpdateLineGraph();
 	}
 
 	private void UpdateLineGraph()
 	{
+		if (LineGraph != null && CurrentPoints != null)
+			LineGraph.SetPoints(CurrentPoints);
+		if (CurrentPoints != null && CurrentPoints.Count > 0)
+			UpdateDotPoint(CurrentPoints[CurrentPoints.Count - 1]);
 	}
 
 	private void UpdateDotPoint(Vector2 point)
 	{
+		if (DotObjectTr != null)
+			DotObjectTr.anchoredPosition = point;
+		if (CurValueTextTr != null)
+			CurValueTextTr.anchoredPosition = point + Vector2.up * 30f;
 	}
 
 	private double PreciseDivide(BigInteger numerator, BigInteger denominator)
 	{
-		return 0.0;
+		if (denominator == BigInteger.Zero) return 0.0;
+		BigInteger scaled = numerator * 1000000 / denominator;
+		return (double)scaled / 1000000.0;
 	}
 }

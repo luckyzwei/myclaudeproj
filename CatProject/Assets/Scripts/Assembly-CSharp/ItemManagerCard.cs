@@ -95,45 +95,67 @@ public class ItemManagerCard : MonoBehaviour
 
 	public Action InfoCloseCb;
 
-	public string CurManagerName { get { return null; } }
+	public string CurManagerName { get { return ManagerName != null ? ManagerName.text : null; } }
 
-	public Color CurFrameColor { get { return default(Color); } }
+	public Color CurFrameColor { get { return ManagerFrame != null ? ManagerFrame.color : default(Color); } }
 
-	public int CurManagerIdx { get { return 0; } }
+	public int CurManagerIdx { get { return curManagerIdx; } }
 
 	private void Awake()
 	{
+		if (ManagerBtn != null)
+			ManagerBtn.onClick.AddListener(OnClickManager);
 	}
 
 	public virtual void Set(int managerIdx, int managerCount = -1, bool isNew = false, bool onHireObjDeactive = false, bool isAcquisition = false)
 	{
+		curManagerIdx = managerIdx;
+		if (ManagerLockObj != null) ManagerLockObj.SetActive(false);
+		if (NewNoti != null) NewNoti.SetActive(isNew);
+		UpdateHireInfo(onHireObjDeactive);
+		if (isAcquisition)
+			UpdateAcquisitionValue();
+		else
+			UpdateOfficeValue(managerCount, onHireObjDeactive);
 	}
 
 	public void SetRedDotCondition(ManagerCardSystem.E_RedDotCondition condition)
 	{
+		RedDotCondition = condition;
 	}
 
 	public void UpdateRedDot()
 	{
+		// Update red dot notification based on RedDotCondition
 	}
 
 	private void SetManagerCommonInfo(ManagerInfoData infoData)
 	{
+		// Set name, grade, frame, ability icon from ManagerInfoData
 	}
 
 	private void UpdateOfficeValue(int tempManagerCount, bool onHireObjDeactive = false)
 	{
+		if (CardLevelObj != null) CardLevelObj.SetActive(true);
+		if (ReinforceLevelObj != null) ReinforceLevelObj.SetActive(false);
+		if (GachaCountText != null && tempManagerCount >= 0)
+			GachaCountText.text = tempManagerCount.ToString();
 	}
 
 	private void UpdateAcquisitionValue()
 	{
+		if (CardLevelObj != null) CardLevelObj.SetActive(false);
+		if (ReinforceLevelObj != null) ReinforceLevelObj.SetActive(true);
 	}
 
 	private void UpdateHireInfo(bool onHireObjDeactive)
 	{
+		if (OnHiringObj != null)
+			OnHiringObj.SetActive(!onHireObjDeactive && curManagerIdx > 0);
 	}
 
 	protected virtual void OnClickManager()
 	{
+		// Show manager detail popup
 	}
 }

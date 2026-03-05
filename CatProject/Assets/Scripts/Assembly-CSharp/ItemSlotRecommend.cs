@@ -37,25 +37,65 @@ public class ItemSlotRecommend : MonoBehaviour
 
 	private void Awake()
 	{
+		ActiveObjList = new List<GameObject> { AdsUserObj, CompanyObj, AllCompanyMaxObj, UnlockCompanyObj, AllContractObj };
+		if (AllCompanyMaxLvShortCutBtn != null)
+			AllCompanyMaxLvShortCutBtn.onClick.AddListener(OnClickedCompanyMaxLvShortCutBtn);
+		if (NoAdsPurchaseBtn != null)
+			NoAdsPurchaseBtn.onClick.AddListener(OnClickedNoAdsPurchaseBtn);
+		if (UnlockCompanyShortCutBtn != null)
+			UnlockCompanyShortCutBtn.onClick.AddListener(OnClickedUnlockCompanyShortCutBtn);
 	}
 
 	public void SetSlotState(E_ItemSlotRecommendState state)
 	{
+		SlotState = state;
+		// Deactivate all
+		if (ActiveObjList != null)
+		{
+			for (int i = 0; i < ActiveObjList.Count; i++)
+			{
+				if (ActiveObjList[i] != null)
+					ActiveObjList[i].SetActive(false);
+			}
+		}
+		// Activate the correct one
+		switch (state)
+		{
+			case E_ItemSlotRecommendState.AdsUser:
+				if (AdsUserObj != null) AdsUserObj.SetActive(true);
+				break;
+			case E_ItemSlotRecommendState.RecommendCompany:
+				if (CompanyObj != null) CompanyObj.SetActive(true);
+				break;
+			case E_ItemSlotRecommendState.RecommendCompany_AllContract:
+				if (AllContractObj != null) AllContractObj.SetActive(true);
+				break;
+			case E_ItemSlotRecommendState.AllCompanyMax_UnlockableCompExist:
+				if (UnlockCompanyObj != null) UnlockCompanyObj.SetActive(true);
+				break;
+			case E_ItemSlotRecommendState.AllCompanyMax:
+				if (AllCompanyMaxObj != null) AllCompanyMaxObj.SetActive(true);
+				break;
+		}
 	}
 
 	private void OnClickedCompanyMaxLvShortCutBtn()
 	{
+		// Navigate to company max level screen
 	}
 
 	private void OnClickedNoAdsPurchaseBtn()
 	{
+		// Open no-ads purchase popup
 	}
 
 	private void OnClickedUnlockCompanyShortCutBtn()
 	{
+		// Navigate to company unlock screen
 	}
 
 	private void RefreshCompanyContract()
 	{
+		// Refresh company contract display
 	}
 }

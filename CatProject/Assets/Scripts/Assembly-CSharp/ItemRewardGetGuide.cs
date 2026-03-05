@@ -48,35 +48,45 @@ public class ItemRewardGetGuide : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ShortCutBtn != null)
+			ShortCutBtn.onClick.AddListener(OnClickShortCut);
 	}
 
 	public void SetGuideSlot(int guideIdx)
 	{
+		GuideIdx = guideIdx;
+		if (ShortCutObj != null)
+			ShortCutObj.SetActive(guideIdx > 0);
 	}
 
 	private void SetGuideIconImage(List<string> iconNameList)
 	{
+		// Set guide icon from icon name list
 	}
 
 	private void SetGuideDecoImage(string iconName)
 	{
+		// Set guide decoration image
 	}
 
 	private void SetGuideDescText(int guidIdx, string desc)
 	{
+		if (GuideDescText != null)
+			GuideDescText.text = MakeGuideDescText(guidIdx, desc);
 	}
 
 	private string MakeGuideDescText(int guideIdx, string desc)
 	{
-		return null;
+		return desc ?? string.Empty;
 	}
 
 	private object[] GetShortCutArgs()
 	{
-		return null;
+		return new object[] { GuideIdx };
 	}
 
 	private void OnClickShortCut()
 	{
+		// Navigate to guide target via shortcut
 	}
 }
