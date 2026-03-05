@@ -166,26 +166,65 @@ public class InGameOffice : InGameMode
 
 	public void UpdateStatues()
 	{
+		// Update statue visuals in office
 	}
 
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
 	{
+		if (AdsupplyVipPref == null) { CompCb?.Invoke(null); return; }
+		Addressables.InstantiateAsync(AdsupplyVipPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				AdsupplyMoneyVip = handle.Result.GetComponent<AdSupplyVIP>();
+				CompCb?.Invoke(AdsupplyMoneyVip);
+			}
+			else CompCb?.Invoke(null);
+		};
 	}
 
 	public void LoadNightSkip(Action<NightSkipVIP> CompCb)
 	{
+		if (NightSkipPref == null) { CompCb?.Invoke(null); return; }
+		Addressables.InstantiateAsync(NightSkipPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				NightSkipVip = handle.Result.GetComponent<NightSkipVIP>();
+				CompCb?.Invoke(NightSkipVip);
+			}
+			else CompCb?.Invoke(null);
+		};
 	}
 
 	public void LoadBizAcqStage(Action compCb, bool isActive)
 	{
+		if (BizAcqStagePref == null) { compCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(BizAcqStagePref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				BizAcqStage = handle.Result.GetComponent<BizAcqStage>();
+				handle.Result.SetActive(isActive);
+				IsBizAcqMode = isActive;
+			}
+			compCb?.Invoke();
+		};
 	}
 
 	public void MoveBizAcqStage(Action compCb)
 	{
+		IsBizAcqMode = true;
+		if (BizAcqStage != null)
+			BizAcqStage.gameObject.SetActive(true);
+		compCb?.Invoke();
 	}
 
 	public void ReturnBizAcqStage()
 	{
+		IsBizAcqMode = false;
+		if (BizAcqStage != null)
+			BizAcqStage.gameObject.SetActive(false);
 	}
 
 	public void ReturnEmployees(bool clearEmployeeList = false)
@@ -216,22 +255,76 @@ public class InGameOffice : InGameMode
 
 	public void LoadEmployee(int office, int seat, Worker.E_AppearType appearType, int order, Action CompCb)
 	{
+		if (CharacterPref == null) { CompCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(CharacterPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				var employee = handle.Result.GetComponent<Employee>();
+				if (employee != null)
+				{
+					EmployeeList.Add(employee);
+					if (!CurEmployeeCnt.ContainsKey(office)) CurEmployeeCnt[office] = 0;
+					CurEmployeeCnt[office]++;
+				}
+			}
+			CompCb?.Invoke();
+		};
 	}
 
 	public void LoadCeo(Worker.E_AppearType appearType, int order, Action CompCb)
 	{
+		if (CeoPref == null) { CompCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(CeoPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+				Ceo = handle.Result.GetComponent<CEO>();
+			CompCb?.Invoke();
+		};
 	}
 
 	public void LoadSecretary(Worker.E_AppearType appearType, int order, Action CompCb)
 	{
+		if (SecretaryPref == null) { CompCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(SecretaryPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+				Secretary = handle.Result.GetComponent<Secretary>();
+			CompCb?.Invoke();
+		};
 	}
 
 	public void LoadEngineer(int seat, int order, Worker.E_AppearType appearType, Action CompCb)
 	{
+		if (EngineerPref == null) { CompCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(EngineerPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				var engineer = handle.Result.GetComponent<Engineer>();
+				if (engineer != null)
+				{
+					EngineerList.Add(engineer);
+					CurEngineerCount++;
+				}
+			}
+			CompCb?.Invoke();
+		};
 	}
 
 	public void LoadManager(int managerIdx, int officeIdx, int order, Worker.E_AppearType appearType, Action CompCb = null)
 	{
+		if (ManagerPref == null) { CompCb?.Invoke(); return; }
+		Addressables.InstantiateAsync(ManagerPref, CharacterRoot).Completed += (handle) =>
+		{
+			if (handle.Result != null)
+			{
+				var manager = handle.Result.GetComponent<Manager>();
+				if (manager != null)
+					ManagerList.Add(manager);
+			}
+			CompCb?.Invoke();
+		};
 	}
 
 	public bool HaveToLoadChar()
@@ -281,7 +374,9 @@ public class InGameOffice : InGameMode
 	[IteratorStateMachine(typeof(_003CWaitAllWorkOff_Coroutine_003Ed__57))]
 	private IEnumerator WaitAllWorkOff_Coroutine(Action Cb)
 	{
-		yield break;
+		// Wait a short time for work off animations to complete
+		yield return new WaitForSeconds(1.0f);
+		Cb?.Invoke();
 	}
 
 	public void WorkOffEmployee()

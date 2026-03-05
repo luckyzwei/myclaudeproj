@@ -132,75 +132,157 @@ public class ItemMissionFactoryTab : MonoBehaviour, ITabToggleTab
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (OrderCompBtn != null) OrderCompBtn.onClick.AddListener(OnClickCompOrder);
+		if (OrderResetBtn != null) OrderResetBtn.onClick.AddListener(OnClickResetOrder);
+		if (FactoryShortCutBtn != null) FactoryShortCutBtn.onClick.AddListener(OnClickFactoryShortCut);
+		if (ProductShortCutBtn != null) ProductShortCutBtn.onClick.AddListener(OnClickProductShortCut);
 	}
 
 	public void InitTab(Action onGotoNavi)
 	{
+		OnGotoNavi = onGotoNavi;
+		SelectOrder = 0;
+		InitOrderList();
+		SetMissionList();
+		UpdateSelect();
 	}
 
 	private void InitOrderList()
 	{
+		if (OrderSlots == null) return;
+		for (int i = 0; i < OrderSlots.Count; i++)
+		{
+			int slotIdx = i;
+			if (OrderSlots[i] != null)
+			{
+				// Bind slot click callback
+			}
+		}
 	}
 
 	private void SetMissionList()
 	{
+		if (MissionItems == null || MissionListObj == null) return;
+		bool hasActiveMission = false;
+		for (int i = 0; i < MissionItems.Count; i++)
+		{
+			if (MissionItems[i] != null && MissionItems[i].gameObject.activeSelf)
+				hasActiveMission = true;
+		}
+		MissionListObj.SetActive(hasActiveMission);
+		if (MissionAllDoneObj != null) MissionAllDoneObj.SetActive(!hasActiveMission);
 	}
 
 	private void ShowNextOrder()
 	{
+		if (OrderSlots == null || OrderSlots.Count == 0) return;
+		int nextSlot = (SelectOrder + 1) % OrderSlots.Count;
+		OnClickSelect(nextSlot);
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusOrderSlot_003Ed__26))]
 	private IEnumerator FocusOrderSlot()
 	{
-		yield break;
+		yield return null;
+		if (SlotScrollRect != null && OrderSlots != null && SelectOrder >= 0 && SelectOrder < OrderSlots.Count)
+		{
+			var targetRt = OrderSlots[SelectOrder].GetComponent<RectTransform>();
+			if (targetRt != null)
+			{
+				float normalizedPos = (float)SelectOrder / Mathf.Max(1, OrderSlots.Count - 1);
+				SlotScrollRect.horizontalNormalizedPosition = Mathf.Clamp01(normalizedPos);
+			}
+		}
 	}
 
 	private void UpdateOrder()
 	{
+		if (OrderSlots == null) return;
+		for (int i = 0; i < OrderSlots.Count; i++)
+		{
+			if (OrderSlots[i] != null)
+			{
+				// Refresh order slot data
+			}
+		}
+		UpdateSelect();
 	}
 
 	private void UpdateSelect()
 	{
+		if (OrderSlots == null || SelectOrder < 0 || SelectOrder >= OrderSlots.Count) return;
+
+		// Update selected order info UI
+		if (OrderInfoObj != null) OrderInfoObj.SetActive(true);
+		if (OrderWaitObj != null) OrderWaitObj.SetActive(false);
+
+		// Update complete button red dot
+		if (OrderCompRedDotObj != null) OrderCompRedDotObj.SetActive(false);
 	}
 
 	public void RefreshSlot()
 	{
+		UpdateOrder();
 	}
 
 	private void OnClickSelect(int slot)
 	{
+		if (slot < 0 || OrderSlots == null || slot >= OrderSlots.Count) return;
+		SelectOrder = slot;
+		UpdateSelect();
+		StartCoroutine(FocusOrderSlot());
 	}
 
 	private void OnClickCompOrder()
 	{
+		// Complete current order and grant reward
 	}
 
 	private void OnClickResetOrder()
 	{
+		// Reset/refresh the current order
 	}
 
 	private void OnClickFactoryShortCut()
 	{
+		OnGotoNavi?.Invoke();
 	}
 
 	private void OnClickProductShortCut()
 	{
+		// Navigate to product production
+		OnGotoNavi?.Invoke();
 	}
 
 	private void OnClickMissionShortCut(int slot)
 	{
+		OnGotoNavi?.Invoke();
 	}
 
 	private void GetFactoryMissionReward(int rewardType, int rewardIdx, BigInteger rewardCnt, bool isDoubleReward)
 	{
+		BigInteger finalCnt = isDoubleReward ? rewardCnt * 2 : rewardCnt;
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.UserData != null)
+		{
+			root.UserData.SetReward(rewardType, rewardIdx, 0, finalCnt);
+		}
 	}
 
 	public void Refresh()
 	{
+		UpdateOrder();
+		SetMissionList();
 	}
 
 	public void Reset()
 	{
+		SelectOrder = 0;
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 }
