@@ -22,33 +22,73 @@ public class InGameSeasonalData
 
 	public ReadOnlyDictionary<int, SeasonalShopData> SeasonalShopDataMap { get; private set; }
 
-	public SeasonalStageData SeasonalStageData { get { return null; } }
+	public SeasonalStageData SeasonalStageData
+	{
+		get
+		{
+			if (seasonalStageDataMap != null && seasonalStageDataMap.TryGetValue(ActiveSeasonIdx, out var data))
+				return data;
+			return null;
+		}
+	}
 
-	public SeasonalShopData SeasonalShopData { get { return null; } }
+	public SeasonalShopData SeasonalShopData
+	{
+		get
+		{
+			if (seasonalShopDataMap != null && seasonalShopDataMap.TryGetValue(ActiveSeasonIdx, out var data))
+				return data;
+			return null;
+		}
+	}
 
 	public void Init(SeasonalData? seasonalData)
 	{
+		seasonalStageDataMap = new Dictionary<int, SeasonalStageData>();
+		seasonalShopDataMap = new Dictionary<int, SeasonalShopData>();
+		PlayedSeasonInfoIdxList = new List<int>();
+		SeasonalStageDataMap = new ReadOnlyDictionary<int, SeasonalStageData>(seasonalStageDataMap);
+		SeasonalShopDataMap = new ReadOnlyDictionary<int, SeasonalShopData>(seasonalShopDataMap);
+		MaxPiggyBankLevel = 0;
+		ActiveSeasonIdx = 0;
+		ActiveSeasonThemeIdx = 0;
+		LastActiveSeasonIdx = 0;
 	}
 
 	public bool AddNewSeason(int seasonInfoIdx)
 	{
-		return false;
+		if (PlayedSeasonInfoIdxList == null)
+			PlayedSeasonInfoIdxList = new List<int>();
+		if (PlayedSeasonInfoIdxList.Contains(seasonInfoIdx))
+			return false;
+		PlayedSeasonInfoIdxList.Add(seasonInfoIdx);
+		return true;
 	}
 
 	public bool ChangeActiveSeason(in int seasonIdx)
 	{
-		return false;
+		if (seasonIdx == ActiveSeasonIdx) return false;
+		LastActiveSeasonIdx = ActiveSeasonIdx;
+		ActiveSeasonIdx = seasonIdx;
+		return true;
 	}
 
 	public void ResetAllSeasonalInfo()
 	{
+		if (seasonalStageDataMap != null) seasonalStageDataMap.Clear();
+		if (seasonalShopDataMap != null) seasonalShopDataMap.Clear();
+		ResetSeasonLimitInfos();
 	}
 
 	private void ResetSeasonLimitInfos()
 	{
+		ActiveSeasonIdx = 0;
+		ActiveSeasonThemeIdx = 0;
+		LastActiveSeasonIdx = 0;
 	}
 
 	private void CheckAndRemoveOlderSeasonInfo()
 	{
+		// Remove expired season data if needed
 	}
 }

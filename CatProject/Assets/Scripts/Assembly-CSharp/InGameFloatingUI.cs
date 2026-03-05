@@ -20,24 +20,19 @@ public class InGameFloatingUI : MonoBehaviour, IFloatingUI
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitOneFrame_003Ed__14(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -47,12 +42,24 @@ public class InGameFloatingUI : MonoBehaviour, IFloatingUI
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					_003C_003E2__current = null;
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					Callback?.Invoke();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -86,44 +93,64 @@ public class InGameFloatingUI : MonoBehaviour, IFloatingUI
 
 	public virtual void Init(Transform parent, GameType type = GameType.Main)
 	{
+		FollowTrans = parent;
+		modetype = type;
+		isHide = false;
 	}
 
 	public virtual void UpdatePos()
 	{
+		if (!TrackingPos || FollowTrans == null) return;
+		transform.position = FollowTrans.position + TrackingOffset;
 	}
 
 	public void SetFloor(int Floor)
 	{
+		floor = Floor;
 	}
 
 	public void SetTrackingPos(bool bTrackingPos)
 	{
+		TrackingPos = bTrackingPos;
 	}
 
 	protected virtual void Update()
 	{
+		if (TrackingPos)
+			UpdatePos();
 	}
 
 	public virtual void Show()
 	{
+		isHide = false;
+		gameObject.SetActive(true);
+		if (Ani != null)
+			Ani.SetTrigger("Show");
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitOneFrame_003Ed__14))]
 	private IEnumerator WaitOneFrame(Action Callback)
 	{
-		yield break;
+		yield return null;
+		Callback?.Invoke();
 	}
 
 	public virtual GameType GetGameType()
 	{
-		return default(GameType);
+		return modetype;
 	}
 
 	public virtual void Hide()
 	{
+		isHide = true;
+		if (Ani != null)
+			Ani.SetTrigger("Hide");
+		else
+			gameObject.SetActive(false);
 	}
 
 	public void SetFollowOffset(Vector3 offset)
 	{
+		TrackingOffset = offset;
 	}
 }

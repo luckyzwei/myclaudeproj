@@ -19,24 +19,19 @@ public class InGameFactory : OutGameMode
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CSetFactories_003Ed__13(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -46,12 +41,19 @@ public class InGameFactory : OutGameMode
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Initialize factories
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -86,44 +88,103 @@ public class InGameFactory : OutGameMode
 
 	public override void Load()
 	{
+		IsLoading = true;
+		StartCoroutine(SetFactories());
+		LoadUI();
 	}
 
 	[IteratorStateMachine(typeof(_003CSetFactories_003Ed__13))]
 	private IEnumerator SetFactories()
 	{
+		// Initialize all factory buildings
+		IsLoading = false;
 		yield break;
 	}
 
 	private void MakeEnterActionQueue()
 	{
+		EnterActionQueue = new ActionQueue();
 	}
 
 	private void SubscribeTutorialCondition()
 	{
+		// Subscribe to tutorial events for factory
 	}
 
 	public void FocusStorage(Action action)
 	{
+		if (Storage != null)
+		{
+			// Focus camera on storage
+		}
+		action?.Invoke();
 	}
 
 	public void FocusOrder(Action action)
 	{
+		if (OrderBuilding != null)
+		{
+			// Focus camera on order building
+		}
+		action?.Invoke();
 	}
 
 	public void FocusFactory(int factory, Action action)
 	{
+		var go = GetFactory(factory);
+		if (go != null)
+		{
+			// Focus camera on factory
+		}
+		action?.Invoke();
 	}
 
 	public GameObject GetFactory(int factoryIdx)
 	{
+		if (MaterialFactories != null)
+		{
+			for (int i = 0; i < MaterialFactories.Count; i++)
+			{
+				if (MaterialFactories[i] != null && MaterialFactories[i].FactoryIdx == factoryIdx)
+					return MaterialFactories[i].gameObject;
+			}
+		}
+		if (MakeFactories != null)
+		{
+			for (int i = 0; i < MakeFactories.Count; i++)
+			{
+				if (MakeFactories[i] != null && MakeFactories[i].FactoryIdx == factoryIdx)
+					return MakeFactories[i].gameObject;
+			}
+		}
+		if (AssembleFactories != null)
+		{
+			for (int i = 0; i < AssembleFactories.Count; i++)
+			{
+				if (AssembleFactories[i] != null && AssembleFactories[i].FactoryIdx == factoryIdx)
+					return AssembleFactories[i].gameObject;
+			}
+		}
 		return null;
 	}
 
 	protected override void LoadUI()
 	{
+		// Load factory UI
 	}
 
 	public override void UnLoad()
 	{
+		IsLoading = false;
+		if (Tuto_FactoryItem_Disposable != null)
+		{
+			Tuto_FactoryItem_Disposable.Dispose();
+			Tuto_FactoryItem_Disposable = null;
+		}
+		if (EnterActionWaitCoroutine != null)
+		{
+			StopCoroutine(EnterActionWaitCoroutine);
+			EnterActionWaitCoroutine = null;
+		}
 	}
 }
