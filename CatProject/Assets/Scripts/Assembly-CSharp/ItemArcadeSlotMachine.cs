@@ -306,175 +306,397 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		MultipleBettingValue = 1;
+		MultipleValueList = new List<int> { 1, 2, 5, 10 };
+		RouletteResultRewards = new Dictionary<int, BigInteger>();
+		SlotImageObjects = new List<List<Image>>();
+		SlotRewardList = new List<int>();
+		bPlayingSlotMachine = false;
+		bOnAutoPlay = false;
+		bFreeChance = false;
+
+		if (GuideInfoBtn != null) GuideInfoBtn.onClick.AddListener(OnClickGuideInfoBtn);
+		if (BettingMultiplyBtn != null) BettingMultiplyBtn.onClick.AddListener(OnClickedChangeMultiply);
+		if (RewardInfoButton != null) RewardInfoButton.onClick.AddListener(OnClickedRewardInfoBtn);
+		if (MachineLevelUpBtn != null) MachineLevelUpBtn.onClick.AddListener(OnClickedLevelUpBtn);
+		if (PlaySlotMachineLongPressBtn != null)
+		{
+			PlaySlotMachineLongPressBtn.OnPressed = OnClickedPlaySlotMachineButton;
+			PlaySlotMachineLongPressBtn.OnLongPressed = OnLongPressedPlaySlotMachineButton;
+		}
+		if (SkillBookBtn != null) SkillBookBtn.onClick.AddListener(OnClickedSkillBookBtn);
+		if (btnRank != null) btnRank.onClick.AddListener(OnClickCoinRank);
+		if (btnSlotCoinBuff != null) btnSlotCoinBuff.onClick.AddListener(OnClickSlotCoinBuff);
+
+		if (BettingToast != null)
+		{
+			OriginToastTrans = BettingToast.transform.localPosition;
+			BettingToast.SetActive(false);
+		}
 	}
 
 	private void UpdateMyRank(int rank)
 	{
+		if (textMyRank != null)
+			textMyRank.text = rank > 0 ? rank.ToString() : "-";
 	}
 
 	public bool Hide()
 	{
-		return false;
+		if (bPlayingSlotMachine) return false;
+		isClickHide = true;
+		return true;
 	}
 
 	public void OnHideBefore()
 	{
+		bOnAutoPlay = false;
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public void Init(PageArcadeSlotMachine ownerPage)
 	{
+		OwnerPage = ownerPage;
+		isClickHide = false;
+		bPlayingSlotMachine = false;
+		bOnAutoPlay = false;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		SubscribeEvents();
+		CheckFreeChanceSkill();
+		SetDiscountNeedCurrency();
 	}
 
 	private void UpdateLevelInfo(SeasonalArcadeMachineData machineData, SeasonalRouletteInfoData rouletteInfoTable)
 	{
+		if (machineData == null) return;
+		SetArcadeMachineLevelStar(machineData.Level);
+		if (slider_rouletteCount != null)
+		{
+			slider_rouletteCount.value = machineData.RouletteCount;
+		}
+		if (text_rouletteCount != null)
+			text_rouletteCount.text = machineData.RouletteCount.ToString();
+		RedrawMachineLevelUpBtn();
 	}
 
 	private void SubscribeEvents()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
+		// Subscribe to currency change events via reactive properties
 	}
 
 	private void OnChangeHasCurrencyValue(int currencyIdx, BigInteger currencyValue)
 	{
+		if (currencyIdx != MatchCurrencyIdx) return;
+		if (HasCurrencyText != null)
+			HasCurrencyText.text = ProjectUtility.GetThousandCommaText(currencyValue);
+		RedrawMachineLevelUpBtn();
 	}
 
 	private void SetNameText(string nameKey)
 	{
+		if (MainNameText != null) MainNameText.text = nameKey;
 	}
 
 	private void SetPlaySlotMachineText(string strKey)
 	{
+		if (PlaySlotMachineText != null) PlaySlotMachineText.text = strKey;
 	}
 
 	private void SetDescriptionText(string descKey)
 	{
+		if (DescriptionText != null) DescriptionText.text = descKey;
 	}
 
 	private void SetNeedCurrencyIcon(string iconKey)
 	{
+		// Set currency icon sprite by key
 	}
 
 	private void SetHasCurrencyValue(BigInteger hasValue, int needValue)
 	{
+		if (HasCurrencyText != null)
+			HasCurrencyText.text = ProjectUtility.GetThousandCommaText(hasValue);
+		bool isEnough = hasValue >= needValue;
+		if (HasCurrencyText != null)
+			HasCurrencyText.color = isEnough ? Color.white : Color.red;
 	}
 
 	private void SetNeedCurrencyValue(int originValue)
 	{
+		int finalValue = originValue * MultipleBettingValue;
+		if (NeedCurrencyText != null)
+			NeedCurrencyText.text = ProjectUtility.GetThousandCommaText(finalValue);
 	}
 
 	private void SetMultipleBettingText(int bettingMultiple)
 	{
+		if (BettingMultiplyText != null)
+			BettingMultiplyText.text = "x" + bettingMultiple;
 	}
 
 	private void SetRewardInfo(string iconKey, BigInteger rewardValue_PerMile)
 	{
+		if (RewardValueText != null)
+			RewardValueText.text = ProjectUtility.GetThousandCommaText(rewardValue_PerMile);
+		// Set reward icon sprite
 	}
 
 	private void SetArcadeMachineLevelStar(int level)
 	{
+		if (MachineLevelImages == null) return;
+		for (int i = 0; i < MachineLevelImages.Count; i++)
+		{
+			if (MachineLevelImages[i] != null)
+				MachineLevelImages[i].gameObject.SetActive(i < level);
+		}
 	}
 
 	private void RedrawMachineLevelUpBtn()
 	{
+		if (MachineLevelUpBtn == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		bool canAfford = true; // Check if user has enough currency for level up
+		MachineLevelUpBtn.interactable = canAfford;
 	}
 
 	private void ShowRewardTween()
 	{
+		if (RewardDoTween == null) return;
+		for (int i = 0; i < RewardDoTween.Count; i++)
+			if (RewardDoTween[i] != null) RewardDoTween[i].Play();
 	}
 
 	private void HideRewardTween()
 	{
+		if (RewardDoTween == null) return;
+		for (int i = 0; i < RewardDoTween.Count; i++)
+			if (RewardDoTween[i] != null) RewardDoTween[i].Pause();
 	}
 
 	private void OnClickSlotCoinBuff()
 	{
+		// Open slot coin buff popup
 	}
 
 	private void OnClickGuideInfoBtn()
 	{
+		// Open guide info popup for slot machine
 	}
 
 	private void OnClickedChangeMultiply()
 	{
+		if (MultipleValueList == null || MultipleValueList.Count == 0) return;
+		int curIdx = MultipleValueList.IndexOf(MultipleBettingValue);
+		int nextIdx = (curIdx + 1) % MultipleValueList.Count;
+		MultipleBettingValue = MultipleValueList[nextIdx];
+		SetMultipleBettingText(MultipleBettingValue);
+
+		if (BettingToast != null)
+		{
+			if (BettingToastText != null) BettingToastText.text = "x" + MultipleBettingValue;
+			BettingToast.SetActive(false);
+			BettingToast.SetActive(true);
+		}
 	}
 
 	private void OnClickedRewardInfoBtn()
 	{
+		// Open reward info popup showing reward table
 	}
 
 	private void OnClickedLevelUpBtn()
 	{
+		// Level up the arcade machine
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Check currency and level up
 	}
 
 	private void OnClickedPlaySlotMachineButton()
 	{
+		if (bPlayingSlotMachine) return;
+		bOnAutoPlay = false;
+		PlayArcadeRoulette();
 	}
 
 	private void OnLongPressedPlaySlotMachineButton()
 	{
+		if (bPlayingSlotMachine) return;
+		bOnAutoPlay = true;
+		PlayArcadeRoulette();
 	}
 
 	private bool PlayArcadeRoulette()
 	{
-		return false;
+		if (bPlayingSlotMachine) return false;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+
+		// Check cost
+		bPlayingSlotMachine = true;
+		SetInteractionSlotMachineBtn(false);
+
+		// Play slot machine animation
+		if (SlotMachineAnimator != null)
+			SlotMachineAnimator.SetTrigger(ROULETTE_PLAY_KEY);
+
+		OnPlayArcadeSlotMachine?.Invoke(MultipleBettingValue);
+
+		// Start animation complete coroutine
+		StartCoroutine(OnAnimationComplete());
+		return true;
 	}
 
 	private void ResetPlaySlotMachineLongPressState()
 	{
+		bOnAutoPlay = false;
 	}
 
 	private void SetInteractionSlotMachineBtn(bool isActive)
 	{
+		if (PlaySlotMachineLongPressBtn != null)
+			PlaySlotMachineLongPressBtn.Interactable = isActive;
+		if (obj_reddot != null) obj_reddot.SetActive(false);
 	}
 
 	private void SetSlotImages(int rewardCurrencyIdx)
 	{
+		// Set slot machine reel images based on reward currency index
+		if (SlotParentsObjects == null) return;
+		SlotImageObjects.Clear();
+		for (int i = 0; i < SlotParentsObjects.Count; i++)
+		{
+			if (SlotParentsObjects[i] != null)
+			{
+				var images = new List<Image>(SlotParentsObjects[i].GetComponentsInChildren<Image>());
+				SlotImageObjects.Add(images);
+			}
+		}
 	}
 
 	private void SetSlotImageBlur(int slotIndex, bool isBlur)
 	{
+		if (SlotImageObjects == null || slotIndex < 0 || slotIndex >= SlotImageObjects.Count) return;
+		var images = SlotImageObjects[slotIndex];
+		if (images == null) return;
+		for (int i = 0; i < images.Count; i++)
+		{
+			if (images[i] != null)
+			{
+				var c = images[i].color;
+				c.a = isBlur ? 0.5f : 1f;
+				images[i].color = c;
+			}
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitForAnimation_003Ed__103))]
 	private IEnumerator WaitForAnimation(Animator anim, string stateName)
 	{
-		yield break;
+		if (anim == null) yield break;
+		// Wait until animator enters the target state
+		yield return null;
+		while (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
+			   anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+		{
+			yield return null;
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003COnAnimationComplete_003Ed__104))]
 	private IEnumerator OnAnimationComplete()
 	{
-		yield break;
+		// Wait for slot machine animation to finish
+		if (SlotMachineAnimator != null)
+		{
+			yield return StartCoroutine(WaitForAnimation(SlotMachineAnimator, ROULETTE_STOP_KEY));
+		}
+		else
+		{
+			yield return new WaitForSeconds(2f);
+		}
+
+		// Show reward
+		if (RouletteResultRewards != null && RouletteResultRewards.Count > 0)
+		{
+			ShowRewardTween();
+			ShowRewardGoodsEffect(RouletteResultRewards);
+		}
+
+		bPlayingSlotMachine = false;
+		SetInteractionSlotMachineBtn(true);
+
+		// Auto play if long-pressed
+		if (bOnAutoPlay && !isClickHide)
+		{
+			PlayArcadeRoulette();
+		}
 	}
 
 	private void ShowRewardGoodsEffect(Dictionary<int, BigInteger> rewards)
 	{
+		if (rewards == null) return;
+		ShowRewardGoodsEffect_Delay(rewards);
 	}
 
 	private void ShowRewardGoodsEffect_Delay(Dictionary<int, BigInteger> rewards)
 	{
+		if (rewards == null || OwnerPage == null) return;
+		// Show reward coin/gem flying effect via OwnerPage
 	}
 
 	private void SetDiscountNeedCurrency()
 	{
+		if (DiscountObj != null) DiscountObj.SetActive(false);
+		if (DiscountNeedCurrencyText != null) DiscountNeedCurrencyText.gameObject.SetActive(false);
 	}
 
 	private void OnClickCoinRank()
 	{
+		// Open coin rank popup
 	}
 
 	private void AddCatstaEventMissionValue(int slotMatchCount, int rewardTableOrder)
 	{
+		// Track event mission progress for slot machine play
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Add mission event value
 	}
 
 	private void CheckFreeChanceSkill()
 	{
+		bFreeChance = false;
+		if (FreeChanceSkillRoot != null) FreeChanceSkillRoot.SetActive(false);
+		if (FreeChanceFxObj != null) FreeChanceFxObj.SetActive(false);
+		// Check if skill book provides free chance
 	}
 
 	private void OnClickedSkillBookBtn()
 	{
+		// Open skill book popup
 	}
 }

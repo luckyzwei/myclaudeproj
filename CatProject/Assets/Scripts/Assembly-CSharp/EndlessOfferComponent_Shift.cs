@@ -290,70 +290,215 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		ItemShopEndlessList = new List<ItemShopEndless>();
+		ItemShopEndlessPositionList = new List<Vector3>();
+		RewardTableList = new List<EndlessOfferRewardData>();
+		RepeatRewardTableList = new List<EndlessOfferRewardData>();
+		IsAnimating = false;
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public override void Set(int endlessIdx, ShopSystem.InAppPurchaseLocation enterPlace)
 	{
+		EndlessPackageIdx = endlessIdx;
+		EnterPlace = enterPlace;
+
+		// Collect item slots from ItemRoot
+		if (ItemRoot != null)
+		{
+			ItemShopEndlessList.Clear();
+			ItemShopEndlessPositionList.Clear();
+			var items = ItemRoot.GetComponentsInChildren<ItemShopEndless>(true);
+			for (int i = 0; i < items.Length; i++)
+			{
+				ItemShopEndlessList.Add(items[i]);
+				ItemShopEndlessPositionList.Add(items[i].transform.localPosition);
+			}
+		}
+
+		UpdateItemList();
+		UpdateRedDot();
 	}
 
 	public override void Reset()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
+		IsAnimating = false;
 	}
 
 	private void SetMainImage(EndlessOfferInfoData offerInfo)
 	{
+		if (MainImage == null) return;
+		// Set main image sprite from offer info
 	}
 
 	protected override EndlessOfferRewardData GetTargetRewardTable(int orderIdx)
 	{
-		return null;
+		if (RewardTableList != null)
+		{
+			for (int i = 0; i < RewardTableList.Count; i++)
+			{
+				if (RewardTableList[i].Orderidx == orderIdx)
+					return RewardTableList[i];
+			}
+		}
+		if (RepeatRewardTableList != null && RepeatRewardTableList.Count > 0)
+		{
+			int repeatIdx = orderIdx % RepeatRewardTableList.Count;
+			return RepeatRewardTableList[repeatIdx];
+		}
+		return default;
 	}
 
 	private void OnClickedItemBuyBtn(int orderIdx, int slotIdx)
 	{
+		if (IsAnimating) return;
+		PurchaseItem(orderIdx, (success) =>
+		{
+			if (success)
+			{
+				OnPurchaseSuccess(() =>
+				{
+					// After animation, update items
+					UpdateItemList();
+					UpdateRedDot();
+				});
+			}
+		});
 	}
 
 	private void PurchaseItem(int orderIdx, Action<bool> callback)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null)
+		{
+			callback?.Invoke(false);
+			return;
+		}
+		// Process in-app purchase via ShopSystem
+		callback?.Invoke(false);
 	}
 
 	protected void OnPurchaseSuccess(Action callback)
 	{
+		if (ItemShopEndlessList == null || ItemShopEndlessList.Count == 0)
+		{
+			callback?.Invoke();
+			return;
+		}
+		IsAnimating = true;
+		OnPlayAnimationEvent?.Invoke(true);
+		StartCoroutine(AnimateItemShift());
+		// Delay callback after animation
+		Observable.Timer(TimeSpan.FromSeconds(AnimationDuration + AnimationDelay * ItemShopEndlessList.Count))
+			.Subscribe(_ =>
+			{
+				IsAnimating = false;
+				OnPlayAnimationEvent?.Invoke(false);
+				callback?.Invoke();
+			}).AddTo(Disposables);
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateItemShift_003Ed__24))]
 	private IEnumerator AnimateItemShift()
 	{
-		yield break;
+		if (ItemShopEndlessList == null || ItemShopEndlessList.Count == 0) yield break;
+		// Scale out the first item (purchased)
+		var firstItem = ItemShopEndlessList[0];
+		yield return StartCoroutine(AnimateItemScaleOut(firstItem));
+		// Shift remaining items
+		yield return StartCoroutine(AnimateSnakeShift());
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateItemScaleOut_003Ed__25))]
 	private IEnumerator AnimateItemScaleOut(ItemShopEndless item)
 	{
-		yield break;
+		if (item == null) yield break;
+		Vector3 startScale = item.transform.localScale;
+		Vector3 endScale = Vector3.zero;
+		float elapsedTime = 0f;
+		while (elapsedTime < ScaleAnimationDuration)
+		{
+			elapsedTime += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsedTime / ScaleAnimationDuration);
+			item.transform.localScale = Vector3.Lerp(startScale, endScale, t);
+			yield return null;
+		}
+		item.transform.localScale = endScale;
+		item.gameObject.SetActive(false);
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateSnakeShift_003Ed__26))]
 	private IEnumerator AnimateSnakeShift()
 	{
-		yield break;
+		int totalItems = ItemShopEndlessList != null ? ItemShopEndlessList.Count : 0;
+		for (int i = 1; i < totalItems; i++)
+		{
+			if (ItemShopEndlessList[i] == null) continue;
+			Vector3 targetPos = ItemShopEndlessPositionList[i - 1];
+			StartCoroutine(MoveItemToPositionWithOvershoot(ItemShopEndlessList[i], targetPos));
+			yield return new WaitForSeconds(AnimationDelay);
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CMoveItemToPositionWithOvershoot_003Ed__27))]
 	private IEnumerator MoveItemToPositionWithOvershoot(ItemShopEndless item, Vector3 targetPosition)
 	{
-		yield break;
+		if (item == null) yield break;
+		Vector3 startPosition = item.transform.localPosition;
+		float elapsedTime = 0f;
+		Vector3 overshootPosition = targetPosition + (targetPosition - startPosition).normalized * OvershootStrength;
+
+		// Move to overshoot position
+		while (elapsedTime < AnimationDuration)
+		{
+			elapsedTime += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsedTime / AnimationDuration);
+			item.transform.localPosition = Vector3.Lerp(startPosition, overshootPosition, t);
+			yield return null;
+		}
+
+		// Snap back to target
+		elapsedTime = 0f;
+		while (elapsedTime < OvershootDuration)
+		{
+			elapsedTime += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsedTime / OvershootDuration);
+			item.transform.localPosition = Vector3.Lerp(overshootPosition, targetPosition, t);
+			yield return null;
+		}
+		item.transform.localPosition = targetPosition;
 	}
 
 	private void UpdateItemList()
 	{
+		if (ItemShopEndlessList == null) return;
+		// Update each item slot with reward data
+		for (int i = 0; i < ItemShopEndlessList.Count; i++)
+		{
+			if (ItemShopEndlessList[i] == null) continue;
+			ItemShopEndlessList[i].gameObject.SetActive(true);
+			ItemShopEndlessList[i].transform.localScale = Vector3.one;
+			if (i < ItemShopEndlessPositionList.Count)
+				ItemShopEndlessList[i].transform.localPosition = ItemShopEndlessPositionList[i];
+		}
 	}
 
 	private void UpdateRedDot()
 	{
+		// Check if any items are available for purchase and show red dot
 	}
 }

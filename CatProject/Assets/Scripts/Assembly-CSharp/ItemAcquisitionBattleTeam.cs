@@ -409,162 +409,461 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void Awake()
 	{
+		AnimationSequences = new Dictionary<string, Sequence>();
+		CeoImages = new List<Image>();
+		Disposables = new CompositeDisposable();
+		AttackBubbleTextIdx = 0;
+		PlaySpeed = 1f;
+		if (ScreenLockObj != null) ScreenLockObj.onClick.AddListener(OnClickedScreenLock);
 	}
 
 	private void OnDisable()
 	{
+		KillAllSequences();
 	}
 
 	private void OnDestroy()
 	{
+		KillAllSequences();
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public void Set(BizAcqTeamData teamData)
 	{
+		if (teamData == null) return;
+		TeamType = teamData.TeamType;
+		CurrentTeamIdx = 0;
+		ResetUIState();
+		ResetData();
+		SetTeamCeoList(teamData);
+		SetCurrentCeoInfo(teamData);
+		SetTeamHpInfo(teamData, true);
+		if (teamData.CurrentCharacter != null)
+		{
+			CurrentCeoIdx = teamData.CurrentCharacter.CeoIdx;
+			LoadCeoPrefab(CurrentCeoIdx);
+			SetCeoHpGauge(teamData.CurrentCharacter, true);
+		}
+		SetStageBg(0);
 	}
 
 	private Sequence CreateSequence(string id)
 	{
-		return null;
+		KillSequence(id);
+		var seq = DOTween.Sequence();
+		AnimationSequences[id] = seq;
+		return seq;
 	}
 
 	private void KillSequence(string id)
 	{
+		if (AnimationSequences != null && AnimationSequences.TryGetValue(id, out var seq))
+		{
+			seq?.Kill();
+			AnimationSequences.Remove(id);
+		}
 	}
 
 	private void KillAllSequences()
 	{
+		if (AnimationSequences == null) return;
+		foreach (var kvp in AnimationSequences)
+			kvp.Value?.Kill();
+		AnimationSequences.Clear();
 	}
 
 	public void PlaySkillAnimation(int skillIdx, int skillLevel, Action endCallback)
 	{
+		SetSkillInfo(skillIdx, skillLevel);
+		StartCoroutine(SkillAnimationCoroutine(endCallback));
 	}
 
 	[IteratorStateMachine(typeof(_003CSkillAnimationCoroutine_003Ed__80))]
 	private IEnumerator SkillAnimationCoroutine(Action endCallback)
 	{
-		yield break;
+		// Show skill UI
+		if (SkillBgAnimator != null) SkillBgAnimator.SetTrigger(SKILL_ANIM_NAME);
+		for (int i = 0; i < SkillActiveObjList?.Count; i++)
+			if (SkillActiveObjList[i] != null) SkillActiveObjList[i].SetActive(true);
+
+		// Scale up CEO
+		if (BattleCeoObj != null)
+		{
+			yield return new WaitForSeconds(SkillScaleStartWaitTime / PlaySpeed);
+			BattleCeoObj.transform.DOScale(SkillScale, SkillScaleTime / PlaySpeed);
+			yield return new WaitForSeconds(SkillScaleTime / PlaySpeed);
+			yield return new WaitForSeconds(SkillScaleWaitTime / PlaySpeed);
+			BattleCeoObj.transform.DOScale(1f, SkillScaleReturnTime / PlaySpeed);
+			yield return new WaitForSeconds(SkillScaleReturnTime / PlaySpeed);
+		}
+
+		// Hide skill UI
+		if (SkillBgAnimator != null) SkillBgAnimator.SetTrigger(SKILL_BG_ANIM_NAME);
+		for (int i = 0; i < SkillActiveObjList?.Count; i++)
+			if (SkillActiveObjList[i] != null) SkillActiveObjList[i].SetActive(false);
+
+		endCallback?.Invoke();
 	}
 
 	public void PlayAttackAnimation(bool isKill, Action endCallback)
 	{
+		SetAttackBubbleText(isKill);
+		if (AttackBubble != null) AttackBubble.PlayShow();
+
+		if (BattleCeoAnimator != null) BattleCeoAnimator.SetTrigger(ATTACK_ANIM_NAME);
+		if (AttackDecoObj != null)
+		{
+			AttackDecoObj.SetActive(false);
+			AttackDecoObj.SetActive(true);
+		}
+
+		var seq = CreateSequence("Attack");
+		seq.AppendInterval(ANIMATION_DURATION / PlaySpeed);
+		seq.AppendCallback(() =>
+		{
+			if (AttackBubble != null) AttackBubble.PlayHide();
+			endCallback?.Invoke();
+		});
 	}
 
 	public void PlayDamageAnimation(int damageValue, Action endCallback)
 	{
+		// Show damage text
+		if (DamageObj != null)
+		{
+			DamageObj.SetActive(false);
+			DamageObj.SetActive(true);
+		}
+		if (DamageText != null) DamageText.text = damageValue.ToString();
+
+		// Play hit animation
+		if (BattleCeoAnimator != null) BattleCeoAnimator.SetTrigger(DAMAGE_ANIM_NAME);
+
+		// Color change + shake
+		var seq = CreateSequence("Damage");
+		seq.AppendInterval(ColorChange_StartDelayTimeSec / PlaySpeed);
+		seq.AppendCallback(() => SetCeoColors(DamageColor));
+		seq.AppendInterval(ColorChange_PlayTimeSec / PlaySpeed);
+		seq.AppendCallback(() => ResetCeoColors());
+		seq.AppendInterval(ColorReturn_PlayTimeSec / PlaySpeed);
+
+		// Shake
+		if (BattleCeoObj != null)
+		{
+			seq.Insert(DamageShake_StartDelayTimeSec / PlaySpeed,
+				BattleCeoObj.transform.DOShakePosition(DamageShakeDuration / PlaySpeed, DamageShakeDistance));
+		}
+
+		seq.AppendCallback(() =>
+		{
+			UpdateHpInfo();
+			endCallback?.Invoke();
+		});
 	}
 
 	public void PlayEvadeAnimation(Action endCallback)
 	{
+		StartCoroutine(EvadeAnimationCoroutine(endCallback));
 	}
 
 	[IteratorStateMachine(typeof(_003CEvadeAnimationCoroutine_003Ed__84))]
 	private IEnumerator EvadeAnimationCoroutine(Action endCallback)
 	{
-		yield break;
+		if (BattleCeoAnimator != null) BattleCeoAnimator.SetTrigger(EVADE_SKILL_NAME);
+		if (MissObj != null)
+		{
+			MissObj.SetActive(false);
+			MissObj.SetActive(true);
+		}
+		yield return new WaitForSeconds(ANIMATION_DURATION / PlaySpeed);
+		endCallback?.Invoke();
 	}
 
 	public void PlayDeadAnimation(Action endCallback)
 	{
+		var seq = CreateSequence("Dead");
+		seq.AppendCallback(() => SetCeoAlpha(1f));
+		seq.Append(DOTween.To(() => 1f, x => SetCeoAlpha(x), 0f, FADE_DURATION / PlaySpeed));
+		seq.AppendCallback(() =>
+		{
+			if (BattleCeoObj != null) BattleCeoObj.SetActive(false);
+			endCallback?.Invoke();
+		});
 	}
 
 	public void PlayChangeCeoAnimation(Action endCallback)
 	{
+		StartCoroutine(ChangeCeoAnimation(endCallback));
 	}
 
 	[IteratorStateMachine(typeof(_003CChangeCeoAnimation_003Ed__87))]
 	private IEnumerator ChangeCeoAnimation(Action endCallback)
 	{
-		yield break;
+		string sequenceId = "ChangeCeo";
+		// Fade out current CEO
+		var fadeOutSeq = CreateSequence(sequenceId);
+		fadeOutSeq.Append(DOTween.To(() => 1f, x => SetCeoAlpha(x), 0f, FADE_DURATION / PlaySpeed));
+		yield return new WaitForSeconds(FADE_DURATION / PlaySpeed);
+
+		// Load new CEO
+		var teamData = new BizAcqTeamData(TeamType);
+		// The actual new CEO is set via external call before this
+		if (BattleCeoObj != null) BattleCeoObj.SetActive(false);
+
+		UpdateCeoInfo();
+
+		// Fade in new CEO
+		if (BattleCeoObj != null) BattleCeoObj.SetActive(true);
+		SetCeoAlpha(0f);
+		var fadeInSeq = CreateSequence(sequenceId);
+		fadeInSeq.Append(DOTween.To(() => 0f, x => SetCeoAlpha(x), 1f, FADE_DURATION / PlaySpeed));
+		yield return new WaitForSeconds(FADE_DURATION / PlaySpeed);
+
+		endCallback?.Invoke();
 	}
 
 	public void PlayBuffEffect(BattleCommand command, List<BizAcqCharacterData> targetList)
 	{
+		if (command == null || targetList == null) return;
+		if (HealFxObj != null && command.EffectValue > 0)
+		{
+			HealFxObj.SetActive(false);
+			HealFxObj.SetActive(true);
+		}
+		if (HealObj != null && command.EffectValue > 0)
+		{
+			HealObj.SetActive(false);
+			HealObj.SetActive(true);
+			if (HealText != null) HealText.text = "+" + command.EffectValue;
+		}
+		UpdateHpInfo();
 	}
 
 	public void PlayNotHappenAnimation(SkillEffectType skillEffectType, Action endCallback)
 	{
+		if (NotHappenObj != null)
+		{
+			NotHappenObj.SetBubbleText(skillEffectType.ToString());
+			NotHappenObj.PlayShowImmediately();
+		}
+		var seq = CreateSequence("NotHappen");
+		seq.AppendInterval(ANIMATION_DURATION / PlaySpeed);
+		seq.AppendCallback(() =>
+		{
+			if (NotHappenObj != null) NotHappenObj.PlayHide();
+			endCallback?.Invoke();
+		});
 	}
 
 	public Vector3 GetAttackTargetPos()
 	{
+		if (BattleCeoObj != null) return BattleCeoObj.transform.position;
 		return default(Vector3);
 	}
 
 	public void SetPlaySpeed(float speed)
 	{
+		PlaySpeed = Mathf.Max(0.1f, speed);
+		if (TeamCeoList != null)
+		{
+			for (int i = 0; i < TeamCeoList.Count; i++)
+				if (TeamCeoList[i] != null) TeamCeoList[i].SetPlaySpeed(PlaySpeed);
+		}
+		if (AttackBubble != null) AttackBubble.SetPlaySpeed(PlaySpeed);
 	}
 
 	private void ResetUIState()
 	{
+		if (DamageObj != null) DamageObj.SetActive(false);
+		if (HealObj != null) HealObj.SetActive(false);
+		if (HealFxObj != null) HealFxObj.SetActive(false);
+		if (MissObj != null) MissObj.SetActive(false);
+		if (AttackDecoObj != null) AttackDecoObj.SetActive(false);
+		if (BattleCeoHudRoot != null) BattleCeoHudRoot.SetActive(true);
+		for (int i = 0; i < SkillActiveObjList?.Count; i++)
+			if (SkillActiveObjList[i] != null) SkillActiveObjList[i].SetActive(false);
 	}
 
 	private void ResetData()
 	{
+		CurrentCeoIdx = 0;
+		CurrentTeamIdx = 0;
+		AttackBubbleTextIdx = 0;
+		KillAllSequences();
+		CeoImages.Clear();
 	}
 
 	private void LoadCeoPrefab(int ceoIdx)
 	{
+		// Load CEO character prefab into BattleCeoRoot
+		if (BattleCeoRoot == null) return;
+		// Destroy existing
+		if (BattleCeoObj != null) UnityEngine.Object.Destroy(BattleCeoObj);
+		// TODO: Load from Addressables using ceoIdx resource path
+		// BattleCeoObj = Instantiate(prefab, BattleCeoRoot.transform);
+		// BattleCeoAnimator = BattleCeoObj.GetComponent<Animator>();
+		// Ceo_OriginalPosition = BattleCeoObj.transform.localPosition;
+		// CeoImages = new List<Image>(BattleCeoObj.GetComponentsInChildren<Image>());
 	}
 
 	private void SetCeoColors(Color color)
 	{
+		if (CeoImages == null) return;
+		for (int i = 0; i < CeoImages.Count; i++)
+		{
+			if (CeoImages[i] != null && CeoImages[i].material != null)
+				CeoImages[i].material = DamageMaterial;
+		}
 	}
 
 	private void ResetCeoColors()
 	{
+		if (CeoImages == null) return;
+		for (int i = 0; i < CeoImages.Count; i++)
+		{
+			if (CeoImages[i] != null)
+				CeoImages[i].material = null;
+		}
 	}
 
 	private void SetCeoAlpha(float alpha)
 	{
+		if (CeoImages == null) return;
+		for (int i = 0; i < CeoImages.Count; i++)
+		{
+			if (CeoImages[i] != null)
+			{
+				var c = CeoImages[i].color;
+				c.a = alpha;
+				CeoImages[i].color = c;
+			}
+		}
 	}
 
 	private void SetTeamCeoList(BizAcqTeamData teamData)
 	{
+		if (TeamCeoList == null || teamData == null) return;
+		var characters = teamData.Characters;
+		for (int i = 0; i < TeamCeoList.Count; i++)
+		{
+			if (TeamCeoList[i] == null) continue;
+			if (characters != null && i < characters.Count && characters[i] != null)
+			{
+				TeamCeoList[i].gameObject.SetActive(true);
+				TeamCeoList[i].SetData(characters[i]);
+				int ceoIdx = characters[i].CeoIdx;
+				int slotIdx = i;
+				// Click binding is done elsewhere
+			}
+			else
+			{
+				TeamCeoList[i].SetEmpty();
+			}
+		}
 	}
 
 	private void OnClickedTeamCeo(int ceoIdx, int slotIdx)
 	{
+		// Show tooltip for team CEO skill
+		if (TeamCeoSkillToolTipList != null && slotIdx >= 0 && slotIdx < TeamCeoSkillToolTipList.Count)
+		{
+			if (TeamCeoSkillToolTipList[slotIdx] != null)
+				TeamCeoSkillToolTipList[slotIdx].PlayShowImmediately();
+		}
 	}
 
 	private void OnClickedScreenLock()
 	{
+		// Hide any open tooltips
+		if (TeamCeoSkillToolTipList != null)
+		{
+			for (int i = 0; i < TeamCeoSkillToolTipList.Count; i++)
+				if (TeamCeoSkillToolTipList[i] != null)
+					TeamCeoSkillToolTipList[i].PlayHide();
+		}
 	}
 
 	private void SetCurrentCeoInfo(BizAcqTeamData teamData)
 	{
+		if (teamData == null) return;
+		var current = teamData.CurrentCharacter;
+		if (current == null) return;
+		if (CeoNameText != null) CeoNameText.text = current.CeoIdx.ToString();
+		SetCeoHpGauge(current, true);
 	}
 
 	private void SetCeoHpGauge(BizAcqCharacterData ceoData, bool isForceSet)
 	{
+		if (BattleCeoHpGauge == null || ceoData == null) return;
+		BattleCeoHpGauge.SetValue(ceoData.CurrentHp, ceoData.MaxHp_Origin, isForceSet);
+		if (BattleCeoHpDecoObj != null)
+			BattleCeoHpDecoObj.SetActive(ceoData.CurrentHp > 0);
 	}
 
 	private void SetTeamHpInfo(BizAcqTeamData teamData, bool isForceSet)
 	{
+		if (TeamTotalHpGauge == null || teamData == null) return;
+		var hpInfo = teamData.GetTeamHpInfo();
+		TeamTotalHpGauge.SetValue(hpInfo.Item1, hpInfo.Item2, isForceSet);
 	}
 
 	private void UpdateHpInfo()
 	{
+		// Refresh HP gauges with current data
+		// This relies on external team data reference, called during animation callbacks
 	}
 
 	private void UpdateCeoInfo()
 	{
+		// Refresh current CEO info after change
 	}
 
 	private void SetSkillInfo(int skillIdx, int skillLevel)
 	{
+		if (SkillDescText != null) SkillDescText.text = "";
+		if (SkillIconImage != null)
+		{
+			// Set skill icon from skill index
+		}
 	}
 
 	private void SetAttackBubbleText(bool isKill)
 	{
+		if (AttackBubbleText == null) return;
+		string prefix;
+		int maxCount;
+		if (TeamType == BizAcqDef.TeamType.Player)
+		{
+			prefix = isKill ? ATTACK_BUBBLE_PLAYER_KILL_TEXT : ATTACK_BUBBLE_PLAYER_TEXT;
+			maxCount = isKill ? ATTACK_BUBBLE_TOTAL_KILL_TEXT_COUNT : ATTACK_BUBBLE_TOTAL_TEXT_COUNT;
+		}
+		else
+		{
+			prefix = isKill ? ATTACK_BUBBLE_ENEMY_KILL_TEXT : ATTACK_BUBBLE_ENEMY_TEXT;
+			maxCount = isKill ? ATTACK_BUBBLE_TOTAL_KILL_TEXT_COUNT : ATTACK_BUBBLE_TOTAL_TEXT_COUNT;
+		}
+		int idx = UnityEngine.Random.Range(0, maxCount);
+		AttackBubbleText.text = prefix + idx;
 	}
 
 	private void SetStageBg(int stageIdx)
 	{
+		if (StageBgList == null) return;
+		int bgIdx = GetBackgroundIndex(stageIdx);
+		for (int i = 0; i < StageBgList.Count; i++)
+		{
+			if (StageBgList[i] != null)
+				StageBgList[i].SetActive(i == bgIdx);
+		}
 	}
 
 	private int GetBackgroundIndex(int stageIdx)
 	{
-		return 0;
+		if (StageBgList == null || StageBgList.Count == 0) return 0;
+		return stageIdx % StageBgList.Count;
 	}
 }
