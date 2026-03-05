@@ -75,62 +75,122 @@ public class ItemPassReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (GetBtn != null) GetBtn.onClick.AddListener(OnClickGetBtn);
 	}
 
 	public void SetPassReward(int order, bool isPremium)
 	{
+		PassType = E_PassType.LevelPass;
+		Order = order;
+		bPremium = isPremium;
+		InitGetObj();
 	}
 
 	public void UpdateStatus()
 	{
+		bool isGet = false; // Check from user data
+		UpdateGetState(isGet, false);
+		UpdateLockState(false);
 	}
 
 	public void SetAuctionPassReward(int _event, int _order, bool isPremium)
 	{
+		PassType = E_PassType.AuctionPass;
+		EventIdx = _event;
+		Order = _order;
+		bPremium = isPremium;
+		InitGetObj();
 	}
 
 	public void UpdateAuctionStatus()
 	{
+		bool isGet = false;
+		UpdateGetState(isGet, false);
+		UpdateLockState(false);
 	}
 
 	public void SetBizAcqPassReward(int passIdx, bool isPremium, Action<int, bool> onClickGetBtnAction)
 	{
+		PassType = E_PassType.BizAcqPass;
+		Order = passIdx;
+		bPremium = isPremium;
+		OnClickGetBtnAction = onClickGetBtnAction;
+		InitGetObj();
 	}
 
 	public void UpdateBizAcqStatus(bool bPlayAni)
 	{
+		bool isGet = false;
+		UpdateGetState(isGet, bPlayAni);
+		UpdateLockState(bPlayAni);
 	}
 
 	public void SetSeasonalPassReward(int seasonInfoIdx, int rewardGroupIdx, int rewardTableIdx, bool isPremium, Action<int, bool> onClickGetBtnAction)
 	{
+		PassType = E_PassType.SeasonalPass;
+		EventIdx = seasonInfoIdx;
+		GroupIdx = rewardGroupIdx;
+		Order = rewardTableIdx;
+		bPremium = isPremium;
+		OnClickGetBtnAction = onClickGetBtnAction;
+		InitGetObj();
 	}
 
 	public void UpdateSeasonalStatus(bool bPlayAni)
 	{
+		bool isGet = false;
+		UpdateGetState(isGet, bPlayAni);
+		UpdateLockState(bPlayAni);
 	}
 
 	public void SetSpecialReward(bool isSpecial)
 	{
+		if (BgNormalObj != null) BgNormalObj.SetActive(!isSpecial);
+		if (BgSpecialObj != null) BgSpecialObj.SetActive(isSpecial);
 	}
 
 	private void InitGetObj()
 	{
+		if (GetObj != null) GetObj.SetActive(false);
+		if (EnableGetObj != null) EnableGetObj.SetActive(false);
+		if (LockObj != null) LockObj.SetActive(false);
+		if (AdsObj != null) AdsObj.SetActive(false);
+		IsClaimable = false;
+		IsAdsReward = false;
 	}
 
 	private void UpdateGetState(bool isGet, bool bPlayAni)
 	{
+		if (GetObj != null) GetObj.SetActive(isGet);
+		if (bPlayAni && isGet && GetAnimator != null)
+			GetAnimator.SetTrigger("Play");
+
+		bool canClaim = !isGet && IsPremiumActive();
+		IsClaimable = canClaim;
+		if (EnableGetObj != null) EnableGetObj.SetActive(canClaim);
 	}
 
 	private void UpdateLockState(bool bPlayAni)
 	{
+		bool isLocked = bPremium && !bActivePremium;
+		if (LockObj != null) LockObj.SetActive(isLocked);
+		if (bPlayAni && !isLocked && LockAnimator != null)
+			LockAnimator.SetTrigger("Unlock");
 	}
 
 	private bool IsPremiumActive()
 	{
-		return false;
+		if (!bPremium) return true;
+		return bActivePremium;
 	}
 
 	private void OnClickGetBtn()
 	{
+		if (OnClickGetBtnAction != null)
+		{
+			OnClickGetBtnAction.Invoke(Order, bPremium);
+			return;
+		}
+		// Default claim logic
 	}
 }
