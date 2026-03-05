@@ -223,82 +223,170 @@ public class PageOfficeManagement : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		CurTab = Tab.None;
+
+		if (BoostTab != null) BoostTab.onValueChanged.AddListener((on) => { if (on) OnClickChangeTab(Tab.Boost); });
+		if (CeoTab != null) CeoTab.onValueChanged.AddListener((on) => { if (on) OnClickChangeTab(Tab.Ceo); });
+		if (ManagementTab != null) ManagementTab.onValueChanged.AddListener((on) => { if (on) OnClickChangeTab(Tab.Management); });
+		if (StrikeInfoBtn != null) StrikeInfoBtn.onClick.AddListener(OnClickStrikeInfo);
+		if (StrikeInfoCloseBtn != null) StrikeInfoCloseBtn.onClick.AddListener(OnClickStrikeInfoClose);
+		if (CompanyLvUpAtOnceToggle != null) CompanyLvUpAtOnceToggle.setToggleListener(OnChangeCompanyLvUpAtOnceToggle);
 	}
 
 	public override void OnShowBefore()
 	{
+		SetRentalFee();
+		UpdateStrikeMessage();
 	}
 
 	public void Init(E_OpenType openType, Tab tab = Tab.None, int focusOfficeIdx = -1)
 	{
+		OpenType = openType;
+		if (tab == Tab.None) tab = Tab.Boost;
+		OnClickChangeTab(tab, true);
+		if (focusOfficeIdx >= 0)
+		{
+			FocusOfficeSlot = null;
+			if (tab == Tab.Ceo) SetCeo(focusOfficeIdx);
+			else if (tab == Tab.Management) SetManagement(focusOfficeIdx);
+		}
 	}
 
 	private void SetRentalFee()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Calculate and display total rental fee
+		if (RevenueTab != null)
+		{
+			// Set revenue tab data
+		}
+		if (BoosterOnObj != null) BoosterOnObj.SetActive(false);
 	}
 
 	private void SetCeo(int focusOfficeIdx)
 	{
+		UpdateCeoList();
+		if (focusOfficeIdx >= 0)
+		{
+			// Set focus slot and scroll to it
+			StartCoroutine(FocusOffsetSlot());
+		}
 	}
 
 	private void UpdateCeoList()
 	{
+		// Populate CEO list in the scroll view
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateCeoStrikeStatus();
 	}
 
 	private void UpdateStrikeMessage()
 	{
+		if (InStrikeTimeObj != null) InStrikeTimeObj.SetActive(false);
+		if (EnableStrikeObj != null) EnableStrikeObj.SetActive(false);
+		// Check if strike is active and show relevant UI
 	}
 
 	private void UpdateCeoStrikeStatus()
 	{
+		// Update strike status indicators on CEO items
 	}
 
 	private void SetManagement(int focusOfficeIdx)
 	{
+		// Populate management list
+		if (focusOfficeIdx >= 0)
+		{
+			StartCoroutine(FocusOffsetSlot());
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusOffsetSlot_003Ed__42))]
 	private IEnumerator FocusOffsetSlot()
 	{
-		yield break;
+		yield return null;
+		// Scroll to the focused office slot
+		if (FocusOfficeSlot != null && CeoScroll != null)
+		{
+			// Calculate normalized position and set scroll
+		}
 	}
 
 	private void OnScrolled(Vector2 value)
 	{
+		// Handle scroll events (e.g., lazy loading)
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__44))]
 	private IEnumerator CheckInput()
 	{
-		yield break;
+		while (true)
+		{
+			yield return null;
+			// Check for input events while page is active
+		}
 	}
 
 	private void OnClickChangeTab(Tab tab, bool isInit = false)
 	{
+		CurTab = tab;
+		if (BoostRoot != null) BoostRoot.SetActive(tab == Tab.Boost);
+		if (CeoRoot != null) CeoRoot.SetActive(tab == Tab.Ceo);
+		if (ManagementRoot != null) ManagementRoot.SetActive(tab == Tab.Management);
+
+		if (!isInit)
+		{
+			if (tab == Tab.Ceo) UpdateCeoList();
+		}
 	}
 
 	private void OnClickStrikeInfo()
 	{
+		if (StrikeInfoBubbleObj != null) StrikeInfoBubbleObj.SetActive(true);
 	}
 
 	private void OnClickStrikeInfoClose()
 	{
+		if (StrikeInfoBubbleObj != null) StrikeInfoBubbleObj.SetActive(false);
 	}
 
 	private void OnChangeCompanyLvUpAtOnceToggle(bool isOn)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Save company level up at once preference
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = new CompositeDisposable();
+		}
+		if (InputCheckCoroutine != null)
+		{
+			StopCoroutine(InputCheckCoroutine);
+			InputCheckCoroutine = null;
+		}
 	}
 
 	public GameObject GetRentalFeeBoostBtn()
 	{
+		if (RevenueTab != null) return RevenueTab.gameObject;
 		return null;
 	}
 }
