@@ -58,7 +58,7 @@ public class SeasonalWorkshopData : SeasonalBuildingData
 	{
 		setOpenFacility();
 		if (WorkshopState != null)
-			WorkshopState.Value = E_WorkshopState.Idle;
+			WorkshopState.Value = E_WorkshopState.WorkOn;
 	}
 
 	public override void OnUpdateFacilityLevel()

@@ -67,7 +67,7 @@ public class ItemBoosterGraph : MonoBehaviour
 	}
 
 	[SerializeField]
-	private LineRenderer LineGraph;
+	private UILineRenderer LineGraph;
 
 	[SerializeField]
 	private RectTransform DotObjectTr;

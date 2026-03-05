@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasRenderer))]
-public class LineRenderer : MaskableGraphic
+public class UILineRenderer : MaskableGraphic
 {
 	[Header("Line Settings")]
 	public List<Vector2> Points;

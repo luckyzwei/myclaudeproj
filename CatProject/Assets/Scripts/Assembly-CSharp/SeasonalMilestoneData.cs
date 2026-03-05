@@ -45,7 +45,7 @@ public class SeasonalMilestoneData
 
 	public void UpdateData(Treeplla.Data.SeasonalMilestoneData milestoneData)
 	{
-		if (milestoneData == null) return;
+		// milestoneData is a FlatBuffer struct
 		// Update from FlatBuffer data
 		bool bMax;
 		int nextIdx = CalcNextRewardListIndex(out bMax);

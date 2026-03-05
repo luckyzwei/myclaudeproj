@@ -104,7 +104,7 @@ public class HUDBase : HUDAniBase
 	{
 		if (CurrencyHud != null)
 		{
-			var trans = CurrencyHud.GetTrans(Config.CurrencyID.Level);
+			var trans = CurrencyHud.GetTrans(Config.CurrencyID.Gold);
 			if (trans != null) return trans.position;
 		}
 		return default(Vector3);

@@ -28,7 +28,8 @@ public static class Config
 		Coin = 7,
 		Star = 8,
 		Medal = 9,
-		Token = 10
+		Token = 10,
+		Permission = 11
 	}
 
 	public enum CurrencyGameType
@@ -165,7 +166,8 @@ public static class Config
 
 	public enum RecordCountKeys
 	{
-		None = 0
+		None = 0,
+		DailyAdWatchCount = 1
 	}
 
 	public enum OfficeType

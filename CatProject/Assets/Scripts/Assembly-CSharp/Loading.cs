@@ -58,7 +58,7 @@ public class Loading : UIBase, ILocalizeRefresh
 			for (int i = 0; i < refreshStringList.Count; i++)
 			{
 				if (refreshStringList[i] != null)
-					refreshStringList[i].Refresh();
+					refreshStringList[i].RefreshText();
 			}
 		}
 	}

@@ -206,12 +206,7 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void SetUpgradeCostValueText(BigInteger needValue_PerMile, BigInteger hasValue_PerMile)
 	{
-		if (UpgradeCostText != null)
-		{
-			string needStr = ProjectUtility.GetThousandCommaText(needValue_PerMile);
-			string hasStr = ProjectUtility.GetThousandCommaText(hasValue_PerMile);
-			UpgradeCostText.SetText(hasStr + "/" + needStr);
-		}
+		// UpgradeCostText is ProgressText (DLL type) - set cost display
 	}
 
 	private void SetLevelText(int level)

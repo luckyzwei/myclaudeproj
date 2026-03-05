@@ -124,7 +124,7 @@ public class ItemAttendance : MonoBehaviour
 		if (DayText != null)
 			DayText.text = "Day " + (attData.DayIndex + 1);
 		if (RewardItemCountText != null && attData.RewardItemData != null)
-			RewardItemCountText.text = REWARD_COUNT_PREFIX + attData.RewardItemData.RewardValue;
+			RewardItemCountText.text = REWARD_COUNT_PREFIX + attData.RewardItemData.rewardValue;
 	}
 
 	private void UpdateRewardIcon(AttendanceData attData)

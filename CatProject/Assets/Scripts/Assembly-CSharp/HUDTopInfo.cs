@@ -196,7 +196,7 @@ public class HUDTopInfo : MonoBehaviour
 		var rewardType = (Config.RewardType)topInfoData.RewardType;
 		string valueText = "0";
 
-		var userDataSystem = Singleton<GameRoot>.Instance.UserDataSystem;
+		var userDataSystem = Singleton<GameRoot>.Instance.UserData;
 		if (rewardType == Config.RewardType.Currency)
 		{
 			var currencyIdx = (Config.CurrencyID)topInfoData.RewardIdx;
@@ -313,7 +313,7 @@ public class HUDTopInfo : MonoBehaviour
 	{
 		RemoveRewardUpdateDisposable(index);
 
-		var userDataSystem = Singleton<GameRoot>.Instance.UserDataSystem;
+		var userDataSystem = Singleton<GameRoot>.Instance.UserData;
 		IDisposable disposable = null;
 
 		if (currencyIdx == Config.CurrencyID.Gold)
@@ -346,7 +346,7 @@ public class HUDTopInfo : MonoBehaviour
 	{
 		RemoveRewardUpdateDisposable(index);
 
-		var userDataSystem = Singleton<GameRoot>.Instance.UserDataSystem;
+		var userDataSystem = Singleton<GameRoot>.Instance.UserData;
 		var itemDataList = userDataSystem.ItemData;
 		if (itemDataList == null)
 			return;
