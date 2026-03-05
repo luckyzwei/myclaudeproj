@@ -2,25 +2,28 @@ public class PlayTimeSecMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
+		// Subscribe to play time second counter from TimeSystem
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? string.Empty;
 	}
 
 	public override string GetMissionProgressText_CurrentValue()
 	{
-		return null;
+		return CurrentValue != null ? CurrentValue.Value.ToString() : "0";
 	}
 
 	public override string GetMissionProgressText_TargetValue()
 	{
-		return null;
+		return TargetValue.ToString();
 	}
 
 	public override string GetMissionProgressText()
 	{
-		return null;
+		string cur = GetMissionProgressText_CurrentValue();
+		string target = GetMissionProgressText_TargetValue();
+		return cur + "/" + target;
 	}
 }

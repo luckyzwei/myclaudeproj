@@ -109,35 +109,72 @@ public class ItemCommonManagerCard : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ManagerPrefabRoot != null)
+			ManagerPrefabRootPosition_Origin = ManagerPrefabRoot.transform.localPosition;
+		ManagerPrefabRootPosition_Outer = ManagerPrefabRootPosition_Origin + Vector3.right * 1000f;
 	}
 
 	public void Set(int managerIdx)
 	{
+		ManagerIdx = managerIdx;
+		bool usePrefab = ManagerPrefabRoot != null;
+		SetManagerInfo(managerIdx, !usePrefab);
+		if (usePrefab)
+			LoadManagerPrefab(managerIdx);
 	}
 
 	public void SetAnimateManager(int managerIdx, Action endCallback)
 	{
+		ManagerIdx = managerIdx;
+		LoadEndCallback = endCallback;
+		SetManagerInfo(managerIdx, false);
+		if (ManagerPrefabRoot != null)
+			LoadManagerPrefab(managerIdx);
 	}
 
 	public void Reset()
 	{
+		ManagerIdx = 0;
+		if (ManagerName != null) ManagerName.text = "";
+		if (ManagerImg != null) ManagerImg.gameObject.SetActive(false);
+		if (LoadedManagerPrefab != null)
+		{
+			Destroy(LoadedManagerPrefab);
+			LoadedManagerPrefab = null;
+		}
 	}
 
 	private void SetManagerInfo(int managerIdx, bool setImg)
 	{
+		// Set manager name, grade, frame based on managerIdx data
+		if (hireRoot != null) hireRoot.SetActive(false);
+		if (RegionRoot != null) RegionRoot.SetActive(false);
 	}
 
 	public void UpdateManagerHireInfo()
 	{
+		// Update hired office/region info display
+		if (hireRoot != null) hireRoot.SetActive(ManagerIdx > 0);
 	}
 
 	private void LoadManagerPrefab(int managerIdx)
 	{
+		if (LoadedManagerPrefab != null)
+		{
+			Destroy(LoadedManagerPrefab);
+			LoadedManagerPrefab = null;
+		}
+		// Load manager prefab async and parent to ManagerPrefabRoot
+		StartCoroutine(PrefabActiveNextFrame());
 	}
 
 	[IteratorStateMachine(typeof(_003CPrefabActiveNextFrame_003Ed__23))]
 	private IEnumerator PrefabActiveNextFrame()
 	{
-		yield break;
+		yield return null;
+		if (ManagerPrefabRoot != null)
+			ManagerPrefabRoot.transform.localPosition = ManagerPrefabRootPosition_Origin;
+		LoadEndCallback?.Invoke();
+		LoadEndCallback = null;
 	}
 }

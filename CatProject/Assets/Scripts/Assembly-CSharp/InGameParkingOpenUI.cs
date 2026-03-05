@@ -20,21 +20,29 @@ public class InGameParkingOpenUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (Btn != null)
+			Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.House)
 	{
+		base.Init(parent, type);
 	}
 
 	public void SetNeedHouse(int needHouse)
 	{
+		NeedHouseIdx = needHouse;
+		UpdateUI();
 	}
 
 	private void UpdateUI()
 	{
+		if (EnableUpgradeObj != null)
+			EnableUpgradeObj.SetActive(NeedHouseIdx <= 0);
 	}
 
 	private void OnClickBtn()
 	{
+		// Open parking lot management
 	}
 }

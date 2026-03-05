@@ -60,21 +60,30 @@ public class PiggyBankComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		if (InfoBtn != null)
+			InfoBtn.onClick.AddListener(OnClickInfo);
+		if (PurchaseBtn != null)
+			PurchaseBtn.onClick.AddListener(OnClickBuyPiggyBank);
 	}
 
 	public void Init(bool isShop)
 	{
+		bShop = isShop;
 	}
 
 	private void SetPiggySkin(int level)
 	{
+		// Set piggy bank spine skin based on level
 	}
 
 	private void OnClickInfo()
 	{
+		// Show piggy bank info popup
 	}
 
 	private void OnClickBuyPiggyBank()
 	{
+		// Purchase/break piggy bank
+		LevelUpCallback?.Invoke();
 	}
 }

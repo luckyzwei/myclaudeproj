@@ -31,24 +31,19 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CWaitHUD_003Ed__33(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -58,12 +53,20 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Wait for HUD to be available, then call waitCb with target position
+					waitCb?.Invoke(Vector3.zero);
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -118,88 +121,130 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	private CompositeDisposable disposables;
 
-	public Image OneTimeCurrencyIcon { get { return null; } }
+	public Image OneTimeCurrencyIcon { get { return oneTimeCurrencyIcon; } }
 
-	public int CurCurrency { get { return 0; } }
+	public int CurCurrency { get { return curCurrency; } }
 
-	public bool IsActive { get { return false; } }
+	public bool IsActive { get { return isActive; } }
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (oneTimeBtn != null)
+			oneTimeBtn.onClick.AddListener(OnClickOneTime);
+		itemLevelCurrency = new Dictionary<int, int>();
 	}
 
 	private void OnEnable()
 	{
+		UpdateCurrencyCount();
+		UpdateReddot();
 	}
 
 	public void Init()
 	{
+		isActive = false;
+		isMaxLevel = false;
+		curCurrency = 0;
+		UpdateOneTimeHUDIcon();
+		UpdateCurrencyIcon();
+		SubscribeComponent();
 	}
 
 	private void SubscribeComponent()
 	{
+		// Subscribe to one-time event system changes
 	}
 
 	private void UpdateOneTimeHUDIcon()
 	{
+		// Update HUD icon from OneTimeEventSystem
 	}
 
 	private void UpdateCurrencyIcon()
 	{
+		// Update currency icon from OneTimeEventSystem
 	}
 
 	public void UpdateCompanyResetCount()
 	{
+		// Update company reset count display
 	}
 
 	public void UpdateReddot()
 	{
+		if (oneTimeReddot != null)
+			oneTimeReddot.SetActive(false);
 	}
 
 	public void UpdateCurrencyCount()
 	{
+		if (oneTimeCurrencyCount != null)
+			oneTimeCurrencyCount.text = curCurrency.ToString();
 	}
 
 	private void UpdateRemainTime()
 	{
+		// Update remain time text from OneTimeEventSystem.RemainEndTime
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitHUD_003Ed__33))]
 	private IEnumerator WaitHUD(Action<Vector3> waitCb)
 	{
-		yield break;
+		var d = new _003CWaitHUD_003Ed__33(0);
+		d.waitCb = waitCb;
+		return d;
 	}
 
 	public void ShowOneTimeGetEffectHUD(Vector3 startPos)
 	{
+		StartCoroutine(WaitHUD((endPos) =>
+		{
+			ShowOneTimeGetEffectTarget(startPos, endPos);
+		}));
 	}
 
 	public void ShowOneTimeGetEffectTarget(Vector3 startPos, Vector3 endPos, Action endCb = null)
 	{
+		// Show currency fly effect from startPos to endPos
+		endCb?.Invoke();
 	}
 
 	public void ShowOneTimeGetEffectTargetOffice(int count, Vector3 startPos, Vector3 endPos, Action endCb = null)
 	{
+		// Show multiple currency fly effects for office rewards
+		endCb?.Invoke();
 	}
 
 	public int GetOneTimeOfficeCount(int level)
 	{
-		return 0;
+		if (itemLevelCurrency != null && itemLevelCurrency.TryGetValue(level, out int count))
+			return count;
+		return 1;
 	}
 
 	private void OnClickOneTime()
 	{
+		// Open one-time event page
 	}
 
 	private void Unscribe()
 	{
+		if (disposables != null)
+			disposables.Clear();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		Unscribe();
 	}
 }

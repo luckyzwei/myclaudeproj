@@ -26,22 +26,42 @@ public class UIRePositionBase : MonoBehaviour
 
 	private void Start()
 	{
+		myRectTr = GetComponent<RectTransform>();
+		isInit = true;
+		ReAddChildObserve();
+		UpdatePosition();
 	}
 
 	private void OnEnable()
 	{
+		if (isInit)
+			UpdatePosition();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposable != null)
+		{
+			disposable.Dispose();
+			disposable = null;
+		}
 	}
 
 	private void OnDisable()
 	{
+		if (disposable != null)
+		{
+			disposable.Dispose();
+			disposable = null;
+		}
 	}
 
 	private void ReAddChildObserve()
 	{
+		if (disposable != null)
+			disposable.Dispose();
+		disposable = new CompositeDisposable();
+		childCount = transform.childCount;
 	}
 
 	public virtual void UpdatePosition()

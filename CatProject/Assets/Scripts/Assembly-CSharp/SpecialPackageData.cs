@@ -24,6 +24,9 @@ public class SpecialPackageData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		Param = new List<int>();
+		OfferTimeMap = new Dictionary<Config.E_PackageOfferType, DateTime>();
+		Purchase = false;
 	}
 
 	public virtual object Clone()
@@ -35,18 +38,25 @@ public class SpecialPackageData : IReadOnlyData, ICloneable
 
 	public void BuyPackage()
 	{
+		Purchase = true;
 	}
 
 	public void ExpirePackage()
 	{
+		Expire = true;
 	}
 
 	public bool IsOfferTime(Config.E_PackageOfferType offerType, bool emptyIsTrue)
 	{
-		return false;
+		if (OfferTimeMap == null || !OfferTimeMap.ContainsKey(offerType))
+			return emptyIsTrue;
+		return DateTime.UtcNow < OfferTimeMap[offerType];
 	}
 
 	public void UpdateOfferTime(Config.E_PackageOfferType offerType)
 	{
+		if (OfferTimeMap == null)
+			OfferTimeMap = new Dictionary<Config.E_PackageOfferType, DateTime>();
+		OfferTimeMap[offerType] = DateTime.UtcNow;
 	}
 }

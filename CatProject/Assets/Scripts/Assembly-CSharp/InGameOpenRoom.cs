@@ -46,21 +46,39 @@ public class InGameOpenRoom : InGameFloatingUI
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (OpenBtn != null)
+			OpenBtn.onClick.AddListener(OnClickOpen);
+		if (SkipTimeBtn != null)
+			SkipTimeBtn.onClick.AddListener(OnClickSkip);
 	}
 
 	public void SetOffice(int office)
 	{
+		OfficeIdx = office;
+		// Determine room state and show appropriate UI
+		if (LockObj != null) LockObj.SetActive(false);
+		if (OpenObj != null) OpenObj.SetActive(true);
+		if (TimeObj != null) TimeObj.SetActive(false);
+		if (NeedLevelObj != null) NeedLevelObj.SetActive(false);
 	}
 
 	private void OnClickOpen()
 	{
+		// Open room / office
 	}
 
 	private void OnClickSkip()
 	{
+		// Skip construction time with gems
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 }

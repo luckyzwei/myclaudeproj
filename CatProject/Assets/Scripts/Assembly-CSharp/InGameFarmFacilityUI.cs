@@ -23,21 +23,32 @@ public class InGameFarmFacilityUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (UpgradeBtn != null)
+			UpgradeBtn.OnPressed = OnClickUpgrade;
 	}
 
 	public void UpdateLv(string lv, float value)
 	{
+		if (facilityLv != null)
+			facilityLv.text = lv;
+		if (productSlider != null)
+			productSlider.value = Mathf.Clamp01(value);
 	}
 
 	public void SetUpgradeBtn(bool value)
 	{
+		if (UpgradeBtn != null)
+			UpgradeBtn.gameObject.SetActive(value);
 	}
 
 	public void SetUpgradeValue(string value)
 	{
+		if (productUpgradeValue != null)
+			productUpgradeValue.text = value;
 	}
 
 	private void OnClickUpgrade()
 	{
+		clickAction?.Invoke();
 	}
 }

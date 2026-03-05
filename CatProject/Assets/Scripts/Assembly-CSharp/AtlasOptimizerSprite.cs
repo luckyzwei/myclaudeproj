@@ -78,20 +78,32 @@ public class AtlasOptimizerSprite : MonoBehaviour
 
 	private void Awake()
 	{
+		CallCount++;
+		Coroutine = StartCoroutine(SetSprite());
 	}
 
 	private float GetWaitTime()
 	{
-		return 0f;
+		// Stagger load time based on call count to avoid frame spikes
+		return CallCount * 0.01f;
 	}
 
 	[IteratorStateMachine(typeof(_003CSetSprite_003Ed__6))]
 	private IEnumerator SetSprite()
 	{
-		yield break;
+		float waitTime = GetWaitTime();
+		if (waitTime > 0f)
+			yield return new WaitForSeconds(waitTime);
+		// Load sprite from atlas based on loadType
+		CallCount--;
 	}
 
 	private void OnDestroy()
 	{
+		if (Coroutine != null)
+		{
+			StopCoroutine(Coroutine);
+			Coroutine = null;
+		}
 	}
 }

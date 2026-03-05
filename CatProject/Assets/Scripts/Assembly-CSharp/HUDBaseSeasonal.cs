@@ -89,56 +89,119 @@ public class HUDBaseSeasonal : HUDAniBase, IHUDTopInfo, IScreenAction
 
 	private List<Tween> ScreenActionTweens;
 
-	public HUDType[] HudType { get { return null; } }
+	public HUDType[] HudType { get { return aniType; } }
 
-	public bool IsAppear { get { return false; } }
+	public bool IsAppear { get { return appear; } }
 
-	public bool IsScreenAction { get { return false; } }
+	public bool IsScreenAction { get { return screenAction; } }
 
 	public WaitUntil WaitHUDAppear { get; set; }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		aniType = new HUDType[] { anitype, toptype };
+		initRootOrigin();
+		ScreenActionTweens = new List<Tween>();
+		WaitHUDAppear = new WaitUntil(() => appear);
 	}
 
 	private void initRootOrigin()
 	{
+		originLeftPos = new List<float>();
+		originRightPos = new List<float>();
+		if (LeftRoot != null)
+		{
+			for (int i = 0; i < LeftRoot.Count; i++)
+			{
+				if (LeftRoot[i] != null)
+					originLeftPos.Add(LeftRoot[i].anchoredPosition.x);
+			}
+		}
+		if (RightRoot != null)
+		{
+			for (int i = 0; i < RightRoot.Count; i++)
+			{
+				if (RightRoot[i] != null)
+					originRightPos.Add(RightRoot[i].anchoredPosition.x);
+			}
+		}
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID type)
 	{
+		if (CurrencyHud != null)
+			return CurrencyHud.transform.position;
 		return default(Vector3);
 	}
 
 	public HUDTopInfo GetHUDTopInfo()
 	{
-		return null;
+		return CurrencyHud;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitComebackCo_003Ed__24))]
 	private IEnumerator WaitComebackCo(bool value)
 	{
-		yield break;
+		yield return new WaitForSeconds(0.3f);
+		if (value)
+		{
+			ShowRootObject(LeftRoot, originLeftPos);
+			ShowRootObject(RightRoot, originRightPos);
+		}
+		else
+		{
+			HideRootObjects(LeftRoot, -500f);
+			HideRootObjects(RightRoot, 500f);
+		}
+		appear = value;
 	}
 
 	public void ScreenAction(bool value)
 	{
+		screenAction = value;
+		if (ScreenActionCo != null)
+			StopCoroutine(ScreenActionCo);
+		ScreenActionCo = StartCoroutine(WaitComebackCo(value));
 	}
 
 	public void ScreenTopOn(bool value)
 	{
+		screenAction = !value;
 	}
 
 	public bool IsScreenTopOn()
 	{
-		return false;
+		return !screenAction;
 	}
 
 	private void ShowRootObject(List<RectTransform> rootObjects, List<float> moveXPos)
 	{
+		if (rootObjects == null || moveXPos == null) return;
+		// Kill existing tweens
+		for (int i = 0; i < ScreenActionTweens.Count; i++)
+		{
+			if (ScreenActionTweens[i] != null)
+				ScreenActionTweens[i].Kill();
+		}
+		ScreenActionTweens.Clear();
+
+		for (int i = 0; i < rootObjects.Count && i < moveXPos.Count; i++)
+		{
+			if (rootObjects[i] == null) continue;
+			var tween = rootObjects[i].DOAnchorPosX(moveXPos[i], 0.3f);
+			ScreenActionTweens.Add(tween);
+		}
 	}
 
 	private void HideRootObjects(List<RectTransform> rootObjects, float moveXPos)
 	{
+		if (rootObjects == null) return;
+		for (int i = 0; i < rootObjects.Count; i++)
+		{
+			if (rootObjects[i] == null) continue;
+			var tween = rootObjects[i].DOAnchorPosX(moveXPos, 0.3f);
+			ScreenActionTweens.Add(tween);
+		}
 	}
 }

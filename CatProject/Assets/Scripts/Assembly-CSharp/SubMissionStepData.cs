@@ -24,6 +24,7 @@ public class SubMissionStepData
 
 	~SubMissionStepData()
 	{
+		DisposeSubscribe();
 	}
 
 	public void DisposeSubscribe()

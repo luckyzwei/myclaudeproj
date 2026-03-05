@@ -172,53 +172,86 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (DistributorShortcutBtn != null)
+			DistributorShortcutBtn.onClick.AddListener(OnClickedDistributorShortcutBtn);
+		if (BoxVisibilityToggleBtn != null)
+			BoxVisibilityToggleBtn.onClick.AddListener(OnClickedBoxVisibilityToggleBtn);
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	public void Init(int workshopIdx, bool bShow)
 	{
+		WorkshopIdx = workshopIdx;
+		StartCoroutine(InitVisibility_Delay(bShow));
 	}
 
 	[IteratorStateMachine(typeof(_003CInitVisibility_Delay_003Ed__24))]
 	private IEnumerator InitVisibility_Delay(bool bShow)
 	{
-		yield break;
+		yield return null;
+		SetVisibility(bShow, false);
 	}
 
 	private void UpdateHasProductValue(BigInteger hasValue_PerMile)
 	{
+		SetProductHasValueText(hasValue_PerMile);
+		if (ProductHasValueRedDot != null)
+			ProductHasValueRedDot.SetActive(hasValue_PerMile > BigInteger.Zero);
 	}
 
 	private void SetWorkshopProductIcon(string iconKey)
 	{
+		// Set product icon sprite by icon key
 	}
 
 	private void SetProductHasValueText(BigInteger hasValue_PerMile)
 	{
+		if (ProductHasValueText != null)
+			ProductHasValueText.text = ProjectUtility.GetThousandCommaText(hasValue_PerMile);
 	}
 
 	private void SetProductOnceDistributeValueText(BigInteger distributeValue_PerMile)
 	{
+		OnceDistributeValue_PerMile = distributeValue_PerMile;
+		if (ProductOnceDistributeValueText != null)
+			ProductOnceDistributeValueText.text = ProjectUtility.GetThousandCommaText(distributeValue_PerMile);
 	}
 
 	private void OnClickedDistributorShortcutBtn()
 	{
+		// Open distributor popup focused on this product
+		StartCoroutine(PopupFocusToProduct_Delay(null));
 	}
 
 	[IteratorStateMachine(typeof(_003CPopupFocusToProduct_Delay_003Ed__30))]
 	private IEnumerator PopupFocusToProduct_Delay(UIBase popupMenu)
 	{
-		yield break;
+		yield return null;
+		// Focus to product in popup after delay
 	}
 
 	private void OnClickedBoxVisibilityToggleBtn()
 	{
+		SetVisibility(!bShowState, true);
 	}
 
 	public void SetVisibility(bool bVisible, bool bPlayAnim)
 	{
+		bShowState = bVisible;
+		if (RootObj != null)
+			RootObj.SetActive(bVisible);
+		if (bPlayAnim && BoxAnimator != null)
+		{
+			BoxAnimator.Play(bVisible ? ANIM_STATE_SHOW : ANIM_STATE_HIDE);
+		}
 	}
 }

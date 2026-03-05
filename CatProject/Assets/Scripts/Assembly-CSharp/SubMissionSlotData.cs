@@ -8,5 +8,13 @@ public class SubMissionSlotData
 
 	public List<List<SubMissionGroupData>> MissionPriorityGroups;
 
-	public List<SubMissionGroupData> LastActiveMissionGroup { get { return null; } }
+	public List<SubMissionGroupData> LastActiveMissionGroup
+	{
+		get
+		{
+			if (MissionPriorityGroups == null || LastActiveMissionGroupIndex < 0 || LastActiveMissionGroupIndex >= MissionPriorityGroups.Count)
+				return null;
+			return MissionPriorityGroups[LastActiveMissionGroupIndex];
+		}
+	}
 }

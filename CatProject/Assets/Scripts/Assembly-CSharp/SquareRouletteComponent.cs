@@ -129,33 +129,135 @@ public class SquareRouletteComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		InitializeSlots();
+		if (SpinBtn != null)
+			SpinBtn.onClick.AddListener(() => StartSpin(-1));
 	}
 
 	private void OnDisable()
 	{
+		StopAllCoroutines();
+		IsSpinning = false;
 	}
 
 	private void InitializeSlots()
 	{
+		Slots = new List<ItemSquareRoulette>();
+		if (SlotsParent == null) return;
+		for (int i = 0; i < SlotsParent.childCount; i++)
+		{
+			var slot = SlotsParent.GetChild(i).GetComponent<ItemSquareRoulette>();
+			if (slot != null)
+				Slots.Add(slot);
+		}
 	}
 
 	public bool StartSpin(int winningIndex)
 	{
-		return false;
+		if (IsSpinning || Slots == null || Slots.Count == 0)
+			return false;
+
+		WinningIndex = winningIndex;
+		IsRandomSpin = (winningIndex < 0);
+		IsSpinning = true;
+		CurrentIndex = 0;
+		PreviousWinningIndex = -1;
+
+		// Reset all slot highlights
+		for (int i = 0; i < Slots.Count; i++)
+		{
+			Slots[i].SetHighlight(false);
+			Slots[i].SetRewardedFx(false);
+		}
+
+		OnRouletteStart?.Invoke();
+		StartCoroutine(SpinRoulette());
+		return true;
 	}
 
 	[IteratorStateMachine(typeof(_003CSpinRoulette_003Ed__28))]
 	private IEnumerator SpinRoulette()
 	{
-		yield break;
+		int slotCount = Slots.Count;
+		int totalSteps;
+		if (IsRandomSpin)
+		{
+			totalSteps = RandomRotations * slotCount;
+			WinningIndex = UnityEngine.Random.Range(0, slotCount);
+		}
+		else
+		{
+			totalSteps = MinRotations * slotCount;
+		}
+		// Add steps to land on winning index
+		int stepsToWin = ((WinningIndex - CurrentIndex) % slotCount + slotCount) % slotCount;
+		totalSteps += stepsToWin;
+
+		float slowdownStart = totalSteps * SlowdownStartPercentage;
+
+		for (int i = 0; i < totalSteps; i++)
+		{
+			// Unhighlight previous
+			if (PreviousWinningIndex >= 0 && PreviousWinningIndex < slotCount)
+				Slots[PreviousWinningIndex].SetHighlight(false);
+
+			// Highlight current
+			CurrentIndex = i % slotCount;
+			Slots[CurrentIndex].SetHighlight(true);
+			PreviousWinningIndex = CurrentIndex;
+
+			// Calculate speed
+			float speed;
+			if (IsRandomSpin)
+			{
+				speed = RandomSpinSpeed;
+			}
+			else if (i >= slowdownStart)
+			{
+				float t = (i - slowdownStart) / (totalSteps - slowdownStart);
+				float eased = CalculateEasing(t);
+				speed = Mathf.Lerp(FastestSpeed, SlowestSpeed, eased);
+			}
+			else
+			{
+				speed = FastestSpeed;
+			}
+
+			// Slot highlight sound played by animation/event
+
+			yield return new WaitForSeconds(speed);
+		}
+
+		OnSpinComplete();
 	}
 
 	private void OnSpinComplete()
 	{
+		IsSpinning = false;
+		if (Slots != null && WinningIndex >= 0 && WinningIndex < Slots.Count)
+			Slots[WinningIndex].SetRewardedFx(true);
+
+		// Complete sound played by animation/event
+
+		OnRouletteComplete?.Invoke(WinningIndex);
 	}
 
 	private float CalculateEasing(float t)
 	{
-		return 0f;
+		switch (EasingType)
+		{
+			case EasingType.Linear:
+				return t;
+			case EasingType.Exponential:
+				return t * t * t;
+			case EasingType.Quadratic:
+				return t * t;
+			case EasingType.Cubic:
+				return t * t * t;
+			case EasingType.SmoothStep:
+				return t * t * (3f - 2f * t);
+			default:
+				return t;
+		}
 	}
 }
