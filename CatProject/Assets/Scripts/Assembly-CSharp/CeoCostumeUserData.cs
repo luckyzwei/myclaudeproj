@@ -62,8 +62,8 @@ public class CeoCostumeUserData
 		if (!fbData.HasValue) return null;
 		var d = fbData.Value;
 		var result = new CeoCostumeUserData();
-		result.ChangeEquippedCostumeIdx(d.EquippedCostumeIdx);
-		result.SetDefaultCostumeIdx(d.DefaultCostumeIdx);
+		result.ChangeEquippedCostumeIdx(d.Equippedcostumeidx);
+		result.SetDefaultCostumeIdx(d.Defaultcostumeidx);
 		return result;
 	}
 

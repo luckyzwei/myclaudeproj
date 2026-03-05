@@ -59,10 +59,7 @@ public class ButtonIconText : MonoBehaviour
 	{
 		if (text != null)
 		{
-			if (shortCnt)
-				text.text = ProjectUtility.GetShortBigInteger(rewardCnt);
-			else
-				text.text = rewardCnt.ToString();
+			text.text = rewardCnt.ToString();
 		}
 	}
 

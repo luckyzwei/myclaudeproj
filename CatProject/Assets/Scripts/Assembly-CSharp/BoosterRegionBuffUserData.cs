@@ -34,10 +34,9 @@ public class BoosterRegionBuffUserData
 	{
 		if (!data.HasValue) return null;
 		var d = data.Value;
-		var result = new BoosterRegionBuffUserData(d.BoosterIdx, d.BoosterActiveRegionIdx);
-		result.BoosterValue = d.BoosterValue;
-		result.BoosterDailyUseCount = d.BoosterDailyUseCount;
-		result.BoosterRemainTimeSec.Value = d.BoosterRemainTimeSec;
+		var result = new BoosterRegionBuffUserData(d.Boosteridx, d.Boosteractiveregionidx);
+		result.BoosterDailyUseCount = d.Boosterdailyusecount;
+		result.BoosterRemainTimeSec.Value = d.Boosterremaintimesec;
 		return result;
 	}
 
@@ -60,8 +59,8 @@ public class BoosterRegionBuffUserData
 			builder,
 			data.BoosterIdx,
 			data.BoosterActiveRegionIdx,
-			data.BoosterValue,
 			data.BoosterRemainTimeSec != null ? data.BoosterRemainTimeSec.Value : 0,
+			data.BoosterNextResetTime.Ticks,
 			data.BoosterDailyUseCount
 		);
 	}

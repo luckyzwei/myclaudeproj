@@ -33,14 +33,15 @@ public class BoosterBuffUserData
 	{
 		if (!data.HasValue) return null;
 		var d = data.Value;
-		var result = new BoosterBuffUserData(d.BoosterIdx, d.BoosterTotalUseCount, d.BoosterTicketUseActive);
+		var result = new BoosterBuffUserData(d.Boosteridx, d.Totalusecount, d.Boosterticketuseactive);
 		return result;
 	}
 
 	public static Offset<BoosterBuffData> ToFlatBuffer(FlatBufferBuilder builder, BoosterBuffUserData data)
 	{
 		if (data == null) return default(Offset<BoosterBuffData>);
-		return BoosterBuffData.CreateBoosterBuffData(builder, data.BoosterIdx, data.BoosterTotalUseCount, data.BoosterTicketUseActive);
+		var regionBuffOffset = BoosterRegionBuffUserData.ToFlatBufferVector(builder, data.BoosterRegionBuffDataList);
+		return BoosterBuffData.CreateBoosterBuffData(builder, data.BoosterIdx, data.BoosterTotalUseCount, regionBuffOffset, data.BoosterTicketUseActive);
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<BoosterBuffUserData> dataList)

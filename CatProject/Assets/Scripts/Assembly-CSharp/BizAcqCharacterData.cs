@@ -34,7 +34,7 @@ public class BizAcqCharacterData
 		DealPower = power;
 		MaxHp_Origin = maxHp;
 		CurrentHp = maxHp;
-		State = CharacterState.Idle;
+		State = CharacterState.Ready;
 		SkillData = new BizAcqCharacterSkillData(skillIdx, skillLevel);
 		StatusEffectList = new List<BizAcqCharacterStatusEffectData>();
 	}
@@ -142,7 +142,7 @@ public class BizAcqCharacterData
 	{
 		CurrentHp = MaxHp_Origin;
 		DealPower = DealPower_Origin;
-		State = CharacterState.Idle;
+		State = CharacterState.Ready;
 		if (StatusEffectList != null)
 			StatusEffectList.Clear();
 	}
