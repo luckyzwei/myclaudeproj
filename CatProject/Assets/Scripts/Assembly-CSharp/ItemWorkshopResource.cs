@@ -26,33 +26,50 @@ public class ItemWorkshopResource : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ShortCutBtn != null)
+			ShortCutBtn.onClick.AddListener(OnClickedShortCutButton);
 	}
 
 	public void SetWorkshopProductInfo(int productIdx, bool isCost)
 	{
+		ProductIdx = productIdx;
+		IsCostResource = isCost;
 	}
 
 	public void SetResourceInfo(Config.AtlasType atlasType, string iconPath, string valueText)
 	{
+		SetResourceIcon(atlasType, iconPath);
+		SetResourceValue(valueText);
 	}
 
 	public void SetResourceIcon(Config.AtlasType atlasType, string iconPath)
 	{
+		// Set icon sprite by atlas type and path
 	}
 
 	public void SetResourceValue(string valueStr)
 	{
+		if (ValueText != null)
+			ValueText.text = valueStr;
 	}
 
 	public void SetIsEnoughResource(bool isEnoughRes)
 	{
+		IsEnoughResource = isEnoughRes;
+		if (LeakReddot != null)
+			LeakReddot.SetActive(!isEnoughRes && IsCostResource);
+		if (ValueText != null)
+			ValueText.color = isEnoughRes ? Color.white : Color.red;
 	}
 
 	public void ShowHighlightFx()
 	{
+		if (HighlightFxObj != null)
+			HighlightFxObj.SetActive(true);
 	}
 
 	private void OnClickedShortCutButton()
 	{
+		// Navigate to resource production shortcut
 	}
 }

@@ -34,6 +34,9 @@ public class HUDBase : HUDAniBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ShopT != null)
+			ShopOriginP = ShopT.position;
 	}
 
 	public virtual void Refresh(E_RefreshType refreshType)
@@ -47,48 +50,68 @@ public class HUDBase : HUDAniBase
 
 	protected void SetDayTime()
 	{
+		// Initialize day time display
 	}
 
 	protected void UpdateDayStatus(DaySystem.DayStatus status)
 	{
+		// Update time icon based on day status (day/evening/night)
 	}
 
 	protected void UpdateDayTime()
 	{
+		// Update time text display
 	}
 
 	public void StartPowerEffect(int region)
 	{
+		if (CurrencyHud != null)
+			CurrencyHud.ShowPowerEffect(region);
 	}
 
 	public void EndPowerEffect(int region, bool direct = false)
 	{
+		// End power effect on currency HUD
 	}
 
 	public void StartMoneyEffect(int region)
 	{
+		if (CurrencyHud != null)
+			CurrencyHud.ShowMoneyEffect(region);
 	}
 
 	public void EndMoneyEffect(int region)
 	{
+		// End money effect on currency HUD
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID type)
 	{
+		if (CurrencyHud != null)
+		{
+			var trans = CurrencyHud.GetTrans(type);
+			if (trans != null) return trans.position;
+		}
 		return default(Vector3);
 	}
 
 	public Vector3 GetHUDShopPos()
 	{
-		return default(Vector3);
+		return ShopOriginP;
 	}
 
 	public Vector3 GetLevelPos()
 	{
+		if (CurrencyHud != null)
+		{
+			var trans = CurrencyHud.GetTrans(Config.CurrencyID.Level);
+			if (trans != null) return trans.position;
+		}
 		return default(Vector3);
 	}
 
 	public void SetTempLevel(int value = -1)
 	{
+		// Temporarily override level display
 	}
 }

@@ -44,33 +44,54 @@ public class ItemMiniGameRewardProgressSlot : MonoBehaviour
 
 	public void Awake()
 	{
+		RewardItemDataList = new List<IRewardItemData>();
+		if (InfoBtn != null)
+			InfoBtn.onClick.AddListener(OnClickInfoBtn);
+		if (ClaimBtn != null)
+			ClaimBtn.onClick.AddListener(OnClickClaimBtn);
 	}
 
 	public void SetData(MiniGameDiggingInfoData rewardTable, E_RewardProgressSlotType type, Action onClaimCallback)
 	{
+		OnClaimCallback = onClaimCallback;
+		CurType = type;
+		UpdateUI();
 	}
 
 	public void UpdateSlot(E_RewardProgressSlotType type)
 	{
+		CurType = type;
+		UpdateUI();
 	}
 
 	private void UpdateUI()
 	{
+		if (NormalObj != null) NormalObj.SetActive(CurType == E_RewardProgressSlotType.Normal);
+		if (RewardableObj != null) RewardableObj.SetActive(CurType == E_RewardProgressSlotType.Rewardable);
+		if (RewardedObj != null) RewardedObj.SetActive(CurType == E_RewardProgressSlotType.Rewarded);
+		if (ClaimBtn != null) ClaimBtn.gameObject.SetActive(CurType == E_RewardProgressSlotType.Rewardable);
 	}
 
 	private void OnClickInfoBtn()
 	{
+		ShowRewardDetailPopup();
 	}
 
 	private void OnClickClaimBtn()
 	{
+		if (CurType != E_RewardProgressSlotType.Rewardable) return;
+		ClaimReward();
 	}
 
 	private void ShowRewardDetailPopup()
 	{
+		// Show reward detail popup
 	}
 
 	private void ClaimReward()
 	{
+		CurType = E_RewardProgressSlotType.Rewarded;
+		UpdateUI();
+		OnClaimCallback?.Invoke();
 	}
 }
