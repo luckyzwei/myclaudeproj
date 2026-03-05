@@ -363,175 +363,372 @@ public class PopupPhone : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		money_disposables = new CompositeDisposable();
+		ChatObjs = new Dictionary<int, GameObject>();
+		CurTab = Tab.Main;
+		SendChat = false;
+		WaitSendChat = new WaitUntil(() => SendChat);
+		CurCompanySort = CompanySortType.Basic;
+
+		if (HomeBtn != null) HomeBtn.onClick.AddListener(OnClickGotoMain);
+		if (ChatBtn != null) ChatBtn.onClick.AddListener(OnClickGotoChat);
+		if (RankBtn != null) RankBtn.onClick.AddListener(OnClickGotoRank);
+		if (CompanyBookBtn != null) CompanyBookBtn.onClick.AddListener(OnClickGotoCompanyBook);
+		if (CatstaBtn != null) CatstaBtn.onClick.AddListener(OnClickGotoCatsta);
+		if (ItemBookBtn != null) ItemBookBtn.onClick.AddListener(OnClickGotoOfficeBook);
+		if (CostumeBtn != null) CostumeBtn.onClick.AddListener(OnClickGotoCostume);
+		if (PlantBtn != null) PlantBtn.onClick.AddListener(OnClickGotoPlant);
+		if (BankUpBtn != null) BankUpBtn.onClick.AddListener(OnClickBankLevelUp);
+		if (BankInfoBtn != null) BankInfoBtn.onClick.AddListener(OnClickBankInfo);
+		if (Chat_SendBtn != null) Chat_SendBtn.onClick.AddListener(OnSendChat);
+		if (Chat_SelectBtn1 != null) Chat_SelectBtn1.onClick.AddListener(() => OnClickSelect(1));
+		if (Chat_SelectBtn2 != null) Chat_SelectBtn2.onClick.AddListener(() => OnClickSelect(2));
+		if (ContractBackBtn != null) ContractBackBtn.onClick.AddListener(OnClickGotoChat);
+		if (ChatBackBtn != null) ChatBackBtn.onClick.AddListener(OnClickGotoChat);
+		if (RankBackBtn != null) RankBackBtn.onClick.AddListener(OnClickGotoMain);
+		if (InfoBackBtn != null) InfoBackBtn.onClick.AddListener(OnClickGotoMain);
+		if (CompanyBookBackBtn != null) CompanyBookBackBtn.onClick.AddListener(OnClickGotoMain);
+		if (RankTabBtn != null) RankTabBtn.onClick.AddListener(OnClickGotoRank);
+		if (InfoTabBtn != null) InfoTabBtn.onClick.AddListener(OnClickGotoInfo);
+		if (InfoRichPointBtn != null) InfoRichPointBtn.onClick.AddListener(OnClickRichPointInfo);
+		if (EditNameBtn != null) EditNameBtn.onClick.AddListener(OnClickEditNameInfo);
+		if (RankRewardBtn != null) RankRewardBtn.onClick.AddListener(OnClickGetRankingReward);
+		if (CompanyFilterBtn != null) CompanyFilterBtn.onClick.AddListener(OnClickCompanyBookFilter);
 	}
 
 	public void InitTab(Tab tabType)
 	{
+		CurTab = tabType;
+		UpdateTab();
+
+		switch (tabType)
+		{
+			case Tab.Main:
+				UpdateBank();
+				break;
+			case Tab.Chat:
+				UpdateContact();
+				break;
+			case Tab.Rank:
+				UpdateRank();
+				break;
+			case Tab.CompanyBook:
+				UpdateCompanyBook();
+				break;
+			case Tab.MyInfo:
+				UpdateUserInfo();
+				break;
+			case Tab.Catstagram:
+				UpdateCatstagram();
+				break;
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
+		if (money_disposables != null) { money_disposables.Dispose(); money_disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
+		if (money_disposables != null) { money_disposables.Dispose(); money_disposables = new CompositeDisposable(); }
+		if (ChatCoroutine != null) { StopCoroutine(ChatCoroutine); ChatCoroutine = null; }
 	}
 
 	private void UpdateCatstagram()
 	{
+		if (CatstagramRoot != null) CatstagramRoot.gameObject.SetActive(true);
+		// Initialize catstagram content
 	}
 
 	private void UpdateBank()
 	{
+		if (money_disposables != null)
+		{
+			money_disposables.Dispose();
+			money_disposables = new CompositeDisposable();
+		}
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Update money display
+		if (MoneyCount != null) MoneyCount.text = "0";
+		if (LimitMoneyCount != null) LimitMoneyCount.text = "0";
+		if (BankMaxObj != null) BankMaxObj.SetActive(false);
+		if (MoneyLimitMaxObj != null) MoneyLimitMaxObj.SetActive(false);
 	}
 
 	private void UpdateCompanyBook()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update company book list
+		if (CompanyCount != null) CompanyCount.text = "0/0";
+		if (CompanyCountProgress != null) CompanyCountProgress.value = 0f;
 	}
 
 	private void UpdateCompanyItem(int companyIdx)
 	{
+		// Update specific company item in the book
 	}
 
 	private void UpdateContact()
 	{
+		UpdateContactList();
 	}
 
 	public void UpdateContactList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Populate contact list from messenger system
 	}
 
 	private void SetChats()
 	{
+		if (ChatObjs != null) ChatObjs.Clear();
+		// Set up chat message items in scroll view
 	}
 
 	private void SetPassiveChat(int subChat)
 	{
+		// Add a passive (NPC) chat message to the chat scroll
 	}
 
 	[IteratorStateMachine(typeof(_003CStartChat_003Ed__100))]
 	private IEnumerator StartChat()
 	{
-		yield break;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) yield break;
+
+		// Iterate through chat messages with wait-for-send logic
+		if (Chat_InsesrtObj != null) Chat_InsesrtObj.SetActive(false);
+		if (Chat_SelectObj != null) Chat_SelectObj.SetActive(false);
+
+		// Wait for user to send chat
+		SendChat = false;
+		if (Chat_SendArrow != null) Chat_SendArrow.SetActive(true);
+		yield return WaitSendChat;
+		if (Chat_SendArrow != null) Chat_SendArrow.SetActive(false);
 	}
 
 	private void UpdateUserInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		UpdateUserName();
+
+		// Set rank and point info
+		if (RankText != null) RankText.text = "";
+		if (PointText != null) PointText.text = "0";
+		if (TotalHousePoint != null) TotalHousePoint.text = "0";
+		if (TotalCarPoint != null) TotalCarPoint.text = "0";
+		if (NoHaveHouseObj != null) NoHaveHouseObj.SetActive(true);
+		if (NoHaveCarObj != null) NoHaveCarObj.SetActive(true);
 	}
 
 	public void UpdateUserName()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (UserName != null) UserName.text = "";
 	}
 
 	private void UpdateRank()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Populate ranking list
+		if (RankRewardCount != null) RankRewardCount.text = "0";
 	}
 
 	private void UpdateTab()
 	{
+		if (MainRoot != null) MainRoot.SetActive(CurTab == Tab.Main);
+		if (ChatRoot != null) ChatRoot.SetActive(CurTab == Tab.Chat);
+		if (RankRoot != null) RankRoot.SetActive(CurTab == Tab.Rank);
+		if (CompanyBookRoot != null) CompanyBookRoot.SetActive(CurTab == Tab.CompanyBook);
+
+		// Sub tabs
+		if (RankTabRoot != null) RankTabRoot.SetActive(CurTab == Tab.Rank);
+		if (UserTabRoot != null) UserTabRoot.SetActive(CurTab == Tab.MyInfo);
+
+		// Chat sub panels
+		if (Chat_ContactRoot != null) Chat_ContactRoot.SetActive(CurTab == Tab.Chat);
+		if (Chat_ChatRoot != null) Chat_ChatRoot.SetActive(false);
+
+		if (CatstagramRoot != null) CatstagramRoot.gameObject.SetActive(CurTab == Tab.Catstagram);
 	}
 
 	private void Update()
 	{
+		UpdateDayTime();
 	}
 
 	private void UpdateDayTime()
 	{
+		var now = DateTime.Now;
+		string timeStr = now.ToString("HH:mm");
+		if (HudTimeText != null) HudTimeText.text = timeStr;
+		if (TimeText != null && CurTab == Tab.Main) TimeText.text = timeStr;
 	}
 
 	private void OnSendChat()
 	{
+		SendChat = true;
 	}
 
 	private void OnClickSelect(int select)
 	{
+		SelectChat = select;
+		SendChat = true;
+		if (Chat_SelectObj != null) Chat_SelectObj.SetActive(false);
 	}
 
 	private void OnSelectChat(int group)
 	{
+		// Open specific chat group
+		if (Chat_ContactRoot != null) Chat_ContactRoot.SetActive(false);
+		if (Chat_ChatRoot != null) Chat_ChatRoot.SetActive(true);
+
+		SetChats();
+		if (ChatCoroutine != null) StopCoroutine(ChatCoroutine);
+		ChatCoroutine = StartCoroutine(StartChat());
 	}
 
 	private void OnClickGotoChat()
 	{
+		CurTab = Tab.Chat;
+		UpdateTab();
+		UpdateContact();
 	}
 
 	private void OnClickGotoRank()
 	{
+		CurTab = Tab.Rank;
+		UpdateTab();
+		UpdateRank();
 	}
 
 	private void OnClickGotoInfo()
 	{
+		CurTab = Tab.MyInfo;
+		UpdateTab();
+		UpdateUserInfo();
 	}
 
 	public void OnClickGotoCompanyBook()
 	{
+		CurTab = Tab.CompanyBook;
+		UpdateTab();
+		UpdateCompanyBook();
 	}
 
 	private void OnClickGotoOfficeBook()
 	{
+		// Open office/item book page
+		Hide();
 	}
 
 	private void OnClickGotoCostume()
 	{
+		// Open costume page
+		Hide();
 	}
 
 	private void OnClickGotoCatsta()
 	{
+		CurTab = Tab.Catstagram;
+		UpdateTab();
+		UpdateCatstagram();
 	}
 
 	private void OnClickGotoPlant()
 	{
+		// Open plant page
+		Hide();
 	}
 
 	private void OnClickGotoMain()
 	{
+		CurTab = Tab.Main;
+		UpdateTab();
+		UpdateBank();
 	}
 
 	private void OnClickRichPointInfo()
 	{
+		// Show rich point info popup
 	}
 
 	private void OnClickEditNameInfo()
 	{
+		// Open name edit popup
 	}
 
 	private void OnClickBankInfo()
 	{
+		// Show bank info popup
 	}
 
 	private void OnClickBankLevelUp()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Level up bank
+		UpdateBank();
 	}
 
 	private void OnClickCompanyInfo(int company)
 	{
+		FocusCompanyInfo(company);
 	}
 
 	public void FocusCompanyInfo(int companyIdx)
 	{
+		if (CompanyDetailPopup == null) return;
+		CompanyDetailPopup.gameObject.SetActive(true);
+		// Show company detail
 	}
 
 	public void ShowLevelUpGuide(int companyIdx, int guideLevel)
 	{
+		FocusCompanyInfo(companyIdx);
+		// Show level up guide arrow
 	}
 
 	private void OnFocusAfterScrolled(Vector2 value)
 	{
+		// Handle scroll after focus
 	}
 
 	private void FocusNextMaxCompany()
 	{
+		// Focus on next max level company in the list
 	}
 
 	private void ReleaseFocusCompany()
 	{
+		FocusCompany = null;
+		if (CompanyDetailPopup != null) CompanyDetailPopup.gameObject.SetActive(false);
 	}
 
 	private void OnClickCompanyBookFilter()
 	{
+		// Toggle company book sort filter
+		CurCompanySort = CurCompanySort == CompanySortType.Basic ? CompanySortType.UnLock : CompanySortType.Basic;
+		UpdateCompanyBook();
 	}
 
 	private void OnClickGetRankingReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Claim ranking reward
 	}
 }

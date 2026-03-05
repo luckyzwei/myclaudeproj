@@ -408,7 +408,7 @@ public class PopupOfficeUpgrade : UIBase
 
 	private bool CachedActiveLevelUpAllBtn;
 
-	public OnetimeCurrencyComponent OneTimeComponent { get { return null; } }
+	public OnetimeCurrencyComponent OneTimeComponent { get { return oneTimeComponent; } }
 
 	public int selectItem { get; private set; }
 
@@ -420,259 +420,611 @@ public class PopupOfficeUpgrade : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		power_disposables = new CompositeDisposable();
+		exp_disposables = new CompositeDisposable();
+		company_disposables = new CompositeDisposable();
+		company_lv_disposables = new CompositeDisposable();
+		daystatus_disposables = new CompositeDisposable();
+		company_increase_exp_disposables = new CompositeDisposable();
+		strike_disposables = new CompositeDisposable();
+		OfficeItemList = new List<ItemOfficeItem>();
+		CurTab = Tab.Upgrade;
+		IsLongPressed = false;
+		IsFirstLongPressed = false;
+		BuyBtnClickCount = 0;
+		SavedPiggyCount = 0;
+		SavedOneTimeCount = 0;
+		powercolorkey = new string[] { "green", "yellow", "red" };
+
+		if (UpgradeTab != null) UpgradeTab.onValueChanged.AddListener((on) => { if (on) OnClickChangeTab(Tab.Upgrade); });
+		if (MoodTab != null) MoodTab.onValueChanged.AddListener((on) => { if (on) OnClickChangeTab(Tab.Mood); });
+		if (PurchaseBtnPressed != null) PurchaseBtnPressed.OnPressed = OnClickBuy;
+		if (GotoPowerRoomBtn != null) GotoPowerRoomBtn.onClick.AddListener(OnClickGotoPowerRoom);
+		if (CompanyListBtn != null) CompanyListBtn.onClick.AddListener(OnClickCompanyList);
+		if (CompanyOutBtn != null) CompanyOutBtn.onClick.AddListener(OnClickCompanyOut);
+		if (CompanyOutMaxLvBtn != null) CompanyOutMaxLvBtn.onClick.AddListener(OnClickCompanyOutMax);
+		if (CompanyLevelUpCashBtn != null) CompanyLevelUpCashBtn.onClick.AddListener(OnClickCompanyCashLevelUpBtn);
+		if (CompanyLevelUpBtn != null) CompanyLevelUpBtn.onClick.AddListener(OnClickCompanyLevelUpBtn);
+		if (LevelUpAllItemsBtn != null) LevelUpAllItemsBtn.onClick.AddListener(OnClickLevelUpAllItems);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickOfficeGuide);
+		if (ExpInfoBtn != null) ExpInfoBtn.onClick.AddListener(OnClickExpInfo);
+		if (RentalFeeInfoBtn != null) RentalFeeInfoBtn.onClick.AddListener(OnClickRentalFeeInfo);
+		if (ManagerPreOpenBtn != null) ManagerPreOpenBtn.onClick.AddListener(OnClickManagerPreOpen);
+		if (ManagerAbilityBtn != null) ManagerAbilityBtn.onClick.AddListener(OnClickManagerAbility);
+		if (moveLeftBtn != null) moveLeftBtn.onClick.AddListener(() => GoToOffice(beforeOfficeIdx));
+		if (moveRightBtn != null) moveRightBtn.onClick.AddListener(() => GoToOffice(afterOfficeIdx));
+		if (Scroll != null) Scroll.onValueChanged.AddListener(UpdateItemScroll);
 	}
 
 	public void Set(int officeIdx, int naviOfficeIdx = -1)
 	{
+		OfficeIdx = officeIdx;
+		NaviOfficeIdx = naviOfficeIdx;
+		selectItem = 0;
+		selectItemType = 0;
+		BuyBtnClickCount = 0;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		SetUpdateTab();
+		UpdateCompany();
+		SetPowerInfo(true);
+		SetManager();
+		UpdateSelectItem();
+		UpdateStrike();
+
+		// Set office name
+		if (OfficeName != null) OfficeName.text = "";
+
+		// Set navigation buttons
+		beforeOfficeIdx = officeIdx - 1;
+		afterOfficeIdx = officeIdx + 1;
+		if (moveLeftBtn != null) moveLeftBtn.gameObject.SetActive(beforeOfficeIdx >= 0);
+		if (moveRightBtn != null) moveRightBtn.gameObject.SetActive(true);
 	}
 
 	public void SetGuide(int type, int level, int count = 1)
 	{
+		GuideLevel = level;
+		GuideCount = count;
+		// Focus on the guided item type and show guide arrow
+		if (GuideArrow != null) GuideArrow.SetActive(true);
 	}
 
 	public void ShowCompanyLevelupPopup()
 	{
+		// Show company level up animation/popup
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void Update()
 	{
+		// Handle long press logic for purchase button
+		if (IsLongPressed)
+		{
+			OnClickBuy();
+		}
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateOfficeExp();
+		UpdatePower();
+		UpdateLevelUpAllButton();
+		SetTapReddotObj();
 	}
 
 	public override void OnRefresh()
 	{
+		UpdateSelectItem();
+		UpdateCompany();
+		UpdatePower();
+		UpdateLevelUpAllButton();
+		UpdateNoti();
+	}
+
+	private void UpdateNoti()
+	{
+		SetTapReddotObj();
 	}
 
 	private bool CheckAndPlayCompanyExpTicket()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if player has company exp tickets to auto-use
 		return false;
 	}
 
 	private void SetUpdateTab()
 	{
+		if (UpgradeRoot != null) UpgradeRoot.SetActive(CurTab == Tab.Upgrade);
+		if (MoodRoot != null) MoodRoot.SetActive(CurTab == Tab.Mood);
 	}
 
 	private void SetMoodTab()
 	{
+		// Populate mood/require item list
+		if (EmployeeMood_NoCompanyObj != null) EmployeeMood_NoCompanyObj.SetActive(CompanyIdx <= 0);
+		if (RequireItem_NoCompanyObj != null) RequireItem_NoCompanyObj.SetActive(CompanyIdx <= 0);
 	}
 
 	private void UpdateCompanyContractButton()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update company contract button state
+		if (CompanyOutBtn != null) CompanyOutBtn.gameObject.SetActive(CompanyIdx > 0);
+		if (CompanyOutMaxLvBtn != null) CompanyOutMaxLvBtn.gameObject.SetActive(false);
 	}
 
 	private void UpdateCompanyLevelUpButton()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		bool canLevelUp = IsEnableCompanyLevelUp(CompanyIdx);
+		if (CompanyLvUpNotiObj != null) CompanyLvUpNotiObj.SetActive(canLevelUp);
 	}
 
 	private void UpdateOfficeExp()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update office exp progress
+		if (exp_disposables != null)
+		{
+			exp_disposables.Dispose();
+			exp_disposables = new CompositeDisposable();
+		}
 	}
 
 	public void LevelUpByCashItem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Level up company using cash item
+		UpdateCompany();
 	}
 
 	private void UpdatePower()
 	{
+		if (power_disposables != null)
+		{
+			power_disposables.Dispose();
+			power_disposables = new CompositeDisposable();
+		}
+		SetPowerInfo();
 	}
 
 	private void SetPowerInfo(bool isInit = false)
 	{
+		if (PowerInfoRoot == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Set power value and load ratio
+		if (PowerValue != null) PowerValue.text = "0";
+		if (PowerLoadRatio != null) PowerLoadRatio.text = "0%";
+		if (LeakPowerObj != null) LeakPowerObj.SetActive(false);
+
+		// Set power load step indicators
+		if (PowerLoadStepObjs != null)
+		{
+			for (int i = 0; i < PowerLoadStepObjs.Count; i++)
+			{
+				if (PowerLoadStepObjs[i] != null)
+					PowerLoadStepObjs[i].SetActive(false);
+			}
+		}
 	}
 
 	private void UpdateCompany()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (CompanyInfoRoot != null) CompanyInfoRoot.SetActive(CompanyIdx > 0);
+		if (NoneCompanyRoot != null) NoneCompanyRoot.SetActive(CompanyIdx <= 0);
+
+		if (CompanyIdx > 0)
+		{
+			UpdateExpGauge();
+			UpdateCompanyContractButton();
+			UpdateCompanyLevelUpButton();
+			UpdateRentalFee();
+		}
+
+		if (CompanyLevelUpCashObj != null) CompanyLevelUpCashObj.SetActive(CompanyIdx > 0);
 	}
 
 	private void UpdateExpGauge()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update company exp gauge
+		if (LevelProgress != null) LevelProgress.value = 0f;
+		UpdateExpGaugeColor();
 	}
 
 	private void UpdateExpGaugeColor()
 	{
+		// Update progress fill color based on level status
+		if (GaugeParticleObj != null) GaugeParticleObj.SetActive(false);
 	}
 
 	private void OnUpdateCompanyExp()
 	{
+		UpdateExpGauge();
+		UpdateCompanyLevelUpButton();
 	}
 
 	private void SetCompanyExp(BigInteger exp)
 	{
+		if (ExpRatioText != null)
+		{
+			if (CompanyNeedExp > 0)
+				ExpRatioText.text = ProjectUtility.GetThousandCommaText(exp) + "/" + ProjectUtility.GetThousandCommaText(CompanyNeedExp);
+		}
+		if (ExpProgressFill != null && CompanyNeedExp > 0)
+		{
+			float ratio = (float)((double)exp / (double)CompanyNeedExp);
+			ExpProgressFill.fillAmount = Mathf.Clamp01(ratio);
+		}
 	}
 
 	private void UpdateCompanyLevel(int level)
 	{
+		CurLevel = level;
+		if (LevelObjs != null)
+		{
+			for (int i = 0; i < LevelObjs.Count; i++)
+			{
+				if (LevelObjs[i] != null)
+					LevelObjs[i].gameObject.SetActive(i < level);
+			}
+		}
+		UpdateExpGauge();
+		UpdateRentalFee();
 	}
 
 	private void UpdateRentalFee()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update rental fee display
+		if (RentalFeeDebuffObj != null) RentalFeeDebuffObj.SetActive(false);
 	}
 
 	private void UpdateSelectItem()
 	{
+		if (OfficeItemList == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Update selected item info display
+		if (ItemName != null) ItemName.text = "";
+		if (ItemDesc != null) ItemDesc.text = "";
+		if (ItemLevel != null) ItemLevel.text = "";
+
+		// Update need currency display
+		if (NeedLevelObj != null) NeedLevelObj.SetActive(false);
+		if (UsePowerInfoRoot != null) UsePowerInfoRoot.SetActive(false);
+
+		// Mood buff info
+		if (MoodBuffObj != null) MoodBuffObj.SetActive(false);
+
+		// Manager hire info
+		if (HireManagerRoot != null) HireManagerRoot.SetActive(false);
+
+		// Ability info
+		if (AbilityRoot != null) AbilityRoot.SetActive(false);
+
+		// Player exp/level display
+		if (PlayerExpObj != null) PlayerExpObj.SetActive(false);
+		if (PlayerLevelObj != null) PlayerLevelObj.SetActive(false);
 	}
 
 	private void UpdateLevelUpAllButton()
 	{
+		if (LevelUpAllItemsBtn == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Check if bulk level up is available
+		bool canBulkLevelUp = false;
+		CachedActiveLevelUpAllBtn = canBulkLevelUp;
+		LevelUpAllItemsBtn.gameObject.SetActive(canBulkLevelUp);
+		if (LevelUpAllFxObj != null) LevelUpAllFxObj.SetActive(false);
 	}
 
 	private void UpdateLevelUpAllButton_LowPower()
 	{
+		// Disable bulk level up when power is low
+		if (LevelUpAllItemsBtn != null) LevelUpAllItemsBtn.interactable = false;
 	}
 
 	private void ShowIngamePreview(int itemType, int itemIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.InGameSystem == null) return;
+		// Show preview of item in the in-game view
 	}
 
 	private void FocusItem(int itemType, int itemIdx)
 	{
+		if (OfficeItemList == null) return;
+		for (int i = 0; i < OfficeItemList.Count; i++)
+		{
+			if (OfficeItemList[i] != null && OfficeItemList[i].ItemType == itemType && OfficeItemList[i].ItemIdx == itemIdx)
+			{
+				GuideItem = OfficeItemList[i];
+				break;
+			}
+		}
 	}
 
 	private void ScreenTraceItem(int itemType, int itemIdx, bool bForceUpdate)
 	{
+		// Trace item position on screen for tutorial/guide
+		FocusItem(itemType, itemIdx);
 	}
 
 	public ItemOfficeItem GetScrollItem(int idx)
 	{
-		return null;
+		if (OfficeItemList == null || idx < 0 || idx >= OfficeItemList.Count) return null;
+		return OfficeItemList[idx];
 	}
 
 	public void SelectUnActiveDesk(int needDeskCount)
 	{
+		if (NeedDeskCountText != null)
+			NeedDeskCountText.text = needDeskCount.ToString();
 	}
 
 	public void SelectItem(int itemIdx, int itemType)
 	{
+		selectItem = itemIdx;
+		selectItemType = itemType;
+		UpdateSelectItem();
+		ShowIngamePreview(itemType, itemIdx);
 	}
 
 	private void SetManager()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Check if office has a manager assigned
+		bool hasManager = false;
+		if (ManagerRootObj != null) ManagerRootObj.SetActive(hasManager);
+		if (ManagerPreOpenObj != null) ManagerPreOpenObj.SetActive(!hasManager);
+		if (ManagerFindObj != null) ManagerFindObj.SetActive(false);
+		if (ManagerHireObj != null) ManagerHireObj.SetActive(false);
+		if (ManagerBadObj != null) ManagerBadObj.SetActive(false);
 	}
 
 	private void UpdateItemScroll(Vector2 pos)
 	{
+		// Handle scroll updates for lazy loading
 	}
 
 	private void OnClickChangeTab(Tab tab)
 	{
+		CurTab = tab;
+		SetUpdateTab();
+		if (tab == Tab.Mood)
+			SetMoodTab();
 	}
 
 	public void OnClickItem(int idx, int type)
 	{
+		SelectItem(idx, type);
 	}
 
 	private void OnClickBuy()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		BuyBtnClickCount++;
+		// Purchase/upgrade selected office item
+		UpdateSelectItem();
+		UpdatePower();
+		UpdateLevelUpAllButton();
 	}
 
 	private void OnClickLevelUpAllItems()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Level up all items at once
+		if (LevelUpAllFxObj != null) LevelUpAllFxObj.SetActive(true);
+		UpdateSelectItem();
+		UpdatePower();
 	}
 
 	private void OnClickPiggyBank()
 	{
+		// Open piggy bank popup
 	}
 
 	private void OnClickGotoPowerRoom()
 	{
+		// Navigate to power room
+		Hide();
 	}
 
 	private void OnClickRentalFeeInfo()
 	{
+		// Show rental fee info popup
 	}
 
 	private void OnClickExpInfo()
 	{
+		// Show exp info popup
 	}
 
 	private void OnClickOfficeGuide()
 	{
+		// Show office guide/info popup
 	}
 
 	private void OnClickCompanyList()
 	{
+		// Open company list popup for assignment
 	}
 
 	private void OnClickCompanyOut()
 	{
+		// Remove company from office
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateCompany();
 	}
 
 	private void OnClickCompanyOutMax()
 	{
+		// Remove max level company from office
+		OnClickCompanyOut();
 	}
 
 	private void OnClickManagerPreOpen()
 	{
+		// Open manager page for hiring
+		Hide();
 	}
 
 	private void OnClickManagerAbility()
 	{
+		// Show manager ability detail popup
 	}
 
 	private void OnClickMoodRequireItem(int itemType)
 	{
+		// Navigate to the required mood item source
 	}
 
 	private void OnClickCompanyCashLevelUpBtn()
 	{
+		// Level up company using cash currency
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateCompany();
 	}
 
 	private void OnClickCompanyLevelUpBtn()
 	{
+		// Level up company using exp
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateCompany();
 	}
 
 	private object GetContractParam()
 	{
-		return null;
+		// Get contract parameters for company assignment
+		return new { officeIdx = OfficeIdx, companyIdx = CompanyIdx };
 	}
 
 	private void UpdateStrike()
 	{
+		if (StrikeReddotObj != null) StrikeReddotObj.SetActive(false);
+		SetStrike();
 	}
 
 	private void SetStrike()
 	{
+		if (strike_disposables != null)
+		{
+			strike_disposables.Dispose();
+			strike_disposables = new CompositeDisposable();
+		}
+		// Subscribe to strike events
 	}
 
 	private void SetTapReddotObj()
 	{
+		// Update tab red dot notification indicators
 	}
 
 	public override void OnHideBefore()
 	{
+		if (GuideArrow != null) GuideArrow.SetActive(false);
+		if (LongPressNotiObj != null) LongPressNotiObj.SetActive(false);
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	private void OnDisable()
 	{
+		DisposeAll();
 	}
 
 	private void OnDestroy()
 	{
+		DisposeAll();
+		power_disposables = null;
+		exp_disposables = null;
+		company_disposables = null;
+		company_lv_disposables = null;
+		daystatus_disposables = null;
+		company_increase_exp_disposables = null;
+		strike_disposables = null;
+	}
+
+	private void DisposeAll()
+	{
+		if (power_disposables != null) { power_disposables.Dispose(); power_disposables = new CompositeDisposable(); }
+		if (exp_disposables != null) { exp_disposables.Dispose(); exp_disposables = new CompositeDisposable(); }
+		if (company_disposables != null) { company_disposables.Dispose(); company_disposables = new CompositeDisposable(); }
+		if (company_lv_disposables != null) { company_lv_disposables.Dispose(); company_lv_disposables = new CompositeDisposable(); }
+		if (daystatus_disposables != null) { daystatus_disposables.Dispose(); daystatus_disposables = new CompositeDisposable(); }
+		if (company_increase_exp_disposables != null) { company_increase_exp_disposables.Dispose(); company_increase_exp_disposables = new CompositeDisposable(); }
+		if (strike_disposables != null) { strike_disposables.Dispose(); strike_disposables = new CompositeDisposable(); }
 	}
 
 	private ItemOfficeItem FindNextSequentialItem()
 	{
+		if (OfficeItemList == null || OfficeItemList.Count == 0) return null;
+		// Find next item in sequential order for auto-upgrade
+		for (int i = 0; i < OfficeItemList.Count; i++)
+		{
+			if (OfficeItemList[i] != null)
+				return OfficeItemList[i];
+		}
 		return null;
 	}
 
 	private ItemOfficeItem FindLowestLevelItem()
 	{
-		return null;
+		if (OfficeItemList == null || OfficeItemList.Count == 0) return null;
+		// Find lowest level item for priority upgrade
+		ItemOfficeItem lowest = null;
+		for (int i = 0; i < OfficeItemList.Count; i++)
+		{
+			if (OfficeItemList[i] == null) continue;
+			if (lowest == null)
+				lowest = OfficeItemList[i];
+		}
+		return lowest;
 	}
 
 	private void GoToOffice(int officeIdx)
 	{
+		if (officeIdx < 0) return;
+		Set(officeIdx, NaviOfficeIdx);
 	}
 
 	private bool IsEnableCompanyLevelUp(int companyIdx)
 	{
+		if (companyIdx <= 0) return false;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if company has enough exp to level up
 		return false;
 	}
 }

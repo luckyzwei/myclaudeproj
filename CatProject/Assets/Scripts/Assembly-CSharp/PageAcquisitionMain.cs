@@ -171,169 +171,304 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		ActionQueue = new Queue<Action>();
+		EndlessOfferIdxList = new List<int>();
+		IsOpenWeeklyShop = false;
+
+		if (BizAcquisitionStartBtn != null) BizAcquisitionStartBtn.onClick.AddListener(OnClickedBizAcquisitionStartBtn);
+		if (BizAcquisitionRewardBtn != null) BizAcquisitionRewardBtn.onClick.AddListener(OnClickedBizAcquisitionRewardBtn);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnInfoBtnClick);
+		if (ManagerShopBtn != null) ManagerShopBtn.onClick.AddListener(OnClickedManagerShopBtn);
+		if (ManagerBtn != null) ManagerBtn.onClick.AddListener(OnClickedManagerBtn);
+		if (WeeklyShopBtn != null) WeeklyShopBtn.onClick.AddListener(OnClickedWeeklyShopBtn);
+		if (PackageBtn_BattleSpeed != null) PackageBtn_BattleSpeed.onClick.AddListener(OnClickedPackageBtn_BattleSpeed);
+		if (PackageBtn_AcqPass != null) PackageBtn_AcqPass.onClick.AddListener(OnClickedPackageBtn_AcqPass);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+
+		SetIdleRewardInfo();
+		SetSubMissionItem();
+		SetWeeklyShopSaleInfo();
+		SetEndlessOffer();
+		SetManagerPackage();
+		SetBattleSpeedSpecialPackageIcon();
+		SetAcqStagePassSpecialPackageIcon();
+		UpdateContentsOpen();
+		UpdateJewelryBoxValue();
+		StartActionQueue();
 	}
 
 	public override void OnHideBefore()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	public override void OnRefresh()
 	{
+		SetIdleRewardInfo();
+		UpdateJewelryBoxValue();
+		UpdateContentsOpen();
 	}
 
 	public HUDTopInfo GetHUDTopInfo()
 	{
-		return null;
+		return HUDTopInfo;
 	}
 
 	public Transform FindRewardGetTransform(TopInfoData topInfoData)
 	{
+		if (ItemGetEndTr != null) return ItemGetEndTr;
 		return null;
 	}
 
 	public void SetStageList(int curStageIdx, bool isClearAll)
 	{
+		if (StageItems == null) return;
+		for (int i = 0; i < StageItems.Count; i++)
+		{
+			if (StageItems[i] == null) continue;
+			StageItems[i].gameObject.SetActive(true);
+			// Set stage item state based on current stage index
+		}
+		if (CurCityNameText != null) CurCityNameText.text = "";
 	}
 
 	public void OpenBizAcqBattleStart()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+		// Open battle start UI
 	}
 
 	public void UpdateJewelryBoxValue()
 	{
+		if (JewelryBoxComp == null) return;
+		// Update jewelry box value display
 	}
 
 	public void UpdateAccumulateJewelryBoxValue(Vector3 rewardGetPos, Action onEndAction)
 	{
+		UpdateAccumulateJewelryBoxValue(onEndAction);
 	}
 
 	private void UpdateAccumulateJewelryBoxValue(Action onEndAction)
 	{
+		UpdateJewelryBoxValue();
+		onEndAction?.Invoke();
 	}
 
 	private void SetIdleRewardInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+
+		// Set idle reward time display
+		bool isFull = false;
+		if (RewardFullObj != null) RewardFullObj.SetActive(isFull);
 	}
 
 	private void StartActionQueue()
 	{
+		if (ActionQueue == null || ActionQueue.Count == 0) return;
+		var action = ActionQueue.Dequeue();
+		action?.Invoke();
 	}
 
 	[IteratorStateMachine(typeof(_003CDelayEndActionQueue_003Ed__47))]
 	private IEnumerator DelayEndActionQueue(Action onEndAction)
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		onEndAction?.Invoke();
 	}
 
 	private void UpdateContentsOpen()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ContentsOpenSystem == null) return;
+		// Update content open status
+		if (PackageObj_BattleSpeed != null) PackageObj_BattleSpeed.SetActive(false);
+		if (PackageObj_AcqPass != null) PackageObj_AcqPass.SetActive(false);
 	}
 
 	private void SetSubMissionItem()
 	{
+		if (SubMissionItem == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Set sub mission display
 	}
 
 	private void GetMissionReward(int rewardType, int rewardIdx, BigInteger rewardCnt, bool isDoubleReward)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Process mission reward
 	}
 
 	private void CheckAndPlayReinforceTutorial(Action onEndAction)
 	{
+		// Check if reinforce tutorial needs to be shown
+		onEndAction?.Invoke();
 	}
 
 	private void CheckAndOpenBattleSpeedSpecialPackage(Action onEndAction)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
+		// Check if battle speed package should show
+		onEndAction?.Invoke();
 	}
 
 	private void ShowBattleSpeedSpecialPackage(Action onEndAction)
 	{
+		if (PackageObj_BattleSpeed != null) PackageObj_BattleSpeed.SetActive(true);
+		onEndAction?.Invoke();
 	}
 
 	private void SetBattleSpeedSpecialPackageIcon()
 	{
+		if (PackageObj_BattleSpeed == null) return;
+		// Set battle speed package icon
 	}
 
 	private void CheckAndOpenAcqStagePassSpecialPackage(Action onEndAction)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
+		// Check if acq pass package should show
+		onEndAction?.Invoke();
 	}
 
 	private void ShowAcqStagePassSpecialPackage(Action onEndAction)
 	{
+		if (PackageObj_AcqPass != null) PackageObj_AcqPass.SetActive(true);
+		if (AcqPassBubbleObj != null) AcqPassBubbleObj.SetActive(true);
+		onEndAction?.Invoke();
 	}
 
 	private void SetAcqStagePassSpecialPackageIcon()
 	{
+		if (PackageObj_AcqPass == null) return;
+		// Set acq pass package icon
 	}
 
 	private void UpdatePackage(Action onEndAction)
 	{
+		if (PackageComp != null)
+		{
+			// Update package component
+		}
+		onEndAction?.Invoke();
 	}
 
 	private void SetManagerPackage()
 	{
+		if (ManagerPackageGroup == null) return;
+		// Set manager package display
 	}
 
 	private void SetWeeklyShopSaleInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set weekly shop sale info
+		if (WeeklyShopBtn != null) WeeklyShopBtn.gameObject.SetActive(false);
 	}
 
 	private void SetWeeklyShopSaleTimer(DateTime startTime)
 	{
+		WeeklyShopResetTime = startTime;
+		if (WeeklyShopTimeComponent != null)
+		{
+			// Set timer countdown display
+		}
 	}
 
 	private void CheckAndOpenWeeklyShop(Action onEndAction)
 	{
+		if (IsOpenWeeklyShop) { onEndAction?.Invoke(); return; }
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
+		// Check weekly shop open condition
+		onEndAction?.Invoke();
 	}
 
 	private void SetEndlessOffer()
 	{
+		if (EndlessOfferIdxList == null) EndlessOfferIdxList = new List<int>();
+		EndlessOfferIdxList.Clear();
+		// Set endless offer items
+		if (EndlessOfferItem_1 != null) EndlessOfferItem_1.gameObject.SetActive(false);
+		if (EndlessOfferItem_2 != null) EndlessOfferItem_2.gameObject.SetActive(false);
 	}
 
 	private void CheckAndOpenEndlessOffer(int offerIdx, Action onEndAction)
 	{
+		// Check if endless offer popup should auto-open
+		onEndAction?.Invoke();
 	}
 
 	public void OpenBizAcquisitionReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+		// Open reward claim popup
 	}
 
 	private void OnClickedBizAcquisitionStartBtn()
 	{
+		OpenBizAcqBattleStart();
 	}
 
 	private void OnClickedBizAcquisitionRewardBtn()
 	{
+		OpenBizAcquisitionReward();
 	}
 
 	private void OnInfoBtnClick()
 	{
+		// Show acquisition info popup
 	}
 
 	private void OnClickedManagerShopBtn()
 	{
+		// Open manager shop
+		Hide();
 	}
 
 	private void OnClickedPackageBtn_BattleSpeed()
 	{
+		// Open battle speed package shop
 	}
 
 	private void OnClickedPackageBtn_AcqPass()
 	{
+		// Open acquisition pass package shop
 	}
 
 	private void OnClickedWeeklyShopBtn()
 	{
+		// Open weekly shop
 	}
 
 	private void OnClickedManagerBtn()
 	{
+		// Open manager page
+		Hide();
 	}
 }
