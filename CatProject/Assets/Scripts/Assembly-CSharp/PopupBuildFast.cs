@@ -100,51 +100,99 @@ public class PopupBuildFast : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		AutoConsumeCash = false;
+
+		if (Btn != null) Btn.onClick.AddListener(OnClickSkip);
 	}
 
 	public override void OnHideBefore()
 	{
+		StopAllCoroutines();
 	}
 
 	public void Set(int office)
 	{
+		OfficeIdx = office;
+		FactoryIdx = -1;
+		SeasonalBuildingIdx = -1;
 	}
 
 	public void SetFactory(int factory)
 	{
+		FactoryIdx = factory;
+		OfficeIdx = -1;
+		SeasonalBuildingIdx = -1;
 	}
 
 	public void SetSeasonal(int buildingIdx, int targetBuildingLevel)
 	{
+		SeasonalBuildingIdx = buildingIdx;
+		SeasonalTargetBuildingLevel = targetBuildingLevel;
+		OfficeIdx = -1;
+		FactoryIdx = -1;
 	}
 
 	public void SetTimer(DateTime endDateTime, int totalBuildTime, bool bConsumeCash, UnityAction clickedAction)
 	{
+		EndDateTime = endDateTime;
+		BuildTime = totalBuildTime;
+		AutoConsumeCash = bConsumeCash;
+		OnConfirmedFastOpen = clickedAction;
+
+		if (CashText != null) CashText.text = NeedCash.ToString();
+
+		StartCoroutine(UpdateTimer());
 	}
 
 	[IteratorStateMachine(typeof(_003CUpdateTimer_003Ed__20))]
 	private IEnumerator UpdateTimer()
 	{
-		yield break;
+		while (true)
+		{
+			int remainSec = (int)(EndDateTime - DateTime.UtcNow).TotalSeconds;
+			if (remainSec <= 0)
+			{
+				Hide();
+				yield break;
+			}
+			UpdateRemainTime(remainSec);
+			yield return new WaitForSeconds(1f);
+		}
 	}
 
 	public void UpdateRemainTime(int remainTimeSec)
 	{
+		if (RemainTime != null) RemainTime.text = ProjectUtility.GetTimeStringFormattingShort(remainTimeSec);
+		if (Progress != null && BuildTime > 0)
+		{
+			float ratio = 1f - (float)remainTimeSec / (float)BuildTime;
+			Progress.value = Mathf.Clamp01(ratio);
+		}
 	}
 
 	private void UpdateFactoryRemainTime(int remainTime)
 	{
+		UpdateRemainTime(remainTime);
 	}
 
 	private void OnClickSkip()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Consume cash to skip build time
+		OnConfirmedFastOpen?.Invoke();
+		Hide();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

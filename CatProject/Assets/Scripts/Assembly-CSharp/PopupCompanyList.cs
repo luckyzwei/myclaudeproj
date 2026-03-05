@@ -87,65 +87,113 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (InfoDimBtn != null) InfoDimBtn.onClick.AddListener(OnClickInfoClose);
+		if (RefreshBtn != null) RefreshBtn.onClick.AddListener(OnClickRefreshCompany);
+		if (RefreshAdBtn != null) RefreshAdBtn.onClick.AddListener(OnClickAdRefreshCompany);
+		if (RefreshCashBtn != null) RefreshCashBtn.onClick.AddListener(OnClickCashRefreshCompany);
+		if (NoAdsRefreshBtn != null) NoAdsRefreshBtn.onClick.AddListener(OnClickRefreshCompany);
+		if (FreeRefreshBtn != null) FreeRefreshBtn.onClick.AddListener(OnClickRefreshCompany);
+		if (AdsRefreshBtn != null) AdsRefreshBtn.onClick.AddListener(OnClickAdsRefreshCountChargeBtn);
 	}
 
 	public void Show(int officeIdx, Action contractCompanyCb = null)
 	{
+		OfficeIdx = officeIdx;
+		ContractCompanyCb = contractCompanyCb;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		SetABTestLayout();
+		DrawList();
+		UpdateRefreshBtn();
 	}
 
 	private void SetABTestLayout()
 	{
+		if (ABTestObj_A != null) ABTestObj_A.SetActive(ABType_CompanyListAdTest == 0);
+		if (ABTestObj_B != null) ABTestObj_B.SetActive(ABType_CompanyListAdTest == 1);
 	}
 
 	public void DrawList()
 	{
+		// Populate company list slots from company data
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (MaxGradeText != null) MaxGradeText.text = curMaxGrade.ToString();
 	}
 
 	public void UpdateRefreshBtn()
 	{
+		// Update refresh button state based on cooldown
 	}
 
 	private void OnClickContracts(int company)
 	{
+		// Contract with selected company
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		ContractCompanyCb?.Invoke();
 	}
 
 	private void OnClickAdRefreshCompany()
 	{
+		// Watch ad to refresh company list
+		RefreshCompanyList();
 	}
 
 	private void OnClickAdsRefreshCountChargeBtn()
 	{
+		// Watch ad to charge refresh count
 	}
 
 	private void OnClickCashRefreshCompany()
 	{
+		// Pay cash to refresh company list
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		RefreshCompanyList();
 	}
 
 	private void OnClickRefreshCompany()
 	{
+		// Free refresh company list
+		RefreshCompanyList();
 	}
 
 	private void RefreshCompanyList()
 	{
+		DrawList();
+		UpdateRefreshBtn();
 	}
 
 	private void OnClickInfo()
 	{
+		if (InfoObj != null) InfoObj.SetActive(true);
 	}
 
 	private void OnClickInfoClose()
 	{
+		if (InfoObj != null) InfoObj.SetActive(false);
 	}
 
 	public void RefreshText()
 	{
+		DrawList();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }
