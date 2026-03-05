@@ -173,51 +173,106 @@ public class PopupInvest : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		notiDisposables = new CompositeDisposable();
+
+		if (InvestBtn != null) InvestBtn.onClick.AddListener(OnClickInvest);
+		if (InvestRewardBtn != null) InvestRewardBtn.onClick.AddListener(OnClickInvestReward);
+		if (btnLeft != null) btnLeft.onClick.AddListener(OnClickLeft);
+		if (btnRight != null) btnRight.onClick.AddListener(OnClickRight);
 	}
 
 	public override void OnShowBefore()
 	{
+		investIdx = 0;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Get invest max count from InvestSystem
+		investMaxCnt = 1;
+		Set(investIdx);
+		UpdateSuperStaff();
 	}
 
 	private void Set(int InvestIdx)
 	{
+		investIdx = InvestIdx;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Determine if invested or not
+		bool isInvested = false;
+		if (BeforeInvestRoot != null) BeforeInvestRoot.SetActive(!isInvested);
+		if (AfterInvestRoot != null) AfterInvestRoot.SetActive(isInvested);
+
+		if (EnableInvestReddot != null) EnableInvestReddot.SetActive(false);
+		if (EnableRewardReddot != null) EnableRewardReddot.SetActive(false);
+
+		UpdateLRBtn();
 	}
 
 	public void UpdateSuperStaff()
 	{
+		if (superStaffBtn == null) return;
+		// Update super staff button state
 	}
 
 	private void OnClickInvest()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Start investment
+		Set(investIdx);
 	}
 
 	private void OnClickInvestReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Claim investment reward
+		Set(investIdx);
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitEndFrameCallback_003Ed__41))]
 	private IEnumerator WaitEndFrameCallback(Action callback)
 	{
-		yield break;
+		yield return new WaitForEndOfFrame();
+		callback?.Invoke();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
+		if (notiDisposables != null) { notiDisposables.Dispose(); notiDisposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
+		if (notiDisposables != null) { notiDisposables.Dispose(); notiDisposables = new CompositeDisposable(); }
 	}
 
 	private void UpdateLRBtn()
 	{
+		if (btnLeft != null) btnLeft.gameObject.SetActive(investIdx > 0);
+		if (btnRight != null) btnRight.gameObject.SetActive(investIdx < investMaxCnt - 1);
+		if (leftReddot != null) leftReddot.SetActive(false);
+		if (rightReddot != null) rightReddot.SetActive(false);
 	}
 
 	private void OnClickLeft()
 	{
+		if (investIdx > 0)
+		{
+			Set(investIdx - 1);
+		}
 	}
 
 	private void OnClickRight()
 	{
+		if (investIdx < investMaxCnt - 1)
+		{
+			Set(investIdx + 1);
+		}
 	}
 }
