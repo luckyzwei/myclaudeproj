@@ -21,10 +21,12 @@ public class InvestData : IClientData
 	{
 		get
 		{
-			return default(BigInteger);
+			if (MultipleValue <= 0) return originRewradMoney;
+			return originRewradMoney * MultipleValue;
 		}
 		set
 		{
+			originRewradMoney = value;
 		}
 	}
 }

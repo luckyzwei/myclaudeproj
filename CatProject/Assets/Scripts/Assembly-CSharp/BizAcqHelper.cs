@@ -29,55 +29,100 @@ public static class BizAcqHelper
 
 	public static void Init()
 	{
+		BOSS_STAGE_IDX_MULTIPLIER = 10;
+		WIN_REWARD_MULTIPLE_VALUE = 3;
+		WIN_REWARD_MULTIPLE_NEED_CASH = 50;
+		WIN_REWARD_MULTIPLE_PLUS_CASH = 10;
+		MAX_STAGE_IDX = 100;
+		ADDITIONAL_BATTLE_SPEED_VALUE = 3;
+		SPEED_TRIAL_START_STAGE = 1;
+		SPEED_TRIAL_END_STAGE = 5;
+		ADDITIONAL_REWARD_TIME_SEC = 3600;
+
+		BuffEffectList = new List<SkillStatusEffectType>
+		{
+			SkillStatusEffectType.PowerUp,
+			SkillStatusEffectType.SkillChanceUp,
+			SkillStatusEffectType.RemoveDebuff
+		};
+
+		DebuffEffectList = new List<SkillStatusEffectType>
+		{
+			SkillStatusEffectType.PowerDown,
+			SkillStatusEffectType.Evade,
+			SkillStatusEffectType.RemoveBuff
+		};
+
+		SkillActivationTypePrefixMap = new Dictionary<Config.ManagerSkillActivationType, string>
+		{
+			{ Config.ManagerSkillActivationType.Passive, "passive_" },
+			{ Config.ManagerSkillActivationType.OnAttack, "onattack_" }
+		};
 	}
 
 	public static bool IsBuffEffect(SkillStatusEffectType statusEffectType)
 	{
-		return false;
+		if (BuffEffectList == null) return false;
+		return BuffEffectList.Contains(statusEffectType);
 	}
 
 	public static bool IsDebuffEffect(SkillStatusEffectType statusEffectType)
 	{
-		return false;
+		if (DebuffEffectList == null) return false;
+		return DebuffEffectList.Contains(statusEffectType);
 	}
 
 	public static string GetSkillDesc(int skillIdx, int skillLevel)
 	{
-		return null;
+		// Would look up skill description from data table
+		return string.Empty;
 	}
 
 	public static string GetSkillValueDesc(int skillidx, int skillvalue)
 	{
-		return null;
+		// Would look up skill value description from data table
+		return string.Empty;
 	}
 
 	public static Config.ManagerSkillContentsType GetSkillContentsType(int skillIdx)
 	{
-		return default(Config.ManagerSkillContentsType);
+		// Would look up skill contents type from data table
+		return Config.ManagerSkillContentsType.None;
 	}
 
 	public static bool IsPercentAbility(Config.ManagerSkillType skillType)
 	{
-		return false;
+		switch (skillType)
+		{
+			case Config.ManagerSkillType.AddDamage:
+			case Config.ManagerSkillType.AddDefense:
+			case Config.ManagerSkillType.AddCritical:
+				return true;
+			default:
+				return false;
+		}
 	}
 
 	public static bool IsBossStageIdx(int stageIdx)
 	{
-		return false;
+		if (BOSS_STAGE_IDX_MULTIPLIER <= 0) return false;
+		return stageIdx > 0 && stageIdx % BOSS_STAGE_IDX_MULTIPLIER == 0;
 	}
 
 	public static int GetMultipleRewardNeedCash(int getCount)
 	{
-		return 0;
+		return WIN_REWARD_MULTIPLE_NEED_CASH + getCount * WIN_REWARD_MULTIPLE_PLUS_CASH;
 	}
 
 	public static bool IsMoneyLimit(int stageIdx)
 	{
+		// Would check if stage has money reward limit
 		return false;
 	}
 
 	private static RewardItemData GetStageMoneyReward(int stageIdx)
 	{
+		// Would look up stage money reward from data table
 		return null;
 	}
 }

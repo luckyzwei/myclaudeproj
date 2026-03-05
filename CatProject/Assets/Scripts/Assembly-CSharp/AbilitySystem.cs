@@ -37,6 +37,8 @@ public class AbilitySystem
 
 	private Dictionary<AbilityType, BigInteger> AbilityValues;
 
+	private Dictionary<int, bool> ActiveBoosters;
+
 	private CompositeDisposable disposables;
 
 	public Subject<AbilityType> OnChangeBoosterState;
@@ -46,6 +48,7 @@ public class AbilitySystem
 	public void Init()
 	{
 		AbilityValues = new Dictionary<AbilityType, BigInteger>();
+		ActiveBoosters = new Dictionary<int, bool>();
 		disposables = new CompositeDisposable();
 		OnChangeBoosterState = new Subject<AbilityType>();
 		OnUseBooster = new Subject<int>();
@@ -54,44 +57,60 @@ public class AbilitySystem
 
 	private void InitBooster()
 	{
+		// Would load booster configurations from table data
 	}
 
 	public void UpdateOneSeconds()
 	{
+		// Would check booster expiry timers and deactivate expired ones
 	}
 
 	public int GetActiveBoosterAbilityValue(AbilityType type, int regionIdx)
 	{
+		// Would sum up active booster values for the given ability type and region
 		return 0;
 	}
 
 	public bool ActivateBooster(int boosterIdx, int regionIdx, bool useTicket)
 	{
-		return false;
+		if (ActiveBoosters == null) return false;
+		ActiveBoosters[boosterIdx] = true;
+		OnUseBooster.OnNext(boosterIdx);
+		return true;
 	}
 
 	public bool IsFreeBooster(int boosterIdx)
 	{
+		// Would check if booster is free (ad-based or first use)
 		return false;
 	}
 
 	public bool IsActiveAnyBooster()
 	{
+		if (ActiveBoosters == null) return false;
+		foreach (var kvp in ActiveBoosters)
+		{
+			if (kvp.Value) return true;
+		}
 		return false;
 	}
 
 	public bool IsActiveMoneyBooster(int regionIdx)
 	{
-		return false;
+		// Check if money-related boosters are active for this region
+		return IsActiveAnyBooster();
 	}
 
 	public bool IsActiveExpBooster(int regionIdx)
 	{
+		// Check if exp-related boosters are active for this region
 		return false;
 	}
 
 	public bool IsActiveBooster(int boosterIdx)
 	{
+		if (ActiveBoosters != null && ActiveBoosters.TryGetValue(boosterIdx, out bool active))
+			return active;
 		return false;
 	}
 
@@ -102,58 +121,86 @@ public class AbilitySystem
 
 	public void UpdateAbility()
 	{
+		// Recalculate all ability values
+		if (AbilityValues == null) return;
+		// Would iterate all ability sources and sum values
 	}
 
 	public void UpdateAbility(int type)
 	{
+		UpdateAbility((AbilityType)type);
 	}
 
 	public void UpdateAbility(AbilityType type)
 	{
+		// Recalculate specific ability type value
+		if (AbilityValues == null) return;
+
+		BigInteger total = BigInteger.Zero;
+		// Would sum: plant buff + building buff + car buff + costume buff + manager buff + booster buff
+		total += GetPlantBuff(type);
+		total += GetBuffObjectBuff(type);
+		total += GetCeoCostumeBuff(type);
+
+		AbilityValues[type] = total;
+		OnChangeBoosterState.OnNext(type);
 	}
 
 	public BigInteger GetAbilityBuffValue(AbilityType type)
 	{
-		return default(BigInteger);
+		if (AbilityValues != null && AbilityValues.TryGetValue(type, out BigInteger value))
+			return value;
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetRegionAbilityBuffValue(int regionIdx, AbilityType type)
 	{
-		return default(BigInteger);
+		BigInteger total = GetAbilityBuffValue(type);
+		total += GetRegionBuildingBuff(regionIdx, type);
+		total += GetRegionCarBuff(regionIdx, type);
+		total += GetRegionCarBrandBuff(regionIdx, type);
+		return total;
 	}
 
 	public BigInteger GetPlantBuff(AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up plant decoration buffs from UserData
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetRegionBuildingBuff(int regionIdx, AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up region building buffs from UserData
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetBuffObjectBuff(AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up buff objects from UserData
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetRegionCarBuff(int regionIdx, AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up car buffs for region from UserData
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetRegionCarBrandBuff(int regionIdx, AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up car brand buffs for region from UserData
+		return BigInteger.Zero;
 	}
 
 	public BigInteger GetCeoCostumeBuff(AbilityType abilityType)
 	{
-		return default(BigInteger);
+		// Would look up CEO costume buffs from UserData
+		return BigInteger.Zero;
 	}
 
 	public List<BoosterData> GetOfficeBoosterList()
 	{
-		return null;
+		// Would return configured booster list for current office
+		return new List<BoosterData>();
 	}
 }

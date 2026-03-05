@@ -42,25 +42,54 @@ public class BizAcqUserData
 
 	public void AddAccumulateReinforceStone_Per(BigInteger rewardValue)
 	{
+		AccumulateReinforceStone_Per += rewardValue;
 	}
 
 	public void AddAccumulateRegionMoney_Per(int regionIdx, BigInteger rewardValue)
 	{
+		if (AccumulateRewards == null)
+			AccumulateRewards = new List<CurrencyUserData>();
+
+		for (int i = 0; i < AccumulateRewards.Count; i++)
+		{
+			if (AccumulateRewards[i] != null && (int)AccumulateRewards[i].CurrencyId == regionIdx)
+			{
+				AccumulateRewards[i].Value += rewardValue;
+				return;
+			}
+		}
+
+		var newData = new CurrencyUserData();
+		newData.CurrencyId = (Config.CurrencyID)regionIdx;
+		newData.Value = rewardValue;
+		AccumulateRewards.Add(newData);
 	}
 
 	public bool IsExistAccumulateRegionMoney_Per(int regionIdx)
 	{
+		if (AccumulateRewards == null) return false;
+		for (int i = 0; i < AccumulateRewards.Count; i++)
+		{
+			if (AccumulateRewards[i] != null && (int)AccumulateRewards[i].CurrencyId == regionIdx)
+				return true;
+		}
 		return false;
 	}
 
 	public int GetPassGroupIdx()
 	{
-		return 0;
+		return CurrentStageIdx / 10;
 	}
 
 	public bool IsAllPassReceived()
 	{
-		return false;
+		if (PassReceiveData == null || PassReceiveData.Count == 0) return false;
+		for (int i = 0; i < PassReceiveData.Count; i++)
+		{
+			if (PassReceiveData[i] == null || !PassReceiveData[i].IsAllRewarded())
+				return false;
+		}
+		return true;
 	}
 
 	public static BizAcqUserData FromFlatBuffer(BizAcqData? data)

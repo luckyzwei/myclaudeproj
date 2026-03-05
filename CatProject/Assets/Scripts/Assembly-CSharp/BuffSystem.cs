@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UniRx;
 
 public class BuffSystem
@@ -100,70 +101,196 @@ public class BuffSystem
 
 	public void UpdateBoostBuff()
 	{
+		// Recalculate boost buffs from all active sources
 	}
 
 	public void UpdateOneSeconds()
 	{
+		if (buffInfos == null) return;
+
+		DateTime now = DateTime.UtcNow;
+		var toRemove = new List<BuffInfo>();
+
+		foreach (var info in buffInfos)
+		{
+			if (info.Infinity) continue;
+
+			int remain = (int)(info.EndTime - now).TotalSeconds;
+			info.RemainTime.Value = Math.Max(0, remain);
+
+			if (remain <= 0)
+			{
+				toRemove.Add(info);
+			}
+		}
+
+		foreach (var info in toRemove)
+		{
+			buffInfos.Remove(info);
+		}
 	}
 
 	public float GetValueTarget(BuffType bft, BuffTarget bt)
 	{
-		return 0f;
+		return GetValueTarget(bft, bt, -1);
 	}
 
 	public float GetValueIdx(BuffType bft, BuffIdx bi)
 	{
-		return 0f;
+		float total = 0f;
+		if (buffInfos == null) return total;
+
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffType == bft && info.BuffIdx == (int)bi)
+			{
+				if (IsMultiple(bft))
+					total = total == 0f ? info.Value : total * info.Value;
+				else
+					total += info.Value;
+			}
+		}
+		return total;
 	}
 
 	public float GetValueTarget(BuffType bft, BuffTarget bt, int idx = -1)
 	{
-		return 0f;
+		float total = 0f;
+		if (buffInfos == null) return total;
+
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffType != bft) continue;
+			if (info.TargetType != bt) continue;
+			if (idx >= 0 && info.TargetIdx != idx) continue;
+
+			if (IsMultiple(bft))
+				total = total == 0f ? info.Value : total * info.Value;
+			else
+				total += info.Value;
+		}
+		return total;
 	}
 
 	public float GetValueForSlotIdx()
 	{
-		return 0f;
+		return GetValueTarget(BuffType.FacilityObjectValue, BuffTarget.AllSlot);
 	}
 
 	public float GetValueForTip()
 	{
-		return 0f;
+		return GetValueTarget(BuffType.StaffObjectValue, BuffTarget.AllStaff);
 	}
 
 	public float GetValueByBuffType(BuffType type, int targetIdx = -1, bool allInfluence = false)
 	{
-		return 0f;
+		float total = 0f;
+		if (buffInfos == null) return total;
+
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffType != type) continue;
+			if (!allInfluence && targetIdx >= 0 && info.TargetIdx != targetIdx) continue;
+
+			if (IsMultiple(type))
+				total = total == 0f ? info.Value : total * info.Value;
+			else
+				total += info.Value;
+		}
+		return total;
 	}
 
 	public void AddBuff(BuffType buffType, int buffIdx, float multiValue, BuffTarget buffTarget, int targetIdx = -1, long endtime = 0L)
 	{
+		if (buffInfos == null) return;
+
+		DateTime endDateTime;
+		bool infinity;
+		if (endtime <= 0)
+		{
+			infinity = true;
+			endDateTime = DateTime.MaxValue;
+		}
+		else
+		{
+			infinity = false;
+			endDateTime = DateTimeOffset.FromUnixTimeSeconds(endtime).UtcDateTime;
+		}
+
+		// Check for existing buff to update
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffIdx == buffIdx && info.TargetIdx == targetIdx && info.BuffType == buffType)
+			{
+				info.SetValue(multiValue);
+				info.SetEndTime(endDateTime);
+				return;
+			}
+		}
+
+		var newBuff = new BuffInfo(buffIdx, buffType, buffTarget, targetIdx, multiValue, infinity, endDateTime);
+		buffInfos.Add(newBuff);
 	}
 
 	public void RemoveBuff(int buffIdx, int targetIdx = -1)
 	{
+		if (buffInfos == null) return;
+
+		for (int i = buffInfos.Count - 1; i >= 0; i--)
+		{
+			var info = buffInfos[i];
+			if (info.BuffIdx == buffIdx && (targetIdx < 0 || info.TargetIdx == targetIdx))
+			{
+				buffInfos.RemoveAt(i);
+			}
+		}
 	}
 
 	public void RemoveBuff(int bufftype, int buffIdx, int targetIdx = -1)
 	{
+		if (buffInfos == null) return;
+
+		for (int i = buffInfos.Count - 1; i >= 0; i--)
+		{
+			var info = buffInfos[i];
+			if ((int)info.BuffType == bufftype && info.BuffIdx == buffIdx && (targetIdx < 0 || info.TargetIdx == targetIdx))
+			{
+				buffInfos.RemoveAt(i);
+			}
+		}
 	}
 
 	public void RemoveBuffFind(int buffIdx, int targetIdx = -1)
 	{
+		RemoveBuff(buffIdx, targetIdx);
 	}
 
 	public bool HasBuff(int buffIdx, int targetIdx)
 	{
+		if (buffInfos == null) return false;
+
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffIdx == buffIdx && info.TargetIdx == targetIdx)
+				return true;
+		}
 		return false;
 	}
 
 	public bool HasBuff(BuffType type, BuffTarget target)
 	{
+		if (buffInfos == null) return false;
+
+		foreach (var info in buffInfos)
+		{
+			if (info.BuffType == type && info.TargetType == target)
+				return true;
+		}
 		return false;
 	}
 
 	public static bool IsMultiple(BuffType type)
 	{
-		return false;
+		return type == BuffType.Boost;
 	}
 }

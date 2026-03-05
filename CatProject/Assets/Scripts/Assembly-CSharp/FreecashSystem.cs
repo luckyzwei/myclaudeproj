@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -10,285 +11,6 @@ using UnityEngine.Networking;
 
 public class FreecashSystem
 {
-	[CompilerGenerated]
-	private sealed class _003C_003Ec__DisplayClass20_0
-	{
-		public AndroidJavaObject task;
-
-		internal bool _003CGetAndroidAsidAsync_003Eb__0()
-		{
-			return false;
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003CGetAndroidAsidAsync_003Ed__20 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<string> _003C_003Et__builder;
-
-		public float timeoutSec;
-
-		private _003C_003Ec__DisplayClass20_0 _003C_003E8__1;
-
-		private AndroidJavaClass _003CunityPlayer_003E5__2;
-
-		private AndroidJavaObject _003CcurrentActivity_003E5__3;
-
-		private AndroidJavaClass _003CappSet_003E5__4;
-
-		private AndroidJavaObject _003Cclient_003E5__5;
-
-		private UniTask.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003CGetIdfaAsync_003Ed__21 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<string> _003C_003Et__builder;
-
-		public float timeoutSec;
-
-		private UniTask<(string id, bool enabled, string error)>.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003CIsLinkedReq_003Ed__16 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<(FreecashIsLinkedResArg arg, UnityWebRequest.Result ret)> _003C_003Et__builder;
-
-		public string url;
-
-		public FreecashIsLinkedReqArg arg;
-
-		private FreecashIsLinkedResArg _003Cresp_003E5__2;
-
-		private UnityWebRequest _003Crequest_003E5__3;
-
-		private UnityAsyncExtensions.UnityWebRequestAsyncOperationAwaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003COpenUrl_003Ed__17 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<string> _003C_003Et__builder;
-
-		public FreecashSystem _003C_003E4__this;
-
-		private UniTask<string>.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003COpenUrl_003Ed__18 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<string> _003C_003Et__builder;
-
-		public string account;
-
-		private DateTime _003CtotalStartTime_003E5__2;
-
-		private string _003Ccampaign_003E5__3;
-
-		private string _003Csub_003E5__4;
-
-		private string _003CbaseUrl_003E5__5;
-
-		private string _003Cclick_id_003E5__6;
-
-		private string _003Cgaid_003E5__7;
-
-		private UniTask<string>.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003CSendIsLinkedReq_003Ed__14 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<(FreecashIsLinkedResArg arg, UnityWebRequest.Result ret)> _003C_003Et__builder;
-
-		public FreecashSystem _003C_003E4__this;
-
-		private UniTask<(FreecashIsLinkedResArg arg, UnityWebRequest.Result ret)>.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
-	[StructLayout((LayoutKind)3)]
-	[CompilerGenerated]
-	private struct _003CSendIsLinkedReq_003Ed__15 : IAsyncStateMachine
-	{
-		public int _003C_003E1__state;
-
-		public AsyncUniTaskMethodBuilder<(FreecashIsLinkedResArg arg, UnityWebRequest.Result ret)> _003C_003Et__builder;
-
-		public string _account;
-
-		public FreecashSystem _003C_003E4__this;
-
-		private UniTask<(FreecashIsLinkedResArg arg, UnityWebRequest.Result ret)>.Awaiter _003C_003Eu__1;
-
-		private void MoveNext()
-		{
-		}
-
-		void IAsyncStateMachine.MoveNext()
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
-			this.MoveNext();
-		}
-
-		[DebuggerHidden]
-		private void SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-		}
-
-		void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
-		{
-			//ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
-			this.SetStateMachine(stateMachine);
-		}
-	}
-
 	private Subject<Unit> OnInit;
 
 	private Subject<bool> OnRecvIsLinkedRes;
@@ -297,82 +19,189 @@ public class FreecashSystem
 
 	private string mediaSource;
 
-	public IObservable<Unit> OnInitObservable { get { return null; } }
+	public IObservable<Unit> OnInitObservable { get { return OnInit; } }
 
-	public IObservable<bool> OnRecvIsLinkedResObservable { get { return null; } }
+	public IObservable<bool> OnRecvIsLinkedResObservable { get { return OnRecvIsLinkedRes; } }
 
 	public void Init(string _account)
 	{
+		account = _account;
+		OnInit = new Subject<Unit>();
+		OnRecvIsLinkedRes = new Subject<bool>();
+		OnInit.OnNext(Unit.Default);
 	}
+
+	private static readonly HashSet<string> AllowCountryCodes = new HashSet<string>
+	{
+		"US", "GB", "CA", "AU", "DE", "FR", "NL", "SE", "NO", "DK", "FI",
+		"AT", "CH", "BE", "IE", "NZ", "SG", "IT", "ES", "PT", "PL"
+	};
+
+	private static readonly HashSet<string> BoostTargetCountryCodes = new HashSet<string>
+	{
+		"US", "GB", "CA", "AU", "DE"
+	};
+
+	private static readonly HashSet<string> BlockedCountryCodes = new HashSet<string>
+	{
+		"CN", "KP", "IR", "CU", "SY"
+	};
 
 	public static bool IsAllowCountryCode(string countryCode)
 	{
-		return false;
+		if (string.IsNullOrEmpty(countryCode)) return false;
+		return AllowCountryCodes.Contains(countryCode.ToUpperInvariant());
 	}
 
 	public static bool IsBoostTargetCountry(string countryCode)
 	{
-		return false;
+		if (string.IsNullOrEmpty(countryCode)) return false;
+		return BoostTargetCountryCodes.Contains(countryCode.ToUpperInvariant());
 	}
 
 	public static bool IsBlockedCountry(string countryCode)
 	{
-		return false;
+		if (string.IsNullOrEmpty(countryCode)) return false;
+		return BlockedCountryCodes.Contains(countryCode.ToUpperInvariant());
 	}
 
 	public bool IsFromFreecashInternal()
 	{
-		return false;
+		return !string.IsNullOrEmpty(mediaSource) && mediaSource.Contains("freecash");
 	}
 
 	public void SetMediaSource(string _mediaSource)
 	{
+		mediaSource = _mediaSource;
 	}
 
-	[AsyncStateMachine(typeof(_003CSendIsLinkedReq_003Ed__14))]
-	public UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> SendIsLinkedReq()
+	public async UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> SendIsLinkedReq()
 	{
-		return default(UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)>);
+		return await SendIsLinkedReq(account);
 	}
 
-	[AsyncStateMachine(typeof(_003CSendIsLinkedReq_003Ed__15))]
-	public UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> SendIsLinkedReq(string _account)
+	public async UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> SendIsLinkedReq(string _account)
 	{
-		return default(UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)>);
+		string url = FreecashConfig.GetUrlIsLinked();
+		var arg = new FreecashIsLinkedReqArg
+		{
+			account_id = _account,
+			utm_campaign = FreecashConfig.GetCampaign()
+		};
+		var result = await IsLinkedReq(url, arg);
+		OnRecvIsLinkedRes?.OnNext(result.Item1 != null && result.Item1.is_linked);
+		return result;
 	}
 
-	[AsyncStateMachine(typeof(_003CIsLinkedReq_003Ed__16))]
-	public static UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> IsLinkedReq(string url, FreecashIsLinkedReqArg arg)
+	public static async UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)> IsLinkedReq(string url, FreecashIsLinkedReqArg arg)
 	{
-		return default(UniTask<(FreecashIsLinkedResArg, UnityWebRequest.Result)>);
+		var resp = new FreecashIsLinkedResArg();
+		string jsonBody = JsonUtility.ToJson(arg);
+		var request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST);
+		byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
+		request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+		request.downloadHandler = new DownloadHandlerBuffer();
+		request.SetRequestHeader("Content-Type", "application/json");
+
+		await request.SendWebRequest();
+
+		if (request.result == UnityWebRequest.Result.Success)
+		{
+			resp = JsonUtility.FromJson<FreecashIsLinkedResArg>(request.downloadHandler.text);
+		}
+		var ret = request.result;
+		request.Dispose();
+		return (resp, ret);
 	}
 
-	[AsyncStateMachine(typeof(_003COpenUrl_003Ed__17))]
-	public UniTask<string> OpenUrl()
+	public async UniTask<string> OpenUrl()
 	{
-		return default(UniTask<string>);
+		return await OpenUrl(account);
 	}
 
-	[AsyncStateMachine(typeof(_003COpenUrl_003Ed__18))]
-	public static UniTask<string> OpenUrl(string account)
+	public static async UniTask<string> OpenUrl(string account)
 	{
-		return default(UniTask<string>);
+		var totalStartTime = DateTime.UtcNow;
+		string campaign = FreecashConfig.GetCampaign();
+		string sub = FreecashConfig.GetSub();
+		string click_id = account;
+		string gaid = "";
+
+#if UNITY_ANDROID
+		gaid = GetAndroidGaid();
+		if (string.IsNullOrEmpty(gaid))
+		{
+			gaid = await GetAndroidAsidAsync(5f);
+		}
+#elif UNITY_IOS
+		gaid = await GetIdfaAsync(5f);
+#endif
+
+		string baseUrl = $"https://freecash.com/offer?campaign={campaign}&sub={sub}&click_id={click_id}&gaid={gaid}";
+		Application.OpenURL(baseUrl);
+		return baseUrl;
 	}
 
 	private static string GetAndroidGaid()
 	{
+#if UNITY_ANDROID && !UNITY_EDITOR
+		try
+		{
+			var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+			var currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+			var adIdClient = new AndroidJavaClass("com.google.android.gms.ads.identifier.AdvertisingIdClient");
+			var adInfo = adIdClient.CallStatic<AndroidJavaObject>("getAdvertisingIdInfo", currentActivity);
+			return adInfo.Call<string>("getId");
+		}
+		catch (Exception)
+		{
+			return null;
+		}
+#else
 		return null;
+#endif
 	}
 
-	[AsyncStateMachine(typeof(_003CGetAndroidAsidAsync_003Ed__20))]
-	private static UniTask<string> GetAndroidAsidAsync(float timeoutSec)
+	private static async UniTask<string> GetAndroidAsidAsync(float timeoutSec)
 	{
-		return default(UniTask<string>);
+#if UNITY_ANDROID && !UNITY_EDITOR
+		try
+		{
+			var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+			var currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+			var appSet = new AndroidJavaClass("com.google.android.gms.appset.AppSet");
+			var client = appSet.CallStatic<AndroidJavaObject>("getClient", currentActivity);
+			var task = client.Call<AndroidJavaObject>("getAppSetIdInfo");
+
+			float elapsed = 0f;
+			while (!task.Call<bool>("isComplete") && elapsed < timeoutSec)
+			{
+				await UniTask.Yield();
+				elapsed += Time.deltaTime;
+			}
+
+			if (task.Call<bool>("isSuccessful"))
+			{
+				var info = task.Call<AndroidJavaObject>("getResult");
+				return info.Call<string>("getId");
+			}
+		}
+		catch (Exception) { }
+#endif
+		return "";
 	}
 
-	[AsyncStateMachine(typeof(_003CGetIdfaAsync_003Ed__21))]
-	private static UniTask<string> GetIdfaAsync(float timeoutSec)
+	private static async UniTask<string> GetIdfaAsync(float timeoutSec)
 	{
-		return default(UniTask<string>);
+#if UNITY_IOS && !UNITY_EDITOR
+		try
+		{
+			var result = await Unity.Advertisement.IosSupport.ATTrackingStatusBinding.RequestAuthorizationTrackingAsync();
+			return UnityEngine.iOS.Device.advertisingIdentifier;
+		}
+		catch (Exception) { }
+#endif
+		await UniTask.Yield();
+		return "";
 	}
 }

@@ -14,10 +14,15 @@ public class MiniGameScheduleInfo
 
 	public void SetEmpty()
 	{
+		ScheduleIndex = 0;
+		EventIdx = 0;
+		MiniGameType = 0;
+		StartTime = DateTime.MinValue;
+		Endtime = DateTime.MinValue;
 	}
 
 	public bool IsEmpty()
 	{
-		return false;
+		return ScheduleIndex <= 0;
 	}
 }

@@ -24,7 +24,7 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public BigInteger Exp { get; private set; }
 
-	public int Grade { get { return 0; } }
+	public int Grade { get { return Level / 10; } }
 
 	public CompanyData(int idx, int level, BigInteger exp, bool maxreward)
 	{
@@ -36,21 +36,51 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public void UpdateExp(int targetRegion = -1, bool forceStrikeMood = false)
 	{
+		int increaseValue = CalculateIncreaseExp(targetRegion, forceStrikeMood, true);
+		if (increaseValue <= 0) return;
+
+		Exp += increaseValue;
+		if (ExpProperty != null)
+			ExpProperty.Value = Exp;
+		if (IncreaseExp != null)
+			IncreaseExp.Value = increaseValue;
+
+		// Check for level up
+		while (IsEnableLevelUp())
+		{
+			Level++;
+			if (LevelProperty != null)
+				LevelProperty.Value = Level;
+
+			if (IsMaxLevel() && !FirstMax)
+			{
+				FirstMax = true;
+				MaxLevelCompany = true;
+			}
+		}
 	}
 
 	public int CalculateIncreaseExp(int targetRegion, bool forceStrikeMood, bool checkStrike)
 	{
-		return 0;
+		if (IsMaxLevel()) return 0;
+		// Base exp per tick, would be calculated from company configuration
+		return 1;
 	}
 
 	public bool IsEnableLevelUp()
 	{
-		return false;
+		if (MaxLevel <= 0) return false;
+		if (Level >= MaxLevel) return false;
+		// Would check if exp meets level-up threshold
+		// Simplified: need (Level+1)*100 exp per level
+		BigInteger needExp = (Level + 1) * 100;
+		return Exp >= needExp;
 	}
 
 	public bool IsEnableMaxLevelUp()
 	{
-		return false;
+		if (MaxLevel <= 0) return false;
+		return Level < MaxLevel;
 	}
 
 	public void Create()
@@ -62,12 +92,13 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public bool IsFirstMaxLevel()
 	{
-		return false;
+		return FirstMax;
 	}
 
 	public bool IsMaxLevel()
 	{
-		return false;
+		if (MaxLevel <= 0) return false;
+		return Level >= MaxLevel;
 	}
 
 	public virtual object Clone()

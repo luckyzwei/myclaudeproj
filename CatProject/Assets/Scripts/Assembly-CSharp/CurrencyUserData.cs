@@ -22,16 +22,28 @@ public class CurrencyUserData
 	public static CurrencyUserData FromFlatBuffer(CurrencyData data)
 	{
 		var result = new CurrencyUserData();
+		result.CurrencyId = (Config.CurrencyID)data.Currencyid;
+		if (!string.IsNullOrEmpty(data.Value))
+			BigInteger.TryParse(data.Value, out result.Value);
 		return result;
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<CurrencyUserData> dataList)
 	{
-		return default(VectorOffset);
+		if (dataList == null || dataList.Count == 0)
+			return default(VectorOffset);
+
+		var offsets = new Offset<CurrencyData>[dataList.Count];
+		for (int i = 0; i < dataList.Count; i++)
+		{
+			offsets[i] = ToFlatBuffer(builder, dataList[i]);
+		}
+		return builder.CreateVectorOfTables(offsets);
 	}
 
 	private static Offset<CurrencyData> ToFlatBuffer(FlatBufferBuilder builder, CurrencyUserData data)
 	{
-		return default(Offset<CurrencyData>);
+		var valueOffset = builder.CreateString(data.Value.ToString());
+		return CurrencyData.CreateCurrencyData(builder, (int)data.CurrencyId, valueOffset);
 	}
 }

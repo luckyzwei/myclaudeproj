@@ -160,21 +160,43 @@ public class GameNotificationSystem
 
 	private bool IsPassive(NotificationCategory category)
 	{
-		return false;
+		var data = GetData(category, -1, -1);
+		return data != null && data.type == NotificationType.Passive;
 	}
 
 	public NotificationData GetData(NotificationCategory _key, int _targetIdx, int _targetSubIdx)
 	{
+		if (notifications == null) return null;
+		if (!notifications.TryGetValue(_key, out var list)) return null;
+
+		for (int i = 0; i < list.Count; i++)
+		{
+			var data = list[i];
+			if ((_targetIdx < 0 || data.targetIdx == _targetIdx) &&
+				(_targetSubIdx < 0 || data.targetSubIdx == _targetSubIdx))
+			{
+				return data;
+			}
+		}
 		return null;
 	}
 
 	public bool IsOn(NotificationCategory _key, int _targetIdx, int _targetSubIdx)
 	{
+		var data = GetData(_key, _targetIdx, _targetSubIdx);
+		if (data?.on != null)
+			return data.on.Value;
 		return false;
 	}
 
 	public void Clear()
 	{
+		if (notifications != null)
+			notifications.Clear();
+		if (ScheduledCategories != null)
+			ScheduledCategories.Clear();
+		if (ScheduledEvent != null)
+			ScheduledEvent.Clear();
 	}
 
 	public void Create()
@@ -183,51 +205,165 @@ public class GameNotificationSystem
 		disposables = new CompositeDisposable();
 		ScheduledCategories = new Dictionary<int, HashSet<NotificationCategory>>();
 		ScheduledEvent = new Dictionary<int, Subject<int>>();
+		buffEventDic = new Dictionary<BuffSystem.BuffType, Action>();
+		LastCheckTime = DateTime.UtcNow;
 	}
 
 	public void UpdateNotification(NotificationCategory category)
 	{
+		// Would recalculate notification state for the given category
 	}
 
 	public void CheckChangeOnceNotification(NotificationCategory category, bool value, int targetIdx = -1)
 	{
+		var data = GetData(category, targetIdx, -1);
+		if (data != null && data.type == NotificationType.Once)
+		{
+			if (data.on != null)
+				data.on.Value = value;
+		}
 	}
 
 	public void ChangeOnceNotification(NotificationCategory category, bool value, int targetIdx = -1)
 	{
+		var data = GetData(category, targetIdx, -1);
+		if (data != null)
+		{
+			if (data.on != null)
+				data.on.Value = value;
+		}
+		else
+		{
+			AddNotification(category, targetIdx);
+			data = GetData(category, targetIdx, -1);
+			if (data?.on != null)
+				data.on.Value = value;
+		}
 	}
 
 	public void AddNotification(NotificationCategory category, int targetIdx = -1)
 	{
+		if (notifications == null) return;
+
+		if (!notifications.TryGetValue(category, out var list))
+		{
+			list = new List<NotificationData>();
+			notifications[category] = list;
+		}
+
+		var data = new NotificationData
+		{
+			type = NotificationType.Once,
+			category = category,
+			targetIdx = targetIdx,
+			targetSubIdx = -1,
+			on = new ReactiveProperty<bool>(false),
+			onCount = new ReactiveProperty<int>(0)
+		};
+		list.Add(data);
 	}
 
 	public void DelNotifiaction(NotificationCategory category, int targetIdx = -1)
 	{
+		if (notifications == null) return;
+		if (!notifications.TryGetValue(category, out var list)) return;
+
+		for (int i = list.Count - 1; i >= 0; i--)
+		{
+			if (targetIdx < 0 || list[i].targetIdx == targetIdx)
+			{
+				list.RemoveAt(i);
+			}
+		}
 	}
 
 	public void UpdateOneSeconds()
 	{
+		DateTime now = DateTime.UtcNow;
+		var passedHours = GetPassedHours(LastCheckTime, now);
+		if (passedHours != null && passedHours.Count > 0)
+		{
+			foreach (int hour in passedHours)
+			{
+				// Trigger scheduled categories for this hour
+				if (ScheduledCategories.TryGetValue(hour, out var categories))
+				{
+					foreach (var cat in categories)
+					{
+						UpdateNotification(cat);
+					}
+				}
+				// Trigger scheduled events
+				if (ScheduledEvent.TryGetValue(hour, out var subject))
+				{
+					subject.OnNext(hour);
+				}
+			}
+		}
+		LastCheckTime = now;
 	}
 
 	private List<int> GetPassedHours(DateTime lastCheckTime, DateTime nowTime)
 	{
-		return null;
+		var result = new List<int>();
+		int lastHour = lastCheckTime.Hour;
+		int nowHour = nowTime.Hour;
+
+		if (nowHour == lastHour && (nowTime - lastCheckTime).TotalHours < 1)
+			return result;
+
+		if (nowHour > lastHour)
+		{
+			for (int h = lastHour + 1; h <= nowHour; h++)
+				result.Add(h);
+		}
+		else if (nowHour < lastHour)
+		{
+			// Crossed midnight
+			for (int h = lastHour + 1; h < 24; h++)
+				result.Add(h);
+			for (int h = 0; h <= nowHour; h++)
+				result.Add(h);
+		}
+
+		return result;
 	}
 
 	public void RegisterScheduledCategory(int hour, NotificationCategory category)
 	{
+		if (ScheduledCategories == null) return;
+
+		if (!ScheduledCategories.TryGetValue(hour, out var set))
+		{
+			set = new HashSet<NotificationCategory>();
+			ScheduledCategories[hour] = set;
+		}
+		set.Add(category);
 	}
 
 	public IDisposable RegisterScheduledEvent(int hour, Action<int> action)
 	{
-		return null;
+		if (ScheduledEvent == null) return null;
+
+		if (!ScheduledEvent.TryGetValue(hour, out var subject))
+		{
+			subject = new Subject<int>();
+			ScheduledEvent[hour] = subject;
+		}
+		return subject.Subscribe(action);
 	}
 
 	public void UnregisterScheduledCategory(int hour, NotificationCategory category)
 	{
+		if (ScheduledCategories != null && ScheduledCategories.TryGetValue(hour, out var set))
+		{
+			set.Remove(category);
+		}
 	}
 
 	public void ClearAllScheduledCategories()
 	{
+		if (ScheduledCategories != null)
+			ScheduledCategories.Clear();
 	}
 }

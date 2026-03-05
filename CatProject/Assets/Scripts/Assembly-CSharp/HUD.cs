@@ -33,32 +33,46 @@ public class HUD : UIBase, IScreenAction
 
 	private bool screenAction;
 
-	public HUDType[] HudType { get { return null; } }
+	public HUDType[] HudType { get { return aniType; } }
 
-	public bool IsScreenAction { get { return false; } }
+	public bool IsScreenAction { get { return screenAction; } }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (MenuBtn != null) MenuBtn.onClick.AddListener(OnClickSetting);
+		if (MoneyBtn != null) MoneyBtn.onClick.AddListener(OnClickMoney);
+		if (CashBtn != null) CashBtn.onClick.AddListener(OnClickCash);
 	}
 
 	public override void OnShowBefore()
 	{
+		SyncData();
 	}
 
 	public void SyncData()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (MoneyText != null && root.UserData.HUDMoney != null)
+			MoneyText.text = root.UserData.HUDMoney.Value.ToString();
+		if (CashText != null && root.UserData.HUDCash != null)
+			CashText.text = root.UserData.HUDCash.Value.ToString();
 	}
 
 	public void OnClickSetting()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void OnClickMoney()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickCash()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void UpdateBoost(float value)
@@ -67,7 +81,15 @@ public class HUD : UIBase, IScreenAction
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID idx)
 	{
-		return default(Vector3);
+		switch (idx)
+		{
+			case Config.CurrencyID.Gold:
+				return MoneyText != null ? MoneyText.transform.position : default(Vector3);
+			case Config.CurrencyID.Cash:
+				return CashText != null ? CashText.transform.position : default(Vector3);
+			default:
+				return default(Vector3);
+		}
 	}
 
 	public override void SaveOringSortingData()
@@ -80,6 +102,15 @@ public class HUD : UIBase, IScreenAction
 
 	public void ScreenAction(bool value)
 	{
+		screenAction = value;
+		if (appearTween != null)
+		{
+			if (value)
+				appearTween.DOPlayForward();
+			else
+				appearTween.DOPlayBackwards();
+		}
+		appear = !value;
 	}
 
 	public override void CustomSortingOrder()
@@ -88,11 +119,12 @@ public class HUD : UIBase, IScreenAction
 
 	public void ScreenTopOn(bool value)
 	{
+		screenAction = value;
 	}
 
 	public bool IsScreenTopOn()
 	{
-		return false;
+		return screenAction;
 	}
 
 	public void OnScreenActionStep()
@@ -101,5 +133,7 @@ public class HUD : UIBase, IScreenAction
 
 	public void OnScreenActionComplete()
 	{
+		screenAction = false;
+		appear = true;
 	}
 }

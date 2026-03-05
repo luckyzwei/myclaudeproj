@@ -15,6 +15,7 @@ public class ExchangeShopUserData
 
 	public void AddItemBuyCount(int buyCount)
 	{
+		ItemBuyCount += buyCount;
 	}
 
 	public static ExchangeShopUserData FromFlatBuffer(ExchangeShopData data)

@@ -35,11 +35,11 @@ public class EmployeeData : IReadOnlyData, ICloneable
 
 	public string GetNameKey()
 	{
-		return null;
+		return $"employee_name_{Idx}";
 	}
 
 	public string GetIconKey()
 	{
-		return null;
+		return $"employee_icon_{ViewIdx}";
 	}
 }
