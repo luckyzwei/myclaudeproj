@@ -27,13 +27,13 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 		[SerializeField]
 		private GameObject roof;
 
-		public int Idx { get { return 0; } }
+		public int Idx { get { return idx; } }
 
-		public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return null; } }
+		public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return itemOnetimeFloors; } }
 
-		public GameObject BodyR { get { return null; } }
+		public GameObject BodyR { get { return bodyR; } }
 
-		public GameObject Roof { get { return null; } }
+		public GameObject Roof { get { return roof; } }
 	}
 
 	[CompilerGenerated]
@@ -226,107 +226,196 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 
 	private bool IsOnSimpleMode;
 
-	public Animator CharactersAnimator { get { return null; } }
+	public Animator CharactersAnimator { get { return charactersAnimator; } }
 
-	public Button ScreenTouch { get { return null; } }
+	public Button ScreenTouch { get { return screenTouch; } }
 
 	public bool OnRewarding { get; set; }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		OnRewarding = false;
+		IsOnSimpleMode = false;
+		waitMessageTerm = new WaitUntil(() => RemainMessageDuration <= 0f);
+
+		if (UseCurrencyBtn != null) UseCurrencyBtn.OnPressed = OnClickUseCurrency;
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (AprilFoolBannerBtn != null) AprilFoolBannerBtn.onClick.AddListener(OnClickAprilFoolBanner);
 	}
 
 	private void Update()
 	{
+		if (RemainMessageDuration > 0f) RemainMessageDuration -= Time.deltaTime;
+		if (RemainCurrencyParticleDuration > 0f) RemainCurrencyParticleDuration -= Time.deltaTime;
+		if (RemainFloorDoTweenDuration > 0f) RemainFloorDoTweenDuration -= Time.deltaTime;
+
+		// Update remain time text
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateOneTimeInfo();
 	}
 
 	private void UpdateOneTimeInfo(bool isUpdateTheme = true)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (isUpdateTheme)
+		{
+			// Set theme background and building struct
+		}
+		UpdateLevel();
+		UpdateBtns();
+		UpdateCurrency();
+		UpdateExp();
 	}
 
 	private void UpdateLevel()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		UpdateLevelText();
+		UpdateLevelBuilding();
 	}
 
 	private void UpdateLevelText()
 	{
+		if (CurStep != null) CurStep.text = "";
+		if (ProgressBarText != null) ProgressBarText.text = "";
 	}
 
 	private void UpdateLevelBuilding(int nextLevel = -1)
 	{
+		if (BuildingStructs == null || CurBuildingStruct == null) return;
+		// Show/hide building floors based on current level
+		if (CurBuildingStruct.ItemOnetimeFloors != null)
+		{
+			for (int i = 0; i < CurBuildingStruct.ItemOnetimeFloors.Count; i++)
+			{
+				if (CurBuildingStruct.ItemOnetimeFloors[i] != null)
+					CurBuildingStruct.ItemOnetimeFloors[i].gameObject.SetActive(true);
+			}
+		}
 	}
 
 	public void UpdateBtns()
 	{
+		bool isComplete = false;
+		if (CompleteObject != null) CompleteObject.SetActive(isComplete);
+		if (UseCurrencyBtn != null) UseCurrencyBtn.gameObject.SetActive(!isComplete);
+		if (CurrencyReddot != null) CurrencyReddot.SetActive(false);
 	}
 
 	private void UpdateExp()
 	{
+		if (ProgressSlider == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		ProgressSlider.value = 0f;
 	}
 
 	public void UpdateCurrency()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (CurrencyText != null) CurrencyText.text = "0";
 	}
 
 	private void HideInfoBubbles()
 	{
+		// Hide any info bubbles that are showing
 	}
 
 	private void ShowCurrencyParticle()
 	{
+		RemainCurrencyParticleDuration = CurrencyParticleDuration;
+		if (CurrencyParticleSmall != null) CurrencyParticleSmall.Play();
 	}
 
 	private void ShowMessage(int targetLevel)
 	{
+		if (CurMessageCoroutine != null) StopCoroutine(CurMessageCoroutine);
+		CurMessageCoroutine = StartCoroutine(RandomMessage());
 	}
 
 	[IteratorStateMachine(typeof(_003CRandomMessage_003Ed__68))]
 	private IEnumerator RandomMessage()
 	{
-		yield break;
+		if (MessageText == null || MessageT == null) yield break;
+		RemainMessageDuration = MessageTerm;
+		// Show random congratulation message
+		MessageText.text = "";
+		yield return waitMessageTerm;
 	}
 
 	private void ShowGuideArrow()
 	{
+		if (AprilFoolGuideArrow != null) AprilFoolGuideArrow.SetActive(true);
 	}
 
 	private void OnClickUseCurrency()
 	{
+		if (OnRewarding) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		OnRewarding = true;
+		// Use currency to upgrade building
+		if (UpgradeFxObj != null) UpgradeFxObj.SetActive(true);
+		ShowCurrencyParticle();
+		UpdateLevel();
+		UpdateCurrency();
+		UpdateBtns();
+		OnRewarding = false;
 	}
 
 	private void OnClickInfo()
 	{
+		// Show one-time event info popup
 	}
 
 	private void OnClickAprilFoolBanner()
 	{
+		// Handle April Fool banner click
 	}
 
 	public void RefreshText()
 	{
+		UpdateLevelText();
+		UpdateCurrency();
 	}
 
 	private void KillCoroutine()
 	{
+		if (CurMessageCoroutine != null) { StopCoroutine(CurMessageCoroutine); CurMessageCoroutine = null; }
+		if (CurAnimationCoroutine != null) { StopCoroutine(CurAnimationCoroutine); CurAnimationCoroutine = null; }
 	}
 
 	public override void OnHideBefore()
 	{
+		KillCoroutine();
 	}
 
 	public override void OnHideAfter()
 	{
+		if (UpgradeFxObj != null) UpgradeFxObj.SetActive(false);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		KillCoroutine();
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

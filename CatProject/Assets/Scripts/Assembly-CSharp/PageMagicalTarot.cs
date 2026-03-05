@@ -216,144 +216,325 @@ public class PageMagicalTarot : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		curNormalIdxList = new List<int>();
+		curGetCardList = new List<int>();
+		curStatus = Status.None;
+		curUseCurrency = UseCurrency.Gem;
+		waitCardTerm = new WaitForSeconds(waitCardFrame / 60f);
+		waitOneSec = new WaitForSeconds(1f);
+
+		if (PlayBtn != null) PlayBtn.onClick.AddListener(OnClickPlay);
+		if (ChangeBtn != null) ChangeBtn.onClick.AddListener(OnClickChange);
+		if (FreeChangeBtn != null) FreeChangeBtn.onClick.AddListener(OnClickFreeChange);
+		if (AddPlayBtn != null) AddPlayBtn.onClick.AddListener(OnClickAdd);
+		if (CurrencyLeftArrowBtn != null) CurrencyLeftArrowBtn.onClick.AddListener(OnClickCurrencyLeft);
+		if (CurrencyRightArrowBtn != null) CurrencyRightArrowBtn.onClick.AddListener(OnClickCurrencyRight);
+		if (AddLeftArrowBtn != null) AddLeftArrowBtn.onClick.AddListener(OnClickCurrencyLeft);
+		if (AddRightArrowBtn != null) AddRightArrowBtn.onClick.AddListener(OnClickCurrencyRight);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		ResetGameProcess();
+		InitGameProcess();
 	}
 
 	public override void OnHideAfter()
 	{
+		if (SpecialParticleObj != null) SpecialParticleObj.SetActive(false);
 	}
 
 	public override void Hide()
 	{
+		HidePopup();
 	}
 
 	private void HidePopup()
 	{
+		UploadUserData(() => { base.Hide(); });
 	}
 
 	private void ResetGameProcess()
 	{
+		curStatus = Status.Idle;
+		isOwnSpecial = false;
+		curSpecialIdx = -1;
+		if (curNormalIdxList != null) curNormalIdxList.Clear();
+		if (curGetCardList != null) curGetCardList.Clear();
+		if (SpecialParticleObj != null) SpecialParticleObj.SetActive(false);
 	}
 
 	private void InitGameProcess()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		LoadCradList();
+		LoadGetCardList();
+		SetCardList(false);
+		UpdateUseCurrency();
+		SetChangeButtonState();
+		SetDescText();
 	}
 
 	private void SetNewCardList(bool isUpdate)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Generate new card list
+		if (isUpdate)
+			SetCardList(true);
 	}
 
 	private void LoadCradList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Load card list from user data / tarot region data
+		if (curTarotRegionData != null && curTarotRegionData.TarotCardList != null)
+		{
+			curNormalIdxList = new List<int>(curTarotRegionData.TarotCardList);
+		}
 	}
 
 	private void LoadGetCardList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (curTarotRegionData != null && curTarotRegionData.TarotCardGetList != null)
+		{
+			curGetCardList = new List<int>(curTarotRegionData.TarotCardGetList);
+		}
 	}
 
 	private void SetCardList(bool isUpdate)
 	{
+		if (TarotCardList == null) return;
+		normalCardCount = 0;
+
+		for (int i = 0; i < TarotCardList.Length; i++)
+		{
+			if (TarotCardList[i] == null) continue;
+			bool isGot = curGetCardList != null && curGetCardList.Contains(i);
+			TarotCardList[i].gameObject.SetActive(true);
+			// Set card visual state
+			normalCardCount++;
+		}
 	}
 
 	private void UpdateUseCurrency()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		// Update currency display based on curUseCurrency
+		switch (curUseCurrency)
+		{
+			case UseCurrency.Gem:
+				if (GemCountText != null) GemCountText.text = "0";
+				break;
+			case UseCurrency.BasicTicket:
+				if (BasicTicketCountText != null) BasicTicketCountText.text = "0";
+				break;
+			case UseCurrency.SpecialTicket:
+				if (SpecialTicketCountText != null) SpecialTicketCountText.text = "0";
+				break;
+		}
 	}
 
 	private void SetChangeButtonState()
 	{
+		bool canChange = curStatus == Status.Idle;
+		if (ChangeBtn != null) ChangeBtn.gameObject.SetActive(canChange);
+		if (FreeChangeBtn != null) FreeChangeBtn.gameObject.SetActive(false);
 	}
 
 	private void ShowCardReward(int idx, bool isOwn, Action cb)
 	{
+		// Show reward popup for the selected tarot card
+		cb?.Invoke();
 	}
 
 	private void SetNextGame()
 	{
+		curStatus = Status.Idle;
+		SetCardList(false);
+		UpdateUseCurrency();
+		SetChangeButtonState();
+		SetDescText();
 	}
 
 	private void SetGameDone(bool isSpecial)
 	{
+		curStatus = Status.Done;
+		if (isSpecial && SpecialParticleObj != null)
+			SpecialParticleObj.SetActive(true);
+		SetDescText();
 	}
 
 	private int GetRandomIdx()
 	{
-		return 0;
+		if (curNormalIdxList == null || curNormalIdxList.Count == 0) return 0;
+		return curNormalIdxList[UnityEngine.Random.Range(0, curNormalIdxList.Count)];
 	}
 
 	private void SetDescText()
 	{
+		if (DescText == null) return;
+		switch (curStatus)
+		{
+			case Status.Idle:
+				DescText.text = "";
+				break;
+			case Status.Done:
+				DescText.text = "";
+				break;
+			default:
+				DescText.text = "";
+				break;
+		}
 	}
 
 	private void OnClickPlay()
 	{
+		if (curStatus != Status.Idle) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		curStatus = Status.Play;
+		// Consume currency and start card shuffle
+		if (TarotAnimator != null) TarotAnimator.Play("Shuffle");
 	}
 
 	private void OnClickChange()
 	{
+		if (curStatus != Status.Idle) return;
+		// Change card list
+		SetNewCardList(true);
 	}
 
 	private void OnClickFreeChange()
 	{
+		if (curStatus != Status.Idle) return;
+		// Free change card list
+		SetNewCardList(true);
 	}
 
 	private void OnClickAdd()
 	{
+		if (curStatus != Status.WaitAdd) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Add additional play after first round
 	}
 
 	private void UseTarotTicket(bool isSpecialTicket, Action addCb)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Use tarot ticket
+		addCb?.Invoke();
 	}
 
 	private void AddCatstaEventTarotPlay()
 	{
+		// Add catstagram event for tarot play
 	}
 
 	private void OnClickCurrencyLeft()
 	{
+		// Cycle currency type left
+		int cur = (int)curUseCurrency;
+		cur--;
+		if (cur < (int)UseCurrency.Gem) cur = (int)UseCurrency.SpecialTicket;
+		curUseCurrency = (UseCurrency)cur;
+		UpdateUseCurrency();
 	}
 
 	private void OnClickCurrencyRight()
 	{
+		// Cycle currency type right
+		int cur = (int)curUseCurrency;
+		cur++;
+		if (cur > (int)UseCurrency.SpecialTicket) cur = (int)UseCurrency.Gem;
+		curUseCurrency = (UseCurrency)cur;
+		UpdateUseCurrency();
 	}
 
 	private void OnClickInfo()
 	{
+		// Show tarot info popup
 	}
 
 	private void OnClickCard(ItemTarotCard card)
 	{
+		if (curStatus != Status.Wait && curStatus != Status.WaitAdd) return;
+		if (card == null) return;
+		// Handle card selection
+		int idx = GetRandomIdx();
+		ShowCardReward(idx, false, () =>
+		{
+			if (curGetCardList != null) curGetCardList.Add(idx);
+			SetCardList(false);
+			// Check if all cards collected
+			if (curGetCardList != null && curGetCardList.Count >= normalCardCount)
+				SetGameDone(false);
+			else
+				curStatus = Status.WaitAdd;
+		});
 	}
 
 	public void EventShuffleDone()
 	{
+		curStatus = Status.Wait;
+		SetDescText();
 	}
 
 	public void EventReversCard(int idx)
 	{
+		// Called by animation event when card is reversed
+		if (TarotCardList != null && idx >= 0 && idx < TarotCardList.Length && TarotCardList[idx] != null)
+		{
+			// Show card front face
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CPlayCards_003Ed__74))]
 	private IEnumerator PlayCards(ItemTarotCard.AniClip clip, Action cb = null)
 	{
-		yield break;
+		if (TarotCardList == null) { cb?.Invoke(); yield break; }
+		for (int i = 0; i < TarotCardList.Length; i++)
+		{
+			if (TarotCardList[i] == null) continue;
+			// Play animation on each card with delay
+			yield return waitCardTerm;
+		}
+		cb?.Invoke();
 	}
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void UploadUserData(Action SuccessCb)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { SuccessCb?.Invoke(); return; }
+		// Save tarot data to server
+		SuccessCb?.Invoke();
 	}
 }

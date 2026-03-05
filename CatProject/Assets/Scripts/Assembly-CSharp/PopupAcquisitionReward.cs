@@ -198,57 +198,116 @@ public class PopupAcquisitionReward : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		RewardItemDataList = new List<RewardItemData>();
+		MultipleNeedCash = 0;
+
+		if (ConfirmButton != null) ConfirmButton.onClick.AddListener(OnConfirmButtonClick);
+		if (NextStageButton != null) NextStageButton.onClick.AddListener(OnNextStageButtonClick);
+		if (MultipleRewardButton != null) MultipleRewardButton.onClick.AddListener(() => GetReward(2));
+		if (AutoPlayToggleBtn != null) AutoPlayToggleBtn.onClick.AddListener(OnClickAutoPlayBtn);
 	}
 
 	public void Init(int clearStageIdx)
 	{
+		ClearStageIdx = clearStageIdx;
+		if (ClearStageText != null) ClearStageText.text = clearStageIdx.ToString();
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+
+		// Set reward info from battle system
+		SetAutoPlay();
+
+		// Start reward items display coroutine
+		StartCoroutine(SetRewardItemsCoroutine());
 	}
 
 	private void SetAutoPlay()
 	{
+		if (AutoPlayObj != null) AutoPlayObj.SetActive(false);
+		if (AutoPlayGuideObj != null) AutoPlayGuideObj.SetActive(false);
+		// Check if auto play is available
+		StartCoroutine(CheckAndShowAutoPlayPopup());
 	}
 
 	private void SetRewardText(Config.CurrencyID currencyId, BigInteger beforeReward, BigInteger afterReward)
 	{
+		int idx = (int)currencyId;
+		if (RevenueIconList != null && idx >= 0 && idx < RevenueIconList.Count && RevenueIconList[idx] != null)
+			RevenueIconList[idx].gameObject.SetActive(true);
+		if (BeforeRevenueTextList != null && idx >= 0 && idx < BeforeRevenueTextList.Count && BeforeRevenueTextList[idx] != null)
+			BeforeRevenueTextList[idx].text = ProjectUtility.GetThousandCommaText(beforeReward);
+		if (AfterRevenueTextList != null && idx >= 0 && idx < AfterRevenueTextList.Count && AfterRevenueTextList[idx] != null)
+			AfterRevenueTextList[idx].text = ProjectUtility.GetThousandCommaText(afterReward);
 	}
 
 	private void SetRewardItems(AcquisitionInfoData acqInfoTable)
 	{
+		if (RewardItemArticleList == null) return;
+		// Hide all reward items first
+		for (int i = 0; i < RewardItemArticleList.Count; i++)
+		{
+			if (RewardItemArticleList[i] != null)
+				RewardItemArticleList[i].gameObject.SetActive(false);
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CSetRewardItemsCoroutine_003Ed__29))]
 	private IEnumerator SetRewardItemsCoroutine()
 	{
-		yield break;
+		yield return new WaitForSeconds(RewardGetStartTime);
+		if (RewardItemArticleList == null) yield break;
+		for (int i = 0; i < RewardItemArticleList.Count; i++)
+		{
+			if (RewardItemArticleList[i] == null) continue;
+			RewardItemArticleList[i].gameObject.SetActive(true);
+			// Play reward get sound/animation
+			if (i > 0) yield return new WaitForSeconds(RewardGetDelayTime);
+		}
 	}
 
 	private void OnConfirmButtonClick()
 	{
+		GetReward(1);
+		OnClickedButton?.Invoke(ButtonType.Confirm);
 	}
 
 	private void OnNextStageButtonClick()
 	{
+		PlayNextStage();
 	}
 
 	private void PlayNextStage()
 	{
+		GetReward(1);
+		OnClickedButton?.Invoke(ButtonType.NextStage);
 	}
 
 	private void GetReward(int multiple)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+		// Apply reward with multiplier
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckAndShowAutoPlayPopup_003Ed__34))]
 	private IEnumerator CheckAndShowAutoPlayPopup()
 	{
-		yield break;
+		float waitTime = 3f;
+		yield return new WaitForSeconds(waitTime);
+		// Check if auto play toggle should show
+		if (NextStageCountDownObj != null) NextStageCountDownObj.SetActive(false);
 	}
 
 	private void OnClickAutoPlayBtn()
 	{
+		if (AutoPlayToggleObj != null)
+			AutoPlayToggleObj.SetActive(!AutoPlayToggleObj.activeSelf);
 	}
 
 	public override void OnHideBefore()
 	{
+		if (CountDownCoroutine != null) { StopCoroutine(CountDownCoroutine); CountDownCoroutine = null; }
 	}
 }

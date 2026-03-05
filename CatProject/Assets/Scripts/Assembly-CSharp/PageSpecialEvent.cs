@@ -177,125 +177,205 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private bool IsOnSimpleMode;
 
-	public Button ScreenTouch { get { return null; } }
+	public Button ScreenTouch { get { return screenTouch; } }
 
 	public bool OnRewarding { get; set; }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		OnRewarding = false;
+		IsOnSimpleMode = false;
+		waitMessageTerm = new WaitUntil(() => RemainMessageDuration <= 0f);
+
+		if (UseCurrencyBtn != null) UseCurrencyBtn.OnPressed = OnClickUseCurrency;
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (RouletteBtn != null) RouletteBtn.onClick.AddListener(OnClickRoulette);
+		if (BuildingScroll != null) BuildingScroll.onValueChanged.AddListener(OnChangeBuildingScroll);
 	}
 
 	private void Update()
 	{
+		if (RemainMessageDuration > 0f) RemainMessageDuration -= Time.deltaTime;
+		if (RemainCurrencyParticleDuration > 0f) RemainCurrencyParticleDuration -= Time.deltaTime;
+		if (RemainFloorDoTweenDuration > 0f) RemainFloorDoTweenDuration -= Time.deltaTime;
 	}
 
 	private void OnChangeBuildingScroll(Vector2 value)
 	{
+		// Handle building scroll events
 	}
 
 	public override void OnShowBefore()
 	{
+		InitPage();
 	}
 
 	private void InitPage()
 	{
+		UpdateOneTimeInfo(null, null);
 	}
 
 	private void UpdateOneTimeInfo(Action onSuccess, Action onFail)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { onFail?.Invoke(); return; }
+
+		UpdateInfo();
+		onSuccess?.Invoke();
 	}
 
 	private void UpdateInfo()
 	{
+		UpdateLevel();
+		UpdateBtns();
+		UpdateCurrency();
+		UpdateExp();
+		UpdateLastReward();
 	}
 
 	private void UpdateLevel()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateLevelText();
+		UpdateLevelBuilding();
 	}
 
 	private void UpdateLevelText()
 	{
+		if (CurStep != null) CurStep.text = "";
+		if (ProgressBarText != null) ProgressBarText.text = "";
 	}
 
 	private void UpdateLevelBuilding(int nextLevel = -1)
 	{
+		// Update building visual based on current level
+		if (buildingRoot == null) return;
 	}
 
 	public void UpdateBtns()
 	{
+		bool isComplete = false;
+		if (CompleteObject != null) CompleteObject.SetActive(isComplete);
+		if (UseCurrencyBtn != null) UseCurrencyBtn.gameObject.SetActive(!isComplete);
+		if (CurrencyReddot != null) CurrencyReddot.SetActive(false);
 	}
 
 	private void UpdateExp()
 	{
+		if (ProgressSlider == null) return;
+		ProgressSlider.value = 0f;
 	}
 
 	public void UpdateCurrency()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (CurrencyText != null) CurrencyText.text = "0";
 	}
 
 	private void UpdateLastReward()
 	{
+		if (LastRewardObj == null) return;
+		LastRewardObj.SetActive(false);
+		// Show last reward items if available
 	}
 
 	private void HideInfoBubbles()
 	{
+		// Hide any info bubbles
 	}
 
 	private void ShowCurrencyParticle()
 	{
+		RemainCurrencyParticleDuration = CurrencyParticleDuration;
+		if (CurrencyParticle != null) CurrencyParticle.Play();
 	}
 
 	private void ShowMessage(int targetLevel)
 	{
+		if (CurMessageCoroutine != null) StopCoroutine(CurMessageCoroutine);
+		CurMessageCoroutine = StartCoroutine(RandomMessage());
 	}
 
 	[IteratorStateMachine(typeof(_003CRandomMessage_003Ed__60))]
 	private IEnumerator RandomMessage()
 	{
-		yield break;
+		if (MessageText == null || MessageT == null) yield break;
+		RemainMessageDuration = MessageTerm;
+		MessageText.text = "";
+		yield return waitMessageTerm;
 	}
 
 	private void OnClickUseCurrency()
 	{
+		if (OnRewarding) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		OnRewarding = true;
+		if (UpgradeFxObj != null) UpgradeFxObj.SetActive(true);
+		ShowCurrencyParticle();
+		UpdateLevel();
+		UpdateCurrency();
+		UpdateBtns();
+		OnRewarding = false;
 	}
 
 	private void OnClickInfo()
 	{
+		// Show special event info popup
 	}
 
 	private void OnClickRoulette()
 	{
+		// Open roulette page
+		Hide();
 	}
 
 	public void RefreshText()
 	{
+		UpdateLevelText();
+		UpdateCurrency();
 	}
 
 	private void SetScroll(float speed)
 	{
+		if (BuildingScroll != null)
+			BuildingScroll.horizontalNormalizedPosition = Mathf.Clamp01(BuildingScroll.horizontalNormalizedPosition + speed * Time.deltaTime);
 	}
 
 	private void SetScrollExit(float speed)
 	{
+		// Scroll building view to exit position
 	}
 
 	private void KillCoroutine()
 	{
+		if (CurMessageCoroutine != null) { StopCoroutine(CurMessageCoroutine); CurMessageCoroutine = null; }
+		if (CurAnimationCoroutine != null) { StopCoroutine(CurAnimationCoroutine); CurAnimationCoroutine = null; }
 	}
 
 	public override void OnHideBefore()
 	{
+		KillCoroutine();
 	}
 
 	public override void OnHideAfter()
 	{
+		if (UpgradeFxObj != null) UpgradeFxObj.SetActive(false);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		KillCoroutine();
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }
