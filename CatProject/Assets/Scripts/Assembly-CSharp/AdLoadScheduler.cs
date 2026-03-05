@@ -18,6 +18,9 @@ public class AdLoadScheduler
 
 		public AdLoadRequest(string adUnitId, AdType adType)
 		{
+			AdUnitId = adUnitId;
+			AdType = adType;
+			Subject = new Subject<AdLoadSchedulerResult>();
 		}
 	}
 
@@ -99,24 +102,55 @@ public class AdLoadScheduler
 
 	private AdLoadRequest currentRequest;
 
+	public AdLoadScheduler()
+	{
+	}
+
 	public IObservable<AdLoadSchedulerResult> Schedule(string adUnitId, AdType adType)
 	{
-		return null;
+		var existing = GetExistingRequest(adUnitId, adType);
+		if (existing != null)
+			return existing.Subject;
+
+		var request = new AdLoadRequest(adUnitId, adType);
+		scheduler?.Add(request);
+		return request.Subject;
 	}
 
 	public IObservable<AdLoadSchedulerResult> ScheduleNow(string adUnitId, AdType adType)
 	{
-		return null;
+		var existing = GetExistingRequest(adUnitId, adType);
+		if (existing != null)
+			return existing.Subject;
+
+		var request = new AdLoadRequest(adUnitId, adType);
+		// Insert at front for priority loading
+		scheduler?.Insert(0, request);
+		return request.Subject;
 	}
 
 	private bool TryGetCurrentRequestObservable(string adUnitId, AdType adType, out IObservable<AdLoadSchedulerResult> observable)
 	{
 		observable = null;
+		if (currentRequest != null && currentRequest.AdUnitId == adUnitId && currentRequest.AdType == adType)
+		{
+			observable = currentRequest.Subject;
+			return true;
+		}
 		return false;
 	}
 
 	private AdLoadRequest GetExistingRequest(string adUnitId, AdType adType)
 	{
+		if (currentRequest != null && currentRequest.AdUnitId == adUnitId && currentRequest.AdType == adType)
+			return currentRequest;
+
+		if (scheduler == null) return null;
+		for (int i = 0; i < scheduler.Count; i++)
+		{
+			if (scheduler[i] != null && scheduler[i].AdUnitId == adUnitId && scheduler[i].AdType == adType)
+				return scheduler[i];
+		}
 		return null;
 	}
 
@@ -134,30 +168,35 @@ public class AdLoadScheduler
 
 	private (IObservable<AdLoadSchedulerResult>, IObservable<AdLoadSchedulerResult>) GetAdObservables(string unitID, AdType adType)
 	{
-		return default((IObservable<AdLoadSchedulerResult>, IObservable<AdLoadSchedulerResult>));
+		var loaded = GetRewardedAdLoadedObservable(unitID, adType);
+		var failed = GetRewardedAdFailedObservable(unitID, adType);
+		return (loaded, failed);
 	}
 
 	private IObservable<AdLoadSchedulerResult> GetRewardedAdLoadedObservable(string unitID, AdType adType)
 	{
-		return null;
+		return Observable.Empty<AdLoadSchedulerResult>();
 	}
 
 	private IObservable<AdLoadSchedulerResult> GetRewardedAdFailedObservable(string unitID, AdType adType)
 	{
-		return null;
+		return Observable.Empty<AdLoadSchedulerResult>();
 	}
 
 	private IObservable<AdLoadSchedulerResult> GetInterstitialAdLoadedObservable(string unitID, AdType adType)
 	{
-		return null;
+		return Observable.Empty<AdLoadSchedulerResult>();
 	}
 
 	private IObservable<AdLoadSchedulerResult> GetInterstitialAdFailedObservable(string unitID, AdType adType)
 	{
-		return null;
+		return Observable.Empty<AdLoadSchedulerResult>();
 	}
 
 	private void LogAdLoadResult(AdLoadSchedulerResult schedulerResult)
 	{
+		if (schedulerResult == null) return;
+		string status = schedulerResult.IsSuccess ? "Success" : "Failed";
+		UnityEngine.Debug.Log($"[AdLoadScheduler] {schedulerResult.AdType} {status}: {schedulerResult.AdUnitId}");
 	}
 }

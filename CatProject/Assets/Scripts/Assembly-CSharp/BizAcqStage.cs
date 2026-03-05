@@ -38,44 +38,79 @@ public class BizAcqStage : MonoBehaviour
 
 	public GameObject GetMoveRootObject()
 	{
-		return null;
+		return MoveRootObj;
 	}
 
 	public ObjectFollowCam GetFollowCam()
 	{
-		return null;
+		return followCamera;
 	}
 
 	public Camera GetFollowCameraComponent()
 	{
-		return null;
+		if (followCamera == null) return null;
+		return followCamera.GetComponent<Camera>();
 	}
 
 	private void Awake()
 	{
+		CarIdx = DEFAULT_CAR_IDX;
+		Buildings = new List<BizAcqBuilding>();
+		if (StartTr != null && EndTr != null)
+		{
+			MoveDir = (EndTr.position - StartTr.position).normalized;
+		}
 	}
 
 	public void StartMove()
 	{
+		IsMoving = true;
 	}
 
 	public void StopMove()
 	{
+		IsMoving = false;
 	}
 
 	private void LoadCar()
 	{
+		// Would load car prefab via Addressables
 	}
 
 	private void ResetBuildings()
 	{
+		if (Buildings != null)
+			Buildings.Clear();
+		if (BuildingsRoot != null)
+		{
+			var buildingComponents = BuildingsRoot.GetComponentsInChildren<BizAcqBuilding>();
+			if (buildingComponents != null)
+			{
+				Buildings = new List<BizAcqBuilding>(buildingComponents);
+			}
+		}
 	}
 
 	private void Update()
 	{
+		if (!IsMoving || MoveRootObj == null) return;
+		MoveRootObj.transform.position += MoveDir * MoveSpeed * Time.deltaTime;
 	}
 
 	private void FixedUpdate()
 	{
+		if (!IsMoving || CarObj == null || followCamera == null) return;
+		// Check building distance for effects
+		if (Buildings == null) return;
+		Vector3 carPos = CarObj.transform.position;
+		for (int i = 0; i < Buildings.Count; i++)
+		{
+			if (Buildings[i] == null) continue;
+			float dist = Vector3.Distance(carPos, Buildings[i].transform.position);
+			if (dist <= BuildingFxPlayDistance)
+			{
+				// Would trigger building effect
+			}
+		}
 	}
 }

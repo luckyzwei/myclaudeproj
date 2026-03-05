@@ -13,18 +13,19 @@ public class AdLoadSchedulerResult
 	private AdLoadSchedulerResult(string adUnitId, bool isSuccess, AdType adType, MaxSdkBase.AdInfo adInfo = null, MaxSdkBase.ErrorInfo errorInfo = null)
 	{
 		AdUnitId = adUnitId;
-		this.AdType = AdType;
+		IsSuccess = isSuccess;
+		AdType = adType;
 		AdInfo = adInfo;
 		ErrorInfo = errorInfo;
 	}
 
 	public static AdLoadSchedulerResult Success(string adUnitId, AdType adType, MaxSdkBase.AdInfo adInfo)
 	{
-		return null;
+		return new AdLoadSchedulerResult(adUnitId, true, adType, adInfo, null);
 	}
 
 	public static AdLoadSchedulerResult Failure(string adUnitId, AdType adType, MaxSdkBase.ErrorInfo errorInfo)
 	{
-		return null;
+		return new AdLoadSchedulerResult(adUnitId, false, adType, null, errorInfo);
 	}
 }

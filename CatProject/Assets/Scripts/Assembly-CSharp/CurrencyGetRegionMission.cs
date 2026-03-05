@@ -10,29 +10,35 @@ public class CurrencyGetRegionMission : SingleMissionBase
 
 	protected override void OnInitAfter()
 	{
+		if (Args != null && Args.Length >= 2)
+		{
+			RegionIdx = (int)Args[0];
+			CurrencyIdx = (int)Args[1];
+		}
 	}
 
 	public override void Subscribe()
 	{
+		// Would subscribe to currency get events via UserDataSystem
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? string.Empty;
 	}
 
 	public override string GetMissionProgressText_CurrentValue()
 	{
-		return null;
+		return CurrentValue != null ? CurrentValue.Value.ToString() : "0";
 	}
 
 	public override string GetMissionProgressText_TargetValue()
 	{
-		return null;
+		return TargetValue.ToString();
 	}
 
 	public override bool IsPossibleShortCut()
 	{
-		return false;
+		return bPossibleShortCut;
 	}
 }

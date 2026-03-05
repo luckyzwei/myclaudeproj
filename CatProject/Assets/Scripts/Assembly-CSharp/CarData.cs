@@ -10,17 +10,19 @@ public class CarData : IReadOnlyData, ICloneable
 
 	public int GetRegion()
 	{
-		return 0;
+		// Region is derived from car index range
+		return Idx / 1000;
 	}
 
 	public int GetBrandIdx()
 	{
-		return 0;
+		// Brand is derived from car index
+		return Idx % 1000;
 	}
 
 	public bool IsSpecial()
 	{
-		return false;
+		return Idx >= 90000;
 	}
 
 	public void Create()

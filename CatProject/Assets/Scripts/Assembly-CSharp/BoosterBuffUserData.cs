@@ -21,28 +21,37 @@ public class BoosterBuffUserData
 		BoosterIdx = boosterIdx;
 		BoosterTotalUseCount = totalUseCount;
 		BoosterTicketUseActive = boosterTicketUseActive;
+		BoosterRegionBuffDataList = new List<BoosterRegionBuffUserData>();
 	}
 
 	public bool IsFree()
 	{
-		return false;
+		return BoosterFreeCount > 0;
 	}
 
 	public static BoosterBuffUserData FromFlatBuffer(BoosterBuffData? data)
 	{
 		if (!data.HasValue) return null;
 		var d = data.Value;
-		var result = (BoosterBuffUserData)new BoosterBuffUserData(0, 0, false).MemberwiseClone();
+		var result = new BoosterBuffUserData(d.BoosterIdx, d.BoosterTotalUseCount, d.BoosterTicketUseActive);
 		return result;
 	}
 
 	public static Offset<BoosterBuffData> ToFlatBuffer(FlatBufferBuilder builder, BoosterBuffUserData data)
 	{
-		return default(Offset<BoosterBuffData>);
+		if (data == null) return default(Offset<BoosterBuffData>);
+		return BoosterBuffData.CreateBoosterBuffData(builder, data.BoosterIdx, data.BoosterTotalUseCount, data.BoosterTicketUseActive);
 	}
 
 	public static VectorOffset ToFlatBufferVector(FlatBufferBuilder builder, List<BoosterBuffUserData> dataList)
 	{
-		return default(VectorOffset);
+		if (dataList == null || dataList.Count == 0)
+			return default(VectorOffset);
+		var offsets = new Offset<BoosterBuffData>[dataList.Count];
+		for (int i = 0; i < dataList.Count; i++)
+		{
+			offsets[i] = ToFlatBuffer(builder, dataList[i]);
+		}
+		return builder.CreateVectorOfTables(offsets);
 	}
 }

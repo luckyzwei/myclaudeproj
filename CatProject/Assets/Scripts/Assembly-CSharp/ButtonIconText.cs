@@ -29,52 +29,90 @@ public class ButtonIconText : MonoBehaviour
 
 	private void Awake()
 	{
+		if (btn != null)
+			btn.onClick.AddListener(OnClickBtn);
+		if (layout != null)
+		{
+			left = layout.padding.left;
+			right = layout.padding.right;
+		}
 	}
 
 	private void OnEnable()
 	{
+		CheckLayout();
 	}
 
 	public void SetData(int rewardType, int rewardIdx, BigInteger rewardCnt, bool shortCnt = false)
 	{
+		// Would load icon sprite from atlas based on rewardType/rewardIdx
+		SetCnt(rewardCnt, shortCnt);
 	}
 
 	public void SetIcon(Sprite sprite)
 	{
+		if (icon != null)
+			icon.sprite = sprite;
 	}
 
 	public void SetCnt(BigInteger rewardCnt, bool shortCnt = false)
 	{
+		if (text != null)
+		{
+			if (shortCnt)
+				text.text = ProjectUtility.GetShortBigInteger(rewardCnt);
+			else
+				text.text = rewardCnt.ToString();
+		}
 	}
 
 	public void SetCnt(string cnt)
 	{
+		if (text != null)
+			text.text = cnt;
 	}
 
 	public void SetBtnEnable(bool value)
 	{
+		if (btn != null)
+			btn.interactable = value;
 	}
 
 	private void OnClickBtn()
 	{
+		if (OneClick && btn != null)
+			btn.interactable = false;
+		OnClick?.Invoke();
 	}
 
 	public Image GetImage()
 	{
-		return null;
+		return icon;
 	}
 
 	public Text GetText()
 	{
-		return null;
+		return text;
 	}
 
 	public Button GetBtn()
 	{
-		return null;
+		return btn;
 	}
 
 	private void CheckLayout()
 	{
+		if (layout == null) return;
+		bool hasIcon = icon != null && icon.gameObject.activeSelf;
+		if (!hasIcon)
+		{
+			layout.padding.left = 0;
+			layout.padding.right = 0;
+		}
+		else
+		{
+			layout.padding.left = left;
+			layout.padding.right = right;
+		}
 	}
 }

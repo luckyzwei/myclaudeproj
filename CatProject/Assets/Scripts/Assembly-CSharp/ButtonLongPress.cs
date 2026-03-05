@@ -22,7 +22,7 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -31,13 +31,14 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CStart_003Ed__20(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -52,7 +53,6 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -77,15 +77,12 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 	[SerializeField]
 	private GameObject LongPressShowFxObj;
 
-	[Tooltip("클릭 이벤트로 판정되는 최대 시간. 이 시간내에 손을 떼면 클릭 이벤트로 판정.")]
 	[SerializeField]
 	private float PressEventMaxTimeSec;
 
-	[Tooltip("롱 프레스 이벤트가 불리는 시간. 이 시간에 도달해야만 롱 프레스 성공으로 간주.")]
 	[SerializeField]
 	private float LongPressEventCallTimeSec;
 
-	[Tooltip("롱 프레스 후 클릭시 해제되는 타입")]
 	[SerializeField]
 	private bool ToggleLongPressType;
 
@@ -107,17 +104,18 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 
 	public bool Interactable
 	{
-		get
-		{
-			return false;
-		}
+		get { return interactable; }
 		set
 		{
+			interactable = value;
+			RefreshState(true);
 		}
 	}
 
 	private void Awake()
 	{
+		animator = GetComponent<Animator>();
+		interactable = true;
 	}
 
 	[IteratorStateMachine(typeof(_003CStart_003Ed__20))]
@@ -128,42 +126,103 @@ public class ButtonLongPress : MonoBehaviour, IPointerDownHandler, IEventSystemH
 
 	private void OnEnable()
 	{
+		ResetPressInfo();
 	}
 
 	private void RefreshState(bool bForceUpdate)
 	{
+		if (animator == null) return;
+		if (!interactable)
+		{
+			if (!string.IsNullOrEmpty(DisabledTrigger))
+				animator.SetTrigger(DisabledTrigger);
+		}
+		else if (bKeepLongPress)
+		{
+			if (!string.IsNullOrEmpty(LongPressedTrigger))
+				animator.SetTrigger(LongPressedTrigger);
+		}
+		else
+		{
+			if (!string.IsNullOrEmpty(NormalTrigger))
+				animator.SetTrigger(NormalTrigger);
+		}
 	}
 
 	public void ResetToNormal()
 	{
+		bKeepLongPress = false;
+		RefreshState(true);
 	}
 
 	public bool IsKeepLongPressState()
 	{
-		return false;
+		return bKeepLongPress;
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (!interactable) return;
+		bPressed = true;
+		PressElapsedTimeSec = 0f;
+		bStartLongPress = false;
+		if (animator != null && !string.IsNullOrEmpty(PressedTrigger))
+			animator.SetTrigger(PressedTrigger);
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		if (!interactable) return;
+		if (bPressed)
+		{
+			if (PressElapsedTimeSec < PressEventMaxTimeSec)
+			{
+				if (ToggleLongPressType && bKeepLongPress)
+				{
+					bKeepLongPress = false;
+					RefreshState(false);
+				}
+				else
+				{
+					OnPressed?.Invoke();
+				}
+			}
+		}
+		ResetPressInfo();
+		RefreshState(false);
 	}
 
 	private void OnButtonLongPressed()
 	{
+		bKeepLongPress = true;
+		if (LongPressShowFxObj != null)
+			LongPressShowFxObj.SetActive(true);
+		OnLongPressed?.Invoke();
+		RefreshState(false);
 	}
 
 	private void OnDisable()
 	{
+		ResetPressInfo();
 	}
 
 	private void Update()
 	{
+		if (!bPressed) return;
+		PressElapsedTimeSec += Time.deltaTime;
+		if (!bStartLongPress && PressElapsedTimeSec >= LongPressEventCallTimeSec)
+		{
+			bStartLongPress = true;
+			OnButtonLongPressed();
+		}
 	}
 
 	private void ResetPressInfo()
 	{
+		bPressed = false;
+		PressElapsedTimeSec = 0f;
+		bStartLongPress = false;
+		if (LongPressShowFxObj != null)
+			LongPressShowFxObj.SetActive(false);
 	}
 }

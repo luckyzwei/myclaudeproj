@@ -20,24 +20,19 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 		object IEnumerator<object>.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		object IEnumerator.Current
 		{
 			[DebuggerHidden]
-			get
-			{
-				return null;
-			}
+			get { return _003C_003E2__current; }
 		}
 
 		[DebuggerHidden]
 		public _003CStart_003Ed__23(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -52,7 +47,6 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 
 		bool IEnumerator.MoveNext()
 		{
-			//ILSpy generated this explicit interface implementation from .override directive in MoveNext
 			return this.MoveNext();
 		}
 
@@ -99,12 +93,11 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 
 	public bool Interactable
 	{
-		get
-		{
-			return false;
-		}
+		get { return interactable; }
 		set
 		{
+			interactable = value;
+			RefreshState();
 		}
 	}
 
@@ -112,6 +105,9 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 
 	private void Awake()
 	{
+		animator = GetComponent<Animator>();
+		interactable = true;
+		pressedCnt = 0;
 	}
 
 	[IteratorStateMachine(typeof(_003CStart_003Ed__23))]
@@ -122,33 +118,76 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 
 	private void OnEnable()
 	{
+		pressed = false;
+		deltaTime = 0f;
+		pressedCnt = 0;
 	}
 
 	private void RefreshState()
 	{
+		if (animator == null) return;
+		if (!interactable)
+		{
+			if (!string.IsNullOrEmpty(DisabledTrigger))
+				animator.SetTrigger(DisabledTrigger);
+		}
+		else
+		{
+			if (!string.IsNullOrEmpty(NormalTrigger))
+				animator.SetTrigger(NormalTrigger);
+		}
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (!interactable) return;
+		pressed = true;
+		deltaTime = 0f;
+		if (animator != null && !string.IsNullOrEmpty(PressedTrigger))
+			animator.SetTrigger(PressedTrigger);
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		if (!interactable && !keepPressWhenDisabled) return;
+		if (pressed)
+		{
+			pressedCnt++;
+			OnPressed?.Invoke();
+		}
+		pressed = false;
+		OnReleased?.Invoke();
+		RefreshState();
 	}
 
 	private void OnDisable()
 	{
+		pressed = false;
+		deltaTime = 0f;
 	}
 
 	public void OnDrag(PointerEventData eventData)
 	{
+		// Prevent drag from canceling press
 	}
 
 	public void OnCancel()
 	{
+		pressed = false;
+		OnReleased?.Invoke();
+		RefreshState();
 	}
 
 	private void Update()
 	{
+		if (!pressed || !UseLongPressed) return;
+		deltaTime += Time.deltaTime;
+		float interval = pressedCnt >= fastPressCnt ? click_interval_fast : click_interval;
+		if (deltaTime >= interval)
+		{
+			deltaTime = 0f;
+			pressedCnt++;
+			OnPressed?.Invoke();
+		}
 	}
 }

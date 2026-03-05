@@ -72,19 +72,36 @@ public class AutoDeactiveComponent : MonoBehaviour
 
 	public void SetPlaySpeed(float playSpeed)
 	{
+		PlaySpeed = playSpeed;
 	}
 
 	private void OnEnable()
 	{
+		if (DeactiveCoroutine != null)
+			StopCoroutine(DeactiveCoroutine);
+		DeactiveCoroutine = StartCoroutine(AutoDeactive());
 	}
 
 	private void OnDisable()
 	{
+		if (DeactiveCoroutine != null)
+		{
+			StopCoroutine(DeactiveCoroutine);
+			DeactiveCoroutine = null;
+		}
 	}
 
 	[IteratorStateMachine(typeof(_003CAutoDeactive_003Ed__6))]
 	private IEnumerator AutoDeactive()
 	{
-		yield break;
+		float elapsed = 0f;
+		float targetTime = PlaySpeed > 0f ? DactiveTime / PlaySpeed : DactiveTime;
+		while (elapsed < targetTime)
+		{
+			elapsed += Time.deltaTime;
+			yield return null;
+		}
+		gameObject.SetActive(false);
+		DeactiveCoroutine = null;
 	}
 }
