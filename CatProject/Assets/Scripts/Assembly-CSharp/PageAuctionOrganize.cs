@@ -62,49 +62,76 @@ public class PageAuctionOrganize : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (PlayBtn != null) PlayBtn.onClick.AddListener(OnClickStartAuction);
+		if (ResetBtn != null) ResetBtn.onClick.AddListener(OnClickReset);
+		if (AutoOrganizeBtn != null) AutoOrganizeBtn.onClick.AddListener(OnClickAuto);
+		if (StanimaShopBtn != null) StanimaShopBtn.onClick.AddListener(OnClickStaminaShop);
+		if (GemShopBtn != null) GemShopBtn.onClick.AddListener(OnClickGemShop);
+		if (Point2xTrialBtn != null) Point2xTrialBtn.onClick.AddListener(OnClickPoint2xTrial);
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateRoundSlot();
+		if (Point2xTrialNotiObj != null) Point2xTrialNotiObj.SetActive(false);
 	}
 
 	public void UpdateRoundSlot()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update round and coin info
+		if (RoundCountText != null) RoundCountText.text = "";
+		if (TotalCoinText != null) TotalCoinText.text = "0";
 	}
 
 	private void OnClickAuto()
 	{
+		// Auto organize auction managers
+		UpdateRoundSlot();
 	}
 
 	private void OnClickSpy()
 	{
+		// Spy on opponent team
 	}
 
 	private void OnClickStartAuction()
 	{
+		// Start auction battle
 	}
 
 	private void OnClickReset()
 	{
+		// Reset auction team
+		UpdateRoundSlot();
 	}
 
 	private void OnClickStaminaShop()
 	{
+		// Navigate to stamina shop
 	}
 
 	private void OnClickGemShop()
 	{
+		// Navigate to gem shop
 	}
 
 	private void OnClickPoint2xTrial()
 	{
+		// Start 2x point trial
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

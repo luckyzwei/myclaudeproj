@@ -48,50 +48,73 @@ public class ItemStageWorldSpot : MonoBehaviour
 
 	private void Awake()
 	{
+		if (stageBtn != null) stageBtn.onClick.AddListener(OnClickStage);
 	}
 
 	public void SetStage(int stage)
 	{
+		Stage = stage;
+		isLock = true;
+		ShowLockObj(true);
+		ShowUnlockObj(false);
+		ShowPlayingIcon(false);
 	}
 
 	private void OnClickStage()
 	{
+		if (isLock) return;
+		OnClick?.Invoke(Stage, EnterUITrans != null ? EnterUITrans : transform);
 	}
 
 	public Transform GetPlayingIconPos()
 	{
-		return null;
+		if (playingIcon != null) return playingIcon.transform;
+		return transform;
 	}
 
 	public void SetNextStageStatus()
 	{
+		isLock = false;
+		ShowLockObj(false);
+		ShowUnlockObj(true);
+		if (lockNextObject != null) lockNextObject.SetActive(true);
 	}
 
 	public void ShowLockObj(bool value)
 	{
+		if (lockObject != null) lockObject.SetActive(value);
+		if (lockOverObject != null) lockOverObject.SetActive(false);
 	}
 
 	public void ShowUnlockObj(bool value)
 	{
+		if (unlockObject != null) unlockObject.SetActive(value);
+		isLock = !value;
 	}
 
 	public void ShowPlayingIcon(bool value)
 	{
+		if (playingObject != null) playingObject.SetActive(value);
+		if (playingIcon != null) playingIcon.SetActive(value);
 	}
 
 	public void ShowParticle1(bool value)
 	{
+		if (Particle1 != null) Particle1.SetActive(value);
 	}
 
 	public void ShowParticle2(bool value)
 	{
+		if (Particle2 != null) Particle2.SetActive(value);
 	}
 
 	public void ShowPlayingIcon()
 	{
+		ShowPlayingIcon(true);
 	}
 
 	public void ShowName(bool show)
 	{
+		if (Name != null) Name.gameObject.SetActive(show);
 	}
 }

@@ -74,49 +74,89 @@ public class ItemMiniGameExchangeShop : MonoBehaviour
 
 	private void Awake()
 	{
+		if (BuyButton != null) BuyButton.onClick.AddListener(OnItemBuyButtonClick);
+		if (AdsRewardButton != null) AdsRewardButton.onClick.AddListener(OnAdsRewardButtonClick);
+		if (BuyLockedButton != null) BuyLockedButton.onClick.AddListener(OnBuyLockedButtonClick);
+		if (InfoButton != null) InfoButton.onClick.AddListener(OnItemInfoButtonClick);
 	}
 
 	public void SetItem(MiniGameExchangeShopData shopItemData)
 	{
+		if (shopItemData == null) return;
+		// Store shop item data and update UI
+		UpdateBuyBoxLayout();
 	}
 
 	private void UpdateBuyBoxLayout()
 	{
+		bool isSoldOut = ItemRemainCount <= 0;
+
+		if (BuyObj != null) BuyObj.SetActive(!isSoldOut && !IsAdsReward && !IsBuyLocked);
+		if (AdsRewardObj != null) AdsRewardObj.SetActive(!isSoldOut && IsAdsReward);
+		if (SoldOutObj != null) SoldOutObj.SetActive(isSoldOut);
+		if (BuyLockedObj != null) BuyLockedObj.SetActive(!isSoldOut && IsBuyLocked);
 	}
 
 	private void SetItemMainImage(int rewardType, int rewardIdx, int rewardRegion, string iconKey)
 	{
+		if (ItemMainImage != null && !string.IsNullOrEmpty(iconKey))
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) ItemMainImage.sprite = sprite;
+		}
 	}
 
 	private void SetItemRemainCountText(int count)
 	{
+		if (ItemRemainCountText != null)
+			ItemRemainCountText.text = count.ToString();
 	}
 
 	private void SetItemCostValueText(int value)
 	{
+		if (ItemCostValueText != null)
+			ItemCostValueText.text = value.ToString();
 	}
 
 	private void SetItemCostIconImage(int type, int idx, int region)
 	{
+		// Set cost icon based on currency type
+		if (ItemCostIconImage == null) return;
 	}
 
 	private void OnItemBuyButtonClick()
 	{
+		if (ItemRemainCount <= 0) return;
+		BuyItem(1, false);
 	}
 
 	private void OnAdsRewardButtonClick()
 	{
+		if (ItemRemainCount <= 0) return;
+		BuyItem(1, true);
 	}
 
 	private void OnBuyLockedButtonClick()
 	{
+		// Show locked message
+		if (!string.IsNullOrEmpty(LockedMessage))
+		{
+			// Display stage condition message
+			if (StageConditionText != null)
+				StageConditionText.text = LockedMessage;
+		}
 	}
 
 	private void OnItemInfoButtonClick()
 	{
+		// Show item detail info
 	}
 
 	private void BuyItem(int buyCount, bool isAdsReward)
 	{
+		if (ItemRemainCount <= 0) return;
+		ItemRemainCount -= buyCount;
+		SetItemRemainCountText(ItemRemainCount);
+		UpdateBuyBoxLayout();
 	}
 }
