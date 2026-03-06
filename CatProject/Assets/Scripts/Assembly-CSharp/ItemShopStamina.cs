@@ -91,6 +91,7 @@ public class ItemShopStamina : MonoBehaviour
 
 	private void OnClickCash()
 	{
+		if (shopTd == null) return;
 	}
 
 	private void OnDestroy()

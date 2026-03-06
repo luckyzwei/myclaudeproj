@@ -23,6 +23,9 @@ public class PopupParkingGem : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (GemBtn != null) GemBtn.onClick.AddListener(OnClickPurchase);
+		if (IAPBtn != null) IAPBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	public override void OnShowBefore()
@@ -31,5 +34,6 @@ public class PopupParkingGem : UIBase
 
 	private void OnClickPurchase()
 	{
+		Hide();
 	}
 }

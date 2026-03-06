@@ -25,13 +25,20 @@ public class PopupInsufficientKey : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (buyBtn != null) buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	public void Set(int itemIdx, int needCount, Action leakAction)
 	{
+		NeedItem = itemIdx;
+		NeedItemCount = needCount;
+		LeakAction = leakAction;
 	}
 
 	private void OnClickBuy()
 	{
+		LeakAction?.Invoke();
+		Hide();
 	}
 }

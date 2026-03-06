@@ -14,13 +14,16 @@ public class InGameOrderUI : InGameFloatingUI
 
 	public override void Init(Transform parent, GameType type = GameType.Factory)
 	{
+		base.Init(parent, type);
 	}
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	private void OnClickBtn()
 	{
+		clickAction?.Invoke();
 	}
 }

@@ -21,13 +21,19 @@ public class PopupEventAttendanceGem : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ClaimButton != null) ClaimButton.onClick.AddListener(OnClickClaimButton);
 	}
 
 	public void Init(E_AttendanceEventType eventType, int dayIndex, Action onClaimedEvent)
 	{
+		OnClaimedEvent = onClaimedEvent;
+		if (ReplaceGemCountText != null) ReplaceGemCountText.text = ATTENDANCE_REPLACE_GEM_COUNT.ToString();
 	}
 
 	private void OnClickClaimButton()
 	{
+		OnClaimedEvent?.Invoke();
+		Hide();
 	}
 }

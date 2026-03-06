@@ -16,13 +16,16 @@ public class InGameStoreMoney : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (GetMoneyBtn != null) GetMoneyBtn.onClick.AddListener(OnClickGetMoney);
 	}
 
 	public void UpdateValue(string value)
 	{
+		if (StoreMoneyText != null) StoreMoneyText.text = value;
 	}
 
 	private void OnClickGetMoney()
 	{
+		clickAction?.Invoke();
 	}
 }

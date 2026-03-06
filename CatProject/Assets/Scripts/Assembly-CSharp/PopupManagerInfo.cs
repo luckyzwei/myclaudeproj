@@ -73,6 +73,8 @@ public class PopupManagerInfo : UIBase, ITabToggleGroup
 
 	public override void OnShowBefore()
 	{
+		if (Disposables != null) { Disposables.Dispose(); }
+		Disposables = new CompositeDisposable();
 	}
 
 	public override void OnHideBefore()
@@ -117,10 +119,17 @@ public class PopupManagerInfo : UIBase, ITabToggleGroup
 
 	private void OnClickPrevManagerBtn()
 	{
+		int prevIdx = ManagerIdx - 1;
+		if (prevIdx >= 0)
+		{
+			Set(prevIdx, E_ManagerInfoTab.None, IsActivePrevNextBtn);
+		}
 	}
 
 	private void OnClickNextManagerBtn()
 	{
+		int nextIdx = ManagerIdx + 1;
+		Set(nextIdx, E_ManagerInfoTab.None, IsActivePrevNextBtn);
 	}
 
 	public void SetIsActivePrevNextBtn(bool isActive)

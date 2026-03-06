@@ -143,6 +143,8 @@ public class PopupDataSave : UIBase
 
 	private void OnClickAccountDelete()
 	{
+		ShowLogin(true);
+		ShowUserInfo(false);
 	}
 
 	private string EscapeURL(string url)
@@ -152,6 +154,7 @@ public class PopupDataSave : UIBase
 
 	private void Test()
 	{
+		Debug.Log("[PopupDataSave] Test");
 	}
 
 	private void ReloadData()
@@ -167,5 +170,7 @@ public class PopupDataSave : UIBase
 
 	private void OpenMailBox()
 	{
+		var popup = UISystem.OpenUI<PopupMailBox>();
+		if (popup != null) popup.Init();
 	}
 }

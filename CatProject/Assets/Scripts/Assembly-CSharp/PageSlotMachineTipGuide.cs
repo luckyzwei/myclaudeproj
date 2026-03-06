@@ -13,13 +13,17 @@ public class PageSlotMachineTipGuide : UIBase
 
 	public void Init(int seasonInfoIdx)
 	{
+		SetDistributorImg(seasonInfoIdx);
+		SetFirstWorkShopImg(seasonInfoIdx);
 	}
 
 	private void SetDistributorImg(int themeIdx)
 	{
+		// Resource loading - keep empty
 	}
 
 	private void SetFirstWorkShopImg(int themeIdx)
 	{
+		// Resource loading - keep empty
 	}
 }

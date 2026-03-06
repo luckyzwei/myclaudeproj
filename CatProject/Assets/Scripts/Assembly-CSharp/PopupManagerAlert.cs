@@ -17,13 +17,18 @@ public class PopupManagerAlert : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (HireBtn != null) HireBtn.onClick.AddListener(OnClickHireBtn);
 	}
 
 	public void Set(int regionIdx, int stageIdx, int officeIdx, Action hireCb)
 	{
+		onClickHireCb = hireCb;
 	}
 
 	public void OnClickHireBtn()
 	{
+		onClickHireCb?.Invoke();
+		Hide();
 	}
 }

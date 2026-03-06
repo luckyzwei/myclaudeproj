@@ -47,10 +47,13 @@ public class PopupSkills : UIBase
 
 	public override void OnShowBefore()
 	{
+		if (Disposables != null) { Disposables.Dispose(); }
+		Disposables = new CompositeDisposable();
 	}
 
 	public override void OnHideAfter()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public void Init(E_SkillBookAbilityType focusAbilityType)
@@ -81,6 +84,7 @@ public class PopupSkills : UIBase
 
 	private void ShowSkillBookPackage()
 	{
+		if (PackageBanner != null) PackageBanner.gameObject.SetActive(true);
 	}
 
 	public GameObject GetFirstUnlockSkillButton()

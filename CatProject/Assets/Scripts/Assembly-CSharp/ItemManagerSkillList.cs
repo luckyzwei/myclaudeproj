@@ -26,18 +26,26 @@ public class ItemManagerSkillList : MonoBehaviour
 
 	private void OnEnable()
 	{
+		if (SkillLevelUpFxObj != null)
+			SkillLevelUpFxObj.SetActive(false);
 	}
 
 	public void SetSkillInfo(Config.ManagerSkillContentsType skillContentsType, int skillIdx, int skillLevel)
 	{
+		if (SkillLevelText != null)
+			SkillLevelText.text = "Lv." + skillLevel;
+		if (SkillContentsTypeText != null)
+			SkillContentsTypeText.text = GetSkillContentsNameKey(skillContentsType);
 	}
 
 	public void PlaySkillLevelUpFx()
 	{
+		if (SkillLevelUpFxObj != null)
+			SkillLevelUpFxObj.SetActive(true);
 	}
 
 	public string GetSkillContentsNameKey(Config.ManagerSkillContentsType skillContentsType)
 	{
-		return null;
+		return skillContentsType.ToString();
 	}
 }

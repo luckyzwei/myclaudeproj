@@ -38,13 +38,17 @@ public class PopupCompanyNewFind : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (OutBtn != null) OutBtn.onClick.AddListener(OnClickOut);
 	}
 
 	public void Set(int office)
 	{
+		OfficeIdx = office;
 	}
 
 	private void OnClickOut()
 	{
+		Hide();
 	}
 }

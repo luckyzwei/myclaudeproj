@@ -10,13 +10,18 @@ public class PopupReview : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ReviewBtn != null) ReviewBtn.onClick.AddListener(OnClickReview);
 	}
 
 	public void ShowPopup()
 	{
+		Show();
 	}
 
 	private void OnClickReview()
 	{
+		Application.OpenURL("market://details?id=" + Application.identifier);
+		Hide();
 	}
 }

@@ -22,10 +22,13 @@ public class ItemRecommendReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ReceiveBtn != null)
+			ReceiveBtn.onClick.AddListener(OnClickReward);
 	}
 
 	public void UpdateItem(int _idx)
 	{
+		idx = _idx;
 	}
 
 	private void OnClickReward()

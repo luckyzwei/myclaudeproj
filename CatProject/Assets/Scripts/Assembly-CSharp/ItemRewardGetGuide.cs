@@ -67,6 +67,7 @@ public class ItemRewardGetGuide : MonoBehaviour
 	{
 	}
 
+
 	private void SetGuideDescText(int guidIdx, string desc)
 	{
 		if (GuideDescText != null)
@@ -85,5 +86,6 @@ public class ItemRewardGetGuide : MonoBehaviour
 
 	private void OnClickShortCut()
 	{
+		var args = GetShortCutArgs();
 	}
 }

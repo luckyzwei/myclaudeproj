@@ -22,6 +22,8 @@ public class PopupTutorialBoostGive : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (confirmBtn != null) confirmBtn.onClick.AddListener(OnClickConfirm);
 	}
 
 	public void Init()
@@ -30,5 +32,6 @@ public class PopupTutorialBoostGive : UIBase
 
 	private void OnClickConfirm()
 	{
+		Hide();
 	}
 }

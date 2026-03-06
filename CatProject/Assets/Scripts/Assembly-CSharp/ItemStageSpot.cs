@@ -30,13 +30,20 @@ public class ItemStageSpot : MonoBehaviour
 
 	private void Awake()
 	{
+		if (stageBtn != null)
+			stageBtn.onClick.AddListener(OnClickStage);
 	}
 
 	public void SetStage(int stage)
 	{
+		this.stage = stage;
+		if (Stage != null)
+			Stage.text = stage.ToString();
 	}
 
 	private void OnClickStage()
 	{
+		if (!isLock)
+			OnClick?.Invoke(stage, transform);
 	}
 }

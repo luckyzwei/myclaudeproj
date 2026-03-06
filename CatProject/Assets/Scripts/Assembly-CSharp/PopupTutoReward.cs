@@ -17,10 +17,16 @@ public class PopupTutoReward : UIBase
 
 	public void Set(int idx)
 	{
+		TutoNum = idx;
+		isGetReward = false;
 	}
 
 	public override void OnHideAfter()
 	{
+		if (!isGetReward)
+		{
+			isGetReward = true;
+		}
 	}
 
 	private void OnDestroy()

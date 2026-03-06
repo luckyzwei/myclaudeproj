@@ -35,13 +35,17 @@ public class PopupStrikeGem : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (NegotiationBtn != null) NegotiationBtn.onClick.AddListener(OnClickNegotiation);
 	}
 
 	public void Set(int officeIdx)
 	{
+		OfficeIdx = officeIdx;
 	}
 
 	private void OnClickNegotiation()
 	{
+		Hide();
 	}
 }

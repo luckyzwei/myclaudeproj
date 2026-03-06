@@ -30,13 +30,20 @@ public class PopupStageOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (okBtn != null) okBtn.onClick.AddListener(OnClickOK);
 	}
 
 	public override void OnShowBefore()
 	{
+		if (menuContentFitter != null)
+		{
+			menuContentFitter.enabled = menuItemList != null && menuItemList.Count >= menuFitterOnCount;
+		}
 	}
 
 	protected virtual void OnClickOK()
 	{
+		Hide();
 	}
 }

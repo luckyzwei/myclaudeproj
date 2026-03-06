@@ -32,13 +32,18 @@ public class PopupInsufficientCard : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickBuyBtn);
 	}
 
 	public void Set(int managerIdx, int needCount)
 	{
+		ManagerIdx = managerIdx;
+		NeedCount = needCount;
 	}
 
 	private void OnClickBuyBtn()
 	{
+		Hide();
 	}
 }

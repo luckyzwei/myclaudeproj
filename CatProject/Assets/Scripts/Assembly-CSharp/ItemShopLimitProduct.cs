@@ -15,13 +15,19 @@ public class ItemShopLimitProduct : ItemShopProduct
 
 	protected override void SetIdx(int idx, int region = -1)
 	{
+		base.SetIdx(idx, region);
 	}
 
 	private void PurchaseComp()
 	{
+		if (RemainEnablePurchaseCount != null)
+			RemainEnablePurchaseCount.text = "0";
+		if (CannotPurchaseBtn != null)
+			CannotPurchaseBtn.SetActive(true);
 	}
 
 	protected override void OnClickCash()
 	{
+		base.OnClickCash();
 	}
 }

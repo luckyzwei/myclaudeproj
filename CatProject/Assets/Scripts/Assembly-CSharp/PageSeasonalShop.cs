@@ -61,6 +61,11 @@ public class PageSeasonalShop : FullScreenUI
 
 	public void RefreshItems()
 	{
+		if (contents == null) return;
+		for (int i = 0; i < contents.Count; i++)
+		{
+			if (contents[i] != null) contents[i].Init();
+		}
 	}
 
 	public void SetEnterPlace(ShopEnterPlace place)
@@ -84,6 +89,7 @@ public class PageSeasonalShop : FullScreenUI
 
 	public void UpdateGem()
 	{
+		if (hud != null) hud.UpdateCurrency();
 	}
 
 	public void SetFocusContents(ShopContentsType type)
@@ -105,6 +111,7 @@ public class PageSeasonalShop : FullScreenUI
 
 	public override void OnHideAfter()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	public override void OnHideBefore()

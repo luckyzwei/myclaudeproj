@@ -35,13 +35,19 @@ public class PopupPackageConfirm : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (buyBtn != null) buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	public void Show(ShopSystem.InAppPurchaseLocation location, int PackageIdx)
 	{
+		this.location = location;
+		this.pid = PackageIdx;
+		Show();
 	}
 
 	private void OnClickBuy()
 	{
+		Hide();
 	}
 }

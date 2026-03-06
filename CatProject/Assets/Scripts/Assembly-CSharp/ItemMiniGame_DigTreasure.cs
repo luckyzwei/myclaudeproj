@@ -12,10 +12,15 @@ public class ItemMiniGame_DigTreasure : MonoBehaviour
 
 	public void SetItem(int itemIdx)
 	{
+		ItemIdx = itemIdx;
 	}
 
 	private void SetSize(int width, int height)
 	{
+		Size = new Vector2(width, height);
+		var rt = GetComponent<RectTransform>();
+		if (rt != null)
+			rt.sizeDelta = Size;
 	}
 
 	private void SetIcon(string iconPath)

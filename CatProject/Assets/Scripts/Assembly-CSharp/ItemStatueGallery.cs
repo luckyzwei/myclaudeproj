@@ -16,10 +16,15 @@ public class ItemStatueGallery : MonoBehaviour
 
 	private void Awake()
 	{
+		if (InfoBtn != null)
+			InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public void Set(int statue_idx)
 	{
+		StatueIdx = statue_idx;
+		if (LightObj != null)
+			LightObj.SetActive(statue_idx > 0);
 	}
 
 	private void OnClickInfo()

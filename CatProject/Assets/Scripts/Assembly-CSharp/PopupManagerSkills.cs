@@ -19,5 +19,18 @@ public class PopupManagerSkills : UIBase
 
 	private void SetSkillList(List<int> skillIdxList, int skillLevel)
 	{
+		if (SkillList == null) return;
+		for (int i = 0; i < SkillList.Count; i++)
+		{
+			if (SkillList[i] == null) continue;
+			if (i < skillIdxList.Count)
+			{
+				SkillList[i].gameObject.SetActive(true);
+			}
+			else
+			{
+				SkillList[i].gameObject.SetActive(false);
+			}
+		}
 	}
 }

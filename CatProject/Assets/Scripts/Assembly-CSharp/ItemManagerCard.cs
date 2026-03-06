@@ -126,6 +126,15 @@ public class ItemManagerCard : MonoBehaviour
 
 	public void UpdateRedDot()
 	{
+		bool showRedDot = false;
+		if (curManagerIdx > 0)
+		{
+			var system = Singleton<GameRoot>.Instance?.ManagerCardSystem;
+			if (system != null)
+				showRedDot = system.CheckManagerRedDot(curManagerIdx, RedDotCondition);
+		}
+		if (LevelUpNoti != null)
+			LevelUpNoti.SetActive(showRedDot);
 	}
 
 	private void SetManagerCommonInfo(ManagerInfoData infoData)
@@ -154,5 +163,6 @@ public class ItemManagerCard : MonoBehaviour
 
 	protected virtual void OnClickManager()
 	{
+		if (curManagerIdx <= 0) return;
 	}
 }

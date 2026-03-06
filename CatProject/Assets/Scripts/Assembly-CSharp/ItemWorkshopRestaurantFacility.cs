@@ -20,10 +20,16 @@ public class ItemWorkshopRestaurantFacility : MonoBehaviour
 
 	public void Init()
 	{
+		UpdateWorkersMood();
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposable != null)
+		{
+			Disposable.Dispose();
+			Disposable = null;
+		}
 	}
 
 	private void UpdateWorkersMood()

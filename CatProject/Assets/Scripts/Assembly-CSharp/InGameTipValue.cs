@@ -18,13 +18,20 @@ public class InGameTipValue : InGameFloatingUI
 
 	public void UpdateValue(string value, bool isCritical = false)
 	{
+		if (MoneyText != null) MoneyText.text = value;
+		if (isCritical)
+			ShowSpecialEff();
 	}
 
 	public void ShowSpecialEff()
 	{
+		if (particle_special != null) particle_special.gameObject.SetActive(true);
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
+		if (particle != null) particle.gameObject.SetActive(false);
+		if (particle_special != null) particle_special.gameObject.SetActive(false);
 	}
 }

@@ -11,9 +11,11 @@ public class InGameZoneNotOpen : InGameFloatingUI
 
 	public override void Init(Transform parent, GameType type = GameType.WorldMap)
 	{
+		base.Init(parent, type);
 	}
 
 	private void OnClickBtn()
 	{
+		Hide();
 	}
 }

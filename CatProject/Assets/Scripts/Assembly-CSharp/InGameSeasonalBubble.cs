@@ -11,9 +11,11 @@ public class InGameSeasonalBubble : InGameFloatingUI
 
 	public override void Init(Transform parent, GameType type = GameType.Main)
 	{
+		base.Init(parent, type);
 	}
 
 	private void OnClickBtn()
 	{
+		Hide();
 	}
 }

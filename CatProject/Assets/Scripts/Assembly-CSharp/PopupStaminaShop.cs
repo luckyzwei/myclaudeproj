@@ -24,13 +24,17 @@ public class PopupStaminaShop : UIBase
 
 	public override void OnShowBefore()
 	{
+		if (disposables != null) { disposables.Dispose(); }
+		disposables = new CompositeDisposable();
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

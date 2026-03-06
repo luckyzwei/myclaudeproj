@@ -24,13 +24,19 @@ public class InGameManagerUI : InGameFloatingUI
 
 	public void ShowMessage(string msg, int isgood)
 	{
+		if (MsgRoot != null) MsgRoot.SetActive(true);
+		if (MsgText != null) MsgText.text = msg;
+		// isgood > 0 means good mood, <= 0 means bad mood
+		if (MsgMood != null) MsgMood.color = isgood > 0 ? Color.green : Color.red;
 	}
 
 	protected override void Update()
 	{
+		base.Update();
 	}
 
 	private void OnEnable()
 	{
+		if (MsgRoot != null) MsgRoot.SetActive(false);
 	}
 }

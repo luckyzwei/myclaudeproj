@@ -204,6 +204,7 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void OnChangeBuildingScroll(Vector2 value)
 	{
+		if (IsOnSimpleMode) return;
 	}
 
 	public override void OnShowBefore()
@@ -282,6 +283,7 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void HideInfoBubbles()
 	{
+		if (MessageT != null) MessageT.gameObject.SetActive(false);
 	}
 
 	private void ShowCurrencyParticle()
@@ -345,6 +347,8 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void SetScrollExit(float speed)
 	{
+		if (BuildingScroll != null)
+			BuildingScroll.horizontalNormalizedPosition = Mathf.Clamp01(BuildingScroll.horizontalNormalizedPosition - speed * Time.deltaTime);
 	}
 
 	private void KillCoroutine()

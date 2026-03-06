@@ -18,13 +18,17 @@ public class PopupParkinglotNeedHouse : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (GotoBtn != null) GotoBtn.onClick.AddListener(OnClickGotoBtn);
 	}
 
 	public void SetHouse(int houseId)
 	{
+		HouseIdx = houseId;
 	}
 
 	private void OnClickGotoBtn()
 	{
+		Hide();
 	}
 }

@@ -15,13 +15,18 @@ public class PopupRestoreGem : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(() => Hide());
 	}
 
 	public void SetGem(int restoreGem)
 	{
+		gemCount = restoreGem;
+		if (RestoreGem != null) RestoreGem.text = restoreGem.ToString();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }

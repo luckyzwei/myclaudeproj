@@ -13,13 +13,18 @@ public class PopupCEOFire : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (FireBtn != null) FireBtn.onClick.AddListener(OnClickFire);
 	}
 
 	public void Set(Action onFire)
 	{
+		OnFire = onFire;
 	}
 
 	private void OnClickFire()
 	{
+		OnFire?.Invoke();
+		Hide();
 	}
 }

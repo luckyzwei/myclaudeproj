@@ -17,13 +17,16 @@ public class InGameBuildingConstructUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (ConstructBtn != null) ConstructBtn.onClick.AddListener(OnClickedConstructBtn);
 	}
 
 	public void SetBuildingConstructInfo()
 	{
+		if (RemainTimeText != null) RemainTimeText.text = "";
 	}
 
 	public void OnClickedConstructBtn()
 	{
+		OnClickedConstructBtnAction?.Invoke();
 	}
 }

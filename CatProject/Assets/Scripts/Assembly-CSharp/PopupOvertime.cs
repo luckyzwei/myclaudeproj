@@ -13,6 +13,8 @@ public class PopupOvertime : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (OvertimeBtn != null) OvertimeBtn.onClick.AddListener(OnClickedOvertimeButton);
 	}
 
 	public override void OnShowBefore()
@@ -21,5 +23,6 @@ public class PopupOvertime : UIBase
 
 	private void OnClickedOvertimeButton()
 	{
+		Hide();
 	}
 }

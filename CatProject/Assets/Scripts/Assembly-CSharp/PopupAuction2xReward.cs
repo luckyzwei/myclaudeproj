@@ -19,13 +19,19 @@ public class PopupAuction2xReward : UIBase
 
 	public void SetType(E_PopupType type)
 	{
+		if (type == E_PopupType.TrialStart)
+			SetTrialStart();
+		else
+			SetTrialEnd();
 	}
 
 	private void SetTrialStart()
 	{
+		if (Point2xNotiObj != null) Point2xNotiObj.SetActive(true);
 	}
 
 	private void SetTrialEnd()
 	{
+		if (Point2xNotiObj != null) Point2xNotiObj.SetActive(false);
 	}
 }

@@ -31,9 +31,19 @@ public class PopupAcquisitionBankLvUp : UIBase
 
 	public override void OnHideAfter()
 	{
+		if (LoadedPrevJewelryBoxObj != null) { UnityEngine.Object.Destroy(LoadedPrevJewelryBoxObj); LoadedPrevJewelryBoxObj = null; }
+		if (LoadedNextJewelryBoxObj != null) { UnityEngine.Object.Destroy(LoadedNextJewelryBoxObj); LoadedNextJewelryBoxObj = null; }
 	}
 
 	private void LoadJewelryBoxPrefab(int stageStep, Transform rootTr, Action<GameObject> onComplete)
 	{
+		if (rootTr == null) return;
+		string path = "Prefab/JewelryBox_" + stageStep;
+		GameObject prefab = Resources.Load<GameObject>(path);
+		if (prefab != null)
+		{
+			GameObject obj = UnityEngine.Object.Instantiate(prefab, rootTr);
+			onComplete?.Invoke(obj);
+		}
 	}
 }
