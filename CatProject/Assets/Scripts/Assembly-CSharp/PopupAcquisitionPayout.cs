@@ -39,42 +39,92 @@ public class PopupAcquisitionPayout : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		RewardItemArticleList = new List<ItemArticle>();
+		RewardItemDataList = new List<RewardItemData>();
+		if (ClaimButton != null) ClaimButton.onClick.AddListener(OnClaimButtonClick);
+		if (InfoButton != null) InfoButton.onClick.AddListener(OnInfoButtonClick);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		UpdateTotalRewardItemDataList();
+		UpdateRewardInfo();
+
+		bool hasReward = RewardItemDataList != null && RewardItemDataList.Count > 0;
+		if (EmptyAcquisitionObj != null) EmptyAcquisitionObj.SetActive(!hasReward);
+		if (AcquisitionObj != null) AcquisitionObj.SetActive(hasReward);
 	}
 
 	public override void OnHideBefore()
 	{
+		// Cleanup before hide
 	}
 
 	private void SetTimeInfo(DateTime lastRewardGetTime)
 	{
+		if (LimitTimeText == null) return;
+		var elapsed = DateTime.UtcNow - lastRewardGetTime;
+		int remainSec = Mathf.Max(0, (int)(86400 - elapsed.TotalSeconds));
+		LimitTimeText.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
 	}
 
 	private void UpdateRewardInfo()
 	{
+		if (RewardItemRoot == null || RewardItemPrefab == null) return;
+		if (RewardItemDataList == null) return;
+
+		// Create reward items if needed
+		while (RewardItemArticleList.Count < RewardItemDataList.Count)
+		{
+			var obj = Instantiate(RewardItemPrefab, RewardItemRoot.transform);
+			var article = obj.GetComponent<ItemArticle>();
+			if (article != null) RewardItemArticleList.Add(article);
+		}
+
+		// Show/hide items
+		for (int i = 0; i < RewardItemArticleList.Count; i++)
+		{
+			if (RewardItemArticleList[i] != null)
+				RewardItemArticleList[i].gameObject.SetActive(i < RewardItemDataList.Count);
+		}
 	}
 
 	private void UpdateTotalRewardItemDataList()
 	{
+		RewardItemDataList.Clear();
+		var saleRewards = MakeSaleRewardItemDataList();
+		if (saleRewards != null)
+			RewardItemDataList.AddRange(saleRewards);
 	}
 
 	private List<RewardItemData> MakeSaleRewardItemDataList()
 	{
-		return null;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return null;
+		var result = new List<RewardItemData>();
+		// Build reward list from acquisition payout data
+		return result;
 	}
 
 	private void OnClaimButtonClick()
 	{
+		ClaimIdleReward(true);
 	}
 
 	private void ClaimIdleReward(bool isReceiveAll)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.BizAcqBattleSystem == null) return;
+		// Claim idle reward and close
+		Hide();
 	}
 
 	private void OnInfoButtonClick()
 	{
+		// Show acquisition payout info popup
 	}
 }

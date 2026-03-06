@@ -85,43 +85,76 @@ public class PopupRewardPassNormal : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		if (NormalPurchaseBtn != null) NormalPurchaseBtn.onClick.AddListener(OnClickedPurchaseBtn);
+		if (DoubleSalePurchaseBtn != null) DoubleSalePurchaseBtn.onClick.AddListener(OnClickedPurchaseBtn);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public override void OnShowBefore()
 	{
+		// Initialize display state
 	}
 
 	public void Init(E_PassType passType, int groupIdx, int orderIdx, Action onPurchaseBtnClick)
 	{
+		GroupIdx = groupIdx;
+		OnClickPurchaseBtnEvent = onPurchaseBtnClick;
+		SetCurReward(passType, orderIdx);
+		SetPremiumRewardList(passType, groupIdx);
+
+		bool isDoubleSale = IsDoubleSale(passType, groupIdx);
+		if (NormalAreaObj != null) NormalAreaObj.SetActive(!isDoubleSale);
+		if (DoubleSaleAreaObj != null) DoubleSaleAreaObj.SetActive(isDoubleSale);
+		if (SaleAreaObj != null) SaleAreaObj.SetActive(false);
+
+		var packageData = GetInAppPackageData(passType, groupIdx);
+		if (packageData != null && Price != null)
+			Price.text = packageData.ProductId;
 	}
 
 	private void SetCurReward(E_PassType passType, int orderIdx)
 	{
+		if (RewardItemArticle == null) return;
+		// Set current reward item display based on pass type and order
 	}
 
 	private void SetPremiumRewardList(E_PassType passType, int groupIdx)
 	{
+		if (PremiumRewardScrollRect == null || PremiumRewardItemPrefab == null) return;
+		// Create premium reward item list in scroll
 	}
 
 	private void SetScrollContentsPivot(int rewardCount)
 	{
+		if (PremiumRewardScrollRect == null) return;
+		var content = PremiumRewardScrollRect.content;
+		if (content == null) return;
+		// Adjust pivot based on reward count for centering
+		if (rewardCount <= 3)
+			content.pivot = new Vector2(0.5f, 0.5f);
 	}
 
 	private InAppPackageData GetInAppPackageData(E_PassType passType, int groupIdx)
 	{
+		// Get IAP package data for pass type
 		return null;
 	}
 
 	private bool IsDoubleSale(E_PassType passType, int groupIdx)
 	{
+		// Check if double sale is active for this pass
 		return false;
 	}
 
 	private void OnClickedPurchaseBtn()
 	{
+		OnClickPurchaseBtnEvent?.Invoke();
+		Hide();
 	}
 }

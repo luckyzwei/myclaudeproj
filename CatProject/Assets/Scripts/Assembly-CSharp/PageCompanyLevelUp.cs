@@ -28,7 +28,7 @@ public class PageCompanyLevelUp : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -37,13 +37,14 @@ public class PageCompanyLevelUp : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CPlayLevelUpSequence_003Ed__19(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -53,7 +54,31 @@ public class PageCompanyLevelUp : UIBase
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					_003CcompanyLevel_003E5__2 = _003C_003E4__this.PrevLv;
+					if (_003C_003E4__this.LevelOnObjs == null) return false;
+					_003Ci_003E5__3 = 0;
+					goto case 2;
+				case 1:
+					_003C_003E1__state = -1;
+					_003Ci_003E5__3++;
+					goto case 2;
+				case 2:
+					if (_003Ci_003E5__3 < _003C_003E4__this.LevelOnObjs.Count)
+					{
+						if (_003C_003E4__this.LevelOnObjs[_003Ci_003E5__3] != null)
+							_003C_003E4__this.LevelOnObjs[_003Ci_003E5__3].SetActive(_003Ci_003E5__3 <= _003CcompanyLevel_003E5__2);
+						_003C_003E2__current = new WaitForSeconds(0.3f);
+						_003C_003E1__state = 1;
+						return true;
+					}
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
@@ -114,28 +139,51 @@ public class PageCompanyLevelUp : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (beforeTween != null) beforeOriginLocalPos = beforeTween.transform.localPosition;
+		if (afterTween != null) afterOriginLocalPos = afterTween.transform.localPosition;
 	}
 
 	public void Set(int company, int prevPlayerLv, int prevLvCompLv)
 	{
+		CompanyIdx = company;
+		PrevLv = prevLvCompLv;
+		if (RewardLevel != null) RewardLevel.text = prevPlayerLv.ToString();
 	}
 
 	public override void OnShowBefore()
 	{
+		// Reset tween positions
+		if (beforeTween != null) beforeTween.transform.localPosition = beforeOriginLocalPos;
+		if (afterTween != null) afterTween.transform.localPosition = afterOriginLocalPos;
+
+		// Initialize level display
+		if (LevelOnObjs != null)
+		{
+			for (int i = 0; i < LevelOnObjs.Count; i++)
+			{
+				if (LevelOnObjs[i] != null)
+					LevelOnObjs[i].SetActive(i < PrevLv);
+			}
+		}
 	}
 
 	public override void OnShowAfter()
 	{
+		StartCoroutine(PlayLevelUpSequence());
 	}
 
 	[IteratorStateMachine(typeof(_003CPlayLevelUpSequence_003Ed__19))]
 	private IEnumerator PlayLevelUpSequence()
 	{
-		yield break;
+		var routine = new _003CPlayLevelUpSequence_003Ed__19(0);
+		routine._003C_003E4__this = this;
+		return routine;
 	}
 
 	public Vector3 GetLevelPos()
 	{
-		return default(Vector3);
+		if (HudLevelText != null) return HudLevelText.transform.position;
+		return transform.position;
 	}
 }
