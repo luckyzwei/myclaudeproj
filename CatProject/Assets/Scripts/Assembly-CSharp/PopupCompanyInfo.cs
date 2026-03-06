@@ -53,26 +53,52 @@ public class PopupCompanyInfo : UIBase, ILocalizeRefresh
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ContractBtn != null) ContractBtn.onClick.AddListener(OnClickContract);
+		if (ContractAdsBtn != null) ContractAdsBtn.onClick.AddListener(OnClickContractAds);
 	}
 
 	public void Show(int office, int company, Action cb)
 	{
+		ContractAction = cb;
+		ContractPrice = BigInteger.Zero;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (ItemCompany != null) ItemCompany.gameObject.SetActive(true);
+		if (ContractCompleteObj != null) ContractCompleteObj.SetActive(false);
+
+		SetStrike(office, company);
+		RefreshText();
+
+		base.Show();
 	}
 
 	private void OnClickContract()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		ContractAction?.Invoke();
+		Hide();
 	}
 
 	private void OnClickContractAds()
 	{
+		// Watch ad to contract for free
+		ContractAction?.Invoke();
+		Hide();
 	}
 
 	public void RefreshText()
 	{
+		if (RentalFeeText != null)
+			RentalFeeText.text = ProjectUtility.GetThousandCommaText(ContractPrice);
 	}
 
 	private void SetStrike(int office, int company)
 	{
+		if (StrikeRoot != null) StrikeRoot.SetActive(false);
 	}
 
 	private void OnDestroy()
@@ -81,5 +107,6 @@ public class PopupCompanyInfo : UIBase, ILocalizeRefresh
 
 	public override void OnHideBefore()
 	{
+		ContractAction = null;
 	}
 }
