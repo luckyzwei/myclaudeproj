@@ -28,10 +28,19 @@ public class PopupRatioInfoManager : UIBase
 
 	private void DrawList()
 	{
+		if (Root == null || Item == null || Rewards == null) return;
+		for (int i = 0; i < Rewards.Count; i++)
+		{
+			var obj = Instantiate(Item, Root);
+			obj.SetActive(true);
+		}
 	}
 
 	public void SetManager(int grade)
 	{
+		if (Rewards == null) Rewards = new List<RewardInfo>();
+		Rewards.Clear();
+		DrawList();
 	}
 
 	private int GetGrade(int idx)

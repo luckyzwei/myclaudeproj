@@ -89,7 +89,7 @@ public class PageSeasonalShop : FullScreenUI
 
 	public void UpdateGem()
 	{
-		if (hud != null) hud.UpdateCurrency();
+		UpdateMachineCoin();
 	}
 
 	public void SetFocusContents(ShopContentsType type)

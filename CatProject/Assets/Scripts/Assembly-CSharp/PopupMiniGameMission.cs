@@ -39,10 +39,15 @@ public class PopupMiniGameMission : UIBase, IHUDTopInfo
 
 	private void SetMissionItems()
 	{
+		if (MissionScrollRect == null || MissionItemPrefab == null) return;
+		MissionItems.Clear();
+		// Populate mission items from mini game mission data
 	}
 
 	private void SetRemainTimeText()
 	{
+		if (RemainTimeText == null) return;
+		RemainTimeText.text = "";
 	}
 
 	private void InitHudTopInfo()

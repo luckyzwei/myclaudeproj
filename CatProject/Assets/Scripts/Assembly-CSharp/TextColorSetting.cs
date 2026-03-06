@@ -12,15 +12,19 @@ public class TextColorSetting : MonoBehaviour
 
 	public string GetTextColorKey()
 	{
-		return null;
+		return keyColor;
 	}
 
 	public void SetTextColorKey(string key)
 	{
+		keyColor = key;
 	}
 
 	[ExecuteInEditMode]
 	public void SetTextColor(Color color)
 	{
+		var text = GetComponent<UnityEngine.UI.Text>();
+		if (text != null)
+			text.color = color;
 	}
 }

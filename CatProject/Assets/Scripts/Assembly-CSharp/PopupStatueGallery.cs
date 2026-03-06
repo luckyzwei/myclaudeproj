@@ -12,9 +12,12 @@ public class PopupStatueGallery : UIBase
 
 	public override void OnShowBefore()
 	{
+		SetList();
 	}
 
 	private void SetList()
 	{
+		if (StatueRoot == null || StatueItem == null) return;
+		// Populate statue gallery items from data
 	}
 }

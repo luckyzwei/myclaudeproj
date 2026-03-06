@@ -125,6 +125,8 @@ public class PopupSeasonalOpen : UIBase
 
 	private void SetBgColor(int seasonThemeIdx)
 	{
+		if (BgColorImage == null) return;
+		// Set background color based on seasonal theme
 	}
 
 	[IteratorStateMachine(typeof(_003CPlaySeasonalStartHUDEffect_003Ed__15))]
@@ -135,5 +137,6 @@ public class PopupSeasonalOpen : UIBase
 
 	public override void OnHideAfter()
 	{
+		SeasonInfoIdx = 0;
 	}
 }

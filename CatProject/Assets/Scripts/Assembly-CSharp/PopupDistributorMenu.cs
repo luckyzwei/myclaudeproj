@@ -165,9 +165,11 @@ public class PopupDistributorMenu : UIBase
 
 	private void OnFocusAfterScrolled(Vector2 value)
 	{
+		// Handle scroll focus position change
 	}
 
 	private void OnClickedGuideInfoBtn()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageDistributorGuide>();
 	}
 }

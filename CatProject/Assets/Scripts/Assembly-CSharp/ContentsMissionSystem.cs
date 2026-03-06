@@ -446,9 +446,13 @@ public class ContentsMissionSystem
 
 	private void NewMissionGeneratedLog(SingleMissionBase missionData)
 	{
+		if (missionData == null) return;
+		UnityEngine.Debug.Log($"[ContentsMission] NewMission idx:{missionData.MissionIdx} slot:{missionData.SlotIdx}");
 	}
 
 	private void MissionCompletedLog(SingleMissionBase missionData)
 	{
+		if (missionData == null) return;
+		UnityEngine.Debug.Log($"[ContentsMission] Completed idx:{missionData.MissionIdx} slot:{missionData.SlotIdx}");
 	}
 }

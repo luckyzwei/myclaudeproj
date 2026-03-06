@@ -285,14 +285,34 @@ public class InGameWorldmapRegion : MonoBehaviour
 
 	private void LoadArrow(Action loadCb = null)
 	{
+		var prefab = Resources.Load<GameObject>("UI/InGame/Arrow");
+		if (prefab != null)
+		{
+			var go = Instantiate(prefab, transform);
+			Arrow = go.GetComponent<InGameArrow>();
+		}
+		loadCb?.Invoke();
 	}
 
 	private void LoadBuildingInfoUI(Action loadCb = null)
 	{
+		var prefab = Resources.Load<GameObject>("UI/InGame/WorldBuildingInfo");
+		if (prefab != null)
+		{
+			var go = Instantiate(prefab, transform);
+			InfoPopup = go.GetComponent<InGameWorldBuildingInfo>();
+		}
+		loadCb?.Invoke();
 	}
 
 	public void ShowGuide(int guide)
 	{
+		if (Zones == null) return;
+		for (int i = 0; i < Zones.Count; i++)
+		{
+			if (Zones[i] != null)
+				Zones[i].gameObject.SetActive(i == guide);
+		}
 	}
 
 	public void ShowBuildingUI(int buildingIdx)
@@ -345,6 +365,14 @@ public class InGameWorldmapRegion : MonoBehaviour
 
 	private void UpdateSpecialTheme()
 	{
+		if (bgRoot == null) return;
+		if (specialBG != null)
+		{
+			Destroy(specialBG);
+			specialBG = null;
+		}
+		if (OriginBG != null)
+			OriginBG.SetActive(true);
 	}
 
 	private void OnDestroy()
@@ -368,5 +396,6 @@ public class InGameWorldmapRegion : MonoBehaviour
 
 	public void ClickAdBoard()
 	{
+		ShowBuildingInfo(0, transform);
 	}
 }

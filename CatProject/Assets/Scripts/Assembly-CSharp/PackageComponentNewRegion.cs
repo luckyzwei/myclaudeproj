@@ -21,13 +21,25 @@ public class PackageComponentNewRegion : PackageComponent
 
 	public override void Set(int packageIdx)
 	{
+		base.Set(packageIdx);
+		disposables = new CompositeDisposable();
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
 	}
 }

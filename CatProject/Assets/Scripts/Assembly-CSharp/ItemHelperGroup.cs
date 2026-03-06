@@ -28,13 +28,17 @@ public class ItemHelperGroup : MonoBehaviour
 
 	private void Awake()
 	{
+		if (buyBtn != null)
+			buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	public void Set(int idx)
 	{
+		packageIdx = idx;
 	}
 
 	private void OnClickBuy()
 	{
+		HideCb?.Invoke();
 	}
 }

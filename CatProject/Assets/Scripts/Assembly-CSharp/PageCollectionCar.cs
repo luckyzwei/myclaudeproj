@@ -76,13 +76,19 @@ public class PageCollectionCar : UIBase
 
 	private void SetParkingSet()
 	{
+		// Populate brand scroll list - resource loading
 	}
 
 	private void OnBrandClick(int brandIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		DrawCollection();
 	}
 
 	private void OnClickTotalRewardBtn()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

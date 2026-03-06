@@ -16,10 +16,15 @@ public class Restaurant : ConstructableBuildingBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		InteractiveItemList = new System.Collections.Generic.List<BuildingFacilityInteractiveItem>();
 	}
 
 	protected override void OnOpenedBuilding()
 	{
+		if (TableTransParentsObj != null)
+			TableTransParentsObj.SetActive(true);
+		LoadRestaurantUI();
 	}
 
 	private void LoadRestaurantUI()

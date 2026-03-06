@@ -7,10 +7,14 @@ public class NightSkipVIP : MonoBehaviour
 
 	public void Show()
 	{
+		gameObject.SetActive(true);
+		if (CharAni != null)
+			CharAni.SetTrigger("Show");
 	}
 
 	public void Hide()
 	{
+		gameObject.SetActive(false);
 	}
 
 	public void OnClickVIP()

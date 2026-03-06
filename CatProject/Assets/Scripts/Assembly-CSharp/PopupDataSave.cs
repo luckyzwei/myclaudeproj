@@ -170,7 +170,6 @@ public class PopupDataSave : UIBase
 
 	private void OpenMailBox()
 	{
-		var popup = UISystem.OpenUI<PopupMailBox>();
-		if (popup != null) popup.Init();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMailBox>();
 	}
 }

@@ -173,14 +173,29 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void SetFacilityAbilityIcon(string iconKey)
 	{
+		if (LevelAbilityIcon != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) LevelAbilityIcon.sprite = sprite;
+		}
 	}
 
 	private void SetFacilityIconImage(string iconKey)
 	{
+		if (MainImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) MainImage.sprite = sprite;
+		}
 	}
 
 	private void SetMilestoneAbilityIcon(string iconKey)
 	{
+		if (MilestoneAbilityIcon != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) MilestoneAbilityIcon.sprite = sprite;
+		}
 	}
 
 	private void SetMilestoneAbilityValueText(float value, E_ValueSignType valueSignType, E_BuildingFacilityAbilityType milestoneAbilityType)
@@ -198,10 +213,17 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void SetUpgradeCostIconImage(string iconKey)
 	{
+		if (UpgradeCostIconImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) UpgradeCostIconImage.sprite = sprite;
+		}
 	}
 
 	private void SetUpgradeCostValueText(BigInteger needValue_PerMile, BigInteger hasValue_PerMile)
 	{
+		if (UpgradeCostText != null)
+			UpgradeCostText.SetText(ProjectUtility.GetThousandCommaText(needValue_PerMile));
 	}
 
 	private void SetLevelText(int level)
@@ -238,6 +260,7 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void OnClickedUpgradeBlockBtn()
 	{
+		// Show message that upgrade is blocked (milestone step required)
 	}
 
 	private bool IsCurStepMaxLevel(int level)

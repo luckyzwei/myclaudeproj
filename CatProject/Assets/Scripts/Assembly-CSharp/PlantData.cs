@@ -41,14 +41,26 @@ public class PlantData : IReadOnlyData, ICloneable
 
 	public void LevelUp(Action cb = null)
 	{
+		Level++;
+		if (LevelProperty != null)
+			LevelProperty.Value = Level;
+		Exp = 0f;
+		if (ExpProperty != null)
+			ExpProperty.Value = Exp;
+		UpdateLevel();
+		cb?.Invoke();
 	}
 
 	private void UpdateLevel()
 	{
+		if (LevelProperty != null)
+			LevelProperty.Value = Level;
 	}
 
 	public void UpdateIncreaseExpBuff()
 	{
+		if (ExpProperty != null)
+			ExpProperty.Value = Exp;
 	}
 
 	public virtual object Clone()

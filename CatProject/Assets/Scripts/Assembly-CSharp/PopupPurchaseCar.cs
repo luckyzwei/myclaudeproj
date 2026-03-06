@@ -12,9 +12,16 @@ public class PopupPurchaseCar : UIBase
 
 	public void SetCar(int carIdx)
 	{
+		if (CarMarketItem != null)
+		{
+			// Set car market item display
+		}
 	}
 
 	private void OnBuyCar(int carIdx)
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 }

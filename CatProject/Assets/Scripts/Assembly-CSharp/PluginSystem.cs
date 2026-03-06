@@ -402,10 +402,12 @@ public class PluginSystem
 
 	public void StopRecordingLoadingEvent(ulong handle)
 	{
+		if (AnalyticsProp == null) return;
 	}
 
 	public void StopRecordingLoadingGroup(ulong handle)
 	{
+		if (AnalyticsProp == null) return;
 	}
 
 	public void InitImmersiveAD()
@@ -495,10 +497,12 @@ public class PluginSystem
 
 	private void InitTapjoyCallbackMgr()
 	{
+		if (TapjoyProp == null) return;
 	}
 
 	public void Update()
 	{
+		if (ADProp == null) return;
 	}
 
 	[IteratorStateMachine(typeof(_003CcoEndReview_003Ed__49))]

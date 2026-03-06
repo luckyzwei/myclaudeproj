@@ -27,13 +27,30 @@ public class AbilityBubbleTip : MonoBehaviour
 
 	public void Set(int abilityIdx, bool isActive)
 	{
+		AbilityIdx = abilityIdx;
+		SetActive(isActive);
+		if (!IsInitEvents) InitEvents();
 	}
 
 	public void SetActive(bool isActive)
 	{
+		if (RootObj != null) RootObj.SetActive(true);
+		if (ActiveBtn != null) ActiveBtn.gameObject.SetActive(isActive);
+		if (InactiveBtnObj != null) InactiveBtnObj.SetActive(!isActive);
 	}
 
 	private void InitEvents()
 	{
+		IsInitEvents = true;
+		if (ActiveBtn != null) ActiveBtn.onClick.AddListener(() =>
+		{
+			var root = Treeplla.Singleton<GameRoot>.Instance;
+			if (root == null) return;
+		});
+		if (InactiveBtn != null) InactiveBtn.onClick.AddListener(() =>
+		{
+			var root = Treeplla.Singleton<GameRoot>.Instance;
+			if (root == null) return;
+		});
 	}
 }

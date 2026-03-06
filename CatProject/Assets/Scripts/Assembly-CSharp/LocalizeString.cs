@@ -11,6 +11,10 @@ public class LocalizeString : MonoBehaviour
 
 	private void Start()
 	{
+		if (Localizelist == null)
+			Localizelist = new List<LocalizeString>();
+		Localizelist.Add(this);
+		RefreshText();
 	}
 
 	public virtual void RefreshText()

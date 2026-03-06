@@ -19,9 +19,13 @@ public class PopupRegionInfo : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (CloseBtn != null) CloseBtn.onClick.AddListener(Hide);
 	}
 
 	public void SetRegion(int regionIdx)
 	{
+		if (RegionDesc != null) RegionDesc.text = "";
+		// Load region image resource
 	}
 }

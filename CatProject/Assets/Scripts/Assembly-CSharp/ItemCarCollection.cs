@@ -43,13 +43,17 @@ public class ItemCarCollection : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ItemBtn != null)
+			ItemBtn.onClick.AddListener(OnItemBtnClick);
 	}
 
 	public void SetBrand(int brandIdx)
 	{
+		BrandIdx = brandIdx;
 	}
 
 	private void OnItemBtnClick()
 	{
+		ClickAction?.Invoke(BrandIdx);
 	}
 }

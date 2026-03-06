@@ -164,10 +164,12 @@ public class ContentsOpenSystem
 
 	private void SubscribeReview()
 	{
+		if (disposables == null) return;
 	}
 
 	private void SubscribeInhouse()
 	{
+		if (disposables == null) return;
 	}
 
 	public void ManualNotifyContentsOpen(OpenConditionType conditionType)
@@ -214,5 +216,6 @@ public class ContentsOpenSystem
 
 	public void SubscribeSeasonalManagerExpRequire()
 	{
+		if (SeasonalDisposables == null) return;
 	}
 }

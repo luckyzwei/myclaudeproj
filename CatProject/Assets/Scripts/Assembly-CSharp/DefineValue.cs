@@ -8,6 +8,7 @@ public class DefineValue : MonoBehaviour
 
 	private void Start()
 	{
+		RefreshText();
 	}
 
 	public void RefreshText()
@@ -16,5 +17,6 @@ public class DefineValue : MonoBehaviour
 
 	public void SetText(string txt)
 	{
+		keyDefine = txt;
 	}
 }

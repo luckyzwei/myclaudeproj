@@ -61,6 +61,7 @@ public class PopupAcquisitionPayout : UIBase
 
 	public override void OnHideBefore()
 	{
+		RewardItemDataList.Clear();
 	}
 
 	private void SetTimeInfo(DateTime lastRewardGetTime)
@@ -120,5 +121,6 @@ public class PopupAcquisitionPayout : UIBase
 
 	private void OnInfoButtonClick()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

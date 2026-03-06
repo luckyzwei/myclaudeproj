@@ -13,13 +13,24 @@ public class LocalizeFormatString : LocalizeString
 
 	public override void RefreshText()
 	{
+		InitArgs();
+		base.RefreshText();
 	}
 
 	public override void SetText(string txt)
 	{
+		base.SetText(txt);
 	}
 
 	private void InitArgs()
 	{
+		if (CachedArgs == null)
+			CachedArgs = new List<string>();
+		CachedArgs.Clear();
+		if (IsDefineFormatArgs && FormatArgs != null)
+		{
+			for (int i = 0; i < FormatArgs.Count; i++)
+				CachedArgs.Add(FormatArgs[i]);
+		}
 	}
 }

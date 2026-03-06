@@ -59,6 +59,9 @@ public class StrikeSystem
 
 	private void SetStrike()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		OnStrikeEnable.Value = IsStrikeOpen;
 	}
 
 	private void SetOfficeStrikeEnable(int officeIdx, int regionIdx, OfficeData officeData)
@@ -96,6 +99,7 @@ public class StrikeSystem
 
 	private void FocusStrikeOffice()
 	{
+		if (!OnStrikeEnable.Value) return;
 	}
 
 	public int GetStrikeRatio(int officeIdx, int regionIdx)
@@ -105,6 +109,8 @@ public class StrikeSystem
 
 	public void SetNegotiation(int officeIdx)
 	{
+		if (!IsSystemInit || !IsStrikeOpen) return;
+		LogStrikeResolve(officeIdx, 0, 0, 1);
 	}
 
 	public BigInteger GetNegotiationGemCount(int officeIdx, int regionIdx)
@@ -130,9 +136,11 @@ public class StrikeSystem
 
 	public void LogStrikeResolve(int officeIdx, int companyGrade, int needValue, int type)
 	{
+		UnityEngine.Debug.Log($"[Strike] Resolve office:{officeIdx} grade:{companyGrade} need:{needValue} type:{type}");
 	}
 
 	public void LogStrikeStart(int officeIdx, int companyGrade, int needValue)
 	{
+		UnityEngine.Debug.Log($"[Strike] Start office:{officeIdx} grade:{companyGrade} need:{needValue}");
 	}
 }

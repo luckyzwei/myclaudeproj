@@ -143,13 +143,16 @@ public class TarotSystem
 
 	public void LogTarotShuffle(int idx, int buyType, int order, bool cnt)
 	{
+		UnityEngine.Debug.Log($"[Tarot] Shuffle idx:{idx} buyType:{buyType} order:{order} cnt:{cnt}");
 	}
 
 	public void LogTarotReroll(bool beforeCnt, bool afterCnt, bool isFree)
 	{
+		UnityEngine.Debug.Log($"[Tarot] Reroll before:{beforeCnt} after:{afterCnt} isFree:{isFree}");
 	}
 
 	public void LogTarotReward(int idx, bool cnt, int buyType, int order, bool type)
 	{
+		UnityEngine.Debug.Log($"[Tarot] Reward idx:{idx} cnt:{cnt} buyType:{buyType} order:{order} type:{type}");
 	}
 }

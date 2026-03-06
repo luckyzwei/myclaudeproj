@@ -120,6 +120,8 @@ public class PopupManagerLevelUp : UIBase
 
 	private void SetLvUpCostExpIconImage(string iconKey)
 	{
+		if (LvUpCostExpIconImage == null || string.IsNullOrEmpty(iconKey)) return;
+		// Load cost icon from resource
 	}
 
 	private void SetManagerLevelText(int curLevel, int maxLevel)
@@ -198,6 +200,7 @@ public class PopupManagerLevelUp : UIBase
 
 	private void ShowLevelUpPackage()
 	{
+		if (PackageBanner != null) PackageBanner.gameObject.SetActive(true);
 	}
 
 	private void SetPackageBanner()

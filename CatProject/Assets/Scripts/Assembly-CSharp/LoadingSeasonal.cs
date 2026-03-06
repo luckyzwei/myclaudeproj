@@ -14,13 +14,20 @@ public class LoadingSeasonal : LoadingBasic
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
+		if (!bFirstEnable)
+		{
+			bFirstEnable = true;
+		}
 	}
 
 	protected override void OnDisable()
 	{
+		base.OnDisable();
 	}
 
 	public void SetSeasonalTheme(int seasonResourceIdx)
 	{
+		NowSeasonResourceIdx = seasonResourceIdx;
 	}
 }

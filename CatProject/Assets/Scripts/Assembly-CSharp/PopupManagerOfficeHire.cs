@@ -30,6 +30,7 @@ public class PopupManagerOfficeHire : UIBase
 
 	private void UpgradeCallBack(int level)
 	{
+		Set(OfficeIdx, RegionIdx);
 	}
 
 	private void OnClickShowPageBtn()
@@ -40,5 +41,6 @@ public class PopupManagerOfficeHire : UIBase
 
 	public void ShowUpgradeArrow()
 	{
+		if (Item != null) Item.gameObject.SetActive(true);
 	}
 }

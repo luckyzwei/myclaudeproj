@@ -77,6 +77,8 @@ public class HUD : UIBase, IScreenAction
 
 	private void UpdateBoost(float value)
 	{
+		// Boost multiplier updates handled by HUD currency display
+		SyncData();
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID idx)
@@ -94,10 +96,12 @@ public class HUD : UIBase, IScreenAction
 
 	public override void SaveOringSortingData()
 	{
+		base.SaveOringSortingData();
 	}
 
 	public override void RecoverySortingData()
 	{
+		base.RecoverySortingData();
 	}
 
 	public void ScreenAction(bool value)
@@ -115,6 +119,7 @@ public class HUD : UIBase, IScreenAction
 
 	public override void CustomSortingOrder()
 	{
+		base.CustomSortingOrder();
 	}
 
 	public void ScreenTopOn(bool value)
@@ -129,6 +134,8 @@ public class HUD : UIBase, IScreenAction
 
 	public void OnScreenActionStep()
 	{
+		if (appearTween != null)
+			appearTween.DOPlayForward();
 	}
 
 	public void OnScreenActionComplete()

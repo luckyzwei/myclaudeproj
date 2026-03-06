@@ -10,6 +10,10 @@ public class TimerSystem
 
 	public void UpdateOneSeconds()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.GamePlayTimeSec == null) return;
+		long playTime = root.GamePlayTimeSec.Value;
+		CheckPlayMin(playTime);
 	}
 
 	public void CheckFirstDay()
@@ -30,5 +34,6 @@ public class TimerSystem
 
 	private void LogPlayMin(int min)
 	{
+		UnityEngine.Debug.Log($"[Timer] PlayMin:{min}");
 	}
 }

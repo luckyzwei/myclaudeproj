@@ -24,13 +24,32 @@ public class HUDSeasonalNotice : MonoBehaviour
 
 	public void OnDistributeProduct(int productIdx, BigInteger sellingPrice_PerMile)
 	{
+		if (DistributeNoticeObj != null)
+			DistributeNoticeObj.SetActive(true);
+		if (AddNewWorkerNoticeObj != null)
+			AddNewWorkerNoticeObj.SetActive(false);
+		if (ProductValueText != null)
+			ProductValueText.text = sellingPrice_PerMile.ToString();
+		Show();
 	}
 
 	public void OnAddNewWorker()
 	{
+		if (AddNewWorkerNoticeObj != null)
+			AddNewWorkerNoticeObj.SetActive(true);
+		if (DistributeNoticeObj != null)
+			DistributeNoticeObj.SetActive(false);
+		Show();
 	}
 
 	public void Show()
 	{
+		if (CanvasGroup == null)
+			CanvasGroup = GetComponent<CanvasGroup>();
+		if (CanvasGroup != null)
+		{
+			CanvasGroup.alpha = 1f;
+			CanvasGroup.blocksRaycasts = true;
+		}
 	}
 }

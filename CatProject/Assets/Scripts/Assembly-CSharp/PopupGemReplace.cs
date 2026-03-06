@@ -18,9 +18,14 @@ public class PopupGemReplace : UIBase
 
 	public override void OnShowBefore()
 	{
+		if (gemCountText != null) gemCountText.text = ProjectUtility.GetThousandCommaText(gemCount);
 	}
 
 	public void Set(int tarotIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		gemCount = 0;
+		if (gemCountText != null) gemCountText.text = ProjectUtility.GetThousandCommaText(gemCount);
 	}
 }

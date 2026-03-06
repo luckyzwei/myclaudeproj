@@ -8,6 +8,8 @@ public class TicketBanner : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ShopBtn != null)
+			ShopBtn.onClick.AddListener(OnClickGotoShop);
 	}
 
 	private void OnEnable()

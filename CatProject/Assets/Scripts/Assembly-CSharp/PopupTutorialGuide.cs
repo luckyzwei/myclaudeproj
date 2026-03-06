@@ -18,9 +18,21 @@ public class PopupTutorialGuide : UIBase
 
 	public void StartTutorial(int tuto_key)
 	{
+		if (TitleText != null) TitleText.text = "";
+		if (DescText != null) DescText.text = "";
+		if (Root != null && GuideObj == null)
+		{
+			// Load tutorial guide resource
+		}
 	}
 
 	public override void Hide()
 	{
+		if (GuideObj != null)
+		{
+			Destroy(GuideObj);
+			GuideObj = null;
+		}
+		base.Hide();
 	}
 }

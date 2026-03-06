@@ -20,6 +20,7 @@ public class SeasonalNotificationSystem
 
 	private void OnChangedCurrencyValue_ArcadeRouletteCoin()
 	{
+		if (Disposables == null) return;
 	}
 
 	private void OnChangedCurrencyValue_SkillBook()
@@ -29,5 +30,6 @@ public class SeasonalNotificationSystem
 
 	private void OnChangedMilestoneInfo()
 	{
+		if (Disposables == null) return;
 	}
 }

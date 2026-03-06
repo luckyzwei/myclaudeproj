@@ -59,10 +59,15 @@ public class PopupEventMission : UIBase, IHUDTopInfo
 
 	private void UpdateMissionSlots()
 	{
+		if (SlotScrollRect == null || MissionSlotPrefab == null) return;
+		MissionSlots.Clear();
+		// Populate mission slots from event mission data
 	}
 
 	private void SetDailyResetTimer()
 	{
+		if (DailyResetTimer == null) return;
+		// Set daily reset timer countdown
 	}
 
 	private void SetEventEndLayout()

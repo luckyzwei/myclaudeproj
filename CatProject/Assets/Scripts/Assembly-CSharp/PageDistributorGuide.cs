@@ -14,13 +14,17 @@ public class PageDistributorGuide : UIBase
 
 	public void Init(int seasonInfoIdx)
 	{
+		SetDistributorImgList(seasonInfoIdx);
+		SetMainProductImgList(seasonInfoIdx);
 	}
 
 	private void SetDistributorImgList(int themeIdx)
 	{
+		// Resource loading for distributor images - keep empty
 	}
 
 	private void SetMainProductImgList(int themeIdx)
 	{
+		// Resource loading for main product images - keep empty
 	}
 }

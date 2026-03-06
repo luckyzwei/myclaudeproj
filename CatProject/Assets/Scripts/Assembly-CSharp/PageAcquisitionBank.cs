@@ -115,6 +115,8 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 
 	private void CheckAndOpenStepUpPage()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void SetPurchaseInfo(int shopSpecialIdx)
@@ -126,10 +128,12 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickLevelInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickPurchase()

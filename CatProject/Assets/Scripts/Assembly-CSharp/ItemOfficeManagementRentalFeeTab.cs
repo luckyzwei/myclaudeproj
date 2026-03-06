@@ -67,14 +67,27 @@ public class ItemOfficeManagementRentalFeeTab : MonoBehaviour
 
 	private void SetRentalFeeInfos()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set rental fee detail texts from user data
+		if (OfficeFeeText != null) OfficeFeeText.text = "0";
+		if (PlantFeeText != null) PlantFeeText.text = "0";
+		if (BuffObjFeeText != null) BuffObjFeeText.text = "0";
+		if (CarFeeText != null) CarFeeText.text = "0";
+		if (CarCollectionFeeText != null) CarCollectionFeeText.text = "0";
+		if (BoosterFeeText != null) BoosterFeeText.text = "0";
+		if (IAPFeeText != null) IAPFeeText.text = "0";
 	}
 
 	private void SetBoosterItems()
 	{
+		if (BoosterItemScroll == null || BoosterItemPrefab == null) return;
+		if (ItemBoosterGraph != null) ItemBoosterGraph.gameObject.SetActive(true);
 	}
 
 	private void OnActivateMultiRevenue(bool isActivate)
 	{
+		if (BoosterFeeText != null) BoosterFeeText.gameObject.SetActive(isActivate);
 	}
 
 	private void OnClickRevenueDetail()

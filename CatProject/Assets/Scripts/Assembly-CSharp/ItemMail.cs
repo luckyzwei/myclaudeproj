@@ -18,20 +18,20 @@ public class ItemMail : MonoBehaviour
 
 		public Article(int _type, int _idx, int _region, int _grade, int _count)
 		{
-			type = 0;
-			idx = 0;
-			region = 0;
-			grade = 0;
-			count = 0;
+			type = _type;
+			idx = _idx;
+			region = _region;
+			grade = _grade;
+			count = _count;
 		}
 
 		public Article(int _type, int _idx, int _region, int _count)
 		{
-			type = 0;
-			idx = 0;
-			region = 0;
+			type = _type;
+			idx = _idx;
+			region = _region;
 			grade = 0;
-			count = 0;
+			count = _count;
 		}
 	}
 
@@ -54,13 +54,26 @@ public class ItemMail : MonoBehaviour
 
 	private void Awake()
 	{
+		if (receiveBtn != null)
+			receiveBtn.onClick.AddListener(OnClickReceive);
 	}
 
 	public void Init(Post post)
 	{
+		postData = post;
+		if (post == null) return;
+		if (content != null)
+			content.text = post.content ?? string.Empty;
+		if (date != null)
+			date.text = post.sentDate ?? string.Empty;
+		if (expire != null)
+			expire.text = post.expirationDate ?? string.Empty;
+		if (receiveBtn != null)
+			receiveBtn.gameObject.SetActive(post.isCanReceive);
 	}
 
 	private void OnClickReceive()
 	{
+		if (postData == null) return;
 	}
 }

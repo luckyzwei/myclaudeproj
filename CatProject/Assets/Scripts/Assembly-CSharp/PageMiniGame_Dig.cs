@@ -308,6 +308,10 @@ public class PageMiniGame_Dig : UIBase
 
 	private void LoadCeo()
 	{
+		if (MyCeoRoot == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		CeoLoadObject = new AddressableLoadGameObject();
 	}
 
 	private void SetRemainTimeText()
@@ -323,6 +327,9 @@ public class PageMiniGame_Dig : UIBase
 
 	private void UpdateHasCurrencyValue()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (UseCurrencyItem != null) UseCurrencyItem.gameObject.SetActive(true);
 	}
 
 	private void MakeUpStage()
@@ -356,10 +363,18 @@ public class PageMiniGame_Dig : UIBase
 
 	private void TryLoadFloor(string floorPath)
 	{
+		if (FloorRootTr == null || string.IsNullOrEmpty(floorPath)) return;
+		FloorLoadObject = new AddressableLoadGameObject();
 	}
 
 	private void PlaceTreasureItems()
 	{
+		if (ItemObjList == null || FloorRootTr == null) return;
+		for (int i = 0; i < ItemObjList.Count; i++)
+		{
+			if (ItemObjList[i] != null)
+				ItemObjList[i].transform.SetParent(FloorRootTr);
+		}
 	}
 
 	private void OnClickedCell(Vector2Int position)

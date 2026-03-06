@@ -304,10 +304,12 @@ public class PagePlantManage : UIBase
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickPreview()
 	{
+		// Preview plant - no action needed
 	}
 
 	private void OnClickBefore()
@@ -334,6 +336,8 @@ public class PagePlantManage : UIBase
 
 	private void OnClickBuyItem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickLevelUp()

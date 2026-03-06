@@ -319,10 +319,12 @@ public class SeasonalSystem
 
 	private void UpdateWorkshop(DateTime curDateTime)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void UpdateDistributor(DateTime curDateTime)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void UpdateScheduleOneSeconds()
@@ -442,6 +444,8 @@ public class SeasonalSystem
 
 	public void ReqAutoSelectDormitory()
 	{
+		if (!IsPlayingSeasonal()) return;
+		ReqSelectBuilding(E_BuildingType.Dormitory, 0, null);
 	}
 
 	public bool ReqBuildingUpgradeImmediatelyComplete(int buildingIdx)
@@ -552,6 +556,7 @@ public class SeasonalSystem
 
 	public void UpdateDelayedCurrencyInventory(int index)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void CheckBuffTime(DateTime curTime)
@@ -645,18 +650,22 @@ public class SeasonalSystem
 
 	private void OnChangeDayActivityState(E_DayActivityStatus dayActivityStatus)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void OnChangeTodayTimeHour(int hour)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void OnEndAllEmployeeWorkOff()
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private void OnChangeDormitoryMaxWorkerCount(int buildingIdx, int prevMaxWorkerCount, int nowMaxWorkerCount)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	private int PickArcadeRouletteRewardIdx()
@@ -714,6 +723,7 @@ public class SeasonalSystem
 
 	private void AddCatstaEventMissionValue(bool isFirstRank, int rankIdx)
 	{
+		if (!IsPlayingSeasonal()) return;
 	}
 
 	public void AddOneHour()

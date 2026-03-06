@@ -129,6 +129,9 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	public void UpdateRefreshBtn()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (RefreshRemainTime != null) RefreshRemainTime.text = "";
 	}
 
 	private void OnClickContracts(int company)
@@ -145,6 +148,8 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickAdsRefreshCountChargeBtn()
 	{
+		// Watch ad to charge refresh count
+		RefreshCompanyList();
 	}
 
 	private void OnClickCashRefreshCompany()

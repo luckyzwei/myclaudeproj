@@ -8,10 +8,13 @@ public class ShopContentsManager : IShopContents
 
 	private void Awake()
 	{
+		if (infoBtn != null)
+			infoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public override void Init()
 	{
+		base.Init();
 	}
 
 	private void OnClickInfo()

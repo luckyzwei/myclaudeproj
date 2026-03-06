@@ -10,13 +10,17 @@ public class ADBoardInhouse : MonoBehaviour
 
 	private void Awake()
 	{
+		Init();
 	}
 
 	private void Init()
 	{
+		// Resource loading for ad board sprite - keep empty
 	}
 
 	public void OnClick()
 	{
+		if (InHouseType == Config.E_INHOUSE_RESERVATION.None) return;
+		CrossPromotionHelper.CheckPossibleClaimReward(InHouseType);
 	}
 }

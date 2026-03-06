@@ -44,6 +44,11 @@ public class PageRewardLuckyDraw : UIBase
 
 		public RewardItemData(int _type, int _idx, BigInteger _count, string res = "", AtlasType atlas = AtlasType.None)
 		{
+			rewardType = _type;
+			rewardIdx = _idx;
+			rewardValue = _count;
+			resImg = res;
+			atlasType = atlas;
 		}
 	}
 
@@ -65,13 +70,26 @@ public class PageRewardLuckyDraw : UIBase
 
 	private void Show(RewardItemData reward)
 	{
+		if (reward == null) return;
+		if (RewardName != null) RewardName.text = "";
+		// Resource loading for RewardImg/RewardIcon - keep minimal
 	}
 
 	public void ShowRouletteReward(int rouletteIdx, bool isreplaceReward = false)
 	{
+		PlantReward = 0;
+		if (RemainRewards == null) RemainRewards = new Queue<RewardItemData>();
+		RemainRewards.Clear();
 	}
 
 	public override void Hide()
 	{
+		if (RemainRewards != null && RemainRewards.Count > 0)
+		{
+			var next = RemainRewards.Dequeue();
+			Show(next);
+			return;
+		}
+		base.Hide();
 	}
 }

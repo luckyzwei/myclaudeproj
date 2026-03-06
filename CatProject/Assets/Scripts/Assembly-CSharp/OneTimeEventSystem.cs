@@ -82,6 +82,13 @@ public class OneTimeEventSystem
 
 	private void SubscribeContentOpen()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ContentsOpenSystem == null) return;
+		root.ContentsOpenSystem.Subscribe(Config.ContentsOpenType.Level, () =>
+		{
+			SetCurEventIdx();
+			UpdateOneTimeEvent();
+		});
 	}
 
 	private void UpdateOneTimeEvent()
@@ -143,6 +150,7 @@ public class OneTimeEventSystem
 
 	private void ShowBonusOneTimeOpenPopup()
 	{
+		IsEnqueueOpenPopup = true;
 	}
 
 	private void ShowDonePopup()
@@ -387,41 +395,51 @@ public class OneTimeEventSystem
 
 	private void LogOpenOneTime()
 	{
+		Debug.Log($"[OneTimeEvent] Open OneTime Event idx:{CurIdx}");
 	}
 
 	private void LogLevelUp(int level)
 	{
+		Debug.Log($"[OneTimeEvent] LevelUp level:{level}");
 	}
 
 	private void LogLevelMax()
 	{
+		Debug.Log($"[OneTimeEvent] LevelMax idx:{CurIdx}");
 	}
 
 	private void LogGetReward(int level, bool isPurchase)
 	{
+		Debug.Log($"[OneTimeEvent] GetReward level:{level} isPurchase:{isPurchase}");
 	}
 
 	private void LogGetAllReward()
 	{
+		Debug.Log($"[OneTimeEvent] GetAllReward idx:{CurIdx}");
 	}
 
 	public void LogEnterPage()
 	{
+		Debug.Log($"[OneTimeEvent] EnterPage idx:{CurIdx}");
 	}
 
 	private void LogPurchase1()
 	{
+		Debug.Log("[OneTimeEvent] Purchase1");
 	}
 
 	private void LogPurchase2()
 	{
+		Debug.Log("[OneTimeEvent] Purchase2");
 	}
 
 	private void LogPurchase3()
 	{
+		Debug.Log("[OneTimeEvent] Purchase3");
 	}
 
 	private void LogPurchase4()
 	{
+		Debug.Log("[OneTimeEvent] Purchase4");
 	}
 }

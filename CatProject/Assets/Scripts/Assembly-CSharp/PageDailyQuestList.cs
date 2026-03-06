@@ -88,6 +88,7 @@ public class PageDailyQuestList : UIBase
 
 	private void SetList()
 	{
+		// Populate quest list from QuestScroll - resource/addressable loading
 	}
 
 	private void UpdateRewardInfo()
@@ -151,10 +152,12 @@ public class PageDailyQuestList : UIBase
 
 	private void UpdateOneTimeCurrencyIcon()
 	{
+		// Resource loading for currency icon - keep empty
 	}
 
 	public void UpdateOneTimeCurrencyCount()
 	{
+		if (oneTimeCurrencyCount != null) oneTimeCurrencyCount.text = "0";
 	}
 
 	private void OnDestroy()

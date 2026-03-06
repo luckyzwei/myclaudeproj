@@ -402,10 +402,12 @@ public class SpecialDaySystem
 
 	private void UpdateLoadingThemeAfter()
 	{
+		if (CurIdx <= 0) return;
 	}
 
 	private void UpdateStageTheme()
 	{
+		if (CurIdx <= 0) return;
 	}
 
 	public int GetSpecialEmployeeViewIdx()

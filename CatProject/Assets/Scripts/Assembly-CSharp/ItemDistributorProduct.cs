@@ -1,5 +1,6 @@
 using System.Numerics;
 using Vector3 = UnityEngine.Vector3;
+using Treeplla;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -142,10 +143,20 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	private void SetProductIconImage(string iconKey)
 	{
+		if (ProductIconImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) ProductIconImage.sprite = sprite;
+		}
 	}
 
 	private void SetDistributorImage(string iconKey)
 	{
+		if (DistributorImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) DistributorImage.sprite = sprite;
+		}
 	}
 
 	private void SetProductOnceDistributeCountText(BigInteger needCount_PerMile)
@@ -171,6 +182,11 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	private void SetProductCostImage(string iconKey)
 	{
+		if (ProductCostImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconKey);
+			if (sprite != null) ProductCostImage.sprite = sprite;
+		}
 	}
 
 	private void SetProductInventoryCountText(BigInteger hasValue_PerMile)
@@ -195,14 +211,22 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	public void RedrawUpgradeValue()
 	{
+		if (text_upgrade_value != null) text_upgrade_value.text = "";
+		if (text_transportation_upgrade_inc_value != null) text_transportation_upgrade_inc_value.text = "";
+		if (text_revenu_upgrade_inc_value != null) text_revenu_upgrade_inc_value.text = "";
 	}
 
 	private void RedrawSellingBtn()
 	{
+		if (ProductSellBtn != null) ProductSellBtn.gameObject.SetActive(true);
+		if (ProductSellingBtn != null) ProductSellingBtn.gameObject.SetActive(false);
+		if (SoldoutObj != null) SoldoutObj.SetActive(false);
 	}
 
 	private void OnClickedProductCostShortcutBtn()
 	{
+		// Navigate to the production source for the product cost
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickedProductSellBtn()

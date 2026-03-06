@@ -28,13 +28,17 @@ public class ItemChatContact : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null)
+			Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	public void Set(int group)
 	{
+		ChatGroup = group;
 	}
 
 	private void OnClickBtn()
 	{
+		SelectCb?.Invoke(ChatGroup);
 	}
 }

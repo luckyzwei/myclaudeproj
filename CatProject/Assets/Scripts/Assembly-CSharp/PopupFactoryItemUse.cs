@@ -27,6 +27,7 @@ public class PopupFactoryItemUse : UIBase
 
 	private void OnDisable()
 	{
+		// Cleanup on disable
 	}
 
 	public void Set(int factory)
@@ -59,6 +60,7 @@ public class PopupFactoryItemUse : UIBase
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void UseItem(int itemIdx, ItemFactoryUseItem item)

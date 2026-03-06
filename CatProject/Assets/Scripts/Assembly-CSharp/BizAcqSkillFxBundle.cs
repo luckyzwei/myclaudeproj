@@ -11,13 +11,32 @@ public class BizAcqSkillFxBundle : ScriptableObject
 
 	public void LoadBuffEffectObject(SkillEffectType skillEffectType, Action<GameObject> onLoaded)
 	{
+		if (BuffEffectList == null) return;
+		for (int i = 0; i < BuffEffectList.Count; i++)
+		{
+			if (BuffEffectList[i] != null && BuffEffectList[i].SkillEffectType == skillEffectType)
+			{
+				if (BuffEffectList[i].OnLoadedList == null)
+					BuffEffectList[i].OnLoadedList = new List<Action<GameObject>>();
+				if (onLoaded != null)
+					BuffEffectList[i].OnLoadedList.Add(onLoaded);
+				return;
+			}
+		}
 	}
 
 	public void Reset()
 	{
+		if (BuffEffectList == null) return;
+		for (int i = 0; i < BuffEffectList.Count; i++)
+		{
+			if (BuffEffectList[i] != null && BuffEffectList[i].OnLoadedList != null)
+				BuffEffectList[i].OnLoadedList.Clear();
+		}
 	}
 
 	private void OnDestroy()
 	{
+		Reset();
 	}
 }

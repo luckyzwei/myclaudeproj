@@ -28,23 +28,31 @@ public class itemSeasonalQuest : MonoBehaviour
 
 	private void Awake()
 	{
+		if (btnReceive != null)
+			btnReceive.onClick.AddListener(OnClickReceive);
 	}
 
 	public void Set(int _tableIdx)
 	{
+		tableIdx = _tableIdx;
+		if (lockObj != null)
+			lockObj.SetActive(IsLocked);
+		if (clearObj != null)
+			clearObj.SetActive(false);
 	}
 
 	public bool IsActiveSlot()
 	{
-		return false;
+		return !IsLocked;
 	}
 
 	public bool IsLockedSlot()
 	{
-		return false;
+		return IsLocked;
 	}
 
 	private void OnClickReceive()
 	{
+		if (IsLocked) return;
 	}
 }

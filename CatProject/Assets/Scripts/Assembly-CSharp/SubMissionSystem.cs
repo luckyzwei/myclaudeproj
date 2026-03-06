@@ -113,10 +113,16 @@ public class SubMissionSystem
 
 	private void NotifyMissionRewardReady()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		root.UserData.Save();
 	}
 
 	private void JustSyncMissionSaveData()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		root.UserData.Save();
 	}
 
 	private SubMissionSlotData MakeMissionSlotData(SubMissionData missionTable)

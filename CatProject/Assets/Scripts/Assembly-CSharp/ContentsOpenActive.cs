@@ -1,3 +1,4 @@
+using Treeplla;
 using UnityEngine;
 
 public class ContentsOpenActive : MonoBehaviour
@@ -25,13 +26,24 @@ public class ContentsOpenActive : MonoBehaviour
 
 	private void Awake()
 	{
+		Refresh();
 	}
 
 	private void OnEnable()
 	{
+		Refresh();
 	}
 
 	public void Refresh()
 	{
+		bool isOpen = false;
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root != null && root.ContentsOpenSystem != null)
+		{
+			isOpen = root.ContentsOpenSystem.isContentsOpen(openType);
+		}
+		if (reverse)
+			isOpen = !isOpen;
+		gameObject.SetActive(isOpen);
 	}
 }

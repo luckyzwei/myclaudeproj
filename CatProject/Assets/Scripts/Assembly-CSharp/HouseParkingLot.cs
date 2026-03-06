@@ -41,10 +41,14 @@ public class HouseParkingLot : MonoBehaviour
 
 	public void UpdateCurHouse()
 	{
+		if (HouseRoot != null)
+			HouseRoot.SetActive(true);
 	}
 
 	public void UpdateParkingSpace()
 	{
+		if (ParkingRoot != null)
+			ParkingRoot.SetActive(true);
 	}
 
 	public void UpdateEditModeUI()

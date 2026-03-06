@@ -66,9 +66,12 @@ public class PopupRecommend : UIBase
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickInvite()
 	{
+		reqTime = DateTime.UtcNow;
+		// Share invite link
 	}
 }
