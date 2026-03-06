@@ -109,47 +109,85 @@ public class ItemFactoryProduct : MonoBehaviour
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
+		if (UnLockBtn != null) UnLockBtn.onClick.AddListener(OnClickUnLock);
 	}
 
 	public void Set(int factory, int idx)
 	{
+		FactoryIdx = factory;
+		ProductIdx = idx;
+		IsLock = false;
+		IsReadyToUnlock = false;
+		if (SelectObj != null) SelectObj.SetActive(false);
+		if (Lock != null) Lock.SetActive(false);
+		UpdateFactoryLevel();
 	}
 
 	public void UpdateFactoryLevel()
 	{
+		// Update product icon and production time from factory data
+		if (Icon != null)
+		{
+			// Set product icon
+		}
+		if (Count != null) Count.text = "";
+		if (ProductionTime != null) ProductionTime.text = "";
 	}
 
 	public void SetSelect(bool value)
 	{
+		if (SelectObj != null) SelectObj.SetActive(value);
 	}
 
 	public void ReadyToUnlock()
 	{
+		IsReadyToUnlock = true;
+		IsLock = true;
+		if (Lock != null) Lock.SetActive(true);
+		if (UnLockBtn != null) UnLockBtn.gameObject.SetActive(true);
 	}
 
 	public void PlayUnlock()
 	{
+		IsReadyToUnlock = false;
+		IsLock = false;
+		if (UnlockAnimator != null)
+		{
+			UnlockAnimator.gameObject.SetActive(true);
+			UnlockAnimator.SetTrigger("Unlock");
+		}
+		StartCoroutine(OnFinishUnlock());
 	}
 
 	[IteratorStateMachine(typeof(_003COnFinishUnlock_003Ed__29))]
 	private IEnumerator OnFinishUnlock()
 	{
-		yield break;
+		yield return new WaitForSeconds(1f);
+		if (Lock != null) Lock.SetActive(false);
+		if (UnlockAnimator != null) UnlockAnimator.gameObject.SetActive(false);
+		UpdateFactoryLevel();
 	}
 
 	private void OnClickBtn()
 	{
+		if (IsLock) return;
+		ClickCb?.Invoke(ProductIdx);
 	}
 
 	private void OnClickUnLock()
 	{
+		GotoUnLockCb?.Invoke();
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

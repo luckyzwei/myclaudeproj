@@ -130,47 +130,86 @@ public class ItemShopEndless : MonoBehaviour
 
 	private void Awake()
 	{
+		ItemArticles = new List<ItemArticle>();
+		RewardItemList = new List<IRewardItemData>();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickBuyBtn);
+		if (FreeBuyBtn != null) FreeBuyBtn.onClick.AddListener(OnClickBuyBtn);
 	}
 
 	public void Set(int packageIdx, int orderIdx)
 	{
+		EndlessPackageIdx = packageIdx;
+		OrderIdx = orderIdx;
+		if (ItemObj != null) ItemObj.SetActive(true);
+		if (SoldOutObj != null) SoldOutObj.SetActive(false);
+		if (LockObj != null) LockObj.SetActive(false);
 	}
 
 	public void SetSoldOut(bool isSoldOut)
 	{
+		if (SoldOutObj != null) SoldOutObj.SetActive(isSoldOut);
+		if (SoldOutDeactiveObjs != null)
+		{
+			for (int i = 0; i < SoldOutDeactiveObjs.Count; i++)
+				if (SoldOutDeactiveObjs[i] != null) SoldOutDeactiveObjs[i].SetActive(!isSoldOut);
+		}
 	}
 
 	public void SetArrowVisibility(bool isShow)
 	{
+		if (ArrowObj != null) ArrowObj.SetActive(isShow);
 	}
 
 	public void SetRedDot(bool isShow)
 	{
+		if (RedDotObj != null) RedDotObj.SetActive(isShow);
 	}
 
 	public void SetEmpty()
 	{
+		if (ItemObj != null) ItemObj.SetActive(false);
+		if (SoldOutObj != null) SoldOutObj.SetActive(false);
+		if (FreeBuyObj != null) FreeBuyObj.SetActive(false);
+		if (CommonBuyObj != null) CommonBuyObj.SetActive(false);
+		if (LockObj != null) LockObj.SetActive(false);
+		if (ArrowObj != null) ArrowObj.SetActive(false);
+		if (RedDotObj != null) RedDotObj.SetActive(false);
 	}
 
 	public void SetSlotIdx(int slotIdx)
 	{
+		SlotIdx = slotIdx;
 	}
 
 	private void SetRewardItemList(EndlessOfferRewardData endlessRewardTable)
 	{
+		if (RewardItemList == null) RewardItemList = new List<IRewardItemData>();
+		RewardItemList.Clear();
+		// Populate reward items from endlessRewardTable
 	}
 
 	public void SetIsLock(bool isLock, bool bPlayAnim)
 	{
+		if (LockObj != null) LockObj.SetActive(isLock);
+		if (isLock) return;
+		if (!bPlayAnim) return;
+		StartCoroutine(PlayUnlockAnim());
 	}
 
 	[IteratorStateMachine(typeof(_003CPlayUnlockAnim_003Ed__44))]
 	private IEnumerator PlayUnlockAnim()
 	{
-		yield break;
+		if (UnlockAnimator != null)
+		{
+			UnlockAnimator.gameObject.SetActive(true);
+			UnlockAnimator.SetTrigger("Unlock");
+		}
+		yield return new WaitForSeconds(1f);
+		if (UnlockAnimator != null) UnlockAnimator.gameObject.SetActive(false);
 	}
 
 	private void OnClickBuyBtn()
 	{
+		OnClickBuyEvent?.Invoke(OrderIdx, SlotIdx);
 	}
 }

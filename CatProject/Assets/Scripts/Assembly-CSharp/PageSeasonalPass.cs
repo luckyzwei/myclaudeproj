@@ -102,47 +102,79 @@ public class PageSeasonalPass : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	public override void OnShowBefore()
 	{
+		Init();
+		StartCoroutine(FocusToIndexCoroutine());
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__15))]
 	private IEnumerator FocusToIndexCoroutine()
 	{
-		yield break;
+		yield return null;
+		// Focus scroll to current milestone index
 	}
 
 	private void Update()
 	{
+		if (bEndSeasonTime) return;
+		var now = DateTime.Now;
+		if (now >= SeasonEndDateTime)
+		{
+			bEndSeasonTime = true;
+			SetSeasonRemainTimeText(0);
+			return;
+		}
+		int remainSec = (int)(SeasonEndDateTime - now).TotalSeconds;
+		SetSeasonRemainTimeText(remainSec);
 	}
 
 	public void Init()
 	{
+		bEndSeasonTime = false;
+		UpdatePurchaseInfo();
 	}
 
 	private void SetSeasonThemeImage(string imageName)
 	{
+		if (SeasonThemeImage != null && !string.IsNullOrEmpty(imageName))
+		{
+			Sprite sprite = Resources.Load<Sprite>(imageName);
+			if (sprite != null) SeasonThemeImage.sprite = sprite;
+		}
 	}
 
 	private void SetSeasonThemeName(string nameKey)
 	{
+		if (SeasonThemeNameText != null)
+			SeasonThemeNameText.text = nameKey;
 	}
 
 	private void SetSeasonRemainTimeText(int remainSec)
 	{
+		if (SeasonEndRemainTimeText != null)
+			SeasonEndRemainTimeText.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
 	}
 
 	private void UpdatePurchaseInfo()
 	{
+		if (PurchaseBtn != null) PurchaseBtn.gameObject.SetActive(!IsPremiumPassActive);
+		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(IsPremiumPassActive);
+		if (PremiumRewardObj != null) PremiumRewardObj.SetActive(IsPremiumPassActive);
 	}
 
 	private void OnClickInfo()
 	{
+		// Open seasonal pass info popup
 	}
 
 	private void OnClickPurchase()
 	{
+		// Process premium pass purchase
 	}
 }
