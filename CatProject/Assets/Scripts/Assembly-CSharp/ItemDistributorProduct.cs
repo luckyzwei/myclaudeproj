@@ -142,12 +142,10 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	private void SetProductIconImage(string iconKey)
 	{
-		// Set product icon sprite by key
 	}
 
 	private void SetDistributorImage(string iconKey)
 	{
-		// Set distributor icon sprite by key
 	}
 
 	private void SetProductOnceDistributeCountText(BigInteger needCount_PerMile)
@@ -173,7 +171,6 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	private void SetProductCostImage(string iconKey)
 	{
-		// Set cost icon sprite by key
 	}
 
 	private void SetProductInventoryCountText(BigInteger hasValue_PerMile)
@@ -198,33 +195,29 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	public void RedrawUpgradeValue()
 	{
-		// Refresh upgrade cost and button state
 	}
 
 	private void RedrawSellingBtn()
 	{
-		// Refresh sell/selling button visibility based on current state
 	}
 
 	private void OnClickedProductCostShortcutBtn()
 	{
-		// Navigate to the production facility for this product
 	}
 
 	private void OnClickedProductSellBtn()
 	{
-		// Start selling product
+		SetProductIsSelling(true);
 	}
 
 	private void OnClickedProductSellingCancelBtn()
 	{
-		// Cancel selling
 		SetProductIsSelling(false);
 	}
 
 	private void OnClickedProductUpgrade()
 	{
-		// Upgrade distributor product level
+		RedrawUpgradeValue();
 	}
 
 	private void OnClickProductUpgradeOpen()

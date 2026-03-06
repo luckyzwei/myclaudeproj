@@ -118,7 +118,6 @@ public class ItemCompany : MonoBehaviour
 
 	public void AddTutorialRegister(TutorialIdent id)
 	{
-		// Register tutorial event for this company item
 	}
 
 	private void OnClickContracts()
@@ -128,6 +127,6 @@ public class ItemCompany : MonoBehaviour
 
 	private void OnClickNeedDeskShortCutBtn()
 	{
-		// Navigate to desk purchase
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOfficeUpgrade>();
 	}
 }

@@ -151,7 +151,6 @@ public class ItemAcquisitionCEO : MonoBehaviour
 	private void SetSkillIcon(int skillIdx)
 	{
 		if (SkillIconImage == null) return;
-		// Load skill icon by skillIdx
 	}
 
 	private void OnClickedSlotButton()
@@ -168,7 +167,6 @@ public class ItemAcquisitionCEO : MonoBehaviour
 			if (fx != null) { fx.SetActive(false); fx.SetActive(true); }
 			return;
 		}
-		// Load and instantiate buff effect prefab
 	}
 
 	private void SetBuffEffectPlaySpeed(float playSpeed)

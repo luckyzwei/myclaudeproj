@@ -123,7 +123,6 @@ public class ItemFactoryOrder : MonoBehaviour
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Get slot data from FactorySystem
 		Refresh();
 	}
 
@@ -199,7 +198,6 @@ public class ItemFactoryOrder : MonoBehaviour
 
 	private void OnClickResetSlot()
 	{
-		// Reset order slot (spend gems or use free reset)
 		Refresh();
 	}
 

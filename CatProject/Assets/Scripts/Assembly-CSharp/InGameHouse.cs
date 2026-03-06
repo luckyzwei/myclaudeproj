@@ -35,13 +35,11 @@ public class InGameHouse : OutGameMode
 
 	public void LoadHouse()
 	{
-		// Load current house
 	}
 
 	public void LoadHouse(int idx)
 	{
 		HouseIdx = idx;
-		// Load house by index
 	}
 
 	public void SetEditMode(bool value)
@@ -53,7 +51,6 @@ public class InGameHouse : OutGameMode
 
 	private void ConfirmEditMode()
 	{
-		// Confirm and save edit mode changes
 		EditCarList = null;
 		SelectEditParkingLot = -1;
 	}
@@ -65,7 +62,6 @@ public class InGameHouse : OutGameMode
 
 	protected override void LoadUI()
 	{
-		// Load house UI
 	}
 
 	public override void UnLoad()

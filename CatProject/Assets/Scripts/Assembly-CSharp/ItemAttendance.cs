@@ -129,7 +129,6 @@ public class ItemAttendance : MonoBehaviour
 
 	private void UpdateRewardIcon(AttendanceData attData)
 	{
-		// Set reward icon from AttendanceData.RewardItemData
 	}
 
 	private void UpdateAttendanceState(AttendanceData attData)
@@ -156,7 +155,7 @@ public class ItemAttendance : MonoBehaviour
 	private void OnClickClaimButton()
 	{
 		if (CurAttendanceState != E_AttendanceState.Possible) return;
-		// Claim attendance reward
+		UpdateAttendanceState(E_AttendanceState.Rewarded);
 	}
 
 	private void PassedAttendanceClaim()

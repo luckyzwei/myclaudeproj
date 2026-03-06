@@ -132,13 +132,11 @@ public class ItemFactoryUseItem : MonoBehaviour
 
 	private void CheckItemUsable(Action<bool> callback)
 	{
-		// Check if item can be used (has enough count, not on cooldown)
 		callback?.Invoke(true);
 	}
 
 	private void BuyAndUseItem(int gemPrice)
 	{
-		// Buy item with gems and use it
 		UseItem?.Invoke(ItemIdx, this);
 		RefreshCb?.Invoke();
 	}
