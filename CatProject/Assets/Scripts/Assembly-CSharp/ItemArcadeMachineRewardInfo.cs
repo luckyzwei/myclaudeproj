@@ -26,25 +26,42 @@ public class ItemArcadeMachineRewardInfo : MonoBehaviour
 
 	public void Init(SeasonalRouletteRewardData rewardData, int level)
 	{
+		IsTimeReward = false;
+		LevelRewardValueList = new List<int>();
+		SetRewardLevelValue(level);
 	}
 
 	public void SetRewardLevelValue(int level)
 	{
+		if (LevelRewardValueList == null || level < 0 || level >= LevelRewardValueList.Count) return;
+		int value = LevelRewardValueList[level];
+		SetRewardValueText(value, IsTimeReward);
 	}
 
 	private void SetSlotImageList(List<int> currencyIdxList)
 	{
+		if (SlotImageList == null || currencyIdxList == null) return;
+		for (int i = 0; i < SlotImageList.Count; i++)
+		{
+			if (SlotImageList[i] != null)
+				SlotImageList[i].gameObject.SetActive(i < currencyIdxList.Count);
+		}
 	}
 
 	private void SetRewardIconImage(string iconKey)
 	{
+		// Set icon from atlas by key
 	}
 
 	private void SetRewardValueText(int value, bool isTimeValue)
 	{
+		if (RewardValueText != null)
+			RewardValueText.text = isTimeValue ? ProjectUtility.GetTimeStringFormattingShort(value) : value.ToString();
 	}
 
 	private void SetRewardGetProbabilityText(float probability)
 	{
+		if (RewardGetProbabilityText != null)
+			RewardGetProbabilityText.text = $"{probability:F1}%";
 	}
 }

@@ -32,25 +32,33 @@ public class PageSeasonalCoinBank : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (LevelInfoBtn != null) LevelInfoBtn.onClick.AddListener(OnClickLevelInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateLevel();
+		UpdateCoin();
 	}
 
 	public override void OnShowAfter()
 	{
+		if (coinComp != null) coinComp.gameObject.SetActive(true);
 	}
 
 	private void UpdateLevel()
 	{
+		if (NextLevelRoot != null) NextLevelRoot.SetActive(true);
 	}
 
 	private void UpdateCoin()
 	{
+		if (CoinText != null) CoinText.text = "0";
 	}
 
 	private void OnClickLevelInfo()
 	{
+		// Show seasonal coin bank level info
 	}
 }

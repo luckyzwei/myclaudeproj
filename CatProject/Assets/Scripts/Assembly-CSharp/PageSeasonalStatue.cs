@@ -62,14 +62,30 @@ public class PageSeasonalStatue : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	private void Update()
 	{
+		if (bEndSeasonTime) return;
+		if (SeasonEndDateTime > DateTime.Now)
+		{
+			int remainSec = (int)(SeasonEndDateTime - DateTime.Now).TotalSeconds;
+			SetSeasonRemainTimeText(remainSec);
+		}
+		else
+		{
+			bEndSeasonTime = true;
+			SetSeasonRemainTimeText(0);
+		}
 	}
 
 	public override void OnShowBefore()
 	{
+		bEndSeasonTime = false;
+		SeasonEndDateTime = DateTime.MaxValue;
+		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(false);
 	}
 
 	public override void OnHideAfter()
@@ -78,13 +94,18 @@ public class PageSeasonalStatue : UIBase
 
 	private void OnClickPurchase()
 	{
+		// Purchase seasonal statue
+		AddCatstaEventMissionValue();
 	}
 
 	private void SetSeasonRemainTimeText(int remainSec)
 	{
+		if (SeasonEndRemainTimeText != null)
+			SeasonEndRemainTimeText.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
 	}
 
 	private void AddCatstaEventMissionValue()
 	{
+		// Add mission progress for statue purchase event
 	}
 }

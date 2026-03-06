@@ -32,25 +32,32 @@ public class ItemPopupNoAdsBanner : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClick);
 	}
 
 	public void Init()
 	{
+		SetNoAdsBanner();
 	}
 
 	private void SetNoAdsBanner()
 	{
+		if (RemainTimeRoot != null) RemainTimeRoot.SetActive(false);
 	}
 
 	private void OnClick()
 	{
+		// Purchase no-ads IAP package
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 }

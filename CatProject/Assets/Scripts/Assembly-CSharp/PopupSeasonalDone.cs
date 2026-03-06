@@ -25,25 +25,41 @@ public class PopupSeasonalDone : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(() => Hide());
+		if (RewardPopupShortCutBtn != null) RewardPopupShortCutBtn.onClick.AddListener(() => Hide());
 	}
 
 	private void OnDestroy()
 	{
+		if (AddressableLoadBgObj != null)
+		{
+			Destroy(AddressableLoadBgObj);
+			AddressableLoadBgObj = null;
+		}
 	}
 
 	public override void OnShowBefore()
 	{
+		bTryLoadAddressableObj = false;
 	}
 
 	public void Init(int seasonInfoIdx, bool showShortcutBtn)
 	{
+		SeasonInfoIdx = seasonInfoIdx;
+		if (RewardPopupShortCutBtn != null) RewardPopupShortCutBtn.gameObject.SetActive(showShortcutBtn);
+		Load_ItemSeasonalThemeResource();
+		Show();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	private void Load_ItemSeasonalThemeResource()
 	{
+		bTryLoadAddressableObj = true;
+		// Load seasonal theme background from addressable
 	}
 }

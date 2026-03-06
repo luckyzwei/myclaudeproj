@@ -19,25 +19,35 @@ public class ItemManagerInfoStatusTab : MonoBehaviour, ITabToggleTab
 
 	private void Awake()
 	{
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public void Set(int managerIdx)
 	{
+		ManagerIdx = managerIdx;
+		IsMaxLevel = false;
+		Refresh();
 	}
 
 	public void Reset()
 	{
+		ManagerIdx = -1;
+		IsMaxLevel = false;
 	}
 
 	public void Refresh()
 	{
+		if (ManagerInfoOffice != null) ManagerInfoOffice.gameObject.SetActive(true);
+		if (ManagerInfoAcquisition != null) ManagerInfoAcquisition.gameObject.SetActive(true);
 	}
 
 	public void ManagerReinforceTutorial()
 	{
+		// Start manager reinforce tutorial
 	}
 
 	private void OnClickInfo()
 	{
+		// Show manager status info
 	}
 }

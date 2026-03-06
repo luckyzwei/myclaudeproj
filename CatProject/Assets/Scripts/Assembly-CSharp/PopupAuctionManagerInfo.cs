@@ -66,29 +66,45 @@ public class PopupAuctionManagerInfo : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgrade);
+		if (GotoShopBtn != null) GotoShopBtn.onClick.AddListener(OnClickShop);
 	}
 
 	public override void OnShowBefore()
 	{
+		if (LevelUpEffect != null) LevelUpEffect.SetActive(false);
 	}
 
 	public void Set(int managerIdx)
 	{
+		ManagerIdx = managerIdx;
+		UpdateLevel();
+		Show();
 	}
 
 	public void UpdateLevel()
 	{
+		if (NextLevelRoot != null) NextLevelRoot.SetActive(true);
+		if (MaxRoot != null) MaxRoot.SetActive(false);
+		if (LevelUpArrow != null) LevelUpArrow.SetActive(false);
 	}
 
 	private void ShowLevelUpEffect()
 	{
+		if (LevelUpEffect != null) LevelUpEffect.SetActive(true);
 	}
 
 	private void OnClickUpgrade()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		ShowLevelUpEffect();
+		UpdateLevel();
 	}
 
 	private void OnClickShop()
 	{
+		Hide();
 	}
 }

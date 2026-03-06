@@ -36,25 +36,36 @@ public class ItemOfficeItem : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickItem);
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposable != null) { Disposable.Dispose(); Disposable = null; }
 	}
 
 	public void Set(int office, int type, int idx)
 	{
+		OfficeIdx = office;
+		ItemType = type;
+		ItemIdx = idx;
+		LevelValue = 0;
+		if (NoHaveObj != null) NoHaveObj.SetActive(false);
+		SetUpgradableState();
 	}
 
 	private void SetUpgradableState()
 	{
+		if (UpgradableObj != null) UpgradableObj.SetActive(false);
 	}
 
 	public void Select(bool value)
 	{
+		if (SelectObj != null) SelectObj.SetActive(value);
 	}
 
 	private void OnClickItem()
 	{
+		ClickCb?.Invoke(ItemType, ItemIdx);
 	}
 }

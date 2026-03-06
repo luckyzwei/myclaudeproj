@@ -36,25 +36,41 @@ public class PopupRecommend : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (InviteBtn != null) InviteBtn.onClick.AddListener(OnClickInvite);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		Refresh();
 	}
 
 	public new void Refresh()
 	{
+		RefreshFreeGem();
+		if (itemList != null)
+		{
+			for (int i = 0; i < itemList.Count; i++)
+			{
+				if (itemList[i] != null)
+					itemList[i].gameObject.SetActive(true);
+			}
+		}
 	}
 
 	public void RefreshFreeGem()
 	{
+		if (FreeGemObj != null) FreeGemObj.SetActive(false);
 	}
 
 	private void OnClickInfo()
 	{
+		// Show recommend info popup
 	}
 
 	private void OnClickInvite()
 	{
+		// Share invite link
 	}
 }

@@ -34,25 +34,35 @@ public class InGameHouseCarInfo : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (EquipBtn != null) EquipBtn.onClick.AddListener(OnClickEquip);
+		if (SaleBtn != null) SaleBtn.onClick.AddListener(OnClickSale);
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.House)
 	{
+		base.Init(parent, type);
 	}
 
 	public void Set(int caridx, Action sellCarAction)
 	{
+		CarIdx = caridx;
+		SellCarAction = sellCarAction;
+		if (EquipCompObj != null) EquipCompObj.SetActive(false);
 	}
 
 	private void OnClickEquip()
 	{
+		// Equip car to parking lot
+		if (EquipCompObj != null) EquipCompObj.SetActive(true);
 	}
 
 	private void OnClickSale()
 	{
+		SellCarAction?.Invoke();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }
