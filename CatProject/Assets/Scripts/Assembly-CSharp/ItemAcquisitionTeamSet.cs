@@ -30,58 +30,114 @@ public class ItemAcquisitionTeamSet : MonoBehaviour
 
 	private void Awake()
 	{
+		HasCeoList = new List<ManagerCardData>();
+
+		if (ConfirmButton != null) ConfirmButton.onClick.AddListener(OnClickedConfirmBtn);
+		if (DimConfirmButton != null) DimConfirmButton.onClick.AddListener(OnClickedConfirmBtn);
+		if (AutoSetButton != null) AutoSetButton.onClick.AddListener(OnClickedAutoSetBtn);
 	}
 
 	public void OnDisable()
 	{
+		IsTeamSetMode = false;
 	}
 
 	public void SetTeamData()
 	{
+		UpdateTeamData();
+		if (MyTeamList != null)
+		{
+			for (int i = 0; i < MyTeamList.Count; i++)
+			{
+				if (MyTeamList[i] != null)
+				{
+					int slotIdx = i;
+					MyTeamList[i].OnClickedSlotButtonEvent = (ceoIdx, slot) => OnClickedTeamCeoItem(ceoIdx, slot);
+				}
+			}
+		}
 	}
 
 	public void SetTeamSetMode(bool isTeamSetMode)
 	{
+		IsTeamSetMode = isTeamSetMode;
+		if (ConfirmButton != null) ConfirmButton.gameObject.SetActive(isTeamSetMode);
+		if (DimConfirmButton != null) DimConfirmButton.gameObject.SetActive(!isTeamSetMode);
+		if (AutoSetButton != null) AutoSetButton.gameObject.SetActive(isTeamSetMode);
 	}
 
 	public void SetAllCeoList()
 	{
+		HasCeoList.Clear();
+		// Populate HasCeoList from manager card data
+		RefreshCeoList();
 	}
 
 	public void RefreshCeoList()
 	{
+		// Update scroll list display
 	}
 
 	private void UpdateTeamData()
 	{
+		if (MyTeamList == null) return;
+		for (int i = 0; i < MyTeamList.Count; i++)
+		{
+			if (MyTeamList[i] != null)
+				MyTeamList[i].SetEmpty();
+		}
 	}
 
 	private void OnClickedConfirmBtn()
 	{
+		OnChangedTeamDataEvent?.Invoke();
+		OnHideCallback?.Invoke();
 	}
 
 	private void OnClickedAutoSetBtn()
 	{
+		// Auto-assign best CEOs to team slots
+		UpdateTeamData();
+		RefreshCeoList();
 	}
 
 	private void OnClickedTeamCeoItem(int ceoIdx, int slotIdx)
 	{
+		if (!IsTeamSetMode) return;
+		if (ceoIdx > 0)
+		{
+			RemoveFromTeam(ceoIdx);
+		}
 	}
 
 	private void OnClickedCeoListItem(int ceoIdx, int slotIdx)
 	{
+		if (!IsTeamSetMode) return;
+		AddToTeam(ceoIdx);
 	}
 
 	private void AddToTeam(int ceoIdx)
 	{
+		// Add CEO to first empty team slot
+		UpdateTeamData();
+		RefreshCeoList();
 	}
 
 	private void RemoveFromTeam(int ceoIdx)
 	{
+		// Remove CEO from team slot
+		UpdateTeamData();
+		RefreshCeoList();
 	}
 
 	private ItemAcquisitionCEO FindHasCeoItem(int ceoIdx)
 	{
+		if (MyTeamList == null) return null;
+		for (int i = 0; i < MyTeamList.Count; i++)
+		{
+			if (MyTeamList[i] != null && MyTeamList[i].CeoIdx == ceoIdx)
+				return MyTeamList[i];
+		}
 		return null;
 	}
 }

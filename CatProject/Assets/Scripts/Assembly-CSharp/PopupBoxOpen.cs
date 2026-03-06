@@ -88,53 +88,93 @@ public class PopupBoxOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		adsDisposables = new CompositeDisposable();
+		freeDisposables = new CompositeDisposable();
+
+		if (FreeBtn != null) FreeBtn.onClick.AddListener(OnClickFree);
+		if (AdsBtn != null) AdsBtn.onClick.AddListener(OnClickAds);
+		if (GemBtn != null) GemBtn.onClick.AddListener(OnClickBuyGem);
+		if (KeyBtn != null) KeyBtn.onClick.AddListener(OnClickBuyKey);
+		if (TicketBtn != null) TicketBtn.onClick.AddListener(OnClickTicket);
 	}
 
 	private void UpdateAdsBtn()
 	{
+		UpdateAdStat();
 	}
 
 	public void Show(int shopBoxIdx)
 	{
+		ShopIdx = shopBoxIdx;
+		BoxTableIdx = shopBoxIdx;
+
+		UpdateAdsBtn();
 	}
 
 	private void UpdateAdBoxTime(int remainTime)
 	{
+		if (AdsRemainTime != null)
+			AdsRemainTime.text = ProjectUtility.GetTimeStringFormattingShort(remainTime);
 	}
 
 	private void UpdateAdStat()
 	{
+		// Update ad button enabled/disabled state
+		if (AdsBtn != null) AdsBtn.interactable = true;
+		if (AdsRedDot != null) AdsRedDot.SetActive(false);
+		if (FreeRedDot != null) FreeRedDot.SetActive(false);
+		if (KeyRedDot != null) KeyRedDot.SetActive(false);
 	}
 
 	public void OnClickTicket()
 	{
+		OpenBox(BoxTableIdx);
 	}
 
 	private void OpenBox(int boxIdx, Action CompCb = null)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Open box and show rewards
+		CompCb?.Invoke();
 	}
 
 	private void OnClickBuyKey()
 	{
+		OpenBox(BoxTableIdx);
 	}
 
 	private void OnClickBuyGem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Purchase with gems
+		OpenBox(BoxTableIdx);
 	}
 
 	private void OnClickFree()
 	{
+		OpenBox(BoxTableIdx);
 	}
 
 	private void OnClickAds()
 	{
+		// Watch ad then open box
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
+		if (adsDisposables != null) { adsDisposables.Dispose(); adsDisposables = new CompositeDisposable(); }
+		if (freeDisposables != null) { freeDisposables.Dispose(); freeDisposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
+		if (adsDisposables != null) { adsDisposables.Dispose(); adsDisposables = null; }
+		if (freeDisposables != null) { freeDisposables.Dispose(); freeDisposables = null; }
 	}
 }
