@@ -156,18 +156,20 @@ public class ItemEventMission : MonoBehaviour
 
 	private void OnClickRefreshBtn()
 	{
-		// Refresh mission with gem cost
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickShortCutBtn()
 	{
 		if (IsReqShortCut) return;
 		IsReqShortCut = true;
-		// Navigate to mission shortcut target
 	}
 
 	private void OnClickClaimBtn()
 	{
-		// Claim mission reward
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateLayout(true, true);
 	}
 }

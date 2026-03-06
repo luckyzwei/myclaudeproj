@@ -43,7 +43,6 @@ public class InGameFindManagerUI : InGameFloatingUI
 
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Check if manager is assigned to this office
 		SetActive(curManagerIdx);
 	}
 
@@ -66,7 +65,7 @@ public class InGameFindManagerUI : InGameFloatingUI
 
 	private void OnClickBtn()
 	{
-		// Open manager assignment popup for this office
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnDisable()

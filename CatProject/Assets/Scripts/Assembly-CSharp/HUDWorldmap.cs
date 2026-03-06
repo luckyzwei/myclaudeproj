@@ -99,7 +99,6 @@ public class HUDWorldmap : HUDBase
 	private void UpdateSuperStaff()
 	{
 		if (superStaffBtn == null) return;
-		// superStaffBtn state managed externally
 	}
 
 	public void SetFactory()
@@ -147,7 +146,6 @@ public class HUDWorldmap : HUDBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Subscribe via GameNotificationSystem
 	}
 
 	private void SetRichAchieveBtn()
@@ -164,13 +162,11 @@ public class HUDWorldmap : HUDBase
 	public void ShowRichAchieveGuide(float waitTime)
 	{
 		if (RichWayProgress == null) return;
-		// Show guide effect after delay
 	}
 
 	public void RichAchieveHUDStartEffect()
 	{
 		if (RichWayProgress == null) return;
-		// Play reward claim effect
 	}
 
 	private Vector3 GetRichAchievePos()
@@ -235,7 +231,6 @@ public class HUDWorldmap : HUDBase
 		if (root == null || root.InGameSystem == null) return;
 		var inGame = root.InGameSystem.CurInGame;
 		if (inGame == null) return;
-		// Trigger region move camera transition
 	}
 
 	private void OnClickCarBook()

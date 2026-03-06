@@ -44,21 +44,24 @@ public class HudMissionItem : MonoBehaviour
 	{
 		if (ClearedMissionRoot != null)
 			ClearedMissionRoot.SetActive(false);
-		// Populate cleared mission data from mission system
 	}
 
 	private void GetMissionReward(int rewardType, int rewardIdx, BigInteger rewardCnt, bool isDoubleReward)
 	{
-		// Claim mission reward and show effect
+		BigInteger finalCnt = isDoubleReward ? rewardCnt * 2 : rewardCnt;
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root != null && root.UserData != null)
+			root.UserData.SetReward(rewardType, rewardIdx, 0, finalCnt);
 	}
 
 	private void GetMoneySafe(BigInteger money)
 	{
-		// Collect money from safe
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root != null && root.UserData != null)
+			root.UserData.SetReward(0, 0, 0, money);
 	}
 
 	private void GotoNavi(int slot)
 	{
-		// Navigate to mission target
 	}
 }

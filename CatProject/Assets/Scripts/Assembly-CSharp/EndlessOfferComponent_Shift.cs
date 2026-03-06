@@ -343,7 +343,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 	private void SetMainImage(EndlessOfferInfoData offerInfo)
 	{
 		if (MainImage == null) return;
-		// Set main image sprite from offer info
 	}
 
 	protected override EndlessOfferRewardData GetTargetRewardTable(int orderIdx)
@@ -373,7 +372,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 			{
 				OnPurchaseSuccess(() =>
 				{
-					// After animation, update items
 					UpdateItemList();
 					UpdateRedDot();
 				});
@@ -389,7 +387,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 			callback?.Invoke(false);
 			return;
 		}
-		// Process in-app purchase via ShopSystem
 		callback?.Invoke(false);
 	}
 
@@ -403,7 +400,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 		IsAnimating = true;
 		OnPlayAnimationEvent?.Invoke(true);
 		StartCoroutine(AnimateItemShift());
-		// Delay callback after animation
 		Observable.Timer(TimeSpan.FromSeconds(AnimationDuration + AnimationDelay * ItemShopEndlessList.Count))
 			.Subscribe(_ =>
 			{
@@ -487,7 +483,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 	private void UpdateItemList()
 	{
 		if (ItemShopEndlessList == null) return;
-		// Update each item slot with reward data
 		for (int i = 0; i < ItemShopEndlessList.Count; i++)
 		{
 			if (ItemShopEndlessList[i] == null) continue;
@@ -500,6 +495,5 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 
 	private void UpdateRedDot()
 	{
-		// Check if any items are available for purchase and show red dot
 	}
 }

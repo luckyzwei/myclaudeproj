@@ -79,7 +79,6 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	public void ShowPlantFocusing()
 	{
-		// Highlight/focus the plant-related quest item
 	}
 
 	private void DrawPage()
@@ -92,7 +91,6 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	private void SetList()
 	{
-		// Populate quest list items from DailyQuestData
 	}
 
 	private void UpdateRewardInfo()
@@ -109,13 +107,11 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 		if (RewardObj != null) RewardObj.SetActive(!rewardDone);
 		if (RewardLastObj != null) RewardLastObj.SetActive(rewardDone);
 
-		// Update weekly rewards
 		if (WeeklyRewards != null)
 		{
 			for (int i = 0; i < WeeklyRewards.Count; i++)
 			{
 				if (WeeklyRewards[i] == null) continue;
-				// Set weekly reward status
 			}
 		}
 	}
@@ -139,7 +135,6 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Mark quest as complete and give reward
 		UpdateRewardInfo();
 		UpdateProgress(false);
 	}
@@ -153,7 +148,6 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 	{
 		if (oneTimeUIRoot == null) return;
 		oneTimeUIRoot.SetActive(false);
-		// Check if one-time event is active and show UI
 		UpdateOneTimeCurrencyIcon();
 		UpdateOneTimeCurrencyCount();
 	}
@@ -161,7 +155,6 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 	private void UpdateOneTimeCurrencyIcon()
 	{
 		if (oneTimeCurrencyIcon == null) return;
-		// Set one-time currency icon sprite
 	}
 
 	public void UpdateOneTimeCurrencyCount()

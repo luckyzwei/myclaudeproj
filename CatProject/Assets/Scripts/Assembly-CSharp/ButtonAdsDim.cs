@@ -15,7 +15,6 @@ public class ButtonAdsDim : MonoBehaviour, IPointerDownHandler, IEventSystemHand
 
 	public void OnPointerClick(PointerEventData e)
 	{
-		// Handled by button click listener
 	}
 
 	private void Start()
@@ -25,17 +24,15 @@ public class ButtonAdsDim : MonoBehaviour, IPointerDownHandler, IEventSystemHand
 
 	private void OnEnable()
 	{
-		// Subscribe to ad ready state changes
+		CB_AdRewarded(false);
 	}
 
 	private void OnDestroy()
 	{
-		// Unsubscribe from ad ready state changes
 	}
 
 	private void CB_AdRewarded(bool isAdReady)
 	{
-		// Dim the button when ads are not ready
 		var canvasGroup = GetComponent<CanvasGroup>();
 		if (canvasGroup != null)
 		{

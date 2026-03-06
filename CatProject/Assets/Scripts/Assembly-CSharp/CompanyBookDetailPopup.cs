@@ -141,7 +141,6 @@ public class CompanyBookDetailPopup : MonoBehaviour
 
 	private void UpdateLevelUpCashInfo()
 	{
-		// Update level up cost information
 	}
 
 	private void OnClickMaxReward()
@@ -169,11 +168,13 @@ public class CompanyBookDetailPopup : MonoBehaviour
 
 	private void OnClickLevelUpCash()
 	{
-		// Purchase level up with cash
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickCompanyLevelUp()
 	{
-		// Level up company
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }
