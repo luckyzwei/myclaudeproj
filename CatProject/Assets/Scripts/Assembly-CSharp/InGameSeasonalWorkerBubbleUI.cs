@@ -33,21 +33,31 @@ public class InGameSeasonalWorkerBubbleUI : InGameFloatingUI
 
 	public void SetBuildingInfo(int buildingIdx)
 	{
+		BuildingIdx = buildingIdx;
+		Disposables = new CompositeDisposable();
+		if (RootObject != null) RootObject.SetActive(true);
 	}
 
 	public void OnReleaseBuilding()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
+		if (RootObject != null) RootObject.SetActive(false);
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	private void CheckCanBeHireWorker()
 	{
+		if (CanBeHireWorkerObj != null) CanBeHireWorkerObj.SetActive(false);
 	}
 
 	private void OnAddNewActiveWorker(int prevCnt, int curCnt)
 	{
+		ActivateWorkerCount = curCnt;
+		if (ActivateWorkerCountText != null)
+			ActivateWorkerCountText.text = curCnt.ToString();
 	}
 }

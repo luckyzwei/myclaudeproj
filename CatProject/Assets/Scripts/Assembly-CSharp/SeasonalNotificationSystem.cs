@@ -8,10 +8,14 @@ public class SeasonalNotificationSystem
 
 	public void OnStartGame()
 	{
+		Disposables = new CompositeDisposable();
+		IsEnabledSkillBookContents = false;
 	}
 
 	public void OnExitGame()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
+		IsEnabledSkillBookContents = false;
 	}
 
 	private void OnChangedCurrencyValue_ArcadeRouletteCoin()
@@ -20,6 +24,7 @@ public class SeasonalNotificationSystem
 
 	private void OnChangedCurrencyValue_SkillBook()
 	{
+		IsEnabledSkillBookContents = true;
 	}
 
 	private void OnChangedMilestoneInfo()

@@ -109,10 +109,12 @@ public class PageArcadeSlotMachine : UIBase
 
 	private void InitTopInfoCurrency()
 	{
+		if (TopInfo != null) TopInfo.UpdateCurrencyInfos();
 	}
 
 	private void OnClickedPopupMissionBtn()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalMission>();
 	}
 
 	private void OnClickedCoinBankBtn()

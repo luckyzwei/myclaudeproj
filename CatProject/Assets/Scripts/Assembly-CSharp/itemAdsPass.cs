@@ -25,10 +25,13 @@ public class itemAdsPass : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnRewardBtnClick);
 	}
 
 	public void Set(int idx)
 	{
+		Idx = idx;
+		UpdateGetReward();
 	}
 
 	private void UpdateGetReward()
@@ -37,5 +40,7 @@ public class itemAdsPass : MonoBehaviour
 
 	private void OnRewardBtnClick()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

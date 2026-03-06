@@ -5,6 +5,7 @@ public class SendQueueMgr : MonoBehaviour
 {
 	private void Awake()
 	{
+		DontDestroyOnLoad(gameObject);
 	}
 
 	private void Update()
@@ -13,6 +14,7 @@ public class SendQueueMgr : MonoBehaviour
 
 	private void ExceptionEvent(Exception e)
 	{
+		UnityEngine.Debug.LogException(e);
 	}
 
 	private void OnApplicationPause(bool isPause)

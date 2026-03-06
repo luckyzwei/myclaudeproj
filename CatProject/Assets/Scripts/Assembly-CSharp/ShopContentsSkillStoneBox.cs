@@ -48,17 +48,32 @@ public class ShopContentsSkillStoneBox : IShopContents
 
 	public override void Init()
 	{
+		base.Init();
+		Disposables = new CompositeDisposable();
+		SkillStoneProductIdxList = new List<int>();
+		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnPurchaseItem);
+		SetPurchaseItem();
 	}
 
 	public override void Reset()
 	{
+		base.Reset();
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
+		if (TimeUpdateDisposable != null) { TimeUpdateDisposable.Dispose(); TimeUpdateDisposable = null; }
+		SetPurchaseItem();
 	}
 
 	private void SetPurchaseItem()
 	{
+		if (RootObj != null) RootObj.SetActive(true);
+		if (SoldOutObj != null) SoldOutObj.SetActive(false);
+		if (PurchaseBtnObj != null) PurchaseBtnObj.SetActive(true);
+		if (RedDotObj != null) RedDotObj.SetActive(false);
 	}
 
 	private void OnPurchaseItem()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

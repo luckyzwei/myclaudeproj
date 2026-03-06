@@ -17,13 +17,17 @@ public class ShopContentsRevenue : IShopContents
 
 	public override void Init()
 	{
+		base.Init();
+		RefreshActive();
 	}
 
 	private void RefreshActive()
 	{
+		if (PackageItem != null) PackageItem.SetActive(true);
 	}
 
 	private void OpenPackageUI(int idx)
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

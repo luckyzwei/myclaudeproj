@@ -33,17 +33,22 @@ public class itemPackageGroupAllPurchase : MonoBehaviour
 
 	private void Awake()
 	{
+		if (buyBtn != null) buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	public void Set(int packageIdx)
 	{
+		this.packageIdx = packageIdx;
 	}
 
 	public void SetSale(bool value)
 	{
+		if (saleObj != null) saleObj.SetActive(value);
+		if (bgSale != null) bgSale.SetActive(value);
 	}
 
 	private void OnClickBuy()
 	{
+		ClickCb?.Invoke(packageIdx);
 	}
 }

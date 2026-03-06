@@ -15,11 +15,13 @@ public class OfficeRoom : Room
 
 	private void Awake()
 	{
+		BoosterOfficeEffect = GetComponentInChildren<BoosterOfficeEffect>();
 	}
 
 	public override void Init(int officeIndex)
 	{
 		base.Init(officeIndex);
+		InitFindManagerUI();
 	}
 
 	public Transform GetSeat(int seat)
@@ -30,10 +32,13 @@ public class OfficeRoom : Room
 
 	protected override void SetOpened(bool value)
 	{
+		gameObject.SetActive(value);
 	}
 
 	public override void OnClickOffice()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
 	}
 
 	private void InitFindManagerUI()
