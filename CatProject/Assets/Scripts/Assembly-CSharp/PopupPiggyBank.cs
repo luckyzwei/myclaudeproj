@@ -43,33 +43,52 @@ public class PopupPiggyBank : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		if (LevelInfoBtn != null) LevelInfoBtn.onClick.AddListener(OnClickLevelInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateLevel();
+		UpdateLevelReward();
 	}
 
 	public override void OnShowAfter()
 	{
+		if (piggyComp != null) piggyComp.Init(false);
 	}
 
 	private void UpdateLevel()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (NextLevelRoot != null) NextLevelRoot.SetActive(true);
 	}
 
 	private void UpdateLevelReward()
 	{
+		if (RewardItems == null) return;
+		for (int i = 0; i < RewardItems.Count; i++)
+		{
+			if (RewardItems[i] != null)
+				RewardItems[i].gameObject.SetActive(true);
+		}
 	}
 
 	private void OnClickLevelInfo()
 	{
+		// Show piggy bank level info page
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

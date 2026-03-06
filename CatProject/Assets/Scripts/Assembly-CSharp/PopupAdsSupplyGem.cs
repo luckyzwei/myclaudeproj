@@ -22,10 +22,13 @@ public class PopupAdsSupplyGem : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
 	}
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
 	}
 
 	private void OnDisable()
@@ -38,17 +41,27 @@ public class PopupAdsSupplyGem : UIBase
 
 	private void OnClickReward()
 	{
+		if (isShowAds) return;
+		isShowAds = true;
+		GetReward();
 	}
 
 	private void GetReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Give gem reward to player
+		Hide();
 	}
 
 	public override void OnShowBefore()
 	{
+		isShowAds = false;
+		if (oneTimeComponent != null) oneTimeComponent.gameObject.SetActive(false);
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }

@@ -39,37 +39,68 @@ public class PopupFactoryShortcut : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(OnClickConfirmBtn);
 	}
 
 	public void SetOrderShortcut()
 	{
+		PopupContentsType = E_PopupContentsType.FactoryShortcut;
+		place = "Order";
+		SetChar_Secretary();
+		if (CancelBtn != null) CancelBtn.SetActive(true);
+		Show();
 	}
 
 	public void SetStorageShortcut()
 	{
+		PopupContentsType = E_PopupContentsType.FactoryShortcut;
+		place = "Storage";
+		SetChar_Economic();
+		if (CancelBtn != null) CancelBtn.SetActive(true);
+		Show();
 	}
 
 	public void SetFactoryOpen()
 	{
+		PopupContentsType = E_PopupContentsType.FactoryShortcut;
+		place = "Factory";
+		SetChar_Economic();
+		if (CancelBtn != null) CancelBtn.SetActive(false);
+		Show();
 	}
 
 	public void SeasonalPreOpenNotice()
 	{
+		PopupContentsType = E_PopupContentsType.SeasonalPreOpen;
+		SetChar_Secretary();
+		if (CancelBtn != null) CancelBtn.SetActive(true);
+		Show();
 	}
 
 	private void SetChar_Economic()
 	{
+		// Set economic character image and name
+		if (CharImage != null) CharImage.gameObject.SetActive(true);
 	}
 
 	private void SetChar_Secretary()
 	{
+		// Set secretary character image and name
+		if (CharImage != null) CharImage.gameObject.SetActive(true);
 	}
 
 	private void OnClickConfirmBtn()
 	{
+		if (PopupContentsType == E_PopupContentsType.FactoryShortcut)
+			GotoFactory();
+		Hide();
 	}
 
 	private void GotoFactory()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Navigate to factory scene
 	}
 }
