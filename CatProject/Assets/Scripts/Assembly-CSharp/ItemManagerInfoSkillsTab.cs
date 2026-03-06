@@ -68,45 +68,83 @@ public class ItemManagerInfoSkillsTab : MonoBehaviour, ITabToggleTab
 
 	private void Awake()
 	{
+		if (SkillLevelUpBtn != null) SkillLevelUpBtn.onClick.AddListener(OnClickSkillLevelUpBtn);
 	}
 
 	public void Set(int managerIdx)
 	{
+		ManagerIdx = managerIdx;
+		IsMaxLevel = false;
+		SetSkillLevelUpInfo();
+		UpdateRedDot();
 	}
 
 	private void UpdateRedDot()
 	{
+		if (RedDot_SkillUp != null)
+			RedDot_SkillUp.SetActive(!IsMaxLevel && SkillUpHasItemCount >= SkillUpNeedItemCount && SkillUpNeedItemCount > 0);
 	}
 
 	private void SetSkillInfo(ManagerCardData managerData, ManagerSkillData skillData)
 	{
+		if (managerData == null || skillData == null) return;
+		// Update skill simple and detail lists
+		if (SkillSimpleList != null)
+		{
+			for (int i = 0; i < SkillSimpleList.Count; i++)
+			{
+				if (SkillSimpleList[i] != null)
+					SkillSimpleList[i].gameObject.SetActive(false);
+			}
+		}
 	}
 
 	public void SetSkillLevelUpInfo()
 	{
+		UpdateSkillLevelUpInfo();
 	}
 
 	private void UpdateSkillLevelUpInfo()
 	{
+		if (SkillLevelUpBtnObj != null) SkillLevelUpBtnObj.SetActive(!IsMaxLevel);
+		if (SkillLevelUpCostObj != null) SkillLevelUpCostObj.SetActive(!IsMaxLevel);
+		SetReinforceBtnText(IsMaxLevel);
+
+		if (SkillLevelUpCostInfo != null && SkillUpNeedItemCount > 0)
+			SkillLevelUpCostInfo.SetValue((float)SkillUpHasItemCount, (float)SkillUpNeedItemCount, false);
 	}
 
 	private void SetReinforceBtnText(bool isMaxLevel)
 	{
+		if (SkillLevelUpBtnText != null)
+			SkillLevelUpBtnText.text = isMaxLevel ? "MAX" : "";
 	}
 
 	private void OnClickSkillLevelUpBtn()
 	{
+		if (IsMaxLevel) return;
+		if (SkillUpHasItemCount < SkillUpNeedItemCount) return;
+		// Process skill level up
+		PlaySkillLevelUpFx();
+		SetSkillLevelUpInfo();
+		UpdateRedDot();
 	}
 
 	private void PlaySkillLevelUpFx()
 	{
+		// Play skill level up visual effect
 	}
 
 	public void Reset()
 	{
+		ManagerIdx = 0;
+		IsMaxLevel = false;
+		SkillUpNeedItemCount = 0;
+		SkillUpHasItemCount = 0;
 	}
 
 	public void Refresh()
 	{
+		Set(ManagerIdx);
 	}
 }

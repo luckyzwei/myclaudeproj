@@ -90,45 +90,71 @@ public class ItemListOfficeCEO : MonoBehaviour
 
 	private void Awake()
 	{
+		if (CeoHireBtn != null) CeoHireBtn.onClick.AddListener(OnClickCeoHire);
+		if (StartNegoBtn != null) StartNegoBtn.onClick.AddListener(OnClickStartNego);
+		if (InNegoBtn != null) InNegoBtn.onClick.AddListener(OnClickInNego);
 	}
 
 	public void Set(int officeIdx)
 	{
+		OfficeIdx = officeIdx;
+		Refresh();
 	}
 
 	public void UpdateStrike()
 	{
+		if (InStrikeObj != null) InStrikeObj.SetActive(false);
+		if (NegoObj != null) NegoObj.SetActive(false);
 	}
 
 	private void UpdateCompany()
 	{
+		if (CompanyObj != null) CompanyObj.SetActive(false);
+		if (EmptyObj != null) EmptyObj.SetActive(true);
+		// Load company data from office index and set name/logo/grade
 	}
 
 	public void UpdateBuff()
 	{
+		if (BuffObj != null) BuffObj.SetActive(false);
+		if (MoneyPauseObj != null) MoneyPauseObj.SetActive(false);
+		if (ExpPauseObj != null) ExpPauseObj.SetActive(false);
+		if (MoneyBuffObj != null) MoneyBuffObj.SetActive(false);
+		if (ExpBuffObj != null) ExpBuffObj.SetActive(false);
 	}
 
 	private void UpdateManager()
 	{
+		if (EmptyCeoObj != null) EmptyCeoObj.SetActive(true);
+		if (HaveCeoObj != null) HaveCeoObj.SetActive(false);
+		// Check if CEO is assigned to this office
 	}
 
 	public void Refresh()
 	{
+		UpdateCompany();
+		UpdateManager();
+		UpdateBuff();
+		UpdateStrike();
 	}
 
 	public void SetActiveSelectedObj(bool isActive)
 	{
+		if (FocusObj != null) FocusObj.SetActive(isActive);
 	}
 
 	private void OnClickCeoHire()
 	{
+		// Open CEO hire popup for this office
 	}
 
 	private void OnClickStartNego()
 	{
+		// Start negotiation for strike resolution
 	}
 
 	private void OnClickInNego()
 	{
+		// Continue in-progress negotiation
 	}
 }
