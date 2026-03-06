@@ -17,12 +17,12 @@ public class PopupRewardClaimAll : UIBase
 
 		internal bool _003CAnimateRewardSlot_003Eb__0(RewardItemData rewardData)
 		{
-			return false;
+			return rewardData.type == rewardItemData.type && rewardData.idx == rewardItemData.idx;
 		}
 
 		internal bool _003CAnimateRewardSlot_003Eb__1(ItemArticle item)
 		{
-			return false;
+			return item != null && item.gameObject.activeSelf;
 		}
 	}
 
@@ -48,7 +48,7 @@ public class PopupRewardClaimAll : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -57,13 +57,14 @@ public class PopupRewardClaimAll : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CAnimateRewardSlot_003Ed__10(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -73,7 +74,32 @@ public class PopupRewardClaimAll : UIBase
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					if (_003C_003E4__this.RewardSlotList == null || _003C_003E4__this.RewardSlotList.Count == 0)
+						return false;
+					_003Ci_003E5__3 = 0;
+					goto case 2;
+				case 1:
+					_003C_003E1__state = -1;
+					_003Ci_003E5__3++;
+					goto case 2;
+				case 2:
+					if (_003Ci_003E5__3 < _003C_003E4__this.RewardSlotList.Count)
+					{
+						_003CrewardSlot_003E5__4 = _003C_003E4__this.RewardSlotList[_003Ci_003E5__3];
+						if (_003CrewardSlot_003E5__4 != null)
+							_003CrewardSlot_003E5__4.gameObject.SetActive(true);
+						_003C_003E2__current = new WaitForSeconds(0.15f);
+						_003C_003E1__state = 1;
+						return true;
+					}
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
@@ -111,27 +137,60 @@ public class PopupRewardClaimAll : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		RewardSlotList = new List<ItemArticle>();
+		RewardItemDataList = new List<IRewardItemData>();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(OnClickedConfirmBtn);
 	}
 
 	public void ShowRewards(List<IRewardItemData> rewardList)
 	{
+		RewardItemDataList = rewardList ?? new List<IRewardItemData>();
+		SetAllRewardSlot();
+		Show();
+		if (AnimateCoroutine != null) StopCoroutine(AnimateCoroutine);
+		AnimateCoroutine = StartCoroutine(AnimateRewardSlot());
 	}
 
 	[IteratorStateMachine(typeof(_003CAnimateRewardSlot_003Ed__10))]
 	private IEnumerator AnimateRewardSlot()
 	{
-		yield break;
+		var routine = new _003CAnimateRewardSlot_003Ed__10(0);
+		routine._003C_003E4__this = this;
+		return routine;
 	}
 
 	private void SetAllRewardSlot()
 	{
+		for (int i = 0; i < RewardSlotList.Count; i++)
+		{
+			if (RewardSlotList[i] != null)
+				RewardSlotList[i].gameObject.SetActive(false);
+		}
+
+		if (RewardItemDataList == null || RewardSlotPrefab == null || RewardScrollRect == null) return;
+
+		while (RewardSlotList.Count < RewardItemDataList.Count)
+		{
+			var obj = Instantiate(RewardSlotPrefab, RewardScrollRect.content);
+			var article = obj.GetComponent<ItemArticle>();
+			if (article != null)
+				RewardSlotList.Add(article);
+			obj.SetActive(false);
+		}
 	}
 
 	private void OnClickedConfirmBtn()
 	{
+		Hide();
 	}
 
 	public override void OnHideBefore()
 	{
+		if (AnimateCoroutine != null)
+		{
+			StopCoroutine(AnimateCoroutine);
+			AnimateCoroutine = null;
+		}
 	}
 }

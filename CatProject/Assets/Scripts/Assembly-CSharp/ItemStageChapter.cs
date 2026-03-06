@@ -35,43 +35,90 @@ public class ItemStageChapter : MonoBehaviour
 
 	public int Chapter { get; private set; }
 
-	public int MoveTransCount { get { return 0; } }
+	public int MoveTransCount { get { return moveTransList != null ? moveTransList.Count : 0; } }
 
 	private void Awake()
 	{
+		curMoveTrans = new List<TweenPoint>();
 	}
 
 	public void Init(int chapter, Action<int, Transform> OnClick)
 	{
+		Chapter = chapter;
+		if (spotList == null) return;
+		for (int i = 0; i < spotList.Count; i++)
+		{
+			if (spotList[i] == null) continue;
+			int stageIdx = i;
+			spotList[i].Init(stageIdx, OnClick);
+		}
+		if (LastChapterObj != null) LastChapterObj.SetActive(false);
 	}
 
 	public void SetActiveHideObj(bool value)
 	{
+		if (clearHideObj != null) clearHideObj.SetActive(value);
 	}
 
 	public void SetActiveName(bool value)
 	{
+		// Show/hide chapter name display
 	}
 
 	public ItemStageWorldSpot GetSpot(int stage)
 	{
-		return null;
+		if (spotList == null || stage < 0 || stage >= spotList.Count) return null;
+		return spotList[stage];
 	}
 
 	public Transform GetMoveTrans(int index)
 	{
-		return null;
+		if (moveTransList == null || index < 0 || index >= moveTransList.Count) return null;
+		return moveTransList[index];
 	}
 
 	public void StartCarMoveTween(Action Callback)
 	{
+		if (moveCarRect == null || curMoveTrans == null || curMoveTrans.Count == 0)
+		{
+			Callback?.Invoke();
+			return;
+		}
+		// Animate car movement along the move trans points
+		Callback?.Invoke();
 	}
 
 	public void SetNextChapterSpots()
 	{
+		if (spotList == null) return;
+		for (int i = 0; i < spotList.Count; i++)
+		{
+			if (spotList[i] != null)
+				spotList[i].gameObject.SetActive(false);
+		}
+		if (LastChapterObj != null) LastChapterObj.SetActive(true);
 	}
 
 	public void SetMoveTrans(int stage)
 	{
+		if (curMoveTrans == null) curMoveTrans = new List<TweenPoint>();
+		curMoveTrans.Clear();
+
+		if (moveTransList == null) return;
+		float totalDist = 0f;
+		for (int i = 0; i <= stage && i < moveTransList.Count; i++)
+		{
+			if (moveTransList[i] == null) continue;
+			curMoveTrans.Add(new TweenPoint { trans = moveTransList[i], number = totalDist });
+			totalDist += 1f;
+		}
+
+		// Position car at the correct stage
+		if (moveCarRect != null && curMoveTrans.Count > 0)
+		{
+			var last = curMoveTrans[curMoveTrans.Count - 1];
+			if (last.trans != null)
+				moveCarRect.position = last.trans.position;
+		}
 	}
 }
