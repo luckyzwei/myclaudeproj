@@ -24,17 +24,33 @@ public class BizAcqBuilding : MonoBehaviour
 
 	private void Awake()
 	{
+		MatPropBlock = new MaterialPropertyBlock();
+		bPlaying = false;
 	}
 
 	public void SetRegion(int region)
 	{
+		Region = region;
 	}
 
 	public void PlayBuildingFx()
 	{
+		bPlaying = true;
+		if (BuildingFx != null)
+		{
+			for (int i = 0; i < BuildingFx.Count; i++)
+				if (BuildingFx[i] != null) BuildingFx[i].SetActive(true);
+		}
+		if (BuildingFxTween != null) BuildingFxTween.Play();
 	}
 
 	public void Reset()
 	{
+		bPlaying = false;
+		if (BuildingFx != null)
+		{
+			for (int i = 0; i < BuildingFx.Count; i++)
+				if (BuildingFx[i] != null) BuildingFx[i].SetActive(false);
+		}
 	}
 }

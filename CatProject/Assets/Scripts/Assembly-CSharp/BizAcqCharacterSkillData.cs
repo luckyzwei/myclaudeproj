@@ -28,17 +28,22 @@ public class BizAcqCharacterSkillData
 
 	public void UpdateSkillData(int skillLevel)
 	{
+		SkillLevel = skillLevel;
 	}
 
 	public void SetAddedTriggerChanceRatio(float value)
 	{
+		TriggerChance = TriggerChance_Origin + (TriggerChance_Origin * value);
 	}
 
 	public void SetTriggered(bool isTriggered)
 	{
+		IsTriggered = isTriggered;
 	}
 
 	public void Reset()
 	{
+		IsTriggered = false;
+		TriggerChance = TriggerChance_Origin;
 	}
 }

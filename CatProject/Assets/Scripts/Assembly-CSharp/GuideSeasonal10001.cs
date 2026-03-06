@@ -178,10 +178,15 @@ public class GuideSeasonal10001 : UIBase
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
+		disposables = new CompositeDisposable();
+		curActionIdx = 0;
+		isClicked = false;
 	}
 
 	private void Clear()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void Update()
@@ -190,5 +195,7 @@ public class GuideSeasonal10001 : UIBase
 
 	private void LateUpdate()
 	{
+		if (followTrans != null && clickObj != null && clickObjActive)
+			clickObj.position = followTrans.position;
 	}
 }

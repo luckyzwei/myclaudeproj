@@ -17,17 +17,23 @@ public class ClickCallback : MonoBehaviour
 
 	public void Click(string clickedTag, Vector2 touchPosition)
 	{
+		if (!string.IsNullOrEmpty(targetTagName) && clickedTag != targetTagName) return;
+		OnCallback?.Invoke(touchPosition);
 	}
 
 	public void AddCallback(Action cb)
 	{
+		if (cb != null)
+			OnCallback.AddListener(_ => cb());
 	}
 
 	public void ClearCallback()
 	{
+		OnCallback.RemoveAllListeners();
 	}
 
 	public void TutorialClick()
 	{
+		OnCallback?.Invoke(Vector2.zero);
 	}
 }

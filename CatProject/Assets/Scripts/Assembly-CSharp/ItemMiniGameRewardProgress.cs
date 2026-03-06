@@ -23,10 +23,14 @@ public class ItemMiniGameRewardProgress : MonoBehaviour
 
 	private void Awake()
 	{
+		SlotList = new List<ItemMiniGameRewardProgressSlot>();
 	}
 
 	public void Init(int scheduleIdx, int eventIdx)
 	{
+		ScheduleIdx = scheduleIdx;
+		EventIdx = eventIdx;
+		Refresh(false);
 	}
 
 	public void Refresh(bool playAnim)
@@ -35,5 +39,7 @@ public class ItemMiniGameRewardProgress : MonoBehaviour
 
 	private void OnClaimReward(int order)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }
