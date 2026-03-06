@@ -18,6 +18,7 @@ public class PopupMiniGameOpen : UIBase
 
 		internal void _003CPlayMiniGameOpenEffect_003Eb__1()
 		{
+			if (hud != null) hud.OnRefresh();
 		}
 	}
 
@@ -35,7 +36,7 @@ public class PopupMiniGameOpen : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -44,13 +45,14 @@ public class PopupMiniGameOpen : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CPlayMiniGameOpenEffect_003Ed__8(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -60,7 +62,20 @@ public class PopupMiniGameOpen : UIBase
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					_003C_003E2__current = new WaitForSeconds(0.5f);
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					_003C_003E8__1._003CPlayMiniGameOpenEffect_003Eb__1();
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
@@ -91,23 +106,37 @@ public class PopupMiniGameOpen : UIBase
 
 	public override void OnShowBefore()
 	{
+		Disposables = new CompositeDisposable();
+		SetTimeText();
 	}
 
 	public override void OnHideBefore()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 
 	private void SetTimeText()
 	{
+		if (RemainTimeText != null) RemainTimeText.text = "";
 	}
 
 	[IteratorStateMachine(typeof(_003CPlayMiniGameOpenEffect_003Ed__8))]
 	public IEnumerator PlayMiniGameOpenEffect()
 	{
-		yield break;
+		var routine = new _003CPlayMiniGameOpenEffect_003Ed__8(0);
+		return routine;
 	}
 
 	public override void OnHideAfter()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = null;
+		}
 	}
 }
