@@ -36,21 +36,16 @@ public class WaitingRoom : Room
 
 	public virtual void CallNextEmployee()
 	{
-		var emp = DequeueEmployee();
-		if (emp != null)
-		{
-			// Move next employee to activity
-		}
+		DequeueEmployee();
 	}
 
 	public virtual void ResetInUseItem()
 	{
-		// Reset all waiting room items
 	}
 
 	public override void EndRepairing()
 	{
-		// Resume waiting room after repair
+		base.EndRepairing();
 	}
 
 	public virtual bool isInUse()

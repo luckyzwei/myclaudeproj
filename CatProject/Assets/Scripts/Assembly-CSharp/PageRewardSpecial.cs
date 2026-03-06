@@ -125,28 +125,27 @@ public class PageRewardSpecial : UIBase
 
 	public void ShowSpecialDayReward(int onetimeIdx)
 	{
-		// Show one-time event reward
+		Show();
 	}
 
 	public void ShowSpecialDayRouletteReward(int rouletteIdx, bool isreplaceReward = false)
 	{
-		// Show roulette reward
+		Show();
 	}
 
 	public void ShowSpecialDayLuckyDraw(int plantIdx)
 	{
 		PlantRewardIdx = plantIdx;
-		// Show lucky draw plant reward
+		Show();
 	}
 
 	public void ShowSpecialDayDecoReward(int specialdayIdx)
 	{
-		// Show special day decoration reward
+		Show();
 	}
 
 	private void UpdateSpecialTheme()
 	{
-		// Update tile images for special day theme
 	}
 
 	private void InitHideData()
@@ -174,7 +173,8 @@ public class PageRewardSpecial : UIBase
 	private void OnClickEquipCar()
 	{
 		if (CarIdx <= 0) return;
-		// Equip the car reward
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 		if (EquipCompObj != null) EquipCompObj.SetActive(true);
 		if (EquipBtn != null) EquipBtn.gameObject.SetActive(false);
 	}

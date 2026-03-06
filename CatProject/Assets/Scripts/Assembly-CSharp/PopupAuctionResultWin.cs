@@ -135,17 +135,17 @@ public class PopupAuctionResultWin : UIBase
 
 	private void OnClickStaminaShop()
 	{
-		// Open stamina shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickGemShop()
 	{
-		// Open gem shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickPoint2xTrial()
 	{
-		// Activate 2x point trial
+		if (Point2xTrialNotiObj != null) Point2xTrialNotiObj.SetActive(false);
 	}
 
 	public override void OnHideAfter()

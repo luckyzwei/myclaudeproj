@@ -174,7 +174,7 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnClickedManagerLevelUpBtn()
 	{
-		// Open manager level up popup for this building's manager
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupManagerLevelUp>();
 	}
 
 	private void OnClosedBuildingUpgradeMenu()
@@ -185,7 +185,7 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnLevelUpFacility()
 	{
-		// Refresh UI after facility level up
+		SetBuildingInfo(BuildingIdx);
 		UpdateUpgradeMenuBtnReddot();
 	}
 
@@ -274,12 +274,10 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnChangeBuildingConstruction(bool inConstruction)
 	{
-		// Handle building construction state change
 	}
 
 	private void OnChangeManagerLevel()
 	{
-		// Refresh manager info after level change
 		UpdateManagerLevelUpRedDot();
 	}
 
@@ -290,7 +288,6 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnChangeHiredWorkerCount(int hiredCount)
 	{
-		// Refresh dormitory worker display
 	}
 
 	private void UpdateBuildingUpgradeInfo(int facilityLevel)

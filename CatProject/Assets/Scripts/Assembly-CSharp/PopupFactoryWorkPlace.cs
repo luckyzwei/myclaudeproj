@@ -319,22 +319,22 @@ public class PopupFactoryWorkPlace : UIBase
 
 	private void OnClickMakeSelect()
 	{
-		// Start/stop production of selected product
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
+		UpdateSelectItem();
 	}
 
 	private void OnClickUpgrade()
 	{
-		// Upgrade factory level
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
 		UpdateUpgrade();
+		UpdateList();
 	}
 
 	private void OnClickUseItem()
 	{
-		// Use item to boost factory
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void GotoFactory(int idx)
@@ -355,7 +355,7 @@ public class PopupFactoryWorkPlace : UIBase
 
 	private void OnClickRecipe()
 	{
-		// Show product recipe popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickSelectNeedShortCut(int idx)

@@ -111,18 +111,16 @@ public class PopupManagerLevelUp : UIBase
 
 	private void InitTopCurrencyInfo()
 	{
-		// Set up top currency HUD info
+		if (TopInfo != null) TopInfo.UpdateCurrencyInfos();
 	}
 
 	private void SetManagerViewInfo(string imgPath, string nameKey)
 	{
 		if (ManagerNameText != null) ManagerNameText.text = nameKey;
-		// Load manager portrait image
 	}
 
 	private void SetLvUpCostExpIconImage(string iconKey)
 	{
-		// Set level up cost currency icon
 	}
 
 	private void SetManagerLevelText(int curLevel, int maxLevel)
@@ -174,7 +172,6 @@ public class PopupManagerLevelUp : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Refresh all level-related UI
 	}
 
 	private void SubscribeEvents(SeasonalWorkshopManagerData managerData)
@@ -185,7 +182,6 @@ public class PopupManagerLevelUp : UIBase
 			Disposables = new CompositeDisposable();
 		}
 		if (managerData == null) return;
-		// Subscribe to manager data changes
 	}
 
 	private void OnClickedManagerLevelUpBtn()
@@ -196,7 +192,6 @@ public class PopupManagerLevelUp : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Level up manager
 		isLeveledUp = true;
 		if (LvUpParticle != null) LvUpParticle.SetActive(true);
 		UpdateLevelData();
@@ -204,13 +199,11 @@ public class PopupManagerLevelUp : UIBase
 
 	private void ShowLevelUpPackage()
 	{
-		// Show package offer after level up
 	}
 
 	private void SetPackageBanner()
 	{
 		if (PackageBanner == null) return;
 		PackageBanner.gameObject.SetActive(false);
-		// Check and show package banner
 	}
 }

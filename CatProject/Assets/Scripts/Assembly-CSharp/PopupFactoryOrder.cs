@@ -241,18 +241,17 @@ public class PopupFactoryOrder : UIBase
 
 	private void OnClickCompOrder()
 	{
-		// Complete current order and grant reward
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Complete factory order
+		UpdateOrder();
+		UpdateDailyRewards();
 	}
 
 	private void OnClickResetOrder()
 	{
-		// Reset/refresh the current order
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Reset factory order
+		UpdateOrder();
 	}
 
 	private void OnClickProductShortCut()
@@ -263,7 +262,7 @@ public class PopupFactoryOrder : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show order info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void InitDailyReward()

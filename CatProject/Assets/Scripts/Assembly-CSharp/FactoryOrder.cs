@@ -28,17 +28,15 @@ public class FactoryOrder : MonoBehaviour
 
 	private void LoadUI()
 	{
-		// Load order UI prefab
+		OrderUI = GetComponentInChildren<InGameOrderUI>(true);
 	}
 
 	private void SubscribeEnableOrder()
 	{
-		// Subscribe to order enable events
 	}
 
 	private void SubscribeOrders()
 	{
-		// Subscribe to order state changes
 	}
 
 	private void SetTruck(int order)
@@ -49,6 +47,6 @@ public class FactoryOrder : MonoBehaviour
 
 	public void OnClick()
 	{
-		// Open factory order UI
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupFactoryOrder>();
 	}
 }

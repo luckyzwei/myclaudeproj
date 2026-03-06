@@ -76,7 +76,7 @@ public class PopupHouseBase : UIBase
 
 	public void SetSpecialParkingLot(int idx)
 	{
-		// Set up special parking lot display
+		UpdateParkingSlot();
 	}
 
 	public void UpdateParkingSlot()
@@ -93,12 +93,12 @@ public class PopupHouseBase : UIBase
 
 	public void UpdateSetBuff()
 	{
-		// Update parking set buff display
 	}
 
 	private void FocusParkingLot()
 	{
-		// Scroll to the selected parking space
+		if (ParkingSlotScroll != null)
+			ParkingSlotScroll.horizontalNormalizedPosition = 0f;
 	}
 
 	private void UpdateMoveBtn()
@@ -126,7 +126,6 @@ public class PopupHouseBase : UIBase
 
 	private void OnClickUpgrade()
 	{
-		// Upgrade parking lot
 		BuyCallback?.Invoke();
 	}
 

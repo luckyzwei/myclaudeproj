@@ -121,12 +121,16 @@ public class PopupAdsSupply : UIBase
 
 	private void OnClickReward()
 	{
-		// Watch ad and get reward
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 
 	private void OnClickMultipleReward()
 	{
-		// Get multiplied reward using gems
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 
 	private void GetReward(bool isOpenSeasonal, E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
@@ -171,6 +175,7 @@ public class PopupAdsSupply : UIBase
 
 	private void OnClickGetBank()
 	{
-		// Collect piggy bank reward
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

@@ -258,11 +258,6 @@ public class PageOfficeManagement : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Calculate and display total rental fee
-		if (RevenueTab != null)
-		{
-			// Set revenue tab data
-		}
 		if (BoosterOnObj != null) BoosterOnObj.SetActive(false);
 	}
 
@@ -278,7 +273,6 @@ public class PageOfficeManagement : UIBase
 
 	private void UpdateCeoList()
 	{
-		// Populate CEO list in the scroll view
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		UpdateCeoStrikeStatus();
@@ -288,12 +282,10 @@ public class PageOfficeManagement : UIBase
 	{
 		if (InStrikeTimeObj != null) InStrikeTimeObj.SetActive(false);
 		if (EnableStrikeObj != null) EnableStrikeObj.SetActive(false);
-		// Check if strike is active and show relevant UI
 	}
 
 	private void UpdateCeoStrikeStatus()
 	{
-		// Update strike status indicators on CEO items
 	}
 
 	private void SetManagement(int focusOfficeIdx)
@@ -318,7 +310,6 @@ public class PageOfficeManagement : UIBase
 
 	private void OnScrolled(Vector2 value)
 	{
-		// Handle scroll events (e.g., lazy loading)
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__44))]
@@ -358,7 +349,6 @@ public class PageOfficeManagement : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Save company level up at once preference
 	}
 
 	private void OnDestroy()
