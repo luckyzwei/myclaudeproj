@@ -188,8 +188,8 @@ public class PageShop : FullScreenUI
 			case (int)Config.CurrencyID.Gem:
 				type = ShopContentsType.Gem;
 				break;
-			case (int)Config.CurrencyID.Stamina:
-				type = ShopContentsType.Tonic;
+			case (int)Config.CurrencyID.Key:
+				type = ShopContentsType.Money;
 				break;
 		}
 		if (type != ShopContentsType.None)
