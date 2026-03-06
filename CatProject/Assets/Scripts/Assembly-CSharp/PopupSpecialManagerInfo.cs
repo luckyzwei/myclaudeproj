@@ -70,33 +70,67 @@ public class PopupSpecialManagerInfo : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposable = new CompositeDisposable();
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgrade);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		bStartLvAction = false;
+		deltaTime = 0f;
 	}
 
 	public void SetSuper(int _superStaffIdx)
 	{
+		superStaffIdx = _superStaffIdx;
+		isMax = false;
+		requireItemCnt = 0;
+
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (UpgradePossible != null) UpgradePossible.SetActive(!isMax);
+		if (UpgradeNoPossible != null) UpgradeNoPossible.SetActive(isMax);
+		if (LvUpEffect != null) LvUpEffect.SetActive(false);
+		if (statRoot != null) statRoot.SetActive(true);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposable != null) { disposable.Dispose(); disposable = null; }
 	}
 
 	private void ShowLevelUpEffect()
 	{
+		bStartLvAction = true;
+		deltaTime = 0f;
+		if (LvUpEffect != null) LvUpEffect.SetActive(true);
 	}
 
 	private void Update()
 	{
+		if (!bStartLvAction) return;
+		deltaTime += Time.deltaTime;
+		if (deltaTime >= 1.5f)
+		{
+			bStartLvAction = false;
+			if (LvUpEffect != null) LvUpEffect.SetActive(false);
+		}
 	}
 
 	private void OnClickUpgrade()
 	{
+		if (isMax) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		ShowLevelUpEffect();
+		SetSuper(superStaffIdx);
 	}
 
 	private void OnClickInfo()
 	{
+		// Show special manager detail info
 	}
 }

@@ -39,29 +39,60 @@ public class ItemAcquisitionStageBox : MonoBehaviour
 
 	private void Awake()
 	{
+		OriginalPosition = Vector2.zero;
+		var rt = GetComponent<RectTransform>();
+		if (rt != null) OriginalPosition = rt.anchoredPosition;
 	}
 
 	public void Init(int prevClearStageIdx, int curStageIdx)
 	{
+		bPlayNextStage = false;
+		if (AllBusinessRoot != null) AllBusinessRoot.SetActive(true);
+		if (NextBusinessRoot != null) NextBusinessRoot.SetActive(false);
+		if (BossStageDecoObj != null) BossStageDecoObj.SetActive(false);
+
+		if (StageSlots != null)
+		{
+			for (int i = 0; i < StageSlots.Count; i++)
+			{
+				if (StageSlots[i] != null)
+					StageSlots[i].gameObject.SetActive(i < STAGE_SLOT_COUNT);
+			}
+		}
 	}
 
 	public void OnShowAfter()
 	{
+		if (bPlayNextStage)
+			PlayNextBusiness();
 	}
 
 	private void PlayNextBusiness()
 	{
+		KillSequence();
+		if (NextBusinessRoot != null) NextBusinessRoot.SetActive(true);
+		MoveSequence = DOTween.Sequence();
+		var rt = GetComponent<RectTransform>();
+		if (rt != null)
+			MoveSequence.Append(rt.DOAnchorPosX(rt.anchoredPosition.x - moveDistance, moveDuration));
 	}
 
 	private void KillSequence()
 	{
+		if (MoveSequence != null)
+		{
+			MoveSequence.Kill();
+			MoveSequence = null;
+		}
 	}
 
 	private void OnDestroy()
 	{
+		KillSequence();
 	}
 
 	private void OnDisable()
 	{
+		KillSequence();
 	}
 }

@@ -82,29 +82,52 @@ public class ItemCompany : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ContractsBtn != null) ContractsBtn.onClick.AddListener(OnClickContracts);
+		if (NeedDeskShortCutBtn != null) NeedDeskShortCutBtn.onClick.AddListener(OnClickNeedDeskShortCutBtn);
 	}
 
 	public void Set(int companyIdx)
 	{
+		CompanyIdx = companyIdx;
+		CompanyLevel = 0;
+
+		if (NeedDeskObj != null) NeedDeskObj.SetActive(false);
+		if (NeedCompanyObj != null) NeedCompanyObj.SetActive(false);
+		if (InContractObj != null) InContractObj.SetActive(false);
+		if (RecommandObj != null) RecommandObj.SetActive(false);
+		if (CompanySpecialObj != null) CompanySpecialObj.SetActive(false);
 	}
 
 	public void Set(int office, int companyIdx, int recommendGrade, int recommendLv)
 	{
+		OfficeIdx = office;
+		CompanyIdx = companyIdx;
+		CompanyLevel = 0;
+		inRecommend = recommendGrade > 0 || recommendLv > 0;
+
+		if (RecommandObj != null) RecommandObj.SetActive(inRecommend);
+		if (NeedDeskObj != null) NeedDeskObj.SetActive(false);
+		if (NeedCompanyObj != null) NeedCompanyObj.SetActive(false);
+		if (InContractObj != null) InContractObj.SetActive(false);
 	}
 
 	public void SetIsOpenCompany(bool isOpen)
 	{
+		if (ContractsBtn != null) ContractsBtn.interactable = isOpen;
 	}
 
 	public void AddTutorialRegister(TutorialIdent id)
 	{
+		// Register tutorial event for this company item
 	}
 
 	private void OnClickContracts()
 	{
+		onContracts?.Invoke(CompanyIdx);
 	}
 
 	private void OnClickNeedDeskShortCutBtn()
 	{
+		// Navigate to desk purchase
 	}
 }

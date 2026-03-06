@@ -24,25 +24,38 @@ public class BuffObjectComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (ObjSprite != null) OriginMat = ObjSprite.material;
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	public void UpdateActive(Action<BuffObjectComponent> onRemove = null)
 	{
+		UpdateOwn();
+		UpdateEffect();
 	}
 
 	private void UpdateOwn()
 	{
+		if (OwnObj == null) return;
+		for (int i = 0; i < OwnObj.Count; i++)
+		{
+			if (OwnObj[i] != null)
+				OwnObj[i].SetActive(true);
+		}
 	}
 
 	private void UpdateEffect()
 	{
+		// Apply buff object visual effects
 	}
 
 	private void OnClickObject()
 	{
+		// Show buff object info popup
 	}
 }
