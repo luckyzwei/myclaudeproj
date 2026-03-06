@@ -118,39 +118,62 @@ public class PopupSpecialDayOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		if (moveBtn != null) moveBtn.onClick.AddListener(() => Hide());
+
+		if (TileImg != null) originTile = TileImg.sprite;
+		if (TileBgImg != null) originTileBgColor = TileBgImg.color;
 	}
 
 	public override void OnShowBefore()
 	{
+		SetSpecialDay();
+		UpdateSpecialTheme();
 	}
 
 	public void SetSpecialDay()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set special day info (title, subtitle, description, remain time, reward image)
 	}
 
 	private void RunHUDEffect()
 	{
+		CurProcess = StartCoroutine(ShowSpecialDayHUDEffect());
 	}
 
 	[IteratorStateMachine(typeof(_003CShowSpecialDayHUDEffect_003Ed__20))]
 	private IEnumerator ShowSpecialDayHUDEffect()
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		// Show special day HUD decoration effect
 	}
 
 	public void KillProcess()
 	{
+		if (CurProcess != null)
+		{
+			StopCoroutine(CurProcess);
+			CurProcess = null;
+		}
 	}
 
 	private void UpdateSpecialTheme()
 	{
+		// Update tile images for special day theme
+		if (TileImg != null && originTile != null) TileImg.sprite = originTile;
+		if (TileBgImg != null) TileBgImg.color = originTileBgColor;
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

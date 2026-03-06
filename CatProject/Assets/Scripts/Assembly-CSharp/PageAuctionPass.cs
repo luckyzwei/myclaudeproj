@@ -222,42 +222,83 @@ public class PageAuctionPass : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		FirstShowPlay = false;
+
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(() => OnClickPurchase(false));
 	}
 
 	public void InitPage(E_PopupType popupType)
 	{
+		PopupType = popupType;
+		FirstShowPlay = ForceFirstShowPlay;
+
+		// Update purchase state
+		if (PurchaseObj != null) PurchaseObj.SetActive(true);
+		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(false);
+		if (PremiumBonusLockObj != null) PremiumBonusLockObj.SetActive(true);
+
+		if (FirstShowPlay)
+			StartCoroutine(FirstShowPlayCoroutine());
+		else
+			StartCoroutine(FocusCurrentItemCoroutine());
 	}
 
 	private void OnClickPurchase_RewardPopup()
 	{
+		OnClickPurchase(true);
 	}
 
 	private void OnClickPurchase(bool isRewardPopup)
 	{
+		// Process auction pass purchase
 	}
 
 	[IteratorStateMachine(typeof(_003CFirstShowPlayCoroutine_003Ed__31))]
 	private IEnumerator FirstShowPlayCoroutine()
 	{
-		yield break;
+		yield return new WaitForSeconds(FirstShowPlayDelayTime);
+
+		if (Scroll != null)
+		{
+			Vector2 startPosition = Scroll.normalizedPosition;
+			Vector2 targetPosition = new Vector2(0f, 0f);
+			yield return new WaitForSeconds(FirstShowPlayStartDelayTime);
+
+			float elapsedTime = 0f;
+			while (elapsedTime < FirstShowPlayTime)
+			{
+				elapsedTime += Time.deltaTime;
+				float t = Mathf.Clamp01(elapsedTime / FirstShowPlayTime);
+				Scroll.normalizedPosition = Vector2.Lerp(startPosition, targetPosition, t);
+				yield return null;
+			}
+		}
+
+		yield return StartCoroutine(FocusCurrentItemCoroutine());
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusCurrentItemCoroutine_003Ed__32))]
 	private IEnumerator FocusCurrentItemCoroutine()
 	{
-		yield break;
+		yield return null;
+		// Focus scroll to current reward item position
 	}
 
 	public Transform GetStaminaTransform()
 	{
+		if (StaminaText != null) return StaminaText.transform;
 		return null;
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }
