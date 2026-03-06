@@ -33,37 +33,58 @@ public class PageStageOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		RewardItemList = new List<ItemArticle>();
+		RewardItemDataList = new List<IRewardItemData>();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(OnClickConfirm);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	public override void OnHideAfter()
 	{
+		if (RewardItemList != null) RewardItemList.Clear();
+		if (RewardItemDataList != null) RewardItemDataList.Clear();
 	}
 
 	private void SetStageOpenTitle(int stageIdx)
 	{
+		if (StageOpenTitleText != null)
+			StageOpenTitleText.text = "";
 	}
 
 	private void SetStageBuildingIcon(int stageIdx)
 	{
+		// Set building icon image based on stage index
 	}
 
 	private void SetRewardList(StageOpenInfoData openTable)
 	{
+		if (openTable == null || RewardItemRef == null) return;
+		if (RewardItemList == null) RewardItemList = new List<ItemArticle>();
+		// Instantiate reward items from table data
 	}
 
 	private void SetContentsList(int stageIdx, StageOpenInfoData openTable)
 	{
+		if (openTable == null || StageOpenContentsRef == null) return;
+		// Instantiate contents list items
 	}
 
 	private void OnClickConfirm()
 	{
+		GetReward();
+		Hide();
 	}
 
 	private void GetReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Give stage open rewards to player
 	}
 }
