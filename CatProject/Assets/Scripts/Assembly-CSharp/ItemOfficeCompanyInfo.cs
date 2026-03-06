@@ -229,17 +229,17 @@ public class ItemOfficeCompanyInfo : MonoBehaviour
 
 	private void OnClickOfficeShortCutBtn()
 	{
-		// Navigate to this office
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOfficeUpgrade>();
 	}
 
 	private void OnClickNeedDeskShortCurBtn()
 	{
-		// Navigate to desk purchase/upgrade
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOfficeUpgrade>();
 	}
 
 	private void OnClickFindNewCompanyBtn()
 	{
-		// Open company list popup for this office
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCompanyList>();
 	}
 
 	private void OnClickCompanyLevelUp()

@@ -326,13 +326,13 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void OnClickInfo()
 	{
-		// Show special event info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickRoulette()
 	{
-		// Open roulette page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageRoulette>();
 	}
 
 	public void RefreshText()

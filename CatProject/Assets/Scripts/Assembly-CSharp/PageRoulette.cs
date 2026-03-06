@@ -214,7 +214,7 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 
 	private void OnClickRatioInfo()
 	{
-		// Show roulette ratio info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	public override void Hide()
@@ -239,12 +239,15 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 
 	private void UpdateNoAdsIcon()
 	{
-		// Set no-ads icon based on purchase state
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) return;
+		bool noAds = root.ShopSystem.NoAds;
+		if (NoAdsBtn != null) NoAdsBtn.gameObject.SetActive(!noAds);
 	}
 
 	private void OnClickNoAds()
 	{
-		// Open no-ads purchase popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupNoAds>();
 	}
 
 	private void OnDestroy()

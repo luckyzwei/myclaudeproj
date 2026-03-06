@@ -96,12 +96,15 @@ public class PageAuctionOrganize : UIBase
 
 	private void OnClickSpy()
 	{
-		// Spy on opponent team
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickStartAuction()
 	{
-		// Start auction battle
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.AuctionSystem == null) return;
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageAuction>();
 	}
 
 	private void OnClickReset()
@@ -112,17 +115,17 @@ public class PageAuctionOrganize : UIBase
 
 	private void OnClickStaminaShop()
 	{
-		// Navigate to stamina shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickGemShop()
 	{
-		// Navigate to gem shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickPoint2xTrial()
 	{
-		// Start 2x point trial
+		if (Point2xTrialNotiObj != null) Point2xTrialNotiObj.SetActive(false);
 	}
 
 	private void OnDisable()

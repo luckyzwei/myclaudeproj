@@ -378,12 +378,12 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 
 	private void OnClickInfo()
 	{
-		// Show one-time event info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickAprilFoolBanner()
 	{
-		// Handle April Fool banner click
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void RefreshText()

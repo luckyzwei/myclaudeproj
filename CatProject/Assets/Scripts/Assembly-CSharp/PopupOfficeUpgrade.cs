@@ -846,33 +846,33 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickPiggyBank()
 	{
-		// Open piggy bank popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupPiggyBank>();
 	}
 
 	private void OnClickGotoPowerRoom()
 	{
-		// Navigate to power room
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickRentalFeeInfo()
 	{
-		// Show rental fee info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickExpInfo()
 	{
-		// Show exp info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickOfficeGuide()
 	{
-		// Show office guide/info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickCompanyList()
 	{
-		// Open company list popup for assignment
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCompanyList>();
 	}
 
 	private void OnClickCompanyOut()
@@ -891,18 +891,18 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickManagerPreOpen()
 	{
-		// Open manager page for hiring
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnClickManagerAbility()
 	{
-		// Show manager ability detail popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickMoodRequireItem(int itemType)
 	{
-		// Navigate to the required mood item source
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickCompanyCashLevelUpBtn()

@@ -178,17 +178,17 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 
 	private void OnClickOption()
 	{
-		// Open option/settings popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void OnClickRichPointInfo()
 	{
-		// Show rich point info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickLevelInfo()
 	{
-		// Show car market level info
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickPrev()

@@ -85,16 +85,22 @@ public class ItemPlayerLvPass : MonoBehaviour
 
 	private void GetNormal(int gemValue)
 	{
-		// Claim normal pass reward
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateStatus();
 	}
 
 	private void GetADNormal(int gemValue)
 	{
-		// Claim normal pass reward via ad
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateStatus();
 	}
 
 	private void GetPremium(int gemValue)
 	{
-		// Claim premium pass reward
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateStatus();
 	}
 }

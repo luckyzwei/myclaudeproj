@@ -159,18 +159,18 @@ public class PageManager : UIBase
 
 	private void OnClickInfoBtn()
 	{
-		// Open manager info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickSuperStaffInfo()
 	{
-		// Open super staff info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickOfficeManagingBtn()
 	{
-		// Navigate to office management page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageOfficeManagement>();
 	}
 
 	private void OnClickSortingBtn()
@@ -183,8 +183,8 @@ public class PageManager : UIBase
 
 	private void OnClickManagerShopBtn()
 	{
-		// Open manager shop
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void SetCategory(E_MANAGER_SORTING category, bool isInit = false)

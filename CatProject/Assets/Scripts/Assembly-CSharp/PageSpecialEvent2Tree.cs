@@ -85,22 +85,23 @@ public class PageSpecialEvent2Tree : UIBase, ILocalizeRefresh
 
 	private void OnClickInfo()
 	{
-		// Show event info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickGetItem()
 	{
-		// Get event item
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickReward()
 	{
-		// Show reward popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickPass()
 	{
-		// Navigate to pass page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnDestroy()

@@ -81,21 +81,21 @@ public class ItemSlotRecommend : MonoBehaviour
 
 	private void OnClickedCompanyMaxLvShortCutBtn()
 	{
-		// Navigate to company max level screen
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedNoAdsPurchaseBtn()
 	{
-		// Open no-ads purchase popup
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupNoAds>();
 	}
 
 	private void OnClickedUnlockCompanyShortCutBtn()
 	{
-		// Navigate to company unlock screen
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void RefreshCompanyContract()
 	{
-		// Refresh company contract display
+		if (ItemCompany != null) ItemCompany.gameObject.SetActive(true);
 	}
 }
