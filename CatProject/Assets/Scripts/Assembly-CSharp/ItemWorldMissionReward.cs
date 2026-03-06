@@ -38,17 +38,23 @@ public class ItemWorldMissionReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (btn_reward != null) btn_reward.onClick.AddListener(OnClickReward);
 	}
 
 	public void SetInfo(int rewardIndex)
 	{
+		_idx = rewardIndex;
+		isReceived = false;
 	}
 
 	public void SetState()
 	{
+		if (obj_active != null) obj_active.SetActive(!isReceived);
+		if (obj_after != null) obj_after.SetActive(isReceived);
 	}
 
 	private void OnClickReward()
 	{
+		if (isReceived) return;
 	}
 }

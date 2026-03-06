@@ -27,17 +27,38 @@ public class PageManageForest : FullScreenUI
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (toggles != null)
+		{
+			for (int i = 0; i < toggles.Count; i++)
+			{
+				int idx = i;
+				if (toggles[i] != null)
+					toggles[i].onValueChanged.AddListener(on => ChangeTab((ToggleTab)idx, on));
+			}
+		}
 	}
 
 	public override void OnShowBefore()
 	{
+		if (hudTopComponent != null) hudTopComponent.Binding();
+		ChangeTab(ToggleTab.Woker, true, true);
 	}
 
 	public override void OnHideAfter()
 	{
+		if (hudTopComponent != null) hudTopComponent.Unbinding();
 	}
 
 	public void ChangeTab(ToggleTab tab, bool on, bool selecttab = false)
 	{
+		if (!on && !selecttab) return;
+		CurrentTab = tab;
+		if (toggleContents == null) return;
+		for (int i = 0; i < toggleContents.Count; i++)
+		{
+			if (toggleContents[i] != null)
+				toggleContents[i].gameObject.SetActive(i == (int)tab);
+		}
 	}
 }

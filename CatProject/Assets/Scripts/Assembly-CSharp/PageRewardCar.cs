@@ -42,17 +42,25 @@ public class PageRewardCar : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (EquipBtn != null) EquipBtn.onClick.AddListener(OnClickEquipCar);
 	}
 
 	public void ShowCarPurchase(int carIdx)
 	{
+		CarIdx = carIdx;
+		if (EquipBtn != null) EquipBtn.gameObject.SetActive(true);
+		if (EquipCompObj != null) EquipCompObj.SetActive(false);
 	}
 
 	private void OnClickEquipCar()
 	{
+		if (EquipBtn != null) EquipBtn.gameObject.SetActive(false);
+		if (EquipCompObj != null) EquipCompObj.SetActive(true);
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }

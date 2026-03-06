@@ -94,23 +94,42 @@ public class PageConversation : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (NextBtn != null) NextBtn.onClick.AddListener(OnClickNext);
+		Conversations = new List<ConversationInfo>();
+		CurStep = 0;
+		ClickNext = false;
 	}
 
 	public void SetSecretaryConversation(Config.SecretaryConversationType type, int target)
 	{
+		Conversations.Clear();
+		CurStep = 0;
+		StartCoroutine(StartConversation());
 	}
 
 	public void SetBuildingConversation(int type, int building, bool showdim = false)
 	{
+		Conversations.Clear();
+		CurStep = 0;
+		StartCoroutine(StartConversation());
 	}
 
 	[IteratorStateMachine(typeof(_003CStartConversation_003Ed__10))]
 	private IEnumerator StartConversation()
 	{
-		yield break;
+		if (Conversations == null || Conversations.Count == 0) yield break;
+		for (int i = 0; i < Conversations.Count; i++)
+		{
+			CurStep = i;
+			ClickNext = false;
+			yield return new WaitUntil(() => ClickNext);
+		}
+		Hide();
 	}
 
 	private void OnClickNext()
 	{
+		ClickNext = true;
 	}
 }

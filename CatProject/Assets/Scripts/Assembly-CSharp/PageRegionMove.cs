@@ -17,14 +17,17 @@ public class PageRegionMove : UIBase
 
 	public override void OnShowBefore()
 	{
+		Init();
 	}
 
 	public void Init()
 	{
+		if (hud != null) hud.Binding();
 	}
 
 	public override void OnHideAfter()
 	{
+		if (hud != null) hud.Unbinding();
 	}
 
 	private void OnDestroy()

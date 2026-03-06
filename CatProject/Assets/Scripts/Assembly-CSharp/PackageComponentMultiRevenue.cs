@@ -35,14 +35,19 @@ public class PackageComponentMultiRevenue : PackageComponent
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (buyBtn != null) buyBtn.onClick.AddListener(OnClickBuy);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	public override void SetSpecial(int packageIdx)
 	{
+		if (doubleSale != null) doubleSale.SetActive(false);
+		if (orignSale != null) orignSale.SetActive(false);
 	}
 
 	private void OnClickBuy()

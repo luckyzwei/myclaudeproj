@@ -53,17 +53,24 @@ public class ItemSuperStaffCard : MonoBehaviour
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (ManagerBtn != null) ManagerBtn.onClick.AddListener(OnClickManager);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	public virtual void Set(int idx)
 	{
+		curIdx = idx;
+		isLock = false;
+		if (obj_Lock != null) obj_Lock.SetActive(isLock);
 	}
 
 	protected virtual void OnClickManager()
 	{
+		if (isLock) return;
 	}
 }

@@ -11,6 +11,12 @@ public class PackageComponentOnePlusSix : PackageComponent
 
 	public override void SetSpecial(int packageIdx)
 	{
+		if (itemList == null) return;
+		for (int i = 0; i < itemList.Count; i++)
+		{
+			if (itemList[i] != null)
+				itemList[i].gameObject.SetActive(true);
+		}
 	}
 
 	private void OnOpenNextReward()
@@ -23,5 +29,6 @@ public class PackageComponentOnePlusSix : PackageComponent
 
 	private void Hide()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

@@ -14,10 +14,18 @@ public class TimerSystem
 
 	public void CheckFirstDay()
 	{
+		IsFirstDay = true;
 	}
 
 	private void CheckPlayMin(long playTime)
 	{
+		if (mins == null) return;
+		int playMin = (int)(playTime / 60);
+		for (int i = 0; i < mins.Count; i++)
+		{
+			if (playMin >= mins[i])
+				LogPlayMin(mins[i]);
+		}
 	}
 
 	private void LogPlayMin(int min)
