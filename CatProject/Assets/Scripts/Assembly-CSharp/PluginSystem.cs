@@ -470,7 +470,7 @@ public class PluginSystem
 			friend_user_id = user_id
 		};
 		string jsonData = UnityEngine.JsonUtility.ToJson(data);
-		using (var request = UnityWebRequest.Post(InviteFriendServerURL, jsonData))
+		using (var request = UnityWebRequest.PostWwwForm(InviteFriendServerURL, jsonData))
 		{
 			request.SetRequestHeader("Content-Type", "application/json");
 			yield return request.SendWebRequest();
@@ -489,7 +489,7 @@ public class PluginSystem
 			user_id = BackEndProp != null ? "" : ""
 		};
 		string jsonData = UnityEngine.JsonUtility.ToJson(data);
-		using (var request = UnityWebRequest.Post(GetFriendCountServerURL, jsonData))
+		using (var request = UnityWebRequest.PostWwwForm(GetFriendCountServerURL, jsonData))
 		{
 			request.SetRequestHeader("Content-Type", "application/json");
 			yield return request.SendWebRequest();
@@ -574,15 +574,15 @@ public class PluginSystem
 	{
 		if (token != null)
 		{
-			UnityEngine.Debug.Log("FCM Token: " + token.Token);
+			UnityEngine.Debug.Log("FCM Token received");
 		}
 	}
 
 	public void OnMessageReceived(object sender, MessageReceivedEventArgs e)
 	{
-		if (e != null && e.Message != null)
+		if (e != null)
 		{
-			UnityEngine.Debug.Log("FCM Message: " + e.Message.Notification?.Title);
+			UnityEngine.Debug.Log("FCM Message received");
 		}
 	}
 

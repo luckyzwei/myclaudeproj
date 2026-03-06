@@ -139,7 +139,7 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.DaySystem == null) return;
-		UpdateDayStatus(root.DaySystem.CurrentStatus);
+		UpdateDayStatus(root.DaySystem.CurTimeStatus.Value);
 		UpdateDayTime();
 	}
 

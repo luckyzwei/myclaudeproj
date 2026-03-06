@@ -122,7 +122,7 @@ public class PageSeasonalShop : FullScreenUI
 
 	public Vector3 GetHUDWorldPos(E_CurrencyType type)
 	{
-		if (MachineCoinTrans != null && type == E_CurrencyType.SlotMachineCoin)
+		if (MachineCoinTrans != null && type == E_CurrencyType.ArcadeRouletteCoin)
 			return MachineCoinTrans.position;
 		return default(Vector3);
 	}

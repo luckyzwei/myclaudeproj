@@ -209,7 +209,7 @@ public class PopupWorkshopMenu : UIBase
 	{
 		if (buildingData == null || ProductionFacilities == null) return;
 		// Set production facilities info
-		bool isDormitory = buildingData.BuildingType == (int)E_BuildingType.Dormitory;
+		bool isDormitory = buildingData.BuildingType == E_BuildingType.Dormitory;
 		if (WorkshopHeaderObj != null) WorkshopHeaderObj.SetActive(!isDormitory);
 		if (DormitoryHeaderObj != null) DormitoryHeaderObj.SetActive(isDormitory);
 	}
@@ -245,8 +245,8 @@ public class PopupWorkshopMenu : UIBase
 			return;
 		}
 		ManagerObj.SetActive(true);
-		ManagerLevel = managerData.Level;
-		SetManagerLevelText(managerData.Level, false);
+		ManagerLevel = managerData.Level.Value;
+		SetManagerLevelText(managerData.Level.Value, false);
 		if (ManagerAbilityIconImage != null)
 		{
 			// Set ability icon

@@ -60,8 +60,8 @@ public class PageAcquisitionTeamSet : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		var playerTeam = root.BizAcqBattleSystem.PlayerTeam;
-		var enemyTeam = root.BizAcqBattleSystem.EnemyTeam;
+		var playerTeam = root.BizAcqBattleSystem.GetTeam(BizAcqDef.TeamType.Player);
+		var enemyTeam = root.BizAcqBattleSystem.GetTeam(BizAcqDef.TeamType.Enemy);
 
 		if (playerTeam != null && PlayerTeamTotalHpValueText != null)
 		{

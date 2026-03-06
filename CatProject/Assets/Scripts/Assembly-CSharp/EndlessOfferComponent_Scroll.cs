@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
+using EndlessOfferRewardData = Treeplla.Data.EndlessOfferRewardData;
 using UnityEngine;
 
 public class EndlessOfferComponent_Scroll : EndlessOfferComponentBase

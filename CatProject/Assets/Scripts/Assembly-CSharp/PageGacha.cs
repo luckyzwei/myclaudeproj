@@ -200,7 +200,7 @@ public class PageGacha : UIBase
 		{
 			for (int i = 0; i < rewardData.Count; i++)
 			{
-				if (rewardData[i].type == (int)E_CurrencyType.Manager)
+				if (rewardData[i].rewardType == (int)Config.RewardType.Manager)
 					cardSize++;
 				else
 					rewardSize++;

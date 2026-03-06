@@ -144,7 +144,7 @@ public class PageAcquisitionBattle : FullScreenUI
 
 		// Set stage index text
 		if (StageIdxText != null)
-			StageIdxText.text = battleSystem.CurrentStageIdx.ToString();
+			StageIdxText.text = battleSystem.GetStageIdx().ToString();
 
 		// Set team data
 		var playerData = battleSystem.GetTeam(BizAcqDef.TeamType.Player);

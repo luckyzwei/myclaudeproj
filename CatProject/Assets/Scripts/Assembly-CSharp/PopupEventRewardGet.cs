@@ -17,7 +17,7 @@ public class PopupEventRewardGet : UIBase
 
 		internal bool _003CAnimateRewardSlot_003Eb__0(RewardItemData rewardData)
 		{
-			return rewardData.type == rewardItemData.type && rewardData.idx == rewardItemData.idx;
+			return rewardData.rewardType == rewardItemData.rewardType && rewardData.rewardIdx == rewardItemData.rewardIdx;
 		}
 	}
 

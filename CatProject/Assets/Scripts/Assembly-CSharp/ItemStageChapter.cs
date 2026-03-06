@@ -50,7 +50,8 @@ public class ItemStageChapter : MonoBehaviour
 		{
 			if (spotList[i] == null) continue;
 			int stageIdx = i;
-			spotList[i].Init(stageIdx, OnClick);
+			spotList[i].SetStage(stageIdx);
+			spotList[i].OnClick = OnClick;
 		}
 		if (LastChapterObj != null) LastChapterObj.SetActive(false);
 	}

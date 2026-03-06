@@ -104,7 +104,7 @@ public class PageSeasonalPass : UIBase
 	{
 		base.Awake();
 		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
-		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnClickPurchase);
+		if (PurchaseBtn != null) PurchaseBtn.OnClickBuyEvent += OnClickPurchase;
 	}
 
 	public override void OnShowBefore()

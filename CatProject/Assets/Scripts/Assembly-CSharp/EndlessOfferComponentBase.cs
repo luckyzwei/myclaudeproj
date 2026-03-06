@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Treeplla;
 using UnityEngine;
+using EndlessOfferRewardData = Treeplla.Data.EndlessOfferRewardData;
 
 public class EndlessOfferComponentBase : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class EndlessOfferComponentBase : MonoBehaviour
 
 	protected virtual EndlessOfferRewardData GetTargetRewardTable(int orderIdx)
 	{
-		return null;
+		return default;
 	}
 
 	protected virtual void UpdateOfferPurchaseData()

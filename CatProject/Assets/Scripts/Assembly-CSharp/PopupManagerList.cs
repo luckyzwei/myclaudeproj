@@ -99,22 +99,22 @@ public class PopupManagerList : UIBase
 		if (SortingBtn != null) SortingBtn.onClick.AddListener(OnClickSorting);
 
 		if (RewardTabToggle != null)
-			RewardTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Reward); });
+			RewardTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Office); });
 		if (ExpTabToggle != null)
-			ExpTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Exp); });
+			ExpTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Factory); });
 	}
 
 	public override void OnShowBefore()
 	{
-		curTab = Config.ManagerCategory.Reward;
+		curTab = Config.ManagerCategory.Office;
 		UpdateList();
 	}
 
 	private void OnClickChangeTab(Config.ManagerCategory tab)
 	{
 		curTab = tab;
-		if (RewardScroll != null) RewardScroll.gameObject.SetActive(tab == Config.ManagerCategory.Reward);
-		if (ExpScroll != null) ExpScroll.gameObject.SetActive(tab == Config.ManagerCategory.Exp);
+		if (RewardScroll != null) RewardScroll.gameObject.SetActive(tab == Config.ManagerCategory.Office);
+		if (ExpScroll != null) ExpScroll.gameObject.SetActive(tab == Config.ManagerCategory.Factory);
 		UpdateList();
 	}
 
