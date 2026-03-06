@@ -106,7 +106,6 @@ public class ItemSeasonalSkill : MonoBehaviour
 			LvUpEffect.SetActive(false);
 			LvUpEffect.SetActive(true);
 		}
-		// Refresh after level up
 	}
 
 	private void SetSkillLevelInfo(SeasonalSkillInfoData skillInfoTable)
@@ -184,7 +183,6 @@ public class ItemSeasonalSkill : MonoBehaviour
 	{
 		if (bMaxLevel) return;
 		if (HasValue_PerMile < NeedValue_PerMile) return;
-		// Level up skill
 		OnLevelUpSkill();
 	}
 

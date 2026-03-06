@@ -102,7 +102,6 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 	private void LoadJewelryBoxPrefab(int stageStep, bool isFull)
 	{
 		if (JewelryBoxRoot == null) return;
-		// Load jewelry box model based on stage step
 		LoadedStageStep = stageStep;
 	}
 
@@ -138,7 +137,6 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 		if (!IsEnablePurchase) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Purchase bank expansion
 	}
 
 	private void OnDestroy()

@@ -85,6 +85,5 @@ public class PaidParkingLot : MonoBehaviour
 	public void OnClickParkingLot(int space = -1)
 	{
 		if (!IsOpen) return;
-		// Open parking lot management popup
 	}
 }

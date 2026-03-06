@@ -185,7 +185,6 @@ public class ItemShopEndless : MonoBehaviour
 	{
 		if (RewardItemList == null) RewardItemList = new List<IRewardItemData>();
 		RewardItemList.Clear();
-		// Populate reward items from endlessRewardTable
 	}
 
 	public void SetIsLock(bool isLock, bool bPlayAnim)

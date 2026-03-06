@@ -24,7 +24,6 @@ public class PagePackage : FullScreenUI
 		PackageIdx = idx;
 		showLock = true;
 		OnDirectionEnd = closeCb;
-		// Load and show package contents
 	}
 
 	public void ShowSpecial(ShopSystem.InAppPurchaseLocation location, int Idx)
@@ -32,7 +31,6 @@ public class PagePackage : FullScreenUI
 		Location = location;
 		PackageIdx = Idx;
 		showLock = true;
-		// Load and show special package
 	}
 
 	public void ShowManagedSaleList(ShopSystem.InAppPurchaseLocation location, bool skipLog = false)
@@ -54,21 +52,18 @@ public class PagePackage : FullScreenUI
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ShopSystem == null) return;
-		// Process package purchase via ShopSystem
 	}
 
 	private void BuySpecial(int idx)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ShopSystem == null) return;
-		// Process special package purchase
 	}
 
 	private void BuySaleList(int idx)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ShopSystem == null) return;
-		// Process sale list purchase
 	}
 
 	public override void OnShowBefore()

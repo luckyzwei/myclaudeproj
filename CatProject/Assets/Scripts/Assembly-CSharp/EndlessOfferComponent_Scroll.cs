@@ -115,7 +115,6 @@ public class EndlessOfferComponent_Scroll : EndlessOfferComponentBase
 		Disposables = new CompositeDisposable();
 		RewardTableList = new List<EndlessOfferRewardData>();
 		IsAnimating = false;
-		// Load reward table data for this endless offer
 	}
 
 	public override void Reset()
@@ -163,7 +162,6 @@ public class EndlessOfferComponent_Scroll : EndlessOfferComponentBase
 			callback?.Invoke(false);
 			return;
 		}
-		// Process in-app purchase
 		callback?.Invoke(false);
 	}
 

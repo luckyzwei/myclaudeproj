@@ -51,7 +51,6 @@ public class PageMissionMilestone : UIBase
 	private void InitRegionInfo()
 	{
 		PageNow = PageFront;
-		// Set region info on current page
 	}
 
 	private void UpdateButtonState()
@@ -77,7 +76,6 @@ public class PageMissionMilestone : UIBase
 	private void FlipNextPage()
 	{
 		IsFlipping = true;
-		// Play flip animation forward
 		InitRegionInfo();
 		UpdateButtonState();
 		IsFlipping = false;
@@ -86,7 +84,6 @@ public class PageMissionMilestone : UIBase
 	private void FlipPrevPage()
 	{
 		IsFlipping = true;
-		// Play flip animation backward
 		InitRegionInfo();
 		UpdateButtonState();
 		IsFlipping = false;

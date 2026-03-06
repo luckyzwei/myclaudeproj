@@ -43,7 +43,6 @@ public class PageFactoryProcess : UIBase
 	public void SetFocus(List<int> productIdxList)
 	{
 		if (productIdxList == null || productIdxList.Count == 0) return;
-		// Calculate which page contains the product and navigate to it
 		UpdatePage();
 	}
 

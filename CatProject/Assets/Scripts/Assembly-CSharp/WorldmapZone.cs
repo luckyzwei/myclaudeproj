@@ -90,7 +90,6 @@ public class WorldmapZone : MonoBehaviour
 	public void OpenZone()
 	{
 		SetOpened(true);
-		// Buildings auto-update their state on open
 	}
 
 	public void PlayZoneOpenEffect()

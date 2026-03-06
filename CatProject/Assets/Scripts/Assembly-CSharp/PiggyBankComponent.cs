@@ -81,7 +81,6 @@ public class PiggyBankComponent : MonoBehaviour
 
 	private void OnClickBuyPiggyBank()
 	{
-		// Purchase/break piggy bank
 		LevelUpCallback?.Invoke();
 	}
 }

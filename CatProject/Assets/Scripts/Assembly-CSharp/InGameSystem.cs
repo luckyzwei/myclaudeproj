@@ -125,7 +125,6 @@ public class InGameSystem
 
 	private void StartGame(GameType type, Action loadCallback = null, bool isNewRegion = false)
 	{
-		// Would load the game scene for the given type
 		loadCallback?.Invoke();
 	}
 
@@ -141,7 +140,6 @@ public class InGameSystem
 			return;
 
 		inInitPopups = true;
-		// Would initialize and show queued popups
 		inInitPopups = false;
 	}
 
@@ -188,7 +186,6 @@ public class InGameSystem
 
 	public RegionData InitNewRegionData(int stage)
 	{
-		// Would create and initialize a new RegionData for the given stage
 		return null;
 	}
 
@@ -256,7 +253,6 @@ public class InGameSystem
 
 	private int CalculatePoint(int stageIdx)
 	{
-		// Would calculate stage points based on configuration
 		return stageIdx * 100;
 	}
 
@@ -265,7 +261,6 @@ public class InGameSystem
 		if (CurOutGame == null)
 			return false;
 
-		// Check if currently in the specified out-game type
 		return CurOutGame.gameObject.activeInHierarchy;
 	}
 }

@@ -99,7 +99,6 @@ public class BizAcqStage : MonoBehaviour
 	private void FixedUpdate()
 	{
 		if (!IsMoving || CarObj == null || followCamera == null) return;
-		// Check building distance for effects
 		if (Buildings == null) return;
 		Vector3 carPos = CarObj.transform.position;
 		for (int i = 0; i < Buildings.Count; i++)

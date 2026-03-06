@@ -141,7 +141,6 @@ public class PagePlantList : UIBase
 
 	private (int, int) GetGemPlantInfo()
 	{
-		// Return (gem plant count, gem plant page index)
 		return (0, 0);
 	}
 

@@ -95,7 +95,6 @@ public class PopupSeasonEndReward : UIBase
 		bool hasItems = itemList != null && itemList.Count > 0;
 		rootObj.SetActive(hasItems);
 		if (!hasItems) return;
-		// Instantiate item slots from prefab
 	}
 
 	private void SetRewardRemainTimeText(int remainTimeSec)
@@ -121,7 +120,6 @@ public class PopupSeasonEndReward : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Claim all unreceived season rewards
 		Hide();
 	}
 }

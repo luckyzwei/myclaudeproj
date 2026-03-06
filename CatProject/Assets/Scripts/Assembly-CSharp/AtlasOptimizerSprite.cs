@@ -84,7 +84,6 @@ public class AtlasOptimizerSprite : MonoBehaviour
 
 	private float GetWaitTime()
 	{
-		// Stagger load time based on call count to avoid frame spikes
 		return CallCount * 0.01f;
 	}
 
@@ -94,7 +93,6 @@ public class AtlasOptimizerSprite : MonoBehaviour
 		float waitTime = GetWaitTime();
 		if (waitTime > 0f)
 			yield return new WaitForSeconds(waitTime);
-		// Load sprite from atlas based on loadType
 		CallCount--;
 	}
 

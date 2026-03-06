@@ -180,7 +180,6 @@ public class ItemManagerHireList : MonoBehaviour
 		curOfficeIdx = officeIdx;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get office and company data
 		UpdateArrow();
 		UpdateLevelWarning();
 	}
@@ -195,12 +194,10 @@ public class ItemManagerHireList : MonoBehaviour
 		if (officeData == null) return;
 		if (OfficeNameText != null) OfficeNameText.text = "";
 
-		// Set company info
 		bool hasCompany = false;
 		if (CompanyNullObj != null) CompanyNullObj.SetActive(!hasCompany);
 		if (CompanyNameText != null) CompanyNameText.text = "";
 
-		// Set exp gauge
 		if (LevelProgress != null) LevelProgress.value = 0f;
 	}
 
@@ -211,7 +208,6 @@ public class ItemManagerHireList : MonoBehaviour
 			company_exp_disposables.Dispose();
 			company_exp_disposables = new CompositeDisposable();
 		}
-		// Update exp display
 		if (ExpPerText != null) ExpPerText.text = ProjectUtility.GetThousandCommaText(exp);
 	}
 
@@ -269,18 +265,15 @@ public class ItemManagerHireList : MonoBehaviour
 	{
 		if (BadObj != null) BadObj.SetActive(false);
 		if (LevelUpNoti != null) LevelUpNoti.SetActive(false);
-		// Check if office has level warnings
 	}
 
 	private void LevelUpByCashItem()
 	{
-		// Level up using cash item
 		UpgradeCb?.Invoke(curOfficeIdx);
 	}
 
 	private void OnClickPurchase()
 	{
-		// Purchase manager desk
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		UpgradeCb?.Invoke(curOfficeIdx);

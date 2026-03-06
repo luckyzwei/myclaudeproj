@@ -74,7 +74,6 @@ public class TutorialEntityEventProductTime : TutorialEntity
 	public override void StartEntity()
 	{
 		base.StartEntity();
-		// Set event product time
 		StartCoroutine(WaitTime(Time));
 	}
 

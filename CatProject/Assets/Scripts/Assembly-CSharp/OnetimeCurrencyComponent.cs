@@ -154,7 +154,6 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 	private void SubscribeComponent()
 	{
 		if (disposables != null) disposables.Clear();
-		// Subscriptions to OneTimeEventSystem currency changes go here
 	}
 
 	private void UpdateOneTimeHUDIcon()
@@ -208,13 +207,11 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	public void ShowOneTimeGetEffectTarget(Vector3 startPos, Vector3 endPos, Action endCb = null)
 	{
-		// Show currency fly effect from startPos to endPos
 		endCb?.Invoke();
 	}
 
 	public void ShowOneTimeGetEffectTargetOffice(int count, Vector3 startPos, Vector3 endPos, Action endCb = null)
 	{
-		// Show multiple currency fly effects for office rewards
 		endCb?.Invoke();
 	}
 

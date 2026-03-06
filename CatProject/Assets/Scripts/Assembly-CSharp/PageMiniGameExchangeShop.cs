@@ -38,7 +38,6 @@ public class PageMiniGameExchangeShop : UIBase
 	private void SetExchangeItemList(int eventIdx)
 	{
 		if (ItemExchangeRoot == null || ItemExchangeRefAsset == null) return;
-		// Create exchange shop items from mini game shop data
 	}
 
 	private void SetRemainTimeText()

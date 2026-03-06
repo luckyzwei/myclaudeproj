@@ -88,7 +88,6 @@ public class PopupSeasonalOpen : UIBase
 	public void Init(int seasonInfoIdx)
 	{
 		SeasonInfoIdx = seasonInfoIdx;
-		// Load seasonal info and set UI
 	}
 
 	private void Update()
@@ -132,7 +131,6 @@ public class PopupSeasonalOpen : UIBase
 	public IEnumerator PlaySeasonalStartHUDEffect()
 	{
 		yield return new WaitForSeconds(0.5f);
-		// Play seasonal start HUD decoration effect
 	}
 
 	public override void OnHideAfter()

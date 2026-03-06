@@ -104,7 +104,6 @@ public class ItemWorkshopWorkerFacility : MonoBehaviour
 		WorkerSlots.Clear();
 		if (WorkerSlotListObject == null || WorkerSlotPrefab == null) return;
 
-		// Clear existing children
 		for (int i = WorkerSlotListObject.transform.childCount - 1; i >= 0; i--)
 			Object.Destroy(WorkerSlotListObject.transform.GetChild(i).gameObject);
 

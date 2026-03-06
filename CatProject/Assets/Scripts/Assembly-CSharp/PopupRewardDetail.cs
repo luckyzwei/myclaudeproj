@@ -68,7 +68,6 @@ public class PopupRewardDetail : UIBase
 
 	private void InitPopup()
 	{
-		// Clear existing items
 		if (ItemArticleList != null) ItemArticleList.Clear();
 		if (BuffRoot != null) BuffRoot.SetActive(false);
 		if (CompanyRoot != null) CompanyRoot.SetActive(false);
@@ -84,25 +83,21 @@ public class PopupRewardDetail : UIBase
 	public void SetDailyReward(int idx)
 	{
 		InitPopup();
-		// Set daily reward item display based on idx
 	}
 
 	public void SetPiggyReward(int level)
 	{
 		InitPopup();
-		// Set piggy bank reward display for given level
 	}
 
 	public void SetRouletteReward(int order)
 	{
 		InitPopup();
-		// Set roulette reward display for given order
 	}
 
 	public void SetManagerBox(int goodsIdx)
 	{
 		InitPopup();
-		// Set manager box reward display
 	}
 
 	public void SetReward(RewardItemData rewardItemData)
@@ -115,7 +110,6 @@ public class PopupRewardDetail : UIBase
 	public void SetPlant(int plantidx)
 	{
 		InitPopup();
-		// Set plant reward display
 	}
 
 	public void SetBuffObject(int objIdx)
@@ -195,7 +189,6 @@ public class PopupRewardDetail : UIBase
 	{
 		if (CompanyRoot == null) return;
 		CompanyRoot.SetActive(true);
-		// Set company name, grade, region from table
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 	}

@@ -105,7 +105,6 @@ public class MissionSystem
 
 	private void Create()
 	{
-		// 각 미션 슬롯의 미션 데이터를 로드하고 구독 설정
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.mainData == null) return;
 		var stageData = userData.mainData.StageData;
@@ -118,13 +117,11 @@ public class MissionSystem
 
 	public void ClearMission(int slot, int isdouble)
 	{
-		// 미션 클리어 처리: 보상 지급, 다음 미션 할당
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.mainData == null) return;
 		var stageData = userData.mainData.StageData;
 		if (stageData == null || stageData.Missions == null) return;
 		if (slot < 0 || slot >= stageData.Missions.Length) return;
-		// 보상을 지급하고 다음 미션을 할당
 		OnMissionClear.OnNext(Unit.Default);
 		SubscribeMission(slot);
 	}
@@ -134,22 +131,18 @@ public class MissionSystem
 		if (missionDisposables == null || slot < 0 || slot >= missionDisposables.Length) return;
 		missionDisposables[slot]?.Clear();
 		missionDisposables[slot] = new CompositeDisposable();
-		// 미션 조건 구독 설정
 	}
 
 	public void UpdateMission(E_MissionType type)
 	{
-		// 특정 미션 타입의 진행 업데이트
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.mainData == null) return;
 		var stageData = userData.mainData.StageData;
 		if (stageData == null || stageData.Missions == null) return;
-		// 해당 타입의 미션이 있으면 값 업데이트
 	}
 
 	public string GetMissionDesc(int type, params object[] args)
 	{
-		// 미션 설명 문자열 생성
 		return string.Empty;
 	}
 
@@ -179,7 +172,6 @@ public class MissionSystem
 	{
 		if (!CatstaEventDataMap.TryGetValue(type, out var list)) return;
 		if (list == null) return;
-		// 캣스타 이벤트 진행도 업데이트
 	}
 
 	private void SetEventJoinMission(int specialDayIdx)
@@ -224,7 +216,6 @@ public class MissionSystem
 	public static int GetMissionRequireValue_AB(MissionInfoData missionInfo)
 	{
 		if (missionInfo == null) return 0;
-		// AB 테스트에 따른 미션 요구 값 반환
 		return 0;
 	}
 
@@ -253,12 +244,10 @@ public class MissionSystem
 		if (MissionMilestoneDataMap == null)
 			MissionMilestoneDataMap = new Dictionary<int, MissionMilestoneData>();
 		MissionMilestoneDataMap.Clear();
-		// 마일스톤 테이블 데이터 로드
 	}
 
 	public bool ReqClaimAllMilestoneReward(int regionIdx)
 	{
-		// 리전의 모든 클레임 가능한 마일스톤 보상 수령
 		var milestoneData = GetMilestoneData(regionIdx);
 		if (milestoneData == null || milestoneData.StepDataList == null) return false;
 		bool claimed = false;
@@ -274,12 +263,10 @@ public class MissionSystem
 
 	public bool ReqClaimMilestoneReward(int orderIdx, bool isMultipleClaim)
 	{
-		// 특정 마일스톤 보상 수령
 		int regionIdx = GetMilestoneRegionIdx(orderIdx);
 		var milestoneData = GetMilestoneData(regionIdx);
 		if (milestoneData == null) return false;
 		int clearedCount = milestoneData.ClearedMissionCount;
-		// 마일스톤 단계의 필요 미션수 충족 여부 확인
 		if (!isMultipleClaim)
 			OnMissionMilestoneRewarded.OnNext(Unit.Default);
 		return true;
@@ -304,7 +291,6 @@ public class MissionSystem
 
 	public bool IsClaimedMilestone(int orderIdx)
 	{
-		// 마일스톤 보상 수령 여부 (레코드로 관리)
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.RecordCount == null) return false;
 		string key = "milestone_claimed_" + orderIdx;
@@ -346,7 +332,6 @@ public class MissionSystem
 
 	public List<MissionMilestoneStepData> GetHudMissionMilestoneGroupData()
 	{
-		// HUD에 표시할 마일스톤 그룹 데이터
 		var result = new List<MissionMilestoneStepData>();
 		if (MissionMilestoneDataMap == null) return result;
 		foreach (var kvp in MissionMilestoneDataMap)

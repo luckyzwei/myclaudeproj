@@ -65,13 +65,11 @@ public class PageStageOpen : UIBase
 	{
 		if (openTable == null || RewardItemRef == null) return;
 		if (RewardItemList == null) RewardItemList = new List<ItemArticle>();
-		// Instantiate reward items from table data
 	}
 
 	private void SetContentsList(int stageIdx, StageOpenInfoData openTable)
 	{
 		if (openTable == null || StageOpenContentsRef == null) return;
-		// Instantiate contents list items
 	}
 
 	private void OnClickConfirm()
@@ -84,6 +82,5 @@ public class PageStageOpen : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Give stage open rewards to player
 	}
 }

@@ -101,7 +101,6 @@ public class HUDTopInfo : MonoBehaviour
 		RewardUpdateDisposables = new Dictionary<int, IDisposable>();
 		ItemAddDisposables = new Dictionary<int, IDisposable>();
 
-		// Priority 1: Use TopCurrencyList if available
 		if (TopCurrencyList != null && TopCurrencyList.Count > 0)
 		{
 			for (int i = 0; i < TopCurrencyList.Count && i < CurrencyObject.Count; i++)
@@ -112,7 +111,6 @@ public class HUDTopInfo : MonoBehaviour
 			}
 		}
 
-		// Priority 2: Use TopRewardList if available
 		if (TopRewardList != null && TopRewardList.Count > 0)
 		{
 			for (int i = 0; i < TopRewardList.Count; i++)
@@ -122,7 +120,6 @@ public class HUDTopInfo : MonoBehaviour
 			}
 		}
 
-		// Add from parameter list
 		if (topInfoDataList != null)
 		{
 			for (int i = 0; i < topInfoDataList.Count; i++)
@@ -132,7 +129,6 @@ public class HUDTopInfo : MonoBehaviour
 			}
 		}
 
-		// Set each slot
 		for (int i = 0; i < TopInfoList.Count && i < CurrencyObject.Count; i++)
 		{
 			SetCurrencySlotInfo(i, TopInfoList[i]);
@@ -365,7 +361,6 @@ public class HUDTopInfo : MonoBehaviour
 			}
 		}
 
-		// Also subscribe to collection changes in case item is added later
 		var itemDisposable = itemDataList.ObserveAdd().Subscribe(addEvent =>
 		{
 			if (addEvent.Value.ItemIdx == itemIdx)

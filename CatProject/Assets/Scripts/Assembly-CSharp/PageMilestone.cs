@@ -108,7 +108,6 @@ public class PageMilestone : UIBase
 	private IEnumerator FocusToIndexCoroutine()
 	{
 		yield return null;
-		// Scroll milestone list to current progress after layout
 	}
 
 	private void Update()
@@ -141,7 +140,6 @@ public class PageMilestone : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Check if milestone pass is purchased
 		bool isPurchased = false;
 		if (PurchaseBtn != null) PurchaseBtn.gameObject.SetActive(!isPurchased);
 		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(isPurchased);
@@ -149,7 +147,6 @@ public class PageMilestone : UIBase
 
 	private void OnClickedEnterButton()
 	{
-		// Enter seasonal content
 		Hide();
 	}
 

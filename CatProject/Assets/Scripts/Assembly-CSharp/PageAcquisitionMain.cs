@@ -252,13 +252,11 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Open battle start UI
 	}
 
 	public void UpdateJewelryBoxValue()
 	{
 		if (JewelryBoxComp == null) return;
-		// Update jewelry box value display
 	}
 
 	public void UpdateAccumulateJewelryBoxValue(Vector3 rewardGetPos, Action onEndAction)
@@ -277,7 +275,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
 
-		// Set idle reward time display
 		bool isFull = false;
 		if (RewardFullObj != null) RewardFullObj.SetActive(isFull);
 	}
@@ -300,7 +297,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ContentsOpenSystem == null) return;
-		// Update content open status
 		if (PackageObj_BattleSpeed != null) PackageObj_BattleSpeed.SetActive(false);
 		if (PackageObj_AcqPass != null) PackageObj_AcqPass.SetActive(false);
 	}
@@ -310,19 +306,16 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 		if (SubMissionItem == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Set sub mission display
 	}
 
 	private void GetMissionReward(int rewardType, int rewardIdx, BigInteger rewardCnt, bool isDoubleReward)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Process mission reward
 	}
 
 	private void CheckAndPlayReinforceTutorial(Action onEndAction)
 	{
-		// Check if reinforce tutorial needs to be shown
 		onEndAction?.Invoke();
 	}
 
@@ -330,7 +323,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
-		// Check if battle speed package should show
 		onEndAction?.Invoke();
 	}
 
@@ -343,14 +335,12 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	private void SetBattleSpeedSpecialPackageIcon()
 	{
 		if (PackageObj_BattleSpeed == null) return;
-		// Set battle speed package icon
 	}
 
 	private void CheckAndOpenAcqStagePassSpecialPackage(Action onEndAction)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
-		// Check if acq pass package should show
 		onEndAction?.Invoke();
 	}
 
@@ -364,7 +354,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	private void SetAcqStagePassSpecialPackageIcon()
 	{
 		if (PackageObj_AcqPass == null) return;
-		// Set acq pass package icon
 	}
 
 	private void UpdatePackage(Action onEndAction)
@@ -379,14 +368,12 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	private void SetManagerPackage()
 	{
 		if (ManagerPackageGroup == null) return;
-		// Set manager package display
 	}
 
 	private void SetWeeklyShopSaleInfo()
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set weekly shop sale info
 		if (WeeklyShopBtn != null) WeeklyShopBtn.gameObject.SetActive(false);
 	}
 
@@ -404,7 +391,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 		if (IsOpenWeeklyShop) { onEndAction?.Invoke(); return; }
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) { onEndAction?.Invoke(); return; }
-		// Check weekly shop open condition
 		onEndAction?.Invoke();
 	}
 
@@ -412,14 +398,12 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	{
 		if (EndlessOfferIdxList == null) EndlessOfferIdxList = new List<int>();
 		EndlessOfferIdxList.Clear();
-		// Set endless offer items
 		if (EndlessOfferItem_1 != null) EndlessOfferItem_1.gameObject.SetActive(false);
 		if (EndlessOfferItem_2 != null) EndlessOfferItem_2.gameObject.SetActive(false);
 	}
 
 	private void CheckAndOpenEndlessOffer(int offerIdx, Action onEndAction)
 	{
-		// Check if endless offer popup should auto-open
 		onEndAction?.Invoke();
 	}
 
@@ -427,7 +411,6 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Open reward claim popup
 	}
 
 	private void OnClickedBizAcquisitionStartBtn()

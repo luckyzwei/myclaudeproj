@@ -44,7 +44,6 @@ public class ShopContentsPackage : IShopContents
 	{
 		if (Disposables != null)
 			Disposables.Clear();
-		// Clear existing package items
 	}
 
 	private void RefreshActive()

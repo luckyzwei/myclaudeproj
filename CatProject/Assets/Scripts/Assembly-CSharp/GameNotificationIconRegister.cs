@@ -86,7 +86,6 @@ public class GameNotificationIconRegister : MonoBehaviour
 	public void UpdateActive()
 	{
 		bool active = false;
-		// Check notification system for active status
 		if (reverse) active = !active;
 		if (redDot != null) redDot.SetActive(active);
 	}

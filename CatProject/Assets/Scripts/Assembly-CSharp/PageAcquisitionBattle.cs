@@ -142,11 +142,9 @@ public class PageAcquisitionBattle : FullScreenUI
 		if (root == null || root.BizAcqBattleSystem == null) return;
 		var battleSystem = root.BizAcqBattleSystem;
 
-		// Set stage index text
 		if (StageIdxText != null)
 			StageIdxText.text = battleSystem.GetStageIdx().ToString();
 
-		// Set team data
 		var playerData = battleSystem.GetTeam(BizAcqDef.TeamType.Player);
 		var enemyData = battleSystem.GetTeam(BizAcqDef.TeamType.Enemy);
 		if (PlayerTeam != null && playerData != null)
@@ -223,7 +221,6 @@ public class PageAcquisitionBattle : FullScreenUI
 	private void OnBattleEnd(bool isWin)
 	{
 		IsAllowHide = true;
-		// Show result popup
 	}
 
 	private void SetContinueBattle(bool isContinue)
@@ -274,7 +271,6 @@ public class PageAcquisitionBattle : FullScreenUI
 
 	private void OnBattleSpeedButtonClick()
 	{
-		// Cycle battle speed: 1x -> 2x -> 3x -> 1x
 		int curSpeed = 1;
 		if (BattleSpeedText != null)
 		{
@@ -298,7 +294,6 @@ public class PageAcquisitionBattle : FullScreenUI
 
 	private void PlayBattleStartQueue()
 	{
-		// Play battle start animation, then start battle
 		if (BattleStartAnimObj != null)
 		{
 			BattleStartAnimObj.SetActive(true);
@@ -332,13 +327,11 @@ public class PageAcquisitionBattle : FullScreenUI
 
 	private void CheckAndPlayBattleSpeedTutorial(Action onComplete)
 	{
-		// Check if battle speed tutorial should play
 		onComplete?.Invoke();
 	}
 
 	private void CheckAndPlaySpeedTrial(Action onComplete)
 	{
-		// Check if speed trial should play
 		onComplete?.Invoke();
 	}
 }

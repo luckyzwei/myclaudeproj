@@ -59,7 +59,6 @@ public class PopupShopAdsGem : UIBase
 
 	private void RewardAndReset()
 	{
-		// Give gem reward and reset state
 		Hide();
 	}
 

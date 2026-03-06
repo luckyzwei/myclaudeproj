@@ -54,12 +54,10 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 
 	public void UpdateProductionTime()
 	{
-		// Recalculate production time based on level and battery
 		float baseTime = 60f;
 		float levelReduction = Level * 0.05f;
 		production_time = baseTime * Math.Max(0.2f, 1f - levelReduction);
 
-		// Battery speed boost
 		if (EndBatteryTime > DateTime.UtcNow)
 		{
 			production_time *= 0.5f;
@@ -89,7 +87,6 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 
 	public void UseMix()
 	{
-		// Consume needed products and start production
 		d_time = 0f;
 	}
 
@@ -104,7 +101,6 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 
 	public void FindTargetNeedProduct()
 	{
-		// Would look up recipe for MakeProduct and populate need_product/need_product_count
 		if (MakeProduct == null || MakeProduct.Value <= 0)
 		{
 			need_product = null;
@@ -112,7 +108,6 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 			return;
 		}
 
-		// Default: no materials needed (base products)
 		need_product = null;
 		need_product_count = null;
 	}
@@ -127,7 +122,6 @@ public class FactoryBuildingData : IReadOnlyData, ICloneable
 			return;
 		}
 
-		// Would check if player has enough materials in factory storage
 		IsLack.Value = false;
 	}
 

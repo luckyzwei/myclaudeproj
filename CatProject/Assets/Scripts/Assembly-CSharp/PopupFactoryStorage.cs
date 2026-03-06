@@ -169,14 +169,12 @@ public class PopupFactoryStorage : UIBase
 		if (IsMaxLevel) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Upgrade storage level
 		UpdateUpgrade();
 	}
 
 	private void OnClickOrganize()
 	{
 		if (SelectProduct < 0) return;
-		// Discard selected product
 		SelectProduct = -1;
 		UpdateList();
 		UpdateSelectItem();
@@ -184,7 +182,6 @@ public class PopupFactoryStorage : UIBase
 
 	private void OnClickProcess()
 	{
-		// Process products in storage
 		Hide();
 	}
 

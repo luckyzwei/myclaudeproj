@@ -127,7 +127,6 @@ public class ItemFactoryProduct : MonoBehaviour
 
 	public void UpdateFactoryLevel()
 	{
-		// Update product icon and production time from factory data
 		if (Icon != null)
 		{
 			// Set product icon

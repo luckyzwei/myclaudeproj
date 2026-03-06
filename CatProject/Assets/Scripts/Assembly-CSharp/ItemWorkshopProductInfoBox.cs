@@ -227,7 +227,6 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 
 	private void OnClickedDistributorShortcutBtn()
 	{
-		// Open distributor popup focused on this product
 		StartCoroutine(PopupFocusToProduct_Delay(null));
 	}
 
@@ -235,7 +234,6 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 	private IEnumerator PopupFocusToProduct_Delay(UIBase popupMenu)
 	{
 		yield return null;
-		// Focus to product in popup after delay
 	}
 
 	private void OnClickedBoxVisibilityToggleBtn()

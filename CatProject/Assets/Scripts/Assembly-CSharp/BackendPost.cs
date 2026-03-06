@@ -27,13 +27,11 @@ public class BackendPost
 	public void SavePostToLocal(JsonData item)
 	{
 		if (item == null) return;
-		// Would save post data to local storage
 	}
 
 	public int PostListGet(PostType postType)
 	{
 		if (postList == null) return 0;
-		// Would call backend SDK to get post list
 		return postList.Count;
 	}
 
@@ -46,7 +44,6 @@ public class BackendPost
 	public bool PostReceive(PostType postType, Post post)
 	{
 		if (post == null) return false;
-		// Would call backend SDK to receive post
 		if (postList != null)
 			postList.Remove(post);
 		return true;

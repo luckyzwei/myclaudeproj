@@ -157,7 +157,6 @@ public class PopupEventRewardGet : UIBase
 
 	private void SetAllRewardSlot()
 	{
-		// Hide existing slots
 		for (int i = 0; i < RewardSlotList.Count; i++)
 		{
 			if (RewardSlotList[i] != null)
@@ -166,7 +165,6 @@ public class PopupEventRewardGet : UIBase
 
 		if (RewardItemDataList == null || RewardSlotPrefab == null || RewardScrollRect == null) return;
 
-		// Create additional slots if needed
 		while (RewardSlotList.Count < RewardItemDataList.Count)
 		{
 			var obj = Instantiate(RewardSlotPrefab, RewardScrollRect.content);
@@ -176,7 +174,6 @@ public class PopupEventRewardGet : UIBase
 			obj.SetActive(false);
 		}
 
-		// Show coin/cash reward info
 		if (CoinRewardInfo != null) CoinRewardInfo.gameObject.SetActive(false);
 		if (CashRewardInfo != null) CashRewardInfo.gameObject.SetActive(false);
 	}

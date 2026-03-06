@@ -105,7 +105,6 @@ public class PopupManagerLevelUp : UIBase
 		WorkshopIdx = workShopIdx;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get manager data from workshop
 		UpdateLevelData();
 	}
 

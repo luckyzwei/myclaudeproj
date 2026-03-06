@@ -58,7 +58,6 @@ public class Secretary : Worker
 
 	private void UpdateSecretaryAlarm()
 	{
-		// Check all offices for max level or missing items and update Alarms list
 		UpdateExclamation();
 	}
 
@@ -67,7 +66,6 @@ public class Secretary : Worker
 		if (Alarms == null)
 			Alarms = new List<OfficeStatus>();
 
-		// Check if already exists
 		for (int i = 0; i < Alarms.Count; i++)
 		{
 			if (Alarms[i].type == Config.SecretaryConversationType.Guide && Alarms[i].target == office)

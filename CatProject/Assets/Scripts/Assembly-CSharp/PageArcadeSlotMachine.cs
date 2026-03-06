@@ -132,7 +132,6 @@ public class PageArcadeSlotMachine : UIBase
 
 	private void AddCoinBankValue(int value)
 	{
-		// Add coins to bank and update display
 		UpdateCoinBankValue();
 		if (CoinBankTween != null) CoinBankTween.gameObject.SetActive(true);
 	}

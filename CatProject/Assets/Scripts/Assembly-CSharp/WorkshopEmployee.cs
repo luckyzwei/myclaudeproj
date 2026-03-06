@@ -418,11 +418,9 @@ public class WorkshopEmployee : MonoBehaviour
 		Vector3 targetPos = ActivityData.MoveNextNode.WorldPos;
 		Vector3 curPos = transform.position;
 
-		// Calculate direction for animation
 		E_Direction moveDir = GetDir(curPos, targetPos);
 		SetAni(E_EmployeeState.Move, moveDir);
 
-		// Move toward target
 		float speed = WalkSpeed;
 		if (ActivityData.MoveTime > 0f)
 			speed = ActivityData.MoveTime;
@@ -430,7 +428,6 @@ public class WorkshopEmployee : MonoBehaviour
 		float step = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards(curPos, targetPos, step);
 
-		// Check if reached target node
 		if (Vector3.Distance(transform.position, targetPos) < 0.01f)
 		{
 			transform.position = targetPos;
@@ -448,7 +445,6 @@ public class WorkshopEmployee : MonoBehaviour
 
 	private void UpdateWork()
 	{
-		// Check if workshop became active/inactive
 		bool isActive = IsActiveWork(BuildingIdx, BuildingTransformIdx);
 		if (isActive != CachedActiveWork)
 		{
@@ -624,12 +620,10 @@ public class WorkshopEmployee : MonoBehaviour
 		if (ProgressTrans == null)
 			return;
 
-		// Load floating UI via Addressables
 		var inGameSeasonal = SeasonalHelper.InGameSeasonalMode;
 		if (inGameSeasonal == null)
 			return;
 
-		// InGameSeasonalProgress is loaded as a floating UI attached to ProgressTrans
 		var progressGo = ProgressTrans.GetComponentInChildren<InGameSeasonalProgress>();
 		if (progressGo != null)
 		{

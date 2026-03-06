@@ -78,7 +78,6 @@ public class PageAuctionSpy : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Start spy search
 	}
 
 	private void OnDisable()

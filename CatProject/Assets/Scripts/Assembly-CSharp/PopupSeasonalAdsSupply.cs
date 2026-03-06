@@ -67,14 +67,12 @@ public class PopupSeasonalAdsSupply : UIBase
 	{
 		if (isShowAds) return;
 		isShowAds = true;
-		// Watch ad and get seasonal reward
 		Hide();
 	}
 
 	private void ShowRewardGoodsEffect(int currency_idx, BigInteger value)
 	{
 		if (RewardGoodsEffectEndTr == null) return;
-		// Play reward goods fly effect to RewardGoodsEffectEndTr
 	}
 
 	private void OnClickReject()

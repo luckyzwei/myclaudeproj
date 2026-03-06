@@ -131,14 +131,12 @@ public class PopupShop : HUDAniBase
 		IsSelctTab = selecttab;
 		CurrentTab = tab;
 
-		// Deactivate all contents
 		if (shopContents != null)
 		{
 			for (int i = 0; i < shopContents.Count; i++)
 				if (shopContents[i] != null) shopContents[i].gameObject.SetActive(false);
 		}
 
-		// Activate selected tab content
 		var contents = GetContents(tab);
 		if (contents != null)
 		{

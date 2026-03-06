@@ -139,7 +139,6 @@ public class PopupRewardAll : UIBase
 
 	private void SetAllRewardSlot()
 	{
-		// Hide existing slots
 		for (int i = 0; i < RewardSlotList.Count; i++)
 		{
 			if (RewardSlotList[i] != null)
@@ -148,7 +147,6 @@ public class PopupRewardAll : UIBase
 
 		if (RewardItemDataList == null || RewardSlotPrefab == null || RewardScrollRect == null) return;
 
-		// Create additional slots if needed
 		while (RewardSlotList.Count < RewardItemDataList.Count)
 		{
 			var obj = Instantiate(RewardSlotPrefab, RewardScrollRect.content);

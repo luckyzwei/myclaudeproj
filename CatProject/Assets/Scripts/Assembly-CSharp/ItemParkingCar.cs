@@ -158,7 +158,6 @@ public class ItemParkingCar : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Determine parking slot type based on zone/space data
 		CurrentParkingSlotType = E_ParkingSlotType.NONE;
 		DrawStatus();
 	}
@@ -192,7 +191,6 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void SetCarUI()
 	{
-		// Set car image, name, desc, logo, rich point text
 		if (OnCarNameText != null) OnCarNameText.text = "";
 		if (OnCarDescText != null) OnCarDescText.text = "";
 		if (OnRichPointText != null) OnRichPointText.text = "0";
@@ -201,20 +199,17 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void SetPurchaseUI()
 	{
-		// Set purchase car image and price
 		if (PurchaseGemBtnText != null) PurchaseGemBtnText.text = PurchaseGemPrice.ToString();
 	}
 
 	private void SetRichPointUI()
 	{
-		// Set rich point progress bar
 		if (RichPointSlider != null) RichPointSlider.value = 0f;
 		if (RichPointCountText != null) RichPointCountText.SetText("0");
 	}
 
 	private void SetSpecialUI()
 	{
-		// Set special car info
 		if (SpecialCarName != null) SpecialCarName.text = "";
 		if (SpecialCarDesc != null) SpecialCarDesc.text = "";
 	}
@@ -223,13 +218,11 @@ public class ItemParkingCar : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Equip the car in this parking space
 		UpdateState();
 	}
 
 	private void OnClickSale()
 	{
-		// Sell the parked car
 		SellCarCallback?.Invoke();
 		UpdateState();
 	}
@@ -238,7 +231,6 @@ public class ItemParkingCar : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Purchase car via gem or cash
 		if (PurchaseEffectObj != null)
 		{
 			PurchaseEffectObj.SetActive(false);
@@ -253,13 +245,11 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void OnClickNoneShortCut()
 	{
-		// Navigate to car market to buy a car for this slot
 		OpenCarMarket(0);
 	}
 
 	private void OnClickNextNoneShortCut()
 	{
-		// Navigate to next region car market
 		OpenCarMarket(0);
 	}
 
@@ -267,7 +257,6 @@ public class ItemParkingCar : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if all cars in current zone are purchased
 		return false;
 	}
 

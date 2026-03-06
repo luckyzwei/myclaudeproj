@@ -30,7 +30,6 @@ public class Engineer : Worker
 
 	private void LoadChar(Action LoadComp)
 	{
-		// Load engineer character model and invoke callback when done
 		LoadComp?.Invoke();
 	}
 

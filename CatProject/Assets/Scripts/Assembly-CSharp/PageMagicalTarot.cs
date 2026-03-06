@@ -284,7 +284,6 @@ public class PageMagicalTarot : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Generate new card list
 		if (isUpdate)
 			SetCardList(true);
 	}
@@ -293,7 +292,6 @@ public class PageMagicalTarot : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Load card list from user data / tarot region data
 		if (curTarotRegionData != null && curTarotRegionData.TarotCardList != null)
 		{
 			curNormalIdxList = new List<int>(curTarotRegionData.TarotCardList);
@@ -330,7 +328,6 @@ public class PageMagicalTarot : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Update currency display based on curUseCurrency
 		switch (curUseCurrency)
 		{
 			case UseCurrency.Gem:
@@ -354,7 +351,6 @@ public class PageMagicalTarot : UIBase
 
 	private void ShowCardReward(int idx, bool isOwn, Action cb)
 	{
-		// Show reward popup for the selected tarot card
 		cb?.Invoke();
 	}
 
@@ -405,21 +401,18 @@ public class PageMagicalTarot : UIBase
 		if (root == null || root.UserData == null) return;
 
 		curStatus = Status.Play;
-		// Consume currency and start card shuffle
 		if (TarotAnimator != null) TarotAnimator.Play("Shuffle");
 	}
 
 	private void OnClickChange()
 	{
 		if (curStatus != Status.Idle) return;
-		// Change card list
 		SetNewCardList(true);
 	}
 
 	private void OnClickFreeChange()
 	{
 		if (curStatus != Status.Idle) return;
-		// Free change card list
 		SetNewCardList(true);
 	}
 
@@ -428,14 +421,12 @@ public class PageMagicalTarot : UIBase
 		if (curStatus != Status.WaitAdd) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Add additional play after first round
 	}
 
 	private void UseTarotTicket(bool isSpecialTicket, Action addCb)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Use tarot ticket
 		addCb?.Invoke();
 	}
 
@@ -445,7 +436,6 @@ public class PageMagicalTarot : UIBase
 
 	private void OnClickCurrencyLeft()
 	{
-		// Cycle currency type left
 		int cur = (int)curUseCurrency;
 		cur--;
 		if (cur < (int)UseCurrency.Gem) cur = (int)UseCurrency.SpecialTicket;
@@ -455,7 +445,6 @@ public class PageMagicalTarot : UIBase
 
 	private void OnClickCurrencyRight()
 	{
-		// Cycle currency type right
 		int cur = (int)curUseCurrency;
 		cur++;
 		if (cur > (int)UseCurrency.SpecialTicket) cur = (int)UseCurrency.Gem;
@@ -471,7 +460,6 @@ public class PageMagicalTarot : UIBase
 	{
 		if (curStatus != Status.Wait && curStatus != Status.WaitAdd) return;
 		if (card == null) return;
-		// Handle card selection
 		int idx = GetRandomIdx();
 		ShowCardReward(idx, false, () =>
 		{
@@ -493,7 +481,6 @@ public class PageMagicalTarot : UIBase
 
 	public void EventReversCard(int idx)
 	{
-		// Called by animation event when card is reversed
 		if (TarotCardList != null && idx >= 0 && idx < TarotCardList.Length && TarotCardList[idx] != null)
 		{
 			// Show card front face
@@ -532,7 +519,6 @@ public class PageMagicalTarot : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) { SuccessCb?.Invoke(); return; }
-		// Save tarot data to server
 		SuccessCb?.Invoke();
 	}
 }

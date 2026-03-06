@@ -163,7 +163,6 @@ public class SquareRouletteComponent : MonoBehaviour
 		CurrentIndex = 0;
 		PreviousWinningIndex = -1;
 
-		// Reset all slot highlights
 		for (int i = 0; i < Slots.Count; i++)
 		{
 			Slots[i].SetHighlight(false);
@@ -189,7 +188,6 @@ public class SquareRouletteComponent : MonoBehaviour
 		{
 			totalSteps = MinRotations * slotCount;
 		}
-		// Add steps to land on winning index
 		int stepsToWin = ((WinningIndex - CurrentIndex) % slotCount + slotCount) % slotCount;
 		totalSteps += stepsToWin;
 
@@ -237,7 +235,6 @@ public class SquareRouletteComponent : MonoBehaviour
 		if (Slots != null && WinningIndex >= 0 && WinningIndex < Slots.Count)
 			Slots[WinningIndex].SetRewardedFx(true);
 
-		// Complete sound played by animation/event
 
 		OnRouletteComplete?.Invoke(WinningIndex);
 	}

@@ -56,7 +56,6 @@ public class InGameOpenRoom : InGameFloatingUI
 	public void SetOffice(int office)
 	{
 		OfficeIdx = office;
-		// Determine room state and show appropriate UI
 		if (LockObj != null) LockObj.SetActive(false);
 		if (OpenObj != null) OpenObj.SetActive(true);
 		if (TimeObj != null) TimeObj.SetActive(false);

@@ -149,7 +149,6 @@ public class BizAcqCharacterData
 
 	private void UpdateStatusEffect()
 	{
-		// Recalculate DealPower based on active status effects
 		DealPower = DealPower_Origin;
 		if (StatusEffectList == null) return;
 		for (int i = 0; i < StatusEffectList.Count; i++)

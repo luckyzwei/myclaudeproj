@@ -313,7 +313,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 		EndlessPackageIdx = endlessIdx;
 		EnterPlace = enterPlace;
 
-		// Collect item slots from ItemRoot
 		if (ItemRoot != null)
 		{
 			ItemShopEndlessList.Clear();
@@ -413,10 +412,8 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 	private IEnumerator AnimateItemShift()
 	{
 		if (ItemShopEndlessList == null || ItemShopEndlessList.Count == 0) yield break;
-		// Scale out the first item (purchased)
 		var firstItem = ItemShopEndlessList[0];
 		yield return StartCoroutine(AnimateItemScaleOut(firstItem));
-		// Shift remaining items
 		yield return StartCoroutine(AnimateSnakeShift());
 	}
 
@@ -459,7 +456,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 		float elapsedTime = 0f;
 		Vector3 overshootPosition = targetPosition + (targetPosition - startPosition).normalized * OvershootStrength;
 
-		// Move to overshoot position
 		while (elapsedTime < AnimationDuration)
 		{
 			elapsedTime += Time.deltaTime;
@@ -468,7 +464,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 			yield return null;
 		}
 
-		// Snap back to target
 		elapsedTime = 0f;
 		while (elapsedTime < OvershootDuration)
 		{

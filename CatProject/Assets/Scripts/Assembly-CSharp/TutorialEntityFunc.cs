@@ -399,7 +399,6 @@ public class TutorialEntityFunc : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitFactory_003Ed__3))]
 	private IEnumerator WaitFactory()
 	{
-		// Wait until factory scene is loaded
 		yield return new WaitForSeconds(1f);
 		Complete = true;
 	}
@@ -407,7 +406,6 @@ public class TutorialEntityFunc : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitRepair_003Ed__4))]
 	private IEnumerator WaitRepair(int officeIdx)
 	{
-		// Wait until office repair is complete
 		yield return new WaitForSeconds(1f);
 		Complete = true;
 	}
@@ -422,7 +420,6 @@ public class TutorialEntityFunc : TutorialEntity
 	[IteratorStateMachine(typeof(_003CWaitCeo_003Ed__6))]
 	private IEnumerator WaitCeo()
 	{
-		// Wait until CEO character is loaded and ready
 		yield return new WaitForSeconds(1f);
 		Complete = true;
 	}

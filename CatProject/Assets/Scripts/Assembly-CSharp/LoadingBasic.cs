@@ -130,7 +130,6 @@ public class LoadingBasic : Loading
 		StageLoadComplete = false;
 		AdLoad = false;
 		loadingStartTime = Time.realtimeSinceStartup;
-		// 랜덤 배경 오브젝트 선택
 		if (RandObj != null && RandObj.Count > 0)
 		{
 			int randIdx = UnityEngine.Random.Range(0, RandObj.Count);
@@ -166,13 +165,11 @@ public class LoadingBasic : Loading
 			originTile = TileImg.sprite;
 		if (TileBgImg != null)
 			originTileBgColor = TileBgImg.color;
-		// 설정에서 로딩 광고 시간 로드
 		gamestart_loading_time = 3;
 	}
 
 	private void OnClickTap()
 	{
-		// 탭하면 로딩 스킵 (스테이지 로드 완료 후에만)
 		if (!StageLoadComplete) return;
 		Hide(false);
 	}
@@ -180,7 +177,6 @@ public class LoadingBasic : Loading
 	protected override void Update()
 	{
 		base.Update();
-		// 로딩 바 업데이트
 		if (loadingBar != null && !StageLoadComplete)
 		{
 			float elapsed = Time.realtimeSinceStartup - loadingStartTime;
@@ -219,13 +215,11 @@ public class LoadingBasic : Loading
 	[IteratorStateMachine(typeof(_003CWaitStageLoad_003Ed__31))]
 	private IEnumerator WaitStageLoad(Action action)
 	{
-		// 최소 로딩 시간 대기
 		float elapsed = Time.realtimeSinceStartup - loadingStartTime;
 		if (elapsed < gamestart_loading_time)
 		{
 			yield return new WaitForSecondsRealtime(gamestart_loading_time - elapsed);
 		}
-		// 로딩 바 100%로 설정
 		if (loadingBar != null)
 			loadingBar.value = 1f;
 		if (loadingBarText != null)
@@ -236,17 +230,14 @@ public class LoadingBasic : Loading
 
 	private bool CheckShowLoadingAds()
 	{
-		// 로딩 중 광고 표시 여부 확인
 		if (immersiveADRect == null) return false;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return false;
-		// 광고 조건 확인 (레벨, 시간 등)
 		return false;
 	}
 
 	private void InitTheme()
 	{
-		// 스페셜 데이 테마 초기화
 		if (SpecialDayDecoList == null) return;
 		for (int i = 0; i < SpecialDayDecoList.Count; i++)
 		{
@@ -262,7 +253,6 @@ public class LoadingBasic : Loading
 
 	public void UpdateSpecialTheme()
 	{
-		// 현재 스페셜 데이에 맞는 테마 적용
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 		int specialDayIdx = root.SpecialDaySystem != null ? root.SpecialDaySystem.CurIdx : -1;
@@ -290,7 +280,6 @@ public class LoadingBasic : Loading
 
 	private void SetDefaultTheme()
 	{
-		// 기본 테마로 복원
 		if (TileImg != null && originTile != null)
 			TileImg.sprite = originTile;
 		if (TileBgImg != null)

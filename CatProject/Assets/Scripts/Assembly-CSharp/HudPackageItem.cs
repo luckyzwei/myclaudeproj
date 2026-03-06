@@ -54,7 +54,6 @@ public class HudPackageItem : MonoBehaviour
 
 	private bool CheckRemainSameGroupPackage(int group)
 	{
-		// Check if there are remaining packages in the same group
 		return false;
 	}
 

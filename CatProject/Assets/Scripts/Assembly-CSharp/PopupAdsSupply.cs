@@ -143,13 +143,11 @@ public class PopupAdsSupply : UIBase
 
 	private void GetReward_SuperStaffOpen(E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
 	{
-		// Get reward with super staff bonus
 		Hide();
 	}
 
 	private void GetReward_Normal(E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
 	{
-		// Get normal reward
 		Hide();
 	}
 

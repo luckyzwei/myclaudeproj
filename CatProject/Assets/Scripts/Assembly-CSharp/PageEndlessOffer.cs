@@ -63,7 +63,6 @@ public class PageEndlessOffer : UIBase
 		if (EndlessOfferComponent != null) return;
 		if (ComponentRootTr == null) return;
 
-		// Load and instantiate endless offer component prefab
 		if (EndlessOfferComponent != null)
 		{
 			EndlessOfferComponent.OnPlayAnimationEvent = OnPlayAnimationEvent;

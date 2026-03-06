@@ -161,7 +161,6 @@ public class ItemManagerInfoAcquisition : MonoBehaviour
 		if (IsMaxReinforceLevel) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Reinforce manager
 		ShowLevelUpEffect();
 		Refresh();
 	}

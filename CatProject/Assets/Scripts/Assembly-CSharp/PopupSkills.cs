@@ -76,7 +76,6 @@ public class PopupSkills : UIBase
 	private void SetSkillList(E_SkillBookAbilityType focusAbilityType)
 	{
 		SeasonalSkillSlots.Clear();
-		// Instantiate skill slots from prefab and init each with skill data
 		if (SkillBookGeneralObj != null) SkillBookGeneralObj.SetActive(bUseGeneralSkillBook);
 	}
 

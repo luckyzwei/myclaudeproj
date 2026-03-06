@@ -113,7 +113,6 @@ public class GoodEffect : MonoBehaviour
 		}
 		if (animator != null && !string.IsNullOrEmpty(aniName))
 			animator.Play(aniName);
-		// Move effect: start -> middle -> end
 	}
 
 	public void SetPlayIcon(Vector3 worldStartPos, Vector3 worldMiddlePos, Vector3 worldEndPos, Config.AtlasType atlasType, string Icon, string CountText = "", Action OnEnd = null, float delay = 0f, string Ani = "Show", float firsttime = 0.95f, Vector2 iconSize = default(Vector2))
@@ -128,13 +127,11 @@ public class GoodEffect : MonoBehaviour
 	public void SetPackage(Vector3 worldStartPos, Vector3 worldMiddlePos, Vector3 worldEndPos, int packageIdx, Action OnEnd = null, float delay = 0f)
 	{
 		transform.position = worldStartPos;
-		// Set package icon/info from packageIdx
 	}
 
 	public void SetCurveMove(Vector3 worldStartPos, Vector3 worldEndPos, int goodsType, int goodsIdx, int goodsRegion, int goodsGrade, Action OnEnd = null, float delay = 0f)
 	{
 		transform.position = worldStartPos;
-		// Curve movement from start to end position
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__16))]

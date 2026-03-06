@@ -188,7 +188,6 @@ public class PopupInvest : UIBase
 		investIdx = 0;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get invest max count from InvestSystem
 		investMaxCnt = 1;
 		Set(investIdx);
 		UpdateSuperStaff();
@@ -200,7 +199,6 @@ public class PopupInvest : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Determine if invested or not
 		bool isInvested = false;
 		if (BeforeInvestRoot != null) BeforeInvestRoot.SetActive(!isInvested);
 		if (AfterInvestRoot != null) AfterInvestRoot.SetActive(isInvested);
@@ -214,14 +212,12 @@ public class PopupInvest : UIBase
 	public void UpdateSuperStaff()
 	{
 		if (superStaffBtn == null) return;
-		// Update super staff button state
 	}
 
 	private void OnClickInvest()
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Start investment
 		Set(investIdx);
 	}
 
@@ -229,7 +225,6 @@ public class PopupInvest : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Claim investment reward
 		Set(investIdx);
 	}
 

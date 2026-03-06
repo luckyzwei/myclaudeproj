@@ -74,19 +74,16 @@ public static class BizAcqHelper
 
 	public static string GetSkillDesc(int skillIdx, int skillLevel)
 	{
-		// Would look up skill description from data table
 		return string.Empty;
 	}
 
 	public static string GetSkillValueDesc(int skillidx, int skillvalue)
 	{
-		// Would look up skill value description from data table
 		return string.Empty;
 	}
 
 	public static Config.ManagerSkillContentsType GetSkillContentsType(int skillIdx)
 	{
-		// Would look up skill contents type from data table
 		return Config.ManagerSkillContentsType.None;
 	}
 
@@ -116,13 +113,11 @@ public static class BizAcqHelper
 
 	public static bool IsMoneyLimit(int stageIdx)
 	{
-		// Would check if stage has money reward limit
 		return false;
 	}
 
 	private static RewardItemData GetStageMoneyReward(int stageIdx)
 	{
-		// Would look up stage money reward from data table
 		return null;
 	}
 }

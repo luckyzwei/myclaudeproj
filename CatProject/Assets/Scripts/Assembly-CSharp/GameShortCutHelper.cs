@@ -31,7 +31,6 @@ public static class GameShortCutHelper
 
 	public static void ShortCutContents(MissionSystem.E_MissionType missionType, object[] args, Action<bool> resultCallBack, Action endCallBack)
 	{
-		// Convert mission type to shortcut type and delegate
 		resultCallBack?.Invoke(false);
 		endCallBack?.Invoke();
 	}
@@ -60,32 +59,27 @@ public static class GameShortCutHelper
 
 	public static bool GoToActiveRegionHouse(Action<bool> endCallBack)
 	{
-		// Navigate to active region house
 		endCallBack?.Invoke(true);
 		return true;
 	}
 
 	public static void GoToBizAcqStage(Action<bool> endCallBack)
 	{
-		// Navigate to BizAcq stage
 		endCallBack?.Invoke(true);
 	}
 
 	public static void GoToBizAcqBattleStart(Action<bool> endCallBack)
 	{
-		// Navigate to BizAcq battle
 		endCallBack?.Invoke(true);
 	}
 
 	public static void FocusFactory(int factoryIdx, Action endCallBack)
 	{
-		// Focus camera on specific factory
 		endCallBack?.Invoke();
 	}
 
 	public static void FocusFactoryFacility(int factoryIdx, bool isUpgrade, Action endCallBack)
 	{
-		// Focus camera on factory facility
 		endCallBack?.Invoke();
 	}
 
@@ -104,7 +98,6 @@ public static class GameShortCutHelper
 
 	private static bool CheckItemContentsOpen(int rewardType, int rewardIdx)
 	{
-		// Check if the reward contents are available
 		return true;
 	}
 

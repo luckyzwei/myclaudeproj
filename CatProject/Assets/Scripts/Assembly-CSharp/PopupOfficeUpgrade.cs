@@ -475,10 +475,8 @@ public class PopupOfficeUpgrade : UIBase
 		UpdateSelectItem();
 		UpdateStrike();
 
-		// Set office name
 		if (OfficeName != null) OfficeName.text = "";
 
-		// Set navigation buttons
 		beforeOfficeIdx = officeIdx - 1;
 		afterOfficeIdx = officeIdx + 1;
 		if (moveLeftBtn != null) moveLeftBtn.gameObject.SetActive(beforeOfficeIdx >= 0);
@@ -489,20 +487,17 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		GuideLevel = level;
 		GuideCount = count;
-		// Focus on the guided item type and show guide arrow
 		if (GuideArrow != null) GuideArrow.SetActive(true);
 	}
 
 	public void ShowCompanyLevelupPopup()
 	{
-		// Show company level up animation/popup
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
 
 	private void Update()
 	{
-		// Handle long press logic for purchase button
 		if (IsLongPressed)
 		{
 			OnClickBuy();
@@ -535,7 +530,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if player has company exp tickets to auto-use
 		return false;
 	}
 
@@ -547,7 +541,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void SetMoodTab()
 	{
-		// Populate mood/require item list
 		if (EmployeeMood_NoCompanyObj != null) EmployeeMood_NoCompanyObj.SetActive(CompanyIdx <= 0);
 		if (RequireItem_NoCompanyObj != null) RequireItem_NoCompanyObj.SetActive(CompanyIdx <= 0);
 	}
@@ -556,7 +549,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update company contract button state
 		if (CompanyOutBtn != null) CompanyOutBtn.gameObject.SetActive(CompanyIdx > 0);
 		if (CompanyOutMaxLvBtn != null) CompanyOutMaxLvBtn.gameObject.SetActive(false);
 	}
@@ -573,7 +565,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update office exp progress
 		if (exp_disposables != null)
 		{
 			exp_disposables.Dispose();
@@ -585,7 +576,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Level up company using cash item
 		UpdateCompany();
 	}
 
@@ -605,12 +595,10 @@ public class PopupOfficeUpgrade : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Set power value and load ratio
 		if (PowerValue != null) PowerValue.text = "0";
 		if (PowerLoadRatio != null) PowerLoadRatio.text = "0%";
 		if (LeakPowerObj != null) LeakPowerObj.SetActive(false);
 
-		// Set power load step indicators
 		if (PowerLoadStepObjs != null)
 		{
 			for (int i = 0; i < PowerLoadStepObjs.Count; i++)
@@ -644,14 +632,12 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update company exp gauge
 		if (LevelProgress != null) LevelProgress.value = 0f;
 		UpdateExpGaugeColor();
 	}
 
 	private void UpdateExpGaugeColor()
 	{
-		// Update progress fill color based on level status
 		if (GaugeParticleObj != null) GaugeParticleObj.SetActive(false);
 	}
 
@@ -694,7 +680,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update rental fee display
 		if (RentalFeeDebuffObj != null) RentalFeeDebuffObj.SetActive(false);
 	}
 
@@ -704,25 +689,19 @@ public class PopupOfficeUpgrade : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Update selected item info display
 		if (ItemName != null) ItemName.text = "";
 		if (ItemDesc != null) ItemDesc.text = "";
 		if (ItemLevel != null) ItemLevel.text = "";
 
-		// Update need currency display
 		if (NeedLevelObj != null) NeedLevelObj.SetActive(false);
 		if (UsePowerInfoRoot != null) UsePowerInfoRoot.SetActive(false);
 
-		// Mood buff info
 		if (MoodBuffObj != null) MoodBuffObj.SetActive(false);
 
-		// Manager hire info
 		if (HireManagerRoot != null) HireManagerRoot.SetActive(false);
 
-		// Ability info
 		if (AbilityRoot != null) AbilityRoot.SetActive(false);
 
-		// Player exp/level display
 		if (PlayerExpObj != null) PlayerExpObj.SetActive(false);
 		if (PlayerLevelObj != null) PlayerLevelObj.SetActive(false);
 	}
@@ -732,7 +711,6 @@ public class PopupOfficeUpgrade : UIBase
 		if (LevelUpAllItemsBtn == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Check if bulk level up is available
 		bool canBulkLevelUp = false;
 		CachedActiveLevelUpAllBtn = canBulkLevelUp;
 		LevelUpAllItemsBtn.gameObject.SetActive(canBulkLevelUp);
@@ -741,7 +719,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void UpdateLevelUpAllButton_LowPower()
 	{
-		// Disable bulk level up when power is low
 		if (LevelUpAllItemsBtn != null) LevelUpAllItemsBtn.interactable = false;
 	}
 
@@ -749,7 +726,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.InGameSystem == null) return;
-		// Show preview of item in the in-game view
 	}
 
 	private void FocusItem(int itemType, int itemIdx)
@@ -767,7 +743,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void ScreenTraceItem(int itemType, int itemIdx, bool bForceUpdate)
 	{
-		// Trace item position on screen for tutorial/guide
 		FocusItem(itemType, itemIdx);
 	}
 
@@ -796,7 +771,6 @@ public class PopupOfficeUpgrade : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Check if office has a manager assigned
 		bool hasManager = false;
 		if (ManagerRootObj != null) ManagerRootObj.SetActive(hasManager);
 		if (ManagerPreOpenObj != null) ManagerPreOpenObj.SetActive(!hasManager);
@@ -827,7 +801,6 @@ public class PopupOfficeUpgrade : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		BuyBtnClickCount++;
-		// Purchase/upgrade selected office item
 		UpdateSelectItem();
 		UpdatePower();
 		UpdateLevelUpAllButton();
@@ -837,7 +810,6 @@ public class PopupOfficeUpgrade : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Level up all items at once
 		if (LevelUpAllFxObj != null) LevelUpAllFxObj.SetActive(true);
 		UpdateSelectItem();
 		UpdatePower();
@@ -876,7 +848,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickCompanyOut()
 	{
-		// Remove company from office
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		UpdateCompany();
@@ -884,7 +855,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickCompanyOutMax()
 	{
-		// Remove max level company from office
 		OnClickCompanyOut();
 	}
 
@@ -906,7 +876,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickCompanyCashLevelUpBtn()
 	{
-		// Level up company using cash currency
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		UpdateCompany();
@@ -914,7 +883,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void OnClickCompanyLevelUpBtn()
 	{
-		// Level up company using exp
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		UpdateCompany();
@@ -922,7 +890,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private object GetContractParam()
 	{
-		// Get contract parameters for company assignment
 		return new { officeIdx = OfficeIdx, companyIdx = CompanyIdx };
 	}
 
@@ -939,7 +906,6 @@ public class PopupOfficeUpgrade : UIBase
 			strike_disposables.Dispose();
 			strike_disposables = new CompositeDisposable();
 		}
-		// Subscribe to strike events
 	}
 
 	private void SetTapReddotObj()
@@ -988,7 +954,6 @@ public class PopupOfficeUpgrade : UIBase
 	private ItemOfficeItem FindNextSequentialItem()
 	{
 		if (OfficeItemList == null || OfficeItemList.Count == 0) return null;
-		// Find next item in sequential order for auto-upgrade
 		for (int i = 0; i < OfficeItemList.Count; i++)
 		{
 			if (OfficeItemList[i] != null)
@@ -1000,7 +965,6 @@ public class PopupOfficeUpgrade : UIBase
 	private ItemOfficeItem FindLowestLevelItem()
 	{
 		if (OfficeItemList == null || OfficeItemList.Count == 0) return null;
-		// Find lowest level item for priority upgrade
 		ItemOfficeItem lowest = null;
 		for (int i = 0; i < OfficeItemList.Count; i++)
 		{
@@ -1022,7 +986,6 @@ public class PopupOfficeUpgrade : UIBase
 		if (companyIdx <= 0) return false;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if company has enough exp to level up
 		return false;
 	}
 }

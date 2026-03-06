@@ -151,7 +151,6 @@ public class PopupWorkshopMenu : UIBase
 		BuildingIdx = buildingIdx;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get building data from UserData
 		SetBuildingInfo("", 1);
 	}
 
@@ -208,7 +207,6 @@ public class PopupWorkshopMenu : UIBase
 	private void SetFacilityInfos(SeasonalBuildingData buildingData)
 	{
 		if (buildingData == null || ProductionFacilities == null) return;
-		// Set production facilities info
 		bool isDormitory = buildingData.BuildingType == E_BuildingType.Dormitory;
 		if (WorkshopHeaderObj != null) WorkshopHeaderObj.SetActive(!isDormitory);
 		if (DormitoryHeaderObj != null) DormitoryHeaderObj.SetActive(isDormitory);
@@ -225,7 +223,6 @@ public class PopupWorkshopMenu : UIBase
 	{
 		if (DormitoryWorkerCountText != null)
 			DormitoryWorkerCountText.text = activeWorkerCnt + "/" + maxWorkerCnt;
-		// Create/update worker icon slots
 		if (DormitoryWorkerIconListObj == null || DormitoryWorkerIconPrefab == null) return;
 	}
 
@@ -233,7 +230,6 @@ public class PopupWorkshopMenu : UIBase
 	{
 		if (productIdxList == null || productBox == null) return;
 		if (resourceList == null) resourceList = new List<ItemWorkshopResource>();
-		// Create resource icons for each product
 	}
 
 	private void SetManagerInfo(SeasonalWorkshopManagerData managerData, string abilityIconKey)
@@ -268,7 +264,6 @@ public class PopupWorkshopMenu : UIBase
 	private void SetBuildingUpgradeMenu(SeasonalBuildingData buildingData)
 	{
 		if (BuildingUpgradeMenu == null || buildingData == null) return;
-		// Initialize building upgrade menu with building data
 		UpdateUpgradeMenuBtnReddot();
 	}
 
@@ -302,7 +297,6 @@ public class PopupWorkshopMenu : UIBase
 	private void UpdateProductionCostValue(SeasonalWorkshopData workshopData)
 	{
 		if (workshopData == null) return;
-		// Update production cost display values
 	}
 
 	private void UpdateProductionListValues(List<ItemWorkshopResource> resourceList, List<BigInteger> productionValues_PerMile)
@@ -320,14 +314,12 @@ public class PopupWorkshopMenu : UIBase
 	private void UpdateProductionCoolTime(long productionCoolTimeMs)
 	{
 		if (ProductionNeedTime == null) return;
-		// Update production cooldown time display
 	}
 
 	private void UpdateManagerLevelUpRedDot()
 	{
 		if (ManagerRedDot == null) return;
 		ManagerRedDot.SetActive(false);
-		// Check if manager can be leveled up
 	}
 
 	private void SubscribeEvents(SeasonalBuildingData buildingData)
@@ -338,7 +330,6 @@ public class PopupWorkshopMenu : UIBase
 			Disposables = new CompositeDisposable();
 		}
 		if (buildingData == null) return;
-		// Subscribe to building data change events
 	}
 
 	private void ActiveReadyObjectCount(List<ItemWorkshopResource> resourceObjects, int needCount)
@@ -368,7 +359,6 @@ public class PopupWorkshopMenu : UIBase
 	{
 		if (BuildingUpgradeReddot == null) return;
 		BuildingUpgradeReddot.SetActive(false);
-		// Check if any facility can be upgraded
 	}
 
 	public int GetBuildingIdx()

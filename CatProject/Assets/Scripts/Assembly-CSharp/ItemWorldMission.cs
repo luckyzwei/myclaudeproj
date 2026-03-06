@@ -79,14 +79,12 @@ public class ItemWorldMission : MonoBehaviour
 
 	private bool IsCheckLockMission(int regionIdx, int missionIdx)
 	{
-		// Check if mission is locked based on region progress
 		return false;
 	}
 
 	private void SetImg()
 	{
 		if (img_mission == null) return;
-		// Load mission image
 	}
 
 	private void SetDesc()
@@ -127,7 +125,6 @@ public class ItemWorldMission : MonoBehaviour
 
 	private void OnClickClear()
 	{
-		// Claim mission reward
 		PageRichAchieve page;
 		if (pageUI != null && pageUI.TryGetTarget(out page))
 		{

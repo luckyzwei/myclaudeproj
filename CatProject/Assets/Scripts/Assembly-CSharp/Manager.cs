@@ -24,7 +24,6 @@ public class Manager : Worker
 		TargetOffice = officeIdx;
 		WorkerInit();
 		GetRandomCooltime();
-		// 매니저 캐릭터 로드
 		LoadChar(() =>
 		{
 			LoadManagerUI(() =>
@@ -54,7 +53,6 @@ public class Manager : Worker
 
 	public void WorkOutImmediate()
 	{
-		// 즉시 퇴근 처리
 		isOut = true;
 		ReturnManagerUI();
 		GotoWorkOffReturn();
@@ -67,7 +65,6 @@ public class Manager : Worker
 
 	private void LoadChar(Action LoadComp)
 	{
-		// 매니저 캐릭터 어드레서블 로드
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ManagerCardSystem == null)
 		{
@@ -80,7 +77,6 @@ public class Manager : Worker
 			LoadComp?.Invoke();
 			return;
 		}
-		// 캐릭터 리소스 로드 후 콜백
 		LoadComp?.Invoke();
 	}
 
@@ -96,7 +92,6 @@ public class Manager : Worker
 
 	private void LoadManagerUI(Action action)
 	{
-		// InGameManagerUI 프리팹 로드
 		action?.Invoke();
 	}
 
@@ -113,10 +108,8 @@ public class Manager : Worker
 	{
 		if (ManagerUI == null) return;
 		if (state != E_State.Work) return;
-		// 매니저 말풍선 메시지 표시
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// 랜덤 메시지 선택 후 표시
 		curMessageCoolTime = maxMessageCoolTime;
 	}
 
@@ -124,7 +117,6 @@ public class Manager : Worker
 	{
 		base.Update();
 		if (state != E_State.Work) return;
-		// 메시지 쿨타임 처리
 		realtime_dtime += Time.deltaTime;
 		if (realtime_dtime >= 1f)
 		{
@@ -140,7 +132,6 @@ public class Manager : Worker
 
 	private void GetRandomCooltime()
 	{
-		// 랜덤 메시지 쿨타임 설정 (30~90초)
 		maxMessageCoolTime = UnityEngine.Random.Range(30, 91);
 		curMessageCoolTime = maxMessageCoolTime;
 	}

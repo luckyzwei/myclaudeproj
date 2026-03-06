@@ -121,7 +121,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	public void DrawList()
 	{
-		// Populate company list slots from company data
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
@@ -134,7 +133,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickContracts(int company)
 	{
-		// Contract with selected company
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		ContractCompanyCb?.Invoke();
@@ -142,7 +140,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickAdRefreshCompany()
 	{
-		// Watch ad to refresh company list
 		RefreshCompanyList();
 	}
 
@@ -152,7 +149,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickCashRefreshCompany()
 	{
-		// Pay cash to refresh company list
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		RefreshCompanyList();
@@ -160,7 +156,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickRefreshCompany()
 	{
-		// Free refresh company list
 		RefreshCompanyList();
 	}
 

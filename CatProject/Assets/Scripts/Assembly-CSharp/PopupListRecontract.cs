@@ -153,7 +153,6 @@ public class PopupListRecontract : UIBase
 		ItemOfficeCompanyInfoList.Clear();
 		FocusOfficeSlot = null;
 
-		// Create office company info slots from prefab
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
@@ -165,7 +164,6 @@ public class PopupListRecontract : UIBase
 	private IEnumerator FocusOffsetSlot()
 	{
 		yield return null;
-		// Scroll to focused office slot position
 		if (FocusOfficeSlot != null && ListScrollRect != null)
 		{
 			// Normalize scroll position to focus item

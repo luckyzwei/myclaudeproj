@@ -168,19 +168,16 @@ public class ConstructableBuildingBase : BuildingBase
 		if (!buildingDataMap.TryGetValue(BuildingIdx, out var buildingData))
 			return;
 
-		// Subscribe to open state changes
 		if (buildingData.IsOpen != null)
 		{
 			buildingData.IsOpen.Subscribe(isOpen => OnChangedOpenState(isOpen)).AddTo(Disposables);
 		}
 
-		// Subscribe to construction state changes
 		if (buildingData.IsConstruction != null)
 		{
 			buildingData.IsConstruction.Subscribe(isConstruction => OnChangedInConstruction(isConstruction)).AddTo(Disposables);
 		}
 
-		// Subscribe to building level changes for facility updates
 		if (buildingData.Level != null)
 		{
 			buildingData.Level.Subscribe(level =>
@@ -199,7 +196,6 @@ public class ConstructableBuildingBase : BuildingBase
 			}).AddTo(Disposables);
 		}
 
-		// Subscribe to each facility's level changes
 		if (buildingData.FacilityDataMap != null)
 		{
 			foreach (var kvp in buildingData.FacilityDataMap)
@@ -217,7 +213,6 @@ public class ConstructableBuildingBase : BuildingBase
 			}
 		}
 
-		// Subscribe to worker count changes
 		if (buildingData.WorkerData != null && buildingData.WorkerData.HiredWorkerCount != null)
 		{
 			buildingData.WorkerData.HiredWorkerCount.Subscribe(count =>
@@ -226,18 +221,15 @@ public class ConstructableBuildingBase : BuildingBase
 			}).AddTo(Disposables);
 		}
 
-		// Subscribe to openable building idx changes
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData?.OpenableBuildingIdxMap != null && stageData.OpenableBuildingIdxMap.TryGetValue(buildingData.BuildingType, out var openableProp))
 		{
 			openableProp.Subscribe(idx => OnChangedOpenableBuildingIdx(idx)).AddTo(OpenableEventDisposables);
 		}
 
-		// Set initial building state
 		var initialState = GetInitialBuildingState(buildingData);
 		ChangeBuildingState(initialState);
 
-		// Load UIs if building is already open
 		if (buildingData.IsOpen != null && buildingData.IsOpen.Value)
 		{
 			LoadConstructionUI();
@@ -270,7 +262,6 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void OnChangeHasMoneyValue(BigInteger hasMoney_PerMile)
 	{
-		// Update construction UI affordability state when player's money changes
 		if (BuildingInConstructionUI != null && BuildingState == E_BuildingState.Built)
 		{
 			// Trigger construction UI to re-evaluate upgrade conditions
@@ -291,22 +282,17 @@ public class ConstructableBuildingBase : BuildingBase
 
 	protected virtual void OnOpenedBuilding()
 	{
-		// Show building open effect
 		if (BuildingOpenFx != null)
 			BuildingOpenFx.SetActive(true);
 
-		// Enable character transform parents
 		if (CharTransParentsObj != null)
 			CharTransParentsObj.SetActive(true);
 
-		// Load floating UIs
 		LoadConstructionUI();
 		LoadWorkerBubbleUI();
 
-		// Play completion sound
 		PlayBuildingConstructCompleteSound();
 
-		// Initialize facility resources if not done yet
 		if (!isResourceInit)
 		{
 			isResourceInit = true;
@@ -394,7 +380,6 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void OnChangeMaxWorkerCount(int hiredCount)
 	{
-		// Update building door objects visibility based on hired worker count
 		if (BuildingDoorObjs != null)
 		{
 			for (int i = 0; i < BuildingDoorObjs.Count; i++)
@@ -409,7 +394,6 @@ public class ConstructableBuildingBase : BuildingBase
 	{
 		if (level <= 0) return;
 
-		// Calculate new facility level index for resource swapping
 		var levelData = SeasonalTableHelper.GetFacilityLevelTable(BuildingIdx, facilityIdx);
 		if (levelData == null) return;
 
@@ -418,7 +402,6 @@ public class ConstructableBuildingBase : BuildingBase
 		if (maxLevel > 0)
 			facilityLevelIndex = (level - 1) * SubFacilities.Count / maxLevel;
 
-		// Check if the level index has changed
 		int prevLevelIndex = 0;
 		if (FacilityLevelIndex.TryGetValue(abilityType, out int existingIndex))
 			prevLevelIndex = existingIndex;
@@ -449,7 +432,6 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void OnShowSmokeForResource()
 	{
-		// Show smoke effect at building position when facility resources change
 		if (BuildingObj == null) return;
 
 		var prefab = Resources.Load<GameObject>("UI/InGame/Fx_Seasonal_Object_Smoke");
@@ -466,7 +448,6 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void OnShowSmokeForAddFacility(Pair<int> hiredCount)
 	{
-		// Only show smoke when a new worker is added (current > previous)
 		if (hiredCount.Current <= hiredCount.Previous) return;
 
 		if (BuildingObj == null) return;
@@ -486,7 +467,6 @@ public class ConstructableBuildingBase : BuildingBase
 	protected void PlayBuildingConstructSound()
 	{
 		if (string.IsNullOrEmpty(BuildingConstructSoundName)) return;
-		// Play construction start sound via sound system
 		var soundObj = gameObject.GetComponent<PlaySound>();
 		if (soundObj == null)
 			soundObj = gameObject.AddComponent<PlaySound>();
@@ -497,7 +477,6 @@ public class ConstructableBuildingBase : BuildingBase
 	protected void PlayBuildingConstructCompleteSound()
 	{
 		if (string.IsNullOrEmpty(BuildingConstructCompleteSoundName)) return;
-		// Play construction complete sound via sound system
 		var soundObj = gameObject.GetComponent<PlaySound>();
 		if (soundObj == null)
 			soundObj = gameObject.AddComponent<PlaySound>();

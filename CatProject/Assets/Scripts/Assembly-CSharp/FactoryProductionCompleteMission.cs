@@ -27,7 +27,6 @@ public class FactoryProductionCompleteMission : SingleMissionBase
 	public override void Subscribe()
 	{
 		if (Disposables == null) return;
-		// Subscribe to factory production events
 		IsActive = CheckIsActive();
 	}
 
@@ -50,7 +49,6 @@ public class FactoryProductionCompleteMission : SingleMissionBase
 	private bool CheckIsActive()
 	{
 		if (OpenCondition_FactoryType <= 0 && OpenCondition_FactoryLevel <= 0) return true;
-		// Check if factory type and level conditions are met
 		return true;
 	}
 }

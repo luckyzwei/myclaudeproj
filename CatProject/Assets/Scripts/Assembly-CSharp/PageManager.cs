@@ -175,7 +175,6 @@ public class PageManager : UIBase
 
 	private void OnClickSortingBtn()
 	{
-		// Cycle through sorting categories
 		int curIdx = CategoryList.IndexOf(CurCategory);
 		int nextIdx = (curIdx + 1) % CategoryList.Count;
 		SetCategory(CategoryList[nextIdx]);
@@ -210,7 +209,6 @@ public class PageManager : UIBase
 	{
 		if (EnableEquip_Noti != null) EnableEquip_Noti.SetActive(false);
 		if (UnSatisfy_Noti != null) UnSatisfy_Noti.SetActive(false);
-		// Check for equippable/unsatisfied manager notifications
 	}
 
 	private void UpdateManagerCard(int managerIdx)
@@ -232,7 +230,6 @@ public class PageManager : UIBase
 		if (CurrentSortingManagers == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ManagerCardSystem == null) return;
-		// Sort managers based on CurCategory
 	}
 
 	private void ChangeTab(E_MANAGER_TAP tab, bool on)
@@ -256,14 +253,12 @@ public class PageManager : UIBase
 	public int GetNextManagerIdx(int curManagerIdx)
 	{
 		if (CurrentSortingManagers == null || CurrentSortingManagers.Count == 0) return 0;
-		// Find next manager index in sorted list
 		return 0;
 	}
 
 	public int GetPrevManagerIdx(int curManagerIdx)
 	{
 		if (CurrentSortingManagers == null || CurrentSortingManagers.Count == 0) return 0;
-		// Find previous manager index in sorted list
 		return 0;
 	}
 

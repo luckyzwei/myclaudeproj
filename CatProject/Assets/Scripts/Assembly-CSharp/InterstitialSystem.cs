@@ -48,7 +48,6 @@ public class InterstitialSystem : SystemBase
 	{
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null) return;
-		// Check if user has purchased any in-app to disable interstitial
 		if (userData.BuyInappIds != null && userData.BuyInappIds.Count > 0)
 			INTERSTITIAL_ACTIVE_FLAG = false;
 	}
@@ -90,7 +89,6 @@ public class InterstitialSystem : SystemBase
 
 	private void OpenInterstitial()
 	{
-		// Show interstitial ad
 		ResetTimer();
 	}
 
@@ -102,7 +100,6 @@ public class InterstitialSystem : SystemBase
 
 	public void ShowInterstitial(Action callBack)
 	{
-		// Show interstitial ad with callback
 		ResetTimer();
 		callBack?.Invoke();
 	}

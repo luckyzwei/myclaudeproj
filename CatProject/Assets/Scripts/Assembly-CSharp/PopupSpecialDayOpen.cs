@@ -136,7 +136,6 @@ public class PopupSpecialDayOpen : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set special day info (title, subtitle, description, remain time, reward image)
 	}
 
 	private void RunHUDEffect()
@@ -148,7 +147,6 @@ public class PopupSpecialDayOpen : UIBase
 	private IEnumerator ShowSpecialDayHUDEffect()
 	{
 		yield return new WaitForSeconds(0.5f);
-		// Show special day HUD decoration effect
 	}
 
 	public void KillProcess()
@@ -162,7 +160,6 @@ public class PopupSpecialDayOpen : UIBase
 
 	private void UpdateSpecialTheme()
 	{
-		// Update tile images for special day theme
 		if (TileImg != null && originTile != null) TileImg.sprite = originTile;
 		if (TileBgImg != null) TileBgImg.color = originTileBgColor;
 	}

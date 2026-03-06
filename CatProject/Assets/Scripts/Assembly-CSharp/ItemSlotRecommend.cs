@@ -49,7 +49,6 @@ public class ItemSlotRecommend : MonoBehaviour
 	public void SetSlotState(E_ItemSlotRecommendState state)
 	{
 		SlotState = state;
-		// Deactivate all
 		if (ActiveObjList != null)
 		{
 			for (int i = 0; i < ActiveObjList.Count; i++)
@@ -58,7 +57,6 @@ public class ItemSlotRecommend : MonoBehaviour
 					ActiveObjList[i].SetActive(false);
 			}
 		}
-		// Activate the correct one
 		switch (state)
 		{
 			case E_ItemSlotRecommendState.AdsUser:

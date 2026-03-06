@@ -112,7 +112,6 @@ public class InvestSystem
 			return;
 		}
 
-		// Generate random multiple
 		data.MultipleValue = UnityEngine.Random.Range(invest_amount_multiple_min, invest_amount_multiple_max + 1);
 		data.InvestStartTime = DateTime.UtcNow;
 

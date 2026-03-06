@@ -33,7 +33,6 @@ public class FactoryBuilding : MonoBehaviour
 		FactoryIdx = idx;
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.FactoryData == null) return;
-		// Get factory building data for this index
 		SetOpen();
 	}
 

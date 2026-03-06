@@ -117,7 +117,6 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 
 	private void OnClickMilestoneOpenBtn()
 	{
-		// Open milestone popup
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 	}
@@ -136,7 +135,6 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Apply reward to user data
 		UpdateMoneySafe();
 	}
 
@@ -146,19 +144,16 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 		if (MoneySafeEmptyDecoObj != null) MoneySafeEmptyDecoObj.SetActive(false);
 		if (MoneySafeCount != null) MoneySafeCount.text = "0";
 		if (MoneySafeMoney != null) MoneySafeMoney.text = "0";
-		// Populate from stage money safe data
 	}
 
 	private void GetMoneySafe(BigInteger money)
 	{
-		// Add money safe reward to user data
 		if (MoneySafeTween != null) MoneySafeTween.Play();
 		UpdateMoneySafe();
 	}
 
 	private void OnClickGetMoneySafe()
 	{
-		// Collect accumulated money safe reward
 		GetMoneySafe(BigInteger.Zero);
 	}
 
@@ -166,14 +161,12 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 	{
 		if (OpenNowBanner == null) return;
 		OpenNowBanner.gameObject.SetActive(false);
-		// Check if there is an active special sale banner
 	}
 
 	private void UpdateNextRegionBanner()
 	{
 		if (NextRegionBanner == null) return;
 		NextRegionBanner.gameObject.SetActive(false);
-		// Check if next region banner should show
 	}
 
 	private void UpdateSubMission()
@@ -200,7 +193,6 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 	{
 		if (MilestoneRoot == null) return;
 		MilestoneRoot.SetActive(false);
-		// Check milestone availability
 	}
 
 	private void OnClickOpenNowBanner(int idx)

@@ -121,11 +121,9 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Set building/car market info
 		if (MarketName != null) MarketName.text = "";
 		if (LevelText != null) LevelText.text = "";
 
-		// Set navigation buttons
 		if (PrevBtn != null) PrevBtn.gameObject.SetActive(BuildingIdx > 0);
 		if (NextBtn != null) NextBtn.gameObject.SetActive(true);
 	}
@@ -159,7 +157,6 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 		if (MoneyHud == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set money HUD values
 		for (int i = 0; i < MoneyHud.Count; i++)
 		{
 			if (MoneyHud[i] == null || MoneyHud[i].Root == null) continue;

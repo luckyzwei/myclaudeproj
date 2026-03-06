@@ -222,7 +222,6 @@ public class PopupFactoryOrder : UIBase
 		if (OrderInfoObj != null) OrderInfoObj.SetActive(true);
 		if (OrderWaitObj != null) OrderWaitObj.SetActive(false);
 		if (OrderCompRedDotObj != null) OrderCompRedDotObj.SetActive(false);
-		// Update selected order detail info
 	}
 
 	public void RefreshSlot()
@@ -256,7 +255,6 @@ public class PopupFactoryOrder : UIBase
 
 	private void OnClickProductShortCut()
 	{
-		// Navigate to product production
 		Hide();
 	}
 
@@ -268,7 +266,6 @@ public class PopupFactoryOrder : UIBase
 	private void InitDailyReward()
 	{
 		if (ItemFactoryDailyRewards == null) return;
-		// Initialize daily reward items
 		UpdateDailyRewards();
 	}
 
@@ -276,7 +273,6 @@ public class PopupFactoryOrder : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update daily order reward progress
 		if (DailyRewardProgressSlider != null)
 		{
 			// Set progress based on completed orders today

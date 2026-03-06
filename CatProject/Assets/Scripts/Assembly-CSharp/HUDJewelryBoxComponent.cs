@@ -55,14 +55,12 @@ public class HUDJewelryBoxComponent : MonoBehaviour
 
 	public void UpdateJewelryBoxValue()
 	{
-		// Update accumulate count and icon from jewelry box data
 		if (RedDotObj != null)
 			RedDotObj.SetActive(false);
 	}
 
 	private void SetJewelryBoxIcon(int stageStep, bool isFull)
 	{
-		// Set icon based on current stage step and full state
 		if (isFull && FullNoticeTween != null)
 			FullNoticeTween.Play();
 	}

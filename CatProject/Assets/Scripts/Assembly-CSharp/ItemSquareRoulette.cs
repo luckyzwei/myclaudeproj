@@ -23,8 +23,6 @@ public class ItemSquareRoulette : MonoBehaviour
 
 	public void SetReward(int specialDayRouletteIdx)
 	{
-		// Set reward icon and count text from data table
-		// Icon and count configured via external data
 	}
 
 	public void SetHighlight(bool isHighlighted)

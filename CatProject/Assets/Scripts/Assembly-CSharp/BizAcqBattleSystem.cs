@@ -191,14 +191,12 @@ public class BizAcqBattleSystem : SystemBase
 	{
 		if (caster == null) return false;
 		if (caster.SkillData == null) return false;
-		// Would check skill activation conditions
 		return false;
 	}
 
 	private void CheckAndTriggerSkill(BizAcqCharacterData caster, Config.ManagerSkillActivationType activationType)
 	{
 		if (!CheckSkillTrigger(caster, activationType)) return;
-		// Would create and queue skill command
 	}
 
 	public int ApplyDamage(BizAcqCharacterData caster, BizAcqCharacterData target, int damage)
@@ -268,7 +266,6 @@ public class BizAcqBattleSystem : SystemBase
 
 	public void UpdateBattlePackageBuyOption()
 	{
-		// Would refresh battle speed options after purchase
 		UpdateBattleSpeedList();
 	}
 
@@ -363,13 +360,11 @@ public class BizAcqBattleSystem : SystemBase
 	public void PlayBgm(E_BgmType bgmType)
 	{
 		CurBgmType = bgmType;
-		// Would play BGM via audio system
 	}
 
 	public void StopBgm()
 	{
 		CurBgmType = E_BgmType.None;
-		// Would stop BGM via audio system
 	}
 
 	public BigInteger AddJewelryBoxValue(BigInteger value)
@@ -493,13 +488,11 @@ public class BizAcqBattleSystem : SystemBase
 	private BizAcqTeamData MakeEnemyTeamData(int stageIdx)
 	{
 		var characters = new List<BizAcqCharacterData>();
-		// Would populate from stage data table
 		return new BizAcqTeamData(TeamType.Enemy, characters);
 	}
 
 	private BizAcqCharacterData MakePlayerCharacter(int ceoIdx, int teamIdx)
 	{
-		// Would load stats from manager card data
 		int power = 10;
 		int maxHp = 100;
 		int skillIdx = 0;
@@ -509,7 +502,6 @@ public class BizAcqBattleSystem : SystemBase
 
 	private BizAcqCharacterData MakeEnemyCharacter(int ceoIdx, int stageIdx, int slotIndex)
 	{
-		// Would load stats from stage enemy data table
 		int power = 10;
 		int maxHp = 100;
 		int skillIdx = 0;
@@ -583,7 +575,6 @@ public class BizAcqBattleSystem : SystemBase
 		if (userData == null) return false;
 		var bizAcqData = userData.BizAcqUserData;
 		if (bizAcqData == null) return false;
-		// Would check against max stage from table data
 		return false;
 	}
 

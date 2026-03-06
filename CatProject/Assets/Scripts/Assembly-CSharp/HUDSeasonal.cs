@@ -224,7 +224,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 		SeasonalNoticeList = new List<HUDSeasonalNotice>();
 		bStartGame = false;
 
-		// Bind button listeners
 		if (BackToOfficeBtn != null) BackToOfficeBtn.onClick.AddListener(OnClickedBackToOfficeBtn);
 		if (TimeScheduleButton != null) TimeScheduleButton.onClick.AddListener(OnClickedTimeScheduleBtn);
 		if (PopupSkillsBtn != null) PopupSkillsBtn.onClick.AddListener(OnClickedPopupSkillsBtn);
@@ -535,7 +534,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		if (NoticeListObj == null || NoticePrefabObj == null) return null;
 
-		// Try reuse inactive notice
 		if (SeasonalNoticeList != null)
 		{
 			for (int i = 0; i < SeasonalNoticeList.Count; i++)
@@ -545,7 +543,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 			}
 		}
 
-		// Create new
 		var go = Instantiate(NoticePrefabObj, NoticeListObj.transform);
 		var notice = go.GetComponent<HUDSeasonalNotice>();
 		if (notice != null)

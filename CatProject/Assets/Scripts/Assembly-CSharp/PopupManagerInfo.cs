@@ -138,12 +138,10 @@ public class PopupManagerInfo : UIBase, ITabToggleGroup
 	private void InitHudTopInfo(bool isOpenAcquisition)
 	{
 		if (HUDTopInfo == null) return;
-		// Configure HUD top info based on acquisition state
 	}
 
 	public void ManagerReinforceTutorial()
 	{
-		// Trigger reinforce tutorial for current manager
 		if (TabToggleGroup != null)
 			TabToggleGroup.ChangeTab(0);
 	}

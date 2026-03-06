@@ -684,7 +684,6 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void GiveBackHouseAddPoint()
 	{
-		// Recalculate house-related bonus points after data load
 		if (AbilitySystem != null)
 			AbilitySystem.UpdateAbility();
 	}
@@ -902,7 +901,6 @@ public class GameRoot : Singleton<GameRoot>
 
 	public void ConvertUserData()
 	{
-		// Version migration: convert old user data format to new format
 		if (UserData != null)
 			UserData.Save();
 	}

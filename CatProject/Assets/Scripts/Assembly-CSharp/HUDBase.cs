@@ -58,7 +58,6 @@ public class HUDBase : HUDAniBase
 	protected void UpdateDayStatus(DaySystem.DayStatus status)
 	{
 		if (TimeIcon == null) return;
-		// Time icon sprite set based on status
 	}
 
 	protected void UpdateDayTime()

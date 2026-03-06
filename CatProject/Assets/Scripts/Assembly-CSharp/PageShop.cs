@@ -141,7 +141,6 @@ public class PageShop : FullScreenUI
 
 	public void SetEnterPlace(ShopEnterPlace place)
 	{
-		// Set initial focus based on entry place
 		switch (place)
 		{
 			case ShopEnterPlace.gem:
@@ -166,7 +165,6 @@ public class PageShop : FullScreenUI
 	private IEnumerator FocusCoroutine()
 	{
 		yield return null;
-		// Scroll to focused content section
 		FocusContents = ShopContentsType.None;
 	}
 
@@ -195,7 +193,6 @@ public class PageShop : FullScreenUI
 
 	private void OnChangeTab(int tabIdx)
 	{
-		// Handle shop tab change
 		bool isManagerTab = tabIdx >= ManagerTabStartIdx;
 		IsManagerTabOpen = isManagerTab;
 		if (ManagerTab != null) ManagerTab.gameObject.SetActive(isManagerTab);

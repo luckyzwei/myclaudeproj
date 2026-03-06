@@ -52,19 +52,16 @@ public class ItemShopTabManager : MonoBehaviour, ITabToggleTab
 	public void FocusOnItemCoroutine(PageShop.ShopContentsType focusContents)
 	{
 		if (ShopScroll == null || ShopContents == null) return;
-		// Scroll to focused contents type
 	}
 
 	public void ShowArrow(PageShop.ShopContentsType type)
 	{
 		if (ShopContents == null) return;
-		// Show arrow indicator for specific shop contents
 	}
 
 	public void HideArrows()
 	{
 		if (ShopContents == null) return;
-		// Hide all arrow indicators
 	}
 
 	private void SetHudTopInfo()

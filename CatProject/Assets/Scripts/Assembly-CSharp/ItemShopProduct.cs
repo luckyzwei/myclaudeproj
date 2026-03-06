@@ -213,7 +213,6 @@ public class ItemShopProduct : MonoBehaviour
 		ShopGoodsIdx = idx;
 		if (region >= 0) shopRewardRegion = region;
 
-		// Hide all button types initially
 		if (cashBtn != null) cashBtn.gameObject.SetActive(false);
 		if (gemBtn != null) gemBtn.gameObject.SetActive(false);
 		if (freeBtn != null) freeBtn.gameObject.SetActive(false);
@@ -221,7 +220,6 @@ public class ItemShopProduct : MonoBehaviour
 		if (keyBtn != null) keyBtn.gameObject.SetActive(false);
 		if (OtherBtn != null) OtherBtn.gameObject.SetActive(false);
 
-		// Activate the appropriate button based on price type
 		switch (myPriceType)
 		{
 			case PriceType.Cash:

@@ -94,7 +94,6 @@ public class PageSeasonalShop : FullScreenUI
 	public void SetFocus(ShopContentsType type)
 	{
 		FocusContents = type;
-		// Scroll to focused content section
 		if (ShopScroll != null)
 			ShopScroll.normalizedPosition = new UnityEngine.Vector2(0f, 1f);
 	}

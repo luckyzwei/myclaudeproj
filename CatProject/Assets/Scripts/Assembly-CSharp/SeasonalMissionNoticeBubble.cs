@@ -65,13 +65,11 @@ public class SeasonalMissionNoticeBubble : MonoBehaviour
 	private void OnClickedMissionRewardClaimBtn()
 	{
 		if (ActiveMissionSlot < 0) return;
-		// Claim mission reward via system
 		Reset();
 	}
 
 	private void ShowRewardEffect(Dictionary<int, BigInteger> rewards)
 	{
 		if (rewards == null || GoodsEffectStartTr == null || GoodsEffectEndTr == null) return;
-		// Show reward effect for each item in rewards dictionary
 	}
 }

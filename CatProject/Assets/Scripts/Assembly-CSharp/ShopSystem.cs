@@ -266,7 +266,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Initialize reactive properties and subjects
 		OnNoAdsChanged = new Subject<bool>();
 		OnPurchaseSuccess = new Subject<(int purchaseIdx, int count)>();
 		SeasonalFreeCoinReset = new Subject<int>();
@@ -278,7 +277,6 @@ public class ShopSystem
 		RemainADManagerBoxCoolTime = new ReactiveProperty<int>(0);
 		RemainADManagerBoxResetTime = new ReactiveProperty<int>(0);
 
-		// Initialize collections
 		FreeItemTimes = new Dictionary<int, IReactiveProperty<int>>();
 		WaitPackagePopups = new Queue<int>();
 		SeasonalEnablePackages = new List<int>();
@@ -288,13 +286,11 @@ public class ShopSystem
 		InBuyBizStagePassSpecialPackageList = new List<bool>();
 		SeasonalPackageMatchMap = new Dictionary<SeasonalPackageMatchType, List<int>>();
 
-		// Initialize disposables
 		noadsDisposables = new CompositeDisposable();
 		playerlvpassDisposables = new CompositeDisposable();
 		managerDisposables = new CompositeDisposable();
 		NotificationDisposables = new CompositeDisposable();
 
-		// Load config values
 		noads_sale_start_player_lv = 5;
 		noads_sale_time = 600; // 10 minutes
 		ads_sale_onemoretime = 300;
@@ -306,7 +302,6 @@ public class ShopSystem
 		shop_ceo_box_premium_key_1_gem_price = 30;
 		seasonal_shop_free_coin_cooltime = 300; // 5 minutes
 
-		// Initialize state
 		state = ShopState.None;
 		curLocation = InAppPurchaseLocation.none;
 		InMultiRevenue = false;
@@ -318,28 +313,20 @@ public class ShopSystem
 		CurShopSaleIdx = 0;
 		CurShopSaleType = Config.E_ShopSaleListType.None;
 
-		// Update no-ads state
 		UpdateNoAds();
 
-		// Initialize shop special items
 		InitShopSpecial();
 
-		// Set up free items
 		SetFreeItems();
 
-		// Set seasonal free item
 		SetSeasonalFreeItem();
 
-		// Set AD manager box
 		SetADManagerBox();
 
-		// Set shop sale
 		SetShopSale();
 
-		// Initialize endless offer
 		InitEndlessOfferList();
 
-		// Set cycle limited shop goods
 		SetCycleLimitedShopGoods();
 
 		if (!skipCheckPackage)
@@ -370,7 +357,6 @@ public class ShopSystem
 
 		var userData = gameRoot.UserData;
 
-		// Check gem pass purchases
 		InGemPass.Clear();
 		if (userData.BuyInappIds != null)
 		{
@@ -382,21 +368,17 @@ public class ShopSystem
 				InGemPass.Add(InAppPurchaseManager.GemPass3_PackageIdx);
 		}
 
-		// Check multi revenue purchase
 		InMultiRevenue = userData.BuyInappIds != null &&
 			userData.BuyInappIds.Contains(InAppPurchaseManager.MultiRevenue_productID);
 
-		// Check offline time add purchases
 		InMaxOfflineAdd = userData.BuyInappIds != null &&
 			userData.BuyInappIds.Contains(InAppPurchaseManager.OfflineTimeAdd_productID);
 		InMaxOfflineAddNew = userData.BuyInappIds != null &&
 			userData.BuyInappIds.Contains(InAppPurchaseManager.NewOfflineTimeAdd_productID);
 
-		// Check BizAcq battle speed special package
 		InBuyBizAcqBattleSpeedSpecialPackage = userData.BuyInappIds != null &&
 			userData.BuyInappIds.Contains(InAppPurchaseManager.BizAcq_BattleSpeed_Special_productID);
 
-		// Check BizAcq stage pass packages
 		InBuyBizStagePassSpecialPackageList.Clear();
 		int stagePassCount = InAppPurchaseManager.BizAcq_StagePass_Special_Package_End_Idx -
 			InAppPurchaseManager.BizAcq_StagePass_Special_Package_Start_Idx + 1;
@@ -405,7 +387,6 @@ public class ShopSystem
 			InBuyBizStagePassSpecialPackageList.Add(false);
 		}
 
-		// Subscribe to multi-revenue changes
 		SubscribeMultiRevenue();
 	}
 
@@ -416,7 +397,6 @@ public class ShopSystem
 
 		bool prevNoAds = noAds;
 
-		// Check if the user purchased no-ads or no-ads sale
 		var iapManager = gameRoot.InAppPurchaseManager;
 		if (iapManager != null)
 		{
@@ -424,14 +404,12 @@ public class ShopSystem
 					iapManager.checkItemBought(InAppPurchaseManager.NoadsSale_productID);
 		}
 
-		// Also check from UserData BuyInappIds
 		if (!noAds && gameRoot.UserData != null && gameRoot.UserData.BuyInappIds != null)
 		{
 			noAds = gameRoot.UserData.BuyInappIds.Contains(InAppPurchaseManager.NoAds_productID) ||
 					gameRoot.UserData.BuyInappIds.Contains(InAppPurchaseManager.NoadsSale_productID);
 		}
 
-		// Notify if changed
 		if (prevNoAds != noAds && OnNoAdsChanged != null)
 		{
 			OnNoAdsChanged.OnNext(noAds);
@@ -448,7 +426,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Check if multi-revenue sale product was purchased
 		bool hasMRSale = false;
 		if (gameRoot.UserData != null && gameRoot.UserData.BuyInappIds != null)
 		{
@@ -468,7 +445,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Subscribe to BuyInappIds changes to detect multi-revenue purchase
 		gameRoot.UserData.BuyInappIds.ObserveAdd().Subscribe(addEvent =>
 		{
 			if (addEvent.Value == InAppPurchaseManager.MultiRevenue_productID)
@@ -487,7 +463,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// If already purchased no-ads, no need for sale
 		if (noAds)
 		{
 			InNoAdsSale = false;
@@ -500,7 +475,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check if there's an active no-ads sale time
 		if (shopData.NoAdsSaleEndTime > now)
 		{
 			InNoAdsSale = true;
@@ -538,14 +512,11 @@ public class ShopSystem
 
 	private void CheckNoAdsSaleAndShowPopup()
 	{
-		// Show a no-ads sale popup to the user if conditions are met
 		if (!InNoAdsSale || noAds) return;
 
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Check daily popup count limit
-		// Popup display would be handled by UI system
 	}
 
 	public void CheckNoAdsSale(bool showPopup = false)
@@ -560,7 +531,6 @@ public class ShopSystem
 			return;
 		}
 
-		// Check player level requirement
 		int playerLv = gameRoot.UserData.Level != null ? gameRoot.UserData.Level.Value : 0;
 		if (playerLv < noads_sale_start_player_lv) return;
 
@@ -642,7 +612,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Show player level pass sale popup through UI system
 	}
 
 	public void CheckPlayerLvPassSale()
@@ -702,7 +671,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null || shopData.SpecialPackages == null) return;
 
-		// Find special package that matches the manager level-up offer
 		foreach (var sp in shopData.SpecialPackages)
 		{
 			if (sp == null || sp.Expire || sp.Purchase) continue;
@@ -744,7 +712,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Subscribe to manager level changes to trigger manager-specific packages
 		if (gameRoot.UserData.ManagerData != null)
 		{
 			gameRoot.UserData.ManagerData.ObserveAdd().Subscribe(addEvent =>
@@ -762,7 +729,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null) return;
 
-		// Check if factory slot package exists and is not purchased
 		bool found = false;
 		if (shopData.Packages != null)
 		{
@@ -797,13 +763,11 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null) return 0;
 
-		// Create a desk package based on the level
 		int packageIdx = (int)PackageGroup.Desk + level;
 
 		if (shopData.Packages == null)
 			shopData.Packages = new List<PackageData>();
 
-		// Check if already exists
 		foreach (var p in shopData.Packages)
 		{
 			if (p != null && p.PackageIdx == packageIdx) return packageIdx;
@@ -821,13 +785,10 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.ContentsOpenSystem == null) return;
 
-		// Subscribe to desk/office open events to trigger desk package offers
 	}
 
 	private bool IgnoreSubscribePackage(int package_contents_open)
 	{
-		// Some package types should not have their contents open subscribed
-		// e.g., NoTimeLimit packages or already expired/purchased ones
 		if (package_contents_open <= 0) return true;
 
 		var gameRoot = Singleton<GameRoot>.Instance;
@@ -846,7 +807,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check and expire timed packages
 		if (shopData.Packages != null)
 		{
 			foreach (var package in shopData.Packages)
@@ -864,7 +824,6 @@ public class ShopSystem
 			}
 		}
 
-		// Check special packages
 		if (shopData.SpecialPackages != null)
 		{
 			foreach (var sp in shopData.SpecialPackages)
@@ -886,8 +845,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null || shopData.Packages == null) return;
 
-		// Check if there are sequence packages that need to advance
-		// (e.g., after buying package step 1, unlock step 2)
 	}
 
 	public void AllocManagerOpenPackage()
@@ -901,7 +858,6 @@ public class ShopSystem
 		if (shopData.SpecialPackages == null)
 			shopData.SpecialPackages = new List<SpecialPackageData>();
 
-		// Check if manager open package already exists
 		bool found = false;
 		foreach (var sp in shopData.SpecialPackages)
 		{
@@ -929,7 +885,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Update special package states
 		foreach (var sp in shopData.SpecialPackages)
 		{
 			if (sp == null || sp.Expire || sp.Purchase) continue;
@@ -952,7 +907,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Update remaining time on packages
 		foreach (var package in shopData.Packages)
 		{
 			if (package == null) continue;
@@ -983,7 +937,6 @@ public class ShopSystem
 			return;
 		}
 
-		// Find special packages that match the offer type and haven't been shown yet
 		bool found = false;
 		foreach (var sp in shopData.SpecialPackages)
 		{
@@ -1019,7 +972,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null) return false;
 
-		// Check in regular packages
 		if (shopData.Packages != null)
 		{
 			foreach (var package in shopData.Packages)
@@ -1035,7 +987,6 @@ public class ShopSystem
 			}
 		}
 
-		// Check in special packages
 		if (shopData.SpecialPackages != null)
 		{
 			foreach (var sp in shopData.SpecialPackages)
@@ -1058,7 +1009,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null) return false;
 
-		// Check if any package in the specified group exists and is available
 		if (shopData.Packages != null)
 		{
 			foreach (var package in shopData.Packages)
@@ -1083,7 +1033,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null) return false;
 
-		// Check regular packages
 		if (shopData.Packages != null)
 		{
 			foreach (var package in shopData.Packages)
@@ -1093,7 +1042,6 @@ public class ShopSystem
 			}
 		}
 
-		// Check special packages
 		if (shopData.SpecialPackages != null)
 		{
 			foreach (var sp in shopData.SpecialPackages)
@@ -1116,7 +1064,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null || shopData.Packages == null) return;
 
-		// Replace starter package with high starter package
 		for (int i = 0; i < shopData.Packages.Count; i++)
 		{
 			if (shopData.Packages[i] != null && shopData.Packages[i].PackageIdx == StartPackageIdx)
@@ -1141,8 +1088,6 @@ public class ShopSystem
 
 		int nextIdx = WaitPackagePopups.Dequeue();
 
-		// Show the package popup through UI system
-		// When popup closes, recursively show the next one
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UISystem == null)
 		{
@@ -1150,8 +1095,6 @@ public class ShopSystem
 			return;
 		}
 
-		// The popup would be shown via UISystem, and on close would call ShowNextWaitPackagePopup
-		// For now, continue to next
 		ShowNextWaitPackagePopup(OnEnd);
 	}
 
@@ -1164,8 +1107,6 @@ public class ShopSystem
 			return;
 		}
 
-		// Process package rewards through the reward system
-		// Typically adds currencies, items, managers, etc. to UserData
 		OnEnd?.Invoke();
 	}
 
@@ -1175,7 +1116,6 @@ public class ShopSystem
 			SeasonalPackageMatchMap = new Dictionary<SeasonalPackageMatchType, List<int>>();
 		SeasonalPackageMatchMap.Clear();
 
-		// Initialize match type lists
 		SeasonalPackageMatchMap[SeasonalPackageMatchType.COIN] = new List<int>();
 		SeasonalPackageMatchMap[SeasonalPackageMatchType.SKILLBOOK] = new List<int>();
 		SeasonalPackageMatchMap[SeasonalPackageMatchType.LEVELUP] = new List<int>();
@@ -1192,7 +1132,6 @@ public class ShopSystem
 		if (SeasonalEnablePackages == null)
 			SeasonalEnablePackages = new List<int>();
 
-		// Based on the open condition type, determine which seasonal packages to enable
 		switch (type)
 		{
 			case ContentsOpenSystem.OpenConditionType.SeasonalPackage_AverageSkillLevel:
@@ -1255,13 +1194,10 @@ public class ShopSystem
 		if (SeasonalEnablePackages == null)
 			SeasonalEnablePackages = new List<int>();
 
-		// Add packages from the provided list to seasonal enabled packages
 	}
 
 	public bool ShowSeasonalPackageIgnoreGroup(int packageIdx)
 	{
-		// Some seasonal package groups should be ignored for display purposes
-		// e.g., SeasonalAllinOne packages
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return false;
 
@@ -1290,7 +1226,6 @@ public class ShopSystem
 
 		int maxIdx = 0;
 
-		// Find the highest level-up package index for the given workshop
 		foreach (var sp in shopData.SpecialPackages)
 		{
 			if (sp == null || sp.Expire || sp.Purchase) continue;
@@ -1321,7 +1256,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Set up free item cooldown timers from saved data
 		foreach (var kvp in shopData.FreeTimes)
 		{
 			int idx = kvp.Key;
@@ -1347,7 +1281,6 @@ public class ShopSystem
 			return;
 		}
 
-		// Check if free item is available (cooldown expired)
 		if (FreeItemTimes != null && FreeItemTimes.ContainsKey(idx))
 		{
 			if (FreeItemTimes[idx].Value > 0)
@@ -1358,8 +1291,6 @@ public class ShopSystem
 			}
 		}
 
-		// Grant the free item reward
-		// Set cooldown timer
 		DateTime nextFreeTime = DateTime.UtcNow.AddSeconds(seasonal_shop_free_coin_cooltime);
 		if (shopData.FreeTimes == null)
 			shopData.FreeTimes = new Dictionary<int, DateTime>();
@@ -1384,14 +1315,11 @@ public class ShopSystem
 		var seasonalSystem = gameRoot.SeasonalSystem;
 		if (!seasonalSystem.IsPlayingSeasonal()) return;
 
-		// Set up seasonal free coin with cooldown
 		DateTime now = DateTime.UtcNow;
 		SeasonalFreeCoinProductIdx = 0;
 
-		// Set day reset time (next midnight UTC)
 		SeasonalFreeCoinDayResetDateTime = now.Date.AddDays(1);
 
-		// Check saved cooldown
 		var shopData = gameRoot.UserData?.ShopData;
 		if (shopData != null && shopData.FreeTimes != null)
 		{
@@ -1411,14 +1339,12 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Set cooldown for seasonal free coin
 		DateTime now = DateTime.UtcNow;
 		SeasonalFreeCoinNextResetDateTime = now.AddSeconds(seasonal_shop_free_coin_cooltime);
 
 		if (SeasonalFreeCoinResetRemainTimeSec != null)
 			SeasonalFreeCoinResetRemainTimeSec.Value = seasonal_shop_free_coin_cooltime;
 
-		// Save to ShopData
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData != null)
 		{
@@ -1444,7 +1370,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Reset cycle-limited goods whose reset time has passed
 		var keysToReset = new List<int>();
 		foreach (var kvp in shopData.CycleLimitedShopGoodsMap)
 		{
@@ -1463,7 +1388,6 @@ public class ShopSystem
 
 	private void SetADManagerBox()
 	{
-		// Initialize AD manager box cooldown and reset timers
 		if (RemainADManagerBoxCoolTime == null)
 			RemainADManagerBoxCoolTime = new ReactiveProperty<int>(0);
 		if (RemainADManagerBoxResetTime == null)
@@ -1489,22 +1413,16 @@ public class ShopSystem
 
 	private int GetCurShopSaleIdx()
 	{
-		// Determine the current shop sale index based on time/schedule
-		// The sale idx rotates on a schedule
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return 0;
 
-		// Default: use ShopSaleIdx_AcqWeeklyShop for BizAcquisition
 		return 0;
 	}
 
 	private DateTime GetNextShopSaleStartTime()
 	{
-		// Calculate the next shop sale start time
 		DateTime now = DateTime.UtcNow;
 
-		// Shop sales typically rotate weekly
-		// Next Monday at midnight UTC
 		int daysUntilMonday = ((int)DayOfWeek.Monday - (int)now.DayOfWeek + 7) % 7;
 		if (daysUntilMonday == 0) daysUntilMonday = 7;
 
@@ -1515,7 +1433,6 @@ public class ShopSystem
 	{
 		if (CurShopSaleIdx <= 0) return;
 
-		// Set the sale end time based on the rotation schedule
 		ShopSaleEndTime = NextShopSaleStartTime;
 
 		DateTime now = DateTime.UtcNow;
@@ -1529,7 +1446,6 @@ public class ShopSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.ContentsOpenSystem == null) return;
 
-		// Subscribe to contents open conditions for shop sale items
 	}
 
 	public void UpdateOpenShopSaleItems()
@@ -1544,7 +1460,6 @@ public class ShopSystem
 		var shopData = gameRoot.UserData.ShopData;
 		if (shopData == null || shopData.ShopSaleItemMap == null) return;
 
-		// Add items that are currently available in the sale
 		foreach (var kvp in shopData.ShopSaleItemMap)
 		{
 			if (IsOpenShopSaleList(kvp.Key))
@@ -1569,7 +1484,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check if the sale item is within its active time window
 		if (saleItem.StartTime != default(DateTime) && saleItem.StartTime > now) return false;
 		if (saleItem.EndTime != default(DateTime) && saleItem.EndTime < now) return false;
 
@@ -1621,7 +1535,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check if the purchase reset time hasn't passed yet
 		if (saleItem.ResetTime != default(DateTime) && saleItem.ResetTime > now)
 			return true;
 
@@ -1637,7 +1550,6 @@ public class ShopSystem
 			return;
 		}
 
-		// Process sale package rewards
 		OnEnd?.Invoke();
 	}
 
@@ -1656,7 +1568,6 @@ public class ShopSystem
 		if (shopData.EndlessOfferMap == null)
 			shopData.EndlessOfferMap = new Dictionary<int, EndlessOfferUserData>();
 
-		// Initialize all known endless offers
 		UpdateEndlessOfferOpen();
 	}
 
@@ -1674,7 +1585,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check which endless offers are currently open
 		foreach (var kvp in shopData.EndlessOfferMap)
 		{
 			var offerData = kvp.Value;
@@ -1698,7 +1608,6 @@ public class ShopSystem
 
 		DateTime now = DateTime.UtcNow;
 
-		// Check for expired offers and notify
 		var expiredKeys = new List<int>();
 		foreach (var kvp in shopData.EndlessOfferMap)
 		{
@@ -1711,7 +1620,6 @@ public class ShopSystem
 			}
 		}
 
-		// Handle expired offers - reset or remove
 		foreach (int key in expiredKeys)
 		{
 			var offerData = shopData.EndlessOfferMap[key];
@@ -1719,7 +1627,6 @@ public class ShopSystem
 				offerData.OnResetEndlessOffer.OnNext(true);
 		}
 
-		// Update the open list
 		UpdateEndlessOfferOpen();
 	}
 
@@ -1757,7 +1664,6 @@ public class ShopSystem
 	{
 		DateTime now = DateTime.UtcNow;
 
-		// Update multi-revenue sale timer
 		if (InMultiRevenueSale && EndMRSaleTime != DateTime.MaxValue)
 		{
 			int remain = (int)(EndMRSaleTime - now).TotalSeconds;
@@ -1770,7 +1676,6 @@ public class ShopSystem
 				RemainMRSaleTime.Value = Math.Max(0, remain);
 		}
 
-		// Update no-ads sale timer
 		if (InNoAdsSale)
 		{
 			int remain = (int)(NextNoAdsSaleTime - now).TotalSeconds;
@@ -1784,7 +1689,6 @@ public class ShopSystem
 				RemainNoAdsSaleTime.Value = Math.Max(0, remain);
 		}
 
-		// Update player level pass sale timer
 		if (InPlayerLvPassSale)
 		{
 			var gameRoot = Singleton<GameRoot>.Instance;
@@ -1802,7 +1706,6 @@ public class ShopSystem
 			}
 		}
 
-		// Update shop sale timer
 		if (CurShopSaleIdx > 0 && ShopSaleEndTime != default(DateTime))
 		{
 			int remain = (int)(ShopSaleEndTime - now).TotalSeconds;
@@ -1816,7 +1719,6 @@ public class ShopSystem
 				RemainShopSaleTime.Value = Math.Max(0, remain);
 		}
 
-		// Update free item cooldowns
 		if (FreeItemTimes != null)
 		{
 			foreach (var kvp in FreeItemTimes)
@@ -1828,19 +1730,15 @@ public class ShopSystem
 			}
 		}
 
-		// Update seasonal timers
 		UpdateOneSecondSeasonal(now);
 
-		// Update package timers
 		UpdatePackage();
 
-		// Update endless offers
 		UpdateEndlessOffer();
 	}
 
 	private void UpdateOneSecondSeasonal(DateTime curTime)
 	{
-		// Update seasonal free coin cooldown
 		if (SeasonalFreeCoinResetRemainTimeSec != null && SeasonalFreeCoinResetRemainTimeSec.Value > 0)
 		{
 			int remain = (int)(SeasonalFreeCoinNextResetDateTime - curTime).TotalSeconds;
@@ -1853,7 +1751,6 @@ public class ShopSystem
 			}
 		}
 
-		// Check seasonal day reset
 		if (SeasonalFreeCoinDayResetDateTime != default(DateTime) && curTime >= SeasonalFreeCoinDayResetDateTime)
 		{
 			// Day reset - recalculate next day reset

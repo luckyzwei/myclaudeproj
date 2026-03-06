@@ -26,7 +26,6 @@ public class InGameSeasonal : InGameMode
 
 	public override void Load()
 	{
-		// Load seasonal game mode
 		LoadUI();
 	}
 
@@ -43,19 +42,16 @@ public class InGameSeasonal : InGameMode
 
 	public void LoadWorkshopEmployee(Action<WorkshopEmployee> CompCb)
 	{
-		// Instantiate workshop employee from prefab at CharacterRoot
 		CompCb?.Invoke(null);
 	}
 
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
 	{
-		// Load ad supply VIP object
 		CompCb?.Invoke(AdsupplyMoneyVip);
 	}
 
 	public void LoadNightSkipVip(Action<NightSkipVIP> CompCb)
 	{
-		// Load night skip VIP object
 		CompCb?.Invoke(NightSkipVip);
 	}
 

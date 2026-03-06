@@ -75,7 +75,6 @@ public class PopupBuildingProgressList : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Purchase premium building slot
 	}
 
 	private void UpdateBuildingConstruction()

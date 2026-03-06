@@ -69,7 +69,6 @@ public class ItemAcquisitionTeamSet : MonoBehaviour
 	public void SetAllCeoList()
 	{
 		HasCeoList.Clear();
-		// Populate HasCeoList from manager card data
 		RefreshCeoList();
 	}
 
@@ -95,7 +94,6 @@ public class ItemAcquisitionTeamSet : MonoBehaviour
 
 	private void OnClickedAutoSetBtn()
 	{
-		// Auto-assign best CEOs to team slots
 		UpdateTeamData();
 		RefreshCeoList();
 	}
@@ -117,14 +115,12 @@ public class ItemAcquisitionTeamSet : MonoBehaviour
 
 	private void AddToTeam(int ceoIdx)
 	{
-		// Add CEO to first empty team slot
 		UpdateTeamData();
 		RefreshCeoList();
 	}
 
 	private void RemoveFromTeam(int ceoIdx)
 	{
-		// Remove CEO from team slot
 		UpdateTeamData();
 		RefreshCeoList();
 	}

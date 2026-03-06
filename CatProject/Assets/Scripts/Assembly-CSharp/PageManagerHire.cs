@@ -116,7 +116,6 @@ public class PageManagerHire : UIBase
 
 	public override void OnShowBefore()
 	{
-		// Hide all CEOs initially
 		if (CEOs != null)
 		{
 			for (int i = 0; i < CEOs.Length; i++)
@@ -129,7 +128,6 @@ public class PageManagerHire : UIBase
 
 	public override void OnHideAfter()
 	{
-		// Cleanup animator references
 		if (curCEO != null)
 		{
 			curCEO.gameObject.SetActive(false);
@@ -144,7 +142,6 @@ public class PageManagerHire : UIBase
 
 	public void Set(int managerIdx)
 	{
-		// Set CEO based on manager index
 		if (CEOs != null && managerIdx >= 0 && managerIdx < CEOs.Length)
 			curCEO = CEOs[managerIdx];
 

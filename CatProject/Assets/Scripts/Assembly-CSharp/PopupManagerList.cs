@@ -139,7 +139,6 @@ public class PopupManagerList : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Populate manager card list based on curTab and curSort
 	}
 
 	public void SelectManager(int managerIdx)
@@ -148,7 +147,6 @@ public class PopupManagerList : UIBase
 		if (root == null || root.UserData == null) return;
 
 		if (ManagerRoot != null) ManagerRoot.SetActive(true);
-		// Display selected manager info
 	}
 
 	private void SetSort(managerSortingType type)

@@ -90,7 +90,6 @@ public class PopupBuildingConstruct : UIBase
 	public void SetBuildingInfo(int buildingIdx)
 	{
 		BuildingIdx = buildingIdx;
-		// Determine if building is under construction or ready to construct
 		bool isConstructing = false;
 		if (ConstructInfoObj != null) ConstructInfoObj.SetActive(!isConstructing);
 		if (FastConstructObj != null) FastConstructObj.SetActive(isConstructing);
@@ -104,7 +103,6 @@ public class PopupBuildingConstruct : UIBase
 	private void SetBuildingMainImage(string imageKey)
 	{
 		if (BuildingMainImage == null) return;
-		// Load and set building image
 	}
 
 	private void setBuildingProductionInfo(string descKey)
@@ -121,7 +119,6 @@ public class PopupBuildingConstruct : UIBase
 	private void SetBuildingCostIconImage(string iconKey)
 	{
 		if (BuildingCostIconImage == null) return;
-		// Load and set cost icon
 	}
 
 	private void setBuildingCostValue(BigInteger costValue_PerMile)
@@ -153,15 +150,12 @@ public class PopupBuildingConstruct : UIBase
 
 	private void OnClickedConstructBtn()
 	{
-		// Start building construction
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Check if enough currency and start construction
 	}
 
 	private void OnClickedFactConstructBtn()
 	{
-		// Fast construct using premium currency
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}

@@ -94,7 +94,6 @@ public class PopupAdsNightSkip : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Skip night via ad viewing, apply reward
 		Hide();
 	}
 }

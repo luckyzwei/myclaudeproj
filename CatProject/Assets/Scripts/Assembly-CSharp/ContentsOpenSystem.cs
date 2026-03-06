@@ -93,7 +93,6 @@ public class ContentsOpenSystem
 	{
 		if (action == null) return;
 
-		// Find or create group for this type
 		for (int i = 0; i < SubscribeGroups.Count; i++)
 		{
 			if ((int)SubscribeGroups[i].Type == opentypeidx)
@@ -158,7 +157,6 @@ public class ContentsOpenSystem
 
 	public bool IsContentsOpen(OpenConditionType conditionType, int conditionValue)
 	{
-		// Would check specific condition against current game state
 		if (openedContents != null && openedContents.TryGetValue((int)conditionType, out bool opened))
 			return opened;
 		return false;
@@ -178,7 +176,6 @@ public class ContentsOpenSystem
 		if (openedContents != null)
 			openedContents[typeIdx] = true;
 
-		// Notify all subscribers of this condition type
 		for (int i = 0; i < SubscribeGroups.Count; i++)
 		{
 			if (SubscribeGroups[i].Type == conditionType)
@@ -194,7 +191,6 @@ public class ContentsOpenSystem
 
 	private void SubscribeSeasonal()
 	{
-		// Subscribe to seasonal content open conditions
 		SubscribeSeasonalManagerExpRequire();
 	}
 

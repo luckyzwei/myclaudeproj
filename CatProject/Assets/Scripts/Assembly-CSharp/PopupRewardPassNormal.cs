@@ -120,13 +120,11 @@ public class PopupRewardPassNormal : UIBase
 	private void SetCurReward(E_PassType passType, int orderIdx)
 	{
 		if (RewardItemArticle == null) return;
-		// Set current reward item display based on pass type and order
 	}
 
 	private void SetPremiumRewardList(E_PassType passType, int groupIdx)
 	{
 		if (PremiumRewardScrollRect == null || PremiumRewardItemPrefab == null) return;
-		// Create premium reward item list in scroll
 	}
 
 	private void SetScrollContentsPivot(int rewardCount)
@@ -134,20 +132,17 @@ public class PopupRewardPassNormal : UIBase
 		if (PremiumRewardScrollRect == null) return;
 		var content = PremiumRewardScrollRect.content;
 		if (content == null) return;
-		// Adjust pivot based on reward count for centering
 		if (rewardCount <= 3)
 			content.pivot = new Vector2(0.5f, 0.5f);
 	}
 
 	private InAppPackageData GetInAppPackageData(E_PassType passType, int groupIdx)
 	{
-		// Get IAP package data for pass type
 		return null;
 	}
 
 	private bool IsDoubleSale(E_PassType passType, int groupIdx)
 	{
-		// Check if double sale is active for this pass
 		return false;
 	}
 

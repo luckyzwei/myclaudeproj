@@ -83,7 +83,6 @@ public class ItemMiniGameExchangeShop : MonoBehaviour
 	public void SetItem(MiniGameExchangeShopData shopItemData)
 	{
 		if (shopItemData == null) return;
-		// Store shop item data and update UI
 		UpdateBuyBoxLayout();
 	}
 
@@ -120,7 +119,6 @@ public class ItemMiniGameExchangeShop : MonoBehaviour
 
 	private void SetItemCostIconImage(int type, int idx, int region)
 	{
-		// Set cost icon based on currency type
 		if (ItemCostIconImage == null) return;
 	}
 
@@ -138,7 +136,6 @@ public class ItemMiniGameExchangeShop : MonoBehaviour
 
 	private void OnBuyLockedButtonClick()
 	{
-		// Show locked message
 		if (!string.IsNullOrEmpty(LockedMessage))
 		{
 			// Display stage condition message

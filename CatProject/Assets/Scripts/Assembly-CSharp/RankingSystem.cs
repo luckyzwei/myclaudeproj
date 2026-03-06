@@ -15,7 +15,6 @@ public class RankingSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Subscribe to level changes to update rank
 		if (gameRoot.UserData.Level != null)
 		{
 			gameRoot.UserData.Level.Subscribe(level =>
@@ -33,7 +32,6 @@ public class RankingSystem
 			return;
 		}
 
-		// Rank tiers based on level/point thresholds
 		if (point >= 100)
 			UserRank = 10;
 		else if (point >= 80)

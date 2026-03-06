@@ -45,7 +45,6 @@ public class ButtonIconText : MonoBehaviour
 
 	public void SetData(int rewardType, int rewardIdx, BigInteger rewardCnt, bool shortCnt = false)
 	{
-		// Would load icon sprite from atlas based on rewardType/rewardIdx
 		SetCnt(rewardCnt, shortCnt);
 	}
 

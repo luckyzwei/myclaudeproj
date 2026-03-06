@@ -10,7 +10,6 @@ public class CurrencyUseRegionMission : SingleMissionBase
 
 	protected override void OnInitAfter()
 	{
-		// Would parse mission args to set RegionIdx, CurrencyIdx, etc.
 		if (Args != null && Args.Length >= 2)
 		{
 			RegionIdx = (int)Args[0];

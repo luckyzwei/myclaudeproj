@@ -102,7 +102,6 @@ public class CompanySystem
 		CompanyContractNeedCompanyConditionMap = new Dictionary<int, (int, int, int)>();
 		RecommendCompanyInfoDataList = new List<CompanyInfoData>();
 
-		// Load define values
 		company_list_renewal_cooltime = 1800;
 		company_list_reset_gem_count = 10;
 		company_cancel_cost_cash_value = 50;
@@ -220,12 +219,10 @@ public class CompanySystem
 
 		if (companyData == null) return 0;
 
-		// Base exp = 1 + company level * grade bonus
 		int baseExp = 1 + companyData.Level;
 		int gradeBonus = companyData.Grade;
 		int exp = baseExp + gradeBonus;
 
-		// Apply buff system multiplier
 		if (gameRoot.BuffSystem != null)
 		{
 			float buffValue = gameRoot.BuffSystem.GetValueTarget(BuffSystem.BuffType.ManagerFacilityValue, BuffSystem.BuffTarget.AllUpgrade);
@@ -245,7 +242,6 @@ public class CompanySystem
 
 		int curHour = (int)gameRoot.DaySystem.DayTime;
 
-		// Check activity time window
 		bool wasActivityEnabled = EnableActivityTime;
 		EnableActivityTime = (curHour >= activity_starttime && curHour < activity_endtime);
 
@@ -254,7 +250,6 @@ public class CompanySystem
 			StartActivity();
 		}
 
-		// Check meeting time
 		bool wasMeetingEnabled = EnableMeetingTime;
 		if (meetingroom_use_time > 0)
 		{
@@ -380,7 +375,6 @@ public class CompanySystem
 		else
 			officeData.Employees.Clear();
 
-		// Create default employee slots for the office
 		int seatCount = 4; // default seats per office
 		for (int i = 0; i < seatCount; i++)
 		{
@@ -398,14 +392,12 @@ public class CompanySystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return BigInteger.Zero;
 
-		// Base price scales with region and company index
 		BigInteger basePrice = 100;
 		BigInteger regionMultiplier = (BigInteger)(1 + regionIdx);
 		BigInteger companyMultiplier = (BigInteger)(1 + companyIdx / 10);
 
 		BigInteger price = basePrice * regionMultiplier * companyMultiplier;
 
-		// Apply buff discount
 		if (gameRoot.BuffSystem != null)
 		{
 			float discountBuff = gameRoot.BuffSystem.GetValueTarget(BuffSystem.BuffType.StageUpgradePrice, BuffSystem.BuffTarget.AllUpgrade);
@@ -435,7 +427,6 @@ public class CompanySystem
 
 		officeData.CompanyIdx.Value = company;
 
-		// Create company data if not exists
 		if (stageData.Companies != null)
 		{
 			bool found = false;
@@ -479,7 +470,6 @@ public class CompanySystem
 		int companyIdx = officeData.CompanyIdx.Value;
 		if (companyIdx <= 0) return;
 
-		// Reset company exp for re-contract
 		if (stageData.Companies != null)
 		{
 			for (int i = 0; i < stageData.Companies.Count; i++)
@@ -617,7 +607,6 @@ public class CompanySystem
 		int pickCount = deskcount > 0 ? deskcount : company_list_show_count;
 		RecommendCompanyInfoDataList = MakeCommonContractList(pool, pickCount);
 
-		// Reset refresh cooldown
 		RemainRefreshTime.Value = company_list_renewal_cooltime;
 		curMode.CompanyRefreshTime = DateTime.Now.AddSeconds(company_list_renewal_cooltime);
 
@@ -704,7 +693,6 @@ public class CompanySystem
 			return result;
 		}
 
-		// Randomly pick from pool
 		var tempPool = new List<CompanyInfoData>(companyPool);
 		var random = new Random();
 		for (int i = 0; i < pickCount && tempPool.Count > 0; i++)
@@ -756,7 +744,6 @@ public class CompanySystem
 
 		var stageData = curMode.StageData;
 
-		// Check if already unlocked
 		if (stageData.UnLockCompanyList != null)
 		{
 			for (int i = 0; i < stageData.UnLockCompanyList.Count; i++)
@@ -766,7 +753,6 @@ public class CompanySystem
 			}
 		}
 
-		// Check contract condition map
 		if (CompanyContractNeedCompanyConditionMap != null &&
 			CompanyContractNeedCompanyConditionMap.TryGetValue(companyIdx, out var condition))
 		{
@@ -797,7 +783,6 @@ public class CompanySystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Navigate to company detail page for the specified office
 		if (gameRoot.UserData == null) return;
 
 		var curMode = gameRoot.UserData.CurMode;
@@ -808,7 +793,6 @@ public class CompanySystem
 		if (!stageData.Offices.TryGetValue(officeIdx, out var officeData)) return;
 		if (officeData == null) return;
 
-		// Open company UI via navigation system
 		if (gameRoot.UISystem != null)
 		{
 			// UI would be opened here via UISystem
@@ -853,13 +837,11 @@ public class CompanySystem
 
 	public void UpdateOneSecond()
 	{
-		// Decrement refresh timer
 		if (RemainRefreshTime != null && RemainRefreshTime.Value > 0)
 		{
 			RemainRefreshTime.Value = RemainRefreshTime.Value - 1;
 		}
 
-		// Decrement meeting duration
 		if (EnableMeetingTime && meetingroom_use_time > 0)
 		{
 			meetingroom_use_time--;
@@ -869,7 +851,6 @@ public class CompanySystem
 			}
 		}
 
-		// Update office open remain times and company remain times
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
@@ -905,7 +886,6 @@ public class CompanySystem
 			}
 		}
 
-		// Check special company unlocks
 		UnLockSpecialCompany();
 	}
 
@@ -963,7 +943,6 @@ public class CompanySystem
 		if (companyData == null) return 0;
 		if (companyData.IsMaxLevel()) return 0;
 
-		// Gem cost increases with level
 		int baseCost = company_list_reset_gem_count;
 		int levelMultiplier = 1 + companyData.Level / 5;
 		return baseCost * levelMultiplier;
@@ -977,7 +956,6 @@ public class CompanySystem
 		int gemCost = CalcCompanyLevelUpGem(companyIdx);
 		if (gemCost <= 0) return false;
 
-		// Check if user has enough cash/gems
 		int currentCash = gameRoot.UserData.Cash != null ? gameRoot.UserData.Cash.Value : 0;
 		if (currentCash < gemCost)
 		{
@@ -988,12 +966,10 @@ public class CompanySystem
 			return false;
 		}
 
-		// Deduct gems
 		gameRoot.UserData.Cash.Value = currentCash - gemCost;
 		if (gameRoot.UserData.HUDCash != null)
 			gameRoot.UserData.HUDCash.Value = gameRoot.UserData.Cash.Value;
 
-		// Perform level up
 		CompanyLevelUp(companyIdx, false, null);
 
 		return true;

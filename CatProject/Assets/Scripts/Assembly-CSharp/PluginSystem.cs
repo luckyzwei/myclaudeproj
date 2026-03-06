@@ -377,7 +377,6 @@ public class PluginSystem
 	private void InitTapjoy()
 	{
 		if (TapjoyProp == null) return;
-		// Tapjoy initialization handled by SDK
 	}
 
 	public void InitMax(Action InitAction = null)
@@ -393,13 +392,11 @@ public class PluginSystem
 
 	public ulong StartRecordingLoadingEvent(int sceneIndex)
 	{
-		// Firebase Performance monitoring - start loading trace
 		return (ulong)sceneIndex;
 	}
 
 	public ulong StartRecordingLoadingGroup()
 	{
-		// Firebase Performance monitoring - start group trace
 		return 0uL;
 	}
 
@@ -414,7 +411,6 @@ public class PluginSystem
 	public void InitImmersiveAD()
 	{
 		if (ImmersiveADProp == null) return;
-		// Initialize immersive in-game ad
 	}
 
 	private void AppsFlyerOnRequestResponse(object sender, EventArgs e)
@@ -429,7 +425,6 @@ public class PluginSystem
 			onCallback?.Invoke(string.Empty);
 			return;
 		}
-		// Generate AppsFlyer invite link
 		AppsFlyer.generateUserInviteLink(new Dictionary<string, string>(), null);
 		onCallback?.Invoke(string.Empty);
 	}
@@ -441,7 +436,6 @@ public class PluginSystem
 		if (deepLinkEventArgs == null) return;
 		var paramDict = GetDeepLinkParamsDictionary(deepLinkEventArgs);
 		if (paramDict == null) return;
-		// Process deep link parameters (friend invite, etc.)
 	}
 
 	private Dictionary<string, object> GetDeepLinkParamsDictionary(DeepLinkEventsArgs deepLinkEventArgs)
@@ -592,7 +586,6 @@ public class PluginSystem
 	{
 		if (!appOpenAvailable) return;
 		if (ADProp == null) return;
-		// Show app open ad via MAX SDK
 	}
 
 	private void InitAppOpenAvailable()

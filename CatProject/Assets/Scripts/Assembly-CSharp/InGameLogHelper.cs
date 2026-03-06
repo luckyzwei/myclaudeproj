@@ -81,13 +81,11 @@ public static class InGameLogHelper
 	{
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.BuyInappIds == null) return 0;
-		// Check if user bought game speed package
 		return 0;
 	}
 
 	private static int GetBizAcqClearStageIdx()
 	{
-		// Get BizAcq clear stage index from user data
 		return 0;
 	}
 

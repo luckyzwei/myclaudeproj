@@ -74,7 +74,6 @@ public class PopupDataSave : UIBase
 	private void CheckPost()
 	{
 		if (PostRoot != null) PostRoot.SetActive(false);
-		// Check if there are any mail posts to show
 	}
 
 	public override void OnHideAfter()
@@ -93,13 +92,11 @@ public class PopupDataSave : UIBase
 
 	private void OnClickGoogleLogin()
 	{
-		// Initiate Google login
 		cb_LoginCallback?.Invoke(true);
 	}
 
 	private void OnClickAppleLogin()
 	{
-		// Initiate Apple login
 		cb_LoginCallback?.Invoke(true);
 	}
 
@@ -128,21 +125,18 @@ public class PopupDataSave : UIBase
 
 	private void OnClickSave()
 	{
-		// Save user data to cloud
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickLoad()
 	{
-		// Load user data from cloud
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickLogout()
 	{
-		// Logout from cloud service
 		ShowLogin(true);
 		ShowUserInfo(false);
 	}
@@ -162,7 +156,6 @@ public class PopupDataSave : UIBase
 
 	private void ReloadData()
 	{
-		// Reload all data after cloud load
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 	}

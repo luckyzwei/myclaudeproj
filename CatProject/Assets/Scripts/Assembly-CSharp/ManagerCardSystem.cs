@@ -89,7 +89,6 @@ public class ManagerCardSystem
 
 	public int GetManagerNeedCard(int idx, int level)
 	{
-		// Card cost typically scales with level: level + 1 cards needed
 		return level + 1;
 	}
 
@@ -135,7 +134,6 @@ public class ManagerCardSystem
 		if (CheckManagerMaxReinforceLevel(managerIdx, managerReinforceLv))
 			return false;
 
-		// Reinforce requires minimum card level
 		var forceData = GetManagerForceTable(managerIdx, managerReinforceLv + 1);
 		if (forceData == null)
 			return false;
@@ -185,20 +183,17 @@ public class ManagerCardSystem
 
 	public static bool CheckManagerMaxReinforceLevel(int idx, int level)
 	{
-		// Typical max reinforce level: 5 for normal, 10 for legend
 		int maxReinforce = idx >= LEGEND_MANAGER_START_IDX ? 10 : 5;
 		return level >= maxReinforce;
 	}
 
 	public static ManagerForceData GetManagerCurSkillUpData(int managerIdx, int curSkillLv)
 	{
-		// Would look up from table data - return null for missing data
 		return null;
 	}
 
 	public static int GetManagerSkillUpStoneItemIdx(int managerIdx)
 	{
-		// Legend managers have unique skill-up stone items
 		if (managerIdx >= LEGEND_MANAGER_START_IDX)
 		{
 			return 90000 + (managerIdx - LEGEND_MANAGER_START_IDX);
@@ -217,13 +212,11 @@ public class ManagerCardSystem
 
 	public static bool IsStageUnlockManager(int managerIdx)
 	{
-		// Legend managers (idx >= 3000) are stage-unlock managers
 		return managerIdx >= LEGEND_MANAGER_START_IDX;
 	}
 
 	public int GetManagerTableAbilityValue(int managerIdx, int managerLevel)
 	{
-		// Base ability value from table data, scaled by level
 		return managerLevel;
 	}
 
@@ -244,7 +237,6 @@ public class ManagerCardSystem
 
 	public static int GetManagerGrade(int idx)
 	{
-		// Grade determined by index range
 		if (idx >= LEGEND_MANAGER_START_IDX) return (int)Config.ManagerGrade.Legend;
 		if (idx >= 2000) return (int)Config.ManagerGrade.Epic;
 		if (idx >= 1000) return (int)Config.ManagerGrade.Rare;
@@ -273,7 +265,6 @@ public class ManagerCardSystem
 
 	public Sprite GetManagerGradeCardIcon(int idx)
 	{
-		// Would load from Resources based on grade
 		return null;
 	}
 
@@ -294,7 +285,6 @@ public class ManagerCardSystem
 
 	public static ManagerForceData GetManagerForceTable(int managerIdx, int reinforceLv)
 	{
-		// Would look up from table data
 		return null;
 	}
 
@@ -328,7 +318,6 @@ public class ManagerCardSystem
 	{
 		regionIdx = -1;
 		stageIdx = -1;
-		// Would search all offices for assigned manager
 		return -1;
 	}
 
@@ -341,7 +330,6 @@ public class ManagerCardSystem
 	public int SearchMinManagerDeskLevel(int managerIdx)
 	{
 		int grade = GetManagerGrade(managerIdx);
-		// Higher grade managers require higher desk levels
 		return grade + 1;
 	}
 
@@ -444,7 +432,6 @@ public class ManagerCardSystem
 	public List<Config.RewardItemData> GetRandomManagers(int rewardType, int rewardIdx, int rewardValue, int maxVariety, int exceptIdx = -1)
 	{
 		var result = new List<Config.RewardItemData>();
-		// Would generate random manager rewards based on gacha/reward tables
 		return result;
 	}
 
@@ -479,7 +466,6 @@ public class ManagerCardSystem
 		if (abilityValue <= 0)
 			return value;
 
-		// Apply percentage buff: value * (100 + abilityValue) / 100
 		return value * (100 + abilityValue) / 100;
 	}
 

@@ -184,7 +184,6 @@ public class ItemArticle : MonoBehaviour
 	private void SetNameText(int type, int idx, int region = -1)
 	{
 		if (Name == null) return;
-		// Set localized reward name
 		Name.text = "";
 	}
 

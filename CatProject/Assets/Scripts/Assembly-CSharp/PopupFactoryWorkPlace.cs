@@ -242,7 +242,6 @@ public class PopupFactoryWorkPlace : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Determine previous/next factory indices
 		if (MoveBeforeBtn != null) MoveBeforeBtn.gameObject.SetActive(PrevFactoryIdx >= 0);
 		if (MoveAfterBtn != null) MoveAfterBtn.gameObject.SetActive(NextFactoryIdx >= 0);
 	}
@@ -252,20 +251,17 @@ public class PopupFactoryWorkPlace : UIBase
 		if (BatteryRoot == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) { BatteryRoot.SetActive(false); return; }
-		// Check if factory has battery boost active
 		BatteryRoot.SetActive(false);
 	}
 
 	private void UpdateUseBattery()
 	{
-		// Update battery progress timer each frame
 		if (BatteryRemainTime == null || BatteryRoot == null || !BatteryRoot.activeSelf) return;
 	}
 
 	private void UpdateList()
 	{
 		if (ProductItems == null) ProductItems = new List<ItemFactoryProduct>();
-		// Populate product item list from factory data
 		if (NewProductRedDotObj != null) NewProductRedDotObj.SetActive(false);
 	}
 
@@ -276,7 +272,6 @@ public class PopupFactoryWorkPlace : UIBase
 	private void UpdateSelectItem()
 	{
 		if (ProductItems == null) return;
-		// Update selected product info
 		UpdateNeedProduct();
 	}
 
@@ -287,7 +282,6 @@ public class PopupFactoryWorkPlace : UIBase
 			need_disposables.Dispose();
 			need_disposables = new CompositeDisposable();
 		}
-		// Show needed materials for selected product
 		bool hasNeeds = false;
 		if (SelectNeedObj != null) SelectNeedObj.SetActive(hasNeeds);
 		if (SelectNeedNothing != null) SelectNeedNothing.SetActive(!hasNeeds);
@@ -297,7 +291,6 @@ public class PopupFactoryWorkPlace : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Update factory upgrade UI
 		bool isMaxLevel = false;
 		if (UpgradeNeedObj != null) UpgradeNeedObj.SetActive(!isMaxLevel);
 		if (UpgradeMaxObj != null) UpgradeMaxObj.SetActive(isMaxLevel);
@@ -359,7 +352,6 @@ public class PopupFactoryWorkPlace : UIBase
 
 	private void OnClickSelectNeedShortCut(int idx)
 	{
-		// Navigate to the needed material's factory
 		Hide();
 	}
 

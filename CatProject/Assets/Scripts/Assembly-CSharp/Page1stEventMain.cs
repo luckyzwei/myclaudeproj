@@ -168,7 +168,6 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Load roulette data and set items
 		UpdateRouletteMultipleText();
 		UpdateRoulettePlayCountProgress();
 	}
@@ -204,7 +203,6 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Start roulette spin
 		int winIdx = GetRandomWinningIndex();
 		OnStartSpin();
 		if (SquareRouletteComponent != null)
@@ -276,7 +274,6 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 
 	private void GetMultipleReward(int multipleCount)
 	{
-		// Apply reward with multiplier
 		if (MatchFxObj != null) MatchFxObj.SetActive(true);
 	}
 
@@ -299,7 +296,6 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if event package is available
 		return false;
 	}
 }

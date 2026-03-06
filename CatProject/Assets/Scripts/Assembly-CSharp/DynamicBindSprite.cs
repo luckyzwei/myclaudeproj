@@ -38,7 +38,6 @@ public class DynamicBindSprite : MonoBehaviour
 
 	private Sprite GetSprite(string key)
 	{
-		// Load sprite from atlas based on atlasType and key
 		return null;
 	}
 }

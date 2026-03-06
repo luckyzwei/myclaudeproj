@@ -84,7 +84,6 @@ public class MiniGameSystem : SystemBase
 
 	private void SetScheduleInfo()
 	{
-		// Would load schedule info from table data and determine current/next schedule
 		OnChangeNowScheduleInfo.OnNext(NowScheduleIdx);
 	}
 
@@ -98,7 +97,6 @@ public class MiniGameSystem : SystemBase
 		if (NowMiniGameScheduleInfo == null || NowMiniGameScheduleInfo.IsEmpty())
 			return;
 
-		// Would create the correct MiniGameBase subclass based on MiniGameType
 	}
 
 	private void CheckAndOpenMiniGameDonePopup(int lastPlayScheduleIdx, Action onEndAction)
@@ -143,7 +141,6 @@ public class MiniGameSystem : SystemBase
 		if (userData?.MiniGameUserData == null)
 			return 0;
 
-		// Would return current mini-game stage/progress
 		return 0;
 	}
 
@@ -153,13 +150,11 @@ public class MiniGameSystem : SystemBase
 		if (userData?.MiniGameUserData == null)
 			return false;
 
-		// Would check if current mini-game event is completed
 		return false;
 	}
 
 	public bool IsProgressRewardClaimed(int index)
 	{
-		// Would check from MiniGameUserData if progress reward at index was claimed
 		return false;
 	}
 
@@ -168,19 +163,16 @@ public class MiniGameSystem : SystemBase
 		if (IsProgressRewardClaimed(index))
 			return false;
 
-		// Would mark reward as claimed and give rewards
 		return false;
 	}
 
 	public void OpenMiniGameOpenPopup(Action onEndAction)
 	{
-		// Would open the mini-game announcement popup
 		onEndAction?.Invoke();
 	}
 
 	public void OpenMiniGameDonePopup(Action onEndAction)
 	{
-		// Would open the mini-game completion popup
 		onEndAction?.Invoke();
 	}
 
@@ -197,7 +189,6 @@ public class MiniGameSystem : SystemBase
 		if (userData?.MiniGameUserData == null)
 			return FreeItemMaxCount;
 
-		// Would calculate remaining free items from user data
 		return FreeItemMaxCount;
 	}
 
@@ -218,7 +209,6 @@ public class MiniGameSystem : SystemBase
 
 	private ExchangeShopUserData GetExchangeItemData(int itemIdx)
 	{
-		// Would look up exchange shop data from user data
 		return null;
 	}
 }

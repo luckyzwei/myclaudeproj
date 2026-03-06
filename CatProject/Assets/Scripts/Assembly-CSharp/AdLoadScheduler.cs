@@ -124,7 +124,6 @@ public class AdLoadScheduler
 			return existing.Subject;
 
 		var request = new AdLoadRequest(adUnitId, adType);
-		// Insert at front for priority loading
 		scheduler?.Insert(0, request);
 		return request.Subject;
 	}

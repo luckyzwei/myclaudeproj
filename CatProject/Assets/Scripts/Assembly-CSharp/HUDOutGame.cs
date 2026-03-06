@@ -153,7 +153,6 @@ public class HUDOutGame : HUDBase
 
 	private void OnClickEditMode()
 	{
-		// Toggle edit mode
 		if (EditModeUnActiveObjs != null)
 		{
 			for (int i = 0; i < EditModeUnActiveObjs.Count; i++)

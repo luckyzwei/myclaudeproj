@@ -119,7 +119,6 @@ public class PopupDistributorMenu : UIBase
 
 	public void Init()
 	{
-		// Initialize distributor menu with building data
 		SetBuildingNameText("");
 		SetEmptySellingProduct();
 	}
@@ -132,7 +131,6 @@ public class PopupDistributorMenu : UIBase
 	private void SetSellingProductInfo(int productIdx, int distributeCoolTimeSec)
 	{
 		ProductDistributeCoolTimeSec = distributeCoolTimeSec;
-		// Set current selling product icon and income text
 		if (CurDistributeProductIncomeValueText != null)
 			CurDistributeProductIncomeValueText.text = "0";
 	}
@@ -147,7 +145,6 @@ public class PopupDistributorMenu : UIBase
 	{
 		if (saleProductsMap == null) return;
 		ItemDistributorProductList.Clear();
-		// Instantiate product items from prefab into scroll
 	}
 
 	public void FocusToObject(int productIdx)
@@ -160,7 +157,6 @@ public class PopupDistributorMenu : UIBase
 	private IEnumerator CheckFocusAfterScrolled_Delayed()
 	{
 		yield return null;
-		// Scroll to focus product after layout
 		if (DistributorProductScrollRect != null)
 		{
 			DistributorProductScrollRect.normalizedPosition = Vector2.zero;

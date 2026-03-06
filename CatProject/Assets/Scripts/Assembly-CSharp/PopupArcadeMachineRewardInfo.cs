@@ -50,7 +50,6 @@ public class PopupArcadeMachineRewardInfo : UIBase
 	private void SetOrAddArcadeRouletteProbabilityList(int rouletteLevel)
 	{
 		if (RewardInfoScrollPanelObj == null || ItemRewardInfoPrefab == null) return;
-		// Populate reward probability list for given roulette level
 	}
 
 	private void OnClickedPrevLevelInfoButton()

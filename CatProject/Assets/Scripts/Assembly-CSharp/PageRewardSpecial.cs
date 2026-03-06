@@ -112,7 +112,6 @@ public class PageRewardSpecial : UIBase
 	{
 		if (reward == null) return;
 
-		// Clear existing reward display
 		if (Rewards != null)
 		{
 			for (int i = 0; i < Rewards.Count; i++)

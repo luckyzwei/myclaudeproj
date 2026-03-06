@@ -76,7 +76,6 @@ public class ItemMilestoneProgress : MonoBehaviour
 
 	private void UpdateMilestoneCurrencyInfo()
 	{
-		// Update currency income display
 		if (MilestoneCurrencyIncomeText != null)
 			MilestoneCurrencyIncomeText.text = "0";
 	}
@@ -121,7 +120,6 @@ public class ItemMilestoneProgress : MonoBehaviour
 	private void SetMilestoneStepRewardItem(SeasonalRewardData rewardTableData)
 	{
 		if (MilestoneStepRewardItem == null || rewardTableData == null) return;
-		// Set reward item display from seasonal reward data
 	}
 
 	private void SetMilestoneCurrencyInfoText(BigInteger totalValue, BigInteger goalValue)

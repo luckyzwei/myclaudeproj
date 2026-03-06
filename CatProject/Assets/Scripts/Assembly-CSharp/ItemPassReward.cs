@@ -191,6 +191,5 @@ public class ItemPassReward : MonoBehaviour
 			OnClickGetBtnAction.Invoke(Order, bPremium);
 			return;
 		}
-		// Default claim logic
 	}
 }

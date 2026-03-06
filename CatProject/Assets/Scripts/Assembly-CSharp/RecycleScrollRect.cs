@@ -245,7 +245,6 @@ public class RecycleScrollRect : ScrollRect
 
 	private void Init()
 	{
-		// Clear existing slots
 		if (SlotList == null)
 		{
 			SlotList = new LinkedList<GameObject>();
@@ -259,14 +258,12 @@ public class RecycleScrollRect : ScrollRect
 		}
 		SlotList.Clear();
 
-		// Determine the slot template
 		GameObject slotTemplate = (SlotObjectT != null) ? SlotObjectT : SlotObject;
 		if (slotTemplate == null)
 		{
 			return;
 		}
 
-		// Calculate slot dimensions
 		if (SlotSize != Vector2.zero)
 		{
 			slotWidth = SlotSize.x;
@@ -282,7 +279,6 @@ public class RecycleScrollRect : ScrollRect
 			}
 		}
 
-		// Calculate how many slots fit in the viewport
 		RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
 		float viewWidth = viewportRect.rect.width;
 		float viewHeight = viewportRect.rect.height;
@@ -291,10 +287,8 @@ public class RecycleScrollRect : ScrollRect
 		horizontalCnt = div;
 		verticalCnt = Mathf.CeilToInt(viewHeight / (slotHeight + heightSpace)) + 1;
 
-		// Calculate line count
 		lineCount = Mathf.CeilToInt((float)dataSize / div);
 
-		// Create enough slots to fill viewport plus buffer
 		int totalSlots = horizontalCnt * (verticalCnt + 1);
 		if (totalSlots > dataSize)
 		{
@@ -329,13 +323,10 @@ public class RecycleScrollRect : ScrollRect
 			}
 		}
 
-		// Set content size
 		CalculatePosition(true);
 
-		// Position all slots
 		SetPosition();
 
-		// Invoke callbacks for visible slots
 		SlotAllEvent();
 	}
 
@@ -424,7 +415,6 @@ public class RecycleScrollRect : ScrollRect
 		int div = DIV;
 		float scrollY = content.anchoredPosition.y;
 
-		// Check if we need to recycle slots from top to bottom (scrolling down)
 		while (SlotList.First != null)
 		{
 			LinkedListNode<GameObject> firstNode = SlotList.First;
@@ -464,7 +454,6 @@ public class RecycleScrollRect : ScrollRect
 			}
 		}
 
-		// Check if we need to recycle slots from bottom to top (scrolling up)
 		while (SlotList.Last != null && dataIndex > 0)
 		{
 			LinkedListNode<GameObject> firstNode = SlotList.First;
@@ -594,7 +583,6 @@ public class RecycleScrollRect : ScrollRect
 		Vector2 targetPos = CalculateFocusToIndexPosition(dataIndex);
 		SetContentsAnchoredPosition(targetPos);
 		this.dataIndex = 0;
-		// Recalculate which slots should be visible
 		int div = DIV;
 		int row = dataIndex / div;
 		this.dataIndex = row * div;
@@ -618,7 +606,6 @@ public class RecycleScrollRect : ScrollRect
 		int row = dataIndex / div;
 		float yPos = startHeightSpace + row * (slotHeight + heightSpace);
 
-		// Clamp to valid content range
 		RectTransform viewportRect = viewport != null ? viewport : GetComponent<RectTransform>();
 		float viewHeight = viewportRect.rect.height;
 		float maxY = content.sizeDelta.y - viewHeight;
@@ -665,7 +652,6 @@ public class RecycleScrollRect : ScrollRect
 	{
 		IsAnimating = true;
 
-		// Store original positions and calculate target positions
 		List<Vector3> originalPositions = new List<Vector3>();
 		List<Vector3> targetPositions = new List<Vector3>();
 		LinkedListNode<GameObject> slot = SlotList.First;
@@ -679,7 +665,6 @@ public class RecycleScrollRect : ScrollRect
 			slotIdx++;
 		}
 
-		// Play first slot disappear animation
 		if (SlotList.First != null)
 		{
 			Animator animator = SlotList.First.Value.GetComponent<Animator>();
@@ -694,7 +679,6 @@ public class RecycleScrollRect : ScrollRect
 			yield return new WaitForSeconds(animParams.FirstDelay);
 		}
 
-		// Animate remaining slots to their new positions
 		float elapsedTime = 0f;
 		float duration = animParams.PlayDuration;
 		if (duration <= 0f)
@@ -729,7 +713,6 @@ public class RecycleScrollRect : ScrollRect
 			yield return null;
 		}
 
-		// Finalize positions
 		slot = SlotList.First;
 		int idx = 0;
 		while (slot != null && idx < targetPositions.Count)
@@ -739,13 +722,11 @@ public class RecycleScrollRect : ScrollRect
 			idx++;
 		}
 
-		// Update data
 		if (animParams.DataUpdateAction != null)
 		{
 			animParams.DataUpdateAction();
 		}
 
-		// Refresh
 		CalculatePosition(true);
 		SetPosition();
 		SlotAllEvent();
@@ -791,7 +772,6 @@ public class RecycleScrollRect : ScrollRect
 
 	private Vector3 CalculateOvershootPosition(Vector3 originalPos, Vector3 targetPos, float progress, float overshootValue)
 	{
-		// Overshoot: go past the target then come back
 		float overshoot;
 		if (progress < 0.7f)
 		{

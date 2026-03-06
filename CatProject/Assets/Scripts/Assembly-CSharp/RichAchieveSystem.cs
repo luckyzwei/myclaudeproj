@@ -47,14 +47,12 @@ public class RichAchieveSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set up mission indices from table data
 	}
 
 	public int GetFocusMissionIdx(int regionIdx)
 	{
 		if (dic_RichAchieveRigion == null || !dic_RichAchieveRigion.TryGetValue(regionIdx, out var regionData))
 			return 0;
-		// Return the first uncompleted mission index in the region
 		return regionData.startIdx;
 	}
 
@@ -69,7 +67,6 @@ public class RichAchieveSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if mission is cleared from user data
 		return false;
 	}
 
@@ -77,7 +74,6 @@ public class RichAchieveSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return 0;
-		// Get current progress value for mission
 		return 0;
 	}
 
@@ -85,7 +81,6 @@ public class RichAchieveSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if rich achieve guide has been shown
 		return false;
 	}
 
@@ -105,14 +100,12 @@ public class RichAchieveSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Subscribe to content open events for rich achieve system
 	}
 
 	public bool IsGetAchieveReward(int activeRegionIdx)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if all achieve rewards have been collected for region
 		return false;
 	}
 }

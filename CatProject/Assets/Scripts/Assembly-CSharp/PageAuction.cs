@@ -306,7 +306,6 @@ public class PageAuction : UIBase
 		LoadMyChar();
 		LoadNpcChar();
 
-		// Update HUD
 		if (StaminaText != null) StaminaText.text = "0";
 		if (GemText != null) GemText.text = "0";
 		if (StaminaTimeRoot != null) StaminaTimeRoot.SetActive(false);
@@ -324,7 +323,6 @@ public class PageAuction : UIBase
 
 	private void CheckResult()
 	{
-		// Check win/lose condition after all rounds
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.AuctionSystem == null) return;
 	}
@@ -355,7 +353,6 @@ public class PageAuction : UIBase
 		if (ManagerRoot == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set auction manager info
 		if (MaxCoinText != null) MaxCoinText.text = MaxCoin.ToString();
 	}
 
@@ -372,26 +369,22 @@ public class PageAuction : UIBase
 	private void EndGame(PopupAuctionResultWin.E_GameEndType endType)
 	{
 		AuctionStart = false;
-		// Show result popup
 	}
 
 	[IteratorStateMachine(typeof(_003CEndTrial2xCoroutine_003Ed__59))]
 	private IEnumerator EndTrial2xCoroutine()
 	{
 		yield return new WaitForSeconds(0.5f);
-		// Show trial 2x reward end animation
 	}
 
 	private void LoadMyChar()
 	{
 		if (MyCharRoot == null) return;
-		// Load player character model
 	}
 
 	private void LoadNpcChar()
 	{
 		if (NpcCharRoot == null) return;
-		// Load NPC character model
 	}
 
 	private void SetRound()
@@ -468,7 +461,6 @@ public class PageAuction : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Use gem to spy on enemy coin
 		UseSpy++;
 		if (EnemyCoinRoot != null) EnemyCoinRoot.SetActive(true);
 	}

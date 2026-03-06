@@ -95,7 +95,6 @@ public class Loading : UIBase, ILocalizeRefresh
 	public void ShowTip()
 	{
 		if (TipText == null) return;
-		// Show random tip text
 		TipText.gameObject.SetActive(true);
 	}
 

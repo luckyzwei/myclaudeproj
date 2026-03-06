@@ -37,7 +37,6 @@ public class PlantSystem
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 		if (root.UserData.PlantData == null) return;
-		// Calculate offline exp gain for each plant
 	}
 
 	public void AddPlant(int idx, int value = 1)
@@ -54,7 +53,6 @@ public class PlantSystem
 				return;
 			}
 		}
-		// New plant
 		var plantData = new PlantData();
 		plantData.Create();
 		plantData.Idx = idx;
@@ -85,7 +83,6 @@ public class PlantSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Give gem reward and reset cooldown
 	}
 
 	public void UpdateOneSeconds()
@@ -128,7 +125,6 @@ public class PlantSystem
 
 	public int GetPlantMaxLevel(int idx)
 	{
-		// Return max level for plant type from config data
 		return 10;
 	}
 }

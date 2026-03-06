@@ -148,7 +148,6 @@ public class PagePlayerLvPass : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Check if pass is purchased
 		bool isPurchased = false;
 		if (BtnAreaObj != null) BtnAreaObj.SetActive(!isPurchased);
 		if (DoubleSaleAreaObj != null) DoubleSaleAreaObj.SetActive(false);
@@ -159,7 +158,6 @@ public class PagePlayerLvPass : UIBase
 
 	private void SetClaimAllButtonState()
 	{
-		// Show claim all button if there are unclaimed rewards
 		bool hasClaimable = false;
 		if (ClaimAllBtnObj != null) ClaimAllBtnObj.SetActive(hasClaimable);
 	}
@@ -168,12 +166,10 @@ public class PagePlayerLvPass : UIBase
 	{
 		if (inPurchase) return;
 		inPurchase = true;
-		// IAP purchase for player level pass
 	}
 
 	private void OnClickClaimAllBtn()
 	{
-		// Claim all available rewards
 		RefreshPage();
 	}
 

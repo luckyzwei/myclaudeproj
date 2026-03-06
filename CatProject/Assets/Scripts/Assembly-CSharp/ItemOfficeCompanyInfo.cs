@@ -149,7 +149,6 @@ public class ItemOfficeCompanyInfo : MonoBehaviour
 		if (root == null || root.UserData == null) return;
 
 		if (OfficeNameText != null) OfficeNameText.text = "";
-		// Determine slot state based on office data
 		SetSlotState(E_SlotState.NotContract);
 	}
 
@@ -183,7 +182,6 @@ public class ItemOfficeCompanyInfo : MonoBehaviour
 
 	private void SetSlotState(E_SlotState slotState)
 	{
-		// Hide all state objects
 		if (ActiveObjectList != null)
 		{
 			for (int i = 0; i < ActiveObjectList.Count; i++)
@@ -222,7 +220,6 @@ public class ItemOfficeCompanyInfo : MonoBehaviour
 
 	private void OnClickRecontract()
 	{
-		// Recontract with current company
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
@@ -244,7 +241,6 @@ public class ItemOfficeCompanyInfo : MonoBehaviour
 
 	private void OnClickCompanyLevelUp()
 	{
-		// Level up company in this office
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}

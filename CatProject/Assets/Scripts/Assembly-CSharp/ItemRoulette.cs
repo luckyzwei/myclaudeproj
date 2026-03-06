@@ -22,13 +22,11 @@ public class ItemRoulette : MonoBehaviour
 	public void SetRouletteItem(int idx)
 	{
 		Order = idx;
-		// Set icon and count from roulette reward data table
 	}
 
 	public void SetRouletteSpecialDayItem(int idx)
 	{
 		Order = idx;
-		// Set icon and count from special day roulette data
 	}
 
 	public void ShowParticle()
@@ -40,7 +38,6 @@ public class ItemRoulette : MonoBehaviour
 	public void SetLuckyDraw(int idx)
 	{
 		Order = idx;
-		// Set icon and count for lucky draw
 	}
 
 	public void ShowInfoBtn()

@@ -79,7 +79,6 @@ public class AttendanceSystem
 	private void InitSystem_SpecialDayAnniversaryAttendance(AttendanceEvent attendanceEvent)
 	{
 		if (attendanceEvent == null) return;
-		// Would load special day anniversary attendance config from table data
 	}
 
 	public void SetShownAttendancePopup(E_AttendanceEventType eventType)

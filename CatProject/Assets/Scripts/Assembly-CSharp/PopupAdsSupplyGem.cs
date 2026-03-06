@@ -50,7 +50,6 @@ public class PopupAdsSupplyGem : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Give gem reward to player
 		Hide();
 	}
 

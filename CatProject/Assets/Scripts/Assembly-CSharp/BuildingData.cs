@@ -27,7 +27,6 @@ public class BuildingData : IReadOnlyData, ICloneable
 	public void LevelUp()
 	{
 		Level++;
-		// Update reactive properties if needed
 	}
 
 	public void Create()

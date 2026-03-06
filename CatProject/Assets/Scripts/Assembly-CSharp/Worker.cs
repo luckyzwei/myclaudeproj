@@ -187,7 +187,6 @@ public class Worker : MonoBehaviour
 	protected void GotoWorkOffBus(int order = 0)
 	{
 		ChangeState(E_State.Workoff);
-		// Walk to bus stop then call Return
 	}
 
 	public int GetRepairRoomIdx()

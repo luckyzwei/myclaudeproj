@@ -106,7 +106,6 @@ public class PageReward : UIBase
 		if (RewardName != null)
 			RewardName.text = ProjectUtility.GetThousandCommaText(reward.rewardValue);
 
-		// Show individual reward items
 		if (Rewards != null)
 		{
 			for (int i = 0; i < Rewards.Count; i++)
@@ -196,21 +195,18 @@ public class PageReward : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get shop goods reward data and show
 	}
 
 	public void ShowRouletteReward(int rouletteIdx, bool isreplaceReward = false)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get roulette reward data and show
 	}
 
 	public void SetQuestReward(int order, bool isreplaceReward)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get quest reward data and show
 	}
 
 	public void ShowList(List<IRewardItemData> listReward)
@@ -240,34 +236,29 @@ public class PageReward : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get house purchase reward and show
 	}
 
 	public void ShowPackageReward(int packageIdx, List<BigInteger> bigValues)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get package reward data and show list
 	}
 
 	public void ShowSalePackageReward(int packageIdx, List<BigInteger> bigValues)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get sale package reward data and show list
 	}
 
 	public void ShowFactoryOrderReward(int slot)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Get factory order slot reward and show
 	}
 
 	public void ShowFactoryProductReward(int product, int count)
 	{
 		InitHideData();
-		// Show factory product reward with count
 		if (Rewards != null && Rewards.Count > 0 && Rewards[0] != null && Rewards[0].Root != null)
 		{
 			Rewards[0].Root.SetActive(true);
@@ -279,7 +270,6 @@ public class PageReward : UIBase
 	public void ShowFactoryItem(int item)
 	{
 		InitHideData();
-		// Show factory item reward
 		if (Rewards != null && Rewards.Count > 0 && Rewards[0] != null && Rewards[0].Root != null)
 			Rewards[0].Root.SetActive(true);
 	}
@@ -288,21 +278,18 @@ public class PageReward : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get one-time event reward and show
 	}
 
 	public void ShowInviteReward(int inviteIdx)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get invite reward data and show
 	}
 
 	public void ShowTarotReward(int tarotIdx, bool isOwn = false)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get tarot reward data and show
 	}
 
 	private void InitHideData()

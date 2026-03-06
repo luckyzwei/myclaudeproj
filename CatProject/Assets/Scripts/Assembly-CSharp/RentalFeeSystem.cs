@@ -85,7 +85,6 @@ public class RentalFeeSystem
 		BigInteger totalFee = CalculateActiveRegionRentalFee(false);
 		RentalFeeValue.Value = totalFee;
 
-		// Calculate the effective get-time considering ability buff
 		int baseTime = get_money_time;
 		int buffValue = gameRoot.AbilitySystem != null
 			? gameRoot.AbilitySystem.GetActiveBoosterAbilityValue(AbilitySystem.AbilityType.RentalFeeGetTime, mainData.ActiveRegion)
@@ -171,7 +170,6 @@ public class RentalFeeSystem
 			total += GetOfficeRentalFee(region, kvp.Key, officeData, containStrike);
 		}
 
-		// Apply ability buffs
 		if (gameRoot.AbilitySystem != null)
 		{
 			BigInteger buff = gameRoot.AbilitySystem.GetAbilityBuffValue(AbilitySystem.AbilityType.AddReward);
@@ -221,14 +219,12 @@ public class RentalFeeSystem
 		if (companyIdx <= 0)
 			return BigInteger.Zero;
 
-		// Check strike: if on strike and not containing strike, rental fee is 0
 		if (!containStrike && officeData.EnableStrike != null && officeData.EnableStrike.Value)
 			return BigInteger.Zero;
 
 		BigInteger baseFee = CalculateCompanyRentalFee(region, officeKey, companyIdx);
 		exceptManagerBuff = baseFee;
 
-		// Apply manager buff if assigned
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot != null && gameRoot.ManagerCardSystem != null)
 		{
@@ -283,7 +279,6 @@ public class RentalFeeSystem
 		if (!stageData.Offices.TryGetValue(office, out officeData) || officeData == null)
 			return true;
 
-		// Check if all required items are present in the office
 		if (officeData.Items == null || officeData.Items.Count == 0)
 			return false;
 
@@ -315,7 +310,6 @@ public class RentalFeeSystem
 			return false;
 		}
 
-		// Check each item slot for required items
 		bool allEnough = true;
 		for (int i = 0; i < officeData.Items.Count; i++)
 		{
@@ -385,7 +379,6 @@ public class RentalFeeSystem
 			}
 		}
 
-		// Update revenue graph
 		BigInteger currentFee = RentalFeeValue != null ? RentalFeeValue.Value : BigInteger.Zero;
 		int currentTime = RunTimeGetMoneyTime != null ? RunTimeGetMoneyTime.Value : get_money_time;
 		UpdateRevenueGraph(currentFee, currentTime, dt);

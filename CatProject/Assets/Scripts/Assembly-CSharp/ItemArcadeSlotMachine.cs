@@ -403,7 +403,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 			Disposables.Dispose();
 			Disposables = new CompositeDisposable();
 		}
-		// Subscribe to currency change events via reactive properties
 	}
 
 	private void OnChangeHasCurrencyValue(int currencyIdx, BigInteger currencyValue)
@@ -459,7 +458,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 	{
 		if (RewardValueText != null)
 			RewardValueText.text = ProjectUtility.GetThousandCommaText(rewardValue_PerMile);
-		// Set reward icon sprite
 	}
 
 	private void SetArcadeMachineLevelStar(int level)
@@ -528,10 +526,8 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void OnClickedLevelUpBtn()
 	{
-		// Level up the arcade machine
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Check currency and level up
 	}
 
 	private void OnClickedPlaySlotMachineButton()
@@ -554,17 +550,14 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
 
-		// Check cost
 		bPlayingSlotMachine = true;
 		SetInteractionSlotMachineBtn(false);
 
-		// Play slot machine animation
 		if (SlotMachineAnimator != null)
 			SlotMachineAnimator.SetTrigger(ROULETTE_PLAY_KEY);
 
 		OnPlayArcadeSlotMachine?.Invoke(MultipleBettingValue);
 
-		// Start animation complete coroutine
 		StartCoroutine(OnAnimationComplete());
 		return true;
 	}
@@ -583,7 +576,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void SetSlotImages(int rewardCurrencyIdx)
 	{
-		// Set slot machine reel images based on reward currency index
 		if (SlotParentsObjects == null) return;
 		SlotImageObjects.Clear();
 		for (int i = 0; i < SlotParentsObjects.Count; i++)
@@ -616,7 +608,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 	private IEnumerator WaitForAnimation(Animator anim, string stateName)
 	{
 		if (anim == null) yield break;
-		// Wait until animator enters the target state
 		yield return null;
 		while (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
 			   anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
@@ -628,7 +619,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 	[IteratorStateMachine(typeof(_003COnAnimationComplete_003Ed__104))]
 	private IEnumerator OnAnimationComplete()
 	{
-		// Wait for slot machine animation to finish
 		if (SlotMachineAnimator != null)
 		{
 			yield return StartCoroutine(WaitForAnimation(SlotMachineAnimator, ROULETTE_STOP_KEY));
@@ -638,7 +628,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 			yield return new WaitForSeconds(2f);
 		}
 
-		// Show reward
 		if (RouletteResultRewards != null && RouletteResultRewards.Count > 0)
 		{
 			ShowRewardTween();
@@ -648,7 +637,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 		bPlayingSlotMachine = false;
 		SetInteractionSlotMachineBtn(true);
 
-		// Auto play if long-pressed
 		if (bOnAutoPlay && !isClickHide)
 		{
 			PlayArcadeRoulette();
@@ -664,7 +652,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 	private void ShowRewardGoodsEffect_Delay(Dictionary<int, BigInteger> rewards)
 	{
 		if (rewards == null || OwnerPage == null) return;
-		// Show reward coin/gem flying effect via OwnerPage
 	}
 
 	private void SetDiscountNeedCurrency()
@@ -680,10 +667,8 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void AddCatstaEventMissionValue(int slotMatchCount, int rewardTableOrder)
 	{
-		// Track event mission progress for slot machine play
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Add mission event value
 	}
 
 	private void CheckFreeChanceSkill()
@@ -691,7 +676,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 		bFreeChance = false;
 		if (FreeChanceSkillRoot != null) FreeChanceSkillRoot.SetActive(false);
 		if (FreeChanceFxObj != null) FreeChanceFxObj.SetActive(false);
-		// Check if skill book provides free chance
 	}
 
 	private void OnClickedSkillBookBtn()

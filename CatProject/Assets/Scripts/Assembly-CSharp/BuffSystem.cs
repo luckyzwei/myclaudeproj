@@ -216,7 +216,6 @@ public class BuffSystem
 			endDateTime = DateTimeOffset.FromUnixTimeSeconds(endtime).UtcDateTime;
 		}
 
-		// Check for existing buff to update
 		foreach (var info in buffInfos)
 		{
 			if (info.BuffIdx == buffIdx && info.TargetIdx == targetIdx && info.BuffType == buffType)

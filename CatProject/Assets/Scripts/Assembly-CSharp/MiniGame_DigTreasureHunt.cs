@@ -170,7 +170,6 @@ public class MiniGame_DigTreasureHunt : MiniGameBase
 
 	private void CreateNewStage(int eventIdx, int stageIdx)
 	{
-		// Default board size; could be driven by table data per stage
 		int boardSizeX = 6;
 		int boardSizeY = 6;
 		BoardSize = new Vector2Int(boardSizeX, boardSizeY);
@@ -178,8 +177,6 @@ public class MiniGame_DigTreasureHunt : MiniGameBase
 		SetGrid(boardSizeX, boardSizeY);
 		PlacedItems = new List<PlacedItemInfo>();
 
-		// Create item set for this stage
-		// Default items: a mix of sizes for the treasure hunt puzzle
 		TreasureItemData[] items = new TreasureItemData[]
 		{
 			new TreasureItemData { Id = 1, Index = 0, Size = new Vector2Int(3, 1) },
@@ -215,7 +212,6 @@ public class MiniGame_DigTreasureHunt : MiniGameBase
 			return true;
 
 		var items = new List<TreasureItemData>(itemsToPlace);
-		// Sort by area descending (larger items first for better placement)
 		items.Sort((a, b) => (b.Size.x * b.Size.y).CompareTo(a.Size.x * a.Size.y));
 
 		return SolveWithRandomizedBacktracking(items);
@@ -275,7 +271,6 @@ public class MiniGame_DigTreasureHunt : MiniGameBase
 		if (Grid == null)
 			return;
 
-		// Remove item from grid and from PlacedItems
 		for (int x = 0; x < BoardSize.x; x++)
 		{
 			for (int y = 0; y < BoardSize.y; y++)

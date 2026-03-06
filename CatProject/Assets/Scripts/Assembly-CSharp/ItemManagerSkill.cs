@@ -60,7 +60,6 @@ public class ItemManagerSkill : MonoBehaviour
 	private void SetSkillDesc(int skillIdx, int skillLevel, Config.ManagerSkillActivationType skillActivationType, bool isSimpleDesc)
 	{
 		SkillIdx = skillIdx;
-		// Set skill description text based on data
 	}
 
 	private void OnClickSkillInfoBtn()

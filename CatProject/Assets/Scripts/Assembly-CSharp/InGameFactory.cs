@@ -96,7 +96,6 @@ public class InGameFactory : OutGameMode
 	[IteratorStateMachine(typeof(_003CSetFactories_003Ed__13))]
 	private IEnumerator SetFactories()
 	{
-		// Initialize all factory buildings
 		IsLoading = false;
 		yield break;
 	}

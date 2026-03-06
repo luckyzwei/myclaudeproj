@@ -121,7 +121,6 @@ public class PopupBoxOpen : UIBase
 
 	private void UpdateAdStat()
 	{
-		// Update ad button enabled/disabled state
 		if (AdsBtn != null) AdsBtn.interactable = true;
 		if (AdsRedDot != null) AdsRedDot.SetActive(false);
 		if (FreeRedDot != null) FreeRedDot.SetActive(false);
@@ -137,7 +136,6 @@ public class PopupBoxOpen : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Open box and show rewards
 		CompCb?.Invoke();
 	}
 
@@ -150,7 +148,6 @@ public class PopupBoxOpen : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Purchase with gems
 		OpenBox(BoxTableIdx);
 	}
 

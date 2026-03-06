@@ -45,7 +45,6 @@ public class CompanyData : IReadOnlyData, ICloneable
 		if (IncreaseExp != null)
 			IncreaseExp.Value = increaseValue;
 
-		// Check for level up
 		while (IsEnableLevelUp())
 		{
 			Level++;
@@ -63,7 +62,6 @@ public class CompanyData : IReadOnlyData, ICloneable
 	public int CalculateIncreaseExp(int targetRegion, bool forceStrikeMood, bool checkStrike)
 	{
 		if (IsMaxLevel()) return 0;
-		// Base exp per tick, would be calculated from company configuration
 		return 1;
 	}
 
@@ -71,8 +69,6 @@ public class CompanyData : IReadOnlyData, ICloneable
 	{
 		if (MaxLevel <= 0) return false;
 		if (Level >= MaxLevel) return false;
-		// Would check if exp meets level-up threshold
-		// Simplified: need (Level+1)*100 exp per level
 		BigInteger needExp = (Level + 1) * 100;
 		return Exp >= needExp;
 	}

@@ -308,7 +308,6 @@ public class TutorialSystem
 		WaitTutorials = new Queue<WaitTuto>();
 		CheatPlayTutorialList = new List<int>();
 
-		// Populate LoadMapData: maps tutorial key -> resource path for scenario prefabs
 		LoadMapData[Tutorial_Start1] = "Tutorial/TutoScenario_Start1";
 		LoadMapData[Tutorial_Start2] = "Tutorial/TutoScenario_Start2";
 		LoadMapData[Tutorial_Office2Contact] = "Tutorial/TutoScenario_Office2Contact";
@@ -361,7 +360,6 @@ public class TutorialSystem
 		if (root == null || root.UserData == null || root.UserData.Tutorial == null)
 			return false;
 
-		// Check cheat list first
 		if (CheatPlayTutorialList != null && CheatPlayTutorialList.Contains(key))
 			return true;
 
@@ -406,7 +404,6 @@ public class TutorialSystem
 
 	public void InitTuto(string key)
 	{
-		// Load the tutorial scenario map prefab by resource path key
 		GameObject prefab = Resources.Load<GameObject>(key);
 		if (prefab == null)
 			return;
@@ -447,7 +444,6 @@ public class TutorialSystem
 		IsTuto = true;
 		ActiveTutorialKey = _key;
 
-		// Load the scenario map for this tutorial
 		string path;
 		if (LoadMapData != null && LoadMapData.TryGetValue(_key, out path))
 		{
@@ -526,24 +522,20 @@ public class TutorialSystem
 		int clearedKey = ActiveTutorialKey;
 		ActiveTutorialKey = 0;
 
-		// Destroy the active scenario map
 		if (Active_ScenarioMap != null)
 		{
 			UnityEngine.Object.Destroy(Active_ScenarioMap);
 			Active_ScenarioMap = null;
 		}
 
-		// Invoke end callback
 		Action cb = OnActiveTutoEndCb;
 		OnActiveTutoEndCb = null;
 		if (cb != null)
 			cb.Invoke();
 
-		// Fire end tutorial event
 		if (_OnEndTutorialEvent != null)
 			_OnEndTutorialEvent.Invoke();
 
-		// Check wait queue for next tutorial
 		if (WaitTutorials != null && WaitTutorials.Count > 0)
 		{
 			WaitTuto next = WaitTutorials.Dequeue();
@@ -554,7 +546,6 @@ public class TutorialSystem
 
 	public bool CheckTutorialStartCondition(int key)
 	{
-		// Already cleared tutorials should not start again
 		if (IsClearTuto(key))
 			return false;
 
@@ -678,8 +669,6 @@ public class TutorialSystem
 
 	public bool IsDynamaicTarget(TutorialIdent id)
 	{
-		// Dynamic targets are ones that may not exist at tutorial start
-		// and need to be found at runtime (e.g., factory buildings, manager cards, world map objects)
 		switch (id)
 		{
 			case TutorialIdent.TutoStart_FirstOfficeDesk:

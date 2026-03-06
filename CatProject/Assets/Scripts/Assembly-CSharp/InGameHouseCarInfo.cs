@@ -52,7 +52,6 @@ public class InGameHouseCarInfo : InGameFloatingUI
 
 	private void OnClickEquip()
 	{
-		// Equip car to parking lot
 		if (EquipCompObj != null) EquipCompObj.SetActive(true);
 	}
 

@@ -47,7 +47,6 @@ public class SeasonalDistributorData
 
 	private void SetProductSellingCoolTimeSec(int seasonInfoIdx)
 	{
-		// Set cooltime from table data based on season info
 		if (ProductSellingCoolTimeSec != null)
 			ProductSellingCoolTimeSec.Value = 60;
 	}

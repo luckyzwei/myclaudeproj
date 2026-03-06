@@ -214,11 +214,9 @@ public class ItemMissionFactoryTab : MonoBehaviour, ITabToggleTab
 	{
 		if (OrderSlots == null || SelectOrder < 0 || SelectOrder >= OrderSlots.Count) return;
 
-		// Update selected order info UI
 		if (OrderInfoObj != null) OrderInfoObj.SetActive(true);
 		if (OrderWaitObj != null) OrderWaitObj.SetActive(false);
 
-		// Update complete button red dot
 		if (OrderCompRedDotObj != null) OrderCompRedDotObj.SetActive(false);
 	}
 
@@ -256,7 +254,6 @@ public class ItemMissionFactoryTab : MonoBehaviour, ITabToggleTab
 
 	private void OnClickProductShortCut()
 	{
-		// Navigate to product production
 		OnGotoNavi?.Invoke();
 	}
 

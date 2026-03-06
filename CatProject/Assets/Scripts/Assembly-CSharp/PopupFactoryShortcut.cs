@@ -80,13 +80,11 @@ public class PopupFactoryShortcut : UIBase
 
 	private void SetChar_Economic()
 	{
-		// Set economic character image and name
 		if (CharImage != null) CharImage.gameObject.SetActive(true);
 	}
 
 	private void SetChar_Secretary()
 	{
-		// Set secretary character image and name
 		if (CharImage != null) CharImage.gameObject.SetActive(true);
 	}
 
@@ -101,6 +99,5 @@ public class PopupFactoryShortcut : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Navigate to factory scene
 	}
 }

@@ -136,7 +136,6 @@ public class PopupOneTimeEventOpen : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set one-time event info (title, subtitle, description, remain time, reward image)
 	}
 
 	private void RunHUDEffect()
@@ -148,7 +147,6 @@ public class PopupOneTimeEventOpen : UIBase
 	private IEnumerator ShowOneTimeHUDEffect()
 	{
 		yield return new WaitForSeconds(0.5f);
-		// Show one-time event HUD decoration effect
 	}
 
 	public void KillProcess()

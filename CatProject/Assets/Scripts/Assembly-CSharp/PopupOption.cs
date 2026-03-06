@@ -123,7 +123,6 @@ public class PopupOption : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.ShopSystem == null) return;
-		// Trigger IAP restore via ShopSystem
 	}
 
 	private void SetLang()
@@ -158,7 +157,6 @@ public class PopupOption : UIBase
 
 	private void OnClickInvite()
 	{
-		// Share invite link
 		RefreshFreeGem();
 	}
 

@@ -216,10 +216,8 @@ public class PopupAcquisitionReward : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
 
-		// Set reward info from battle system
 		SetAutoPlay();
 
-		// Start reward items display coroutine
 		StartCoroutine(SetRewardItemsCoroutine());
 	}
 
@@ -227,7 +225,6 @@ public class PopupAcquisitionReward : UIBase
 	{
 		if (AutoPlayObj != null) AutoPlayObj.SetActive(false);
 		if (AutoPlayGuideObj != null) AutoPlayGuideObj.SetActive(false);
-		// Check if auto play is available
 		StartCoroutine(CheckAndShowAutoPlayPopup());
 	}
 
@@ -245,7 +242,6 @@ public class PopupAcquisitionReward : UIBase
 	private void SetRewardItems(AcquisitionInfoData acqInfoTable)
 	{
 		if (RewardItemArticleList == null) return;
-		// Hide all reward items first
 		for (int i = 0; i < RewardItemArticleList.Count; i++)
 		{
 			if (RewardItemArticleList[i] != null)
@@ -288,7 +284,6 @@ public class PopupAcquisitionReward : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Apply reward with multiplier
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckAndShowAutoPlayPopup_003Ed__34))]
@@ -296,7 +291,6 @@ public class PopupAcquisitionReward : UIBase
 	{
 		float waitTime = 3f;
 		yield return new WaitForSeconds(waitTime);
-		// Check if auto play toggle should show
 		if (NextStageCountDownObj != null) NextStageCountDownObj.SetActive(false);
 	}
 

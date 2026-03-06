@@ -110,7 +110,6 @@ public class AuctionSystem
 		}
 		DateTime now = DateTime.UtcNow;
 
-		// Charge stamina timer
 		if (AuctionStaminaProperty.Value < MaxStamina && auctionData.StaminaChargingTime > DateTime.MinValue)
 		{
 			int chargeRemain = (int)(auctionData.StaminaChargingTime - now).TotalSeconds;
@@ -127,14 +126,12 @@ public class AuctionSystem
 			ChargeStaminaRemainTime.Value = 0;
 		}
 
-		// Free stamina timer
 		if (auctionData.FreeStaminaTime > DateTime.MinValue)
 		{
 			int freeRemain = (int)(auctionData.FreeStaminaTime - now).TotalSeconds;
 			FreeStaminaRemainTime.Value = Math.Max(0, freeRemain);
 		}
 
-		// Ad stamina timer
 		if (auctionData.AdStaminaTime > DateTime.MinValue)
 		{
 			int adRemain = (int)(auctionData.AdStaminaTime - now).TotalSeconds;
@@ -322,7 +319,6 @@ public class AuctionSystem
 		{
 			return;
 		}
-		// Distribute remaining coins evenly across rounds
 		int coinPerRound = remainCoin / roundCount;
 		int extraCoin = remainCoin % roundCount;
 		int idx = 0;

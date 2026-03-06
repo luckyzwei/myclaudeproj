@@ -59,7 +59,6 @@ public class TarotSystem
 
 	public void UpdateTarotOpen()
 	{
-		// Check contents open to determine if tarot feature is available
 		IsTarotOpen = true;
 	}
 

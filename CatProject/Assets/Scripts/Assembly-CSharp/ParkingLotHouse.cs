@@ -219,7 +219,6 @@ public class ParkingLotHouse : MonoBehaviour
 
 	private void LoadUI()
 	{
-		// Load RealtorUI
 		if (RealtorUI == null && RealtorRoot != null)
 		{
 			var prefab = Resources.Load<GameObject>("UI/InGame/RealtorUI");
@@ -234,7 +233,6 @@ public class ParkingLotHouse : MonoBehaviour
 			}
 		}
 
-		// Load Arrow
 		if (Arrow == null)
 		{
 			var prefab = Resources.Load<GameObject>("UI/InGame/Arrow");
@@ -373,7 +371,6 @@ public class ParkingLotHouse : MonoBehaviour
 		var inGameHouse = root.InGameSystem.CurOutGame as InGameHouse;
 		if (inGameHouse == null) return;
 
-		// Focus camera on the house and set camera bounds
 		if (inGameHouse.IngameCamera != null)
 		{
 			inGameHouse.IngameCamera.SetCameraZoom(CamOrthographicSize);

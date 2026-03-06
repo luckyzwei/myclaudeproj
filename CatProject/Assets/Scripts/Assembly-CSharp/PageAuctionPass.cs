@@ -234,7 +234,6 @@ public class PageAuctionPass : UIBase
 		PopupType = popupType;
 		FirstShowPlay = ForceFirstShowPlay;
 
-		// Update purchase state
 		if (PurchaseObj != null) PurchaseObj.SetActive(true);
 		if (PurchaseDoneObj != null) PurchaseDoneObj.SetActive(false);
 		if (PremiumBonusLockObj != null) PremiumBonusLockObj.SetActive(true);
@@ -282,7 +281,6 @@ public class PageAuctionPass : UIBase
 	private IEnumerator FocusCurrentItemCoroutine()
 	{
 		yield return null;
-		// Focus scroll to current reward item position
 	}
 
 	public Transform GetStaminaTransform()

@@ -267,7 +267,6 @@ public class PageStageWorldMap : UIBase
 
 	private void LoadChapterItem(int chapter, Action loadComp = null)
 	{
-		// Load chapter prefab and configure spots
 		loadComp?.Invoke();
 	}
 
@@ -303,7 +302,6 @@ public class PageStageWorldMap : UIBase
 	private IEnumerator StartClearEffect()
 	{
 		yield return null;
-		// Play clear effect animation sequence
 	}
 
 	public Image GetFadeWhite()
@@ -335,18 +333,15 @@ public class PageStageWorldMap : UIBase
 	private void OnClickPrevChapter()
 	{
 		if (PrevChapter == null) return;
-		// Navigate to previous chapter
 	}
 
 	private void OnClickNextChapter()
 	{
 		if (NextChapter == null) return;
-		// Navigate to next chapter
 	}
 
 	private void OnClickStageEnter()
 	{
-		// Enter selected stage
 		if (EnterUI != null) EnterUI.SetActive(false);
 	}
 

@@ -132,7 +132,6 @@ public class InGameWorldmap : OutGameMode
 	private IEnumerator DelayLoadEnd()
 	{
 		yield return null;
-		// Delay one frame to allow all world objects to initialize
 	}
 
 	public void AddRegionWorld(int region_idx, Action Cb)

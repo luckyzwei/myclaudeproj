@@ -144,7 +144,6 @@ public class PopupCostume : UIBase
 
 	public override void OnHideAfter()
 	{
-		// Apply costume change if different from original
 		if (ChangedCostumeIdx != OriginCostumeIdx)
 		{
 			// Refresh in-game character appearance
@@ -217,7 +216,6 @@ public class PopupCostume : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Purchase costume via gems
 		OnSuccessPurchase(SelectedCostumeIdx, PurchaseType);
 	}
 
@@ -250,7 +248,6 @@ public class PopupCostume : UIBase
 
 	private void OnClickShortCutBtn()
 	{
-		// Navigate to content that unlocks the costume
 		Hide();
 	}
 
@@ -263,7 +260,6 @@ public class PopupCostume : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if costume unlock condition is met
 		return true;
 	}
 }

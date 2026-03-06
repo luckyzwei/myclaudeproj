@@ -133,13 +133,11 @@ public class OneTimeEventSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
-		// Show one-time event page UI
 		LogEnterPage();
 	}
 
 	private void ShowOpenPopup()
 	{
-		// Show one-time event open popup
 		IsEnqueueOpenPopup = true;
 	}
 
@@ -149,13 +147,11 @@ public class OneTimeEventSystem
 
 	private void ShowDonePopup()
 	{
-		// Show one-time event done popup
 		IsEnqueueDonePopup = true;
 	}
 
 	private bool CheckSpecialDayAtlas()
 	{
-		// Check if special day atlas is loaded
 		return IsSpecialOneTime;
 	}
 
@@ -173,7 +169,6 @@ public class OneTimeEventSystem
 
 	private DateTime GetEndTime()
 	{
-		// Event end time calculated from event data
 		return DateTime.UtcNow.AddHours(24);
 	}
 
@@ -216,25 +211,21 @@ public class OneTimeEventSystem
 
 	public Sprite GetOnetimeHUDIcon()
 	{
-		// Load one-time event HUD icon from resources
 		return null;
 	}
 
 	public string GetOnetimeHUDIconString()
 	{
-		// Return icon resource path string
 		return "";
 	}
 
 	public Sprite GetOnetimeHUDCurrencyIcon()
 	{
-		// Load one-time event currency icon for HUD
 		return null;
 	}
 
 	public Sprite GetOnetimeCurrencyIcon()
 	{
-		// Load one-time event currency icon
 		return null;
 	}
 
@@ -259,7 +250,6 @@ public class OneTimeEventSystem
 		if (data.OneTimeCurrency.Value < useCount) return;
 
 		data.OneTimeCurrency.Value -= useCount;
-		// Apply currency to exp
 		if (remainExp <= 0)
 		{
 			// Level up
@@ -298,7 +288,6 @@ public class OneTimeEventSystem
 	private void GetOneTimeRewards(int level, List<OnetimeRewardData> data, bool isPurchase)
 	{
 		if (data == null) return;
-		// Get reward data for specified level from table
 		LogGetReward(level, isPurchase);
 	}
 
@@ -333,7 +322,6 @@ public class OneTimeEventSystem
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Check if bonus one-time event should be activated based on time limit
 	}
 
 	public void SetAllOneTimeHUDReddot()

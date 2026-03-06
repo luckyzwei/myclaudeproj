@@ -45,8 +45,6 @@ public class SeasonalMilestoneData
 
 	public void UpdateData(Treeplla.Data.SeasonalMilestoneData milestoneData)
 	{
-		// milestoneData is a FlatBuffer struct
-		// Update from FlatBuffer data
 		bool bMax;
 		int nextIdx = CalcNextRewardListIndex(out bMax);
 		CurRewardListIndex.Value = nextIdx;
@@ -106,7 +104,6 @@ public class SeasonalMilestoneData
 
 	private void InitRewardStep(int seasonRewardGroup)
 	{
-		// Load reward step data from config tables
 		if (RewardTableIdxList == null)
 			RewardTableIdxList = new List<int>();
 		MaxRewardListIndex = RewardTableIdxList.Count;

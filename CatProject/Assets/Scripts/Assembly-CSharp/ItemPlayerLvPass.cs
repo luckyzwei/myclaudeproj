@@ -68,7 +68,6 @@ public class ItemPlayerLvPass : MonoBehaviour
 	public bool IsClaimable(bool isPremium, out bool isAdsReward)
 	{
 		isAdsReward = false;
-		// Check if reward is claimable based on player level and claim status
 		return false;
 	}
 

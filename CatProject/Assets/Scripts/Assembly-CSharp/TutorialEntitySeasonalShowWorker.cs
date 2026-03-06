@@ -74,7 +74,6 @@ public class TutorialEntitySeasonalShowWorker : TutorialEntity
 	public override void StartEntity()
 	{
 		base.StartEntity();
-		// Show or hide seasonal workers based on IsShow flag
 		StartCoroutine(WaitAndHide());
 	}
 

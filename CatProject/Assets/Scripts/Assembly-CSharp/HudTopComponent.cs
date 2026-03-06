@@ -82,7 +82,6 @@ public class HudTopComponent : MonoBehaviour
 		if (disposables != null) disposables.Clear();
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Bind currency text to reactive properties
 	}
 
 	public void SetSeasonal()

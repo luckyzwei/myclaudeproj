@@ -97,7 +97,6 @@ public class TutorialEntityFollow : TutorialEntity
 	public override void StartEntity()
 	{
 		base.StartEntity();
-		// Find target worker by id/targetIdx
 		StartCoroutine(WaitVip());
 	}
 

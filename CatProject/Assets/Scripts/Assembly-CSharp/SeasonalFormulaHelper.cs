@@ -28,7 +28,6 @@ public static class SeasonalFormulaHelper
 		if (skipTime <= 0 || skipCash <= 0)
 			return 0;
 
-		// Cost = ceil(remainTimeSec / skipTime) * skipCash
 		int blocks = (remainTimeSec + skipTime - 1) / skipTime;
 		if (blocks <= 0) blocks = 1;
 		return blocks * skipCash;
@@ -36,7 +35,6 @@ public static class SeasonalFormulaHelper
 
 	public static BigInteger CalcBuildingCost_PerMile(BigInteger needCost_Origin_PerMile)
 	{
-		// Apply skill buff: DecWorkshopCost reduces building cost
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.DecWorkshopCost, 0);
 
@@ -64,7 +62,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Base production value from main facility
 		BigInteger baseProduction_PerMile = BigInteger.Zero;
 		if (workshopData.FacilityDataMap != null)
 		{
@@ -80,7 +77,6 @@ public static class SeasonalFormulaHelper
 		if (baseProduction_PerMile <= BigInteger.Zero)
 			baseProduction_PerMile = mileFactor;
 
-		// Manager ability multiplier for production
 		BigInteger managerBonus_PerMile = BigInteger.Zero;
 		if (workshopData.ManagerData != null)
 		{
@@ -88,14 +84,12 @@ public static class SeasonalFormulaHelper
 				E_WorkshopManagerAbilityType.IncProductionValue);
 		}
 
-		// production = base * workerCnt * (MILE + managerBonus) / MILE
 		BigInteger totalProduction = baseProduction_PerMile * possibleWorkerCnt;
 		if (managerBonus_PerMile > BigInteger.Zero)
 		{
 			totalProduction = totalProduction * (mileFactor + managerBonus_PerMile) / mileFactor;
 		}
 
-		// Apply statue buff if active
 		int statueBuffValue = SeasonalHelper.GetStatueAbilityValue_Per(E_StatueAbilityType.IncMoney);
 		if (statueBuffValue > 0)
 		{
@@ -112,7 +106,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Base cost from facility level
 		BigInteger baseCost_PerMile = new BigInteger(mileFactor);
 		if (workshopData.FacilityDataMap != null)
 		{
@@ -126,10 +119,8 @@ public static class SeasonalFormulaHelper
 			}
 		}
 
-		// Scale by cost factor
 		BigInteger onceCost = baseCost_PerMile * costScaleFactor / mileFactor;
 
-		// Apply skill buff: DecWorkshopCost reduces production cost
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.DecWorkshopCost, workshopData.BuildingIdx);
 		if (skillValue_Per > BigInteger.Zero)
@@ -162,11 +153,8 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Manager exp is a fraction of production output
-		// Base manager exp = outputValue / workerCnt (so it's per-production-cycle value)
 		BigInteger managerExp = outputValue_PerMile;
 
-		// Apply IncManagerExpProduction skill buff
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.IncManagerExpProduction, 0);
 		if (skillValue_Per > BigInteger.Zero)
@@ -174,7 +162,6 @@ public static class SeasonalFormulaHelper
 			managerExp = managerExp * (mileFactor + skillValue_Per) / mileFactor;
 		}
 
-		// Apply statue buff for manager exp
 		int statueBuffValue = SeasonalHelper.GetStatueAbilityValue_Per(E_StatueAbilityType.IncManagerExp);
 		if (statueBuffValue > 0)
 		{
@@ -191,7 +178,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Apply skill buff: DecWorkshopCost also reduces manager upgrade cost
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.DecWorkshopCost, 0);
 
@@ -212,10 +198,8 @@ public static class SeasonalFormulaHelper
 
 	public static BigInteger CalcProductOnceDistributeCount_PerMile(int productIdx)
 	{
-		// Find the workshop that produces this product to get its product level
 		var workshopData = SeasonalHelper.FindProductionWorkshop(productIdx);
 		int productLevel = 1;
-		// Check distributor product data for the product level
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData?.DistributorData?.SaleProductsMap != null &&
 			stageData.DistributorData.SaleProductsMap.TryGetValue(productIdx, out var productData))
@@ -230,10 +214,8 @@ public static class SeasonalFormulaHelper
 	{
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Base distribute count scales with product level
 		BigInteger baseCount = new BigInteger(mileFactor) * productLevel;
 
-		// Apply IncOnceDistributeCount skill buff
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.IncOnceDistributeCount, productIdx);
 		if (skillValue_Per > BigInteger.Zero)
@@ -257,7 +239,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Find the workshop for this product to determine base revenue
 		var workshopData = SeasonalHelper.FindProductionWorkshop(productIdx);
 		BigInteger baseProductionValue_PerMile = new BigInteger(mileFactor);
 		if (workshopData != null)
@@ -268,10 +249,8 @@ public static class SeasonalFormulaHelper
 			baseProductionValue_PerMile = CalcWorkshopProduction_PerMile(workshopData, workerCnt);
 		}
 
-		// Revenue = distributeCnt * baseProductionValue / MILE
 		BigInteger revenue = distributeCnt_PerMile * baseProductionValue_PerMile / mileFactor;
 
-		// Apply IncAllDistributorIncome skill buff
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.IncAllDistributorIncome, 0);
 		if (skillValue_Per > BigInteger.Zero)
@@ -279,7 +258,6 @@ public static class SeasonalFormulaHelper
 			revenue = revenue * (mileFactor + skillValue_Per) / mileFactor;
 		}
 
-		// Apply IncWorkshopDistributorIncome skill buff (targeted per workshop)
 		BigInteger workshopSkillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.IncWorkshopDistributorIncome, productIdx);
 		if (workshopSkillValue_Per > BigInteger.Zero)
@@ -297,7 +275,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Use pre-computed revenue from selling data
 		BigInteger revenue = sellingData.OnceDistributeRevenue_PerMile * distributeCnt_PerMile / mileFactor;
 		return revenue;
 	}
@@ -307,7 +284,6 @@ public static class SeasonalFormulaHelper
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 		BigInteger totalManagerExp = BigInteger.Zero;
 
-		// Sum manager exp from all active workshops
 		var workshops = SeasonalHelper.GetBuildingDataOfType<SeasonalWorkshopData>();
 		foreach (var workshop in workshops)
 		{
@@ -324,8 +300,6 @@ public static class SeasonalFormulaHelper
 			totalManagerExp += workshopExp;
 		}
 
-		// Convert to per-second value (divide by production cycle time)
-		// Use a base production cycle of 1 second for idle gain
 		return totalManagerExp;
 	}
 
@@ -339,7 +313,6 @@ public static class SeasonalFormulaHelper
 		if (correctionValue <= 0)
 			correctionValue = mileFactor;
 
-		// Calculate total revenue from all active workshops and distributors
 		BigInteger totalRevenue = BigInteger.Zero;
 		var workshops = SeasonalHelper.GetBuildingDataOfType<SeasonalWorkshopData>();
 		foreach (var workshop in workshops)
@@ -357,14 +330,12 @@ public static class SeasonalFormulaHelper
 			totalRevenue += production;
 		}
 
-		// Bonus = totalRevenue * timeSec * correction / MILE
 		BigInteger bonus = totalRevenue * timeSec * correctionValue / mileFactor;
 		return bonus;
 	}
 
 	public static BigInteger Calc_NextUpgrade_TransValue_PerMile(int productIdx)
 	{
-		// Calculate distribute count at next product level
 		var stageData = SeasonalHelper.SeasonalStageData;
 		int productLevel = 1;
 		if (stageData?.DistributorData?.SaleProductsMap != null &&
@@ -379,7 +350,6 @@ public static class SeasonalFormulaHelper
 
 	public static BigInteger Calc_NextUpgrade_RevenueValue_PerMile(int themeIdx, int productIdx)
 	{
-		// Calculate revenue at next product level
 		BigInteger nextDistributeCount = Calc_NextUpgrade_TransValue_PerMile(productIdx);
 		return CalcProductDistributeRevenue_PerMile(productIdx, nextDistributeCount);
 	}
@@ -391,7 +361,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Upgrade value increases with level: base * level * MILE
 		BigInteger upgradeValue = new BigInteger(mileFactor) * (productLevel + 1);
 		return upgradeValue;
 	}
@@ -406,10 +375,8 @@ public static class SeasonalFormulaHelper
 		if (correctionValue <= 0)
 			correctionValue = mileFactor;
 
-		// Calculate manager exp from all active workshops
 		BigInteger totalManagerExp = CalcOneSecondManagerExpProduction_PerMile();
 
-		// Bonus = totalManagerExp * timeSec * correction / MILE
 		BigInteger bonus = totalManagerExp * timeSec * correctionValue / mileFactor;
 		return bonus;
 	}
@@ -443,7 +410,6 @@ public static class SeasonalFormulaHelper
 		if (correctionValue <= 0)
 			correctionValue = mileFactor;
 
-		// Find the workshop that produces this product
 		var workshopData = SeasonalHelper.FindProductionWorkshop(productIdx);
 		if (workshopData == null || !workshopData.IsWorkshopActive)
 			return (BigInteger.Zero, BigInteger.Zero);
@@ -454,16 +420,13 @@ public static class SeasonalFormulaHelper
 		if (workerCnt <= 0)
 			return (BigInteger.Zero, BigInteger.Zero);
 
-		// Production during offline time
 		BigInteger production_PerMile = CalcWorkshopProduction_PerMile(workshopData, workerCnt);
 		BigInteger productionTotal = production_PerMile * timeSec * correctionValue / mileFactor;
 
-		// Revenue from distributing produced goods
 		BigInteger distributeCount = CalcProductOnceDistributeCount_PerMile(productIdx);
 		BigInteger revenue = CalcProductDistributeRevenue_PerMile(productIdx, distributeCount);
 		BigInteger revenueTotal = revenue * timeSec * correctionValue / mileFactor;
 
-		// Add to offline result
 		if (offlineResultData != null)
 		{
 			offlineResultData.IncreaseHasCurrency_PerMile(productIdx, productionTotal);
@@ -497,13 +460,11 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Get money currency idx
 		int moneyCurrencyIdx = SeasonalHelper.GetSeasonCurrencyIdx(E_CurrencyType.Money);
 		int managerExpCurrencyIdx = SeasonalHelper.GetSeasonCurrencyIdx(E_CurrencyType.ManagerExp);
 
 		BigInteger totalMoneyRevenue = BigInteger.Zero;
 
-		// Calculate offline revenue for each active workshop's products
 		var workshops = SeasonalHelper.GetBuildingDataOfType<SeasonalWorkshopData>();
 		foreach (var workshop in workshops)
 		{
@@ -520,20 +481,17 @@ public static class SeasonalFormulaHelper
 			}
 		}
 
-		// Add money revenue
 		if (moneyCurrencyIdx > 0 && totalMoneyRevenue > BigInteger.Zero)
 		{
 			resultData.IncreaseHasCurrency_PerMile(moneyCurrencyIdx, totalMoneyRevenue);
 		}
 
-		// Add manager exp
 		BigInteger offlineManagerExp = CalcOfflineManagerExpRevenue_PerMile(timeSec);
 		if (managerExpCurrencyIdx > 0 && offlineManagerExp > BigInteger.Zero)
 		{
 			resultData.IncreaseHasCurrency_PerMile(managerExpCurrencyIdx, offlineManagerExp);
 		}
 
-		// Update revenue delta from the original currency map
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData != null)
 		{
@@ -553,8 +511,6 @@ public static class SeasonalFormulaHelper
 		if (correctionValue <= 0)
 			correctionValue = mileFactor;
 
-		// Food production from dormitories during offline time
-		// Uses active worker count as a base
 		int activeWorkerCount = SeasonalHelper.GetTotalWorkingWorkers();
 		if (activeWorkerCount <= 0)
 			return BigInteger.Zero;
@@ -590,7 +546,6 @@ public static class SeasonalFormulaHelper
 		if (buildingDataMap == null || !buildingDataMap.TryGetValue(buildingIdx, out var buildingData))
 			return 0;
 
-		// Max time is based on the building's distributor cool time
 		var buildingTable = SeasonalTableHelper.GetBuildingTable(buildingIdx);
 		if (buildingTable != null)
 			return buildingTable.DistributorCoolTimeSec;
@@ -605,7 +560,6 @@ public static class SeasonalFormulaHelper
 
 		int mileFactor = SeasonalHelper.MILE_FACTOR;
 
-		// Manager exp gained from gem instant purchase
 		BigInteger managerExp = needCount * COST_INSTANT_PURCHASE_GEM_VALUE_SEASONAL * mileFactor;
 		return managerExp;
 	}
@@ -618,11 +572,9 @@ public static class SeasonalFormulaHelper
 
 		var arcadeData = stageData.ArcadeMachineData;
 
-		// Check if within first free chance count
 		if (arcadeData.FirstFreeChanceCheckCount < FIRST_FREE_SPIN_CHANCE_COUNT)
 			return true;
 
-		// Check if skill provides free chance
 		BigInteger skillValue_Per = SeasonalHelper.GetSkillAbilityValue_Per(
 			E_SkillBookAbilityType.ArcadeMachineFreeChanceRatio, 0);
 		if (skillValue_Per > BigInteger.Zero)

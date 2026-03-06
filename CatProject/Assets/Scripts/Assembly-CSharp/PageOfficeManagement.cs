@@ -290,7 +290,6 @@ public class PageOfficeManagement : UIBase
 
 	private void SetManagement(int focusOfficeIdx)
 	{
-		// Populate management list
 		if (focusOfficeIdx >= 0)
 		{
 			StartCoroutine(FocusOffsetSlot());
@@ -301,7 +300,6 @@ public class PageOfficeManagement : UIBase
 	private IEnumerator FocusOffsetSlot()
 	{
 		yield return null;
-		// Scroll to the focused office slot
 		if (FocusOfficeSlot != null && CeoScroll != null)
 		{
 			// Calculate normalized position and set scroll

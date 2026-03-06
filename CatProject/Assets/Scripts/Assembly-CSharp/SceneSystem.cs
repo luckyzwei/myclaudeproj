@@ -20,7 +20,6 @@ public class SceneSystem
 	{
 		if (dicScenePath == null)
 			dicScenePath = new Dictionary<GameType, string>();
-		// Load scene via Addressables, then invoke callback
 		callback?.Invoke();
 	}
 
@@ -28,7 +27,6 @@ public class SceneSystem
 	{
 		if (AddLoadInstances == null)
 			AddLoadInstances = new Dictionary<GameType, SceneInstance>();
-		// Additively load scene via Addressables
 		callback?.Invoke();
 	}
 

@@ -222,7 +222,6 @@ public class ItemDistributorProduct : MonoBehaviour
 
 	private void OnClickProductUpgradeOpen()
 	{
-		// Unlock locked product slot
 		if (!bLockedSlot) return;
 		bLockedSlot = false;
 		SetLockedLayout();

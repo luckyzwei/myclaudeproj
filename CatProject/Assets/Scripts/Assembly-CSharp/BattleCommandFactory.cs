@@ -24,7 +24,6 @@ public static class BattleCommandFactory
 	public static BattleCommand CreateSkillCommand(BizAcqCharacterData caster)
 	{
 		if (caster == null || caster.SkillData == null) return null;
-		// Would create skill-specific command based on SkillData.SkillType
 		return null;
 	}
 

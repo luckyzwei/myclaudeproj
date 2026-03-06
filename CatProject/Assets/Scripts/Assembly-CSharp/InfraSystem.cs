@@ -54,7 +54,6 @@ public class InfraSystem
 
 	public void GetBuildingRevenue(int idx, Transform Trans)
 	{
-		// Would collect revenue from a specific building with effect at Transform position
 		remainRewardTime = infra_reward_time;
 		RefreshCollectBtn();
 	}
@@ -64,7 +63,6 @@ public class InfraSystem
 		if (remainRewardTime > 0)
 			return false;
 
-		// Would collect revenue from all buildings
 		remainRewardTime = infra_reward_time;
 		RefreshCollectBtn();
 		return true;

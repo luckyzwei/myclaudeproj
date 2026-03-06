@@ -34,7 +34,6 @@ public class AdPassSystem
 
 	public void GetAdPassReward(int idx, Action Cb)
 	{
-		// Claim ad pass reward at index
 		Cb?.Invoke();
 	}
 

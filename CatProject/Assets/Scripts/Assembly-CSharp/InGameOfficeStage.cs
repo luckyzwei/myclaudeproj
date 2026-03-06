@@ -797,7 +797,6 @@ public class InGameOfficeStage : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSet_003Ed__52))]
 	public IEnumerator Set(Action compCb)
 	{
-		// Delegate to the state machine coroutine
 		var stateMachine = new _003CSet_003Ed__52(0);
 		stateMachine._003C_003E4__this = this;
 		stateMachine.compCb = compCb;
@@ -808,7 +807,6 @@ public class InGameOfficeStage : MonoBehaviour
 	{
 		if (roomList == null) return;
 
-		// Initialize each office room from the stage data list
 		for (int i = 0; i < roomList.Count && i < Offices.Count; i++)
 		{
 			if (Offices[i] != null)
@@ -868,12 +866,10 @@ public class InGameOfficeStage : MonoBehaviour
 
 	public void DirectInit()
 	{
-		// Direct initialization without coroutine - set floor visibility
 		InitFloor();
 		SubscribeDay();
 		UpdateFarsightView();
 
-		// Initialize astar grids
 		if (Floors != null)
 		{
 			for (int i = 0; i < Floors.Count; i++)
@@ -885,7 +881,6 @@ public class InGameOfficeStage : MonoBehaviour
 			}
 		}
 
-		// Build enter nodes
 		EnterNodes = new List<InGameAstar.Node>();
 		if (Floors != null && Floors.Count > 0 && Floors[0].Astar != null && EnterTrans != null)
 		{
@@ -896,7 +891,6 @@ public class InGameOfficeStage : MonoBehaviour
 			}
 		}
 
-		// Initialize bus
 		if (Bus != null)
 		{
 			Bus.Init();
@@ -905,11 +899,9 @@ public class InGameOfficeStage : MonoBehaviour
 
 	private void InitFloor()
 	{
-		// Calculate max floor based on Floors list
 		MaxFloor = Floors != null ? Floors.Count - 1 : 0;
 		CurFloor = 0;
 
-		// Show current floor, hide others
 		if (Floors != null)
 		{
 			for (int i = 0; i < Floors.Count; i++)
@@ -947,7 +939,6 @@ public class InGameOfficeStage : MonoBehaviour
 		if (floor > MaxFloor)
 			floor = MaxFloor;
 
-		// Hide current floor
 		if (Floors != null && CurFloor >= 0 && CurFloor < Floors.Count)
 		{
 			if (Floors[CurFloor] != null && Floors[CurFloor].Root != null)
@@ -958,7 +949,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 		CurFloor = floor;
 
-		// Show new floor
 		if (Floors != null && CurFloor >= 0 && CurFloor < Floors.Count)
 		{
 			if (Floors[CurFloor] != null && Floors[CurFloor].Root != null)
@@ -969,7 +959,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 		UpdateCameraCullingMask();
 
-		// Update camera bounds for the new floor
 		var root = Singleton<GameRoot>.Instance;
 		if (root != null && root.InGameSystem != null)
 		{
@@ -993,10 +982,7 @@ public class InGameOfficeStage : MonoBehaviour
 
 		Camera cam = inGame.MainCamera;
 
-		// Set culling mask based on current floor
-		// Each floor uses a specific layer; floor 0 = default, higher floors use additional layers
 		int baseMask = cam.cullingMask;
-		// Ensure the camera renders the appropriate floor layer
 		cam.cullingMask = baseMask;
 	}
 
@@ -1025,7 +1011,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 		UpdateFarsightedObjs(status);
 
-		// Update day filter color and sorting order
 		if (DayFilter != null && DayFilterInfos != null)
 		{
 			for (int i = 0; i < DayFilterInfos.Count; i++)
@@ -1063,7 +1048,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 	public void AllResetRepairingRoom()
 	{
-		// Reset repairing state on all office rooms
 		if (Offices != null)
 		{
 			for (int i = 0; i < Offices.Count; i++)
@@ -1072,7 +1056,6 @@ public class InGameOfficeStage : MonoBehaviour
 					Offices[i].ResetRepairing();
 			}
 		}
-		// Reset repairing state on rest rooms
 		if (RestRooms != null)
 		{
 			for (int i = 0; i < RestRooms.Count; i++)
@@ -1081,7 +1064,6 @@ public class InGameOfficeStage : MonoBehaviour
 					RestRooms[i].ResetRepairing();
 			}
 		}
-		// Reset repairing state on meeting rooms
 		if (MeetingRooms != null)
 		{
 			for (int i = 0; i < MeetingRooms.Count; i++)
@@ -1090,7 +1072,6 @@ public class InGameOfficeStage : MonoBehaviour
 					MeetingRooms[i].ResetRepairing();
 			}
 		}
-		// Reset repairing state on lounge rooms
 		if (LoungeRooms != null)
 		{
 			for (int i = 0; i < LoungeRooms.Count; i++)
@@ -1103,7 +1084,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 	public void AllResetInUseRoom()
 	{
-		// Reset in-use state on waiting rooms (rest, meeting, lounge, etc.)
 		if (RestRooms != null)
 		{
 			for (int i = 0; i < RestRooms.Count; i++)
@@ -1140,7 +1120,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 	private void UpdateFarsightedObjs(DaySystem.DayStatus status)
 	{
-		// Show/hide farsighted objects based on day status
 		if (FarsightedObjs == null) return;
 
 		for (int i = 0; i < FarsightedObjs.Count; i++)
@@ -1161,7 +1140,6 @@ public class InGameOfficeStage : MonoBehaviour
 			fObj.On = shouldShow;
 		}
 
-		// Also update special day farsighted objects
 		if (SpecialDayFarsightedObjs != null && SpecialDayFarsightedObjs.obj != null && SpecialDayFarsightedObjs.time != null)
 		{
 			bool shouldShow = false;
@@ -1216,7 +1194,6 @@ public class InGameOfficeStage : MonoBehaviour
 		if (root == null || root.PlantSystem == null || root.UserData == null)
 			return;
 
-		// Initialize plant visuals from user data
 		if (root.UserData.PlantData == null) return;
 
 		for (int i = 0; i < root.UserData.PlantData.Count; i++)
@@ -1237,8 +1214,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 		if (plantIdx < 0) return;
 
-		// Focus camera on the specified plant's position
-		// Plant areas are typically defined by EnterPoints or specific transforms
 	}
 
 	public Sequence PlayFocusPlant(int plantIdx = -1, Action endCb = null)
@@ -1259,7 +1234,6 @@ public class InGameOfficeStage : MonoBehaviour
 			return seq;
 		}
 
-		// Animate camera focus to plant position
 		seq.AppendInterval(0.5f);
 		seq.AppendCallback(() =>
 		{
@@ -1275,8 +1249,6 @@ public class InGameOfficeStage : MonoBehaviour
 		if (root == null || root.PlantSystem == null)
 			return;
 
-		// Open plant UI popup
-		// Would typically open a popup for plant management
 	}
 
 	public void OnClickEditCompanyName()
@@ -1284,8 +1256,6 @@ public class InGameOfficeStage : MonoBehaviour
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 
-		// Open the company name edit popup
-		// Would typically open PopupEditName
 	}
 
 	public void CallEngineerToWorkon(Worker.E_AppearType appearType, Action loadCb, out int totalCount, int startorder = 0)
@@ -1298,10 +1268,8 @@ public class InGameOfficeStage : MonoBehaviour
 		var inGame = root.InGameSystem.GetInGame<InGameOffice>();
 		if (inGame == null) return;
 
-		// Count how many engineer seats are available (from TechnicalRoom)
 		if (TechnicalRoom == null) return;
 
-		// Engineers occupy seats in the technical room
 		int engineerCount = inGame.GetEngineerCount();
 		int order = startorder;
 
@@ -1453,7 +1421,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 	public Transform GetExitTrans(Worker.E_WorkerType type, Worker.E_AppearType appearType)
 	{
-		// Workers exit via the exit transform; CEO may use bus
 		if (type == Worker.E_WorkerType.Ceo && Bus != null)
 		{
 			return Bus.CeoSpawnTrans;
@@ -1479,13 +1446,11 @@ public class InGameOfficeStage : MonoBehaviour
 		if (root == null || root.AdSupplySystem == null)
 			return;
 
-		// Trigger the ad supply money popup
 		root.AdSupplySystem.SetDirectMoneySupply();
 	}
 
 	public List<InGameAstar.Node> GetVipPathNodes(AdSupplySystem.AdsupplyType type)
 	{
-		// Build path nodes from VIP enter to VIP end position using astar
 		if (Floors == null || Floors.Count == 0) return null;
 
 		var astar = GetAstar(0);
@@ -1524,7 +1489,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 	private void InitBoosterOfficeEffect()
 	{
-		// Initialize booster effects for all offices based on current active boosters
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null)
 			return;
@@ -1532,7 +1496,6 @@ public class InGameOfficeStage : MonoBehaviour
 		if (root.UserData.BoosterBuffDataList == null)
 			return;
 
-		// Check each booster buff for active region buffs
 		for (int i = 0; i < root.UserData.BoosterBuffDataList.Count; i++)
 		{
 			var boosterBuff = root.UserData.BoosterBuffDataList[i];
@@ -1562,7 +1525,6 @@ public class InGameOfficeStage : MonoBehaviour
 		if (root == null || root.UserData == null)
 			return;
 
-		// Find the office room for this index
 		OfficeRoom targetRoom = null;
 		for (int i = 0; i < Offices.Count; i++)
 		{
@@ -1575,7 +1537,6 @@ public class InGameOfficeStage : MonoBehaviour
 
 		if (targetRoom == null) return;
 
-		// Check if money or exp booster is active for this office
 		bool moneyBoostActive = false;
 		bool expBoostActive = false;
 
@@ -1623,14 +1584,12 @@ public class InGameOfficeStage : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		// Clean up disposables
 		if (disposables != null)
 		{
 			disposables.Dispose();
 			disposables = null;
 		}
 
-		// Clean up special theme objects
 		if (specialBG != null)
 		{
 			Destroy(specialBG);

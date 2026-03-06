@@ -60,14 +60,12 @@ public class DaySystem
 		CompanyTimeSubscribe = new Dictionary<int, Action>();
 		StatusSeconds = new Dictionary<DayStatus, int>();
 
-		// Initialize time constants
 		work_one_min = 1.0;   // 1 real second = 1 game minute during work
 		workoff_one_min = 0.5; // faster off-work
 		one_min = work_one_min;
 		work_one_hour_second = (int)(work_one_min * 60);
 		workoff_one_hour_second = (int)(workoff_one_min * 60);
 
-		// Build status time mapping
 		StatusSeconds[DayStatus.Midnight] = 0;
 		StatusSeconds[DayStatus.GotoWork] = 8;
 		StatusSeconds[DayStatus.InWork] = 9;
@@ -79,7 +77,6 @@ public class DaySystem
 
 	public void CalcCurTime()
 	{
-		// Calculate current game hour from timer
 		int gameHour = (int)(timer / (one_min * 60));
 		DayTime = (float)gameHour;
 
@@ -102,7 +99,6 @@ public class DaySystem
 			CurTimeStatus.Value = newStatus;
 		}
 
-		// Trigger time subscriptions
 		if (TimeSubscribe != null && TimeSubscribe.TryGetValue(gameHour, out var action))
 		{
 			action?.Invoke();
@@ -151,7 +147,6 @@ public class DaySystem
 
 	public void SkipNight()
 	{
-		// Skip to next morning (GotoWork time)
 		double targetTimerValue = (int)DayStatus.GotoWork * one_min * 60;
 		if (timer < targetTimerValue)
 		{
@@ -168,7 +163,6 @@ public class DaySystem
 
 	public double CalcNightSkipRealTimeSec()
 	{
-		// Calculate how many real seconds the night skip covers
 		double curGameHour = timer / (one_min * 60);
 		double targetGameHour = (int)DayStatus.GotoWork;
 
@@ -189,7 +183,6 @@ public class DaySystem
 	{
 		timer += Time.deltaTime;
 
-		// Check if day cycle complete (24 game hours)
 		double dayEnd = (int)DayStatus.Rest * one_min * 60;
 		if (timer >= dayEnd)
 		{
@@ -197,7 +190,6 @@ public class DaySystem
 			return;
 		}
 
-		// Switch time speed based on work/off-work
 		if (isWorkTime())
 			one_min = work_one_min;
 		else

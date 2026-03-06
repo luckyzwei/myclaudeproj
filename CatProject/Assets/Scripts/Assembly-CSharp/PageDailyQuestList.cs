@@ -72,7 +72,6 @@ public class PageDailyQuestList : UIBase
 
 	public void ShowPlantFocusing()
 	{
-		// Show plant-related quest focused view
 		DrawPage();
 	}
 
@@ -116,7 +115,6 @@ public class PageDailyQuestList : UIBase
 			NextWeekResetTime.text = ProjectUtility.GetTimeStringFormattingShort(remainSec);
 		}
 
-		// Update daily reward states
 		bool allDailyRewardsClaimed = questData.GetDailyRewards != null && questData.GetDailyRewards.Count > 0;
 		if (RewardObj != null) RewardObj.SetActive(!allDailyRewardsClaimed);
 		if (RewardLastObj != null) RewardLastObj.SetActive(allDailyRewardsClaimed);
@@ -136,13 +134,11 @@ public class PageDailyQuestList : UIBase
 
 	private void CompleteQuest(int quest)
 	{
-		// Claim quest reward
 		DrawPage();
 	}
 
 	private void ShortcutQuest(int quest)
 	{
-		// Navigate to quest target
 		Hide();
 	}
 

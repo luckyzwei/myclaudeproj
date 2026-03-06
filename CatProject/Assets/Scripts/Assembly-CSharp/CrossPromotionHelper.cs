@@ -13,7 +13,6 @@ public static class CrossPromotionHelper
 
 	public static bool CheckPossibleClaimReward(Config.E_INHOUSE_RESERVATION reservationType)
 	{
-		// Would check if user can claim cross promotion reward
 		if (IsLinkRewarded(reservationType)) return false;
 		return true;
 	}
@@ -22,7 +21,6 @@ public static class CrossPromotionHelper
 	{
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Would check user data for link reward status
 		return false;
 	}
 
@@ -44,14 +42,12 @@ public static class CrossPromotionHelper
 	{
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Would set link reward flag in user data
 	}
 
 	public static void SetShareRewarded(Config.E_INHOUSE_RESERVATION reservationType)
 	{
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Would set share reward flag in user data
 	}
 
 	public static PageCrossPromotion.APP_IDX GetCrossPromotionAppIdx(Config.E_INHOUSE_RESERVATION reservationType)
@@ -73,13 +69,11 @@ public static class CrossPromotionHelper
 
 	public static bool IsShowRedDot()
 	{
-		// Would check if any cross promotion reward is available
 		return false;
 	}
 
 	public static bool IsPreRegister(Config.E_INHOUSE_RESERVATION reservationType)
 	{
-		// Would check if the app is in pre-registration status
 		return false;
 	}
 }

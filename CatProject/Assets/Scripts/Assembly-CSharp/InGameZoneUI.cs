@@ -59,7 +59,6 @@ public class InGameZoneUI : InGameFloatingUI
 		_zoneIdx = zoneIdx;
 		OpenCb = openCb;
 
-		// Check if zone is unlockable
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 

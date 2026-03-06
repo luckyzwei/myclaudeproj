@@ -129,7 +129,6 @@ public class TutorialEntityConversation : TutorialEntity
 
 	protected virtual void Update()
 	{
-		// Check for tap/click to advance conversation
 		if (Input.GetMouseButtonDown(0))
 		{
 			isNext = true;

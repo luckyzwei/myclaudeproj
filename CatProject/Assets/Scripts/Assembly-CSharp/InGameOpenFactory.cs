@@ -49,7 +49,6 @@ public class InGameOpenFactory : InGameFloatingUI
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Open factory
 	}
 
 	private void OnClickSkip()

@@ -195,14 +195,12 @@ public class PopupExpAccelerate : UIBase
 		HasItemList.Clear();
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get exp ticket items from user data
 	}
 
 	private void SetCompanyInfo(int companyIdx)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Get company current exp and needed exp
 		UpdateCompanyExpInfo();
 	}
 
@@ -232,7 +230,6 @@ public class PopupExpAccelerate : UIBase
 	private void UpdateCompanyLevelUpCashText()
 	{
 		if (UseGemNeedText == null) return;
-		// Calculate gem cost for instant level up
 		UseGemNeedText.text = "0";
 	}
 
@@ -245,7 +242,6 @@ public class PopupExpAccelerate : UIBase
 	private void UpdateUseItemCount(int useCnt)
 	{
 		UseItemCnt = useCnt;
-		// Recalculate total exp from selected items
 		UseItemExp = TicketAddExp * useCnt;
 		UpdateCompanyExpInfo();
 	}
@@ -260,7 +256,6 @@ public class PopupExpAccelerate : UIBase
 		if (UseItemCnt <= 0) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Use exp tickets to level up company
 		EndActionQueue(() =>
 		{
 			OnRefresh();
@@ -283,7 +278,6 @@ public class PopupExpAccelerate : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Use gems to instantly level up company
 	}
 
 	private void OpenExpTicketReturnPopup(Dictionary<Config.ItemIdx, int> returnItemList, Action onComplete)
@@ -293,13 +287,11 @@ public class PopupExpAccelerate : UIBase
 			onComplete?.Invoke();
 			return;
 		}
-		// Show popup listing returned items
 		onComplete?.Invoke();
 	}
 
 	private void CheckAndOpenExpPackage(Action onComplete)
 	{
-		// Check if any exp package should open after use
 		onComplete?.Invoke();
 	}
 
@@ -310,7 +302,6 @@ public class PopupExpAccelerate : UIBase
 
 	private void OnClickBoostShortcut()
 	{
-		// Navigate to boost shop
 		Hide();
 	}
 }

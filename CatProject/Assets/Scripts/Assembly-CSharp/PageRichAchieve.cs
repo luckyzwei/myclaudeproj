@@ -155,7 +155,6 @@ public class PageRichAchieve : UIBase
 
 	private void SetFocusScroll()
 	{
-		// Scroll to current active mission
 		if (scroll != null) scroll.normalizedPosition = new Vector2(0f, 1f);
 	}
 

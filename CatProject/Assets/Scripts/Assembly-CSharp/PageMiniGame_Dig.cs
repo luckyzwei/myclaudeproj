@@ -281,7 +281,6 @@ public class PageMiniGame_Dig : UIBase
 
 	private void Update()
 	{
-		// Update bubble text timer
 		if (BubbleTextRemainTime > 0f)
 		{
 			BubbleTextRemainTime -= Time.deltaTime;
@@ -305,7 +304,6 @@ public class PageMiniGame_Dig : UIBase
 	{
 		if (IsInitDefine) return;
 		IsInitDefine = true;
-		// Load mini game define data
 	}
 
 	private void LoadCeo()
@@ -338,19 +336,16 @@ public class PageMiniGame_Dig : UIBase
 
 	private void CreateNeedItem()
 	{
-		// Create treasure item objects from pool
 		ItemObjList.Clear();
 	}
 
 	private void SetHintItems()
 	{
-		// Create hint item displays
 		HintItemObjList.Clear();
 	}
 
 	private void RestoreItemPool()
 	{
-		// Return items to pool
 		for (int i = 0; i < ItemObjList.Count; i++)
 		{
 			if (ItemObjList[i] != null)
@@ -370,7 +365,6 @@ public class PageMiniGame_Dig : UIBase
 	private void OnClickedCell(Vector2Int position)
 	{
 		if (ScreenCoverObj != null && ScreenCoverObj.activeSelf) return;
-		// Dig at position
 		if (ScreenCoverObj != null) ScreenCoverObj.SetActive(true);
 		StartCoroutine(WaitBlockCoroutine());
 	}
@@ -394,7 +388,6 @@ public class PageMiniGame_Dig : UIBase
 
 	private void GetBonusMoney(Vector2Int cellPos)
 	{
-		// Spawn money get effect at cell position
 		PlayFloorRemoveFx(cellPos);
 	}
 

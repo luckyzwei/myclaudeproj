@@ -90,7 +90,6 @@ public class HUDSeasonalEnterButton : MonoBehaviour
 
 	private void Update()
 	{
-		// Update remaining time texts
 		if (SeasonEndDateTime > DateTime.MinValue)
 		{
 			int remainSec = (int)(SeasonEndDateTime - DateTime.UtcNow).TotalSeconds;

@@ -60,6 +60,5 @@ public class PopupSeasonalDone : UIBase
 	private void Load_ItemSeasonalThemeResource()
 	{
 		bTryLoadAddressableObj = true;
-		// Load seasonal theme background from addressable
 	}
 }

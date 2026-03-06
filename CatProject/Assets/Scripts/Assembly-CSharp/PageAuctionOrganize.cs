@@ -83,14 +83,12 @@ public class PageAuctionOrganize : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update round and coin info
 		if (RoundCountText != null) RoundCountText.text = "";
 		if (TotalCoinText != null) TotalCoinText.text = "0";
 	}
 
 	private void OnClickAuto()
 	{
-		// Auto organize auction managers
 		UpdateRoundSlot();
 	}
 
@@ -109,7 +107,6 @@ public class PageAuctionOrganize : UIBase
 
 	private void OnClickReset()
 	{
-		// Reset auction team
 		UpdateRoundSlot();
 	}
 

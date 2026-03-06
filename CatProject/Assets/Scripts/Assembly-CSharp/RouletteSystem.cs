@@ -80,7 +80,6 @@ public class RouletteSystem
 		SpecialDayRandRatios = new Dictionary<int, int>();
 		specialday_roulette_need_gem = new List<int>();
 
-		// Default values from table data
 		roulette_ad_cooltime = 30;
 		roulette_need_gem = 10;
 		roulette_lucky_draw_count = 10;
@@ -92,7 +91,6 @@ public class RouletteSystem
 		specialday_roulette_reward_plant = 0;
 		specialday_roulette_reward_count = 0;
 
-		// Load existing spin time from user data
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot != null && gameRoot.UserData != null)
 		{
@@ -194,7 +192,6 @@ public class RouletteSystem
 		SpecialDayRandRatios = new Dictionary<int, int>();
 		specialday_roulette_need_gem = new List<int>();
 
-		// Would load special day roulette config from table data
 		specialday_roulette_ad_cooltime = 30;
 		specialday_roulette_reward_plant = 0;
 		specialday_roulette_reward_count = 0;
@@ -253,7 +250,6 @@ public class RouletteSystem
 		var rouletteData = gameRoot.UserData.SpecialDayRouletteData;
 		if (rouletteData == null) return 0;
 
-		// Gem cost increases with each use based on specialday_roulette_need_gem tiers
 		int useCount = rouletteData.LuckydrawCount;
 		if (specialday_roulette_need_gem == null || specialday_roulette_need_gem.Count == 0) return 0;
 
@@ -288,7 +284,6 @@ public class RouletteSystem
 
 	public int GetSpecialDayLuckyDrawReward()
 	{
-		// Return special day roulette confirmed/lucky draw reward plant idx
 		return specialday_roulette_reward_plant;
 	}
 
@@ -297,7 +292,6 @@ public class RouletteSystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Grant the special day lucky draw reward (plant item)
 		if (specialday_roulette_reward_plant > 0 && specialday_roulette_reward_count > 0)
 		{
 			gameRoot.UserData.SetReward(0, specialday_roulette_reward_plant, 0,

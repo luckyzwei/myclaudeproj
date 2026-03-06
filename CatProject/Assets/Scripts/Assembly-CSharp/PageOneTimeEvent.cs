@@ -251,7 +251,6 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 		if (RemainCurrencyParticleDuration > 0f) RemainCurrencyParticleDuration -= Time.deltaTime;
 		if (RemainFloorDoTweenDuration > 0f) RemainFloorDoTweenDuration -= Time.deltaTime;
 
-		// Update remain time text
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
@@ -294,7 +293,6 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 	private void UpdateLevelBuilding(int nextLevel = -1)
 	{
 		if (BuildingStructs == null || CurBuildingStruct == null) return;
-		// Show/hide building floors based on current level
 		if (CurBuildingStruct.ItemOnetimeFloors != null)
 		{
 			for (int i = 0; i < CurBuildingStruct.ItemOnetimeFloors.Count; i++)
@@ -349,7 +347,6 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 	{
 		if (MessageText == null || MessageT == null) yield break;
 		RemainMessageDuration = MessageTerm;
-		// Show random congratulation message
 		MessageText.text = "";
 		yield return waitMessageTerm;
 	}
@@ -366,7 +363,6 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 		if (root == null || root.UserData == null) return;
 
 		OnRewarding = true;
-		// Use currency to upgrade building
 		if (UpgradeFxObj != null) UpgradeFxObj.SetActive(true);
 		ShowCurrencyParticle();
 		UpdateLevel();

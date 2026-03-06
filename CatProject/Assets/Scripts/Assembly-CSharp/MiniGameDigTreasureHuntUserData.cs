@@ -46,7 +46,6 @@ public class MiniGameDigTreasureHuntUserData
 		result.ScheduleIdx = d.Scheduleidx;
 		result.EventIdx = d.Eventidx;
 		result.StageIdx = d.Stageidx;
-		// Grid 데이터 로드
 		if (d.ProgressrewardclaimedLength > 0)
 		{
 			result.ProgressRewardClaimed = new List<bool>();
@@ -61,7 +60,6 @@ public class MiniGameDigTreasureHuntUserData
 	public static Offset<DigTreasureHuntData> ToFlatBuffer(FlatBufferBuilder builder, MiniGameDigTreasureHuntUserData userData)
 	{
 		if (userData == null) return default(Offset<DigTreasureHuntData>);
-		// Build progress reward claimed vector
 		VectorOffset progressOffset = default(VectorOffset);
 		if (userData.ProgressRewardClaimed != null && userData.ProgressRewardClaimed.Count > 0)
 		{

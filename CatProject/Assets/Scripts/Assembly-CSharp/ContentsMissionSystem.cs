@@ -96,7 +96,6 @@ public class ContentsMissionSystem
 			ContentMissions.Add(contentType, contentData);
 		}
 
-		// Check if there is saved user data
 		var userData = GameRoot.Instance.UserData;
 		if (userData != null && userData.ContentsMissionDataMap != null && userData.ContentsMissionDataMap.ContainsKey(contentType))
 		{
@@ -196,7 +195,6 @@ public class ContentsMissionSystem
 			return null;
 		}
 
-		// Remove excluded missions
 		if (excludeMissions != null && excludeMissions.Count > 0)
 		{
 			List<int> filtered = new List<int>();
@@ -228,8 +226,6 @@ public class ContentsMissionSystem
 	private List<int> GetAvailableMissionList(E_ContentsMissionType contentType, int missionGroupIdx)
 	{
 		List<int> availableList = new List<int>();
-		// Query mission indices from data table for the given content type and group
-		// This would typically iterate the mission info table entries matching missionGroupIdx
 		return availableList;
 	}
 
@@ -274,7 +270,6 @@ public class ContentsMissionSystem
 			return null;
 		}
 
-		// Collect existing mission indices to exclude
 		HashSet<int> excludeMissions = new HashSet<int>();
 		List<SingleMissionBase> allMissions = contentData.GetAllMissions();
 		if (allMissions != null)

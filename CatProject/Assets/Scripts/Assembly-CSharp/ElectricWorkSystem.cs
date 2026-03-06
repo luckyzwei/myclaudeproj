@@ -16,7 +16,6 @@ public class ElectricWorkSystem
 	public void Init()
 	{
 		var gameRoot = Singleton<GameRoot>.Instance;
-		// Load config values for maintenance timing
 		office_maintenance_starttime = 300;
 		office_maintenance_cooltime = 600;
 		office_maintenance_probability_origin = 50;

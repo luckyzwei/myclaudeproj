@@ -258,7 +258,6 @@ public class PagePlantManage : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Set plant display info
 		UpdateSelectItem();
 	}
 
@@ -329,7 +328,6 @@ public class PagePlantManage : UIBase
 	private void OnClickGiveItem()
 	{
 		if (SelectItem < 0) return;
-		// Give selected tonic to plant
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 	}
@@ -342,14 +340,12 @@ public class PagePlantManage : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Level up the plant
 	}
 
 	private void OnClickGetGemReward()
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Claim gem reward from special plant
 	}
 
 	private void OnDestroy()

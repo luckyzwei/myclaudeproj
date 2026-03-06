@@ -76,7 +76,6 @@ public class TutorialEntityDefineWait : TutorialEntity
 	public override void StartEntity()
 	{
 		base.StartEntity();
-		// Get wait time from define key
 		float time = 1f;
 		StartCoroutine(WaitTime(time));
 	}

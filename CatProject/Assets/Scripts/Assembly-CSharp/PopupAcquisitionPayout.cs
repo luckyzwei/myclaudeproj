@@ -76,7 +76,6 @@ public class PopupAcquisitionPayout : UIBase
 		if (RewardItemRoot == null || RewardItemPrefab == null) return;
 		if (RewardItemDataList == null) return;
 
-		// Create reward items if needed
 		while (RewardItemArticleList.Count < RewardItemDataList.Count)
 		{
 			var obj = Instantiate(RewardItemPrefab, RewardItemRoot.transform);
@@ -84,7 +83,6 @@ public class PopupAcquisitionPayout : UIBase
 			if (article != null) RewardItemArticleList.Add(article);
 		}
 
-		// Show/hide items
 		for (int i = 0; i < RewardItemArticleList.Count; i++)
 		{
 			if (RewardItemArticleList[i] != null)
@@ -105,7 +103,6 @@ public class PopupAcquisitionPayout : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return null;
 		var result = new List<RewardItemData>();
-		// Build reward list from acquisition payout data
 		return result;
 	}
 
@@ -118,7 +115,6 @@ public class PopupAcquisitionPayout : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Claim idle reward and close
 		Hide();
 	}
 

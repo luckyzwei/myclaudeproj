@@ -11,7 +11,6 @@ public class FactoryFacilityConstructMission : SingleMissionBase
 	public override void Subscribe()
 	{
 		if (Disposables == null) return;
-		// Subscribe to factory facility construction events
 	}
 
 	public override string GetMissionDescriptionText()

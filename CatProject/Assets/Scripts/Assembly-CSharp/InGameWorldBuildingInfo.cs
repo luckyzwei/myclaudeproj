@@ -197,17 +197,14 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Look up building info from table
 		var buildingInfo = GetBuildingInfoData(buildingIdx);
 		if (buildingInfo == null) return;
 
-		// Set building name and description
 		if (BuildingName != null)
 			BuildingName.text = buildingInfo.NameKey;
 		if (BuildingDesc != null)
 			BuildingDesc.text = buildingInfo.DescKey;
 
-		// Determine if the building is already owned
 		bool isOwned = false;
 		if (gameRoot.UserData != null && gameRoot.UserData.WorldmapData != null &&
 			gameRoot.UserData.WorldmapData.BuildingList != null)
@@ -215,14 +212,12 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 			isOwned = gameRoot.UserData.WorldmapData.BuildingList.Contains(buildingIdx);
 		}
 
-		// Check level requirement
 		bool meetsLevel = true;
 		if (buildingInfo.OpenLevel > 0 && gameRoot.UserData != null && gameRoot.UserData.Level != null)
 		{
 			meetsLevel = gameRoot.UserData.Level.Value >= buildingInfo.OpenLevel;
 		}
 
-		// Show/hide buttons based on ownership
 		if (isOwned)
 		{
 			// Already owned - show stage move button
@@ -263,7 +258,6 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 			SetIAP();
 		}
 
-		// Show manager key info if applicable
 		if (ManagerKeyRootObj != null)
 			ManagerKeyRootObj.SetActive(false);
 	}
@@ -288,7 +282,6 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 		if (IAPPriceText != null)
 			IAPPriceText.text = packageData.ProductId;
 
-		// Show sale info
 		if (packageData.SaleValue > 0)
 		{
 			if (IAPSaleObj != null) IAPSaleObj.SetActive(true);
@@ -325,7 +318,6 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 
 	public void HideForParticle()
 	{
-		// Temporarily hide UI while particle effect plays
 		gameObject.SetActive(false);
 		StartCoroutine(WaitParticleEnd());
 	}
@@ -372,23 +364,19 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 
 	private void OnClickNeedPoint()
 	{
-		// Show toast or popup indicating the point requirement for this building
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Show a toast message about needing more points
 	}
 
 	private void OnClickNeedLevel()
 	{
-		// Show toast or popup indicating the level requirement for this building
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
 		var buildingInfo = GetBuildingInfoData(BuildingIdx);
 		if (buildingInfo == null) return;
 
-		// Show a toast message about needing higher level
 	}
 
 	private void ProcessBuildingBuy(BuildingInfoData buildingInfo)
@@ -396,7 +384,6 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null) return;
 
-		// Add the building to owned list
 		if (gameRoot.UserData != null && gameRoot.UserData.WorldmapData != null &&
 			gameRoot.UserData.WorldmapData.BuildingList != null)
 		{
@@ -406,7 +393,6 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 			}
 		}
 
-		// Hide the info panel and play effect
 		HideForParticle();
 	}
 
@@ -415,18 +401,14 @@ public class InGameWorldBuildingInfo : InGameFloatingUI
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.InGameSystem == null) return;
 
-		// Get the region from the building index
 		int region = ProjectUtility.GetBuildingToRegion(BuildingIdx);
 
-		// Navigate to the building's stage
 		Hide();
 		gameRoot.InGameSystem.ChangeMode(GameType.Main);
 	}
 
 	private BuildingInfoData GetBuildingInfoData(int buildingIdx)
 	{
-		// Look up building info from table data by index
-		// BuildingInfoData is populated from FlatBuffer table configs
 		return null;
 	}
 }

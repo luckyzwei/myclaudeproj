@@ -85,7 +85,6 @@ public class PopupCompanyInfo : UIBase, ILocalizeRefresh
 
 	private void OnClickContractAds()
 	{
-		// Watch ad to contract for free
 		ContractAction?.Invoke();
 		Hide();
 	}

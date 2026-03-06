@@ -117,7 +117,6 @@ public class PageSeasonalPass : UIBase
 	private IEnumerator FocusToIndexCoroutine()
 	{
 		yield return null;
-		// Focus scroll to current milestone index
 	}
 
 	private void Update()

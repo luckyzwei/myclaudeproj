@@ -86,7 +86,6 @@ public class PageAcquisitionPass : UIBase
 	private void SetPassInfo(int passIdx)
 	{
 		PassGroupIdx = passIdx;
-		// Create pass items from PassItemPrefab if not created yet
 	}
 
 	private void SetStageInfo()
@@ -106,7 +105,6 @@ public class PageAcquisitionPass : UIBase
 	private void SetAllClaimButtonState()
 	{
 		bool hasClaimable = false;
-		// Check if any pass items are claimable
 		if (ClaimAllObj != null) ClaimAllObj.SetActive(hasClaimable);
 	}
 
@@ -116,7 +114,6 @@ public class PageAcquisitionPass : UIBase
 
 	private void OnClickedClaimAllBtn()
 	{
-		// Claim all available pass rewards
 		OnRewardedUpdate();
 	}
 

@@ -193,7 +193,6 @@ public class AdSupplySystem
 
 	public bool AddPiggySaveCnt()
 	{
-		// Would add to piggy bank save count
 		return true;
 	}
 
@@ -213,7 +212,6 @@ public class AdSupplySystem
 	private void SetExpUpCompany()
 	{
 		ExpUpCompany = 0;
-		// Would find a company that can receive exp
 	}
 
 	public void UpdateDaySkipStatus()
@@ -342,12 +340,10 @@ public class AdSupplySystem
 	{
 		AdsupplyShowPopup = true;
 		AdSupplyProperty.Value = Status.Hide;
-		// Would show ad via ad SDK, then call Cb on success or FailCb on failure
 	}
 
 	public void GetReward(Action<int, int, int, BigInteger> Cb)
 	{
 		CancelSupply();
-		// Would give reward and call Cb
 	}
 }

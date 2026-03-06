@@ -373,7 +373,6 @@ public class InGameOffice : InGameMode
 	[IteratorStateMachine(typeof(_003CWaitAllWorkOff_Coroutine_003Ed__57))]
 	private IEnumerator WaitAllWorkOff_Coroutine(Action Cb)
 	{
-		// Wait a short time for work off animations to complete
 		yield return new WaitForSeconds(1.0f);
 		Cb?.Invoke();
 	}

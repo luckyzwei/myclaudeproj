@@ -94,7 +94,6 @@ public class PageSeasonalStatue : UIBase
 
 	private void OnClickPurchase()
 	{
-		// Purchase seasonal statue
 		AddCatstaEventMissionValue();
 	}
 

@@ -250,7 +250,6 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void UpdateLevelBuilding(int nextLevel = -1)
 	{
-		// Update building visual based on current level
 		if (buildingRoot == null) return;
 	}
 
@@ -279,7 +278,6 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 	{
 		if (LastRewardObj == null) return;
 		LastRewardObj.SetActive(false);
-		// Show last reward items if available
 	}
 
 	private void HideInfoBubbles()

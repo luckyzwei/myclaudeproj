@@ -44,7 +44,6 @@ public class InGamePath : MonoBehaviour
 
 	public int GetPathIdxAtRatio(float ratio, EndOfPathInstruction inst = EndOfPathInstruction.Stop)
 	{
-		// Approximate path index from ratio
 		int max = GetPathIndexMax();
 		if (max <= 0) return 0;
 		return Mathf.Clamp(Mathf.FloorToInt(Mathf.Clamp01(ratio) * max), 0, max - 1);

@@ -130,9 +130,7 @@ public class PopupSeasonalOffline : UIBase
 	private void SetOfflineRewardSlots(Dictionary<int, BigInteger> offlineReward_PerMile, int offlineTimeSec)
 	{
 		if (OfflineRewardBox == null || OfflineRewardSlotPrefab == null) return;
-		// Clear existing slots
 		if (ItemArticleList != null) ItemArticleList.Clear();
-		// Create reward slots from offline reward data
 	}
 
 	private void OnClickedRewardReceiveBtn()
@@ -150,7 +148,6 @@ public class PopupSeasonalOffline : UIBase
 		if (IsRewarded) return;
 		IsRewarded = true;
 		int multiply = RewardMultipleMap.ContainsKey(getType) ? RewardMultipleMap[getType] : 1;
-		// Apply multiplied offline rewards to user data
 		base.Hide();
 	}
 }

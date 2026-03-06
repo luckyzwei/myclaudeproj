@@ -71,7 +71,6 @@ public class PopupReservation : UIBase
 	private void OnClickLink()
 	{
 		IsOpenURL = true;
-		// Open external link
 	}
 
 	private void OnApplicationPause(bool pause)

@@ -49,7 +49,6 @@ public class ItemCostumeList : MonoBehaviour
 		IsLocked = !isOpen;
 
 		SetIsLocked(!isOpen);
-		// Load costume model asynchronously
 	}
 
 	private void OnLoadComplete(GameObject loadObject, Action<GameObject> onLoadComplete)

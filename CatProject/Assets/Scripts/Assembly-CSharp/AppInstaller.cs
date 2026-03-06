@@ -8,7 +8,6 @@ public static class AppInstaller
 	private static bool CheckAndroidAppInstalled(string packageId)
 	{
 		if (string.IsNullOrEmpty(packageId)) return false;
-		// Would use AndroidJavaClass to check PackageManager on Android
 		return false;
 	}
 }

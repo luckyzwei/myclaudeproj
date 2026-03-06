@@ -100,7 +100,6 @@ public class EmployeeMoodSystem : MonoBehaviour
 			// Set mood to Strike when on strike
 			return;
 		}
-		// Calculate mood based on office score and employee data
 	}
 
 	public void AddMoodBuff(int office, int seat, int buff)
@@ -110,7 +109,6 @@ public class EmployeeMoodSystem : MonoBehaviour
 		if (seat < 0 || seat >= officeData.Employees.Count) return;
 		var employeeData = officeData.Employees[seat];
 		if (employeeData == null) return;
-		// Add buff to employee mood
 	}
 
 	public void RemoveMoodbuff(int office, int seat, int buffidx = -1)
@@ -120,7 +118,6 @@ public class EmployeeMoodSystem : MonoBehaviour
 		if (seat < 0 || seat >= officeData.Employees.Count) return;
 		var employeeData = officeData.Employees[seat];
 		if (employeeData == null) return;
-		// Remove mood buff
 	}
 
 	public void UpdateOneSeconds()

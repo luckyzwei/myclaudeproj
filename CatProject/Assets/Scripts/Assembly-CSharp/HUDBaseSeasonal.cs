@@ -178,7 +178,6 @@ public class HUDBaseSeasonal : HUDAniBase, IHUDTopInfo, IScreenAction
 	private void ShowRootObject(List<RectTransform> rootObjects, List<float> moveXPos)
 	{
 		if (rootObjects == null || moveXPos == null) return;
-		// Kill existing tweens
 		for (int i = 0; i < ScreenActionTweens.Count; i++)
 		{
 			if (ScreenActionTweens[i] != null)

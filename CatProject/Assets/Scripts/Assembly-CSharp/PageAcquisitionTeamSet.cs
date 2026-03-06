@@ -51,7 +51,6 @@ public class PageAcquisitionTeamSet : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set current stage info text
 		if (StageIdxText != null) StageIdxText.text = "";
 	}
 
@@ -73,7 +72,6 @@ public class PageAcquisitionTeamSet : UIBase
 			EnemyTeamTotalHpValueText.text = hpInfo.Item1 + "/" + hpInfo.Item2;
 		}
 
-		// Set team slot data
 		if (TeamSetSlotList != null && playerTeam != null)
 		{
 			var characters = playerTeam.Characters;
@@ -91,7 +89,6 @@ public class PageAcquisitionTeamSet : UIBase
 	private void SetAllCeoList()
 	{
 		if (ItemAcqCeoList == null) ItemAcqCeoList = new List<ItemAcquisitionCEO>();
-		// Populate CEO list from user's available CEOs
 	}
 
 	private void OnClickedAutoSetBtn()
@@ -118,7 +115,6 @@ public class PageAcquisitionTeamSet : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Add CEO to player team
 		SetTeamData();
 		SetAllCeoList();
 	}
@@ -127,7 +123,6 @@ public class PageAcquisitionTeamSet : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.BizAcqBattleSystem == null) return;
-		// Remove CEO from player team
 		SetTeamData();
 		SetAllCeoList();
 	}

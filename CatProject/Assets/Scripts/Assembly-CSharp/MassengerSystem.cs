@@ -45,7 +45,6 @@ public class MassengerSystem
 		TutoChatIdx = new List<int>();
 		chat_delaytime = 0.5f;
 
-		// 유저 데이터에서 채팅 진행 상태 로드
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null || userData.PhoneData.ChatDatas == null) return;
 		foreach (var kvp in userData.PhoneData.ChatDatas)
@@ -60,18 +59,15 @@ public class MassengerSystem
 
 	public void CheckNewChat(int group)
 	{
-		// 특정 그룹의 새 채팅 확인
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null || userData.PhoneData.ChatDatas == null) return;
 		if (!userData.PhoneData.ChatDatas.TryGetValue(group, out var chatData)) return;
 		if (chatData == null) return;
-		// 다음 대화가 있으면 새 채팅으로 표시
 		chatData.isNew = true;
 	}
 
 	public void CheckNewChat(OpenType type)
 	{
-		// 특정 오픈 타입에 해당하는 그룹들의 채팅 확인
 		int typeKey = (int)type;
 		if (!OpenTypeCache.TryGetValue(typeKey, out var groupList)) return;
 		if (groupList == null) return;
@@ -83,7 +79,6 @@ public class MassengerSystem
 
 	public int GetEnablePassivityChatOrder(int group)
 	{
-		// 수동 타입 채팅의 현재 진행 가능한 순서 반환
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null || userData.PhoneData.ChatDatas == null) return 0;
 		if (!userData.PhoneData.ChatDatas.TryGetValue(group, out var chatData)) return 0;
@@ -93,7 +88,6 @@ public class MassengerSystem
 
 	private void AddChat(int group, int order)
 	{
-		// 채팅 그룹에 새 대화 추가
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null) return;
 		if (userData.PhoneData.ChatDatas == null)
@@ -112,7 +106,6 @@ public class MassengerSystem
 
 	public void CompleteChat(int group)
 	{
-		// 채팅 그룹 완료 처리
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null || userData.PhoneData.ChatDatas == null) return;
 		if (!userData.PhoneData.ChatDatas.TryGetValue(group, out var chatData)) return;
@@ -123,13 +116,11 @@ public class MassengerSystem
 			chatData.CompleteChat.Add(chatData.CurChatOrder);
 		chatData.isNew = false;
 
-		// 같은 그룹 완료 시 다음 채팅 오픈 확인
 		CheckNewChat(OpenType.CompleteChat_SameGroup);
 	}
 
 	public void SetNextChat(int group, int chat, int completechat = -1)
 	{
-		// 다음 채팅 설정
 		var userData = Singleton<GameRoot>.Instance.UserData;
 		if (userData == null || userData.PhoneData == null || userData.PhoneData.ChatDatas == null) return;
 		if (!userData.PhoneData.ChatDatas.TryGetValue(group, out var chatData)) return;

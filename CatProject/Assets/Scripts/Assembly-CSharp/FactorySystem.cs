@@ -244,7 +244,6 @@ public class FactorySystem
 			return;
 		}
 
-		// Check if player has enough products
 		if (factoryData.FactoryItems != null &&
 			factoryData.FactoryItems.TryGetValue(slot.OrderProduct, out var itemData))
 		{
@@ -321,7 +320,6 @@ public class FactorySystem
 
 	private int GetEnableMakeRandProduct()
 	{
-		// Would select a random product from available production list
 		return 0;
 	}
 
@@ -364,7 +362,6 @@ public class FactorySystem
 
 	public float GetProductionTime(int factory, int level, int product)
 	{
-		// Base production time in seconds, reduced by level
 		float baseTime = 60f;
 		float levelBonus = level * 0.05f;
 		return baseTime * (1f - Math.Min(levelBonus, 0.8f));
@@ -372,13 +369,11 @@ public class FactorySystem
 
 	public float GetProductionValue(int factory, int level)
 	{
-		// Production value increases with level
 		return 1f + level * 0.1f;
 	}
 
 	public BigInteger GetLevelUpNeedCost(int factory, int level)
 	{
-		// Exponential cost scaling
 		BigInteger baseCost = new BigInteger(1000);
 		for (int i = 0; i < level; i++)
 		{
@@ -394,7 +389,6 @@ public class FactorySystem
 
 	public int GetStorageFull(int level = -1)
 	{
-		// Storage capacity increases with level
 		if (level < 0)
 			return StorageFullCount;
 
@@ -403,7 +397,6 @@ public class FactorySystem
 
 	public void ResetManagerKey()
 	{
-		// Reset manager key daily timer
 		RemainManagerKeyAddResetTime.Value = 0;
 	}
 
@@ -434,13 +427,11 @@ public class FactorySystem
 
 	public Sprite GetOrderCharacterIcon(int characterIdx)
 	{
-		// Would load sprite from Resources
 		return null;
 	}
 
 	public string GetOrderCharacterTalkText(int productIdx, int talkIdx)
 	{
-		// Would look up localized text
 		return null;
 	}
 
@@ -461,7 +452,6 @@ public class FactorySystem
 			}
 		}
 
-		// Return first available factory
 		for (int i = 0; i < factoryData.Factoris.Count; i++)
 		{
 			if (factoryData.Factoris[i].MakeProduct == null || factoryData.Factoris[i].MakeProduct.Value <= 0)

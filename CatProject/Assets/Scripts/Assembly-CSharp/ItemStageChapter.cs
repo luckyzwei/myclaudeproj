@@ -84,7 +84,6 @@ public class ItemStageChapter : MonoBehaviour
 			Callback?.Invoke();
 			return;
 		}
-		// Animate car movement along the move trans points
 		Callback?.Invoke();
 	}
 
@@ -113,7 +112,6 @@ public class ItemStageChapter : MonoBehaviour
 			totalDist += 1f;
 		}
 
-		// Position car at the correct stage
 		if (moveCarRect != null && curMoveTrans.Count > 0)
 		{
 			var last = curMoveTrans[curMoveTrans.Count - 1];

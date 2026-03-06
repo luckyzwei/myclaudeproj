@@ -279,8 +279,6 @@ public static class SeasonalTableHelper
 		if (levelData == null)
 			return BigInteger.Zero;
 
-		// Total upgrade value is the sum of all upgrade values from level 1 to current level
-		// Base formula: upgradeAddedValue * level
 		BigInteger totalValue = new BigInteger(levelData.UpgradeAddedValue_PerMile) * facilityLevel;
 		return totalValue;
 	}
@@ -300,8 +298,6 @@ public static class SeasonalTableHelper
 		if (levelData == null)
 			return BigInteger.Zero;
 
-		// Total cost increases with level using the cost multiplier
-		// Base formula: baseCost * (costMultiply ^ level) / 1000
 		BigInteger baseCost = new BigInteger(levelData.UpgradeCostMultiply_PerMile);
 		BigInteger totalCost = baseCost * facilityLevel;
 		return totalCost;
@@ -362,8 +358,6 @@ public static class SeasonalTableHelper
 		if (levelData != null)
 			return levelData.BuildingLevelupNeedFacilityLevel;
 
-		// Default formula: each building level requires a certain facility level
-		// Typically building level * some base requirement
 		return buildingLv * 10;
 	}
 
@@ -391,7 +385,6 @@ public static class SeasonalTableHelper
 		if (massIncLvList == null || massIncLvList.Count == 0)
 			return result;
 
-		// Find the next milestone level above the current facility level
 		int nextIncLevel = 0;
 		for (int i = 0; i < massIncLvList.Count; i++)
 		{
@@ -471,7 +464,6 @@ public static class SeasonalTableHelper
 			}
 		}
 
-		// Sort each list
 		foreach (var kvp in FacilityAbilityMassIncLvMap)
 		{
 			kvp.Value.Sort();

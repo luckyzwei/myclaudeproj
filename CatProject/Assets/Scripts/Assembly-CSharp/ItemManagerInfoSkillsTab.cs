@@ -88,7 +88,6 @@ public class ItemManagerInfoSkillsTab : MonoBehaviour, ITabToggleTab
 	private void SetSkillInfo(ManagerCardData managerData, ManagerSkillData skillData)
 	{
 		if (managerData == null || skillData == null) return;
-		// Update skill simple and detail lists
 		if (SkillSimpleList != null)
 		{
 			for (int i = 0; i < SkillSimpleList.Count; i++)
@@ -124,7 +123,6 @@ public class ItemManagerInfoSkillsTab : MonoBehaviour, ITabToggleTab
 	{
 		if (IsMaxLevel) return;
 		if (SkillUpHasItemCount < SkillUpNeedItemCount) return;
-		// Process skill level up
 		PlaySkillLevelUpFx();
 		SetSkillLevelUpInfo();
 		UpdateRedDot();

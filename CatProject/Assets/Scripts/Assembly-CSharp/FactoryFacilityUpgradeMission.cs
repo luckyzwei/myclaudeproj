@@ -11,7 +11,6 @@ public class FactoryFacilityUpgradeMission : SingleMissionBase
 	public override void Subscribe()
 	{
 		if (Disposables == null) return;
-		// Subscribe to factory facility upgrade events
 	}
 
 	public override string GetMissionDescriptionText()

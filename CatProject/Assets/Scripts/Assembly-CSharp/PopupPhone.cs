@@ -442,7 +442,6 @@ public class PopupPhone : UIBase
 	private void UpdateCatstagram()
 	{
 		if (CatstagramRoot != null) CatstagramRoot.gameObject.SetActive(true);
-		// Initialize catstagram content
 	}
 
 	private void UpdateBank()
@@ -455,7 +454,6 @@ public class PopupPhone : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
 
-		// Update money display
 		if (MoneyCount != null) MoneyCount.text = "0";
 		if (LimitMoneyCount != null) LimitMoneyCount.text = "0";
 		if (BankMaxObj != null) BankMaxObj.SetActive(false);
@@ -466,7 +464,6 @@ public class PopupPhone : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update company book list
 		if (CompanyCount != null) CompanyCount.text = "0/0";
 		if (CompanyCountProgress != null) CompanyCountProgress.value = 0f;
 	}
@@ -484,13 +481,11 @@ public class PopupPhone : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Populate contact list from messenger system
 	}
 
 	private void SetChats()
 	{
 		if (ChatObjs != null) ChatObjs.Clear();
-		// Set up chat message items in scroll view
 	}
 
 	private void SetPassiveChat(int subChat)
@@ -503,11 +498,9 @@ public class PopupPhone : UIBase
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) yield break;
 
-		// Iterate through chat messages with wait-for-send logic
 		if (Chat_InsesrtObj != null) Chat_InsesrtObj.SetActive(false);
 		if (Chat_SelectObj != null) Chat_SelectObj.SetActive(false);
 
-		// Wait for user to send chat
 		SendChat = false;
 		if (Chat_SendArrow != null) Chat_SendArrow.SetActive(true);
 		yield return WaitSendChat;
@@ -521,7 +514,6 @@ public class PopupPhone : UIBase
 
 		UpdateUserName();
 
-		// Set rank and point info
 		if (RankText != null) RankText.text = "";
 		if (PointText != null) PointText.text = "0";
 		if (TotalHousePoint != null) TotalHousePoint.text = "0";
@@ -541,7 +533,6 @@ public class PopupPhone : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Populate ranking list
 		if (RankRewardCount != null) RankRewardCount.text = "0";
 	}
 
@@ -552,11 +543,9 @@ public class PopupPhone : UIBase
 		if (RankRoot != null) RankRoot.SetActive(CurTab == Tab.Rank);
 		if (CompanyBookRoot != null) CompanyBookRoot.SetActive(CurTab == Tab.CompanyBook);
 
-		// Sub tabs
 		if (RankTabRoot != null) RankTabRoot.SetActive(CurTab == Tab.Rank);
 		if (UserTabRoot != null) UserTabRoot.SetActive(CurTab == Tab.MyInfo);
 
-		// Chat sub panels
 		if (Chat_ContactRoot != null) Chat_ContactRoot.SetActive(CurTab == Tab.Chat);
 		if (Chat_ChatRoot != null) Chat_ChatRoot.SetActive(false);
 
@@ -590,7 +579,6 @@ public class PopupPhone : UIBase
 
 	private void OnSelectChat(int group)
 	{
-		// Open specific chat group
 		if (Chat_ContactRoot != null) Chat_ContactRoot.SetActive(false);
 		if (Chat_ChatRoot != null) Chat_ChatRoot.SetActive(true);
 
@@ -678,7 +666,6 @@ public class PopupPhone : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Level up bank
 		UpdateBank();
 	}
 
@@ -691,13 +678,11 @@ public class PopupPhone : UIBase
 	{
 		if (CompanyDetailPopup == null) return;
 		CompanyDetailPopup.gameObject.SetActive(true);
-		// Show company detail
 	}
 
 	public void ShowLevelUpGuide(int companyIdx, int guideLevel)
 	{
 		FocusCompanyInfo(companyIdx);
-		// Show level up guide arrow
 	}
 
 	private void OnFocusAfterScrolled(Vector2 value)
@@ -716,7 +701,6 @@ public class PopupPhone : UIBase
 
 	private void OnClickCompanyBookFilter()
 	{
-		// Toggle company book sort filter
 		CurCompanySort = CurCompanySort == CompanySortType.Basic ? CompanySortType.UnLock : CompanySortType.Basic;
 		UpdateCompanyBook();
 	}
@@ -725,6 +709,5 @@ public class PopupPhone : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Claim ranking reward
 	}
 }

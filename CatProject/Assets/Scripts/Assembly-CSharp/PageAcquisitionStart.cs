@@ -93,7 +93,6 @@ public class PageAcquisitionStart : FullScreenUI
 	private void SetEnemyCeoList()
 	{
 		if (EnemyCeoList == null) return;
-		// Set enemy CEO data from BizAcqSystem stage info
 		if (EnemyTeamHpText != null) EnemyTeamHpText.text = "0";
 
 		for (int i = 0; i < EnemyCeoList.Count; i++)

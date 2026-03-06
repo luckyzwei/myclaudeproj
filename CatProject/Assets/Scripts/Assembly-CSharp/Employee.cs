@@ -328,9 +328,6 @@ public class Employee : Worker
 		var curInGame = gameRoot.InGameSystem.CurInGame as InGameOffice;
 		if (curInGame == null || curInGame.Stage == null) return;
 
-		// Employee is heading to a waiting room (rest/lounge/gym area)
-		// The actual waiting room assignment is handled by the WaitingRoom system
-		// which calls AddToWaitLine on the employee
 	}
 
 	public void ResetActivityTime()
@@ -432,7 +429,6 @@ public class Employee : Worker
 		if (!curMode.StageData.Offices.TryGetValue(OfficeIdx, out var officeData)) return;
 		if (officeData == null || officeData.Items == null) return;
 
-		// Update the specific item in the office if provided
 		if (itemIdx >= 0 && itemLevel >= 0)
 		{
 			for (int i = 0; i < officeData.Items.Count; i++)
@@ -446,7 +442,6 @@ public class Employee : Worker
 			}
 		}
 
-		// Recalculate mood after item change
 		if (gameRoot.MoodSystem != null)
 		{
 			gameRoot.MoodSystem.UpdateMood(OfficeIdx, SeatIdx);

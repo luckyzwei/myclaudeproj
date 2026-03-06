@@ -87,7 +87,6 @@ public class PageSeasonalSlotRank : UIBase
 			RefreshRank();
 		}
 
-		// Update remain time text
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.SeasonalSystem == null) return;
 		var nowSeason = root.SeasonalSystem.NowSeasonScheduleInfo;
@@ -131,7 +130,6 @@ public class PageSeasonalSlotRank : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.SeasonalSystem == null) return;
-		// Open coin bank collection
 		if (CoinBankTween != null) CoinBankTween.Play();
 	}
 

@@ -327,7 +327,6 @@ public class SeasonalSystem
 
 	private void UpdateScheduleOneSeconds()
 	{
-		// 시즌 스케줄 잔여 시간 갱신
 		if (NowSeasonScheduleInfo != null)
 		{
 			DateTime now = DateTime.UtcNow;
@@ -719,7 +718,6 @@ public class SeasonalSystem
 
 	public void AddOneHour()
 	{
-		// 치트: 1시간 추가
 		if (DaySystem != null)
 		{
 			// DaySystem time forward

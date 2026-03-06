@@ -308,6 +308,5 @@ public class DockDistributorObject : MonoBehaviour
 		if (bTryLoadProgressUI || DistributeProgressUI != null) return;
 		bTryLoadProgressUI = true;
 		if (ProgressTrans == null) return;
-		// Load progress UI via resource system
 	}
 }

@@ -119,14 +119,12 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 		if (RouletteItems == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set roulette item rewards from table data
 		UpdateLuckyDraw(true);
 	}
 
 	public void UpdateSuperStaff()
 	{
 		if (superStaffBtn == null) return;
-		// Update super staff button state
 	}
 
 	public void UpdateGemValue()
@@ -145,7 +143,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 		}
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Subscribe to cash value changes
 		if (CashCount != null) CashCount.text = "0";
 	}
 
@@ -153,7 +150,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Subscribe to roulette cooltime changes
 		if (RemainCooltime != null) RemainCooltime.text = "";
 	}
 
@@ -179,7 +175,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 	{
 		if (isSpinRoulette) return;
 		isSpinRoulette = true;
-		// Start roulette spin animation on RouletteWheel
 	}
 
 	private void OnClickFreeSpin()
@@ -191,14 +186,12 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 	private void OnClickAdSpin()
 	{
 		if (isSpinRoulette) return;
-		// Watch ad then spin
 	}
 
 	private bool CheckCompanyContract()
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Check if company contract is needed before spin
 		return true;
 	}
 
@@ -207,7 +200,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 		if (isSpinRoulette) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Use gem to spin
 		SpinRoulette();
 	}
 
@@ -232,7 +224,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 		if (NoAdsBtn == null) return;
 		NoAdsBtn.gameObject.SetActive(false);
 		UpdateNoAdsIcon();
-		// Check if no-ads sale is active
 		if (NoAdsSaleObj != null) NoAdsSaleObj.SetActive(false);
 	}
 

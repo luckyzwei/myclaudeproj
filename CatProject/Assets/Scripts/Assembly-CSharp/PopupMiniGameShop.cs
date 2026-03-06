@@ -92,6 +92,5 @@ public class PopupMiniGameShop : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Give reward items to player
 	}
 }

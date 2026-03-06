@@ -50,13 +50,11 @@ public class PopupFactoryItemUse : UIBase
 	private void InitBatteryItemList()
 	{
 		if (BatteryRoot == null) return;
-		// Instantiate battery items for factory
 	}
 
 	private void InitTimeWarpItemList()
 	{
 		if (TimeWarpRoot == null) return;
-		// Instantiate time warp items for factory
 	}
 
 	private void OnClickInfo()
@@ -67,7 +65,6 @@ public class PopupFactoryItemUse : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.FactorySystem == null) return;
-		// Apply item effect to factory
 		RefreshList();
 	}
 }

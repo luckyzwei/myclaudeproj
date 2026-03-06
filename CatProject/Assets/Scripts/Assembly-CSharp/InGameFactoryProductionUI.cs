@@ -37,7 +37,6 @@ public class InGameFactoryProductionUI : InGameFloatingUI
 
 	public void SetMakeProduct(int idx)
 	{
-		// Set product icon and progress
 		if (Progress != null) Progress.value = 0f;
 		UpdateStatus();
 	}

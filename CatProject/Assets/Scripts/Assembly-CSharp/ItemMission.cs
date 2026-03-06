@@ -72,7 +72,6 @@ public class ItemMission : MonoBehaviour
 	{
 		Slot = slot;
 		MissionSlotType = E_MissionSlotType.Normal;
-		// Set mission data from MissionSystem for this slot
 		if (CompleteObj != null) CompleteObj.SetActive(false);
 		if (ProcessObj != null) ProcessObj.SetActive(true);
 		if (EnableRewardObj != null) EnableRewardObj.SetActive(false);
@@ -109,13 +108,11 @@ public class ItemMission : MonoBehaviour
 
 	private void GetNormalReward()
 	{
-		// Get reward for normal mission slot
 		GetRewardCb?.Invoke(0, 0, BigInteger.Zero, false);
 	}
 
 	private void GetThirdSlotReward()
 	{
-		// Third slot reward (money safe)
 		AddSafeCb?.Invoke(BigInteger.Zero);
 		MoneySafeRefreshCb?.Invoke();
 	}

@@ -153,11 +153,9 @@ public class PageCompanyLevelUp : UIBase
 
 	public override void OnShowBefore()
 	{
-		// Reset tween positions
 		if (beforeTween != null) beforeTween.transform.localPosition = beforeOriginLocalPos;
 		if (afterTween != null) afterTween.transform.localPosition = afterOriginLocalPos;
 
-		// Initialize level display
 		if (LevelOnObjs != null)
 		{
 			for (int i = 0; i < LevelOnObjs.Count; i++)

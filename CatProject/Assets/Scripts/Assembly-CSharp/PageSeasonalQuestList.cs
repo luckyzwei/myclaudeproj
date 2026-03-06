@@ -118,7 +118,6 @@ public class PageSeasonalQuestList : FullScreenUI
 
 		if (textSeasonalPoint != null) textSeasonalPoint.text = "0";
 
-		// Update quest list items
 		if (listItem != null)
 		{
 			for (int i = 0; i < listItem.Count; i++)

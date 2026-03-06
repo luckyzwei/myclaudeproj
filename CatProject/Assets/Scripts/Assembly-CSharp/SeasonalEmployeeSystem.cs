@@ -158,7 +158,6 @@ public class SeasonalEmployeeSystem
 		if (buildingDataMap == null)
 			return;
 
-		// Iterate over all workers and spawn employees that are assigned to open buildings
 		foreach (var kvp in stageData.WorkerDataMap)
 		{
 			var workerData = kvp.Value;
@@ -190,7 +189,6 @@ public class SeasonalEmployeeSystem
 		if (stageData == null)
 			return;
 
-		// Subscribe to mood state changes to update employee UI flags
 		if (stageData.OnChangedAnyWorkerMoodState != null)
 		{
 			stageData.OnChangedAnyWorkerMoodState
@@ -224,12 +222,10 @@ public class SeasonalEmployeeSystem
 		if (workerData == null)
 			return;
 
-		// Update worker data assignment
 		if (workerData.AssignedBuildingIdx != null)
 			workerData.AssignedBuildingIdx.Value = hiredBuildingIdx;
 		workerData.AssignedBuildingTransformIdx = hireIndex;
 
-		// Update the building's worker count
 		var buildingDataMap = SeasonalHelper.SeasonalBuildingData;
 		if (buildingDataMap != null && buildingDataMap.TryGetValue(hiredBuildingIdx, out var buildingData))
 		{
@@ -241,12 +237,10 @@ public class SeasonalEmployeeSystem
 			OnChangedBuildingWorkerCount(hiredBuildingIdx, prevCount, prevCount + 1);
 		}
 
-		// Update stage worker counts
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData != null)
 			stageData.UpdateWorkerCount();
 
-		// Spawn the employee visual
 		int workerIdx = SeasonalHelper.MakeWorkerIdx(hiredBuildingIdx, hireIndex);
 		SpawnNewWorker(workerIdx, hireIndex, false, null);
 	}
@@ -258,7 +252,6 @@ public class SeasonalEmployeeSystem
 
 		int workerIdx = SeasonalHelper.MakeWorkerIdx(fireBuildingIdx, fireIndex);
 
-		// Remove the employee visual from the map
 		if (EmployeeMap != null && EmployeeMap.TryGetValue(fireBuildingIdx, out var employeeList))
 		{
 			for (int i = employeeList.Count - 1; i >= 0; i--)
@@ -275,12 +268,10 @@ public class SeasonalEmployeeSystem
 			}
 		}
 
-		// Clear worker data assignment
 		if (workerData.AssignedBuildingIdx != null)
 			workerData.AssignedBuildingIdx.Value = 0;
 		workerData.AssignedBuildingTransformIdx = 0;
 
-		// Update the building's worker count
 		var buildingDataMap = SeasonalHelper.SeasonalBuildingData;
 		if (buildingDataMap != null && buildingDataMap.TryGetValue(fireBuildingIdx, out var buildingData))
 		{
@@ -293,7 +284,6 @@ public class SeasonalEmployeeSystem
 			}
 		}
 
-		// Update stage worker counts
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData != null)
 			stageData.UpdateWorkerCount();
@@ -304,7 +294,6 @@ public class SeasonalEmployeeSystem
 		if (spawnedEmployee == null)
 			return;
 
-		// Determine the building this worker belongs to
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData == null || stageData.WorkerDataMap == null)
 			return;
@@ -319,10 +308,8 @@ public class SeasonalEmployeeSystem
 			buildingTransformIdx = workerData.AssignedBuildingTransformIdx;
 		}
 
-		// Initialize the employee
 		spawnedEmployee.Init(workerIdx, buildingIdx, buildingTransformIdx);
 
-		// Position the employee at the building transform
 		var inGameStage = SeasonalHelper.InGameSeasonalStage;
 		if (inGameStage != null && buildingIdx > 0)
 		{
@@ -333,12 +320,10 @@ public class SeasonalEmployeeSystem
 			}
 		}
 
-		// Register in the employee map
 		if (!EmployeeMap.ContainsKey(buildingIdx))
 			EmployeeMap[buildingIdx] = new List<WorkshopEmployee>();
 		EmployeeMap[buildingIdx].Add(spawnedEmployee);
 
-		// Set initial state based on current activity
 		if (bGameInitSpawn)
 		{
 			switch (NowActivityStatus)
@@ -373,7 +358,6 @@ public class SeasonalEmployeeSystem
 
 	private void OnChangedBuildingWorkerCount(int buildingIdx, int prevWorkerCnt, int curWorkerCnt)
 	{
-		// When worker count changes on a building, we may need to update production states
 		var buildingDataMap = SeasonalHelper.SeasonalBuildingData;
 		if (buildingDataMap == null)
 			return;
@@ -381,7 +365,6 @@ public class SeasonalEmployeeSystem
 		if (!buildingDataMap.TryGetValue(buildingIdx, out var buildingData))
 			return;
 
-		// Update active worker count on the building's worker data
 		if (buildingData.WorkerData != null && buildingData.WorkerData.ActiveWorkerCount != null)
 		{
 			buildingData.WorkerData.ActiveWorkerCount.Value = curWorkerCnt;
@@ -408,7 +391,6 @@ public class SeasonalEmployeeSystem
 
 	private void UpdateEmployeeAutoActiveMoodFlag()
 	{
-		// Check each employee's mood state and update the AutoActiveEmployeeUI flag
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData == null || stageData.WorkerDataMap == null)
 			return;
@@ -494,7 +476,6 @@ public class SeasonalEmployeeSystem
 		if (employee == null)
 			return;
 
-		// Employee arrived at restaurant; start a coroutine to play the restaurant activity after a short delay
 		var inGameSeasonal = SeasonalHelper.InGameSeasonalMode;
 		if (inGameSeasonal != null)
 		{
@@ -508,7 +489,6 @@ public class SeasonalEmployeeSystem
 		if (employee == null)
 			yield break;
 
-		// Wait a short random delay before starting the restaurant activity
 		yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 2.0f));
 
 		PlayRestaurantActivity(employee);
@@ -526,10 +506,8 @@ public class SeasonalEmployeeSystem
 		int buildingIdx = employee.BuildingIdx;
 		int transformIdx = employee.BuildingTransformIdx;
 
-		// Find the restaurant seat transform for this employee
 		Transform restaurantTr = inGameStage.FindRestaurantEmployeeTransform(buildingIdx, transformIdx);
 
-		// Find an available interactive item (table seat) in the restaurant
 		BuildingFacilityInteractiveItem interactiveItem = null;
 		BuildingBase restaurantBuilding = inGameStage.FindBuilding(E_BuildingType.Restaurant, 0);
 		if (restaurantBuilding != null)
@@ -544,7 +522,6 @@ public class SeasonalEmployeeSystem
 			}
 		}
 
-		// Create the restaurant activity data
 		var activityData = WorkshopEmployee.EmployeeActivityData.MakeRestaurantState(
 			restaurantTr,
 			EMPLOYEE_RESTAURANT_USE_TIME_SEC,
@@ -554,7 +531,6 @@ public class SeasonalEmployeeSystem
 		employee.SetActivity(activityData);
 		ActivityStartEmployeeCnt++;
 
-		// Show meal notice bubble (limited by RESTAURANT_SPEECH_BUBBLE_MAX_COUNT)
 		if (ActivityStartEmployeeCnt <= RESTAURANT_SPEECH_BUBBLE_MAX_COUNT)
 		{
 			employee.SetShowMealNotice(true);
@@ -566,7 +542,6 @@ public class SeasonalEmployeeSystem
 		if (employee == null)
 			return;
 
-		// After restaurant activity ends, return the employee to the appropriate state
 		employee.SetShowMealNotice(false);
 
 		switch (NowActivityStatus)
@@ -582,7 +557,6 @@ public class SeasonalEmployeeSystem
 				break;
 		}
 
-		// Update the worker's last restaurant use time
 		var stageData = SeasonalHelper.SeasonalStageData;
 		if (stageData != null && stageData.WorkerDataMap != null)
 		{

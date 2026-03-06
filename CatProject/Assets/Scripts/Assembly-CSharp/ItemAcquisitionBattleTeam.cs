@@ -485,12 +485,10 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 	[IteratorStateMachine(typeof(_003CSkillAnimationCoroutine_003Ed__80))]
 	private IEnumerator SkillAnimationCoroutine(Action endCallback)
 	{
-		// Show skill UI
 		if (SkillBgAnimator != null) SkillBgAnimator.SetTrigger(SKILL_ANIM_NAME);
 		for (int i = 0; i < SkillActiveObjList?.Count; i++)
 			if (SkillActiveObjList[i] != null) SkillActiveObjList[i].SetActive(true);
 
-		// Scale up CEO
 		if (BattleCeoObj != null)
 		{
 			yield return new WaitForSeconds(SkillScaleStartWaitTime / PlaySpeed);
@@ -501,7 +499,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 			yield return new WaitForSeconds(SkillScaleReturnTime / PlaySpeed);
 		}
 
-		// Hide skill UI
 		if (SkillBgAnimator != null) SkillBgAnimator.SetTrigger(SKILL_BG_ANIM_NAME);
 		for (int i = 0; i < SkillActiveObjList?.Count; i++)
 			if (SkillActiveObjList[i] != null) SkillActiveObjList[i].SetActive(false);
@@ -532,7 +529,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	public void PlayDamageAnimation(int damageValue, Action endCallback)
 	{
-		// Show damage text
 		if (DamageObj != null)
 		{
 			DamageObj.SetActive(false);
@@ -540,10 +536,8 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 		}
 		if (DamageText != null) DamageText.text = damageValue.ToString();
 
-		// Play hit animation
 		if (BattleCeoAnimator != null) BattleCeoAnimator.SetTrigger(DAMAGE_ANIM_NAME);
 
-		// Color change + shake
 		var seq = CreateSequence("Damage");
 		seq.AppendInterval(ColorChange_StartDelayTimeSec / PlaySpeed);
 		seq.AppendCallback(() => SetCeoColors(DamageColor));
@@ -551,7 +545,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 		seq.AppendCallback(() => ResetCeoColors());
 		seq.AppendInterval(ColorReturn_PlayTimeSec / PlaySpeed);
 
-		// Shake
 		if (BattleCeoObj != null)
 		{
 			seq.Insert(DamageShake_StartDelayTimeSec / PlaySpeed,
@@ -604,19 +597,15 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 	private IEnumerator ChangeCeoAnimation(Action endCallback)
 	{
 		string sequenceId = "ChangeCeo";
-		// Fade out current CEO
 		var fadeOutSeq = CreateSequence(sequenceId);
 		fadeOutSeq.Append(DOTween.To(() => 1f, x => SetCeoAlpha(x), 0f, FADE_DURATION / PlaySpeed));
 		yield return new WaitForSeconds(FADE_DURATION / PlaySpeed);
 
-		// Load new CEO
 		var teamData = new BizAcqTeamData(TeamType);
-		// The actual new CEO is set via external call before this
 		if (BattleCeoObj != null) BattleCeoObj.SetActive(false);
 
 		UpdateCeoInfo();
 
-		// Fade in new CEO
 		if (BattleCeoObj != null) BattleCeoObj.SetActive(true);
 		SetCeoAlpha(0f);
 		var fadeInSeq = CreateSequence(sequenceId);
@@ -699,15 +688,8 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void LoadCeoPrefab(int ceoIdx)
 	{
-		// Load CEO character prefab into BattleCeoRoot
 		if (BattleCeoRoot == null) return;
-		// Destroy existing
 		if (BattleCeoObj != null) UnityEngine.Object.Destroy(BattleCeoObj);
-		// TODO: Load from Addressables using ceoIdx resource path
-		// BattleCeoObj = Instantiate(prefab, BattleCeoRoot.transform);
-		// BattleCeoAnimator = BattleCeoObj.GetComponent<Animator>();
-		// Ceo_OriginalPosition = BattleCeoObj.transform.localPosition;
-		// CeoImages = new List<Image>(BattleCeoObj.GetComponentsInChildren<Image>());
 	}
 
 	private void SetCeoColors(Color color)
@@ -768,7 +750,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void OnClickedTeamCeo(int ceoIdx, int slotIdx)
 	{
-		// Show tooltip for team CEO skill
 		if (TeamCeoSkillToolTipList != null && slotIdx >= 0 && slotIdx < TeamCeoSkillToolTipList.Count)
 		{
 			if (TeamCeoSkillToolTipList[slotIdx] != null)
@@ -778,7 +759,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void OnClickedScreenLock()
 	{
-		// Hide any open tooltips
 		if (TeamCeoSkillToolTipList != null)
 		{
 			for (int i = 0; i < TeamCeoSkillToolTipList.Count; i++)
@@ -813,8 +793,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void UpdateHpInfo()
 	{
-		// Refresh HP gauges with current data
-		// This relies on external team data reference, called during animation callbacks
 	}
 
 	private void UpdateCeoInfo()

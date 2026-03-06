@@ -72,7 +72,6 @@ public class PageCharacterSelect : UIBase
 
 	private void OnClickSelect()
 	{
-		// Confirm character selection
 		Hide();
 	}
 }

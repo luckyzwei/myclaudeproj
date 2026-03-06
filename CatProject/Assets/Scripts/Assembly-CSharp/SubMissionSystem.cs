@@ -61,7 +61,6 @@ public class SubMissionSystem
 	{
 		var mission = GetSlotMission(slotIdx);
 		if (mission == null || !mission.bReadyToComplete) return false;
-		// Process mission completion and give rewards
 		OnMissionCompleteReady(slotIdx, mission);
 		return true;
 	}

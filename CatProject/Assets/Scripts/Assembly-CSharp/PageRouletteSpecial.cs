@@ -110,7 +110,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 		if (RouletteItems == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Set roulette items from special roulette data
 	}
 
 	private void SubscribeCash()
@@ -164,7 +163,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 	{
 		if (isSpinRoulette) return;
 		isSpinRoulette = true;
-		// Start spin animation
 	}
 
 	private void OnClickFreeSpin()
@@ -176,7 +174,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 	private void OnClickAdSpin()
 	{
 		if (isSpinRoulette) return;
-		// Watch ad then spin
 	}
 
 	private void OnClickGemSpin()
@@ -195,7 +192,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 	{
 		if (!isLuckyDrawReward || doneLuckDrawReward) return;
 		doneLuckDrawReward = true;
-		// Claim lucky draw reward
 		UpdateLuckyDrawReward();
 	}
 

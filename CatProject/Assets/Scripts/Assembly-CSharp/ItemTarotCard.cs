@@ -70,7 +70,6 @@ public class ItemTarotCard : MonoBehaviour
 
 	public void UpdateCard()
 	{
-		// Update card display from tarot data table by Idx
 		if (RewardCheckObj != null)
 			RewardCheckObj.SetActive(false);
 		if (RewardOwnBubble != null)

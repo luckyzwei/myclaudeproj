@@ -163,7 +163,6 @@ public class SpecialDaySystem
 		CurEventType = Config.E_SpecialDayEventType.None;
 		RemainEndTime.Value = 0;
 
-		// Reset special day roulette data
 		if (gameRoot.UserData.SpecialDayRouletteData != null)
 		{
 			gameRoot.UserData.SpecialDayRouletteData.LuckydrawCount = 0;
@@ -222,7 +221,6 @@ public class SpecialDaySystem
 	private void ShowDonePopup()
 	{
 		IsEnqueueDonePopup = false;
-		// Show a done/reward popup for the ended special day event
 	}
 
 	public void OnHideDonePopup(Action cb = null)
@@ -281,8 +279,6 @@ public class SpecialDaySystem
 
 	private (DateTime, DateTime) GetSpecialDayTime()
 	{
-		// Would look up special day schedule from table data
-		// Return the start and end times for the current special day event
 		DateTime now = TimeSystem.GetCurTime();
 		DateTime startTime = now.Date;
 		DateTime endTime = startTime.AddDays(7);
@@ -294,17 +290,12 @@ public class SpecialDaySystem
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 
-		// Would look up current special day from schedule table
-		// based on current time. Sets CurIdx, CurAtlasIdx, CurEventType
 		DateTime now = TimeSystem.GetCurTime();
 
-		// Reset to None until a matching schedule is found
 		int foundIdx = 0;
 		int foundAtlasIdx = 0;
 		Config.E_SpecialDayEventType foundType = Config.E_SpecialDayEventType.None;
 
-		// Table lookup would happen here to find the active schedule entry
-		// For now, preserve existing values if already set from Init flow
 		if (foundIdx > 0)
 		{
 			CurIdx = foundIdx;
@@ -315,13 +306,10 @@ public class SpecialDaySystem
 
 	private void SetNextSpecialDay()
 	{
-		// Would look up the next upcoming special day from schedule table
-		// and set NextIdx and NextStartTime
 		DateTime now = TimeSystem.GetCurTime();
 		NextIdx = 0;
 		NextStartTime = DateTime.MaxValue;
 
-		// Table lookup would find the next scheduled event after 'now'
 		if (NextIdx > 0)
 		{
 			int remainSec = (int)(NextStartTime - now).TotalSeconds;
@@ -388,7 +376,6 @@ public class SpecialDaySystem
 			return;
 		}
 
-		// Load special day background tile sprite
 		string tilePath = $"SpecialDay/bg_tile_{CurIdx}";
 		var tileSprite = Resources.Load<Sprite>(tilePath);
 		if (tileSprite != null)
@@ -397,7 +384,6 @@ public class SpecialDaySystem
 		}
 		tileLoadCb?.Invoke();
 
-		// Load stage theme decorations
 		stageLoadCb?.Invoke();
 	}
 
@@ -411,7 +397,6 @@ public class SpecialDaySystem
 
 	private void UpdateLoadingTheme()
 	{
-		// Would change loading screen to use special day theme
 		UpdateLoadingThemeAfter();
 	}
 
@@ -428,7 +413,6 @@ public class SpecialDaySystem
 		if (CurIdx <= 0) return 0;
 		if (employeeMinIdx <= 0 || employeeMaxIdx <= 0) return 0;
 
-		// Return a random employee view idx within the special day range
 		int range = employeeMaxIdx - employeeMinIdx + 1;
 		if (range <= 0) return 0;
 
@@ -447,7 +431,6 @@ public class SpecialDaySystem
 		if (CurIdx <= 0) return 0;
 		if (totalAddEmployeeRatio <= 0) return 0;
 
-		// Return a special employee idx based on add ratio chance
 		int roll = UnityEngine.Random.Range(0, 100);
 		if (roll < totalAddEmployeeRatio)
 		{
@@ -473,7 +456,6 @@ public class SpecialDaySystem
 
 		if (SpecialDayDecoIdxList == null || SpecialDayDecoIdxList.Count == 0) return false;
 
-		// Check if all deco rewards have been claimed
 		if (specialDayData.SpecialDayDeco == null) return true;
 
 		foreach (int decoIdx in SpecialDayDecoIdxList)
@@ -517,7 +499,6 @@ public class SpecialDaySystem
 		if (specialDayData.SpecialDayDeco == null)
 			specialDayData.SpecialDayDeco = new List<ItemData>();
 
-		// Grant any unclaimed deco rewards
 		if (SpecialDayDecoIdxList != null)
 		{
 			foreach (int decoIdx in SpecialDayDecoIdxList)
@@ -545,7 +526,6 @@ public class SpecialDaySystem
 
 	private void LogSpecialDecoReward()
 	{
-		// Log analytics for special day deco reward claim
 		var gameRoot = Singleton<GameRoot>.Instance;
 		if (gameRoot == null || gameRoot.UserData == null) return;
 

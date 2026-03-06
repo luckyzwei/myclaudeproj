@@ -29,7 +29,6 @@ public class CeoCostumeUserData
 	{
 		if (CostumeDataList == null)
 			CostumeDataList = new Dictionary<int, CeoCostumeData>();
-		// Would create or update CeoCostumeData entry
 	}
 
 	public void SetShowRedDot(int costumeIdx, bool showRedDot)

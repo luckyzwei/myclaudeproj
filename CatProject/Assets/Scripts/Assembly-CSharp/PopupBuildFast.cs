@@ -181,7 +181,6 @@ public class PopupBuildFast : UIBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Consume cash to skip build time
 		OnConfirmedFastOpen?.Invoke();
 		Hide();
 	}
