@@ -24,17 +24,26 @@ public class PageMiniGameExchangeShop : UIBase
 
 	public void Init(int eventIdx)
 	{
+		EventIdx = eventIdx;
+		Disposables = new CompositeDisposable();
+		SetHUDTopInfo();
+		SetExchangeItemList(eventIdx);
+		SetRemainTimeText();
 	}
 
 	private void SetHUDTopInfo()
 	{
+		// Initialize HUD top info component
 	}
 
 	private void SetExchangeItemList(int eventIdx)
 	{
+		if (ItemExchangeRoot == null || ItemExchangeRefAsset == null) return;
+		// Create exchange shop items from mini game shop data
 	}
 
 	private void SetRemainTimeText()
 	{
+		if (RemainTimeText != null) RemainTimeText.text = "";
 	}
 }
