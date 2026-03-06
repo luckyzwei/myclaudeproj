@@ -62,22 +62,66 @@ public class RewardProgress : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ProgressIcon != null)
+			iconPos = ProgressIcon.transform.position;
+		curType = ProgressType.None;
 	}
 
 	public Vector3 GetProgressIconPos()
 	{
-		return default(Vector3);
+		if (ProgressIcon != null)
+			return ProgressIcon.transform.position;
+		return iconPos;
 	}
 
 	private void SetNormalKeyToBox()
 	{
+		curType = ProgressType.NormalKey;
+		if (ProgressIcon != null)
+			ProgressIcon.gameObject.SetActive(true);
 	}
 
 	private void SetPremiumKeyToBox()
 	{
+		curType = ProgressType.PremiumKey;
+		if (ProgressIcon != null)
+			ProgressIcon.gameObject.SetActive(true);
 	}
 
 	public void ShowKeyProgress(int keyIdx, int gainKey, Action goodsEffect = null)
 	{
+		if (keyIdx == 0)
+			SetNormalKeyToBox();
+		else
+			SetPremiumKeyToBox();
+
+		needValue = gainKey;
+		if (ProgresSlider != null)
+			ProgresSlider.value = 0f;
+		if (ProgressText != null)
+			ProgressText.text = "0/" + needValue;
+
+		if (HitObj != null)
+			HitObj.SetActive(true);
+
+		if (CurSeq != null)
+		{
+			CurSeq.Kill();
+			CurSeq = null;
+		}
+		CurSeq = DOTween.Sequence();
+		CurSeq.Append(DOTween.To(() => 0f, (v) =>
+		{
+			if (ProgresSlider != null) ProgresSlider.value = v;
+		}, 1f, progressTime));
+		CurSeq.AppendCallback(() =>
+		{
+			goodsEffect?.Invoke();
+		});
+		CurSeq.AppendInterval(hideTime);
+		CurSeq.AppendCallback(() =>
+		{
+			if (HitObj != null) HitObj.SetActive(false);
+		});
 	}
 }

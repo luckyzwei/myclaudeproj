@@ -18,9 +18,24 @@ public class ItemStageMap : MonoBehaviour
 
 	public void Set(int region)
 	{
+		if (RegionName != null) RegionName.text = region.ToString();
+		if (LastRegionObj != null) LastRegionObj.SetActive(false);
+
+		if (Spots != null)
+		{
+			for (int i = 0; i < Spots.Count; i++)
+			{
+				if (Spots[i] != null)
+				{
+					Spots[i].SetStage(i);
+					Spots[i].OnClick = OnClickStageSpot;
+				}
+			}
+		}
 	}
 
 	private void OnClickStageSpot(int stage, Transform trans)
 	{
+		OnClickStage?.Invoke(stage, trans);
 	}
 }

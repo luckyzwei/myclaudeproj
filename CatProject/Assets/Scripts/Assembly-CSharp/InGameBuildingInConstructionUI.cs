@@ -138,9 +138,19 @@ public class InGameBuildingInConstructionUI : InGameFloatingUI
 
 	private void OnClickedBuildingFastBtn()
 	{
+		var remain = ConstructionCompleteDateTime - DateTime.UtcNow;
+		if (remain.TotalSeconds <= 0)
+		{
+			OnConfirmedFastOpen();
+			return;
+		}
+		// Show confirm popup for fast construction
 	}
 
 	private void OnConfirmedFastOpen()
 	{
+		ConstructionCompleteDateTime = DateTime.UtcNow;
+		if (ConstructCompleteObj != null) ConstructCompleteObj.SetActive(true);
+		if (ConstructionObj != null) ConstructionObj.SetActive(false);
 	}
 }

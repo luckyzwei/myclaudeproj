@@ -11,9 +11,11 @@ public class ItemShopFreecash : MonoBehaviour
 
 	private void Awake()
 	{
+		if (PopupBtn != null) PopupBtn.onClick.AddListener(OnClickedPopupBtn);
 	}
 
 	private void OnClickedPopupBtn()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

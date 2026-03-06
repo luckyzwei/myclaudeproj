@@ -181,14 +181,39 @@ public class PageShop : FullScreenUI
 
 	public void SetFocus(int rewardType, int rewardIdx)
 	{
+		// Map reward type to shop contents type and focus
+		ShopContentsType type = ShopContentsType.None;
+		switch (rewardType)
+		{
+			case (int)Config.CurrencyID.Gem:
+				type = ShopContentsType.Gem;
+				break;
+			case (int)Config.CurrencyID.Tonic:
+				type = ShopContentsType.Tonic;
+				break;
+		}
+		if (type != ShopContentsType.None)
+			SetFocus(type);
 	}
 
 	public void ShowArrow(ShopContentsType type)
 	{
+		if (contents == null) return;
+		for (int i = 0; i < contents.Count; i++)
+		{
+			if (contents[i] != null)
+				contents[i].ShowArrow(type == (ShopContentsType)i);
+		}
 	}
 
 	public void HideArrows()
 	{
+		if (contents == null) return;
+		for (int i = 0; i < contents.Count; i++)
+		{
+			if (contents[i] != null)
+				contents[i].ShowArrow(false);
+		}
 	}
 
 	private void OnChangeTab(int tabIdx)

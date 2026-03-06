@@ -35,6 +35,7 @@ public class InGameHouse : OutGameMode
 
 	public void LoadHouse()
 	{
+		LoadHouse(HouseIdx);
 	}
 
 	public void LoadHouse(int idx)
@@ -62,6 +63,7 @@ public class InGameHouse : OutGameMode
 
 	protected override void LoadUI()
 	{
+		// Load house-specific UI elements
 	}
 
 	public override void UnLoad()

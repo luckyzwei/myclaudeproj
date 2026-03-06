@@ -11,9 +11,16 @@ public class ItemStageOpenContents : MonoBehaviour
 
 	public void Set(int buildingIdx)
 	{
+		if (ContentsNameText != null) ContentsNameText.text = buildingIdx.ToString();
 	}
 
 	public void Set(string nameKey, string iconPath, Config.AtlasType atlasType)
 	{
+		if (ContentsNameText != null) ContentsNameText.text = nameKey;
+		if (ContentsIcon != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconPath);
+			if (sprite != null) ContentsIcon.sprite = sprite;
+		}
 	}
 }

@@ -14,9 +14,12 @@ public class InGameExclamationUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (Btn != null)
+			Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	private void OnClickBtn()
 	{
+		clickAction?.Invoke();
 	}
 }

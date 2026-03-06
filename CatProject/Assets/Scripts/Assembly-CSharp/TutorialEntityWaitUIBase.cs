@@ -1,4 +1,5 @@
 using Treeplla;
+using UniRx;
 using UnityEngine;
 
 public class TutorialEntityWaitUIBase : TutorialEntity
@@ -54,13 +55,34 @@ public class TutorialEntityWaitUIBase : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
+		if (showWait)
+		{
+			// Show waiting indicator
+		}
+		Wait();
 	}
 
 	private void Wait()
 	{
+		// Wait for the specified UI to open, then mark done
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+
+		// Poll for the UIBase to become active
+		Observable.EveryUpdate().Subscribe(_ =>
+		{
+			// Check if the target UI is active/open
+			// When UI is detected, mark entity as done
+			if (uiBase != null && uiBase.gameObject.activeSelf)
+			{
+				Done();
+			}
+		}).AddTo(this);
 	}
 
 	private void OnDestroy()
 	{
+		uiBase = null;
 	}
 }

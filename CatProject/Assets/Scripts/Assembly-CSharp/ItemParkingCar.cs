@@ -241,6 +241,7 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void OnClickRichPointInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickNoneShortCut()
@@ -262,6 +263,7 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void OpenCarMarket(int carStoreIdx)
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void UpdateParkingLotUI()

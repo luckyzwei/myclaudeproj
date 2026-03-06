@@ -71,6 +71,14 @@ public class ItemMissionMilestoneBg : MonoBehaviour
 
 	private void InitMilestoneList(int regionIdx, bool bPlayAnim, Vector2? scrollPosition = null)
 	{
+		MilestoneOrderList.Clear();
+		if (MilestoneScroll == null) return;
+
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.MissionSystem == null) return;
+
+		if (scrollPosition.HasValue)
+			MilestoneScroll.normalizedPosition = scrollPosition.Value;
 	}
 
 	private void OnClickedClaimAllBtn()
@@ -82,9 +90,13 @@ public class ItemMissionMilestoneBg : MonoBehaviour
 
 	private void OnClaimedMilestoneReward(int orderIdx, bool isSuccess)
 	{
+		if (!isSuccess) return;
+		SetRegion(RegionIdx, true);
 	}
 
 	private void OnChangeBuildingScroll(Vector2 value)
 	{
+		if (MilestoneScroll != null)
+			MilestoneScroll.normalizedPosition = value;
 	}
 }

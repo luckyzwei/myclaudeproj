@@ -781,6 +781,7 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void UpdateItemScroll(Vector2 pos)
 	{
+		// Handle scroll position update for item list
 	}
 
 	private void OnClickChangeTab(Tab tab)
@@ -910,6 +911,7 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void SetTapReddotObj()
 	{
+		// Update tab reddot notification visibility
 	}
 
 	public override void OnHideBefore()

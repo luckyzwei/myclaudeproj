@@ -11,9 +11,13 @@ public class ItemRichPoint : MonoBehaviour
 
 	public void SetHouse(int idx)
 	{
+		if (Name != null) Name.text = idx.ToString();
+		if (Point != null) Point.text = "0";
 	}
 
 	public void SetCar(int idx)
 	{
+		if (Name != null) Name.text = idx.ToString();
+		if (Point != null) Point.text = "0";
 	}
 }

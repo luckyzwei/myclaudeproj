@@ -61,10 +61,16 @@ public class ItemRegionMove : MonoBehaviour
 
 	public void OnClickRegionMove()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Request region move via game systems
 	}
 
 	public void OnClickFactory()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupFactoryWorkPlace>();
 	}
 
 	public void OnClickInfo()

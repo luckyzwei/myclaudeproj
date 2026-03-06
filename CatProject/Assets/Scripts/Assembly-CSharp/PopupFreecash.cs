@@ -75,13 +75,18 @@ public class PopupFreecash : UIBase
 
 	private void GrantReward()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Grant gem reward to player
 	}
 
 	private void OnClickFreecash()
 	{
+		Application.OpenURL("https://freecash.com");
 	}
 
 	private void OnClickRefresh()
 	{
+		GiveRewardIfLinked().Forget();
 	}
 }

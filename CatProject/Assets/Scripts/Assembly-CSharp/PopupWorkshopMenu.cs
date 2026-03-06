@@ -269,6 +269,7 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnChangeBuildingConstruction(bool inConstruction)
 	{
+		SetBuildingInfo(BuildingIdx);
 	}
 
 	private void OnChangeManagerLevel()
@@ -283,6 +284,7 @@ public class PopupWorkshopMenu : UIBase
 
 	private void OnChangeHiredWorkerCount(int hiredCount)
 	{
+		SetBuildingInfo(BuildingIdx);
 	}
 
 	private void UpdateBuildingUpgradeInfo(int facilityLevel)

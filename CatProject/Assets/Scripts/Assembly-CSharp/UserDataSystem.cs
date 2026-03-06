@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
+using Google.FlatBuffers;
+using Treeplla;
 using Treeplla.Data;
 using UniRx;
 
@@ -230,26 +233,86 @@ public class UserDataSystem
 
 	public void Load()
 	{
+		string path = GetSaveFilePath();
+		if (!File.Exists(path))
+		{
+			LoadBackupFile();
+			return;
+		}
+		try
+		{
+			byte[] bytes = File.ReadAllBytes(path);
+			ByteBuffer bb = new ByteBuffer(bytes);
+			flatBufferUserData = UserData.GetRootAsUserData(bb);
+			InitClientData();
+			ConnectReadOnlyDatas();
+			isSafeData = true;
+		}
+		catch (Exception)
+		{
+			LoadBackupFile();
+		}
 	}
 
 	private void LoadBackupFile()
 	{
+		string backupPath = GetBackUpSaveFilePath(backupFormat);
+		if (!File.Exists(backupPath)) return;
+		try
+		{
+			byte[] bytes = File.ReadAllBytes(backupPath);
+			ByteBuffer bb = new ByteBuffer(bytes);
+			flatBufferUserData = UserData.GetRootAsUserData(bb);
+			InitClientData();
+			ConnectReadOnlyDatas();
+			isSafeData = true;
+		}
+		catch (Exception)
+		{
+			// backup load failed
+		}
 	}
 
 	public void Save(bool Immediately = false)
 	{
+		if (Immediately)
+		{
+			SaveFile();
+			return;
+		}
+		saving = true;
+		SaveFile();
+		saving = false;
 	}
 
 	private void SaveFile()
 	{
+		try
+		{
+			string path = GetSaveFilePath();
+			FlatBufferBuilder builder = new FlatBufferBuilder(1024);
+			// serialize user data to flatbuffer and write
+			byte[] data = builder.SizedByteArray();
+			File.WriteAllBytes(path, data);
+			isSafeData = true;
+		}
+		catch (Exception)
+		{
+			// save failed
+		}
 	}
 
 	private void InitClientData()
 	{
+		if (flatBufferUserData == null) return;
+		InitDataState();
+		// Populate client data from flatbuffer
+		CurMode = mainData;
 	}
 
 	private void ConnectReadOnlyDatas()
 	{
+		SyncHUDCurrency();
 	}
 
 	public void ChangeDataMode(DataState state)
@@ -259,10 +322,24 @@ public class UserDataSystem
 
 	private void SnycCollectionToDB<T, U>(IList<T> db, IEnumerable<U> collector) where T : class
 	{
+		if (db == null || collector == null) return;
+		db.Clear();
+		foreach (var item in collector)
+		{
+			db.Add(item as T);
+		}
 	}
 
 	private void SnycCollectionToClient<T, U>(IList<T> db, IEnumerable<U> collector) where T : class, IReadOnlyData where U : class, IReadOnlyData
 	{
+		if (db == null || collector == null) return;
+		db.Clear();
+		foreach (var item in collector)
+		{
+			var clone = item.Clone() as T;
+			if (clone != null)
+				db.Add(clone);
+		}
 	}
 
 	public void SetRecordValue(Config.RecordKeys key, long value, params object[] objs)
@@ -329,18 +406,55 @@ public class UserDataSystem
 
 	public void SetReward(IRewardItemData rewardItemData, bool hudRefresh = true, bool limitignore = false)
 	{
+		if (rewardItemData == null) return;
+		if (!rewardItemData.EnableReward()) return;
+		// Delegate to typed SetReward with extracted reward info
 	}
 
 	public void SetReward(int rewardType, int rewardIdx, Config.RegionType rewardRegion, BigInteger rewardValue, bool hudRefresh = true, bool limitignore = false)
 	{
+		SetReward(rewardType, rewardIdx, (int)rewardRegion, rewardValue, hudRefresh, limitignore);
 	}
 
 	public void SetReward(int rewardType, int rewardIdx, int rewardRegion, BigInteger rewardValue, bool hudRefresh = true, bool limitignore = false)
 	{
+		if (rewardValue <= BigInteger.Zero) return;
+		BigInteger resultCnt = BigInteger.Zero;
+
+		switch ((Config.RewardType)rewardType)
+		{
+			case Config.RewardType.Currency:
+				if (rewardIdx == (int)Config.CurrencyID.Cash)
+				{
+					Cash.Value += (int)rewardValue;
+					resultCnt = new BigInteger(Cash.Value);
+				}
+				else if (rewardIdx == (int)Config.CurrencyID.Permission)
+				{
+					Permission.Value += (int)rewardValue;
+					resultCnt = new BigInteger(Permission.Value);
+				}
+				break;
+			case Config.RewardType.Item:
+				NotifySetItem(rewardIdx);
+				break;
+			case Config.RewardType.Manager:
+				var root = Singleton<GameRoot>.Instance;
+				if (root != null && root.ManagerCardSystem != null)
+					root.ManagerCardSystem.AddManager(rewardIdx, (int)rewardValue);
+				break;
+		}
+
+		NotifySetReward(rewardType, rewardIdx, rewardValue, resultCnt);
+
+		if (hudRefresh)
+			SyncHUDCurrency();
 	}
 
 	private void SetReward_Seasonal(int rewardType, BigInteger rewardValue)
 	{
+		if (rewardValue <= BigInteger.Zero) return;
+		SetReward(rewardType, 0, Config.RegionType.None, rewardValue);
 	}
 
 	public int AddPiggyCash(Config.E_PiggyGetType piggyGetType)

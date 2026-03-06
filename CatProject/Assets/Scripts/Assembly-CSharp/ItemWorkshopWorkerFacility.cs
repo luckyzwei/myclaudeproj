@@ -146,10 +146,15 @@ public class ItemWorkshopWorkerFacility : MonoBehaviour
 
 	private void OnClickedManagerButton()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickedPauseStateWorkerIcon(ItemWorkshopWorkerFacilitySlot.E_SlotState slotState)
 	{
+		if (slotState == ItemWorkshopWorkerFacilitySlot.E_SlotState.Pause)
+			Refresh();
 	}
 
 	private void OnChangeWorkerCount(int hiredWorkerCnt, int maxWorkerCnt, int productionWorkerCount)

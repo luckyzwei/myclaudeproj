@@ -470,6 +470,8 @@ public class PopupPhone : UIBase
 
 	private void UpdateCompanyItem(int companyIdx)
 	{
+		if (CompanyBookScroll == null) return;
+		// Update specific company item in the book list
 	}
 
 	private void UpdateContact()
@@ -490,6 +492,8 @@ public class PopupPhone : UIBase
 
 	private void SetPassiveChat(int subChat)
 	{
+		if (Chat_ChatRoot == null) return;
+		// Display passive chat message from NPC
 	}
 
 	[IteratorStateMachine(typeof(_003CStartChat_003Ed__100))]
@@ -687,10 +691,14 @@ public class PopupPhone : UIBase
 
 	private void OnFocusAfterScrolled(Vector2 value)
 	{
+		// Handle scroll focus position change in company book
 	}
 
 	private void FocusNextMaxCompany()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Focus to next highest grade company in list
 	}
 
 	private void ReleaseFocusCompany()

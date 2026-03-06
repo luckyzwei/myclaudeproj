@@ -48,10 +48,13 @@ public class BuildingBase : MonoBehaviour
 
 	public virtual void UnselectBuilding(bool bHideUI)
 	{
+		if (bHideUI)
+			OnReleaseBuilding();
 	}
 
 	protected virtual void OnReleaseBuilding()
 	{
+		// Override in subclasses to release building-specific UI
 	}
 
 	protected void PlayBuildingMenuSound()
@@ -70,9 +73,24 @@ public class BuildingBase : MonoBehaviour
 
 	public void FocusToBuilding()
 	{
+		if (!bFocusable) return;
+		var cam = Camera.main;
+		if (cam != null)
+		{
+			var pos = cam.transform.position;
+			pos.x = transform.position.x + xOffset;
+			pos.y = transform.position.y + yOffset;
+			cam.transform.position = pos;
+			cam.orthographicSize = cam.orthographicSize + zoomSize;
+		}
 	}
 
 	private void FocusOut()
 	{
+		var cam = Camera.main;
+		if (cam != null)
+		{
+			cam.orthographicSize = cam.orthographicSize - zoomSize;
+		}
 	}
 }

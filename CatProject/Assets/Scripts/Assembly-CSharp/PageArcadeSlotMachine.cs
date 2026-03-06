@@ -68,6 +68,7 @@ public class PageArcadeSlotMachine : UIBase
 
 	private void OnDestroy()
 	{
+		ItemArcadeSlotMachine = null;
 	}
 
 	protected override void OnEnable()

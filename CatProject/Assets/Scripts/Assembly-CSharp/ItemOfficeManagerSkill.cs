@@ -31,10 +31,14 @@ public class ItemOfficeManagerSkill : MonoBehaviour
 
 	public void Set(int officeIdx)
 	{
+		if (MainSkill != null) MainSkill.gameObject.SetActive(true);
+		isFold = true;
+		if (ScrollAnim != null) ScrollAnim.SetBool("Fold", isFold);
 	}
 
 	private void OpenInfoCloseDim()
 	{
+		if (InfoCloseBtn != null) InfoCloseBtn.gameObject.SetActive(true);
 	}
 
 	private void OnClickArrow()

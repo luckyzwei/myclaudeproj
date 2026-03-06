@@ -72,9 +72,13 @@ public class ItemShopTabManager : MonoBehaviour, ITabToggleTab
 
 	private void OnPurchaseFailed(RewardItemData costData)
 	{
+		// Show popup indicating insufficient currency for purchase
+		if (costData == null) return;
 	}
 
 	private void OnPurchaseFailedSkillStone(RewardItemData costData)
 	{
+		// Show popup indicating insufficient skill stones
+		if (costData == null) return;
 	}
 }

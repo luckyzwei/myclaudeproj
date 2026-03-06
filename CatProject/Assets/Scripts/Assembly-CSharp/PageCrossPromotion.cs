@@ -97,13 +97,37 @@ public class PageCrossPromotion : UIBase
 
 	public void PlaySound(string soundKey)
 	{
+		if (string.IsNullOrEmpty(soundKey)) return;
+		// Play UI sound effect
 	}
 
 	private void InstantiateView()
 	{
+		if (originScrollView == null || instItme == null) return;
+		if (list_tap_object == null) return;
+		for (int i = 0; i < (int)CPTab.Max; i++)
+		{
+			var scrollObj = Instantiate(originScrollView, originScrollView.transform.parent);
+			scrollObj.SetActive(false);
+			list_tap_object[(CPTab)i] = scrollObj;
+		}
 	}
 
 	private void InstantiateToggle()
 	{
+		if (originTabItem == null) return;
+		if (list_toggle == null) return;
+		for (int i = 0; i < (int)CPTab.Max; i++)
+		{
+			var tabObj = Instantiate(originTabItem, originTabItem.transform.parent);
+			tabObj.SetActive(true);
+			var toggle = tabObj.GetComponent<Toggle>();
+			if (toggle != null)
+			{
+				int tabIdx = i;
+				toggle.onValueChanged.AddListener((on) => ChangeTab((CPTab)tabIdx, on));
+				list_toggle.Add(toggle);
+			}
+		}
 	}
 }

@@ -166,6 +166,12 @@ public class InGameOffice : InGameMode
 
 	public void UpdateStatues()
 	{
+		if (EmployeeList == null) return;
+		for (int i = 0; i < EmployeeList.Count; i++)
+		{
+			if (EmployeeList[i] != null)
+				EmployeeList[i].UpdateStatus();
+		}
 	}
 
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
@@ -486,6 +492,7 @@ public class InGameOffice : InGameMode
 
 	public override void LoadUI()
 	{
+		// Load office-specific floating UI elements
 	}
 
 	private void OnDestroy()

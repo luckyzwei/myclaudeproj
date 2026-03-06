@@ -60,6 +60,8 @@ public class ItemPackageOnePlusSix : MonoBehaviour
 
 	private void InitIAP()
 	{
+		if (iapBtn != null) iapBtn.gameObject.SetActive(false);
+		if (iapBtnText != null) iapBtnText.text = "";
 	}
 
 	private void OnClickFree()
@@ -69,6 +71,7 @@ public class ItemPackageOnePlusSix : MonoBehaviour
 
 	private void OnClickIap()
 	{
+		onRewardStart?.Invoke();
 	}
 
 	private void OnClickAds()

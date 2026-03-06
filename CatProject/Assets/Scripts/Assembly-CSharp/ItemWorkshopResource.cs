@@ -44,6 +44,11 @@ public class ItemWorkshopResource : MonoBehaviour
 
 	public void SetResourceIcon(Config.AtlasType atlasType, string iconPath)
 	{
+		if (IconImage != null)
+		{
+			Sprite sprite = Resources.Load<Sprite>(iconPath);
+			if (sprite != null) IconImage.sprite = sprite;
+		}
 	}
 
 	public void SetResourceValue(string valueStr)
@@ -69,5 +74,7 @@ public class ItemWorkshopResource : MonoBehaviour
 
 	private void OnClickedShortCutButton()
 	{
+		// Navigate to the source of this resource
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

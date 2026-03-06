@@ -64,10 +64,23 @@ public class ItemMissionMilestone : MonoBehaviour
 
 	public void UpdateData()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.MissionSystem == null) return;
+		// Update milestone step progress and claim state
+		IsClaimed = false;
+		if (CanClaimObj != null) CanClaimObj.SetActive(false);
+		if (ClaimedObj != null) ClaimedObj.SetActive(IsClaimed);
+		if (NotReachedObj != null) NotReachedObj.SetActive(!IsClaimed);
 	}
 
 	private void SetMilestoneReward()
 	{
+		if (RewardItemList == null) return;
+		for (int i = 0; i < RewardItemList.Count; i++)
+		{
+			if (RewardItemList[i] != null)
+				RewardItemList[i].gameObject.SetActive(false);
+		}
 	}
 
 	private void OnClickedClaimBtn()
@@ -77,5 +90,8 @@ public class ItemMissionMilestone : MonoBehaviour
 
 	private void OnClickedShortCutBtn()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Navigate to the relevant building/content for this milestone
 	}
 }

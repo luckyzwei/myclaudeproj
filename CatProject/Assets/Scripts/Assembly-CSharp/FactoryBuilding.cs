@@ -58,10 +58,16 @@ public class FactoryBuilding : MonoBehaviour
 
 	private void UpdateLack(bool isLack)
 	{
+		// Show/hide lack indicator on factory UI
+		if (CooltimeUI != null)
+			CooltimeUI.SetLack(isLack);
 	}
 
 	private void UpdateFull(bool isFull)
 	{
+		// Show/hide full indicator on factory UI
+		if (CooltimeUI != null)
+			CooltimeUI.SetFull(isFull);
 	}
 
 	public void OnClick()
@@ -77,9 +83,11 @@ public class FactoryBuilding : MonoBehaviour
 
 	private void PlaySound()
 	{
+		// Play factory building click sound
 	}
 
 	protected virtual void Update()
 	{
+		if (!isOpen || FactoryData == null) return;
 	}
 }

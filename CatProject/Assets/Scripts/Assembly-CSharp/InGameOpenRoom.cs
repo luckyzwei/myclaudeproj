@@ -64,10 +64,16 @@ public class InGameOpenRoom : InGameFloatingUI
 
 	private void OnClickOpen()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Open room purchase flow
 	}
 
 	private void OnClickSkip()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Skip construction timer via ad or cash
 	}
 
 	private void OnDestroy()

@@ -107,6 +107,7 @@ public class InGameFactory : OutGameMode
 
 	private void SubscribeTutorialCondition()
 	{
+		// Subscribe to tutorial conditions for factory mode
 	}
 
 	public void FocusStorage(Action action)
@@ -168,6 +169,9 @@ public class InGameFactory : OutGameMode
 
 	protected override void LoadUI()
 	{
+		// Load factory-specific UI elements
+		MakeEnterActionQueue();
+		SubscribeTutorialCondition();
 	}
 
 	public override void UnLoad()
