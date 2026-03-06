@@ -63,5 +63,6 @@ public class HudMissionItem : MonoBehaviour
 
 	private void GotoNavi(int slot)
 	{
+		// TODO
 	}
 }

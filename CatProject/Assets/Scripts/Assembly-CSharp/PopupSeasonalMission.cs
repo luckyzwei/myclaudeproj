@@ -67,5 +67,6 @@ public class PopupSeasonalMission : UIBase
 
 	private void ShowRewardEffect(Dictionary<int, BigInteger> rewards)
 	{
+		// TODO
 	}
 }

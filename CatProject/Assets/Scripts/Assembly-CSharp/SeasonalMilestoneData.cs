@@ -130,5 +130,6 @@ public class SeasonalMilestoneData
 
 	private void UpdateGoalAccumulationValue(int rewardTableIdx)
 	{
+		// Update display
 	}
 }

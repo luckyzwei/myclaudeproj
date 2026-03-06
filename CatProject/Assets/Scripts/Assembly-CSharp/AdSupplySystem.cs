@@ -156,14 +156,17 @@ public class AdSupplySystem
 
 	private void ResetSeasonalAdsCount()
 	{
+		gameObject.SetActive(false);
 	}
 
 	private void LoadGemAdsupplyData()
 	{
+		// TODO
 	}
 
 	private void SaveGemAdsupplyData()
 	{
+		// TODO
 	}
 
 	private void CheckGemAdsOpen()
@@ -242,10 +245,12 @@ public class AdSupplySystem
 
 	private void SetReward()
 	{
+		// Update display
 	}
 
 	private void SetSeasonalReward()
 	{
+		// Update display
 	}
 
 	public void SetDirectMoneySupply()
@@ -278,6 +283,7 @@ public class AdSupplySystem
 
 	public void CancelSeasonalSupply()
 	{
+		// TODO
 	}
 
 	public void UpdateAdsMoneyOneSeconds()

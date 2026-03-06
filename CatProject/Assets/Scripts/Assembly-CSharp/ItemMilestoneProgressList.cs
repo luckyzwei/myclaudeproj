@@ -55,6 +55,7 @@ public class ItemMilestoneProgressList : MonoBehaviour
 
 	private void SetSeasonMainIcon(string iconKey)
 	{
+		// Update display
 	}
 
 	private void SetMilestoneProgressInfo(int curStep, int maxStep)
@@ -77,5 +78,6 @@ public class ItemMilestoneProgressList : MonoBehaviour
 
 	private void SetMilestoneRewardList()
 	{
+		// Update display
 	}
 }

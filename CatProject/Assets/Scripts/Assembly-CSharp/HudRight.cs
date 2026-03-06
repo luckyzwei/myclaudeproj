@@ -66,6 +66,7 @@ public class HudRight : UIBase, IScreenAction
 
 	public void OnScreenActionStep()
 	{
+		// TODO
 	}
 
 	public void OnScreenActionComplete()

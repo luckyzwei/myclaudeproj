@@ -35,6 +35,7 @@ public class MeetingRoom : WaitingRoom
 
 	private void UpdateEarnExp()
 	{
+		// Update display
 	}
 
 	public override bool isInUse()

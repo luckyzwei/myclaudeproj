@@ -27,6 +27,7 @@ public class ItemRewardGetGuideList : MonoBehaviour
 
 	public void Refresh()
 	{
+		// Update display
 	}
 
 	public void SetGuideList(int rewardType, int rewardIdx, int regionType)

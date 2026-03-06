@@ -14,5 +14,6 @@ public class CardBoxComponent : MonoBehaviour
 
 	public void Set(int idx)
 	{
+		// Update display
 	}
 }

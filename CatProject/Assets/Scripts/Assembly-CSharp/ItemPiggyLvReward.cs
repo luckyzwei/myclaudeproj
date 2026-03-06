@@ -52,6 +52,7 @@ public class ItemPiggyLvReward : MonoBehaviour
 
 	public void UpdateStatus()
 	{
+		// Update display
 	}
 
 	private void OnClickGetReward()

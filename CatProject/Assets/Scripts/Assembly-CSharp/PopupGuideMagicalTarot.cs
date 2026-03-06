@@ -63,9 +63,11 @@ public class PopupGuideMagicalTarot : UIBase
 
 	private void SetCardRatio()
 	{
+		// Set tarot card ratio display
 	}
 
 	private void SetRewardRatio()
 	{
+		// Set reward ratio display
 	}
 }

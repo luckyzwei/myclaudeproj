@@ -19,5 +19,6 @@ public class ShopContentsPackageDesk : IShopContents
 
 	private void BuyPackage(int idx)
 	{
+		// TODO
 	}
 }

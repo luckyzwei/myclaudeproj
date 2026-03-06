@@ -735,6 +735,7 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void OnAtlasRequest(string tag, Action<SpriteAtlas> callback)
 	{
+		// TODO
 	}
 
 	public void ChangeGameType(GameType type, bool changeData = false, Action callBackAction = null, bool isForce = false)
@@ -751,6 +752,7 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void SetNativeLanguage()
 	{
+		// Update display
 	}
 
 	public void SetCheatWindow(bool value)

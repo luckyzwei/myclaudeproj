@@ -23,6 +23,7 @@ public class SpecialParkingLot : MonoBehaviour
 
 	private void LoadCar()
 	{
+		// TODO
 	}
 
 	private void OnClick()

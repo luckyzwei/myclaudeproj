@@ -34,9 +34,11 @@ public class HUDSeasonalWorkerMood : MonoBehaviour
 
 	private void UpdateEmployeesMood()
 	{
+		// Update display
 	}
 
 	private void OnClickWorkersMood()
 	{
+		// Handle click
 	}
 }

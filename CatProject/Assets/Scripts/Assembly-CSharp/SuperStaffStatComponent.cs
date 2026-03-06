@@ -14,5 +14,6 @@ public class SuperStaffStatComponent : MonoBehaviour
 
 	public void Set(string abilitytext, string cur, string next)
 	{
+		// Update display
 	}
 }

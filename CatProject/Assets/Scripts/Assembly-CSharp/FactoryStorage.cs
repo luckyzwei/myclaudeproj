@@ -9,9 +9,11 @@ public class FactoryStorage : MonoBehaviour
 
 	public void Init(int factoryIdx)
 	{
+		// Initialize
 	}
 
 	public void OnClick()
 	{
+		// Handle click
 	}
 }

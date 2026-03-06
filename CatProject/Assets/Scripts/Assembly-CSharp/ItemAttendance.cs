@@ -129,6 +129,7 @@ public class ItemAttendance : MonoBehaviour
 
 	private void UpdateRewardIcon(AttendanceData attData)
 	{
+		// Update display
 	}
 
 	private void UpdateAttendanceState(AttendanceData attData)

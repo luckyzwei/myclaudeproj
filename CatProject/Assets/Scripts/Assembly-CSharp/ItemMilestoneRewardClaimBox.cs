@@ -15,10 +15,12 @@ public class ItemMilestoneRewardClaimBox : MonoBehaviour
 
 	public void SetRewardClaimSlots(List<SeasonalRewardData> rewardData)
 	{
+		// Update display
 	}
 
 	private void SetRewardProgressSliderValue(float ratio)
 	{
+		// Update display
 	}
 
 	private ItemMilestoneRewardClaimSlot.E_MilestoneRewardSlotState GetMilestoneRewardType(int rewardIdx)

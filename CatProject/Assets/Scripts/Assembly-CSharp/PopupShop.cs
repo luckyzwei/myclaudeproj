@@ -154,6 +154,7 @@ public class PopupShop : HUDAniBase
 
 	public void ReOpenCloseBtn()
 	{
+		// TODO
 	}
 
 	public override void OnShowBefore()

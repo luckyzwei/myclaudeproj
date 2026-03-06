@@ -119,10 +119,12 @@ public class PackageComponentBlackFriday : PackageComponent
 
 	private void SubscribeCash()
 	{
+		// TODO
 	}
 
 	private void OnClickCashShop()
 	{
+		// Handle click
 	}
 
 	public override void OnBuySuccess(int idx)

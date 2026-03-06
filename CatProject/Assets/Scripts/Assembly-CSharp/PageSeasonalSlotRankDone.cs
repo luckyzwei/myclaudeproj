@@ -17,5 +17,6 @@ public class PageSeasonalSlotRankDone : UIBase
 
 	public void Set(int Rank)
 	{
+		// Update display
 	}
 }

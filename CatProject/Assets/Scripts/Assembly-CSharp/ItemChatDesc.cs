@@ -20,5 +20,6 @@ public class ItemChatDesc : MonoBehaviour
 
 	public void Set(int idx, int order)
 	{
+		// Update display
 	}
 }

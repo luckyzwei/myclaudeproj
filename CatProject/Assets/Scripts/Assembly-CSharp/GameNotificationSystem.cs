@@ -211,6 +211,7 @@ public class GameNotificationSystem
 
 	public void UpdateNotification(NotificationCategory category)
 	{
+		// Update display
 	}
 
 	public void CheckChangeOnceNotification(NotificationCategory category, bool value, int targetIdx = -1)

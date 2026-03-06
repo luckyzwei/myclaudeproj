@@ -8,9 +8,11 @@ public class GymRoomItem : OfficeItem
 
 	public override void Init(int office, int type, int idx)
 	{
+		base.Init(office, type, idx);
 	}
 
 	private void UpdateItem()
 	{
+		// Update display
 	}
 }

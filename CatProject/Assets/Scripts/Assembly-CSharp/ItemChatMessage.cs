@@ -61,6 +61,7 @@ public class ItemChatMessage : MonoBehaviour
 
 	public void UpdateReward()
 	{
+		// Update display
 	}
 
 	public void ShowWriting(bool isShowWriting = true)

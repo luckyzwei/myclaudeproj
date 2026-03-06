@@ -25,9 +25,11 @@ public class PopupAcquisitionCEOTime : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	private void SetRewardRevenuePerHourText(Config.CurrencyID currencyId, BigInteger rewardPerHour)
 	{
+		// Update display
 	}
 }

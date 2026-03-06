@@ -31,5 +31,6 @@ public class CrossPromotionTabText : MonoBehaviour
 
 	private void ApplySettings()
 	{
+		// TODO
 	}
 }

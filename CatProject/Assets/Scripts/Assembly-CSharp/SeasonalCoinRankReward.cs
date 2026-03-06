@@ -17,5 +17,6 @@ public class SeasonalCoinRankReward : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

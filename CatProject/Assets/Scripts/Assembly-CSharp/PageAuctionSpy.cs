@@ -72,6 +72,7 @@ public class PageAuctionSpy : UIBase
 
 	private void OnClickCashShop()
 	{
+		// Handle click
 	}
 
 	private void OnClickSpyStart()

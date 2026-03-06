@@ -16,9 +16,11 @@ public class PopupTutoSkip : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	private void OnClickSkip()
 	{
+		Hide();
 	}
 }

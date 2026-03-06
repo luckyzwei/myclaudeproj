@@ -102,6 +102,7 @@ public class PopupCompanyInfo : UIBase, ILocalizeRefresh
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 
 	public override void OnHideBefore()

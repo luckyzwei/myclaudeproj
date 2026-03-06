@@ -12,5 +12,6 @@ public class TutorialEntityShowPopup : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

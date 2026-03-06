@@ -85,6 +85,7 @@ public class ItemMiniGameRewardProgressSlot : MonoBehaviour
 
 	private void ShowRewardDetailPopup()
 	{
+		// TODO
 	}
 
 	private void ClaimReward()

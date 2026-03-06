@@ -92,6 +92,7 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 
 	private void ZoomDistributorObj()
 	{
+		// TODO
 	}
 
 	[IteratorStateMachine(typeof(_003CSetAndWaitTime_003Ed__6))]

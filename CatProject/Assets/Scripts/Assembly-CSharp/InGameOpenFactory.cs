@@ -53,6 +53,7 @@ public class InGameOpenFactory : InGameFloatingUI
 
 	private void OnClickSkip()
 	{
+		// Handle click
 	}
 
 	private void OnDestroy()

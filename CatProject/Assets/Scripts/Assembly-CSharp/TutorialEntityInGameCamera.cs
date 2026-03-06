@@ -25,5 +25,6 @@ public class TutorialEntityInGameCamera : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

@@ -17,5 +17,6 @@ public class TutorialEntityEventClickWait : TutorialEntityClickWait
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

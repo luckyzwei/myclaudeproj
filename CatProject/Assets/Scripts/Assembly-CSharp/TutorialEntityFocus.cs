@@ -27,9 +27,11 @@ public class TutorialEntityFocus : TutorialEntity
 
 	public override void StartEntity()
 	{
+		if (clickobj != null) clickobj.SetActive(true);
 	}
 
 	private void Update()
 	{
+		// Focus tracking handled by tutorial system
 	}
 }

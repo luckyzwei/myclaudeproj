@@ -53,6 +53,7 @@ public class HouseParkingLot : MonoBehaviour
 
 	public void UpdateEditModeUI()
 	{
+		// Update display
 	}
 
 	private void OnClickHouse()

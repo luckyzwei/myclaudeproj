@@ -19,5 +19,6 @@ public class PopupRewardInfo : UIBase
 
 	public void SetOneTimeCar(int idx)
 	{
+		// Update display
 	}
 }

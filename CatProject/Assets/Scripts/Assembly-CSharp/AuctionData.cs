@@ -45,5 +45,6 @@ public class AuctionData : IClientData
 
 	public void Create()
 	{
+		// TODO
 	}
 }

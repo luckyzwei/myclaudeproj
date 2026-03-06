@@ -20,5 +20,6 @@ public class SeasonalArcadeMachineData
 
 	public void AddRouletteCount(int value)
 	{
+		// TODO
 	}
 }

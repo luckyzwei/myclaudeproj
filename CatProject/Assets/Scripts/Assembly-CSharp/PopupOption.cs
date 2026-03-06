@@ -179,5 +179,6 @@ public class PopupOption : UIBase
 
 	private void OnClickReservation(Config.E_INHOUSE_RESERVATION ir)
 	{
+		// Handle click
 	}
 }

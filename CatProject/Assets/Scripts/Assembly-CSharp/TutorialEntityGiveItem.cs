@@ -16,5 +16,6 @@ public class TutorialEntityGiveItem : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

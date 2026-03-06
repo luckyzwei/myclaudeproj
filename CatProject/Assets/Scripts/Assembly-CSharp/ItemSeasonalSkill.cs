@@ -188,5 +188,6 @@ public class ItemSeasonalSkill : MonoBehaviour
 
 	private void OnClickedSkillUnlockButton()
 	{
+		// Handle click
 	}
 }

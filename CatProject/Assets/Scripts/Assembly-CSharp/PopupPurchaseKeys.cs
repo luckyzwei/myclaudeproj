@@ -53,6 +53,7 @@ public class PopupPurchaseKeys : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	public void Set(int _keyIdx)

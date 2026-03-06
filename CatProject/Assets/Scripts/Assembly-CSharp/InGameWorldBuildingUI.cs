@@ -90,6 +90,7 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	private void SetReddot()
 	{
+		// Update display
 	}
 
 	public void UpdateRevenue()
@@ -113,6 +114,7 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	public void OnClickGetRevenue()
 	{
+		// Handle click
 	}
 
 	public void SetArrowNoti()

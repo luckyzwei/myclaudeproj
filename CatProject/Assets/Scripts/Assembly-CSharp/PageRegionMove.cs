@@ -32,5 +32,6 @@ public class PageRegionMove : UIBase
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 }

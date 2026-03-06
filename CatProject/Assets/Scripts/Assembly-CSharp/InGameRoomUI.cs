@@ -80,6 +80,7 @@ public class InGameRoomUI : InGameFloatingUI
 
 	private void OnClickBtn()
 	{
+		// Handle click
 	}
 
 	private bool CheckOnStrike()

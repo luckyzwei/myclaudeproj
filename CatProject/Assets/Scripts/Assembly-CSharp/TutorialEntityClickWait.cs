@@ -42,6 +42,8 @@ public class TutorialEntityClickWait : TutorialEntity
 
 	public override void StartEntity()
 	{
+		isClicked = false;
+		checkUI = false;
 	}
 
 	public Rect RectTransformToScreenSpace(RectTransform _transform)
@@ -51,9 +53,14 @@ public class TutorialEntityClickWait : TutorialEntity
 
 	private void Update()
 	{
+		if (isClicked) return;
+		if (Input.GetMouseButtonDown(0))
+			Click();
 	}
 
 	private void Click()
 	{
+		isClicked = true;
+		EndEntity();
 	}
 }

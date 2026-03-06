@@ -12,5 +12,6 @@ public class ClickFacilityEffect : Effect
 
 	public void SetText(string _text)
 	{
+		// Update display
 	}
 }

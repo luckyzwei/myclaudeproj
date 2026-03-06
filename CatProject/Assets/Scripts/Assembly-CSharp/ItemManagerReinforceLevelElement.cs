@@ -9,5 +9,6 @@ public class ItemManagerReinforceLevelElement : MonoBehaviour
 
 	public void SetActiveCount(int count)
 	{
+		// Update display
 	}
 }

@@ -16,5 +16,6 @@ public class CurrencyIconConvert : MonoBehaviour
 
 	private void Start()
 	{
+		// Start initialization
 	}
 }

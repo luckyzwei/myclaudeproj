@@ -63,6 +63,7 @@ public class ItemPlayerLvPass : MonoBehaviour
 
 	public void UpdateCondition()
 	{
+		// Update display
 	}
 
 	public bool IsClaimable(bool isPremium, out bool isAdsReward)

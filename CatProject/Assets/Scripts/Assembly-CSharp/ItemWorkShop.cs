@@ -162,6 +162,7 @@ public class ItemWorkShop : MonoBehaviour
 
 	private void OnClickManagerInfo(ItemWorkshopWorkerFacilitySlot.E_SlotState slotState)
 	{
+		// Handle click
 	}
 
 	private void OnChangedHiredWorkerCount(int hiredWorkerCount)

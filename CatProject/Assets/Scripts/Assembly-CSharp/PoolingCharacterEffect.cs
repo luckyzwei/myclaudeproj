@@ -36,10 +36,19 @@ public class PoolingCharacterEffect : MonoBehaviour
 
 	private void BarrowBurning(Transform character, EmployeeMoodSystem.Mood mood)
 	{
+		if (character == null) return;
+		// Load and attach burning effect to character
 	}
 
 	private void ReturnBurnings(Transform character)
 	{
+		if (character == null) return;
+		int id = character.GetInstanceID();
+		if (barrowBurningDisposables != null && barrowBurningDisposables.TryGetValue(id, out var d))
+		{
+			d?.Dispose();
+			barrowBurningDisposables.Remove(id);
+		}
 	}
 
 	public CompositeDisposable Subscribe(IObservable<BurningArgs> observable)

@@ -10,9 +10,11 @@ public class InGameRealtorUI : InGameFloatingUI
 
 	public override void Init(Transform parent, GameType type = GameType.House)
 	{
+		base.Init(parent, type);
 	}
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 }

@@ -10,5 +10,6 @@ public class PopupOfficeGuide : UIBase
 
 	public void Set(int office)
 	{
+		// Update display
 	}
 }

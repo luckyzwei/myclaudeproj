@@ -13,9 +13,11 @@ public class BuildingFacilityInteractiveItem : MonoBehaviour
 
 	public void Awake()
 	{
+		// Initialize
 	}
 
 	public void SetOnOff(bool bOn)
 	{
+		// Update display
 	}
 }

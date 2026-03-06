@@ -51,5 +51,6 @@ public class PopupRentalIncomeInfo : UIBase
 
 	public void Set(int office)
 	{
+		// Update display
 	}
 }

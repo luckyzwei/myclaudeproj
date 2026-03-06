@@ -490,5 +490,6 @@ public class EndlessOfferComponent_Shift : EndlessOfferComponentBase
 
 	private void UpdateRedDot()
 	{
+		// Update display
 	}
 }

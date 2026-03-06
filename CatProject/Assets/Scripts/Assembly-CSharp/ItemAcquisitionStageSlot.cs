@@ -38,6 +38,7 @@ public class ItemAcquisitionStageSlot : MonoBehaviour
 
 	public void SetStageInfo(int slotStageIdx)
 	{
+		// Update display
 	}
 
 	public void SetState(E_SlotState state, bool bPlayAnim)

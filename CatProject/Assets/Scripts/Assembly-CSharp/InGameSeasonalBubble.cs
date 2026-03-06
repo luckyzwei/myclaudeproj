@@ -7,6 +7,7 @@ public class InGameSeasonalBubble : InGameFloatingUI
 {
 	private void Awake()
 	{
+		// Initialize
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.Main)

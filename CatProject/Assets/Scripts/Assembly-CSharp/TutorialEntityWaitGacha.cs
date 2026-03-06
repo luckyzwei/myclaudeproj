@@ -7,5 +7,6 @@ public class TutorialEntityWaitGacha : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

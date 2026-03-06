@@ -2,6 +2,7 @@ public class UseAnyBoosterMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
+		base.Subscribe();
 	}
 
 	public override string GetMissionDescriptionText()

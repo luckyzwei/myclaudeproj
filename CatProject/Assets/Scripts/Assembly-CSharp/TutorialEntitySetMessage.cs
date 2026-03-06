@@ -29,5 +29,6 @@ public class TutorialEntitySetMessage : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

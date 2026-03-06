@@ -64,6 +64,7 @@ public class ItemCompanyBase : MonoBehaviour
 
 	private void UpdateCompanyExpInfo()
 	{
+		// Update display
 	}
 
 	private void SetCompanyExpInfo(BigInteger curExp, BigInteger needExp)

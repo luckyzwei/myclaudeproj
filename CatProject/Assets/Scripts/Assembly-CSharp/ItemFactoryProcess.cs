@@ -73,10 +73,12 @@ public class ItemFactoryProcess : MonoBehaviour
 
 	public void Set(Config.FactoryType type)
 	{
+		// Update display
 	}
 
 	public void ShowFocusObj(List<int> productIdxList, bool bShow)
 	{
+		// TODO
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__5))]

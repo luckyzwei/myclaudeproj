@@ -21,10 +21,12 @@ public class PackageComponentOnePlusSix : PackageComponent
 
 	private void OnOpenNextReward()
 	{
+		// TODO
 	}
 
 	private void OnRewardStart()
 	{
+		// TODO
 	}
 
 	private void Hide()

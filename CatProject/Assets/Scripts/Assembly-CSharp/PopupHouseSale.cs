@@ -114,6 +114,7 @@ public class PopupHouseSale : UIBase
 
 	private void OnClickBuy()
 	{
+		// Handle click
 	}
 
 	public override void Hide()

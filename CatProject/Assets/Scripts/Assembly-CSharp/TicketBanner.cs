@@ -14,9 +14,11 @@ public class TicketBanner : MonoBehaviour
 
 	private void OnEnable()
 	{
+		// Enabled
 	}
 
 	private void OnClickGotoShop()
 	{
+		// Handle click
 	}
 }

@@ -15,6 +15,7 @@ public class ButtonAdsDim : MonoBehaviour, IPointerDownHandler, IEventSystemHand
 
 	public void OnPointerClick(PointerEventData e)
 	{
+		// TODO
 	}
 
 	private void Start()
@@ -29,6 +30,7 @@ public class ButtonAdsDim : MonoBehaviour, IPointerDownHandler, IEventSystemHand
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 
 	private void CB_AdRewarded(bool isAdReady)

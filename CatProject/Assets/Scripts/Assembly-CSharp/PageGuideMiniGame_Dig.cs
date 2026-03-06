@@ -12,5 +12,6 @@ public class PageGuideMiniGame_Dig : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 }

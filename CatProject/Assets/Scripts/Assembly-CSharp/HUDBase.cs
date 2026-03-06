@@ -41,6 +41,7 @@ public class HUDBase : HUDAniBase
 
 	public virtual void Refresh(E_RefreshType refreshType)
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual Vector3 GetHUDPos(E_HUDPosType posType, int rewardType = 0, int rewardIdx = 0)

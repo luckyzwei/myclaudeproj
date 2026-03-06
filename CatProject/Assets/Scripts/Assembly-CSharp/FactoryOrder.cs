@@ -33,10 +33,12 @@ public class FactoryOrder : MonoBehaviour
 
 	private void SubscribeEnableOrder()
 	{
+		// TODO
 	}
 
 	private void SubscribeOrders()
 	{
+		// TODO
 	}
 
 	private void SetTruck(int order)

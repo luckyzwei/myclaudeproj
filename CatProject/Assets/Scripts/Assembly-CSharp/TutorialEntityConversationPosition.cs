@@ -112,6 +112,13 @@ public class TutorialEntityConversationPosition : TutorialEntity
 
 	public override void StartEntity()
 	{
+		isNext = false;
+		InitPos = transform.localPosition;
+		if (balloon != null) balloon.SetDir(balloonDir);
+		if (context != null && !string.IsNullOrEmpty(TextKey))
+			context.text = TextKey;
+		if (title != null && !string.IsNullOrEmpty(TitleKey))
+			title.text = TitleKey;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__20))]
@@ -122,9 +129,20 @@ public class TutorialEntityConversationPosition : TutorialEntity
 
 	private void Update()
 	{
+		if (IsAutoNext && !isNext)
+		{
+			AutoNextTime -= Time.deltaTime;
+			if (AutoNextTime <= 0f)
+			{
+				isNext = true;
+				EndEntity();
+			}
+		}
 	}
 
 	private void TextAllPrint()
 	{
+		if (context != null && !string.IsNullOrEmpty(contextOriginal))
+			context.text = contextOriginal;
 	}
 }

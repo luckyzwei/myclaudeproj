@@ -67,5 +67,6 @@ public class HUDJewelryBoxComponent : MonoBehaviour
 
 	private void OnClickJewelryBoxBtn()
 	{
+		// Handle click
 	}
 }

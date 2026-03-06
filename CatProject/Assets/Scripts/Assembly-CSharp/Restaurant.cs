@@ -29,5 +29,6 @@ public class Restaurant : ConstructableBuildingBase
 
 	private void LoadRestaurantUI()
 	{
+		// TODO
 	}
 }

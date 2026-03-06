@@ -169,9 +169,11 @@ public class PageSeasonalPass : UIBase
 
 	private void OnClickInfo()
 	{
+		// Show seasonal pass info
 	}
 
 	private void OnClickPurchase()
 	{
+		// Handle seasonal pass purchase
 	}
 }

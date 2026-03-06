@@ -25,6 +25,7 @@ public class SingleMissionUserData
 
 	public void CopyFrom(SingleMissionBase source)
 	{
+		// TODO
 	}
 
 	public static SingleMissionUserData FromFlatBuffer(SingleMissionData data)

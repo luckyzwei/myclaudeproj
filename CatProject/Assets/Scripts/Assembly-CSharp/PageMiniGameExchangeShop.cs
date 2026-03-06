@@ -33,6 +33,7 @@ public class PageMiniGameExchangeShop : UIBase
 
 	private void SetHUDTopInfo()
 	{
+		// Update display
 	}
 
 	private void SetExchangeItemList(int eventIdx)

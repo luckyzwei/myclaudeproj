@@ -58,6 +58,7 @@ public class MiniGameSystem : SystemBase
 
 	public override void OnChangeScene()
 	{
+		base.OnChangeScene();
 	}
 
 	public void UpdateOneSecond()

@@ -11,5 +11,6 @@ public class ObfScanner : MonoBehaviour
 	[ContextMenu("Scan Obfuscated Types")]
 	private void Scan()
 	{
+		// TODO
 	}
 }

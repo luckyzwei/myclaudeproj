@@ -11,9 +11,11 @@ public class PopupOneTimeEventDone : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 }

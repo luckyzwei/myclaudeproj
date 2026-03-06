@@ -21,5 +21,6 @@ public class PopupRewardExpInfo : UIBase
 
 	public void SetRewardExp(BigInteger Exp)
 	{
+		// Update display
 	}
 }

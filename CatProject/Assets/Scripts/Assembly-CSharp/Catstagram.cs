@@ -269,6 +269,7 @@ public class Catstagram : MonoBehaviour
 
 	private void OnClickComment()
 	{
+		// Handle click
 	}
 
 	private void OnClickMain()

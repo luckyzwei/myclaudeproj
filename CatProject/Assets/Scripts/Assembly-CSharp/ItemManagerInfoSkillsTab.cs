@@ -130,6 +130,7 @@ public class ItemManagerInfoSkillsTab : MonoBehaviour, ITabToggleTab
 
 	private void PlaySkillLevelUpFx()
 	{
+		gameObject.SetActive(true);
 	}
 
 	public void Reset()

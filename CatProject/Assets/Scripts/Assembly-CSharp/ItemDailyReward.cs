@@ -63,6 +63,7 @@ public class ItemDailyReward : MonoBehaviour
 
 	public void UpdateStatus()
 	{
+		// Update display
 	}
 
 	public void ShowParticle()

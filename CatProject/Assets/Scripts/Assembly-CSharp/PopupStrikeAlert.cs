@@ -20,5 +20,6 @@ public class PopupStrikeAlert : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 }

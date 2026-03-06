@@ -69,6 +69,7 @@ public class ShopContentsKeyBox : IShopContents
 
 	private void SetBannerColor(Config.ItemIdx itemIdx)
 	{
+		// Update display
 	}
 
 	public void OnClickBtn()
@@ -86,6 +87,7 @@ public class ShopContentsKeyBox : IShopContents
 
 	private void PurchaseShopGoods()
 	{
+		// TODO
 	}
 
 	private (int, int) GetShopGoodsIdx(Config.ItemIdx itemIdx)

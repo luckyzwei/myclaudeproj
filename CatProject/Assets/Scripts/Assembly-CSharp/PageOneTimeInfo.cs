@@ -11,5 +11,6 @@ public class PageOneTimeInfo : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 }

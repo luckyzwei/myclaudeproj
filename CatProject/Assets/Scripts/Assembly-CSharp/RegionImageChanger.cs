@@ -22,9 +22,11 @@ public class RegionImageChanger : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize region image changer
 	}
 
 	private void OnEnable()
 	{
+		// Enabled
 	}
 }

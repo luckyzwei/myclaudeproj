@@ -8,5 +8,6 @@ public class InGameStatueUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

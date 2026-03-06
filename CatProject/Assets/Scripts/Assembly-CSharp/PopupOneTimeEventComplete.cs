@@ -11,5 +11,6 @@ public class PopupOneTimeEventComplete : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 }

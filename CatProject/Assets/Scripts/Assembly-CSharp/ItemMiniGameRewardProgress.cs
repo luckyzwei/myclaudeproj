@@ -35,6 +35,7 @@ public class ItemMiniGameRewardProgress : MonoBehaviour
 
 	public void Refresh(bool playAnim)
 	{
+		// Update display
 	}
 
 	private void OnClaimReward(int order)

@@ -18,5 +18,6 @@ public class TutorialEntityAni : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

@@ -36,9 +36,11 @@ public class ItemFactoryProcessProduct : MonoBehaviour
 
 	public void Set(int product, int useormakecount)
 	{
+		// Update display
 	}
 
 	private void Update()
 	{
+		// Update logic
 	}
 }

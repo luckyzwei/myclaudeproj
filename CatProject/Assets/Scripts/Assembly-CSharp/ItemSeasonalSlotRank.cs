@@ -23,5 +23,6 @@ public class ItemSeasonalSlotRank : MonoBehaviour
 
 	public void Set(SeasonalCoinRankUserData userData)
 	{
+		// Update display
 	}
 }

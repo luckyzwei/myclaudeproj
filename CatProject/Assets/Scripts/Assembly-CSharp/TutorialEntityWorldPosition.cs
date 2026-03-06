@@ -7,5 +7,6 @@ public class TutorialEntityWorldPosition : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

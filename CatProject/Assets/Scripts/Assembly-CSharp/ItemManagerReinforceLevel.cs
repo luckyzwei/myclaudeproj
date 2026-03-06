@@ -10,5 +10,6 @@ public class ItemManagerReinforceLevel : MonoBehaviour
 
 	public void SetReinforceLevel(int level)
 	{
+		// Update display
 	}
 }

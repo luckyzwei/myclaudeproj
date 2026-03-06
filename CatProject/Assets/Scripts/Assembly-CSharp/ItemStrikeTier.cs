@@ -15,5 +15,6 @@ public class ItemStrikeTier : MonoBehaviour
 
 	public void SetTier(int grade, int count)
 	{
+		// Update display
 	}
 }

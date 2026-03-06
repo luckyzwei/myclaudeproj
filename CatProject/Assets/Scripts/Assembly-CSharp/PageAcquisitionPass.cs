@@ -76,6 +76,7 @@ public class PageAcquisitionPass : UIBase
 
 	public override void OnHideBefore()
 	{
+		base.OnHideBefore();
 	}
 
 	public override void OnRefresh()
@@ -110,6 +111,7 @@ public class PageAcquisitionPass : UIBase
 
 	private void OnClickBuyBtn()
 	{
+		// Handle purchase
 	}
 
 	private void OnClickedClaimAllBtn()

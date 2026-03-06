@@ -24,9 +24,11 @@ public class InGameZoneName : InGameFloatingUI, ILocalizeRefresh
 
 	public void RefreshText()
 	{
+		// Update display
 	}
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 }

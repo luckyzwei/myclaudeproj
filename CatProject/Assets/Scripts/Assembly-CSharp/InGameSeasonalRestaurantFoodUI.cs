@@ -32,6 +32,7 @@ public class InGameSeasonalRestaurantFoodUI : InGameFloatingUI
 
 	private void SetFoodIconImage(string imageKey)
 	{
+		// Update display
 	}
 
 	private void OnChangedFoodValue(int hasValue, int maxValue)

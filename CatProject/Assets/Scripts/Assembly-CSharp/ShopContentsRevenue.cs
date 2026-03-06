@@ -13,6 +13,7 @@ public class ShopContentsRevenue : IShopContents
 
 	private void Awake()
 	{
+		// Initialize
 	}
 
 	public override void Init()

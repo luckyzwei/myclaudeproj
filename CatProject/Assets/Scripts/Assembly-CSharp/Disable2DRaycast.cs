@@ -14,17 +14,32 @@ public class Disable2DRaycast : MonoBehaviour
 
 	private void Start()
 	{
+		SetRaycastDisable();
 	}
 
 	public void SetRaycastDisable()
 	{
+		if (list_FindImg != null)
+			for (int i = 0; i < list_FindImg.Count; i++)
+				if (list_FindImg[i] != null) list_FindImg[i].raycastTarget = false;
+		if (list_FindText != null)
+			for (int i = 0; i < list_FindText.Count; i++)
+				if (list_FindText[i] != null) list_FindText[i].raycastTarget = false;
 	}
 
 	public void UndoRaycast()
 	{
+		if (list_FindImg != null)
+			for (int i = 0; i < list_FindImg.Count; i++)
+				if (list_FindImg[i] != null) list_FindImg[i].raycastTarget = true;
+		if (list_FindText != null)
+			for (int i = 0; i < list_FindText.Count; i++)
+				if (list_FindText[i] != null) list_FindText[i].raycastTarget = true;
 	}
 
 	public void RemoveComponent()
 	{
+		UndoRaycast();
+		Destroy(this);
 	}
 }

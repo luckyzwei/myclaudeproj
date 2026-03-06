@@ -14,5 +14,6 @@ public class ItemPlantPreview : MonoBehaviour
 
 	public void Set(int plantIdx, int plantLevel, bool isSatisfied)
 	{
+		// Update display
 	}
 }

@@ -50,6 +50,7 @@ public class InfraSystem
 
 	public void BuildingLevelUp(int BuildingIdx)
 	{
+		// TODO
 	}
 
 	public void GetBuildingRevenue(int idx, Transform Trans)

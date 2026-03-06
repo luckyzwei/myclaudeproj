@@ -49,6 +49,7 @@ public class PopupMilestoneRewardClaim : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	public void Init()
@@ -58,6 +59,7 @@ public class PopupMilestoneRewardClaim : UIBase
 
 	private void SetRewardSlots()
 	{
+		// Setup reward slot display
 	}
 
 	private void OnClickInfo()

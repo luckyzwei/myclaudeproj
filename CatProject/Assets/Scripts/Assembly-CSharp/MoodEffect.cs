@@ -9,5 +9,6 @@ public class MoodEffect : Effect
 
 	public void UpdateMood(EmployeeMoodSystem.Mood mood)
 	{
+		// Update display
 	}
 }

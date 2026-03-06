@@ -4,10 +4,12 @@ public class ShopGoodsBuyMission : SingleMissionBase
 
 	protected override void OnInitAfter()
 	{
+		base.OnInitAfter();
 	}
 
 	public override void Subscribe()
 	{
+		base.Subscribe();
 	}
 
 	public override string GetMissionDescriptionText()

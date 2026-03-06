@@ -74,6 +74,7 @@ public class PageInterstitialAd : UIBase
 
 	public void Set(TpMaxProp.AdInterType adType)
 	{
+		// Update display
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitHideTime_003Ed__4))]

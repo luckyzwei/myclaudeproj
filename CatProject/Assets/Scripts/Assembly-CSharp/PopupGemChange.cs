@@ -19,9 +19,11 @@ public class PopupGemChange : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	public void Set(BigInteger count)
 	{
+		// Update display
 	}
 }

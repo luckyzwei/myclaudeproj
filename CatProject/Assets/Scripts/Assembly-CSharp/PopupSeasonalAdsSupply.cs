@@ -55,6 +55,7 @@ public class PopupSeasonalAdsSupply : UIBase
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 
 	public void Init(AdSupplySystem.ShowType type)

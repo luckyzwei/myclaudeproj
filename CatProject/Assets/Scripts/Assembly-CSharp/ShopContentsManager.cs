@@ -19,5 +19,6 @@ public class ShopContentsManager : IShopContents
 
 	private void OnClickInfo()
 	{
+		// Handle click
 	}
 }

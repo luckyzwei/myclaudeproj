@@ -50,6 +50,7 @@ public class ItemArcadeMachineRewardInfo : MonoBehaviour
 
 	private void SetRewardIconImage(string iconKey)
 	{
+		// Update display
 	}
 
 	private void SetRewardValueText(int value, bool isTimeValue)

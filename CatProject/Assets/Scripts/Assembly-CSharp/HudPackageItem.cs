@@ -82,5 +82,6 @@ public class HudPackageItem : MonoBehaviour
 
 	private void OnClickBtn()
 	{
+		// Handle click
 	}
 }

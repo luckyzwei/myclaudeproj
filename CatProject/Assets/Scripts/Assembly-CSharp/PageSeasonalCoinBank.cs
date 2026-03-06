@@ -59,5 +59,6 @@ public class PageSeasonalCoinBank : UIBase
 
 	private void OnClickLevelInfo()
 	{
+		// Handle click
 	}
 }

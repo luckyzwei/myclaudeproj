@@ -7,5 +7,6 @@ public class TutorialEntityShowStarReward : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

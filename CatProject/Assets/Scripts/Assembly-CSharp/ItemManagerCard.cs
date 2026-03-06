@@ -139,6 +139,7 @@ public class ItemManagerCard : MonoBehaviour
 
 	private void SetManagerCommonInfo(ManagerInfoData infoData)
 	{
+		// Update display
 	}
 
 	private void UpdateOfficeValue(int tempManagerCount, bool onHireObjDeactive = false)

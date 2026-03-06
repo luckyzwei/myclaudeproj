@@ -251,6 +251,7 @@ public class PageAuctionPass : UIBase
 
 	private void OnClickPurchase(bool isRewardPopup)
 	{
+		// Handle click
 	}
 
 	[IteratorStateMachine(typeof(_003CFirstShowPlayCoroutine_003Ed__31))]

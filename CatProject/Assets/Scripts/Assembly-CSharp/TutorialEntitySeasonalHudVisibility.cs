@@ -7,5 +7,6 @@ public class TutorialEntitySeasonalHudVisibility : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

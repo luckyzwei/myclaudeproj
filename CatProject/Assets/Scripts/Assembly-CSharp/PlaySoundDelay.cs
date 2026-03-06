@@ -8,5 +8,6 @@ public class PlaySoundDelay : MonoBehaviour
 
 	public void PlaySound()
 	{
+		gameObject.SetActive(true);
 	}
 }

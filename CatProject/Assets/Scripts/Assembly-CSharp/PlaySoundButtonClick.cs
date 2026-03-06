@@ -10,5 +10,6 @@ public class PlaySoundButtonClick : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

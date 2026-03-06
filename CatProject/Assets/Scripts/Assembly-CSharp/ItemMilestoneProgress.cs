@@ -72,6 +72,7 @@ public class ItemMilestoneProgress : MonoBehaviour
 
 	private void SubscribeEvents()
 	{
+		// TODO
 	}
 
 	private void UpdateMilestoneCurrencyInfo()

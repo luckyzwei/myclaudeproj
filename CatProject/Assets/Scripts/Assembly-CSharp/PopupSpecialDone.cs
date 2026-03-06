@@ -25,6 +25,7 @@ public class PopupSpecialDone : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	public override void OnHideAfter()

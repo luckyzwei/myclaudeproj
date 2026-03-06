@@ -38,9 +38,11 @@ public class AddressableLoadGameObject
 
 	private void OnLoadComp(AsyncOperationHandle<GameObject> handle, Action<GameObject> onLoad)
 	{
+		// TODO
 	}
 
 	public void Release()
 	{
+		// TODO
 	}
 }

@@ -7,5 +7,6 @@ public class TutorialEntityFloatingUI : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

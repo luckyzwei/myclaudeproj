@@ -112,6 +112,7 @@ public abstract class SingleMissionBase
 
 	protected virtual void OnInitAfter()
 	{
+		// Virtual base - override in subclass
 	}
 
 	protected void OnCurrentValueChanged(BigInteger value)

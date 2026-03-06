@@ -13,18 +13,25 @@ public class HudPackageComponent : MonoBehaviour
 
 	public void Refresh()
 	{
+		if (PackageRoot == null) return;
+		// Clear existing and rebuild package list
 	}
 
 	public void RefreshSeasonal()
 	{
+		Refresh();
 	}
 
 	public void RefreshBizAcquisition(Action onEndAction)
 	{
+		Refresh();
+		onEndAction?.Invoke();
 	}
 
 	private void SortPackageList(List<PackageData> packageList)
 	{
+		if (packageList == null) return;
+		packageList.Sort((a, b) => a.Idx.CompareTo(b.Idx));
 	}
 
 	private bool CheckGameShowType(int type)

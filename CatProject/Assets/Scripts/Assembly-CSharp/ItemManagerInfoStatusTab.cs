@@ -43,9 +43,11 @@ public class ItemManagerInfoStatusTab : MonoBehaviour, ITabToggleTab
 
 	public void ManagerReinforceTutorial()
 	{
+		// TODO
 	}
 
 	private void OnClickInfo()
 	{
+		// Handle click
 	}
 }

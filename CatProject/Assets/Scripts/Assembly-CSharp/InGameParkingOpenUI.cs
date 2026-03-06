@@ -43,5 +43,6 @@ public class InGameParkingOpenUI : InGameFloatingUI
 
 	private void OnClickBtn()
 	{
+		// Handle click
 	}
 }

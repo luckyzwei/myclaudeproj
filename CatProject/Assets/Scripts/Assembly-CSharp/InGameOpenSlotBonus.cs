@@ -16,5 +16,6 @@ public class InGameOpenSlotBonus : InGameFloatingUI
 
 	public void Init(Vector2 pos)
 	{
+		// Initialize
 	}
 }

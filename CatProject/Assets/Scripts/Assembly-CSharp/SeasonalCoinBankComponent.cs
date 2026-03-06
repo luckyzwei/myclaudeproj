@@ -55,6 +55,7 @@ public class SeasonalCoinBankComponent : MonoBehaviour
 
 	private void SetPiggySkin(int level)
 	{
+		// Update display
 	}
 
 	private void OnClickInfo()

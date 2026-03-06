@@ -34,5 +34,6 @@ public class ItemWorkshopRestaurantFacility : MonoBehaviour
 
 	private void UpdateWorkersMood()
 	{
+		// Update display
 	}
 }

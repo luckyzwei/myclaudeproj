@@ -12,9 +12,11 @@ public class ItemFactoryProcessLine : MonoBehaviour
 
 	public void Set(int idx)
 	{
+		// Update display
 	}
 
 	public void ShowFocusObj(bool bShow)
 	{
+		// TODO
 	}
 }

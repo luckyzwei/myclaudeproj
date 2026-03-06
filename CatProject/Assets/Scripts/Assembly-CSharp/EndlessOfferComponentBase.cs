@@ -33,6 +33,7 @@ public class EndlessOfferComponentBase : MonoBehaviour
 
 	protected virtual void UpdateOfferPurchaseData()
 	{
+		// Virtual base - override in subclass
 	}
 
 	protected virtual void OnPurchaseSuccess(List<IRewardItemData> rewardItemDataList, Action callback)

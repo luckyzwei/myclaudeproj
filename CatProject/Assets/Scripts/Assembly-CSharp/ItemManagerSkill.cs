@@ -48,6 +48,7 @@ public class ItemManagerSkill : MonoBehaviour
 
 	private void SetSkillIcon(string iconKey)
 	{
+		// Update display
 	}
 
 	private void SetSkillLevel(int skillLevel)
@@ -64,5 +65,6 @@ public class ItemManagerSkill : MonoBehaviour
 
 	private void OnClickSkillInfoBtn()
 	{
+		// Handle click
 	}
 }

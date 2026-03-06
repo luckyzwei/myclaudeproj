@@ -73,6 +73,7 @@ public class ButtonScale : MonoBehaviour, IPointerDownHandler, IEventSystemHandl
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+		// TODO
 	}
 
 	public void OnPointerExit(PointerEventData eventData)

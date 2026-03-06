@@ -7,5 +7,6 @@ public class TutorialEntityShowBoxBtn : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

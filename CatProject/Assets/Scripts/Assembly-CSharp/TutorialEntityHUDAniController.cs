@@ -13,5 +13,6 @@ public class TutorialEntityHUDAniController : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

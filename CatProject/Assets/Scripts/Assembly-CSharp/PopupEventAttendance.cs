@@ -57,6 +57,7 @@ public class PopupEventAttendance : UIBase
 
 	private void SetEventEndLayout()
 	{
+		// Update display
 	}
 
 	private void UpdateEventEndTime()

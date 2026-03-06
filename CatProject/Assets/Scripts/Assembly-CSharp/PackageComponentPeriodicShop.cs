@@ -40,6 +40,7 @@ public class PackageComponentPeriodicShop : PackageComponent
 
 	private void OnDisable()
 	{
+		// Disabled
 	}
 
 	private void Update()
@@ -49,6 +50,7 @@ public class PackageComponentPeriodicShop : PackageComponent
 
 	private void UpdateRemainTime()
 	{
+		// Update display
 	}
 
 	public override void OnBuySuccess(int idx)

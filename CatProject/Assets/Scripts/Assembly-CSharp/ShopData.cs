@@ -29,5 +29,6 @@ public class ShopData : IClientData
 
 	public void Create()
 	{
+		// TODO
 	}
 }

@@ -267,6 +267,7 @@ public class PopupFactoryWorkPlace : UIBase
 
 	private void ShowUnlockProducts()
 	{
+		// TODO
 	}
 
 	private void UpdateSelectItem()

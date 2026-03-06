@@ -36,6 +36,7 @@ public class ItemShopAdsTicket : MonoBehaviour
 
 	private void DrawInfo()
 	{
+		// TODO
 	}
 
 	private void OnClickItem()

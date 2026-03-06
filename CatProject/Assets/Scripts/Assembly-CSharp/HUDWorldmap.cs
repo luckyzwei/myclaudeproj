@@ -90,10 +90,12 @@ public class HUDWorldmap : HUDBase
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void UpdateSuperStaff()

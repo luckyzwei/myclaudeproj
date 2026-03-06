@@ -10,5 +10,6 @@ public class EnableByGameMode : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

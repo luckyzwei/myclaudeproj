@@ -25,6 +25,7 @@ public class PopupAdsPass : UIBase
 
 	private void UpdateList()
 	{
+		// Update display
 	}
 
 	private void OnDestroy()

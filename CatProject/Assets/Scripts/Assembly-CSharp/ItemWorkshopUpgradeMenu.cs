@@ -197,6 +197,7 @@ public class ItemWorkshopUpgradeMenu : MonoBehaviour
 
 	private void OnClickedUpgradeImmediatelyCompleteButton()
 	{
+		// Handle click
 	}
 
 	[IteratorStateMachine(typeof(_003CUpdateUpgradeTime_003Ed__30))]

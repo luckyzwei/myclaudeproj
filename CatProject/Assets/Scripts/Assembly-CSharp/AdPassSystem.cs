@@ -30,6 +30,7 @@ public class AdPassSystem
 
 	public void IncreaseAdViewCount()
 	{
+		// TODO
 	}
 
 	public void GetAdPassReward(int idx, Action Cb)

@@ -276,6 +276,7 @@ public class BizAcqBattleSystem : SystemBase
 
 	private void CheckBattleSpeedTrialEnd()
 	{
+		// TODO
 	}
 
 	private void UpdateBattleSpeedList()
@@ -291,6 +292,7 @@ public class BizAcqBattleSystem : SystemBase
 
 	public void LoadSkillFxBundle()
 	{
+		// TODO
 	}
 
 	public void UnloadAllSkillFx()
@@ -401,6 +403,7 @@ public class BizAcqBattleSystem : SystemBase
 
 	public void UpdateMultipleRewardInfo()
 	{
+		// Update display
 	}
 
 	public void OnClaimIdleReward(bool isReceiveAll)

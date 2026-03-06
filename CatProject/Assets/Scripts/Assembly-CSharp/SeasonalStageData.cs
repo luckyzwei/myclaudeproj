@@ -289,6 +289,7 @@ public class SeasonalStageData
 
 	private void PutDefaultCurrency(SeasonalInfoData seasonInfoTable)
 	{
+		// TODO
 	}
 
 	private void InitWorkerDataMap()
@@ -372,6 +373,7 @@ public class SeasonalStageData
 
 	private void InitDistributorProductsData()
 	{
+		// TODO
 	}
 
 	private void PutNewProductToInventory(int idx, BigInteger value, bool bAllowOverWrite)

@@ -19,5 +19,6 @@ public class NightSkipVIP : MonoBehaviour
 
 	public void OnClickVIP()
 	{
+		// Handle click
 	}
 }

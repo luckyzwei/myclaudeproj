@@ -197,6 +197,7 @@ public class SpriteAnimation : MonoBehaviour
 
 	public void SetFever(bool value)
 	{
+		// Update display
 	}
 
 	private void OnEnable()

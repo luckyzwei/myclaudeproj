@@ -28,6 +28,7 @@ public class PopupTutorialBoostGive : UIBase
 
 	public void Init()
 	{
+		// Initialize
 	}
 
 	private void OnClickConfirm()

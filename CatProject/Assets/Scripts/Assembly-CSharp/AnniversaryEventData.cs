@@ -23,6 +23,7 @@ public class AnniversaryEventData
 
 	public void Reset()
 	{
+		gameObject.SetActive(false);
 	}
 
 	public static AnniversaryEventData FromFlatBuffer(Treeplla.Data.AnniversaryEventData? eventDataPtr)

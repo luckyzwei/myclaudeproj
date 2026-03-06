@@ -28,5 +28,6 @@ public class TutorialEntityFadeInOut : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

@@ -10,5 +10,6 @@ public class TutorialEntityLockFree : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

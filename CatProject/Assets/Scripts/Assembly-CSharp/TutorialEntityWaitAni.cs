@@ -12,5 +12,6 @@ public class TutorialEntityWaitAni : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

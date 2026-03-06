@@ -61,10 +61,12 @@ public class ItemRewardGetGuide : MonoBehaviour
 
 	private void SetGuideIconImage(List<string> iconNameList)
 	{
+		// Update display
 	}
 
 	private void SetGuideDecoImage(string iconName)
 	{
+		// Update display
 	}
 
 

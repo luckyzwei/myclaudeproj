@@ -6,5 +6,6 @@ public class InGamePriceUp : InGameFloatingUI
 {
 	public override void Show()
 	{
+		base.Show();
 	}
 }

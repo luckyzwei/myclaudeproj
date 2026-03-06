@@ -11,9 +11,11 @@ public class OfficePlant : MonoBehaviour
 
 	public void Init(int idx)
 	{
+		// Initialize
 	}
 
 	public void Show()
 	{
+		gameObject.SetActive(true);
 	}
 }

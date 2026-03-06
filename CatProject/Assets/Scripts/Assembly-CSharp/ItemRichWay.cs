@@ -70,6 +70,7 @@ public class ItemRichWay : MonoBehaviour
 
 	private void OnClickShortcut()
 	{
+		// Handle click
 	}
 
 	private void OnDestroy()

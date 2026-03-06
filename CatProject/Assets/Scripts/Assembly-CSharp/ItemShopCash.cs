@@ -47,6 +47,7 @@ public class ItemShopCash : MonoBehaviour
 
 	private void DrawInfo()
 	{
+		// TODO
 	}
 
 	private void OnClickItem()

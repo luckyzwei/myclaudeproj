@@ -86,6 +86,7 @@ public class PopupMiniGameShop : UIBase
 
 	private void OnClickIAPItem()
 	{
+		// Handle click
 	}
 
 	private void SetReward(int itemIdx)

@@ -69,6 +69,7 @@ public class InterstitialSystem : SystemBase
 
 	private void SubscribeConditionEvents()
 	{
+		// TODO
 	}
 
 	public void SetCountry(string countryCode)

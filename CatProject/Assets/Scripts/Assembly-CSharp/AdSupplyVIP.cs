@@ -71,6 +71,7 @@ public class AdSupplyVIP : MonoBehaviour
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private Direction GetDir(Vector2 curPos, Vector2 nextPos)

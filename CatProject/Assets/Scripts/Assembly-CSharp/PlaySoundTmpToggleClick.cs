@@ -10,5 +10,6 @@ public class PlaySoundTmpToggleClick : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

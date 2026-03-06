@@ -121,6 +121,7 @@ public class ItemWorldMission : MonoBehaviour
 
 	private void OnClickMove()
 	{
+		// Handle click
 	}
 
 	private void OnClickClear()

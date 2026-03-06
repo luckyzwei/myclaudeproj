@@ -8,9 +8,12 @@ public class LevelEffect : MonoBehaviour
 
 	public void Set(Vector3 worldStartPos, Action endCb = null)
 	{
+		transform.position = worldStartPos;
+		if (EffectObj != null) EffectObj.SetActive(true);
 	}
 
 	private void InitPos(GameObject targetObj)
 	{
+		if (targetObj != null) transform.position = targetObj.transform.position;
 	}
 }

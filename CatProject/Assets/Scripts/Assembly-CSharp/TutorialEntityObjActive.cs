@@ -22,5 +22,6 @@ public class TutorialEntityObjActive : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

@@ -43,10 +43,12 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void ShowArrow()
 	{
+		// Arrow UI controlled by subclass
 	}
 
 	public void HideArrow()
 	{
+		// Arrow UI controlled by subclass
 	}
 
 	public void SetPurchaseCb(Action cb)
@@ -61,6 +63,7 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void SetParams(params object[] a_params)
 	{
+		// Subclass-specific params handling
 	}
 
 	public void SetIsAutoReset(bool isAutoReset)
@@ -70,5 +73,6 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void UpdatePurchaseLocation()
 	{
+		// Purchase location update handled by shop system
 	}
 }

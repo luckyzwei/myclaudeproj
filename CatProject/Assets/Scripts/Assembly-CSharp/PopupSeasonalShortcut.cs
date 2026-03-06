@@ -24,6 +24,7 @@ public class PopupSeasonalShortcut : UIBase
 
 	private void SetDescText()
 	{
+		// Update display
 	}
 
 	private void OnClickedShortcutBtn()

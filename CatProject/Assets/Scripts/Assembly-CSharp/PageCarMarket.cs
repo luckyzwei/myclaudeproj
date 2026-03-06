@@ -143,6 +143,7 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 
 	private void UpdateDayStatus(DaySystem.DayStatus status)
 	{
+		// Update display
 	}
 
 	private void UpdateDayTime()

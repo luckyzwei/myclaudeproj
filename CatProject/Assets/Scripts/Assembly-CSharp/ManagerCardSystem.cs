@@ -55,6 +55,7 @@ public class ManagerCardSystem
 
 	public void OnChangeScene()
 	{
+		// TODO
 	}
 
 	public void AddManager(int idx, int count = 1)
@@ -454,6 +455,7 @@ public class ManagerCardSystem
 
 	public void UpdateAllFindManagerUI()
 	{
+		// Update display
 	}
 
 	public BigInteger CalculateManagerAddRewardBuff(BigInteger value, int managerIdx)
@@ -514,6 +516,7 @@ public class ManagerCardSystem
 
 	private void OnSkillContentsOpen()
 	{
+		// TODO
 	}
 
 	private void UpdateManagerSkillBuff(int managerIdx)
@@ -523,6 +526,7 @@ public class ManagerCardSystem
 
 	public void UpdateManagerPopups(int officeIdx = -1, int regionIdx = -1, bool showUpgradeArrow = false)
 	{
+		// Update display
 	}
 
 	public string GetOutlineColor(int region)
@@ -566,21 +570,26 @@ public class ManagerCardSystem
 
 	public void LogManagerUnlock(int managerIdx)
 	{
+		// Analytics log
 	}
 
 	public void LogManagerUpgrade(int managerIdx, int resultLevel)
 	{
+		// Analytics log
 	}
 
 	public void LogSuitCasseBuy(int buyType, int buyCount)
 	{
+		// Analytics log
 	}
 
 	public void LogManagerSpecs(int clearStageIdx)
 	{
+		// Analytics log
 	}
 
 	private void LogManagerSpec(int clearStageIdx, Config.ManagerGrade grade, AbilitySystem.AbilityType abilityType)
 	{
+		// Analytics log
 	}
 }

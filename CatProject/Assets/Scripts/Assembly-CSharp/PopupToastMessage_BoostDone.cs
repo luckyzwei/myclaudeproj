@@ -10,9 +10,11 @@ public class PopupToastMessage_BoostDone : UIBase
 
 	public static void Show(int boosterIdx)
 	{
+		// TODO
 	}
 
 	public void SetData(int boosterIdx)
 	{
+		// Update display
 	}
 }

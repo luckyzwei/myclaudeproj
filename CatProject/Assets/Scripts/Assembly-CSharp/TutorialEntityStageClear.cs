@@ -8,5 +8,6 @@ public class TutorialEntityStageClear : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

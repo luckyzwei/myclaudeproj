@@ -133,6 +133,7 @@ public class PopupManagerList : UIBase
 
 	private void OnClickInfoBtn()
 	{
+		// Handle click
 	}
 
 	public void UpdateList()

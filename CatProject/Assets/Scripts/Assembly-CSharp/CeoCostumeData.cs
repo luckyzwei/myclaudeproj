@@ -18,10 +18,12 @@ public class CeoCostumeData
 
 	public void SetOwned(bool isOwned)
 	{
+		// Update display
 	}
 
 	public void SetShowRedDot(bool showRedDot)
 	{
+		// Update display
 	}
 
 	public static CeoCostumeData FromFlatBuffer(Treeplla.Data.CeoCostumeData? fbData)

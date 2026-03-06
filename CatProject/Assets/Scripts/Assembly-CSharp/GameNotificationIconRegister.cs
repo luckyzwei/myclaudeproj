@@ -92,5 +92,6 @@ public class GameNotificationIconRegister : MonoBehaviour
 
 	private void SetIcon(int idx)
 	{
+		// Update display
 	}
 }

@@ -25,5 +25,6 @@ public class ItemMiniGame_DigTreasure : MonoBehaviour
 
 	private void SetIcon(string iconPath)
 	{
+		// Update display
 	}
 }

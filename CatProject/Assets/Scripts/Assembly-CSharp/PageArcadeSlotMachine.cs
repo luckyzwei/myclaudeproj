@@ -93,6 +93,7 @@ public class PageArcadeSlotMachine : UIBase
 
 	public override void OnHideBefore()
 	{
+		base.OnHideBefore();
 	}
 
 	private void InitPage()
@@ -120,6 +121,7 @@ public class PageArcadeSlotMachine : UIBase
 
 	private void OnClickedCoinBankBtn()
 	{
+		// Handle coin bank button click
 	}
 
 	private void OnPlayArcadeSlotMachine(int usedCoinValue)

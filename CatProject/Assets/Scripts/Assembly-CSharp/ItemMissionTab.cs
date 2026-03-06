@@ -197,6 +197,7 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 
 	private void OnClickOpenNowBanner(int idx)
 	{
+		// Handle click
 	}
 
 	public void Refresh()

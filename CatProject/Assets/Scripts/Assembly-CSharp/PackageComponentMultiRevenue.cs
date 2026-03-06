@@ -52,5 +52,6 @@ public class PackageComponentMultiRevenue : PackageComponent
 
 	private void OnClickBuy()
 	{
+		// Handle click
 	}
 }

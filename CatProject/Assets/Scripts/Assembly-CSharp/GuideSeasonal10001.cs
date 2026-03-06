@@ -191,6 +191,7 @@ public class GuideSeasonal10001 : UIBase
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void LateUpdate()

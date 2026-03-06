@@ -23,6 +23,7 @@ public class ItemSquareRoulette : MonoBehaviour
 
 	public void SetReward(int specialDayRouletteIdx)
 	{
+		// Update display
 	}
 
 	public void SetHighlight(bool isHighlighted)

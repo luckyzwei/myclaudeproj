@@ -71,6 +71,7 @@ public class RichWayProgress : MonoBehaviour, ILocalizeRefresh
 
 	private void SubscribeContentOpen()
 	{
+		// TODO
 	}
 
 	public void RefreshText()
@@ -132,6 +133,7 @@ public class RichWayProgress : MonoBehaviour, ILocalizeRefresh
 
 	private void GetReward(int double_value)
 	{
+		// TODO
 	}
 
 	private void OnClickGetReward()
@@ -141,6 +143,7 @@ public class RichWayProgress : MonoBehaviour, ILocalizeRefresh
 
 	private void OnClickNavi()
 	{
+		// Handle click
 	}
 
 	public void StartPointProgress(int startPoint, int getPoint)

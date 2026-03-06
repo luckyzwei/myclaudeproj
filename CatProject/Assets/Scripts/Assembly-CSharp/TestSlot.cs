@@ -12,5 +12,6 @@ public class TestSlot : MonoBehaviour
 
 	public void Set(int _value, int _index)
 	{
+		// Update display
 	}
 }

@@ -13,5 +13,6 @@ public class TestRect : MonoBehaviour
 
 	private void Start()
 	{
+		// Start initialization
 	}
 }

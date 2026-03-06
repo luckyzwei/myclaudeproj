@@ -24,5 +24,6 @@ public class InGameParkingUI : InGameFloatingUI
 
 	public override void Init(Transform parent, GameType type = GameType.House)
 	{
+		base.Init(parent, type);
 	}
 }

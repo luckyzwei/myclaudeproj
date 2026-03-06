@@ -56,5 +56,6 @@ public class OfficeItem : MonoBehaviour
 
 	public void OnClickOfficeItem()
 	{
+		// Handle click
 	}
 }

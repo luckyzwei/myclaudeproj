@@ -49,6 +49,7 @@ public class ItemAttendanceComplete : MonoBehaviour
 
 	private void UpdateProgress()
 	{
+		// Update display
 	}
 
 	private void OnClaimButtonClick()

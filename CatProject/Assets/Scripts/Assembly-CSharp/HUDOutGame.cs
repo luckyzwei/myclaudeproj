@@ -94,6 +94,7 @@ public class HUDOutGame : HUDBase
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void OnDestroy()

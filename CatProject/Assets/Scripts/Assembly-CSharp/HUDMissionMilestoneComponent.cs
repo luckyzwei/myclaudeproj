@@ -61,5 +61,6 @@ public class HUDMissionMilestoneComponent : MonoBehaviour
 
 	private void OnClickMilestonePageBtn()
 	{
+		// Handle click
 	}
 }

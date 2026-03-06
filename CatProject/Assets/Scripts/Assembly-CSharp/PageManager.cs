@@ -213,10 +213,12 @@ public class PageManager : UIBase
 
 	private void UpdateManagerCard(int managerIdx)
 	{
+		// Update display
 	}
 
 	private void Update_SpecialManagerList()
 	{
+		// Refresh special/legend manager list
 	}
 
 	public void SetTarget(int office, int manager)

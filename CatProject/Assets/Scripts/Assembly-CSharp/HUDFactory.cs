@@ -242,6 +242,7 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void OnDisable()

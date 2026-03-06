@@ -16,9 +16,11 @@ public class PopupParkingCompensation : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }

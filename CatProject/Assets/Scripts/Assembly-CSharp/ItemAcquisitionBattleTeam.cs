@@ -793,10 +793,12 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void UpdateHpInfo()
 	{
+		// Update display
 	}
 
 	private void UpdateCeoInfo()
 	{
+		// Update display
 	}
 
 	private void SetSkillInfo(int skillIdx, int skillLevel)

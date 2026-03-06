@@ -66,10 +66,12 @@ public class InGameSeasonalEmployeeUI : InGameFloatingUI
 
 	private void SetMessageIcon(string iconKey)
 	{
+		// Update display
 	}
 
 	private void SetMoodBgImage(E_EmployeeMoodState moodState)
 	{
+		// Update display
 	}
 
 	private void SetMoodMessageText(string localizeKey)

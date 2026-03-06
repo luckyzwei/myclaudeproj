@@ -386,5 +386,6 @@ public class RentalFeeSystem
 
 	private void PlayRentalFeeGetSound()
 	{
+		gameObject.SetActive(true);
 	}
 }

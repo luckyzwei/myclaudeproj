@@ -6,5 +6,6 @@ public class Fx_Seasonal_Object_Smoke : InGameFloatingUI
 {
 	public override void Show()
 	{
+		base.Show();
 	}
 }

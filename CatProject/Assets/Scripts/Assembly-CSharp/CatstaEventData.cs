@@ -12,6 +12,7 @@ public class CatstaEventData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		// TODO
 	}
 
 	public virtual object Clone()

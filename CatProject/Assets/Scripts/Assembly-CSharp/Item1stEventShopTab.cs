@@ -14,5 +14,6 @@ public class Item1stEventShopTab : MonoBehaviour
 
 	public void InitTab()
 	{
+		// TODO
 	}
 }

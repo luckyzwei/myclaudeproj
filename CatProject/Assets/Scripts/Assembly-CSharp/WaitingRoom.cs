@@ -41,6 +41,7 @@ public class WaitingRoom : Room
 
 	public virtual void ResetInUseItem()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public override void EndRepairing()

@@ -31,5 +31,6 @@ public class PopupTutoReward : UIBase
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 }

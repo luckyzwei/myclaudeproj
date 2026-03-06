@@ -30,6 +30,7 @@ public class PopupParkingGem : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	private void OnClickPurchase()

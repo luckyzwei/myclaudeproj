@@ -8,5 +8,6 @@ public class PlayParticles : MonoBehaviour
 
 	public void Play()
 	{
+		gameObject.SetActive(true);
 	}
 }

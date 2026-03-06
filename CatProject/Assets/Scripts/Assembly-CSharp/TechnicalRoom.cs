@@ -8,5 +8,6 @@ public class TechnicalRoom : Room
 
 	protected override void SetOpened(bool value)
 	{
+		base.SetOpened(value);
 	}
 }

@@ -15,9 +15,11 @@ public class PopupToastMessage_ExpAccelerate : UIBase
 
 	public static void OpenToast(Config.ItemIdx itemIdx, BigInteger expAmount, bool isShowImmediately = true)
 	{
+		// TODO
 	}
 
 	public void SetData(Config.ItemIdx itemIdx, BigInteger expAmount)
 	{
+		// Update display
 	}
 }

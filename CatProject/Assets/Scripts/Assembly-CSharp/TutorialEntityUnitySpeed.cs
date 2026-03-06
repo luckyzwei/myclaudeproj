@@ -7,5 +7,6 @@ public class TutorialEntityUnitySpeed : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

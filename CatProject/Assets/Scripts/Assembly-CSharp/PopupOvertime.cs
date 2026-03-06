@@ -19,6 +19,7 @@ public class PopupOvertime : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 
 	private void OnClickedOvertimeButton()

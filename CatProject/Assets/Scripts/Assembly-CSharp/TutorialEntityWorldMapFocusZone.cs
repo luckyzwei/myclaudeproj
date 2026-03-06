@@ -7,5 +7,6 @@ public class TutorialEntityWorldMapFocusZone : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

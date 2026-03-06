@@ -19,6 +19,7 @@ public class AdsViewUserData
 
 	public void OnViewAds()
 	{
+		// TODO
 	}
 
 	public static AdsViewUserData FromFlatBuffer(AdsFreeViewData? data)

@@ -11,9 +11,11 @@ public class PlayAnimationOnEnable : MonoBehaviour
 
 	private void OnEnable()
 	{
+		Play();
 	}
 
 	private void OnDisable()
 	{
+		// Disabled
 	}
 }

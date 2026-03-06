@@ -76,6 +76,7 @@ public class PopupPlantPreview : UIBase
 
 	public void Set(int plantIdx)
 	{
+		// Update display
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusOnTargetIndex_003Ed__4))]

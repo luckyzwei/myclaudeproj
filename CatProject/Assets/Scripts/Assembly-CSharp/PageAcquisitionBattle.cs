@@ -162,6 +162,7 @@ public class PageAcquisitionBattle : FullScreenUI
 
 	private void SetBattleBgm()
 	{
+		// Update display
 	}
 
 	private void SetBattleSpeed()

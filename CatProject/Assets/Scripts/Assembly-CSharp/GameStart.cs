@@ -4,5 +4,6 @@ public class GameStart : MonoBehaviour
 {
 	private void Start()
 	{
+		// Start initialization
 	}
 }

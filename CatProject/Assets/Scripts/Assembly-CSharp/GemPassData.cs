@@ -9,6 +9,7 @@ public class GemPassData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		// TODO
 	}
 
 	public virtual object Clone()

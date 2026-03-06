@@ -90,6 +90,7 @@ public class PageSeasonalStatue : UIBase
 
 	public override void OnHideAfter()
 	{
+		base.OnHideAfter();
 	}
 
 	private void OnClickPurchase()
@@ -105,5 +106,6 @@ public class PageSeasonalStatue : UIBase
 
 	private void AddCatstaEventMissionValue()
 	{
+		// Track event mission progress
 	}
 }

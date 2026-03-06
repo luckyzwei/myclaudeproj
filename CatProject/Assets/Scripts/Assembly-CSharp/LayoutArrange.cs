@@ -11,9 +11,11 @@ public class LayoutArrange : MonoBehaviour
 
 	private void OnEnable()
 	{
+		// Enabled
 	}
 
 	private void CheckLayout()
 	{
+		// TODO
 	}
 }

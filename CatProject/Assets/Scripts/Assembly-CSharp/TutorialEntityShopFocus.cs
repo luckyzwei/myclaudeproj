@@ -7,5 +7,6 @@ public class TutorialEntityShopFocus : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

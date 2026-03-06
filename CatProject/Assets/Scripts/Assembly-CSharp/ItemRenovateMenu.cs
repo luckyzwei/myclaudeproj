@@ -14,5 +14,6 @@ public class ItemRenovateMenu : MonoBehaviour
 
 	public void Set(string menuKey, string clinicKey, bool newMenu)
 	{
+		// Update display
 	}
 }

@@ -17,9 +17,11 @@ public class InGameSlotCondition : InGameFloatingUI
 
 	public void SetLvCnt(int cnt)
 	{
+		// Update display
 	}
 
 	public void SetDir(bool Left)
 	{
+		// Update display
 	}
 }

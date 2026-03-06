@@ -10,5 +10,6 @@ public class InGameCar : MonoBehaviour
 
 	public void Awake()
 	{
+		// Initialize
 	}
 }

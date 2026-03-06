@@ -33,10 +33,12 @@ public class PopupAdsSupplyGem : UIBase
 
 	private void OnDisable()
 	{
+		// Cleanup on disable
 	}
 
 	private void OnDestroy()
 	{
+		// Cleanup on destroy
 	}
 
 	private void OnClickReward()

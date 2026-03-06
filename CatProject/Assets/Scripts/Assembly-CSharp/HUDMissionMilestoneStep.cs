@@ -73,6 +73,7 @@ public class HUDMissionMilestoneStep : MonoBehaviour
 
 	private void SetMilestoneRewardIcon()
 	{
+		// Update display
 	}
 
 	private void UpdateRewardDataList()
@@ -84,6 +85,7 @@ public class HUDMissionMilestoneStep : MonoBehaviour
 
 	private void OnClickedMilestoneRewardInfo()
 	{
+		// Handle click
 	}
 
 	private void OnClickedMilestoneRewardBtn()

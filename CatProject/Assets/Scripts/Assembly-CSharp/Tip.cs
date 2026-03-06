@@ -28,6 +28,7 @@ public class Tip : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 
 	public void AddPrice(BigInteger Price, bool Critical = false, bool Unique = false)
@@ -49,6 +50,7 @@ public class Tip : MonoBehaviour
 
 	public void OnClick()
 	{
+		// Handle click
 	}
 
 	public bool isActive()

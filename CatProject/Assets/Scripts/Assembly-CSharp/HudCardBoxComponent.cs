@@ -54,6 +54,7 @@ public class HudCardBoxComponent : MonoBehaviour
 
 	private void OnChangeOpenBox()
 	{
+		// TODO
 	}
 
 	private void OnClickBox()
@@ -91,6 +92,7 @@ public class HudCardBoxComponent : MonoBehaviour
 
 	private void SetOpenNow()
 	{
+		// Update display
 	}
 
 	public void SetShow(bool show)

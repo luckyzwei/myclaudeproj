@@ -21,5 +21,6 @@ public class TutorialEntityLoadEffect : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

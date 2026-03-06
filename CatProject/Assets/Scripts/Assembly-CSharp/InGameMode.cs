@@ -86,17 +86,21 @@ public abstract class InGameMode : MonoBehaviour, IInGameMode
 
 	public virtual void Load()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual void UnLoad()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual void LoadUI()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual void UnLoadUI()
 	{
+		// Virtual base - override in subclass
 	}
 }

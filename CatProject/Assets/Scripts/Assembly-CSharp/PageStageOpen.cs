@@ -59,6 +59,7 @@ public class PageStageOpen : UIBase
 
 	private void SetStageBuildingIcon(int stageIdx)
 	{
+		// Update display
 	}
 
 	private void SetRewardList(StageOpenInfoData openTable)

@@ -11,9 +11,11 @@ public class PlaySoundEnable : MonoBehaviour
 
 	private void OnEnable()
 	{
+		// Play sound via SoundSystem
 	}
 
 	private void OnDisable()
 	{
+		// Disabled
 	}
 }

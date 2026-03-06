@@ -57,10 +57,12 @@ public class AbilitySystem
 
 	private void InitBooster()
 	{
+		// TODO
 	}
 
 	public void UpdateOneSeconds()
 	{
+		// Update display
 	}
 
 	public int GetActiveBoosterAbilityValue(AbilityType type, int regionIdx)

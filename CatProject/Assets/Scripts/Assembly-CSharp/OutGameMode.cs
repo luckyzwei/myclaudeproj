@@ -85,9 +85,11 @@ public abstract class OutGameMode : MonoBehaviour, IInGameMode
 
 	protected virtual void LoadUI()
 	{
+		// Virtual base - override in subclass
 	}
 
 	protected virtual void UnLoadUI()
 	{
+		// Virtual base - override in subclass
 	}
 }

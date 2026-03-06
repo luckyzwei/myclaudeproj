@@ -36,6 +36,7 @@ public class itemAdsPass : MonoBehaviour
 
 	private void UpdateGetReward()
 	{
+		// Update display
 	}
 
 	private void OnRewardBtnClick()

@@ -13,9 +13,11 @@ public class AtlasUIOptimizerImage : MonoBehaviour
 
 	private void Awake()
 	{
+		// Register with atlas loading system
 	}
 
 	private void OnDestroy()
 	{
+		// Unregister from atlas loading system
 	}
 }

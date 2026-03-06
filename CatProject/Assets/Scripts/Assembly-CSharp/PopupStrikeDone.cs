@@ -27,5 +27,6 @@ public class PopupStrikeDone : UIBase
 
 	public void Set(int companyIdx)
 	{
+		// Update display
 	}
 }

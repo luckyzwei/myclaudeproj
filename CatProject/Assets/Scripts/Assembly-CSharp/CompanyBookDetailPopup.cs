@@ -141,6 +141,7 @@ public class CompanyBookDetailPopup : MonoBehaviour
 
 	private void UpdateLevelUpCashInfo()
 	{
+		// Update display
 	}
 
 	private void OnClickMaxReward()

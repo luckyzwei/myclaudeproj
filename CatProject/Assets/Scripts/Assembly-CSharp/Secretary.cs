@@ -50,10 +50,12 @@ public class Secretary : Worker
 
 	protected override void UpdateFloor()
 	{
+		base.UpdateFloor();
 	}
 
 	private void LoadUI()
 	{
+		// TODO
 	}
 
 	private void UpdateSecretaryAlarm()

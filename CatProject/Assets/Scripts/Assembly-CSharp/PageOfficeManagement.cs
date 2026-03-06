@@ -286,6 +286,7 @@ public class PageOfficeManagement : UIBase
 
 	private void UpdateCeoStrikeStatus()
 	{
+		// Update CEO strike indicators
 	}
 
 	private void SetManagement(int focusOfficeIdx)
@@ -308,6 +309,7 @@ public class PageOfficeManagement : UIBase
 
 	private void OnScrolled(Vector2 value)
 	{
+		// TODO
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__44))]

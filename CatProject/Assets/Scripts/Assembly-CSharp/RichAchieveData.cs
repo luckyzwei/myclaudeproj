@@ -16,5 +16,6 @@ public class RichAchieveData : IClientData
 
 	public void SetRichAchieveData(int[] missionReceivedIdxs, int[] achieveReceivedIds, bool isGuideShow, bool isPageInfoShow)
 	{
+		// Update display
 	}
 }

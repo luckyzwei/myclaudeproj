@@ -86,5 +86,6 @@ public class PagePackage : FullScreenUI
 
 	private void LogRepopupStarter()
 	{
+		// Analytics log
 	}
 }

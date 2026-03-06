@@ -45,6 +45,7 @@ public class PageAcquisitionTeamSet : UIBase
 
 	public override void OnHideBefore()
 	{
+		base.OnHideBefore();
 	}
 
 	private void SetCurStageInfo()

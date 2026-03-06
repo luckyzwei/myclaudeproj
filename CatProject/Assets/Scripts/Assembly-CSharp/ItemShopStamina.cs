@@ -83,10 +83,12 @@ public class ItemShopStamina : MonoBehaviour
 
 	private void OnClickFree()
 	{
+		// Handle click
 	}
 
 	private void OnClickAds()
 	{
+		// Handle click
 	}
 
 	private void OnClickCash()

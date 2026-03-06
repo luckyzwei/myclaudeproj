@@ -6,5 +6,6 @@ public class PlaySound : MonoBehaviour
 
 	public void PlaySoundDirect()
 	{
+		gameObject.SetActive(true);
 	}
 }

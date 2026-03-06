@@ -6,9 +6,11 @@ public class ShopContentsGem : IShopContents
 
 	public void SetOfferwall()
 	{
+		// Update display
 	}
 
 	public new void SetPurchaseCb(Action cb)
 	{
+		// Update display
 	}
 }

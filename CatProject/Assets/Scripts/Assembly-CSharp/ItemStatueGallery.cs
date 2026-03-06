@@ -29,5 +29,6 @@ public class ItemStatueGallery : MonoBehaviour
 
 	private void OnClickInfo()
 	{
+		// Handle click
 	}
 }

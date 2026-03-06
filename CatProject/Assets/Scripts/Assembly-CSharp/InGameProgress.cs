@@ -11,5 +11,6 @@ public class InGameProgress : InGameFloatingUI
 
 	public void UpdateValue(float value)
 	{
+		// Update display
 	}
 }

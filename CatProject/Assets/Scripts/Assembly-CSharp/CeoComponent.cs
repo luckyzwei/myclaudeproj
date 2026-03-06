@@ -8,5 +8,6 @@ public class CeoComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

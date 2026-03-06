@@ -73,9 +73,11 @@ public class ItemManagerCardMin : MonoBehaviour
 
 	private void UpdateValue()
 	{
+		// Update display
 	}
 
 	public void SetAbilityTextColor(bool isLevel)
 	{
+		// Update display
 	}
 }

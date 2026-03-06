@@ -143,5 +143,6 @@ public class PageSeasonalQuestList : FullScreenUI
 
 	private void OnClickInfo()
 	{
+		// Handle click
 	}
 }

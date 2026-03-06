@@ -118,6 +118,7 @@ public class ItemCompany : MonoBehaviour
 
 	public void AddTutorialRegister(TutorialIdent id)
 	{
+		// TODO
 	}
 
 	private void OnClickContracts()

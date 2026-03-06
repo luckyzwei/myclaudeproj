@@ -69,10 +69,12 @@ public class PageInterstitialAds : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	public override void OnShowAfter()
 	{
+		base.OnShowAfter();
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitInterstitial_003Ed__3))]

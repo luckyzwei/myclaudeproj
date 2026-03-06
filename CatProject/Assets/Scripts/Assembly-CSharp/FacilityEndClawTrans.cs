@@ -15,9 +15,11 @@ public class FacilityEndClawTrans : MonoBehaviour
 
 	public void SetProductImg(Sprite endImg, Sprite bunchImg)
 	{
+		// Update display
 	}
 
 	public void PlayEffect()
 	{
+		gameObject.SetActive(true);
 	}
 }

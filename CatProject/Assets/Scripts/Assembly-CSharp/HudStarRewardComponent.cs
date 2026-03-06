@@ -26,6 +26,7 @@ public class HudStarRewardComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 
 	public Image GetRewardImg()
@@ -35,5 +36,6 @@ public class HudStarRewardComponent : MonoBehaviour
 
 	public void SetState(StarRewardState state)
 	{
+		// Update display
 	}
 }

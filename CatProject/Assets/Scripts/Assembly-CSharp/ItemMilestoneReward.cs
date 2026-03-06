@@ -56,9 +56,11 @@ public class ItemMilestoneReward : MonoBehaviour
 
 	private void OnClickedRewardClaimBtn(int rewardTableIdx, bool bPremium)
 	{
+		// Handle click
 	}
 
 	private void UpdateSlotState(bool bPlayAni)
 	{
+		// Update display
 	}
 }

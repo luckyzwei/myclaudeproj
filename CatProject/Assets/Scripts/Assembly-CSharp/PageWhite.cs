@@ -8,9 +8,11 @@ public class PageWhite : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	public void Init()
 	{
+		// Initialize white page
 	}
 }

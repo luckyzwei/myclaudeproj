@@ -33,5 +33,6 @@ public class ItemRecommendReward : MonoBehaviour
 
 	private void OnClickReward()
 	{
+		// Handle click
 	}
 }

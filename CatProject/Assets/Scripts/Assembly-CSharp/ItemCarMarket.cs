@@ -89,5 +89,6 @@ public class ItemCarMarket : MonoBehaviour
 
 	private void OnClickGotoHouse()
 	{
+		// Handle click
 	}
 }

@@ -89,6 +89,7 @@ public class SeasonalBuildingData
 
 	public virtual void OnUpdateFacilityLevel()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public void SetProductionFacilityLevelData(int level, SeasonalBuildingFacilityData facilityData)
@@ -116,6 +117,7 @@ public class SeasonalBuildingData
 
 	protected virtual void OnBeforeOpen()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public int GetBuildingWorkerCount()

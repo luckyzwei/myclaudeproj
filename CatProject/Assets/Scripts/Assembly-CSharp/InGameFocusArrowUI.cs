@@ -7,5 +7,6 @@ public class InGameFocusArrowUI : InGameFloatingUI
 {
 	public override void Init(Transform parent, GameType gametype = GameType.Main)
 	{
+		base.Init(parent, gametype);
 	}
 }

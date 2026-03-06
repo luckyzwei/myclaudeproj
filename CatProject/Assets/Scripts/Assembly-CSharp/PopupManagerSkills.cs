@@ -11,10 +11,12 @@ public class PopupManagerSkills : UIBase
 
 	public void SetSkillInfo(int managerIdx)
 	{
+		// Update display
 	}
 
 	public void SetSkillInfo(int skillIdx, int skillLevel)
 	{
+		// Update display
 	}
 
 	private void SetSkillList(List<int> skillIdxList, int skillLevel)

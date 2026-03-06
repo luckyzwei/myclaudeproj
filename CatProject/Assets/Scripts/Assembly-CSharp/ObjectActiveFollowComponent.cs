@@ -7,9 +7,11 @@ public class ObjectActiveFollowComponent : MonoBehaviour
 
 	private void OnEnable()
 	{
+		ActiveCb?.Invoke();
 	}
 
 	private void OnDisable()
 	{
+		// Cleanup on disable
 	}
 }

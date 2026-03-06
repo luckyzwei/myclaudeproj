@@ -9,6 +9,7 @@ public static class CrossPromotionHelper
 
 	public static void OpenCrossPromotionPage()
 	{
+		// TODO
 	}
 
 	public static bool CheckPossibleClaimReward(Config.E_INHOUSE_RESERVATION reservationType)

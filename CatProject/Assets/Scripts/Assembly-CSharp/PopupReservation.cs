@@ -84,9 +84,11 @@ public class PopupReservation : UIBase
 
 	private void OnClickShare()
 	{
+		// Handle share button
 	}
 
 	private void OnClickCrossPromotion()
 	{
+		// Handle cross promotion
 	}
 }

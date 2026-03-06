@@ -50,6 +50,7 @@ public class PopupSkillstoneShop : UIBase
 
 	private void OnPurchaseFailed(RewardItemData cost)
 	{
+		// TODO
 	}
 
 	public override void OnHideBefore()

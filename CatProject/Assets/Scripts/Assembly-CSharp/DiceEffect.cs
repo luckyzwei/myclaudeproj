@@ -8,9 +8,11 @@ public class DiceEffect : Effect
 
 	private void OnEnable()
 	{
+		if (ani != null) ani.Play();
 	}
 
 	public void PlayAnimation(string key)
 	{
+		if (ani != null) ani.Play(key);
 	}
 }

@@ -104,6 +104,7 @@ public class ItemBuildingProgressSlot : MonoBehaviour
 
 	private void SetBuildingImg(string imgKey)
 	{
+		// Update display
 	}
 
 	private void SetBuildingLevelInfo(int prevLv, int nextLv)
@@ -118,6 +119,7 @@ public class ItemBuildingProgressSlot : MonoBehaviour
 
 	private void OnClickedBuildingImmediatelyCompleteBtn()
 	{
+		// Handle click
 	}
 
 	private void UpdateTimeText()

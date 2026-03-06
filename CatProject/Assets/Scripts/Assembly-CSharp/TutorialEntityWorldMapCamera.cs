@@ -25,5 +25,6 @@ public class TutorialEntityWorldMapCamera : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

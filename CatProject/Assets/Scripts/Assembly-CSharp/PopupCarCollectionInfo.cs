@@ -77,6 +77,7 @@ public class PopupCarCollectionInfo : UIBase
 
 	private void UpdateProgress()
 	{
+		// Update display
 	}
 
 	private void OnPrevBtnClick()

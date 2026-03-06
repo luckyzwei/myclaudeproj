@@ -43,6 +43,7 @@ public class ItemShopSale : ItemPackageGroup
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	public void UpdateBuyInfo()

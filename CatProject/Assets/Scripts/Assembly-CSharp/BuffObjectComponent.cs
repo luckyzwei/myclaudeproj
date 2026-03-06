@@ -51,9 +51,12 @@ public class BuffObjectComponent : MonoBehaviour
 
 	private void UpdateEffect()
 	{
+		if (ObjSprite != null && OriginMat != null)
+			ObjSprite.material = OriginMat;
 	}
 
 	private void OnClickObject()
 	{
+		// Handle buff object click interaction
 	}
 }

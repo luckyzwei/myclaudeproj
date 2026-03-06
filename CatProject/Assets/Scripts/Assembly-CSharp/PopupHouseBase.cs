@@ -93,6 +93,7 @@ public class PopupHouseBase : UIBase
 
 	public void UpdateSetBuff()
 	{
+		// Update display
 	}
 
 	private void FocusParkingLot()

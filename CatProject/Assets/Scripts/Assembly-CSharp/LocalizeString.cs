@@ -19,9 +19,11 @@ public class LocalizeString : MonoBehaviour
 
 	public virtual void RefreshText()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual void SetText(string txt)
 	{
+		// Virtual base - override in subclass
 	}
 }

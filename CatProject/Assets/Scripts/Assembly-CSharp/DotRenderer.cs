@@ -15,5 +15,6 @@ public class DotRenderer : MaskableGraphic
 
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{
+		base.OnPopulateMesh(vh);
 	}
 }

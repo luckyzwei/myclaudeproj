@@ -11,5 +11,6 @@ public class ItemOfflineTimeBanner : ItemShopSpecialBanner
 
 	public override void Init(int idx)
 	{
+		base.Init(idx);
 	}
 }

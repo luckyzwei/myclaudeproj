@@ -141,5 +141,6 @@ public class PageSeasonalSlotRank : UIBase
 
 	private void UpdatePackage()
 	{
+		// Update display
 	}
 }

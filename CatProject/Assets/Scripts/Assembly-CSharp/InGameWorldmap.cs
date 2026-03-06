@@ -176,6 +176,7 @@ public class InGameWorldmap : OutGameMode
 
 	protected override void LoadUI()
 	{
+		base.LoadUI();
 	}
 
 	public override void UnLoad()

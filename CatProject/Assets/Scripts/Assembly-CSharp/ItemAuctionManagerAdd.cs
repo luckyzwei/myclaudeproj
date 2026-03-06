@@ -32,6 +32,7 @@ public class ItemAuctionManagerAdd : MonoBehaviour
 
 	public void UpdateManager()
 	{
+		// Update display
 	}
 
 	private void OnClickInfo()
@@ -41,5 +42,6 @@ public class ItemAuctionManagerAdd : MonoBehaviour
 
 	private void OnClickAdd()
 	{
+		// Handle click
 	}
 }

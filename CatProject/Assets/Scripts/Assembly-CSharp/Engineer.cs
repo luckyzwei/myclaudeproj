@@ -22,10 +22,12 @@ public class Engineer : Worker
 
 	private void SubscribeSeatLevel()
 	{
+		// TODO
 	}
 
 	private void UpdateRepairTime()
 	{
+		// Update display
 	}
 
 	private void LoadChar(Action LoadComp)

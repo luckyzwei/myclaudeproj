@@ -8,6 +8,7 @@ public class TextColorSetting : MonoBehaviour
 
 	private void Start()
 	{
+		// Start initialization
 	}
 
 	public string GetTextColorKey()

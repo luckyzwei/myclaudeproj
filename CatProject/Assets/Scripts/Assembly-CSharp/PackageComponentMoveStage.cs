@@ -7,5 +7,6 @@ public class PackageComponentMoveStage : PackageComponent
 
 	public override void Set(int packageIdx)
 	{
+		base.Set(packageIdx);
 	}
 }

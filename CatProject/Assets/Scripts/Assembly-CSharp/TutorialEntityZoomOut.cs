@@ -7,5 +7,6 @@ public class TutorialEntityZoomOut : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

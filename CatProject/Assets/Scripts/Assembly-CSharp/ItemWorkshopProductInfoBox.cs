@@ -210,6 +210,7 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 
 	private void SetWorkshopProductIcon(string iconKey)
 	{
+		// Update display
 	}
 
 	private void SetProductHasValueText(BigInteger hasValue_PerMile)

@@ -17,5 +17,6 @@ public class ItemPackageGroupManager : ItemPackageGroup
 
 	public override void Set(int packageIdx)
 	{
+		base.Set(packageIdx);
 	}
 }

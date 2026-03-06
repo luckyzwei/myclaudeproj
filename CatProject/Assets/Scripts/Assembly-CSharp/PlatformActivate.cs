@@ -8,5 +8,6 @@ public class PlatformActivate : MonoBehaviour
 
 	private void Awake()
 	{
+		// Initialize
 	}
 }

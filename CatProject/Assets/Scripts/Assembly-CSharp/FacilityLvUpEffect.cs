@@ -8,5 +8,6 @@ public class FacilityLvUpEffect : Effect
 
 	public override void Play()
 	{
+		base.Play();
 	}
 }

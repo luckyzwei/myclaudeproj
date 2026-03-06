@@ -37,10 +37,12 @@ public class PageRichWay : UIBase
 
 	private void UpdateMissions()
 	{
+		// Refresh mission list
 	}
 
 	private void FocusCurMission()
 	{
+		// Scroll to current mission
 	}
 
 	private void OnClickRichPointInfo()

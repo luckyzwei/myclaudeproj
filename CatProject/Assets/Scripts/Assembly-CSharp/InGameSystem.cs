@@ -191,6 +191,7 @@ public class InGameSystem
 
 	private void InitStageData(int stage)
 	{
+		// TODO
 	}
 
 	public void CloseWorldmap(Action cb = null)
@@ -231,10 +232,12 @@ public class InGameSystem
 
 	public void PlayStageBgm()
 	{
+		gameObject.SetActive(true);
 	}
 
 	public void PlayOutGameBgm(GameType gameType)
 	{
+		gameObject.SetActive(true);
 	}
 
 	private void UnLoadCurGameMode()

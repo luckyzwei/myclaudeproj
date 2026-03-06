@@ -24,5 +24,6 @@ public class ItemAcquisitionMainStage : MonoBehaviour
 
 	public void SetData(AcquisitionInfoData acqData, int curStageIdx)
 	{
+		// Update display
 	}
 }

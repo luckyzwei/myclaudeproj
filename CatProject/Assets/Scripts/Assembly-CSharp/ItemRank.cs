@@ -23,5 +23,6 @@ public class ItemRank : MonoBehaviour
 
 	public void Set(int rank, int idx)
 	{
+		// Update display
 	}
 }

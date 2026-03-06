@@ -376,6 +376,7 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void SetBlockAStarRoad(bool bBlock)
 	{
+		// Update display
 	}
 
 	private void OnChangeMaxWorkerCount(int hiredCount)

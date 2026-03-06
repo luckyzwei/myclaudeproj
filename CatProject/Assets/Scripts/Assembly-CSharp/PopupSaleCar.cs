@@ -76,6 +76,7 @@ public class PopupSaleCar : UIBase
 
 	private void OnClickRichPointInfo()
 	{
+		// Handle click
 	}
 
 	private void SetRichPoint()

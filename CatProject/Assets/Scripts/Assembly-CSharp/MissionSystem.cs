@@ -166,6 +166,7 @@ public class MissionSystem
 
 	private void SubscribeCatstaEventMap(E_MissionType type)
 	{
+		// TODO
 	}
 
 	private void UpdateCatstaEventMap(E_MissionType type)
@@ -176,6 +177,7 @@ public class MissionSystem
 
 	private void SetEventJoinMission(int specialDayIdx)
 	{
+		// Update display
 	}
 
 	private void InitCatstagramDisposable(int idx)
@@ -221,22 +223,27 @@ public class MissionSystem
 
 	private void ClearEventJoinMission(int targetIdx = -1)
 	{
+		// Cleanup resources
 	}
 
 	private void ClearSeasonalJoinMission()
 	{
+		// Cleanup resources
 	}
 
 	private void ClearEventAnyCatstagramMission(int targetIdx = -1)
 	{
+		// Cleanup resources
 	}
 
 	private void ClearSeasonalStatueMission()
 	{
+		// Cleanup resources
 	}
 
 	public void ClearSeasonalMileStoneMission(int seasonInfoIdx)
 	{
+		// Cleanup resources
 	}
 
 	private void InitMissionMilestoneData()

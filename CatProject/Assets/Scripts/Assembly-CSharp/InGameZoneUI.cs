@@ -76,6 +76,7 @@ public class InGameZoneUI : InGameFloatingUI
 
 	private void OnClickLock()
 	{
+		// Handle click
 	}
 
 	public void SetArrowNoti()

@@ -19,9 +19,11 @@ public class PopupAuctionResultFail : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	public void Set(int win_count, bool isdraw)
 	{
+		// Update display
 	}
 }

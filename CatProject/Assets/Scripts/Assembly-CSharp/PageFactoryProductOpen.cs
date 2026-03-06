@@ -13,5 +13,6 @@ public class PageFactoryProductOpen : UIBase
 
 	public void Set(List<int> openProductIdList)
 	{
+		// Update display
 	}
 }

@@ -205,6 +205,7 @@ public class PopupCostume : UIBase
 
 	private void SetCostumeList()
 	{
+		// Update display
 	}
 
 	private void OnClickCostumeSelectBtn(int costumeIdx)

@@ -114,6 +114,7 @@ public class WorldmapBuilding : MonoBehaviour
 
 	private void LoadSignUI()
 	{
+		// TODO
 	}
 
 	private void OnClickBuilding(int building)
@@ -132,6 +133,7 @@ public class WorldmapBuilding : MonoBehaviour
 
 	private void ShowBuildingInfo(ShopSystem.InAppPurchaseLocation location)
 	{
+		// TODO
 	}
 
 	public Transform GetUITrans()

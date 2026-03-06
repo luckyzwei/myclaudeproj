@@ -37,5 +37,6 @@ public class EventData : IClientData
 
 	public void SetEventIdx(int idx, int theme, bool isClear, bool isNextEventClear)
 	{
+		// Update display
 	}
 }

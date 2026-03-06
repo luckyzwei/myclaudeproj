@@ -29,5 +29,6 @@ public class TutorialEntityFocusZoom : TutorialEntity
 
 	public override void StartEntity()
 	{
+		base.StartEntity();
 	}
 }

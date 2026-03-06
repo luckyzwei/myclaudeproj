@@ -8,5 +8,6 @@ public class ClickHandsEffect : Effect
 
 	public override void Play(Vector3 worldPos, Transform followTrans)
 	{
+		base.Play(worldPos, followTrans);
 	}
 }

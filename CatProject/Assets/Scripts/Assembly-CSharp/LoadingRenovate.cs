@@ -17,9 +17,11 @@ public class LoadingRenovate : Loading
 
 	public override void Show()
 	{
+		base.Show();
 	}
 
 	public override void Hide(bool Immediately = true, Action action = null)
 	{
+		base.Hide(Immediately, action);
 	}
 }

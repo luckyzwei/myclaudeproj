@@ -101,6 +101,7 @@ public class BuffSystem
 
 	public void UpdateBoostBuff()
 	{
+		// Update display
 	}
 
 	public void UpdateOneSeconds()

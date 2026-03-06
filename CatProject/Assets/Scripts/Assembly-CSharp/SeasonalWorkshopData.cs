@@ -63,6 +63,7 @@ public class SeasonalWorkshopData : SeasonalBuildingData
 
 	public override void OnUpdateFacilityLevel()
 	{
+		base.OnUpdateFacilityLevel();
 	}
 
 	private void InitManagerData(int managerIdx)

@@ -14,9 +14,11 @@ public class InGameTouchInfoUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		// Initialize
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.House)
 	{
+		base.Init(parent, type);
 	}
 }

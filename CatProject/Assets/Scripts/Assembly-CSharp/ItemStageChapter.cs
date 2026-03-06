@@ -63,6 +63,7 @@ public class ItemStageChapter : MonoBehaviour
 
 	public void SetActiveName(bool value)
 	{
+		// Update display
 	}
 
 	public ItemStageWorldSpot GetSpot(int stage)

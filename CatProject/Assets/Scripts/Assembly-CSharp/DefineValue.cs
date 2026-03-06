@@ -13,6 +13,7 @@ public class DefineValue : MonoBehaviour
 
 	public void RefreshText()
 	{
+		// Update display
 	}
 
 	public void SetText(string txt)

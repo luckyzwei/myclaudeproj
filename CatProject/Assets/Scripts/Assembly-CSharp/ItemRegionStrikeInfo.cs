@@ -14,5 +14,6 @@ public class ItemRegionStrikeInfo : MonoBehaviour
 
 	public void Init()
 	{
+		// Initialize
 	}
 }

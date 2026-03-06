@@ -73,10 +73,12 @@ public class PiggyBankComponent : MonoBehaviour
 
 	private void SetPiggySkin(int level)
 	{
+		// Update display
 	}
 
 	private void OnClickInfo()
 	{
+		// Handle click
 	}
 
 	private void OnClickBuyPiggyBank()

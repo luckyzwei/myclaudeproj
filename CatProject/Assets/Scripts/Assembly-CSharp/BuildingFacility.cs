@@ -20,9 +20,11 @@ public class BuildingFacility : MonoBehaviour
 
 	public void UpdateFacilityResources(int facilityIdx, int index)
 	{
+		// Update display
 	}
 
 	private void UpdateFacilityResources(List<string> resourceNames)
 	{
+		// Update display
 	}
 }

@@ -53,6 +53,7 @@ public class ItemAuctionPass : MonoBehaviour
 
 	public void UpdateStatus()
 	{
+		// Update display
 	}
 
 	private void OnClickGet(bool isPremium)
@@ -66,5 +67,6 @@ public class ItemAuctionPass : MonoBehaviour
 
 	private void GetReward(int rewardType, int rewardIdx, int rewardRegion, int rewardValue, bool isPremium)
 	{
+		// TODO
 	}
 }

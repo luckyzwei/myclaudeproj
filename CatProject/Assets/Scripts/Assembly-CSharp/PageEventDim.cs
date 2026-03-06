@@ -64,6 +64,7 @@ public class PageEventDim : UIBase
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitFrame_003Ed__1))]

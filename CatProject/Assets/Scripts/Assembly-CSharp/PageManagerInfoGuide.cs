@@ -15,5 +15,6 @@ public class PageManagerInfoGuide : UIBase
 
 	public override void OnShowBefore()
 	{
+		base.OnShowBefore();
 	}
 }

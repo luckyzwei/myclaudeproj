@@ -10,9 +10,11 @@ public class PopupStatueMove : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	private void OnClickGotoHouse()
 	{
+		Hide();
 	}
 }

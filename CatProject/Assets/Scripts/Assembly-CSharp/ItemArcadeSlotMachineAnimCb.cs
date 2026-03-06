@@ -7,9 +7,11 @@ public class ItemArcadeSlotMachineAnimCb : MonoBehaviour
 
 	public void SlotBlurOnTrigger(int slotIndex)
 	{
+		// TODO
 	}
 
 	public void SlotBlurOffTrigger(int slotIndex)
 	{
+		// TODO
 	}
 }

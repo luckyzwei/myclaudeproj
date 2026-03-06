@@ -66,5 +66,6 @@ public class UIRePositionBase : MonoBehaviour
 
 	public virtual void UpdatePosition()
 	{
+		// Virtual base - override in subclass
 	}
 }

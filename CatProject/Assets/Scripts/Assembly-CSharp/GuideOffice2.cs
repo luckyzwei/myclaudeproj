@@ -200,6 +200,7 @@ public class GuideOffice2 : UIBase
 
 	public void UpdateItemGuide()
 	{
+		// Update display
 	}
 
 	private void Clear()
@@ -218,6 +219,7 @@ public class GuideOffice2 : UIBase
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void LateUpdate()

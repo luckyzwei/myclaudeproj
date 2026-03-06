@@ -23,9 +23,12 @@ public class TutorialEnityForceFrontUI : TutorialEntity
 
 	public override void StartEntity()
 	{
+		if (dim != null) dim.enabled = true;
 	}
 
 	private void Update()
 	{
+		if (checker != null && checker.IsFinished)
+			EndEntity();
 	}
 }

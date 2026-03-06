@@ -10,9 +10,11 @@ public class PopupToastSmall : UIBase
 
 	public void SetText(string descKey)
 	{
+		// Update display
 	}
 
 	public override void OnHideAfter()
 	{
+		base.OnHideAfter();
 	}
 }

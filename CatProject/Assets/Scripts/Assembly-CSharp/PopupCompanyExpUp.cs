@@ -36,5 +36,6 @@ public class PopupCompanyExpUp : UIBase
 
 	public void Set(int company, BigInteger before_exp, BigInteger get_exp)
 	{
+		// Update display
 	}
 }

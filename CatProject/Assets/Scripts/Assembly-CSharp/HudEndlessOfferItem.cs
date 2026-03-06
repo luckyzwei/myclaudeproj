@@ -52,5 +52,6 @@ public class HudEndlessOfferItem : MonoBehaviour
 
 	private void OnClickBtn()
 	{
+		// Handle click
 	}
 }

@@ -38,6 +38,7 @@ public class InGameSeasonal : InGameMode
 
 	public override void LoadUI()
 	{
+		base.LoadUI();
 	}
 
 	public void LoadWorkshopEmployee(Action<WorkshopEmployee> CompCb)

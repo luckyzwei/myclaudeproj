@@ -48,6 +48,7 @@ public class ItemPopupNoAdsBanner : MonoBehaviour
 
 	private void OnClick()
 	{
+		// Handle click
 	}
 
 	private void OnDisable()

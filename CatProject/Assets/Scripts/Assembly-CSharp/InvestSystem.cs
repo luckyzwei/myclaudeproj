@@ -42,6 +42,7 @@ public class InvestSystem
 
 	private void OpenFirstPopup()
 	{
+		// TODO
 	}
 
 	private void CheckIsOn()

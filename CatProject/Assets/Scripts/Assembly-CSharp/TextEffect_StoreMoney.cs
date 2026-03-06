@@ -14,5 +14,6 @@ public class TextEffect_StoreMoney : MonoBehaviour
 
 	public void Set(string origin, string additive)
 	{
+		// Update display
 	}
 }

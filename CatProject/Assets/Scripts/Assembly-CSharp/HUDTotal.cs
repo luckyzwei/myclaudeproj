@@ -1051,6 +1051,7 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	public void UpdateOneTimeCurrencyIcon()
 	{
+		// Update display
 	}
 
 	public void UpdateOneTimeCurrencyCount()
@@ -1181,6 +1182,7 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	private void OnClickCrossPromotion()
 	{
+		// Handle click
 	}
 
 	private void SetInvest()

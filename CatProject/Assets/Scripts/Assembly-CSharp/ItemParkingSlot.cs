@@ -97,6 +97,7 @@ public class ItemParkingSlot : MonoBehaviour
 
 	private void DrawStatus()
 	{
+		// TODO
 	}
 
 	public void SetSelect(bool isSelect)

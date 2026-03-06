@@ -14,5 +14,6 @@ public class ItemAuctionSpy : MonoBehaviour
 
 	public void Set(int idx)
 	{
+		// Update display
 	}
 }

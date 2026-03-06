@@ -13,9 +13,11 @@ public class PopupCoinDCMission : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 
 	private void OnClickShortcut()
 	{
+		Hide();
 	}
 }

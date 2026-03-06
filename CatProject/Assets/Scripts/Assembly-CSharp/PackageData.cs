@@ -15,6 +15,7 @@ public class PackageData : IReadOnlyData, ICloneable
 
 	public void BuyPackage()
 	{
+		// TODO
 	}
 
 	public PackageData(int idx, long datetime, int count)
@@ -26,6 +27,7 @@ public class PackageData : IReadOnlyData, ICloneable
 
 	public virtual void Create()
 	{
+		// Virtual base - override in subclass
 	}
 
 	public virtual object Clone()

@@ -18,6 +18,7 @@ public class BoxOpenNotiObj : MonoBehaviour
 
 	private void CheckOpenBoxCount()
 	{
+		// TODO
 	}
 
 	private void OnChangeOpenBox(int idx)

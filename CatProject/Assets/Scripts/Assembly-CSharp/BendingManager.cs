@@ -63,5 +63,6 @@ public class BendingManager : MonoBehaviour
 
 	private static void OnEndCameraRendering(ScriptableRenderContext ctx, Camera cam)
 	{
+		// TODO
 	}
 }

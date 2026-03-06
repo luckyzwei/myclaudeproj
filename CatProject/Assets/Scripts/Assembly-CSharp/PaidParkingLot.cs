@@ -55,6 +55,7 @@ public class PaidParkingLot : MonoBehaviour
 
 	private void LoadUI(int needHouse)
 	{
+		// TODO
 	}
 
 	public void UpdateEditModeUI()

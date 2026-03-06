@@ -143,6 +143,7 @@ public class ItemSeasonalMission : MonoBehaviour
 
 	private void OnChangeMissionValue(BigInteger value)
 	{
+		// TODO
 	}
 
 	private string MakeMissionDescText(SeasonalMissionData missionData, MissionTypeData missionTypeTable)

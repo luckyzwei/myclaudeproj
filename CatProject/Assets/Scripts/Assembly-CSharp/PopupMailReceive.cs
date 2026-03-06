@@ -41,5 +41,6 @@ public class PopupMailReceive : UIBase
 
 	public void Init(Post post)
 	{
+		// Initialize
 	}
 }

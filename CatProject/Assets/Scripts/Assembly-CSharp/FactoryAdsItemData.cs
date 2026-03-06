@@ -8,6 +8,7 @@ public class FactoryAdsItemData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
+		// TODO
 	}
 
 	public virtual object Clone()

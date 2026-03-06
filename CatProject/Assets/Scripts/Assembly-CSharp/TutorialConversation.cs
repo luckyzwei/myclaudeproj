@@ -26,9 +26,17 @@ public class TutorialConversation : MonoBehaviour
 
 	public void Set(Config.AudienceType type, string scriptkey, bool showImg = true, bool showAni = false)
 	{
+		bool isCeo = type == Config.AudienceType.CEO;
+		if (AudienceRoot != null) AudienceRoot.SetActive(!isCeo && showImg);
+		if (CeoRoot != null) CeoRoot.SetActive(isCeo && showImg);
+		if (Line != null) Line.text = scriptkey;
 	}
 
 	public void SetText(Config.AudienceType type, string script)
 	{
+		bool isCeo = type == Config.AudienceType.CEO;
+		if (AudienceRoot != null) AudienceRoot.SetActive(!isCeo);
+		if (CeoRoot != null) CeoRoot.SetActive(isCeo);
+		if (Line != null) Line.text = script;
 	}
 }

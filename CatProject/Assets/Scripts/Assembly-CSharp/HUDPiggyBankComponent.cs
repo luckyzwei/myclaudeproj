@@ -29,6 +29,7 @@ public class HUDPiggyBankComponent : MonoBehaviour
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 
 	public void SetPiggyBank()
@@ -38,6 +39,7 @@ public class HUDPiggyBankComponent : MonoBehaviour
 
 	public void UpdatePiggyValue()
 	{
+		// Update display
 	}
 
 	private void OnClickPiggyBankBtn()

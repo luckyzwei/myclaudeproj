@@ -14,9 +14,11 @@ public class ItemExpRatioInfo : MonoBehaviour
 
 	public void SetPlant(int idx, int level)
 	{
+		// Update display
 	}
 
 	public void SetBuffObject(int idx)
 	{
+		// Update display
 	}
 }

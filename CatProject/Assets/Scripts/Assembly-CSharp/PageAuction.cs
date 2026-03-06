@@ -483,6 +483,7 @@ public class PageAuction : UIBase
 
 	private void Update()
 	{
+		// Update logic
 	}
 
 	private void OnDisable()

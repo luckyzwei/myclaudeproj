@@ -13,5 +13,6 @@ public class BoxCollider2DGizmos : MonoBehaviour
 
 	private void Start()
 	{
+		// Start initialization
 	}
 }

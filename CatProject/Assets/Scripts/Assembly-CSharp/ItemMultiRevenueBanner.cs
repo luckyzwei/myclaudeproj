@@ -27,5 +27,6 @@ public class ItemMultiRevenueBanner : ItemShopSpecialBanner
 
 	public override void Init(int idx)
 	{
+		base.Init(idx);
 	}
 }

@@ -47,6 +47,7 @@ public class ParkingSpace : MonoBehaviour
 
 	private void LoadEditUI()
 	{
+		// TODO
 	}
 
 	public void UpdateEditMode()
@@ -68,6 +69,7 @@ public class ParkingSpace : MonoBehaviour
 
 	public void UpdateCar()
 	{
+		// Update display
 	}
 
 	private void DestroyCar()

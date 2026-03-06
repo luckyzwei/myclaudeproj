@@ -5,5 +5,6 @@ public class PopupClearToast : UIBase
 {
 	public override void OnHideAfter()
 	{
+		base.OnHideAfter();
 	}
 }

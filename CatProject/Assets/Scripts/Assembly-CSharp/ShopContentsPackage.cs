@@ -48,6 +48,7 @@ public class ShopContentsPackage : IShopContents
 
 	private void RefreshActive()
 	{
+		// Update display
 	}
 
 	private void RefreshActive(int buyPackageIdx)
@@ -57,6 +58,7 @@ public class ShopContentsPackage : IShopContents
 
 	private void ClickPackage(int idx)
 	{
+		// TODO
 	}
 
 	private bool CheckTimeLimitShowType(E_TimeLimitShowType timeLimitShowType, int remainTime)

@@ -115,6 +115,7 @@ public class FactorySystem
 
 	private void UpdateMissionData()
 	{
+		// Update display
 	}
 
 	public void StartOpenFacility(int factoryIdx)
@@ -337,6 +338,7 @@ public class FactorySystem
 
 	public void Update()
 	{
+		// Update logic
 	}
 
 	public void UpdateOneSeconds()

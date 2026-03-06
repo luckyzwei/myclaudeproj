@@ -167,10 +167,12 @@ public class ItemManagerInfoAcquisition : MonoBehaviour
 
 	private void OnClickNeedLevelBtn()
 	{
+		// Handle click
 	}
 
 	private void OnClickReinforceResetBtn()
 	{
+		// Handle click
 	}
 
 	private void ShowLevelUpEffect()

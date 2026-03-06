@@ -27,9 +27,11 @@ public class ItemHUDSeasonalMilestoneStep : MonoBehaviour
 
 	public void Init(int milestoneRewardStep)
 	{
+		// Initialize
 	}
 
 	private void OnDestroy()
 	{
+		// Cleanup
 	}
 }

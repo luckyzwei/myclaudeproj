@@ -13,5 +13,6 @@ public class PageSeasonalQuestGuide : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
 	}
 }

@@ -106,6 +106,8 @@ public class PageRewardSpecial : UIBase
 
 	public override void OnShowAfter()
 	{
+		base.OnShowAfter();
+		UpdateSpecialTheme();
 	}
 
 	private void Show(RewardItemData reward)
@@ -145,6 +147,7 @@ public class PageRewardSpecial : UIBase
 
 	private void UpdateSpecialTheme()
 	{
+		// Update special theme display
 	}
 
 	private void InitHideData()

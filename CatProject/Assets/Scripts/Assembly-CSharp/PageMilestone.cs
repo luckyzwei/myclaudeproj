@@ -102,6 +102,7 @@ public class PageMilestone : UIBase
 
 	public override void OnHideBefore()
 	{
+		base.OnHideBefore();
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusToIndexCoroutine_003Ed__12))]
@@ -152,6 +153,7 @@ public class PageMilestone : UIBase
 
 	private void OnClickPurchase()
 	{
+		// Handle milestone purchase
 	}
 
 	private void SetSeasonThemeImage(string imageName)

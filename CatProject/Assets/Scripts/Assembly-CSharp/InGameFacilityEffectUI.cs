@@ -14,5 +14,6 @@ public class InGameFacilityEffectUI : InGameFloatingUI
 
 	public void SetAbility(string icon, int value)
 	{
+		// Update display
 	}
 }

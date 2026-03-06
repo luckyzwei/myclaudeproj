@@ -79,6 +79,7 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	public void ShowPlantFocusing()
 	{
+		// TODO
 	}
 
 	private void DrawPage()
@@ -91,6 +92,7 @@ public class ItemDailyQuestTab : MonoBehaviour, ITabToggleTab
 
 	private void SetList()
 	{
+		// Update display
 	}
 
 	private void UpdateRewardInfo()
