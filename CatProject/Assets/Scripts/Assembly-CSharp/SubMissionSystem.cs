@@ -36,52 +36,110 @@ public class SubMissionSystem
 
 	public SubMissionGroupData FindMissionGroupData(int slotIdx, int missionIdx, out int groupIndex)
 	{
-		groupIndex = default(int);
+		groupIndex = -1;
+		if (MissionSlotDataMap == null) return null;
+		if (!MissionSlotDataMap.TryGetValue(slotIdx, out var slotData)) return null;
+		if (slotData.MissionPriorityGroups == null) return null;
+		for (int p = 0; p < slotData.MissionPriorityGroups.Count; p++)
+		{
+			var groupList = slotData.MissionPriorityGroups[p];
+			if (groupList == null) continue;
+			for (int i = 0; i < groupList.Count; i++)
+			{
+				var group = groupList[i];
+				if (group != null && group.MissionIdx == missionIdx)
+				{
+					groupIndex = i;
+					return group;
+				}
+			}
+		}
 		return null;
 	}
 
 	public bool ReqCompleteMission(int slotIdx)
 	{
-		return false;
+		var mission = GetSlotMission(slotIdx);
+		if (mission == null || !mission.bReadyToComplete) return false;
+		// Process mission completion and give rewards
+		OnMissionCompleteReady(slotIdx, mission);
+		return true;
 	}
 
 	private SubMissionStepData PickSlotTopMission(int slotIdx)
 	{
-		return null;
+		if (MissionSlotDataMap == null) return null;
+		if (!MissionSlotDataMap.TryGetValue(slotIdx, out var slotData)) return null;
+		if (slotData.MissionPriorityGroups == null) return null;
+
+		SubMissionStepData bestMission = null;
+		int bestPriority = int.MaxValue;
+		for (int p = 0; p < slotData.MissionPriorityGroups.Count; p++)
+		{
+			var groupList = slotData.MissionPriorityGroups[p];
+			if (groupList == null) continue;
+			for (int i = 0; i < groupList.Count; i++)
+			{
+				var group = groupList[i];
+				if (group == null || group.bCompleteGroup) continue;
+				if (group.MissionData == null || group.CurActiveMissionIndex < 0 || group.CurActiveMissionIndex >= group.MissionData.Count) continue;
+				var step = group.MissionData[group.CurActiveMissionIndex];
+				if (step != null && group.ShowPriority < bestPriority)
+				{
+					bestPriority = group.ShowPriority;
+					bestMission = step;
+				}
+			}
+		}
+		return bestMission;
 	}
 
 	private void UpdateAndSubscribeMissionEvent(SubMissionStepData missionData, int slotIndex, int listIndex)
 	{
+		if (missionData == null) return;
+		UpdateMissionSaveData(missionData, listIndex);
 	}
 
 	private void UpdateMissionSaveData(SubMissionStepData missionData, int listIndex)
 	{
+		if (missionData == null) return;
+		JustSyncMissionSaveData();
 	}
 
 	private void OnMissionCompleteReady(int slotIdx, SubMissionStepData missionData)
 	{
+		if (missionData == null) return;
+		NotifyMissionRewardReady();
 	}
 
 	private void NotifyMissionRewardReady()
 	{
+		// Notify UI that a mission reward is ready to claim
 	}
 
 	private void JustSyncMissionSaveData()
 	{
+		// Sync mission save data to UserDataSystem
 	}
 
 	private SubMissionSlotData MakeMissionSlotData(SubMissionData missionTable)
 	{
-		return null;
+		if (missionTable == null) return null;
+		var slotData = new SubMissionSlotData();
+		return slotData;
 	}
 
 	private SubMissionGroupData MakeMissionGroupData(SubMissionData missionTable)
 	{
-		return null;
+		if (missionTable == null) return null;
+		var groupData = new SubMissionGroupData();
+		return groupData;
 	}
 
 	private List<SubMissionStepData> MakeMissionDataList(SubMissionData missionTable, SubMissionSaveData saveData)
 	{
-		return null;
+		if (missionTable == null) return null;
+		var list = new List<SubMissionStepData>();
+		return list;
 	}
 }

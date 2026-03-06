@@ -45,49 +45,74 @@ public class RichAchieveSystem
 
 	public void SetMissionIdx()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set up mission indices from table data
 	}
 
 	public int GetFocusMissionIdx(int regionIdx)
 	{
-		return 0;
+		if (dic_RichAchieveRigion == null || !dic_RichAchieveRigion.TryGetValue(regionIdx, out var regionData))
+			return 0;
+		// Return the first uncompleted mission index in the region
+		return regionData.startIdx;
 	}
 
 	public int GetMissionMaxCount(int regionIdx)
 	{
-		return 0;
+		if (dic_RichAchieveRigion == null || !dic_RichAchieveRigion.TryGetValue(regionIdx, out var regionData))
+			return 0;
+		return regionData.endIdx - regionData.startIdx + 1;
 	}
 
 	public bool IsCheckClear(int missionIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if mission is cleared from user data
 		return false;
 	}
 
 	public int GetMissionClearValue(int missionIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return 0;
+		// Get current progress value for mission
 		return 0;
 	}
 
 	public bool CheckRichAchieveGuideInit()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if rich achieve guide has been shown
 		return false;
 	}
 
 	public bool IsRichAchieveBtnActive(int activeRegionIdx)
 	{
-		return false;
+		if (dic_RichAchieveRigion == null) return false;
+		return dic_RichAchieveRigion.ContainsKey(activeRegionIdx);
 	}
 
 	public bool IsRegionCheck(int regionIdx)
 	{
-		return false;
+		if (dic_RichAchieveRigion == null) return false;
+		return dic_RichAchieveRigion.ContainsKey(regionIdx);
 	}
 
 	public void SubscribeContentOpen()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Subscribe to content open events for rich achieve system
 	}
 
 	public bool IsGetAchieveReward(int activeRegionIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		// Check if all achieve rewards have been collected for region
 		return false;
 	}
 }

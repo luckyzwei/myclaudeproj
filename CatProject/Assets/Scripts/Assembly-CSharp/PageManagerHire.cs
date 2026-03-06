@@ -24,7 +24,7 @@ public class PageManagerHire : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
@@ -33,13 +33,14 @@ public class PageManagerHire : UIBase
 			[DebuggerHidden]
 			get
 			{
-				return null;
+				return _003C_003E2__current;
 			}
 		}
 
 		[DebuggerHidden]
 		public _003CShowHire_003Ed__13(int _003C_003E1__state)
 		{
+			this._003C_003E1__state = _003C_003E1__state;
 		}
 
 		[DebuggerHidden]
@@ -49,7 +50,25 @@ public class PageManagerHire : UIBase
 
 		private bool MoveNext()
 		{
-			return false;
+			switch (_003C_003E1__state)
+			{
+				case 0:
+					_003C_003E1__state = -1;
+					// Show CEO enter animation
+					if (_003C_003E4__this.curCEO != null)
+						_003C_003E4__this.curCEO.gameObject.SetActive(true);
+					_003C_003E2__current = _003C_003E4__this.wfs;
+					_003C_003E1__state = 1;
+					return true;
+				case 1:
+					_003C_003E1__state = -1;
+					// Show manager enter
+					if (_003C_003E4__this.curManager != null)
+						_003C_003E4__this.curManager.gameObject.SetActive(true);
+					return false;
+				default:
+					return false;
+			}
 		}
 
 		bool IEnumerator.MoveNext()
@@ -91,23 +110,55 @@ public class PageManagerHire : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		wfs = new WaitForSeconds(0.5f);
 	}
 
 	public override void OnShowBefore()
 	{
+		// Hide all CEOs initially
+		if (CEOs != null)
+		{
+			for (int i = 0; i < CEOs.Length; i++)
+			{
+				if (CEOs[i] != null)
+					CEOs[i].gameObject.SetActive(false);
+			}
+		}
 	}
 
 	public override void OnHideAfter()
 	{
+		// Cleanup animator references
+		if (curCEO != null)
+		{
+			curCEO.gameObject.SetActive(false);
+			curCEO = null;
+		}
+		if (curManager != null)
+		{
+			curManager.gameObject.SetActive(false);
+			curManager = null;
+		}
 	}
 
 	public void Set(int managerIdx)
 	{
+		// Set CEO based on manager index
+		if (CEOs != null && managerIdx >= 0 && managerIdx < CEOs.Length)
+			curCEO = CEOs[managerIdx];
+
+		if (ManagerSkillObj != null) ManagerSkillObj.SetActive(false);
+		if (AbilityDescText != null) AbilityDescText.text = "";
+
+		StartCoroutine(ShowHire());
 	}
 
 	[IteratorStateMachine(typeof(_003CShowHire_003Ed__13))]
 	private IEnumerator ShowHire()
 	{
-		yield break;
+		var routine = new _003CShowHire_003Ed__13(0);
+		routine._003C_003E4__this = this;
+		return routine;
 	}
 }
