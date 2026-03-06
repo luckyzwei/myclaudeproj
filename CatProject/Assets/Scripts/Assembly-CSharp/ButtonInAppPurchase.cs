@@ -28,22 +28,31 @@ public class ButtonInAppPurchase : MonoBehaviour
 
 	private void Awake()
 	{
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickBuyBtn);
 	}
 
 	public void SetShopPackage(int shopPackageIdx)
 	{
+		TableIdx = shopPackageIdx;
 	}
 
 	public void SetShopSpecial(int shopSpecialIdx)
 	{
+		TableIdx = shopSpecialIdx;
 	}
 
 	public void SetProduct(string productId)
 	{
+		ProductId = productId;
+		var info = GetProductInfo(productId);
+		if (BuyPriceText != null && info.Price != null)
+			BuyPriceText.text = info.Price;
 	}
 
 	private void SetSaleInfo(int salePercent, ProductInfo productInfo)
 	{
+		if (SaleObj != null) SaleObj.SetActive(salePercent > 0);
+		if (SalePercentText != null) SalePercentText.text = salePercent + "%";
 	}
 
 	private ProductInfo GetProductInfo(string productId)
@@ -53,5 +62,6 @@ public class ButtonInAppPurchase : MonoBehaviour
 
 	private void OnClickBuyBtn()
 	{
+		OnClickBuyEvent?.Invoke();
 	}
 }

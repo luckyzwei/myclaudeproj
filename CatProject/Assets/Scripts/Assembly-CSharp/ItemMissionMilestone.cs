@@ -48,10 +48,18 @@ public class ItemMissionMilestone : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ClaimBtn != null) ClaimBtn.onClick.AddListener(OnClickedClaimBtn);
+		if (ShortCutBtn != null) ShortCutBtn.onClick.AddListener(OnClickedShortCutBtn);
 	}
 
 	public void SetData(int regionIdx, int orderIdx, bool isLastStep, Action<int, bool> onClaimedMilestoneReward)
 	{
+		RegionIdx = regionIdx;
+		OrderIdx = orderIdx;
+		OnClaimedMilestoneReward = onClaimedMilestoneReward;
+		if (NextStepLinkObj != null) NextStepLinkObj.SetActive(!isLastStep);
+		SetMilestoneReward();
+		UpdateData();
 	}
 
 	public void UpdateData()
@@ -64,6 +72,7 @@ public class ItemMissionMilestone : MonoBehaviour
 
 	private void OnClickedClaimBtn()
 	{
+		OnClaimedMilestoneReward?.Invoke(OrderIdx, true);
 	}
 
 	private void OnClickedShortCutBtn()

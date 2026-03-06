@@ -39,14 +39,22 @@ public class ItemPackageOnePlusSix : MonoBehaviour
 
 	private void Awake()
 	{
+		if (freeBtn != null) freeBtn.onClick.AddListener(OnClickFree);
+		if (iapBtn != null) iapBtn.onClick.AddListener(OnClickIap);
+		if (adsBtn != null) adsBtn.onClick.AddListener(OnClickAds);
 	}
 
 	public void Set(OnePlusSixInfoData _td, int _curStep, bool isInit = true)
 	{
+		td = _td;
+		if (td == null) return;
+		InitIAP();
 	}
 
 	private bool CheckCompanyContract()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
 		return false;
 	}
 
@@ -56,6 +64,7 @@ public class ItemPackageOnePlusSix : MonoBehaviour
 
 	private void OnClickFree()
 	{
+		onRewardStart?.Invoke();
 	}
 
 	private void OnClickIap()
@@ -64,9 +73,11 @@ public class ItemPackageOnePlusSix : MonoBehaviour
 
 	private void OnClickAds()
 	{
+		onRewardStart?.Invoke();
 	}
 
 	public void ShowUnlockFx()
 	{
+		if (unlockAni != null) unlockAni.SetTrigger("Play");
 	}
 }

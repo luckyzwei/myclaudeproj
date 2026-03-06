@@ -35,14 +35,20 @@ public class ItemAuctionPass : MonoBehaviour
 
 	private void Awake()
 	{
+		if (GetNormalBtn != null) GetNormalBtn.onClick.AddListener(() => OnClickGet(false));
+		if (GetPremiumBtn != null) GetPremiumBtn.onClick.AddListener(() => OnClickGet(true));
 	}
 
 	public void Set(int _event, int _order)
 	{
+		Event = _event;
+		Order = _order;
+		UpdateStatus();
 	}
 
 	public void UpdateAuctionPass(bool ani = false)
 	{
+		UpdateStatus();
 	}
 
 	public void UpdateStatus()
@@ -51,6 +57,11 @@ public class ItemAuctionPass : MonoBehaviour
 
 	private void OnClickGet(bool isPremium)
 	{
+		if (isPremium && PremiumLock != null && PremiumLock.activeSelf)
+		{
+			OnClickPurchaseBtn?.Invoke();
+			return;
+		}
 	}
 
 	private void GetReward(int rewardType, int rewardIdx, int rewardRegion, int rewardValue, bool isPremium)

@@ -31,22 +31,33 @@ public class PopupSeasonalMission : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		ItemSeasonalMissionSlots = new List<ItemSeasonalMission>();
 	}
 
 	public void Init()
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
+		SetMissionBuffInfo();
 	}
 
 	private void SetMissionBuffInfo()
 	{
+		if (MissionBuffObj != null) MissionBuffObj.SetActive(false);
 	}
 
 	private void OnClickedMissionRewardClaimBtn(int slotIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.SeasonalSystem == null) return;
+		var rewards = root.SeasonalSystem.ReqMissionClaimReward(slotIdx);
+		if (rewards != null && rewards.Count > 0)
+			ShowRewardEffect(rewards);
 	}
 
 	private void OnClickedMissionShortcutBtn(int missionIdx)
 	{
+		Hide();
 	}
 
 	private (E_BuildingType, int) FindShortcutBuildingInfo(SeasonalMissionData missionData)

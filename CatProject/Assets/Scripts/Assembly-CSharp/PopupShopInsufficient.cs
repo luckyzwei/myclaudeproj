@@ -28,25 +28,43 @@ public class PopupShopInsufficient : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (offerwallBtn != null) offerwallBtn.onClick.AddListener(OnClickMoreGem);
 	}
 
 	public override void OnShowBefore()
 	{
+		if (hudTop != null) hudTop.Binding();
 	}
 
 	public void Set(int currencyID, int region, bool packageMode = false, int packageIdx = -1)
 	{
+		tempRegion = region;
+		if (contents != null)
+		{
+			for (int i = 0; i < contents.Count; i++)
+			{
+				if (contents[i] != null)
+					contents[i].Init();
+			}
+		}
+		SetOfferwall(currencyID);
 	}
 
 	private void SetOfferwall(int currencyID)
 	{
+		if (offerwallObj != null) offerwallObj.SetActive(false);
 	}
 
 	private void OnClickMoreGem()
 	{
+		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public override void Hide()
 	{
+		if (hudTop != null) hudTop.Unbinding();
+		base.Hide();
 	}
 }

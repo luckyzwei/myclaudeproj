@@ -46,14 +46,23 @@ public class ItemOfficeManagementRentalFeeTab : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (RevenueDetailBtn != null) RevenueDetailBtn.onClick.AddListener(OnClickRevenueDetail);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null)
+		{
+			Disposables.Dispose();
+			Disposables = new CompositeDisposable();
+		}
 	}
 
 	public void Init()
 	{
+		SetRentalFeeInfos();
+		SetBoosterItems();
 	}
 
 	private void SetRentalFeeInfos()
@@ -70,10 +79,11 @@ public class ItemOfficeManagementRentalFeeTab : MonoBehaviour
 
 	private void OnClickRevenueDetail()
 	{
+		if (RevenueDetailObj != null) RevenueDetailObj.SetActive(!RevenueDetailObj.activeSelf);
 	}
 
 	public GameObject GetRentalFeeBoostBtn()
 	{
-		return null;
+		return RevenueDetailBtn != null ? RevenueDetailBtn.gameObject : null;
 	}
 }

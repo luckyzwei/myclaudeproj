@@ -30,19 +30,31 @@ public class PopupMission : UIBase, ITabToggleGroup
 
 	public Action OnGoNaviHide;
 
-	public ItemMissionTab GetMissionTab { get { return null; } }
+	public ItemMissionTab GetMissionTab { get { return MissionTab; } }
 
 	public void Init(Tab openTab = Tab.None)
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
+		var root = Singleton<GameRoot>.Instance;
+		bool isDailyQuestOpen = root != null && root.ContentsOpenSystem != null;
+		bool isFactoryMode = root != null && root.FactorySystem != null;
+		int initTab = GetInitTabIndex(openTab, isDailyQuestOpen, isFactoryMode);
+		if (MainTabToggleGroup != null)
+		{
+			MainTabToggleGroup.OnTabChanged = OnTabChanged;
+			MainTabToggleGroup.ChangeTab(initTab);
+		}
 	}
 
 	private int GetInitTabIndex(Tab openTab, bool isDailyQuestOpen, bool isFactoryMode)
 	{
-		return 0;
+		if (openTab != Tab.None) return (int)openTab;
+		return (int)Tab.Mission;
 	}
 
 	private void SetHudTopInfo(int region)
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
 	}
 
 	private void OnTabChanged(int index)
@@ -51,18 +63,22 @@ public class PopupMission : UIBase, ITabToggleGroup
 
 	private void OnGoNavi()
 	{
+		OnGoNaviHide?.Invoke();
+		Hide();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	private void OnDestroy()
 	{
+		OnGoNaviHide = null;
 	}
 
 	public TabToggleGroup GetTabToggleGroup()
 	{
-		return null;
+		return MainTabToggleGroup;
 	}
 }

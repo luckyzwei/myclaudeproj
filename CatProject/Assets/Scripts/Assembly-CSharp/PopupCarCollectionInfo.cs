@@ -63,10 +63,16 @@ public class PopupCarCollectionInfo : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (PrevBtn != null) PrevBtn.onClick.AddListener(OnPrevBtnClick);
+		if (NextBtn != null) NextBtn.onClick.AddListener(OnNextBtnClick);
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnRewardBtnClick);
 	}
 
 	public void SetBrand(int brandIdx)
 	{
+		CurBrandIdx = brandIdx;
+		UpdateProgress();
 	}
 
 	private void UpdateProgress()
@@ -75,13 +81,18 @@ public class PopupCarCollectionInfo : UIBase
 
 	private void OnPrevBtnClick()
 	{
+		if (CurBrandIdx > 0)
+			SetBrand(CurBrandIdx - 1);
 	}
 
 	private void OnNextBtnClick()
 	{
+		SetBrand(CurBrandIdx + 1);
 	}
 
 	private void OnRewardBtnClick()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

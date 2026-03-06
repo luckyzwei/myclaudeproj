@@ -60,25 +60,34 @@ public class ItemPlant : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ManageBtn != null) ManageBtn.onClick.AddListener(OnClickManage);
+		if (PreviewBtn != null) PreviewBtn.onClick.AddListener(OnClickPreview);
+		if (GemRewardBtn != null) GemRewardBtn.onClick.AddListener(OnClickGemReward);
 	}
 
 	private void OnDisable()
 	{
+		if (GemTimeDisposable != null) { GemTimeDisposable.Dispose(); GemTimeDisposable = null; }
 	}
 
 	public void Set(int plantidx)
 	{
+		Idx = plantidx;
 	}
 
 	private void OnClickPreview()
 	{
+		clickCb?.Invoke(Idx);
 	}
 
 	private void OnClickManage()
 	{
+		clickCb?.Invoke(Idx);
 	}
 
 	private void OnClickGemReward()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

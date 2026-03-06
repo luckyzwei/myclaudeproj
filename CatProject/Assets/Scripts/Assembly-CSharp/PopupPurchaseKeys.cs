@@ -46,6 +46,9 @@ public class PopupPurchaseKeys : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (purchaseBtn != null) purchaseBtn.onClick.AddListener(OnClickPurchase);
+		if (gemBtn != null) gemBtn.onClick.AddListener(OnClickGem);
 	}
 
 	public override void OnShowBefore()
@@ -54,22 +57,28 @@ public class PopupPurchaseKeys : UIBase
 
 	public void Set(int _keyIdx)
 	{
+		keyIdx = _keyIdx;
 	}
 
 	private int ConvertShopSpecialIdx(int keyidx)
 	{
-		return 0;
+		return keyidx;
 	}
 
 	private void OnClickPurchasePackage(int ShopSpecialIdx)
 	{
+		Hide();
 	}
 
 	private void OnClickPurchase()
 	{
+		OnClickPurchasePackage(ConvertShopSpecialIdx(keyIdx));
 	}
 
 	private void OnClickGem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 }

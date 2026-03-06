@@ -63,25 +63,42 @@ public class ItemOnetimeReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
 	}
 
 	public void SetRewards(int order, bool isSpecial = false)
 	{
+		curStep = order;
+		curSpecialIdx = isSpecial ? order : 0;
+		UpdateBtn(true);
 	}
 
 	public void UpdateBtn(bool isInit = false)
 	{
+		if (DimObject != null) DimObject.SetActive(false);
+		if (ReddotObject != null) ReddotObject.SetActive(false);
 	}
 
 	private void OnClickReward()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void SetPriceText(int shopIdx)
 	{
+		if (CashText != null) CashText.text = "";
 	}
 
 	public void HideAllBubble()
 	{
+		if (infoBubbles != null)
+		{
+			for (int i = 0; i < infoBubbles.Length; i++)
+			{
+				if (infoBubbles[i] != null)
+					infoBubbles[i].SetActive(false);
+			}
+		}
 	}
 }

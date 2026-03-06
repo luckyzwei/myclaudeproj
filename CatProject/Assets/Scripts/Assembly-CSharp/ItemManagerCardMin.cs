@@ -45,22 +45,30 @@ public class ItemManagerCardMin : MonoBehaviour
 
 	private Action onClickCb;
 
-	public GameObject ManagerSelect { get { return null; } }
+	public GameObject ManagerSelect { get { return managerSelect; } }
 
 	private void Awake()
 	{
+		if (ManagerBtn != null) ManagerBtn.onClick.AddListener(OnClickManager);
+		if (infoBtn != null) infoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	private void OnClickManager()
 	{
+		onClickCb?.Invoke();
 	}
 
 	private void OnClickInfo()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	public void Set(int idx, int level, Action cb = null)
 	{
+		curManagerIdx = idx;
+		onClickCb = cb;
+		if (ManagerLevel != null) ManagerLevel.text = "Lv." + level;
+		UpdateValue();
 	}
 
 	private void UpdateValue()

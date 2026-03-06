@@ -37,10 +37,14 @@ public class PopupMilestoneRewardClaim : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		RewardClaimBoxList = new List<ItemMilestoneRewardClaimBox>();
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposable != null) { Disposable.Dispose(); Disposable = null; }
 	}
 
 	public override void OnShowBefore()
@@ -49,6 +53,7 @@ public class PopupMilestoneRewardClaim : UIBase
 
 	public void Init()
 	{
+		SetRewardSlots();
 	}
 
 	private void SetRewardSlots()
@@ -57,5 +62,6 @@ public class PopupMilestoneRewardClaim : UIBase
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

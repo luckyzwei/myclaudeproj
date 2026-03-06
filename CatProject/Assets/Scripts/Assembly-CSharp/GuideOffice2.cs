@@ -189,10 +189,13 @@ public class GuideOffice2 : UIBase
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
+		disposables = new CompositeDisposable();
 	}
 
 	private void OnDestroy()
 	{
+		Clear();
 	}
 
 	public void UpdateItemGuide()
@@ -201,6 +204,16 @@ public class GuideOffice2 : UIBase
 
 	private void Clear()
 	{
+		if (disposables != null)
+		{
+			disposables.Dispose();
+			disposables = null;
+		}
+		if (coroutine != null)
+		{
+			StopCoroutine(coroutine);
+			coroutine = null;
+		}
 	}
 
 	private void Update()
@@ -209,9 +222,14 @@ public class GuideOffice2 : UIBase
 
 	private void LateUpdate()
 	{
+		if (followTrans != null && clickObj != null)
+			clickObj.position = followTrans.position;
 	}
 
 	private void Next()
 	{
+		curActionIdx++;
+		if (guideActions != null && curActionIdx < guideActions.Count)
+			guideActions[curActionIdx]?.Invoke();
 	}
 }

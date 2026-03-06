@@ -46,10 +46,14 @@ public class ItemDailyReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
 	}
 
 	public void Set(int idx)
 	{
+		Idx = idx;
+		UpdateStatus();
 	}
 
 	private Sprite SetSprite(int type, int idx, string iconPath = "")
@@ -63,13 +67,17 @@ public class ItemDailyReward : MonoBehaviour
 
 	public void ShowParticle()
 	{
+		if (FocusParticle != null) FocusParticle.SetActive(true);
 	}
 
 	private void OnClickBtn()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickReward()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

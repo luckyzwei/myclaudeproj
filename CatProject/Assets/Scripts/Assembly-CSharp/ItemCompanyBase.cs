@@ -47,14 +47,19 @@ public class ItemCompanyBase : MonoBehaviour
 
 	public void Set(int officeIdx)
 	{
+		OfficeIdx = officeIdx;
 	}
 
 	public void Reset()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public void Set(int regionIdx, int officeIdx)
 	{
+		RegionIdx = regionIdx;
+		OfficeIdx = officeIdx;
+		UpdateCompanyExpInfo();
 	}
 
 	private void UpdateCompanyExpInfo()
@@ -63,9 +68,14 @@ public class ItemCompanyBase : MonoBehaviour
 
 	private void SetCompanyExpInfo(BigInteger curExp, BigInteger needExp)
 	{
+		if (needExp <= 0) { if (MaxLevelObj != null) MaxLevelObj.SetActive(true); return; }
+		if (MaxLevelObj != null) MaxLevelObj.SetActive(false);
+		if (CompanyExpProgress != null)
+			CompanyExpProgress.value = (float)(curExp * 1000 / needExp) / 1000f;
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 }

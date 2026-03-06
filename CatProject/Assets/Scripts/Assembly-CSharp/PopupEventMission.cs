@@ -38,14 +38,23 @@ public class PopupEventMission : UIBase, IHUDTopInfo
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		MissionSlots = new List<ItemEventMission>();
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	public void Init(E_ContentsMissionType contentType)
 	{
+		MissionContentType = contentType;
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
+		UpdateMissionSlots();
+		SetDailyResetTimer();
+		SetEventEndLayout();
 	}
 
 	private void UpdateMissionSlots()
@@ -58,10 +67,12 @@ public class PopupEventMission : UIBase, IHUDTopInfo
 
 	private void SetEventEndLayout()
 	{
+		if (EventPlayObj != null) EventPlayObj.SetActive(true);
+		if (EventEndObj != null) EventEndObj.SetActive(false);
 	}
 
 	public HUDTopInfo GetHUDTopInfo()
 	{
-		return null;
+		return HUDTopInfo;
 	}
 }

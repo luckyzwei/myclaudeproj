@@ -52,14 +52,20 @@ public class ItemMissionMilestoneBg : MonoBehaviour
 
 	private void Awake()
 	{
+		MilestoneOrderList = new List<int>();
+		if (ClaimAllBtn != null) ClaimAllBtn.onClick.AddListener(OnClickedClaimAllBtn);
 	}
 
 	public void SetRegion(int regionIdx, bool bPlayAnim, Vector2? scrollPosition = null)
 	{
+		RegionIdx = regionIdx;
+		InitMilestoneList(regionIdx, bPlayAnim, scrollPosition);
 	}
 
 	public Vector2 GetScrollPosition()
 	{
+		if (MilestoneScroll != null)
+			return MilestoneScroll.normalizedPosition;
 		return default(Vector2);
 	}
 
@@ -69,6 +75,9 @@ public class ItemMissionMilestoneBg : MonoBehaviour
 
 	private void OnClickedClaimAllBtn()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.MissionSystem == null) return;
+		root.MissionSystem.ReqClaimAllMilestoneReward(RegionIdx);
 	}
 
 	private void OnClaimedMilestoneReward(int orderIdx, bool isSuccess)

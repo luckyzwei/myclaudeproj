@@ -111,33 +111,51 @@ public class PopupOfflineReward : UIBase
 
 	private int GEM_USE_COST_MULTIPLY;
 
-	public OnetimeCurrencyComponent OneTimeComponent { get { return null; } }
+	public OnetimeCurrencyComponent OneTimeComponent { get { return oneTimeComponent; } }
 
 	protected override void Awake()
 	{
+		base.Awake();
+		GEM_USE_REWARD_MULTIPLY = 5;
+		GEM_USE_COST_MULTIPLY = 50;
+		if (GetBtn != null) GetBtn.onClick.AddListener(OnClickGetReward);
+		if (Get3XBtn != null) Get3XBtn.onClick.AddListener(OnClickGet3XReward);
+		if (GetGemUseBtn != null) GetGemUseBtn.onClick.AddListener(OnClickGetGemUse);
+		if (LaterBtn != null) LaterBtn.onClick.AddListener(() => Hide());
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void GetReward(BigInteger value, E_RewardClaimType claimType, Action<bool> result)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) { result?.Invoke(false); return; }
+		result?.Invoke(true);
+		Hide();
 	}
 
 	private void OnClickGetReward()
 	{
+		GetReward(Reward, E_RewardClaimType.Normal, null);
 	}
 
 	private void OnClickGet3XReward()
 	{
+		GetReward(X8Reward, E_RewardClaimType.X8, null);
 	}
 
 	private void OnClickGetGemUse()
 	{
+		GetReward(GemUseMultipleReward, E_RewardClaimType.GemUse, null);
 	}
 
 	private void OnClickMaxOfflineAdd(int idx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }
