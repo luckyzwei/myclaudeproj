@@ -32,17 +32,25 @@ public class ItemRequireItem : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ShortCutBtn != null) ShortCutBtn.onClick.AddListener(OnClickedShortCutBtn);
 	}
 
 	public void Set(int office, int itemtype, Action<int> onClickedCallBack)
 	{
+		OfficeIdx = office;
+		ItemType = itemtype;
+		OnClickedShortCut = onClickedCallBack;
+		Refresh();
 	}
 
 	public void Refresh()
 	{
+		if (EnoughObj != null) EnoughObj.SetActive(IsEnoughItem);
+		if (NotYetObj != null) NotYetObj.SetActive(!IsEnoughItem);
 	}
 
 	private void OnClickedShortCutBtn()
 	{
+		OnClickedShortCut?.Invoke(ItemType);
 	}
 }

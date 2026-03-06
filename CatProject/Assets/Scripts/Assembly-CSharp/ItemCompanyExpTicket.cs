@@ -24,17 +24,21 @@ public class ItemCompanyExpTicket : MonoBehaviour
 
 	private void Awake()
 	{
+		if (SelectButton != null) SelectButton.onClick.AddListener(OnSelectButtonClick);
 	}
 
 	public void Set(int itemIdx, BigInteger hasValue)
 	{
+		ItemIdx = itemIdx;
 	}
 
 	public void SetSelected(bool isSelected)
 	{
+		if (SelectedObj != null) SelectedObj.SetActive(isSelected);
 	}
 
 	private void OnSelectButtonClick()
 	{
+		OnSelectButtonClickEvent?.Invoke(ItemIdx);
 	}
 }

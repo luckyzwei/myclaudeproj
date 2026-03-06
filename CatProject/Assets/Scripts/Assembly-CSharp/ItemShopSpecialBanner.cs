@@ -34,17 +34,27 @@ public class ItemShopSpecialBanner : MonoBehaviour
 
 	private void Awake()
 	{
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickBtn);
 	}
 
 	public virtual void Init(int idx)
 	{
+		Idx = idx;
+		if (SaleRoot != null) SaleRoot.SetActive(false);
 	}
 
 	public void SetRewardInfo(int[] rewardType, int[] rewardIdx, int[] rewardRegion, int[] rewardValue)
 	{
+		if (listItems == null) return;
+		for (int i = 0; i < listItems.Count; i++)
+		{
+			if (listItems[i] != null)
+				listItems[i].gameObject.SetActive(i < rewardType.Length);
+		}
 	}
 
 	public void OnClickBtn()
 	{
+		ClickCb?.Invoke(Idx);
 	}
 }

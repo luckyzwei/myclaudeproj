@@ -25,17 +25,23 @@ public class ItemCompanyContract : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RecontractBtn != null) RecontractBtn.onClick.AddListener(OnClickRecontract);
+		if (OutBtn != null) OutBtn.onClick.AddListener(OnClickOut);
 	}
 
 	public void Set(int officeIdx)
 	{
+		OfficeIdx = officeIdx;
 	}
 
 	private void OnClickRecontract()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void OnClickOut()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCompanyOut>();
 	}
 }

@@ -23,17 +23,21 @@ public class ItemPlantTonic : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickItem);
 	}
 
 	public void Set(int idx, CompositeDisposable disposables)
 	{
+		Idx = idx;
 	}
 
 	public void Select(bool value)
 	{
+		if (SelectObj != null) SelectObj.SetActive(value);
 	}
 
 	private void OnClickItem()
 	{
+		ClickCb?.Invoke(Idx);
 	}
 }

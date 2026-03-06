@@ -36,10 +36,13 @@ public class ItemShopCash : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickItem);
 	}
 
 	public void Init(int idx)
 	{
+		Idx = idx;
+		DrawInfo();
 	}
 
 	private void DrawInfo()
@@ -48,5 +51,6 @@ public class ItemShopCash : MonoBehaviour
 
 	private void OnClickItem()
 	{
+		clickAction?.Invoke(Idx);
 	}
 }
