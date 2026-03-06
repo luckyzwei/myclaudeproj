@@ -79,7 +79,6 @@ public class Item1stEventShop : MonoBehaviour
 	private void SetItemMainImage(int rewardType, int rewardIdx, int rewardRegion, string iconKey)
 	{
 		if (ItemMainImage == null) return;
-		// Set item main image sprite from iconKey or reward type/idx
 	}
 
 	private void SetItemRemainCountText(int count)
@@ -98,7 +97,6 @@ public class Item1stEventShop : MonoBehaviour
 	private void SetItemCostIconImage(int type, int idx, int region)
 	{
 		if (ItemCostIconImage == null) return;
-		// Set cost icon sprite based on currency type/idx/region
 	}
 
 	private void OnItemBuyButtonClick()
@@ -109,14 +107,13 @@ public class Item1stEventShop : MonoBehaviour
 
 	private void OnItemInfoButtonClick()
 	{
-		// Show item detail info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void BuyItem(int buyCount)
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Process buy and update remain count
 		ItemRemainCount -= buyCount;
 		if (ItemRemainCount < 0) ItemRemainCount = 0;
 		UpdateBuyBoxLayout();

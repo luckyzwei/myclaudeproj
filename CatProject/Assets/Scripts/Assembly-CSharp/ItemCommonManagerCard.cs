@@ -146,14 +146,12 @@ public class ItemCommonManagerCard : MonoBehaviour
 
 	private void SetManagerInfo(int managerIdx, bool setImg)
 	{
-		// Set manager name, grade, frame based on managerIdx data
 		if (hireRoot != null) hireRoot.SetActive(false);
 		if (RegionRoot != null) RegionRoot.SetActive(false);
 	}
 
 	public void UpdateManagerHireInfo()
 	{
-		// Update hired office/region info display
 		if (hireRoot != null) hireRoot.SetActive(ManagerIdx > 0);
 	}
 
@@ -164,7 +162,6 @@ public class ItemCommonManagerCard : MonoBehaviour
 			Destroy(LoadedManagerPrefab);
 			LoadedManagerPrefab = null;
 		}
-		// Load manager prefab async and parent to ManagerPrefabRoot
 		StartCoroutine(PrefabActiveNextFrame());
 	}
 

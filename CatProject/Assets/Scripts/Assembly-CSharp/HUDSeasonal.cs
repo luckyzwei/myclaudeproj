@@ -343,12 +343,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.DaySystem == null) return;
-		var status = root.DaySystem.CurTimeStatus.Value;
-		// Update icon sprite based on day/night status
-		if (TimeIcon != null)
-		{
-			// TimeIcon sprite set by DaySystem status
-		}
 	}
 
 	protected void UpdateDayTime()
@@ -391,7 +385,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.SeasonalSystem == null) return;
-		// Set distributor/skill/statue icons based on seasonal theme
 	}
 
 	public void SetAdSupplyTween(bool show, bool direct = false)
@@ -401,7 +394,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void SetAdSupply()
 	{
-		// Check ad supply active state
 		SetAdSupplyTween(false, true);
 	}
 
@@ -412,7 +404,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void SetNightSkip()
 	{
-		// Check if night time
 		SetNightSkipTween(false, true);
 	}
 
@@ -433,7 +424,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickedOvertimeWorkButton()
 	{
-		// Toggle overtime work
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
 	}
@@ -509,7 +499,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 	public void UpdateEnabledSkillBook()
 	{
 		if (PopupSkillsBtnImage == null) return;
-		// Skill book enabled state determined by seasonal system
 	}
 
 	private void OnClickedOptionBtn()
@@ -521,7 +510,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.InGameSystem == null) return;
-		// Trigger coin earn effect at distributor position
 	}
 
 	private void SubscribeSaleProduct()
@@ -533,7 +521,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void UpdatePauseSelling()
 	{
-		// Update distributor button soldout state
 		if (DistributorSoldoutObj != null) DistributorSoldoutObj.SetActive(false);
 	}
 
@@ -601,7 +588,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 		if (text_totalWorkerCount == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Worker count from seasonal user data
 	}
 
 	public void SetNoAds()
@@ -615,7 +601,6 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void UpdateNoAdsIcon()
 	{
-		// Set no-ads button icon/sale state
 		if (NoAdsSaleObj != null) NoAdsSaleObj.SetActive(false);
 	}
 

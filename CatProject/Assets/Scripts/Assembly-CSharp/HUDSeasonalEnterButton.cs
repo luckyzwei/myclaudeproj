@@ -107,7 +107,6 @@ public class HUDSeasonalEnterButton : MonoBehaviour
 	{
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.SeasonalSystem == null) return;
-		// Configure UI based on current season schedule
 	}
 
 	private void UpdateNotification()
@@ -161,13 +160,11 @@ public class HUDSeasonalEnterButton : MonoBehaviour
 	private void SetSeasonMainImage(string imageKey)
 	{
 		if (SeasonMainImage == null || string.IsNullOrEmpty(imageKey)) return;
-		// Load sprite from addressable by imageKey
 	}
 
 	private void SetSeasonMainIcon(string iconKey)
 	{
 		if (SeasonMainIcon == null || string.IsNullOrEmpty(iconKey)) return;
-		// Load sprite from addressable by iconKey
 	}
 
 	private void SetProgressInfo(int curStep, int maxStep)

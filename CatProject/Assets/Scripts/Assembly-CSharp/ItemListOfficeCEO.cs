@@ -111,7 +111,6 @@ public class ItemListOfficeCEO : MonoBehaviour
 	{
 		if (CompanyObj != null) CompanyObj.SetActive(false);
 		if (EmptyObj != null) EmptyObj.SetActive(true);
-		// Load company data from office index and set name/logo/grade
 	}
 
 	public void UpdateBuff()
@@ -127,7 +126,6 @@ public class ItemListOfficeCEO : MonoBehaviour
 	{
 		if (EmptyCeoObj != null) EmptyCeoObj.SetActive(true);
 		if (HaveCeoObj != null) HaveCeoObj.SetActive(false);
-		// Check if CEO is assigned to this office
 	}
 
 	public void Refresh()
@@ -145,16 +143,19 @@ public class ItemListOfficeCEO : MonoBehaviour
 
 	private void OnClickCeoHire()
 	{
-		// Open CEO hire popup for this office
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnClickStartNego()
 	{
-		// Start negotiation for strike resolution
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		RefreshList?.Invoke();
 	}
 
 	private void OnClickInNego()
 	{
-		// Continue in-progress negotiation
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

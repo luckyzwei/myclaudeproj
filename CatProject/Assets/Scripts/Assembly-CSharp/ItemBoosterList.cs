@@ -170,7 +170,6 @@ public class ItemBoosterList : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		// Activate booster
 		UpdateBoosterState();
 		return true;
 	}
@@ -194,7 +193,6 @@ public class ItemBoosterList : MonoBehaviour
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return null;
-		// Look up booster buff data by idx
 		return null;
 	}
 

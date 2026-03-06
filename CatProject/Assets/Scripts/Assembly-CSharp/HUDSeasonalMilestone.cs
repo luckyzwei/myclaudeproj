@@ -79,7 +79,6 @@ public class HUDSeasonalMilestone : MonoBehaviour
 				MilestoneTopRewardSlotList[i].gameObject.SetActive(false);
 			}
 		}
-		// Update progress slider
 		if (MilestoneStepRewardProgress != null && showStepList.Count > 0)
 			MilestoneStepRewardProgress.value = 0f;
 	}
@@ -87,12 +86,11 @@ public class HUDSeasonalMilestone : MonoBehaviour
 	private List<int> MakeTopProgressStepList()
 	{
 		var list = new List<int>();
-		// Build step list from milestone data
 		return list;
 	}
 
 	private void OnClickedMilestoneDetailPopupBtn()
 	{
-		// Open milestone detail popup
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMilestoneRewardClaim>();
 	}
 }

@@ -54,11 +54,6 @@ public class HudCardBoxComponent : MonoBehaviour
 
 	private void OnChangeOpenBox()
 	{
-		// Update box UI state when open count changes
-		if (keyCountObject != null && keyCountText != null)
-		{
-			// Show key count
-		}
 	}
 
 	private void OnClickBox()
@@ -96,7 +91,6 @@ public class HudCardBoxComponent : MonoBehaviour
 
 	private void SetOpenNow()
 	{
-		// Visual feedback for box opening
 	}
 
 	public void SetShow(bool show)
