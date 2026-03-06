@@ -109,48 +109,48 @@ public class PageRichAchieve : UIBase
 
 	private void SetRewards()
 	{
-		// Instantiate reward items from prefab into area_reward
 		list_rewardItems.Clear();
+		if (area_reward == null || pf_reward == null) return;
 	}
 
 	private void SetShop()
 	{
-		// Setup shop button state
+		if (btn_CashBtn != null) btn_CashBtn.gameObject.SetActive(true);
 	}
 
 	private void OnClickCashShop()
 	{
-		// Navigate to cash shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void RedrawRewardState()
 	{
-		// Update reward items visual state
 		for (int i = 0; i < list_rewardItems.Count; i++)
 		{
-			// Refresh each reward item
+			if (list_rewardItems[i] != null)
+				list_rewardItems[i].SetState();
 		}
 	}
 
 	private void OnClickInfo()
 	{
-		// Show rich achievement info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void RedrawMissionUnlock(int missionIdx)
 	{
-		// Update specific mission item to unlocked state
 		if (list_missionItems == null) return;
 		for (int i = 0; i < list_missionItems.Count; i++)
 		{
-			// Check and update mission unlock state
+			if (list_missionItems[i] != null)
+				list_missionItems[i].PlayUnlockAni();
 		}
 	}
 
 	private void InitScroll()
 	{
-		// Instantiate mission items from prefab into scroll
 		list_missionItems.Clear();
+		if (scroll == null || pf_scroll_item == null) return;
 	}
 
 	private void SetFocusScroll()

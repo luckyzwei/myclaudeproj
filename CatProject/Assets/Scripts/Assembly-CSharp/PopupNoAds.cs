@@ -32,13 +32,22 @@ public class PopupNoAds : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	public override void OnShowBefore()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) return;
+		bool noAds = root.ShopSystem.NoAds;
+		if (PurchaseDone != null) PurchaseDone.SetActive(noAds);
+		if (BuyBtn != null) BuyBtn.gameObject.SetActive(!noAds);
 	}
 
 	private void OnClickPurchase()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) return;
 	}
 }

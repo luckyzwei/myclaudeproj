@@ -147,7 +147,7 @@ public class PagePlantList : UIBase
 
 	private void OnClickPlantManage(int plant_idx)
 	{
-		// Open plant manage page for selected plant
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PagePlantManage>();
 	}
 
 	private void OnClickBefore()
@@ -170,27 +170,27 @@ public class PagePlantList : UIBase
 
 	private void OnClickBuyTonic()
 	{
-		// Navigate to tonic purchase shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickGotoShop()
 	{
-		// Navigate to shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickRoulette()
 	{
-		// Navigate to roulette
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageRoulette>();
 	}
 
 	private void OnClickDailyQuest()
 	{
-		// Navigate to daily quest
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMission>();
 	}
 
 	private void OnClickInfo()
 	{
-		// Show plant info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PagePlantInfo>();
 	}
 
 	private void OnDestroy()

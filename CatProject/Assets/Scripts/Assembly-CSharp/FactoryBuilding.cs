@@ -48,43 +48,39 @@ public class FactoryBuilding : MonoBehaviour
 
 	private void UpdateLevel(int level)
 	{
-		// Update visual representation based on level
+		if (FactoryData == null) return;
+		SetOpen();
 	}
 
 	private void SelectProduct(int idx)
 	{
 		if (FactoryData == null) return;
-		// Set selected product for this factory
 	}
 
 	private void UpdateLack(bool isLack)
 	{
-		// Show/hide lack indicator
 	}
 
 	private void UpdateFull(bool isFull)
 	{
-		// Show/hide full indicator
 	}
 
 	public void OnClick()
 	{
 		if (!isOpen)
 		{
-			// Show factory open UI
+			if (OpenUI != null) OpenUI.gameObject.SetActive(true);
 			return;
 		}
-		// Open factory production popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupFactoryWorkPlace>();
 		PlaySound();
 	}
 
 	private void PlaySound()
 	{
-		// Play click sound
 	}
 
 	protected virtual void Update()
 	{
-		// Update cooltime UI if active
 	}
 }

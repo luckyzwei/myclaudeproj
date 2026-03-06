@@ -181,14 +181,14 @@ public class PopupRewardDetail : UIBase
 	{
 		if (BuffRoot == null) return;
 		BuffRoot.SetActive(true);
-		// Set buff icon and description from buff table
+		if (BuffDesc != null) BuffDesc.text = "";
 	}
 
 	private void SetBuffAreaForObject(int idx)
 	{
 		if (BuffRoot == null) return;
 		BuffRoot.SetActive(true);
-		// Set buff area for buff object
+		if (BuffDesc != null) BuffDesc.text = "";
 	}
 
 	private void SetCompanyArea(int idx)
@@ -202,27 +202,27 @@ public class PopupRewardDetail : UIBase
 
 	private void SetCarArea(int idx)
 	{
-		// Set car info display
+		if (BottomDescText != null) BottomDescText.gameObject.SetActive(true);
 	}
 
 	private void SetItemArea(int idx)
 	{
-		// Set item info display
+		if (BottomDescText != null) BottomDescText.gameObject.SetActive(true);
 	}
 
 	private void SetTarotTicketArea(int idx)
 	{
-		// Set tarot ticket info display
+		if (BottomDescText != null) BottomDescText.gameObject.SetActive(true);
 	}
 
 	private void SetManagerCardArea(int managerGrade)
 	{
-		// Set manager card info by grade
+		if (BottomDescText != null) BottomDescText.gameObject.SetActive(true);
 	}
 
 	private void SetCeoCostumeArea(int rewardIdx)
 	{
-		// Set CEO costume preview
+		if (BottomDescText != null) BottomDescText.gameObject.SetActive(true);
 	}
 
 	public void SetTopTitleText(string tarotStr)
@@ -232,7 +232,7 @@ public class PopupRewardDetail : UIBase
 
 	private void OnClickMissionMilestoneShortcut()
 	{
-		// Navigate to mission milestone page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMission>();
 	}
 }

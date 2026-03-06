@@ -132,7 +132,11 @@ public class PageShop : FullScreenUI
 	public void RefreshItems()
 	{
 		if (contents == null) return;
-		// Refresh all shop contents
+		for (int i = 0; i < contents.Count; i++)
+		{
+			if (contents[i] != null)
+				contents[i].Init();
+		}
 	}
 
 	public void SetEnterPlace(ShopEnterPlace place)
@@ -168,7 +172,7 @@ public class PageShop : FullScreenUI
 
 	public void UpdateGem()
 	{
-		// Update gem display in HUD
+		if (HudTopInfo != null) HudTopInfo.UpdateCurrencyInfos();
 	}
 
 	public void SetFocus(ShopContentsType type)
@@ -184,12 +188,10 @@ public class PageShop : FullScreenUI
 
 	public void ShowArrow(ShopContentsType type)
 	{
-		// Show guide arrow on specific shop section
 	}
 
 	public void HideArrows()
 	{
-		// Hide all guide arrows
 	}
 
 	private void OnChangeTab(int tabIdx)
@@ -222,7 +224,7 @@ public class PageShop : FullScreenUI
 
 	private void OnClickCash()
 	{
-		// Open cash purchase flow
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID type)

@@ -50,17 +50,22 @@ public class HUDBase : HUDAniBase
 
 	protected void SetDayTime()
 	{
-		// Initialize day time display
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+		UpdateDayStatus(root.DaySystem.CurTimeStatus.Value);
 	}
 
 	protected void UpdateDayStatus(DaySystem.DayStatus status)
 	{
-		// Update time icon based on day status (day/evening/night)
+		if (TimeIcon == null) return;
+		// Time icon sprite set based on status
 	}
 
 	protected void UpdateDayTime()
 	{
-		// Update time text display
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+		UpdateDayStatus(root.DaySystem.CurTimeStatus.Value);
 	}
 
 	public void StartPowerEffect(int region)
@@ -71,7 +76,8 @@ public class HUDBase : HUDAniBase
 
 	public void EndPowerEffect(int region, bool direct = false)
 	{
-		// End power effect on currency HUD
+		if (CurrencyHud != null)
+			CurrencyHud.HidePowerEffect(region, direct);
 	}
 
 	public void StartMoneyEffect(int region)
@@ -82,7 +88,8 @@ public class HUDBase : HUDAniBase
 
 	public void EndMoneyEffect(int region)
 	{
-		// End money effect on currency HUD
+		if (CurrencyHud != null)
+			CurrencyHud.HideMoneyEffect(region);
 	}
 
 	public Vector3 GetHUDWorldPos(Config.CurrencyID type)
@@ -112,6 +119,7 @@ public class HUDBase : HUDAniBase
 
 	public void SetTempLevel(int value = -1)
 	{
-		// Temporarily override level display
+		if (CurrencyHud != null && value >= 0)
+			CurrencyHud.SetTempLevelText(value);
 	}
 }

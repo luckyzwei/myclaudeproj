@@ -79,7 +79,7 @@ public class PopupPiggyBank : UIBase
 
 	private void OnClickLevelInfo()
 	{
-		// Show piggy bank level info page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnDestroy()

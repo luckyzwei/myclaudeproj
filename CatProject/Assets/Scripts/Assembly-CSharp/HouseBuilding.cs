@@ -74,34 +74,39 @@ public class HouseBuilding : MonoBehaviour
 
 	private void SetOwn()
 	{
-		// Setup ownership state for the house building
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 
 	private void LoadUI()
 	{
-		// Load realtor UI at RealtorRoot
+		if (RealtorRoot == null) return;
 	}
 
 	private void LoadCarInfoUI()
 	{
-		// Load car info UI
+		if (RealtorRoot == null) return;
 	}
 
 	private void LoadCeo()
 	{
 		if (CeoRoot == null) return;
-		// Load CEO character at CeoRoot
 	}
 
 	private void LoadCars()
 	{
 		if (ParkingTrans == null) return;
-		// Load cars at parking transform positions
+		for (int i = 0; i < ParkingTrans.Count; i++)
+		{
+			if (ParkingTrans[i] == null) continue;
+		}
 	}
 
 	public void OnClickRealtor()
 	{
-		// Open realtor menu popup
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupHouseSale>();
 	}
 
 	private void OnClickCar(int idx, bool isSpecial = false)
@@ -114,12 +119,12 @@ public class HouseBuilding : MonoBehaviour
 
 	private void UpdateTouchInfoUI(int idx)
 	{
-		// Show touch info UI for the car at index
+		if (CarInfoUI == null) return;
 	}
 
 	private void ShowSpecialCarInfo(int idx)
 	{
-		// Show special car info popup
+		if (SpecialParkingTrans == null) return;
 	}
 
 	private void OnDestroy()

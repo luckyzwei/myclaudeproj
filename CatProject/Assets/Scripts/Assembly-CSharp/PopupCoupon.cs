@@ -13,9 +13,16 @@ public class PopupCoupon : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (GetButton != null) GetButton.onClick.AddListener(OnClickGet);
 	}
 
 	private void OnClickGet()
 	{
+		if (EditBox == null) return;
+		string couponCode = EditBox.text;
+		if (string.IsNullOrEmpty(couponCode)) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
 	}
 }

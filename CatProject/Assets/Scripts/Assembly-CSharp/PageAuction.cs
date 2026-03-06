@@ -314,12 +314,12 @@ public class PageAuction : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show auction info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickManagerInfo()
 	{
-		// Show manager info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void CheckResult()
@@ -475,12 +475,12 @@ public class PageAuction : UIBase
 
 	private void OnClickStaminaShop()
 	{
-		// Open stamina shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickGemShop()
 	{
-		// Open gem shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public override void Hide()

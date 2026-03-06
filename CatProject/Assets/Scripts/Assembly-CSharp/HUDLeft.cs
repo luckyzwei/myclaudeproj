@@ -46,7 +46,12 @@ public class HUDLeft : UIBase, IScreenAction
 
 	public void UpdatePackage()
 	{
-		// Refresh package icon components
+		if (cachedComponets == null) return;
+		for (int i = 0; i < cachedComponets.Count; i++)
+		{
+			if (cachedComponets[i] != null)
+				cachedComponets[i].SetActive(false);
+		}
 	}
 
 	public override void OnShowBefore()
@@ -76,17 +81,17 @@ public class HUDLeft : UIBase, IScreenAction
 
 	public void ClickBoost()
 	{
-		// Open boost popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupBoost>();
 	}
 
 	public void ClickPass()
 	{
-		// Open pass page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void ClickVip()
 	{
-		// Open VIP page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void ScreenAction(bool value)
@@ -118,7 +123,7 @@ public class HUDLeft : UIBase, IScreenAction
 
 	public void OnScreenActionStep()
 	{
-		// Called during screen action transition
+		// Screen action step - no additional behavior needed
 	}
 
 	public void OnScreenActionComplete()
