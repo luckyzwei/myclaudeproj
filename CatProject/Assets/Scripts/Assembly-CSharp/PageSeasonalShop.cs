@@ -48,38 +48,62 @@ public class PageSeasonalShop : FullScreenUI
 
 	public override void OnShowBefore()
 	{
+		disposables = new CompositeDisposable();
+		UpdateMachineCoin();
+		RefreshItems();
+		Focus();
 	}
 
 	private void UpdateMachineCoin()
 	{
+		if (MachineCoinText != null) MachineCoinText.text = "0";
 	}
 
 	public void RefreshItems()
 	{
+		// Refresh all shop content items
 	}
 
 	public void SetEnterPlace(ShopEnterPlace place)
 	{
+		switch (place)
+		{
+			case ShopEnterPlace.gem:
+				SetFocusContents(ShopContentsType.Gem);
+				break;
+			default:
+				SetFocusContents(ShopContentsType.SlotMachineCoin);
+				break;
+		}
 	}
 
 	private void Focus()
 	{
+		if (FocusContents == ShopContentsType.None) return;
+		SetFocus(FocusContents);
 	}
 
 	public void UpdateGem()
 	{
+		// Update gem display in HUD
 	}
 
 	public void SetFocusContents(ShopContentsType type)
 	{
+		FocusContents = type;
 	}
 
 	public void SetFocus(ShopContentsType type)
 	{
+		FocusContents = type;
+		// Scroll to focused content section
+		if (ShopScroll != null)
+			ShopScroll.normalizedPosition = new UnityEngine.Vector2(0f, 1f);
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	public override void OnHideAfter()
@@ -88,14 +112,18 @@ public class PageSeasonalShop : FullScreenUI
 
 	public override void OnHideBefore()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	public Vector3 GetHUDWorldPos(E_CurrencyType type)
 	{
+		if (MachineCoinTrans != null && type == E_CurrencyType.SlotMachineCoin)
+			return MachineCoinTrans.position;
 		return default(Vector3);
 	}
 }

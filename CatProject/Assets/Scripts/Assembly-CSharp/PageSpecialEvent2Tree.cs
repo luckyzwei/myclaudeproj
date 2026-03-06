@@ -43,53 +43,78 @@ public class PageSpecialEvent2Tree : UIBase, ILocalizeRefresh
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (GetItemBtn != null) GetItemBtn.onClick.AddListener(OnClickGetItem);
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
+		if (PassBtn != null) PassBtn.onClick.AddListener(OnClickPass);
 	}
 
 	public override void OnShowBefore()
 	{
+		InitPage();
 	}
 
 	public override void OnRefresh()
 	{
+		InitPage();
 	}
 
 	private void InitPage()
 	{
+		SetTitleText();
+		UpdateDeco(false);
+		if (Point2xNotiObj != null) Point2xNotiObj.SetActive(false);
 	}
 
 	private void SetTitleText()
 	{
+		if (TitleText != null) TitleText.text = TitleName ?? "";
 	}
 
 	public void UpdateDeco(bool showEffect = false)
 	{
+		if (DecoItemList == null) return;
+		for (int i = 0; i < DecoItemList.Length; i++)
+		{
+			// Update deco item state
+		}
 	}
 
 	private void OnClickInfo()
 	{
+		// Show event info popup
 	}
 
 	private void OnClickGetItem()
 	{
+		// Get event item
 	}
 
 	private void OnClickReward()
 	{
+		// Show reward popup
 	}
 
 	private void OnClickPass()
 	{
+		// Navigate to pass page
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	public void RefreshText()
 	{
+		SetTitleText();
 	}
 }

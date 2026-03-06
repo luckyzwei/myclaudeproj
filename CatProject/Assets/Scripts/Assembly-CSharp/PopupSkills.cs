@@ -40,6 +40,9 @@ public class PopupSkills : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		Disposables = new CompositeDisposable();
+		SeasonalSkillSlots = new List<ItemSeasonalSkill>();
 	}
 
 	public override void OnShowBefore()
@@ -52,38 +55,58 @@ public class PopupSkills : UIBase
 
 	public void Init(E_SkillBookAbilityType focusAbilityType)
 	{
+		IsSkillLeveledUp = false;
+		SetSkillList(focusAbilityType);
+		SetPackageBanner();
 	}
 
 	private void SetGeneralSkillBookIconImage(string imgKey)
 	{
+		if (GeneralSkillBookIconImg == null || string.IsNullOrEmpty(imgKey)) return;
+		Sprite sprite = Resources.Load<Sprite>(imgKey);
+		if (sprite != null) GeneralSkillBookIconImg.sprite = sprite;
 	}
 
 	private void SetGeneralSkillBookCountText(BigInteger hasValue_PerMile)
 	{
+		if (GeneralSkillBookCountText != null)
+			GeneralSkillBookCountText.text = ProjectUtility.GetThousandCommaText(hasValue_PerMile);
 	}
 
 	private void SetSkillList(E_SkillBookAbilityType focusAbilityType)
 	{
+		SeasonalSkillSlots.Clear();
+		// Instantiate skill slots from prefab and init each with skill data
+		if (SkillBookGeneralObj != null) SkillBookGeneralObj.SetActive(bUseGeneralSkillBook);
 	}
 
 	private void ShowSkillBookPackage()
 	{
+		// Show skill book purchase package
 	}
 
 	public GameObject GetFirstUnlockSkillButton()
 	{
+		for (int i = 0; i < SeasonalSkillSlots.Count; i++)
+		{
+			if (SeasonalSkillSlots[i] != null && SeasonalSkillSlots[i].GetSkillUnlockBtn != null)
+				return SeasonalSkillSlots[i].GetSkillUnlockBtn.gameObject;
+		}
 		return null;
 	}
 
 	private void SetPackageBanner()
 	{
+		if (PackageBanner != null) PackageBanner.gameObject.SetActive(false);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 }
