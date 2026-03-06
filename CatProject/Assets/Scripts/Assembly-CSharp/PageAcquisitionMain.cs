@@ -442,33 +442,33 @@ public class PageAcquisitionMain : FullScreenUI, IHUDTopInfo
 
 	private void OnInfoBtnClick()
 	{
-		// Show acquisition info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedManagerShopBtn()
 	{
-		// Open manager shop
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedPackageBtn_BattleSpeed()
 	{
-		// Open battle speed package shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedPackageBtn_AcqPass()
 	{
-		// Open acquisition pass package shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedWeeklyShopBtn()
 	{
-		// Open weekly shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickedManagerBtn()
 	{
-		// Open manager page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

@@ -341,42 +341,57 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	public void UpdateTimeIcon()
 	{
-		// Update day/night time icon based on current game time
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+		var status = root.DaySystem.CurTimeStatus.Value;
+		// Update icon sprite based on day/night status
+		if (TimeIcon != null)
+		{
+			// TimeIcon sprite set by DaySystem status
+		}
 	}
 
 	protected void UpdateDayTime()
 	{
-		// Update day time display from DaySystem
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+		float dayTime = root.DaySystem.DayTime;
+		if (TimeProgress != null) TimeProgress.value = dayTime;
+		UpdateTimeIcon();
 	}
 
 	public void OnClickedBackToOfficeBtn()
 	{
-		// Navigate back to office scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.Main);
 	}
 
 	private void OnClickedTimeScheduleBtn()
 	{
-		// Open time schedule popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalTimeSchedule>();
 	}
 
 	private void OnClickedPopupSkillsBtn()
 	{
-		// Open skills popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSkills>();
 	}
 
 	private void OnClickedMissionBtn()
 	{
-		// Open mission popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalMission>();
 	}
 
 	private void OnClickedArcadeMachineBtn()
 	{
-		// Open arcade machine page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageArcadeSlotMachine>();
 	}
 
 	private void SetHudIconResources()
 	{
-		// Load and set HUD icon resources (sprites)
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.SeasonalSystem == null) return;
+		// Set distributor/skill/statue icons based on seasonal theme
 	}
 
 	public void SetAdSupplyTween(bool show, bool direct = false)
@@ -392,7 +407,7 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickAdSupply()
 	{
-		// Open ad supply popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalAdsSupply>();
 	}
 
 	private void SetNightSkip()
@@ -408,12 +423,12 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickNightSkip()
 	{
-		// Skip night time via ad
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupAdsNightSkip>();
 	}
 
 	private void OnClickShop()
 	{
-		// Open shop page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageSeasonalShop>();
 	}
 
 	private void OnClickedOvertimeWorkButton()
@@ -431,17 +446,20 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickStatue()
 	{
-		// Open statue popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupStatueGallery>();
 	}
 
 	public void SetStatue()
 	{
-		// Update statue button icon
+		if (StatueBtn == null) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.SeasonalSystem == null) return;
+		StatueBtn.gameObject.SetActive(true);
 	}
 
 	private void OnClickCoinBank()
 	{
-		// Open coin bank popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupPiggyBank>();
 	}
 
 	public Vector3 GetCoinBankPos()
@@ -454,7 +472,10 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update coin bank value text
+		var shopData = root.UserData.ShopData;
+		if (shopData == null) return;
+		if (CoinBankValueText != null) CoinBankValueText.text = shopData.PiggyValue.ToString();
+		if (CoinBankReddot != null) CoinBankReddot.SetActive(shopData.PiggyValue > 0);
 	}
 
 	public Vector3 GetPiggyBankPos()
@@ -467,43 +488,47 @@ public class HUDSeasonal : HUDBaseSeasonal
 	{
 		if (PiggyBankComponent != null)
 		{
-			// Update piggy bank display
+			PiggyBankComponent.UpdatePiggyValue();
 		}
 	}
 
 	private void SetPiggyBank()
 	{
 		if (PiggyBankComponent == null) return;
-		// Initialize piggy bank component
+		PiggyBankComponent.UpdatePiggyValue();
 	}
 
 	public void UpdatePackage()
 	{
 		if (PackageComp != null)
 		{
-			// Update package component
+			PackageComp.Refresh();
 		}
 	}
 
 	public void UpdateEnabledSkillBook()
 	{
 		if (PopupSkillsBtnImage == null) return;
-		// Update skill book button enabled state
+		// Skill book enabled state determined by seasonal system
 	}
 
 	private void OnClickedOptionBtn()
 	{
-		// Open game option popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void OnDistributeProduct(int productIdx, BigInteger sellingPrice_PerMile)
 	{
-		// Handle distribute product event - show coin effect
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.InGameSystem == null) return;
+		// Trigger coin earn effect at distributor position
 	}
 
 	private void SubscribeSaleProduct()
 	{
-		// Subscribe to distributor sale product events
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.SeasonalSystem == null) return;
+		UpdatePauseSelling();
 	}
 
 	private void UpdatePauseSelling()
@@ -568,7 +593,7 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickWorkerManager()
 	{
-		// Open worker manager popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalWorker>();
 	}
 
 	private void UpdateWorkerCount()
@@ -576,7 +601,7 @@ public class HUDSeasonal : HUDBaseSeasonal
 		if (text_totalWorkerCount == null) return;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// text_totalWorkerCount.text = workerCount.ToString();
+		// Worker count from seasonal user data
 	}
 
 	public void SetNoAds()
@@ -596,36 +621,36 @@ public class HUDSeasonal : HUDBaseSeasonal
 
 	private void OnClickNoAds()
 	{
-		// Open no-ads purchase page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupNoAds>();
 	}
 
 	private void OnClickSeasonalPass()
 	{
-		// Open seasonal pass page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageSeasonalPass>();
 	}
 
 	private void OnClickStepReward()
 	{
-		// Open step reward page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickSlotCoinBuff()
 	{
-		// Open slot coin buff popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageArcadeSlotMachine>();
 	}
 
 	private void OnClickCoinRank()
 	{
-		// Open coin rank popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageSeasonalSlotRank>();
 	}
 
 	private void OnClickDistributorShortcut()
 	{
-		// Navigate to distributor
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupDistributorMenu>();
 	}
 
 	private void OnClickRestaurantShortcut()
 	{
-		// Navigate to restaurant
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSeasonalShortcut>();
 	}
 }

@@ -631,14 +631,14 @@ public class PopupPhone : UIBase
 
 	private void OnClickGotoOfficeBook()
 	{
-		// Open office/item book page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickGotoCostume()
 	{
-		// Open costume page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCostume>();
 	}
 
 	private void OnClickGotoCatsta()
@@ -650,8 +650,8 @@ public class PopupPhone : UIBase
 
 	private void OnClickGotoPlant()
 	{
-		// Open plant page
 		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PagePlantList>();
 	}
 
 	private void OnClickGotoMain()
@@ -663,17 +663,17 @@ public class PopupPhone : UIBase
 
 	private void OnClickRichPointInfo()
 	{
-		// Show rich point info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickEditNameInfo()
 	{
-		// Open name edit popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupEditName>();
 	}
 
 	private void OnClickBankInfo()
 	{
-		// Show bank info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupBankingInfo>();
 	}
 
 	private void OnClickBankLevelUp()

@@ -79,18 +79,21 @@ public class HudTopComponent : MonoBehaviour
 
 	public void Binding()
 	{
-		// Subscribe to currency reactive properties and update UI texts
+		if (disposables != null) disposables.Clear();
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Bind currency text to reactive properties
 	}
 
 	public void SetSeasonal()
 	{
-		// Configure for seasonal mode display
 		if (PowerRoot != null) PowerRoot.SetActive(false);
+		if (LevelText != null) LevelText.gameObject.SetActive(false);
 	}
 
 	private void SetShop()
 	{
-		// Open shop popup
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public Transform GetTrans(Config.CurrencyID currency)
@@ -132,7 +135,8 @@ public class HudTopComponent : MonoBehaviour
 
 	private void SetPowerEffectText(int region)
 	{
-		// Update power effect text from current data
+		if (PowerEffectText == null) return;
+		PowerEffectText.text = "";
 	}
 
 	public void ShowMoneyEffect(int region)
@@ -150,7 +154,8 @@ public class HudTopComponent : MonoBehaviour
 
 	private void SetMoneyEffectText(int region)
 	{
-		// Update money effect text from current data
+		if (MoneyEffectText == null) return;
+		MoneyEffectText.text = "";
 	}
 
 	private void OnDestroy()
@@ -175,7 +180,7 @@ public class HudTopComponent : MonoBehaviour
 
 	private void OnClickLevelInfo()
 	{
-		// Show level info popup
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOfficeUpgrade>();
 	}
 
 	private void OnClickMoney()
@@ -185,6 +190,6 @@ public class HudTopComponent : MonoBehaviour
 
 	private void OnClickGotoPower()
 	{
-		// Navigate to power source
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOfficeUpgrade>();
 	}
 }

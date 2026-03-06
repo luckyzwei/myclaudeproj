@@ -446,22 +446,22 @@ public class PageMiniGame_Dig : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show dig game info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickMission()
 	{
-		// Show mission popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMission>();
 	}
 
 	private void OnClickShop()
 	{
-		// Show shop popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickExchangeShop()
 	{
-		// Show exchange shop popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupEventExchange>();
 	}
 
 	public static float GetInverseScaleFactor(Vector2 size, float minSize, float maxSize, float minScale, float maxScale)

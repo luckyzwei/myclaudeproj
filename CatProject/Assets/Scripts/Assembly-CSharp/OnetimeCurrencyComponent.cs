@@ -153,22 +153,23 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	private void SubscribeComponent()
 	{
-		// Subscribe to one-time event system changes
+		if (disposables != null) disposables.Clear();
+		// Subscriptions to OneTimeEventSystem currency changes go here
 	}
 
 	private void UpdateOneTimeHUDIcon()
 	{
-		// Update HUD icon from OneTimeEventSystem
+		if (oneTimeUIRoot != null) oneTimeUIRoot.SetActive(isActive);
 	}
 
 	private void UpdateCurrencyIcon()
 	{
-		// Update currency icon from OneTimeEventSystem
+		if (rootObj != null) rootObj.SetActive(isActive);
 	}
 
 	public void UpdateCompanyResetCount()
 	{
-		// Update company reset count display
+		UpdateCurrencyCount();
 	}
 
 	public void UpdateReddot()
@@ -185,7 +186,8 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	private void UpdateRemainTime()
 	{
-		// Update remain time text from OneTimeEventSystem.RemainEndTime
+		if (oneTimeRemainTime == null) return;
+		oneTimeRemainTime.text = "";
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitHUD_003Ed__33))]
@@ -225,7 +227,7 @@ public class OnetimeCurrencyComponent : MonoBehaviour
 
 	private void OnClickOneTime()
 	{
-		// Open one-time event page
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOneTimeEventOpen>();
 	}
 
 	private void Unscribe()

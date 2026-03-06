@@ -122,31 +122,31 @@ public static class GameShortCutHelper
 
 	private static void ShowContentsNotOpen()
 	{
-		// Show "contents not open" toast
+		PopupToastmessage.OpenToast("contents_not_open");
 	}
 
 	private static void ShowHasNoCarStore()
 	{
-		// Show "no car store" toast
+		PopupToastmessage.OpenToast("has_no_car_store");
 	}
 
 	private static void ShowHasNoCar()
 	{
-		// Show "no car" toast
+		PopupToastmessage.OpenToast("has_no_car");
 	}
 
 	private static void ShowTarotCoolTime()
 	{
-		// Show "tarot cooltime" toast
+		PopupToastmessage.OpenToast("tarot_cooltime");
 	}
 
 	private static void ShowHasNoUpgradeOfficeItem()
 	{
-		// Show "no upgrade office item" toast
+		PopupToastmessage.OpenToast("has_no_upgrade_office_item");
 	}
 
 	private static void ShowHasNoUpgradeCompany()
 	{
-		// Show "no upgrade company" toast
+		PopupToastmessage.OpenToast("has_no_upgrade_company");
 	}
 }

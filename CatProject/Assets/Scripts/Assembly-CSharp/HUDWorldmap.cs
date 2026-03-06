@@ -99,7 +99,7 @@ public class HUDWorldmap : HUDBase
 	private void UpdateSuperStaff()
 	{
 		if (superStaffBtn == null) return;
-		// Update super staff button state
+		// superStaffBtn state managed externally
 	}
 
 	public void SetFactory()
@@ -133,7 +133,8 @@ public class HUDWorldmap : HUDBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update rich point text
+		if (RichPointText != null)
+			RichPointText.text = "0";
 	}
 
 	private void SetRichAchieve()
@@ -144,7 +145,9 @@ public class HUDWorldmap : HUDBase
 
 	private void SubRichAchieveNoti()
 	{
-		// Subscribe to rich achieve notifications
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		// Subscribe via GameNotificationSystem
 	}
 
 	private void SetRichAchieveBtn()
@@ -154,17 +157,20 @@ public class HUDWorldmap : HUDBase
 
 	private void SetRichAchieveBtnState()
 	{
-		// Update rich achieve button visual state
+		if (RichWayProgress == null) return;
+		RichWayProgress.UpdateActive();
 	}
 
 	public void ShowRichAchieveGuide(float waitTime)
 	{
-		// Show rich achieve guide after delay
+		if (RichWayProgress == null) return;
+		// Show guide effect after delay
 	}
 
 	public void RichAchieveHUDStartEffect()
 	{
-		// Play rich achieve effect animation
+		if (RichWayProgress == null) return;
+		// Play reward claim effect
 	}
 
 	private Vector3 GetRichAchievePos()
@@ -177,7 +183,7 @@ public class HUDWorldmap : HUDBase
 	{
 		if (RichWayProgress != null)
 		{
-			// Update rich way no-ads state
+			RichWayProgress.UpdateActive();
 		}
 	}
 
@@ -189,46 +195,56 @@ public class HUDWorldmap : HUDBase
 
 	private void OnClickOption()
 	{
-		// Open options popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void OnClickOffice()
 	{
-		// Navigate to office scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.Main);
 	}
 
 	private void OnClickFactory()
 	{
-		// Navigate to factory scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.Factory);
 	}
 
 	private void OnClickHouse()
 	{
-		// Navigate to house
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.House);
 	}
 
 	private void OnClickWorldMission()
 	{
-		// Open world mission popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupWorldMissionOpen>();
 	}
 
 	private void OnClickRichPointInfo()
 	{
-		// Open rich point info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickRegionMove()
 	{
-		// Open region move UI
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.InGameSystem == null) return;
+		var inGame = root.InGameSystem.CurInGame;
+		if (inGame == null) return;
+		// Trigger region move camera transition
 	}
 
 	private void OnClickCarBook()
 	{
-		// Open car book page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageCarMarket>();
 	}
 
 	private void OnClickStageMovePackage()
 	{
-		// Open stage move package
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

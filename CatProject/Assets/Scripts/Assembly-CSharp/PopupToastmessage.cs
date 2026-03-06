@@ -33,32 +33,52 @@ public class PopupToastmessage : UIBase
 
 	public static void OpenToast(string _title, string _desc)
 	{
-		// Static toast open - uses UI system to show toast popup
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupToastmessage>((popup) =>
+		{
+			if (popup != null) popup.Show(_title, _desc);
+		});
 	}
 
 	public static void OpenToast(string _descKey, bool isShowImmediately = true)
 	{
-		// Static toast open with localized key
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupToastmessage>((popup) =>
+		{
+			if (popup != null) popup.SetText(_descKey);
+		});
 	}
 
 	public static void OpenToast(string _descKey, bool isShowImmediately = true, params object[] args)
 	{
-		// Static toast open with localized key and format args
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupToastmessage>((popup) =>
+		{
+			if (popup != null) popup.SetText(_descKey, args);
+		});
 	}
 
 	public static void OpenToastByString(string descStr, bool isShowImmediately = true)
 	{
-		// Static toast open with raw string
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupToastmessage>((popup) =>
+		{
+			if (popup != null) popup.SetText(descStr);
+		});
 	}
 
 	public static void OpenToast_ZoneOpen(int zoneIdx, string localizeKey)
 	{
-		// Toast for zone unlock notification
+		OpenToast(localizeKey);
 	}
 
 	public static void OpenToast_PurchaseFail(bool bShowImmediately = true)
 	{
-		// Toast for purchase failure
+		OpenToast("purchase_fail", bShowImmediately);
 	}
 
 	public void Show(string _title, string _desc)

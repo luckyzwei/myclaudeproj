@@ -223,32 +223,32 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 
 	private void OnClickRouletteBonusButton()
 	{
-		// Open roulette bonus popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickRouletteRatioButton()
 	{
-		// Show roulette ratio info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickEventInfoButton()
 	{
-		// Show event info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickAttendanceButton()
 	{
-		// Open attendance check popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupEventAttendance>();
 	}
 
 	private void OnClickPackageButton()
 	{
-		// Open event package shop
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickMissionButton()
 	{
-		// Open event mission popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupEventMission>();
 	}
 
 	private void OnStartSpin()

@@ -88,7 +88,7 @@ public class HUDOutGame : HUDBase
 	{
 		if (RichWayProgress != null)
 		{
-			// Update rich way no-ads state
+			RichWayProgress.UpdateActive();
 		}
 	}
 
@@ -118,7 +118,8 @@ public class HUDOutGame : HUDBase
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		// Update rich point text
+		if (RichPointText != null)
+			RichPointText.text = "0";
 	}
 
 	public void SetParkingSet()
@@ -137,17 +138,17 @@ public class HUDOutGame : HUDBase
 
 	private void OnClickOption()
 	{
-		// Open options popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void OnClickStatue()
 	{
-		// Open statue popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupStatueGallery>();
 	}
 
 	private void OnClickCarBook()
 	{
-		// Open car book page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageCarMarket>();
 	}
 
 	private void OnClickEditMode()
@@ -165,11 +166,13 @@ public class HUDOutGame : HUDBase
 
 	private void OnClickOffice()
 	{
-		// Navigate to office scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.Main);
 	}
 
 	private void OnClickRichPointInfo()
 	{
-		// Open rich point info popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

@@ -302,32 +302,36 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickMultiRevenue()
 	{
-		// Open multi-revenue popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickWorldMapShortCutBtn()
 	{
-		// Navigate to world map scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.WorldMap);
 	}
 
 	private void OnClickOfficeShortCutBtn()
 	{
-		// Navigate to office scene
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null && root.InGameSystem != null)
+			root.InGameSystem.ChangeMode(GameType.Main);
 	}
 
 	private void OnClickStorage()
 	{
-		// Open factory storage popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupFactoryStorage>();
 	}
 
 	private void OnClickProcess()
 	{
-		// Open factory process popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupFactoryWorkPlace>();
 	}
 
 	private void OnClickOrder()
 	{
-		// Open factory order popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupFactoryOrder>();
 	}
 
 	private void SetShop()
@@ -337,12 +341,13 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickShop()
 	{
-		// Open shop page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	public void UpdatePackage()
 	{
-		// Update package component
+		if (PackageComp != null) PackageComp.Refresh();
+		if (ShopSaleComp != null) ShopSaleComp.Set();
 	}
 
 	private void SetDailyQuest()
@@ -352,7 +357,7 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickDailyQuest()
 	{
-		// Open daily quest popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMission>();
 	}
 
 	private void SetPiggyBank()
@@ -375,7 +380,7 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickPiggyBank()
 	{
-		// Open piggy bank popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupPiggyBank>();
 	}
 
 	public void SetNoAds()
@@ -394,7 +399,7 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickNoAds()
 	{
-		// Open no-ads purchase page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupNoAds>();
 	}
 
 	public void SetGemPass()
@@ -406,12 +411,12 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickGemPass()
 	{
-		// Open gem pass page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickOption()
 	{
-		// Open options popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupOption>();
 	}
 
 	private void SetRoulette()
@@ -421,7 +426,7 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void OnClickRoulette()
 	{
-		// Open roulette page
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageRoulette>();
 	}
 
 	public Vector3 GetPiggyPos()

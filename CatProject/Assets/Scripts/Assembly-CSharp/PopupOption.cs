@@ -89,32 +89,41 @@ public class PopupOption : UIBase
 
 	private void OnClickCoupon()
 	{
-		// Open coupon input popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCoupon>();
 	}
 
 	private void OnClickVibration(bool isOn)
 	{
-		// Save vibration setting
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		PlayerPrefs.SetInt("Vibration", isOn ? 1 : 0);
+		PlayerPrefs.Save();
 	}
 
 	private void OnClickEffect(bool isOn)
 	{
-		// Save sound effect setting
+		PlayerPrefs.SetInt("SoundEffect", isOn ? 1 : 0);
+		PlayerPrefs.Save();
+		AudioListener.volume = isOn ? 1f : 0f;
 	}
 
 	private void OnClickBGM(bool isOn)
 	{
-		// Save BGM setting
+		PlayerPrefs.SetInt("BGM", isOn ? 1 : 0);
+		PlayerPrefs.Save();
 	}
 
 	private void OnClickSlowGraphic(bool isOn)
 	{
-		// Save slow graphic setting
+		PlayerPrefs.SetInt("SlowGraphic", isOn ? 1 : 0);
+		PlayerPrefs.Save();
 	}
 
 	private void OnClickRestore()
 	{
-		// Restore purchases
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) return;
+		// Trigger IAP restore via ShopSystem
 	}
 
 	private void SetLang()
@@ -126,14 +135,15 @@ public class PopupOption : UIBase
 
 	private void OnClickSelectLang(int index)
 	{
-		// Change language and refresh localization
+		PlayerPrefs.SetInt("Language", index);
+		PlayerPrefs.Save();
 	}
 
 	private void OnClickDataSave()
 	{
-		// Open data save/cloud save popup
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupDataSave>();
 	}
 
 	private void OnClickFAQ()
