@@ -49,10 +49,14 @@ public class ItemRegionMove : MonoBehaviour
 
 	private void Awake()
 	{
+		if (GoBtn != null) GoBtn.onClick.AddListener(OnClickRegionMove);
+		if (GoFactoryBtn != null) GoFactoryBtn.onClick.AddListener(OnClickFactory);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public void Set(int regionIdx)
 	{
+		curIdx = regionIdx;
 	}
 
 	public void OnClickRegionMove()
@@ -65,5 +69,6 @@ public class ItemRegionMove : MonoBehaviour
 
 	public void OnClickInfo()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

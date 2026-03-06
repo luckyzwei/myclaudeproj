@@ -25,10 +25,16 @@ public class PopupMiniGameMission : UIBase, IHUDTopInfo
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public void Init()
 	{
+		Disposables = new CompositeDisposable();
+		MissionItems = new List<ItemEventMission>();
+		InitHudTopInfo();
+		SetMissionItems();
+		SetRemainTimeText();
 	}
 
 	private void SetMissionItems()
@@ -41,10 +47,11 @@ public class PopupMiniGameMission : UIBase, IHUDTopInfo
 
 	private void InitHudTopInfo()
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
 	}
 
 	public HUDTopInfo GetHUDTopInfo()
 	{
-		return null;
+		return HUDTopInfo;
 	}
 }

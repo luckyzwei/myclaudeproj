@@ -32,21 +32,30 @@ public class ItemFactoryDailyReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
 	}
 
 	public void Set(int order)
 	{
+		CurOrder = order;
+		UpdateItem();
 	}
 
 	public void UpdateItem(bool isRewarded = false)
 	{
+		if (RewardActiveObj != null) RewardActiveObj.SetActive(!isRewarded);
+		if (RewardAfterObj != null) RewardAfterObj.SetActive(isRewarded);
 	}
 
 	private void UpdateReward(bool isContentsOpen, bool isStageOpen)
 	{
+		IsContentsOpen = isContentsOpen;
+		IsStageOpen = isStageOpen;
 	}
 
 	private void OnClickReward()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }

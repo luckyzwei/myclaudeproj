@@ -25,6 +25,8 @@ public class ItemOfficeManagerSkill : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ArrowBtn != null) ArrowBtn.onClick.AddListener(OnClickArrow);
+		if (InfoCloseBtn != null) InfoCloseBtn.onClick.AddListener(OnClickCloseInfo);
 	}
 
 	public void Set(int officeIdx)
@@ -37,9 +39,13 @@ public class ItemOfficeManagerSkill : MonoBehaviour
 
 	private void OnClickArrow()
 	{
+		isFold = !isFold;
+		if (ScrollAnim != null) ScrollAnim.SetBool("Fold", isFold);
 	}
 
 	private void OnClickCloseInfo()
 	{
+		isFold = true;
+		if (ScrollAnim != null) ScrollAnim.SetBool("Fold", true);
 	}
 }

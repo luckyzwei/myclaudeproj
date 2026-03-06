@@ -57,10 +57,14 @@ public class PopupFreecash : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (freecashBtn != null) freecashBtn.onClick.AddListener(OnClickFreecash);
+		if (refreshBtn != null) refreshBtn.onClick.AddListener(OnClickRefresh);
 	}
 
 	public void Init(ShopSystem.InAppPurchaseLocation enterPlace)
 	{
+		EnterPlace = enterPlace;
 	}
 
 	[AsyncStateMachine(typeof(_003CGiveRewardIfLinked_003Ed__6))]

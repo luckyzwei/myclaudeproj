@@ -40,10 +40,14 @@ public class ItemPiggyLvReward : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickGetReward);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickRewardInfo);
 	}
 
 	public void Set(int level)
 	{
+		Level = level;
+		UpdateStatus();
 	}
 
 	public void UpdateStatus()
@@ -52,9 +56,11 @@ public class ItemPiggyLvReward : MonoBehaviour
 
 	private void OnClickGetReward()
 	{
+		RewardCb?.Invoke();
 	}
 
 	private void OnClickRewardInfo()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

@@ -56,21 +56,34 @@ public class PopupStrike : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (HireBtn != null) HireBtn.onClick.AddListener(OnClickHire);
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgrade);
+		if (NegotiationBtn != null) NegotiationBtn.onClick.AddListener(OnClickNegotiation);
 	}
 
 	public void Set(int officeIdx, int companyIdx)
 	{
+		OfficeIdx = officeIdx;
+		CompanyIdx = companyIdx;
 	}
 
 	private void OnClickHire()
 	{
+		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnClickUpgrade()
 	{
+		Hide();
 	}
 
 	private void OnClickNegotiation()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.StrikeSystem == null) return;
+		root.StrikeSystem.SetNegotiation(OfficeIdx);
+		Hide();
 	}
 }

@@ -17,21 +17,27 @@ public class PopupCoinDCSlot : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (btnShortcut != null) btnShortcut.onClick.AddListener(OnClickShortcut);
 	}
 
 	public override void OnShowBefore()
 	{
+		SetPackageBanner();
 	}
 
 	public void SetVisibleShortcutBtn(bool visible)
 	{
+		if (btnShortcut != null) btnShortcut.gameObject.SetActive(visible);
 	}
 
 	private void SetPackageBanner()
 	{
+		if (PackageBanner != null) PackageBanner.gameObject.SetActive(false);
 	}
 
 	private void OnClickShortcut()
 	{
+		Hide();
 	}
 }

@@ -33,14 +33,19 @@ public class PopupSkillstoneShop : UIBase
 
 	public void Set(int managerIdx, Config.E_ShopInsufficientPlaceType insufficientPlaceType)
 	{
+		ManagerIdx = managerIdx;
+		InsufficientPlaceType = insufficientPlaceType;
+		InitHudTopInfo();
 	}
 
 	private void InitHudTopInfo()
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
 	}
 
 	private void UpdateHudTopInfo()
 	{
+		if (HUDTopInfo != null) HUDTopInfo.UpdateCurrencyInfos();
 	}
 
 	private void OnPurchaseFailed(RewardItemData cost)
@@ -49,5 +54,6 @@ public class PopupSkillstoneShop : UIBase
 
 	public override void OnHideBefore()
 	{
+		if (Disposable != null) { Disposable.Dispose(); Disposable = null; }
 	}
 }

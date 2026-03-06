@@ -43,14 +43,22 @@ public class PopupGuideMagicalTarot : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (NormalTab != null) NormalTab.onValueChanged.AddListener(isOn => { if (isOn) OnClickChangeTab(Tab.Normal); });
+		if (SpecialTab != null) SpecialTab.onValueChanged.AddListener(isOn => { if (isOn) OnClickChangeTab(Tab.Special); });
 	}
 
 	public override void OnShowBefore()
 	{
+		CurTab = Tab.Normal;
+		OnClickChangeTab(CurTab);
 	}
 
 	private void OnClickChangeTab(Tab tab)
 	{
+		CurTab = tab;
+		SetCardRatio();
+		SetRewardRatio();
 	}
 
 	private void SetCardRatio()

@@ -57,21 +57,29 @@ public class PopupNoAdsOneDay : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	public override void OnShowBefore()
 	{
+		inPurchase = false;
 	}
 
 	private void OnClickPurchase()
 	{
+		if (inPurchase) return;
+		inPurchase = true;
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

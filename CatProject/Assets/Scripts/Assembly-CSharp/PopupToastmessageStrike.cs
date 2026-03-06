@@ -21,21 +21,30 @@ public class PopupToastmessageStrike : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(OnClickConfirm);
 	}
 
 	public override void OnShowBefore()
 	{
+		timer = 0f;
+		isShowRemainTime = false;
 	}
 
 	public void SetActiveTime(bool isShow)
 	{
+		isShowRemainTime = isShow;
+		if (RemainTimeObj != null) RemainTimeObj.SetActive(isShow);
 	}
 
 	private void Update()
 	{
+		if (!isShowRemainTime) return;
+		timer += Time.deltaTime;
 	}
 
 	public void OnClickConfirm()
 	{
+		Hide();
 	}
 }

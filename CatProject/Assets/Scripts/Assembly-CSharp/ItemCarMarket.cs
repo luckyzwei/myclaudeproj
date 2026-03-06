@@ -67,18 +67,24 @@ public class ItemCarMarket : MonoBehaviour
 
 	private void Awake()
 	{
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickPurchase);
+		if (OwnBtn != null) OwnBtn.onClick.AddListener(OnClickGotoHouse);
 	}
 
 	public void Set(int carIdx, Action<int> buyCarCallback = null)
 	{
+		CarIdx = carIdx;
+		BuyCarCallback = buyCarCallback;
 	}
 
 	private void SetUnlockComponyBubble(int carIdx, bool isNew)
 	{
+		if (UnlockCompanyObj != null) UnlockCompanyObj.SetActive(isNew);
 	}
 
 	private void OnClickPurchase()
 	{
+		BuyCarCallback?.Invoke(CarIdx);
 	}
 
 	private void OnClickGotoHouse()

@@ -19,10 +19,15 @@ public class ItemAuctionManagerAdd : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickAdd);
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public void Set(int index)
 	{
+		RoundIndex = index;
+		if (RoundText != null) RoundText.text = (index + 1).ToString();
+		UpdateManager();
 	}
 
 	public void UpdateManager()
@@ -31,6 +36,7 @@ public class ItemAuctionManagerAdd : MonoBehaviour
 
 	private void OnClickInfo()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickAdd()

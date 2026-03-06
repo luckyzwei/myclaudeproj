@@ -79,14 +79,20 @@ public class ItemParkingSlot : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ParkingSlotButton != null)
+			ParkingSlotButton.onClick.AddListener(() => ClickCallback?.Invoke(CurParkingSpace));
 	}
 
 	public void Set(int zone, int space)
 	{
+		CurParkingZone = zone;
+		CurParkingSpace = space;
+		UpdateState();
 	}
 
 	public void UpdateState()
 	{
+		DrawStatus();
 	}
 
 	private void DrawStatus()
@@ -95,5 +101,6 @@ public class ItemParkingSlot : MonoBehaviour
 
 	public void SetSelect(bool isSelect)
 	{
+		if (SelectObj != null) SelectObj.SetActive(isSelect);
 	}
 }

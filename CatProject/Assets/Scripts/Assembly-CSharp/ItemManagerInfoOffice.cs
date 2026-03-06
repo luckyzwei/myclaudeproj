@@ -50,21 +50,28 @@ public class ItemManagerInfoOffice : MonoBehaviour
 
 	public void Awake()
 	{
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgradeBtn);
 	}
 
 	public void InitData(int managerIdx)
 	{
+		ManagerIdx = managerIdx;
+		IsMaxLevel = false;
 	}
 
 	public void UpdateStatus(ManagerCardData managerData)
 	{
+		if (managerData == null) return;
+		if (MaxLevelObj != null) MaxLevelObj.SetActive(IsMaxLevel);
 	}
 
 	private void OnClickUpgradeBtn()
 	{
+		if (IsMaxLevel) return;
 	}
 
 	private void ShowLevelUpEffect()
 	{
+		if (LevelUpEffect != null) LevelUpEffect.SetActive(true);
 	}
 }

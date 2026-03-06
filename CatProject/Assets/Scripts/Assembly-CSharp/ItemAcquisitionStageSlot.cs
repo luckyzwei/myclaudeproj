@@ -33,6 +33,7 @@ public class ItemAcquisitionStageSlot : MonoBehaviour
 
 	public void Init(int slotStageIdx)
 	{
+		SetStageInfo(slotStageIdx);
 	}
 
 	public void SetStageInfo(int slotStageIdx)
@@ -41,23 +42,31 @@ public class ItemAcquisitionStageSlot : MonoBehaviour
 
 	public void SetState(E_SlotState state, bool bPlayAnim)
 	{
+		SetActiveClearObj(state == E_SlotState.Clear, bPlayAnim);
+		SetActiveCurrentBubble(state == E_SlotState.Current, bPlayAnim);
 	}
 
 	public E_SlotState GetSlotState(int slotStageIdx, int curStageIdx)
 	{
-		return default(E_SlotState);
+		if (slotStageIdx < curStageIdx) return E_SlotState.Clear;
+		if (slotStageIdx == curStageIdx) return E_SlotState.Current;
+		if (slotStageIdx == curStageIdx + 1) return E_SlotState.Next;
+		return E_SlotState.None;
 	}
 
 	private string GetBusinessImageName(int stageIdx)
 	{
-		return null;
+		return string.Format(BUSINESS_IMAGE_NAME, stageIdx);
 	}
 
 	private void SetActiveClearObj(bool isActive, bool bPlayAnim)
 	{
+		if (ClearObj != null) ClearObj.SetActive(isActive);
+		if (isActive && bPlayAnim && ClearAnimator != null) ClearAnimator.SetTrigger("Clear");
 	}
 
 	private void SetActiveCurrentBubble(bool isActive, bool bPlayAnim)
 	{
+		if (CurrentBubble != null) CurrentBubble.gameObject.SetActive(isActive);
 	}
 }

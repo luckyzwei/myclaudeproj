@@ -49,10 +49,14 @@ public class ItemChatMessage : MonoBehaviour
 
 	private void Awake()
 	{
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
 	}
 
 	public void Set(int group, int idx, int order)
 	{
+		Group = group;
+		Idx = idx;
+		Order = order;
 	}
 
 	public void UpdateReward()
@@ -61,9 +65,12 @@ public class ItemChatMessage : MonoBehaviour
 
 	public void ShowWriting(bool isShowWriting = true)
 	{
+		if (WritingObj != null) WritingObj.SetActive(isShowWriting);
+		if (MsgRoot != null) MsgRoot.SetActive(!isShowWriting);
 	}
 
 	private void OnClickReward()
 	{
+		GetRewardAction?.Invoke();
 	}
 }

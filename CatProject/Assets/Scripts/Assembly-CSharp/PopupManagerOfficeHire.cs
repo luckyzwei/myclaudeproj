@@ -18,10 +18,14 @@ public class PopupManagerOfficeHire : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ShowPageBtn != null) ShowPageBtn.onClick.AddListener(OnClickShowPageBtn);
 	}
 
 	public void Set(int officeIdx, int regionIdx = -1)
 	{
+		OfficeIdx = officeIdx;
+		RegionIdx = regionIdx;
 	}
 
 	private void UpgradeCallBack(int level)
@@ -30,6 +34,8 @@ public class PopupManagerOfficeHire : UIBase
 
 	private void OnClickShowPageBtn()
 	{
+		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	public void ShowUpgradeArrow()

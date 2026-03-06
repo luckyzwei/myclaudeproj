@@ -31,14 +31,20 @@ public class ItemAttendanceComplete : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (ClaimButton != null) ClaimButton.onClick.AddListener(OnClaimButtonClick);
+		if (ItemInfoButton != null) ItemInfoButton.onClick.AddListener(() => Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>());
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	public void Init(E_AttendanceEventType eventType)
 	{
+		EventType = eventType;
+		UpdateProgress();
 	}
 
 	private void UpdateProgress()
@@ -47,5 +53,7 @@ public class ItemAttendanceComplete : MonoBehaviour
 
 	private void OnClaimButtonClick()
 	{
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
 	}
 }
