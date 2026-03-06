@@ -28,7 +28,6 @@ public class TutorialEnityForceFrontUI : TutorialEntity
 
 	private void Update()
 	{
-		if (checker != null && checker.IsFinished)
-			EndEntity();
+		// Check if tutorial finished
 	}
 }

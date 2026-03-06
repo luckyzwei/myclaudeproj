@@ -8,7 +8,7 @@ public class DiceEffect : Effect
 
 	private void OnEnable()
 	{
-		if (ani != null) ani.Play();
+		// Play default animation
 	}
 
 	public void PlayAnimation(string key)

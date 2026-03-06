@@ -188,8 +188,8 @@ public class PageShop : FullScreenUI
 			case (int)Config.CurrencyID.Gem:
 				type = ShopContentsType.Gem;
 				break;
-			case (int)Config.CurrencyID.Tonic:
-				type = ShopContentsType.Tonic;
+			case (int)Config.CurrencyID.Key:
+				type = ShopContentsType.KeyBox;
 				break;
 		}
 		if (type != ShopContentsType.None)
@@ -202,7 +202,10 @@ public class PageShop : FullScreenUI
 		for (int i = 0; i < contents.Count; i++)
 		{
 			if (contents[i] != null)
-				contents[i].ShowArrow(type == (ShopContentsType)i);
+			{
+				if (type == (ShopContentsType)i) contents[i].ShowArrow();
+				else contents[i].HideArrow();
+			}
 		}
 	}
 
@@ -212,7 +215,7 @@ public class PageShop : FullScreenUI
 		for (int i = 0; i < contents.Count; i++)
 		{
 			if (contents[i] != null)
-				contents[i].ShowArrow(false);
+				contents[i].HideArrow();
 		}
 	}
 

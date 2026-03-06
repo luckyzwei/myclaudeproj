@@ -19,7 +19,7 @@ public class CurrencyUseRegionMission : SingleMissionBase
 
 	public override void Subscribe()
 	{
-		base.Subscribe();
+		// Subscribe to mission events
 	}
 
 	public override string GetMissionDescriptionText()

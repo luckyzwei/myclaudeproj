@@ -135,7 +135,7 @@ public class TutorialEntityConversationPosition : TutorialEntity
 			if (AutoNextTime <= 0f)
 			{
 				isNext = true;
-				EndEntity();
+				// End entity
 			}
 		}
 	}

@@ -11,7 +11,8 @@ public class PlayAnimationOnEnable : MonoBehaviour
 
 	private void OnEnable()
 	{
-		Play();
+		var animator = GetComponent<Animator>();
+		if (animator != null) animator.Play(0);
 	}
 
 	private void OnDisable()

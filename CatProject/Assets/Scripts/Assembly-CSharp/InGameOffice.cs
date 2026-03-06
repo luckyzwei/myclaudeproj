@@ -170,7 +170,7 @@ public class InGameOffice : InGameMode
 		for (int i = 0; i < EmployeeList.Count; i++)
 		{
 			if (EmployeeList[i] != null)
-				EmployeeList[i].UpdateStatus();
+				EmployeeList[i].gameObject.SetActive(true);
 		}
 	}
 

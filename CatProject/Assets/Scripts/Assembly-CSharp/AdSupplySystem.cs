@@ -156,7 +156,7 @@ public class AdSupplySystem
 
 	private void ResetSeasonalAdsCount()
 	{
-		gameObject.SetActive(false);
+		// Deactivate
 	}
 
 	private void LoadGemAdsupplyData()

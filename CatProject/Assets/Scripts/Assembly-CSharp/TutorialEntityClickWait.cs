@@ -61,6 +61,6 @@ public class TutorialEntityClickWait : TutorialEntity
 	private void Click()
 	{
 		isClicked = true;
-		EndEntity();
+		// End entity
 	}
 }

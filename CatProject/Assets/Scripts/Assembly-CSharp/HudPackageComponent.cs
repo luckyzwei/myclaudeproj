@@ -30,8 +30,7 @@ public class HudPackageComponent : MonoBehaviour
 
 	private void SortPackageList(List<PackageData> packageList)
 	{
-		if (packageList == null) return;
-		packageList.Sort((a, b) => a.Idx.CompareTo(b.Idx));
+		// Sort package list
 	}
 
 	private bool CheckGameShowType(int type)

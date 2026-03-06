@@ -153,7 +153,7 @@ public class ItemWorkshopWorkerFacility : MonoBehaviour
 
 	private void OnClickedPauseStateWorkerIcon(ItemWorkshopWorkerFacilitySlot.E_SlotState slotState)
 	{
-		if (slotState == ItemWorkshopWorkerFacilitySlot.E_SlotState.Pause)
+		if (slotState == ItemWorkshopWorkerFacilitySlot.E_SlotState.PauseProduction)
 			Refresh();
 	}
 

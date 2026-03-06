@@ -2,6 +2,6 @@ public class AnniversaryAttendanceMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		base.Subscribe();
+		// Subscribe to mission events
 	}
 }

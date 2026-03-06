@@ -24,6 +24,6 @@ public class TutorialEntityClickAny : TutorialEntity
 
 	private void Click()
 	{
-		EndEntity();
+		// End entity
 	}
 }

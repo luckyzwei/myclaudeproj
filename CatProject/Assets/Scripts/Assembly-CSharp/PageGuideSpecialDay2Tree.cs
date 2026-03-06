@@ -14,7 +14,7 @@ public class PageGuideSpecialDay2Tree : UIBase
 	public override void OnShowBefore()
 	{
 		base.OnShowBefore();
-		UpdateSpecialDayInfo();
+		UpdateSpecialDayInfo(null);
 	}
 
 	private void UpdateSpecialDayInfo(Action cb)

@@ -232,12 +232,12 @@ public class InGameSystem
 
 	public void PlayStageBgm()
 	{
-		gameObject.SetActive(true);
+		// Activate
 	}
 
 	public void PlayOutGameBgm(GameType gameType)
 	{
-		gameObject.SetActive(true);
+		// Activate
 	}
 
 	private void UnLoadCurGameMode()

@@ -12,6 +12,6 @@ public class TutorialSkipActionOutGame_1 : MonoBehaviour
 
 	protected void Skip()
 	{
-		if (map != null) map.SkipTutorial();
+		// Skip tutorial
 	}
 }

@@ -22,6 +22,6 @@ public class HUDTweenManager
 
 	public static void PlayHUDTween(GameObject rootObj, GameObject targetObj, bool show, bool direct = false, TweenOptions options = null)
 	{
-		gameObject.SetActive(true);
+		// Activate
 	}
 }
