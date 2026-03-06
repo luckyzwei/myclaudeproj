@@ -96,53 +96,81 @@ public class PopupAdsSupply : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickReward);
+		if (MultipleRewardBtn != null) MultipleRewardBtn.onClick.AddListener(OnClickMultipleReward);
+		if (btnGetBank != null) btnGetBank.onClick.AddListener(OnClickGetBank);
 	}
 
 	protected override void OnEnable()
 	{
+		base.OnEnable();
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnClickReward()
 	{
+		// Watch ad and get reward
 	}
 
 	private void OnClickMultipleReward()
 	{
+		// Get multiplied reward using gems
 	}
 
 	private void GetReward(bool isOpenSeasonal, E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
 	{
+		if (isOpenSeasonal)
+			GetReward_SuperStaffOpen(getType, type, idx, region, value, receiveAll);
+		else
+			GetReward_Normal(getType, type, idx, region, value, receiveAll);
 	}
 
 	private void GetReward_SuperStaffOpen(E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
 	{
+		// Get reward with super staff bonus
+		Hide();
 	}
 
 	private void GetReward_Normal(E_RewardGetType getType, int type, int idx, int region, BigInteger value, int receiveAll)
 	{
+		// Get normal reward
+		Hide();
 	}
 
 	public void UpdateSuperStaff()
 	{
+		if (superStaffBtn == null) return;
+		if (superStaffRoot != null) superStaffRoot.SetActive(false);
 	}
 
 	public void Init(AdSupplySystem.ShowType type, AdSupplySystem.AdsupplyType rewardType)
 	{
+		PopupShowType = type;
+		AdsupplyType = rewardType;
+		isShowAds = false;
+
+		UpdateSuperStaff();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 
 	private void OnClickGetBank()
 	{
+		// Collect piggy bank reward
 	}
 }

@@ -103,53 +103,101 @@ public class PopupFactoryStorage : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		storage_disposables = new CompositeDisposable();
+
+		if (ProcessBtn != null) ProcessBtn.onClick.AddListener(OnClickProcess);
+		if (ThrowBtn != null) ThrowBtn.onClick.AddListener(OnClickOrganize);
+		if (UpgradeBtn != null) UpgradeBtn.onClick.AddListener(OnClickUpgrade);
 	}
 
 	public void Init(Tab openTab = Tab.Storage)
 	{
+		SelectProduct = -1;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		UpdateList();
+		UpdateUpgrade();
+		UpdateSelectItem();
+
+		if (TabGroup != null)
+			TabGroup.ChangeTab((int)openTab);
 	}
 
 	public void ShowUpgradeGuideArrow(bool bShow)
 	{
+		if (UpgradeGuideArrow != null) UpgradeGuideArrow.SetActive(bShow);
 	}
 
 	private void UpdateList()
 	{
+		// Populate product list from factory storage data
 	}
 
 	private void ListActiveCallback()
 	{
+		UpdateSelectItem();
 	}
 
 	private void UpdateUpgrade()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (UpgradeMaxObj != null) UpgradeMaxObj.SetActive(IsMaxLevel);
+		if (UpgradeNeedObj != null) UpgradeNeedObj.SetActive(!IsMaxLevel);
+
+		if (StorageLvUpNotiObj != null) StorageLvUpNotiObj.SetActive(false);
 	}
 
 	private void UpdateSelectItem()
 	{
+		bool hasSelect = SelectProduct >= 0;
+		if (NothingObj != null) NothingObj.SetActive(!hasSelect);
+		if (SelectInfoObj != null) SelectInfoObj.SetActive(hasSelect);
 	}
 
 	private void OnClickSelectItem(int product)
 	{
+		SelectProduct = product;
+		UpdateSelectItem();
 	}
 
 	private void OnClickUpgrade()
 	{
+		if (IsMaxLevel) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Upgrade storage level
+		UpdateUpgrade();
 	}
 
 	private void OnClickOrganize()
 	{
+		if (SelectProduct < 0) return;
+		// Discard selected product
+		SelectProduct = -1;
+		UpdateList();
+		UpdateSelectItem();
 	}
 
 	private void OnClickProcess()
 	{
+		// Process products in storage
+		Hide();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
+		if (storage_disposables != null) { storage_disposables.Dispose(); storage_disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
+		if (storage_disposables != null) { storage_disposables.Dispose(); storage_disposables = new CompositeDisposable(); }
 	}
 }

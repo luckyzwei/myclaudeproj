@@ -72,54 +72,85 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (LevelInfoBtn != null) LevelInfoBtn.onClick.AddListener(OnClickLevelInfo);
+		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnClickPurchase);
 	}
 
 	public override void OnShowBefore()
 	{
+		Init();
 	}
 
 	public HUDTopInfo GetHUDTopInfo()
 	{
-		return null;
+		return HUDTopInfo;
 	}
 
 	private void Init()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		IsEnablePurchase = false;
+		CheckAndOpenStepUpPage();
 	}
 
 	private void LoadJewelryBoxPrefab(int stageStep, bool isFull)
 	{
+		if (JewelryBoxRoot == null) return;
+		// Load jewelry box model based on stage step
+		LoadedStageStep = stageStep;
 	}
 
 	private void PlayJewelryBoxAnimation(bool isFull)
 	{
+		if (LoadedJewelryBoxObj == null) return;
+		var animator = LoadedJewelryBoxObj.GetComponent<Animator>();
+		if (animator != null)
+			animator.SetBool("IsFull", isFull);
 	}
 
 	private void CheckAndOpenStepUpPage()
 	{
+		// Check if level up threshold is reached
 	}
 
 	private void SetPurchaseInfo(int shopSpecialIdx)
 	{
+		ShopSpecialIdx = shopSpecialIdx;
+		if (PriceText != null) PriceText.text = "0";
+		if (SaleObj != null) SaleObj.SetActive(false);
 	}
 
 	private void OnClickInfo()
 	{
+		// Show bank info popup
 	}
 
 	private void OnClickLevelInfo()
 	{
+		// Show level info popup
 	}
 
 	private void OnClickPurchase()
 	{
+		if (!IsEnablePurchase) return;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Purchase bank expansion
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }
