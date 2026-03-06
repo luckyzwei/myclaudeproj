@@ -32,33 +32,63 @@ public class PopupArcadeMachineRewardInfo : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		ItemArcadeMachineRewardInfoList = new List<ItemArcadeMachineRewardInfo>();
+		if (PrevLevelInfoBtn != null) PrevLevelInfoBtn.onClick.AddListener(OnClickedPrevLevelInfoButton);
+		if (NextLevelInfoBtn != null) NextLevelInfoBtn.onClick.AddListener(OnClickedNextLevelInfoButton);
 	}
 
 	public void Init(int seasonalThemeIdx, int initRewardLevel)
 	{
+		ShowRewardLevel = initRewardLevel;
+		RewardLevelInfo = (0, 0);
+
+		UpdateRewardLevel(ShowRewardLevel);
+		Show();
 	}
 
 	private void SetOrAddArcadeRouletteProbabilityList(int rouletteLevel)
 	{
+		if (RewardInfoScrollPanelObj == null || ItemRewardInfoPrefab == null) return;
+		// Populate reward probability list for given roulette level
 	}
 
 	private void OnClickedPrevLevelInfoButton()
 	{
+		if (ShowRewardLevel <= RewardLevelInfo.MinRewardLevel) return;
+		ShowRewardLevel--;
+		UpdateRewardLevel(ShowRewardLevel);
 	}
 
 	private void OnClickedNextLevelInfoButton()
 	{
+		if (ShowRewardLevel >= RewardLevelInfo.MaxRewardLevel) return;
+		ShowRewardLevel++;
+		UpdateRewardLevel(ShowRewardLevel);
 	}
 
 	private void UpdateRewardLevel(int level)
 	{
+		ShowRewardLevel = level;
+		UpdateLevelObjects(level);
+		UpdateButtonVisibility();
+		SetOrAddArcadeRouletteProbabilityList(level);
+		if (RandomSkillBookNoticeObj != null) RandomSkillBookNoticeObj.SetActive(false);
 	}
 
 	private void UpdateLevelObjects(int level)
 	{
+		if (LevelObjList == null) return;
+		for (int i = 0; i < LevelObjList.Count; i++)
+		{
+			if (LevelObjList[i] != null)
+				LevelObjList[i].SetActive(i == level);
+		}
 	}
 
 	private void UpdateButtonVisibility()
 	{
+		if (PrevLevelInfoBtn != null) PrevLevelInfoBtn.gameObject.SetActive(ShowRewardLevel > RewardLevelInfo.MinRewardLevel);
+		if (NextLevelInfoBtn != null) NextLevelInfoBtn.gameObject.SetActive(ShowRewardLevel < RewardLevelInfo.MaxRewardLevel);
 	}
 }

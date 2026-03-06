@@ -90,37 +90,71 @@ public class PopupManagerList : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		cardDic = new Dictionary<int, ItemManagerCardMin>();
+		curSort = managerSortingType.none;
+
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfoBtn);
+		if (ManagerHireBtn != null) ManagerHireBtn.onClick.AddListener(OnClickManagerHire);
+		if (SortingBtn != null) SortingBtn.onClick.AddListener(OnClickSorting);
+
+		if (RewardTabToggle != null)
+			RewardTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Reward); });
+		if (ExpTabToggle != null)
+			ExpTabToggle.onValueChanged.AddListener((isOn) => { if (isOn) OnClickChangeTab(Config.ManagerCategory.Exp); });
 	}
 
 	public override void OnShowBefore()
 	{
+		curTab = Config.ManagerCategory.Reward;
+		UpdateList();
 	}
 
 	private void OnClickChangeTab(Config.ManagerCategory tab)
 	{
+		curTab = tab;
+		if (RewardScroll != null) RewardScroll.gameObject.SetActive(tab == Config.ManagerCategory.Reward);
+		if (ExpScroll != null) ExpScroll.gameObject.SetActive(tab == Config.ManagerCategory.Exp);
+		UpdateList();
 	}
 
 	private void OnClickManagerHire()
 	{
+		Hide();
 	}
 
 	private void OnClickSorting()
 	{
+		if (curSort == managerSortingType.ability)
+			SetSort(managerSortingType.grade);
+		else
+			SetSort(managerSortingType.ability);
 	}
 
 	private void OnClickInfoBtn()
 	{
+		// Show manager info popup
 	}
 
 	public void UpdateList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Populate manager card list based on curTab and curSort
 	}
 
 	public void SelectManager(int managerIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (ManagerRoot != null) ManagerRoot.SetActive(true);
+		// Display selected manager info
 	}
 
 	private void SetSort(managerSortingType type)
 	{
+		curSort = type;
+		UpdateList();
 	}
 }

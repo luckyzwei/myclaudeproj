@@ -96,33 +96,62 @@ public class PopupAuctionResultWin : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+
+		if (ConfirmBtn != null) ConfirmBtn.onClick.AddListener(() => { GameEndType = E_GameEndType.ToTitle; Hide(); });
+		if (RestartBtn != null) RestartBtn.onClick.AddListener(OnClickRestartAuction);
+		if (StaminaShopBtn != null) StaminaShopBtn.onClick.AddListener(OnClickStaminaShop);
+		if (GemShopBtn != null) GemShopBtn.onClick.AddListener(OnClickGemShop);
+		if (Point2xTrialBtn != null) Point2xTrialBtn.onClick.AddListener(OnClickPoint2xTrial);
 	}
 
 	public void Set(string npcname, int spycount, Action<E_GameEndType> endAction)
 	{
+		EndAction = endAction;
+		GameEndType = E_GameEndType.ToTitle;
+
+		if (NpcName != null) NpcName.text = npcname;
+		if (AllWinObj != null) AllWinObj.SetActive(false);
+		if (Point2xTrialNotiObj != null) Point2xTrialNotiObj.SetActive(false);
+
+		InitHUD();
+		Show();
 	}
 
 	private void InitHUD()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (StaminaTimeRoot != null) StaminaTimeRoot.SetActive(false);
 	}
 
 	private void OnClickRestartAuction()
 	{
+		GameEndType = E_GameEndType.Restart;
+		Hide();
 	}
 
 	private void OnClickStaminaShop()
 	{
+		// Open stamina shop
 	}
 
 	private void OnClickGemShop()
 	{
+		// Open gem shop
 	}
 
 	private void OnClickPoint2xTrial()
 	{
+		// Activate 2x point trial
 	}
 
 	public override void OnHideAfter()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
+		EndAction?.Invoke(GameEndType);
+		EndAction = null;
 	}
 }
