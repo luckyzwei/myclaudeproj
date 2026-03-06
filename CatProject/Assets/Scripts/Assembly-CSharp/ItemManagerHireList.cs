@@ -251,7 +251,7 @@ public class ItemManagerHireList : MonoBehaviour
 
 	private void OnClickManager()
 	{
-		// Show manager detail popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void UpdateArrow()
@@ -288,17 +288,17 @@ public class ItemManagerHireList : MonoBehaviour
 
 	private void OnClickHire()
 	{
-		// Open manager hire popup for this office
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnClickChange()
 	{
-		// Open manager change popup for this office
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageManager>();
 	}
 
 	private void OnClickLevelWarning()
 	{
-		// Show level warning detail
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void Reset()

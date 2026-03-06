@@ -63,81 +63,65 @@ public static class SeasonalLogHelper
 
 	public static void SendAnalytics_SeasonalEnter()
 	{
-		// Log seasonal enter event
 	}
 
 	public static void SendAnalytics_SeasonalMilestone()
 	{
-		// Log milestone view
 	}
 
 	public static void SendAnalytics_SeasonalMilestoneClaimReward(int seasonInfoIdx, int claimStepIndex, bool isNowSeason, bool isPremium)
 	{
-		// Log milestone reward claim
 	}
 
 	public static void SendAnalytics_SeasonalMissionRewardClaim(int clearMissionSlotIndex)
 	{
-		// Log mission reward claim
 	}
 
 	public static void SendAnalytics_SeasonalBuildingLevelUp(int buildingIdx, int buildingLevel)
 	{
-		// Log building level up
 	}
 
 	public static void SendAnalytics_SeasonalDistributorSlotLevelUp(int productIdx, int level)
 	{
-		// Log distributor slot level up
 	}
 
 	public static void SendAnalytics_SeasonalSkillLevelUp(int abilityTypeIdx, int level)
 	{
-		// Log skill level up
 	}
 
 	public static void SendAnalytics_SeasonalUseArcadeMachine(int multipleValue, bool bAllMatch, int rewardIdx)
 	{
-		// Log arcade machine use
 	}
 
 	public static void SendAnalytics_SeasonalArcadeMachineLevelUp(int level)
 	{
-		// Log arcade machine level up
 	}
 
 	public static void SendAnalytics_SeasonalQuestClaimReward(int rewardStep)
 	{
-		// Log quest reward claim
 	}
 
 	public static void SendAnalytics_TimeLimit(int packageIdx)
 	{
-		// Log time limit package event
 	}
 
 	public static void SendAnalytics_SeasonalStepRewardReceive(int idx)
 	{
-		// Log step reward receive
 	}
 
 	public static void SendAnalytics_SeasonalCoinRankStart(int type)
 	{
-		// Log coin rank start
 	}
 
 	public static void SendAnalytics_SeasonalCoinRankRewardReceive(int type, int grade, int cnt)
 	{
-		// Log coin rank reward receive
 	}
 
 	public static void SendAnalytics_SeasonalSuperStaffLv(int idx, int lv)
 	{
-		// Log super staff level up
 	}
 
 	public static void SendAnalytics_OfflineReward(int offlineTimeSec)
 	{
-		// Log offline reward
 	}
 }

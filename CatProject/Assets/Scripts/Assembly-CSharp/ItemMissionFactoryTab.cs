@@ -237,12 +237,16 @@ public class ItemMissionFactoryTab : MonoBehaviour, ITabToggleTab
 
 	private void OnClickCompOrder()
 	{
-		// Complete current order and grant reward
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateOrder();
 	}
 
 	private void OnClickResetOrder()
 	{
-		// Reset/refresh the current order
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		UpdateOrder();
 	}
 
 	private void OnClickFactoryShortCut()

@@ -498,12 +498,12 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void OnClickSlotCoinBuff()
 	{
-		// Open slot coin buff popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickGuideInfoBtn()
 	{
-		// Open guide info popup for slot machine
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupMiniGameOpen>();
 	}
 
 	private void OnClickedChangeMultiply()
@@ -524,7 +524,7 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void OnClickedRewardInfoBtn()
 	{
-		// Open reward info popup showing reward table
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickedLevelUpBtn()
@@ -676,7 +676,7 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void OnClickCoinRank()
 	{
-		// Open coin rank popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PageSeasonalSlotRank>();
 	}
 
 	private void AddCatstaEventMissionValue(int slotMatchCount, int rewardTableOrder)
@@ -697,6 +697,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void OnClickedSkillBookBtn()
 	{
-		// Open skill book popup
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupSkills>();
 	}
 }
