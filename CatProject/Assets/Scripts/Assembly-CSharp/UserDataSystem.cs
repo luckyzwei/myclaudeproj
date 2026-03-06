@@ -304,7 +304,7 @@ public class UserDataSystem
 
 	private void InitClientData()
 	{
-		if (flatBufferUserData == null) return;
+		if (flatBufferUserData.ByteBuffer == null) return;
 		InitDataState();
 		// Populate client data from flatbuffer
 		CurMode = mainData;

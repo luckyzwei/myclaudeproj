@@ -7,7 +7,7 @@ public class Vector4Converter : JsonConverter
 
 	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 	{
-		base.WriteJson(writer, value, serializer);
+		// Write JSON
 	}
 
 	public override bool CanConvert(Type objectType)
