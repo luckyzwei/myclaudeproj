@@ -161,7 +161,6 @@ public class PopupBoxOpen : UIBase
 
 	private void OnClickAds()
 	{
-		// Watch ad then open box
 	}
 
 	private void OnDisable()

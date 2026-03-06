@@ -736,7 +736,6 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void OnAtlasRequest(string tag, Action<SpriteAtlas> callback)
 	{
-		// Atlas request handler - loaded via Addressables at runtime
 	}
 
 	public void ChangeGameType(GameType type, bool changeData = false, Action callBackAction = null, bool isForce = false)
@@ -753,7 +752,6 @@ public class GameRoot : Singleton<GameRoot>
 
 	private void SetNativeLanguage()
 	{
-		// Set language from system locale - handled by localization framework
 	}
 
 	public void SetCheatWindow(bool value)

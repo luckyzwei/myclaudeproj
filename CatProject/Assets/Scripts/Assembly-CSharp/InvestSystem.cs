@@ -42,7 +42,6 @@ public class InvestSystem
 
 	private void OpenFirstPopup()
 	{
-		// Would open invest intro popup
 	}
 
 	private void CheckIsOn()

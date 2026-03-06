@@ -71,6 +71,5 @@ public class CrossPromotionComponent : MonoBehaviour
 
 	private void GenerateUserInviteLink(string origin, string templete_id, string channel, string app_name)
 	{
-		// Generate deep link for cross promotion
 	}
 }

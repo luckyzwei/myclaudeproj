@@ -156,17 +156,14 @@ public class AdSupplySystem
 
 	private void ResetSeasonalAdsCount()
 	{
-		// Would reset seasonal ad counts
 	}
 
 	private void LoadGemAdsupplyData()
 	{
-		// Would load gem ad supply data from UserData
 	}
 
 	private void SaveGemAdsupplyData()
 	{
-		// Would save gem ad supply data to UserData
 	}
 
 	private void CheckGemAdsOpen()
@@ -247,12 +244,10 @@ public class AdSupplySystem
 
 	private void SetReward()
 	{
-		// Would calculate money supply reward based on current stage
 	}
 
 	private void SetSeasonalReward()
 	{
-		// Would set seasonal production reward
 	}
 
 	public void SetDirectMoneySupply()
@@ -285,7 +280,6 @@ public class AdSupplySystem
 
 	public void CancelSeasonalSupply()
 	{
-		// Would cancel seasonal supply ad
 	}
 
 	public void UpdateAdsMoneyOneSeconds()

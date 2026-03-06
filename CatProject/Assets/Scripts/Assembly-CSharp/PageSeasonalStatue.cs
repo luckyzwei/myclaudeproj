@@ -106,6 +106,5 @@ public class PageSeasonalStatue : UIBase
 
 	private void AddCatstaEventMissionValue()
 	{
-		// Add mission progress for statue purchase event
 	}
 }

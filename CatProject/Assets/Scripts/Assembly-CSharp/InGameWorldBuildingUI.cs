@@ -90,7 +90,6 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	private void SetReddot()
 	{
-		// Configure reddot notification for this building
 	}
 
 	public void UpdateRevenue()
@@ -114,7 +113,6 @@ public class InGameWorldBuildingUI : InGameFloatingUI
 
 	public void OnClickGetRevenue()
 	{
-		// Collect revenue from this building
 	}
 
 	public void SetArrowNoti()

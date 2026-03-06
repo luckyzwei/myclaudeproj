@@ -61,7 +61,6 @@ public class PageSeasonalShop : FullScreenUI
 
 	public void RefreshItems()
 	{
-		// Refresh all shop content items
 	}
 
 	public void SetEnterPlace(ShopEnterPlace place)
@@ -85,7 +84,6 @@ public class PageSeasonalShop : FullScreenUI
 
 	public void UpdateGem()
 	{
-		// Update gem display in HUD
 	}
 
 	public void SetFocusContents(ShopContentsType type)

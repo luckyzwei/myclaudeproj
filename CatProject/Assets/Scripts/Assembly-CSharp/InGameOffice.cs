@@ -166,7 +166,6 @@ public class InGameOffice : InGameMode
 
 	public void UpdateStatues()
 	{
-		// Update statue visuals in office
 	}
 
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
@@ -488,7 +487,6 @@ public class InGameOffice : InGameMode
 
 	public override void LoadUI()
 	{
-		// UI loading for office mode handled by stage
 	}
 
 	private void OnDestroy()

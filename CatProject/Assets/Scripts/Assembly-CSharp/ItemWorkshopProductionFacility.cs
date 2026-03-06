@@ -173,17 +173,14 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void SetFacilityAbilityIcon(string iconKey)
 	{
-		// Set facility ability icon sprite by key
 	}
 
 	private void SetFacilityIconImage(string iconKey)
 	{
-		// Set main facility image sprite by key
 	}
 
 	private void SetMilestoneAbilityIcon(string iconKey)
 	{
-		// Set milestone ability icon sprite by key
 	}
 
 	private void SetMilestoneAbilityValueText(float value, E_ValueSignType valueSignType, E_BuildingFacilityAbilityType milestoneAbilityType)
@@ -201,12 +198,10 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void SetUpgradeCostIconImage(string iconKey)
 	{
-		// Set upgrade cost icon sprite by key
 	}
 
 	private void SetUpgradeCostValueText(BigInteger needValue_PerMile, BigInteger hasValue_PerMile)
 	{
-		// UpgradeCostText is ProgressText (DLL type) - set cost display
 	}
 
 	private void SetLevelText(int level)
@@ -243,7 +238,6 @@ public class ItemWorkshopProductionFacility : MonoBehaviour
 
 	private void OnClickedUpgradeBlockBtn()
 	{
-		// Show blocked upgrade info
 	}
 
 	private bool IsCurStepMaxLevel(int level)

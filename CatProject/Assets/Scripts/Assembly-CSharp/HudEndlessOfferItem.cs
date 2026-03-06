@@ -52,6 +52,5 @@ public class HudEndlessOfferItem : MonoBehaviour
 
 	private void OnClickBtn()
 	{
-		// Open endless offer page for this offer index
 	}
 }

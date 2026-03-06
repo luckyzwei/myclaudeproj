@@ -173,7 +173,6 @@ public class MissionSystem
 
 	private void SubscribeCatstaEventMap(E_MissionType type)
 	{
-		// 캣스타 이벤트 구독
 	}
 
 	private void UpdateCatstaEventMap(E_MissionType type)
@@ -185,7 +184,6 @@ public class MissionSystem
 
 	private void SetEventJoinMission(int specialDayIdx)
 	{
-		// 이벤트 참여 미션 설정
 	}
 
 	private void InitCatstagramDisposable(int idx)
@@ -232,27 +230,22 @@ public class MissionSystem
 
 	private void ClearEventJoinMission(int targetIdx = -1)
 	{
-		// 이벤트 참여 미션 클리어
 	}
 
 	private void ClearSeasonalJoinMission()
 	{
-		// 시즌 참여 미션 클리어
 	}
 
 	private void ClearEventAnyCatstagramMission(int targetIdx = -1)
 	{
-		// 캣스타그램 이벤트 미션 클리어
 	}
 
 	private void ClearSeasonalStatueMission()
 	{
-		// 시즌 조각상 미션 클리어
 	}
 
 	public void ClearSeasonalMileStoneMission(int seasonInfoIdx)
 	{
-		// 시즌 마일스톤 미션 클리어
 	}
 
 	private void InitMissionMilestoneData()

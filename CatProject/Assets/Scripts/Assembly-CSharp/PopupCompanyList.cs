@@ -130,7 +130,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	public void UpdateRefreshBtn()
 	{
-		// Update refresh button state based on cooldown
 	}
 
 	private void OnClickContracts(int company)
@@ -149,7 +148,6 @@ public class PopupCompanyList : UIBase, ILocalizeRefresh
 
 	private void OnClickAdsRefreshCountChargeBtn()
 	{
-		// Watch ad to charge refresh count
 	}
 
 	private void OnClickCashRefreshCompany()

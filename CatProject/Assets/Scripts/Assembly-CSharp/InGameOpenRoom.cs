@@ -65,12 +65,10 @@ public class InGameOpenRoom : InGameFloatingUI
 
 	private void OnClickOpen()
 	{
-		// Open room / office
 	}
 
 	private void OnClickSkip()
 	{
-		// Skip construction time with gems
 	}
 
 	private void OnDestroy()

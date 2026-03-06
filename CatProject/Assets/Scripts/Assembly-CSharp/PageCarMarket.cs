@@ -145,7 +145,6 @@ public class PageCarMarket : UIBase, ILocalizeRefresh
 
 	private void UpdateDayStatus(DaySystem.DayStatus status)
 	{
-		// Update day/night icon
 	}
 
 	private void UpdateDayTime()

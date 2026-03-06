@@ -204,7 +204,6 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void OnChangeBuildingScroll(Vector2 value)
 	{
-		// Handle building scroll events
 	}
 
 	public override void OnShowBefore()
@@ -285,7 +284,6 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void HideInfoBubbles()
 	{
-		// Hide any info bubbles
 	}
 
 	private void ShowCurrencyParticle()
@@ -349,7 +347,6 @@ public class PageSpecialEvent : UIBase, ILocalizeRefresh
 
 	private void SetScrollExit(float speed)
 	{
-		// Scroll building view to exit position
 	}
 
 	private void KillCoroutine()

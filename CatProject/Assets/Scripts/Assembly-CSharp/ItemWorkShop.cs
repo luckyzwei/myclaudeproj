@@ -162,7 +162,6 @@ public class ItemWorkShop : MonoBehaviour
 
 	private void OnClickManagerInfo(ItemWorkshopWorkerFacilitySlot.E_SlotState slotState)
 	{
-		// Show manager info based on slot state
 	}
 
 	private void OnChangedHiredWorkerCount(int hiredWorkerCount)

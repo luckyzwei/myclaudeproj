@@ -91,6 +91,5 @@ public class PagePackage : FullScreenUI
 
 	private void LogRepopupStarter()
 	{
-		// Log re-popup analytics event
 	}
 }

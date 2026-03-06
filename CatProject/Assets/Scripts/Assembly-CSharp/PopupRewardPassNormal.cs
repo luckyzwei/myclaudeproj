@@ -98,7 +98,6 @@ public class PopupRewardPassNormal : UIBase
 
 	public override void OnShowBefore()
 	{
-		// Initialize display state
 	}
 
 	public void Init(E_PassType passType, int groupIdx, int orderIdx, Action onPurchaseBtnClick)

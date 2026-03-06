@@ -279,7 +279,6 @@ public class BizAcqBattleSystem : SystemBase
 
 	private void CheckBattleSpeedTrialEnd()
 	{
-		// Would check if speed trial period has ended
 	}
 
 	private void UpdateBattleSpeedList()
@@ -295,7 +294,6 @@ public class BizAcqBattleSystem : SystemBase
 
 	public void LoadSkillFxBundle()
 	{
-		// Would load skill effect bundle via Addressables
 	}
 
 	public void UnloadAllSkillFx()
@@ -408,7 +406,6 @@ public class BizAcqBattleSystem : SystemBase
 
 	public void UpdateMultipleRewardInfo()
 	{
-		// Would update multiple reward multiplier info
 	}
 
 	public void OnClaimIdleReward(bool isReceiveAll)

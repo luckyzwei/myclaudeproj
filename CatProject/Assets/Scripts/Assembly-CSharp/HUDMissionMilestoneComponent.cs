@@ -61,6 +61,5 @@ public class HUDMissionMilestoneComponent : MonoBehaviour
 
 	private void OnClickMilestonePageBtn()
 	{
-		// Open mission milestone page
 	}
 }

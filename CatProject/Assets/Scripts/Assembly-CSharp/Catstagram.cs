@@ -269,7 +269,6 @@ public class Catstagram : MonoBehaviour
 
 	private void OnClickComment()
 	{
-		// Open comment popup for current catsta
 	}
 
 	private void OnClickMain()

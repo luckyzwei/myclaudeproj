@@ -41,17 +41,14 @@ public class HouseParkingLot : MonoBehaviour
 
 	public void UpdateCurHouse()
 	{
-		// Update house visual based on current data
 	}
 
 	public void UpdateParkingSpace()
 	{
-		// Update parking space visuals
 	}
 
 	public void UpdateEditModeUI()
 	{
-		// Update UI for edit mode
 	}
 
 	private void OnClickHouse()

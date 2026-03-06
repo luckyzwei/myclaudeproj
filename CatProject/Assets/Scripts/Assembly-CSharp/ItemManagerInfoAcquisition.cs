@@ -168,12 +168,10 @@ public class ItemManagerInfoAcquisition : MonoBehaviour
 
 	private void OnClickNeedLevelBtn()
 	{
-		// Show level up requirement info
 	}
 
 	private void OnClickReinforceResetBtn()
 	{
-		// Open reinforce reset popup
 	}
 
 	private void ShowLevelUpEffect()

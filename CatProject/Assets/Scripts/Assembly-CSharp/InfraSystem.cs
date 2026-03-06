@@ -50,7 +50,6 @@ public class InfraSystem
 
 	public void BuildingLevelUp(int BuildingIdx)
 	{
-		// Would upgrade infrastructure building level
 	}
 
 	public void GetBuildingRevenue(int idx, Transform Trans)

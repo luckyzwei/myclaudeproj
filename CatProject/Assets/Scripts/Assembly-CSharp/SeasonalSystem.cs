@@ -319,12 +319,10 @@ public class SeasonalSystem
 
 	private void UpdateWorkshop(DateTime curDateTime)
 	{
-		// 워크샵 생산 업데이트
 	}
 
 	private void UpdateDistributor(DateTime curDateTime)
 	{
-		// 유통업체 판매 업데이트
 	}
 
 	private void UpdateScheduleOneSeconds()
@@ -445,7 +443,6 @@ public class SeasonalSystem
 
 	public void ReqAutoSelectDormitory()
 	{
-		// 빈 기숙사 자동 선택
 	}
 
 	public bool ReqBuildingUpgradeImmediatelyComplete(int buildingIdx)
@@ -649,22 +646,18 @@ public class SeasonalSystem
 
 	private void OnChangeDayActivityState(E_DayActivityStatus dayActivityStatus)
 	{
-		// 낮/밤 상태 변경 시 처리
 	}
 
 	private void OnChangeTodayTimeHour(int hour)
 	{
-		// 시간별 이벤트 처리
 	}
 
 	private void OnEndAllEmployeeWorkOff()
 	{
-		// 전체 직원 퇴근 완료 시 처리
 	}
 
 	private void OnChangeDormitoryMaxWorkerCount(int buildingIdx, int prevMaxWorkerCount, int nowMaxWorkerCount)
 	{
-		// 기숙사 최대 인원 변경 처리
 	}
 
 	private int PickArcadeRouletteRewardIdx()
@@ -722,7 +715,6 @@ public class SeasonalSystem
 
 	private void AddCatstaEventMissionValue(bool isFirstRank, int rankIdx)
 	{
-		// 캣스타 이벤트 미션 값 추가
 	}
 
 	public void AddOneHour()

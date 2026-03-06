@@ -22,12 +22,10 @@ public class Engineer : Worker
 
 	private void SubscribeSeatLevel()
 	{
-		// Subscribe to seat level changes to update engineer appearance
 	}
 
 	private void UpdateRepairTime()
 	{
-		// Update repair progress display
 	}
 
 	private void LoadChar(Action LoadComp)

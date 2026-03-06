@@ -431,7 +431,6 @@ public class ItemArcadeSlotMachine : MonoBehaviour
 
 	private void SetNeedCurrencyIcon(string iconKey)
 	{
-		// Set currency icon sprite by key
 	}
 
 	private void SetHasCurrencyValue(BigInteger hasValue, int needValue)

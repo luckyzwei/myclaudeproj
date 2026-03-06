@@ -20,7 +20,6 @@ public class CurrencyUseRegionMission : SingleMissionBase
 
 	public override void Subscribe()
 	{
-		// Would subscribe to currency use events via UserDataSystem
 	}
 
 	public override string GetMissionDescriptionText()

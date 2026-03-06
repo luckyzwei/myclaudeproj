@@ -75,7 +75,6 @@ public class ItemAcquisitionTeamSet : MonoBehaviour
 
 	public void RefreshCeoList()
 	{
-		// Update scroll list display
 	}
 
 	private void UpdateTeamData()

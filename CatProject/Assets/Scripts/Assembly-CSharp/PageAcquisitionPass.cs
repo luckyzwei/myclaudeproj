@@ -76,7 +76,6 @@ public class PageAcquisitionPass : UIBase
 
 	public override void OnHideBefore()
 	{
-		// Cleanup before hide
 	}
 
 	public override void OnRefresh()
@@ -113,7 +112,6 @@ public class PageAcquisitionPass : UIBase
 
 	private void OnClickBuyBtn()
 	{
-		// Process BizAcq pass purchase
 	}
 
 	private void OnClickedClaimAllBtn()

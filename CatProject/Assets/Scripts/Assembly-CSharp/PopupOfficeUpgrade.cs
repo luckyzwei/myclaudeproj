@@ -807,7 +807,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void UpdateItemScroll(Vector2 pos)
 	{
-		// Handle scroll updates for lazy loading
 	}
 
 	private void OnClickChangeTab(Tab tab)
@@ -945,7 +944,6 @@ public class PopupOfficeUpgrade : UIBase
 
 	private void SetTapReddotObj()
 	{
-		// Update tab red dot notification indicators
 	}
 
 	public override void OnHideBefore()

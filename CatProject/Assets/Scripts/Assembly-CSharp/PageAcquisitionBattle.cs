@@ -164,7 +164,6 @@ public class PageAcquisitionBattle : FullScreenUI
 
 	private void SetBattleBgm()
 	{
-		// Set battle background music
 	}
 
 	private void SetBattleSpeed()

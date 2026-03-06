@@ -132,7 +132,6 @@ public class ItemManagerInfoSkillsTab : MonoBehaviour, ITabToggleTab
 
 	private void PlaySkillLevelUpFx()
 	{
-		// Play skill level up visual effect
 	}
 
 	public void Reset()

@@ -174,7 +174,6 @@ public class PopupListRecontract : UIBase
 
 	private void OnScrolled(Vector2 value)
 	{
-		// Handle scroll position changes
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__11))]

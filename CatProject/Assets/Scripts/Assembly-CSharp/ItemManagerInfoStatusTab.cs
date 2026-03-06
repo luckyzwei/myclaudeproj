@@ -43,11 +43,9 @@ public class ItemManagerInfoStatusTab : MonoBehaviour, ITabToggleTab
 
 	public void ManagerReinforceTutorial()
 	{
-		// Start manager reinforce tutorial
 	}
 
 	private void OnClickInfo()
 	{
-		// Show manager status info
 	}
 }

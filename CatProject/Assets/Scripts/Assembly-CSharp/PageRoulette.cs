@@ -112,7 +112,6 @@ public class PageRoulette : UIBase, ILocalizeRefresh
 
 	public void ShowPlantFocusing()
 	{
-		// Highlight plant-related roulette items
 	}
 
 	private void UpdateRoulette()

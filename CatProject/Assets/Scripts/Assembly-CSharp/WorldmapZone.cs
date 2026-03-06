@@ -85,7 +85,6 @@ public class WorldmapZone : MonoBehaviour
 
 	private void LoadZoneUI()
 	{
-		// Load zone UI via Addressables at UITrans
 	}
 
 	public void OpenZone()

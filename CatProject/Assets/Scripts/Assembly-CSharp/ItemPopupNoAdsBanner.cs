@@ -48,7 +48,6 @@ public class ItemPopupNoAdsBanner : MonoBehaviour
 
 	private void OnClick()
 	{
-		// Purchase no-ads IAP package
 	}
 
 	private void OnDisable()

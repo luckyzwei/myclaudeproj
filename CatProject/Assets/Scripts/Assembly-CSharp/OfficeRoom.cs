@@ -30,12 +30,10 @@ public class OfficeRoom : Room
 
 	protected override void SetOpened(bool value)
 	{
-		// Set room visual state based on opened status
 	}
 
 	public override void OnClickOffice()
 	{
-		// Handle office room click
 	}
 
 	private void InitFindManagerUI()
@@ -49,7 +47,6 @@ public class OfficeRoom : Room
 
 	private void LoadFindManagerUI()
 	{
-		// Load find manager UI prefab
 	}
 
 	public void SetBoosterOfficeEffectMoney(bool isActive)

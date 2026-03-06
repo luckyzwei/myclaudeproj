@@ -61,7 +61,6 @@ public class PopupFactoryItemUse : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show factory item info popup
 	}
 
 	private void UseItem(int itemIdx, ItemFactoryUseItem item)

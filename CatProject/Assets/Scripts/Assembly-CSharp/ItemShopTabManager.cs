@@ -75,11 +75,9 @@ public class ItemShopTabManager : MonoBehaviour, ITabToggleTab
 
 	private void OnPurchaseFailed(RewardItemData costData)
 	{
-		// Show purchase failed notification
 	}
 
 	private void OnPurchaseFailedSkillStone(RewardItemData costData)
 	{
-		// Show skill stone purchase failed notification
 	}
 }

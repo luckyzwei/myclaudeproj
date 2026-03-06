@@ -116,7 +116,6 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 
 	private void CheckAndOpenStepUpPage()
 	{
-		// Check if level up threshold is reached
 	}
 
 	private void SetPurchaseInfo(int shopSpecialIdx)
@@ -128,12 +127,10 @@ public class PageAcquisitionBank : UIBase, IHUDTopInfo
 
 	private void OnClickInfo()
 	{
-		// Show bank info popup
 	}
 
 	private void OnClickLevelInfo()
 	{
-		// Show level info popup
 	}
 
 	private void OnClickPurchase()

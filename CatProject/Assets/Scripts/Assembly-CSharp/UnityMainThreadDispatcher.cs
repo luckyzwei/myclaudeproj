@@ -131,7 +131,6 @@ public class UnityMainThreadDispatcher : MonoBehaviour
 
 	private void Awake()
 	{
-		// Ensure only one instance
 	}
 
 	private void OnDestroy()

@@ -2,7 +2,6 @@ public class PlayTimeSecMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		// Subscribe to play time second counter from TimeSystem
 	}
 
 	public override string GetMissionDescriptionText()

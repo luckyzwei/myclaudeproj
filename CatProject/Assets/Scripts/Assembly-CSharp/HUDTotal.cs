@@ -1051,7 +1051,6 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	public void UpdateOneTimeCurrencyIcon()
 	{
-		// Update the one-time event currency icon from game data
 	}
 
 	public void UpdateOneTimeCurrencyCount()
@@ -1182,7 +1181,6 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	private void OnClickCrossPromotion()
 	{
-		// Open cross promotion URL or popup
 	}
 
 	private void SetInvest()

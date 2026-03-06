@@ -82,7 +82,6 @@ public class PopupSkills : UIBase
 
 	private void ShowSkillBookPackage()
 	{
-		// Show skill book purchase package
 	}
 
 	public GameObject GetFirstUnlockSkillButton()

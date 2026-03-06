@@ -197,12 +197,10 @@ public class PagePlayerLvPass : UIBase
 
 	private void UpdateOneTimeCurrencyIcon()
 	{
-		// Set one-time currency icon from event data
 	}
 
 	public void UpdateOneTimeCurrencyCount()
 	{
-		// Update one-time currency count text
 	}
 
 	private void OnDisable()

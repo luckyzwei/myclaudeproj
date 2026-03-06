@@ -55,7 +55,6 @@ public class ElectricWorkSystem
 
 	public void CallEngineer()
 	{
-		// Request engineer to go repair
 	}
 
 	public void MaintenanceComplete(int office)

@@ -473,7 +473,6 @@ public class PopupPhone : UIBase
 
 	private void UpdateCompanyItem(int companyIdx)
 	{
-		// Update specific company item in the book
 	}
 
 	private void UpdateContact()
@@ -496,7 +495,6 @@ public class PopupPhone : UIBase
 
 	private void SetPassiveChat(int subChat)
 	{
-		// Add a passive (NPC) chat message to the chat scroll
 	}
 
 	[IteratorStateMachine(typeof(_003CStartChat_003Ed__100))]
@@ -704,12 +702,10 @@ public class PopupPhone : UIBase
 
 	private void OnFocusAfterScrolled(Vector2 value)
 	{
-		// Handle scroll after focus
 	}
 
 	private void FocusNextMaxCompany()
 	{
-		// Focus on next max level company in the list
 	}
 
 	private void ReleaseFocusCompany()

@@ -197,7 +197,6 @@ public class ItemWorkshopUpgradeMenu : MonoBehaviour
 
 	private void OnClickedUpgradeImmediatelyCompleteButton()
 	{
-		// Instantly complete building upgrade with gem cost
 	}
 
 	[IteratorStateMachine(typeof(_003CUpdateUpgradeTime_003Ed__30))]

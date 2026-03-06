@@ -74,7 +74,6 @@ public class BizAcqStage : MonoBehaviour
 
 	private void LoadCar()
 	{
-		// Would load car prefab via Addressables
 	}
 
 	private void ResetBuildings()

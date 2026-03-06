@@ -61,12 +61,10 @@ public class ItemRewardGetGuide : MonoBehaviour
 
 	private void SetGuideIconImage(List<string> iconNameList)
 	{
-		// Set guide icon from icon name list
 	}
 
 	private void SetGuideDecoImage(string iconName)
 	{
-		// Set guide decoration image
 	}
 
 	private void SetGuideDescText(int guidIdx, string desc)
@@ -87,6 +85,5 @@ public class ItemRewardGetGuide : MonoBehaviour
 
 	private void OnClickShortCut()
 	{
-		// Navigate to guide target via shortcut
 	}
 }

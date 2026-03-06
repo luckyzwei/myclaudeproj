@@ -44,7 +44,6 @@ public class ItemWorkshopResource : MonoBehaviour
 
 	public void SetResourceIcon(Config.AtlasType atlasType, string iconPath)
 	{
-		// Set icon sprite by atlas type and path
 	}
 
 	public void SetResourceValue(string valueStr)
@@ -70,6 +69,5 @@ public class ItemWorkshopResource : MonoBehaviour
 
 	private void OnClickedShortCutButton()
 	{
-		// Navigate to resource production shortcut
 	}
 }

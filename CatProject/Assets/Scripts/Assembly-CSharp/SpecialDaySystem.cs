@@ -417,12 +417,10 @@ public class SpecialDaySystem
 
 	private void UpdateLoadingThemeAfter()
 	{
-		// Post-loading theme update (e.g. transition effects)
 	}
 
 	private void UpdateStageTheme()
 	{
-		// Would apply special day decorations/theme to the office stage
 	}
 
 	public int GetSpecialEmployeeViewIdx()

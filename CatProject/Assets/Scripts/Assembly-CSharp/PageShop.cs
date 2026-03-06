@@ -183,7 +183,6 @@ public class PageShop : FullScreenUI
 
 	public void SetFocus(int rewardType, int rewardIdx)
 	{
-		// Map reward type/idx to shop contents type and focus
 	}
 
 	public void ShowArrow(ShopContentsType type)

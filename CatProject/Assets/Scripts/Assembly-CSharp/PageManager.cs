@@ -215,12 +215,10 @@ public class PageManager : UIBase
 
 	private void UpdateManagerCard(int managerIdx)
 	{
-		// Refresh specific manager card in the list
 	}
 
 	private void Update_SpecialManagerList()
 	{
-		// Update super staff / special manager list
 	}
 
 	public void SetTarget(int office, int manager)

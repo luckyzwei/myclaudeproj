@@ -70,7 +70,6 @@ public class ItemRichWay : MonoBehaviour
 
 	private void OnClickShortcut()
 	{
-		// Navigate to mission target
 	}
 
 	private void OnDestroy()

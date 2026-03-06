@@ -49,7 +49,6 @@ public class ShopContentsPackage : IShopContents
 
 	private void RefreshActive()
 	{
-		// Refresh package list based on ShowType, Type, and TimeLimitShowType
 	}
 
 	private void RefreshActive(int buyPackageIdx)
@@ -59,7 +58,6 @@ public class ShopContentsPackage : IShopContents
 
 	private void ClickPackage(int idx)
 	{
-		// Handle package purchase click
 	}
 
 	private bool CheckTimeLimitShowType(E_TimeLimitShowType timeLimitShowType, int remainTime)

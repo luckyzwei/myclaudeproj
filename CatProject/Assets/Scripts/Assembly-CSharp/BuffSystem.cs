@@ -101,7 +101,6 @@ public class BuffSystem
 
 	public void UpdateBoostBuff()
 	{
-		// Recalculate boost buffs from all active sources
 	}
 
 	public void UpdateOneSeconds()

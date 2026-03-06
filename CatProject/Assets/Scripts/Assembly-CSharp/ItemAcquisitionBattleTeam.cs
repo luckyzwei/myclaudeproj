@@ -819,7 +819,6 @@ public class ItemAcquisitionBattleTeam : MonoBehaviour
 
 	private void UpdateCeoInfo()
 	{
-		// Refresh current CEO info after change
 	}
 
 	private void SetSkillInfo(int skillIdx, int skillLevel)

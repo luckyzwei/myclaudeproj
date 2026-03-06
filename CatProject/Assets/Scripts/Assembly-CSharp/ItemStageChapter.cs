@@ -63,7 +63,6 @@ public class ItemStageChapter : MonoBehaviour
 
 	public void SetActiveName(bool value)
 	{
-		// Show/hide chapter name display
 	}
 
 	public ItemStageWorldSpot GetSpot(int stage)

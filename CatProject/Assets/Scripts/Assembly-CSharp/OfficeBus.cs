@@ -73,7 +73,6 @@ public class OfficeBus : MonoBehaviour
 
 	private void LoadCar()
 	{
-		// Load car visual for the bus
 	}
 
 	public void StartBus()
@@ -147,7 +146,6 @@ public class OfficeBus : MonoBehaviour
 
 	public void UpdateSpecialTheme(bool isSpecialTheme)
 	{
-		// Update bus visual for special theme events
 	}
 
 	private void OnDestroy()

@@ -242,7 +242,6 @@ public class HUDFactory : HUDBase, IScreenAction
 
 	private void Update()
 	{
-		// Update timers if needed
 	}
 
 	private void OnDisable()

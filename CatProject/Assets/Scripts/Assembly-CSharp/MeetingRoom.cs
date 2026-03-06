@@ -35,7 +35,6 @@ public class MeetingRoom : WaitingRoom
 
 	private void UpdateEarnExp()
 	{
-		// Calculate earned experience from meeting room level
 	}
 
 	public override bool isInUse()

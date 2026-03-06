@@ -151,7 +151,6 @@ public class Page1stEventMain : UIBase, ITabToggleGroup
 
 	public void OnTabChanged(int index)
 	{
-		// Handle tab changes between roulette, shop, etc.
 	}
 
 	public override void OnShowBefore()

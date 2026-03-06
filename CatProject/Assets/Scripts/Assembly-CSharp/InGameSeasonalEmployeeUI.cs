@@ -66,12 +66,10 @@ public class InGameSeasonalEmployeeUI : InGameFloatingUI
 
 	private void SetMessageIcon(string iconKey)
 	{
-		// Set mood icon from atlas
 	}
 
 	private void SetMoodBgImage(E_EmployeeMoodState moodState)
 	{
-		// Set background color based on mood state
 	}
 
 	private void SetMoodMessageText(string localizeKey)

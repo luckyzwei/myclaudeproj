@@ -48,12 +48,10 @@ public class BuildingBase : MonoBehaviour
 
 	public virtual void UnselectBuilding(bool bHideUI)
 	{
-		// Override in subclasses to hide building-specific UI
 	}
 
 	protected virtual void OnReleaseBuilding()
 	{
-		// Override in subclasses to clean up building resources
 	}
 
 	protected void PlayBuildingMenuSound()
@@ -72,11 +70,9 @@ public class BuildingBase : MonoBehaviour
 
 	public void FocusToBuilding()
 	{
-		// Focus camera to building position with xOffset, yOffset, zoomSize
 	}
 
 	private void FocusOut()
 	{
-		// Return camera to default position
 	}
 }

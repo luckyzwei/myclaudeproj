@@ -50,12 +50,10 @@ public class Secretary : Worker
 
 	protected override void UpdateFloor()
 	{
-		// Secretary stays on the CEO floor, no floor updates needed
 	}
 
 	private void LoadUI()
 	{
-		// Load exclamation UI for secretary notifications
 	}
 
 	private void UpdateSecretaryAlarm()

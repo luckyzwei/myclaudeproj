@@ -131,6 +131,5 @@ public class PopupSpecialManagerInfo : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show special manager detail info
 	}
 }

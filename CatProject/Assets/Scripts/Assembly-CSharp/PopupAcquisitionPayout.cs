@@ -61,7 +61,6 @@ public class PopupAcquisitionPayout : UIBase
 
 	public override void OnHideBefore()
 	{
-		// Cleanup before hide
 	}
 
 	private void SetTimeInfo(DateTime lastRewardGetTime)
@@ -125,6 +124,5 @@ public class PopupAcquisitionPayout : UIBase
 
 	private void OnInfoButtonClick()
 	{
-		// Show acquisition payout info popup
 	}
 }

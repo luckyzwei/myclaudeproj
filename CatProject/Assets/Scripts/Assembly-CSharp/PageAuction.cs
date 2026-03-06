@@ -491,7 +491,6 @@ public class PageAuction : UIBase
 
 	private void Update()
 	{
-		// Update stamina remain time
 	}
 
 	private void OnDisable()

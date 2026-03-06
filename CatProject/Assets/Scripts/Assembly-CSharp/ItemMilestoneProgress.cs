@@ -72,7 +72,6 @@ public class ItemMilestoneProgress : MonoBehaviour
 
 	private void SubscribeEvents()
 	{
-		// Subscribe to milestone currency change events
 	}
 
 	private void UpdateMilestoneCurrencyInfo()

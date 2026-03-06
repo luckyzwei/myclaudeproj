@@ -197,7 +197,6 @@ public class SpriteAnimation : MonoBehaviour
 
 	public void SetFever(bool value)
 	{
-		// Toggle fever animation state
 	}
 
 	private void OnEnable()

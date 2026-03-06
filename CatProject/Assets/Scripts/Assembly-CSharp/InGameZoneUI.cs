@@ -77,7 +77,6 @@ public class InGameZoneUI : InGameFloatingUI
 
 	private void OnClickLock()
 	{
-		// Show locked zone info (level requirement)
 	}
 
 	public void SetArrowNoti()

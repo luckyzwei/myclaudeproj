@@ -210,7 +210,6 @@ public class ItemWorkshopProductInfoBox : MonoBehaviour
 
 	private void SetWorkshopProductIcon(string iconKey)
 	{
-		// Set product icon sprite by icon key
 	}
 
 	private void SetProductHasValueText(BigInteger hasValue_PerMile)

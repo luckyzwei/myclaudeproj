@@ -249,7 +249,6 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void OnClickRichPointInfo()
 	{
-		// Show rich point info popup
 	}
 
 	private void OnClickNoneShortCut()
@@ -274,7 +273,6 @@ public class ItemParkingCar : MonoBehaviour
 
 	private void OpenCarMarket(int carStoreIdx)
 	{
-		// Open car market page for purchasing
 	}
 
 	private void UpdateParkingLotUI()

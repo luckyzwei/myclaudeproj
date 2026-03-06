@@ -117,12 +117,10 @@ public class PopupManagerInfo : UIBase, ITabToggleGroup
 
 	private void OnClickPrevManagerBtn()
 	{
-		// Navigate to previous manager (handled by caller)
 	}
 
 	private void OnClickNextManagerBtn()
 	{
-		// Navigate to next manager (handled by caller)
 	}
 
 	public void SetIsActivePrevNextBtn(bool isActive)

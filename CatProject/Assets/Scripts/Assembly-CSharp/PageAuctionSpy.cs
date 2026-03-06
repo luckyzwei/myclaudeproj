@@ -72,7 +72,6 @@ public class PageAuctionSpy : UIBase
 
 	private void OnClickCashShop()
 	{
-		// Open gem shop
 	}
 
 	private void OnClickSpyStart()

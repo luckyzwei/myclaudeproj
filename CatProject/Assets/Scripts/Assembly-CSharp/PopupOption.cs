@@ -181,6 +181,5 @@ public class PopupOption : UIBase
 
 	private void OnClickReservation(Config.E_INHOUSE_RESERVATION ir)
 	{
-		// Open cross-promotion / reservation popup for the given inhouse type
 	}
 }

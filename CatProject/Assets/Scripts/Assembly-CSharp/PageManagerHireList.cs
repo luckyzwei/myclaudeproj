@@ -68,7 +68,6 @@ public class PageManagerHireList : UIBase
 
 	public void ShowUpgradeArrow(int officeIdx)
 	{
-		// Show arrow indicator for upgradeable manager
 	}
 
 	private void UpgradeCallBack(int level)

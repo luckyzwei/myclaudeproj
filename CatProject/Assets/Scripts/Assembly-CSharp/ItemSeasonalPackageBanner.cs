@@ -67,7 +67,6 @@ public class ItemSeasonalPackageBanner : MonoBehaviour
 
 	private void BuyPackage(int idx)
 	{
-		// Initiate IAP purchase for package
 	}
 
 	public void OnClickBtn()

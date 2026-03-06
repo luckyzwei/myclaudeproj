@@ -69,7 +69,6 @@ public class ShopContentsKeyBox : IShopContents
 
 	private void SetBannerColor(Config.ItemIdx itemIdx)
 	{
-		// Set banner background color based on key item type
 	}
 
 	public void OnClickBtn()
@@ -87,7 +86,6 @@ public class ShopContentsKeyBox : IShopContents
 
 	private void PurchaseShopGoods()
 	{
-		// Purchase key box goods
 	}
 
 	private (int, int) GetShopGoodsIdx(Config.ItemIdx itemIdx)

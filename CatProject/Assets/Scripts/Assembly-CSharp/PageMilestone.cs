@@ -155,7 +155,6 @@ public class PageMilestone : UIBase
 
 	private void OnClickPurchase()
 	{
-		// IAP purchase for milestone pass
 	}
 
 	private void SetSeasonThemeImage(string imageName)

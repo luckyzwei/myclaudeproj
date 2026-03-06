@@ -59,7 +59,6 @@ public class PageStageOpen : UIBase
 
 	private void SetStageBuildingIcon(int stageIdx)
 	{
-		// Set building icon image based on stage index
 	}
 
 	private void SetRewardList(StageOpenInfoData openTable)

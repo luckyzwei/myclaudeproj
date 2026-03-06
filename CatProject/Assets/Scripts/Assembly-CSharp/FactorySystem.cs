@@ -115,7 +115,6 @@ public class FactorySystem
 
 	private void UpdateMissionData()
 	{
-		// Notify mission system about factory progress
 	}
 
 	public void StartOpenFacility(int factoryIdx)
@@ -340,7 +339,6 @@ public class FactorySystem
 
 	public void Update()
 	{
-		// Frame update - handled by Unity MonoBehaviour update cycle
 	}
 
 	public void UpdateOneSeconds()

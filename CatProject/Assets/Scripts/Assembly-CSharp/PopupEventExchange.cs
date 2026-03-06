@@ -68,7 +68,6 @@ public class PopupEventExchange : UIBase
 
 	private void SetCostIconImage(int type, int idx, int region)
 	{
-		// Set cost icon image based on currency type
 	}
 
 	private void SetSliderValueText(int value)

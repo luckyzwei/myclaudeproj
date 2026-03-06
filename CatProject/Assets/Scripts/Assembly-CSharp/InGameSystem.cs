@@ -194,7 +194,6 @@ public class InGameSystem
 
 	private void InitStageData(int stage)
 	{
-		// Would load stage configuration data
 	}
 
 	public void CloseWorldmap(Action cb = null)
@@ -235,12 +234,10 @@ public class InGameSystem
 
 	public void PlayStageBgm()
 	{
-		// Would play stage background music via SoundSystem
 	}
 
 	public void PlayOutGameBgm(GameType gameType)
 	{
-		// Would play out-game background music based on type
 	}
 
 	private void UnLoadCurGameMode()

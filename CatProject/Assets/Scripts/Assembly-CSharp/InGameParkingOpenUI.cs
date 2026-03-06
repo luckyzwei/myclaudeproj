@@ -43,6 +43,5 @@ public class InGameParkingOpenUI : InGameFloatingUI
 
 	private void OnClickBtn()
 	{
-		// Open parking lot management
 	}
 }

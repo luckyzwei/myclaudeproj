@@ -152,7 +152,6 @@ public class PopupExpAccelerate : UIBase
 
 	public override void OnShowBefore()
 	{
-		// Called when popup becomes visible
 	}
 
 	public override void OnHideBefore()

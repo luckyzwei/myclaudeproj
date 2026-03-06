@@ -441,7 +441,6 @@ public class PageMagicalTarot : UIBase
 
 	private void AddCatstaEventTarotPlay()
 	{
-		// Add catstagram event for tarot play
 	}
 
 	private void OnClickCurrencyLeft()
@@ -466,7 +465,6 @@ public class PageMagicalTarot : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show tarot info popup
 	}
 
 	private void OnClickCard(ItemTarotCard card)

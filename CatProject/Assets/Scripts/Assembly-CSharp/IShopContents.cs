@@ -43,12 +43,10 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void ShowArrow()
 	{
-		// Show navigation arrow pointing to this shop section
 	}
 
 	public void HideArrow()
 	{
-		// Hide navigation arrow
 	}
 
 	public void SetPurchaseCb(Action cb)
@@ -63,7 +61,6 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void SetParams(params object[] a_params)
 	{
-		// Store additional parameters for shop contents
 	}
 
 	public void SetIsAutoReset(bool isAutoReset)
@@ -73,6 +70,5 @@ public abstract class IShopContents : MonoBehaviour
 
 	public void UpdatePurchaseLocation()
 	{
-		// Update purchase location for all items in this shop section
 	}
 }

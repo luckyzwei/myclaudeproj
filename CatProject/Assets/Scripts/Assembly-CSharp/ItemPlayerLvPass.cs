@@ -63,7 +63,6 @@ public class ItemPlayerLvPass : MonoBehaviour
 
 	public void UpdateCondition()
 	{
-		// Update button and lock states based on player level and pass status
 	}
 
 	public bool IsClaimable(bool isPremium, out bool isAdsReward)

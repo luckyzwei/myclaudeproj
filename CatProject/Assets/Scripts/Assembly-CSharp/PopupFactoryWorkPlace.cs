@@ -271,7 +271,6 @@ public class PopupFactoryWorkPlace : UIBase
 
 	private void ShowUnlockProducts()
 	{
-		// Show newly unlocked product items with animation
 	}
 
 	private void UpdateSelectItem()

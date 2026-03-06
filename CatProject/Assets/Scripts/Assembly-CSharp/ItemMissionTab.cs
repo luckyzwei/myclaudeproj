@@ -205,7 +205,6 @@ public class ItemMissionTab : MonoBehaviour, ITabToggleTab
 
 	private void OnClickOpenNowBanner(int idx)
 	{
-		// Navigate to the open-now shop item
 	}
 
 	public void Refresh()

@@ -110,7 +110,6 @@ public class PageAcquisitionStart : FullScreenUI
 
 	private void OnClickedStartButton()
 	{
-		// Start acquisition battle
 	}
 
 	private void OnClickedTeamSetButton()
@@ -128,7 +127,6 @@ public class PageAcquisitionStart : FullScreenUI
 
 	private void OnClickedEnemyCeoItem(int ceoIdx, int slotIdx)
 	{
-		// Show enemy CEO info
 	}
 
 	private void SetAutoPlayGuide(bool isSet)

@@ -169,11 +169,9 @@ public class PopupDistributorMenu : UIBase
 
 	private void OnFocusAfterScrolled(Vector2 value)
 	{
-		// Handle scroll position changes
 	}
 
 	private void OnClickedGuideInfoBtn()
 	{
-		// Show distributor guide info popup
 	}
 }

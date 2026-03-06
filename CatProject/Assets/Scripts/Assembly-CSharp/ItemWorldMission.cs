@@ -123,7 +123,6 @@ public class ItemWorldMission : MonoBehaviour
 
 	private void OnClickMove()
 	{
-		// Navigate to mission target
 	}
 
 	private void OnClickClear()

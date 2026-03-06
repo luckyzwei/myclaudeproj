@@ -143,6 +143,5 @@ public class PageSeasonalSlotRank : UIBase
 
 	private void UpdatePackage()
 	{
-		// Update package HUD item display
 	}
 }

@@ -93,6 +93,5 @@ public class GameNotificationIconRegister : MonoBehaviour
 
 	private void SetIcon(int idx)
 	{
-		// Set reddot icon based on notification type
 	}
 }

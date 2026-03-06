@@ -30,7 +30,6 @@ public class AdPassSystem
 
 	public void IncreaseAdViewCount()
 	{
-		// Track ad view count for ad pass rewards
 	}
 
 	public void GetAdPassReward(int idx, Action Cb)

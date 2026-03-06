@@ -149,7 +149,6 @@ public class ItemMiniGameExchangeShop : MonoBehaviour
 
 	private void OnItemInfoButtonClick()
 	{
-		// Show item detail info
 	}
 
 	private void BuyItem(int buyCount, bool isAdsReward)

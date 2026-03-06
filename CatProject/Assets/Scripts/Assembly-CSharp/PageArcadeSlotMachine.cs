@@ -109,17 +109,14 @@ public class PageArcadeSlotMachine : UIBase
 
 	private void InitTopInfoCurrency()
 	{
-		// Configure top info HUD currency display
 	}
 
 	private void OnClickedPopupMissionBtn()
 	{
-		// Show seasonal mission popup
 	}
 
 	private void OnClickedCoinBankBtn()
 	{
-		// Open coin bank
 	}
 
 	private void OnPlayArcadeSlotMachine(int usedCoinValue)

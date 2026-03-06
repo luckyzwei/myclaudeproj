@@ -126,12 +126,10 @@ public class ItemManagerCard : MonoBehaviour
 
 	public void UpdateRedDot()
 	{
-		// Update red dot notification based on RedDotCondition
 	}
 
 	private void SetManagerCommonInfo(ManagerInfoData infoData)
 	{
-		// Set name, grade, frame, ability icon from ManagerInfoData
 	}
 
 	private void UpdateOfficeValue(int tempManagerCount, bool onHireObjDeactive = false)
@@ -156,6 +154,5 @@ public class ItemManagerCard : MonoBehaviour
 
 	protected virtual void OnClickManager()
 	{
-		// Show manager detail popup
 	}
 }

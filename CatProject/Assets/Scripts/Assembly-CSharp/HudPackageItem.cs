@@ -83,6 +83,5 @@ public class HudPackageItem : MonoBehaviour
 
 	private void OnClickBtn()
 	{
-		// Open package shop page
 	}
 }

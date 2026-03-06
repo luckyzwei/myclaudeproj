@@ -92,7 +92,6 @@ public class TutorialEntityWaitDistributor : TutorialEntity
 
 	private void ZoomDistributorObj()
 	{
-		// Zoom camera to distributor building with CamOffset
 	}
 
 	[IteratorStateMachine(typeof(_003CSetAndWaitTime_003Ed__6))]

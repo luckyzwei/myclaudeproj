@@ -166,12 +166,10 @@ public class ContentsOpenSystem
 
 	private void SubscribeReview()
 	{
-		// Subscribe to review/rating prompt conditions
 	}
 
 	private void SubscribeInhouse()
 	{
-		// Subscribe to in-house ad/promotion conditions
 	}
 
 	public void ManualNotifyContentsOpen(OpenConditionType conditionType)
@@ -220,6 +218,5 @@ public class ContentsOpenSystem
 
 	public void SubscribeSeasonalManagerExpRequire()
 	{
-		// Subscribe to seasonal manager exp max time condition
 	}
 }

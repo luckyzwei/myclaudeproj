@@ -76,7 +76,6 @@ public class PopupSaleCar : UIBase
 
 	private void OnClickRichPointInfo()
 	{
-		// Show rich point info popup
 	}
 
 	private void SetRichPoint()

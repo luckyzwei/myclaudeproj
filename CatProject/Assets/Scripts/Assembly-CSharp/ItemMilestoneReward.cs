@@ -56,11 +56,9 @@ public class ItemMilestoneReward : MonoBehaviour
 
 	private void OnClickedRewardClaimBtn(int rewardTableIdx, bool bPremium)
 	{
-		// Claim milestone reward
 	}
 
 	private void UpdateSlotState(bool bPlayAni)
 	{
-		// Update reward slot claimed/unclaimed/locked state
 	}
 }

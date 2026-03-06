@@ -156,7 +156,6 @@ public class PopupShop : HUDAniBase
 
 	public void ReOpenCloseBtn()
 	{
-		// Re-enable close button after purchase flow
 	}
 
 	public override void OnShowBefore()

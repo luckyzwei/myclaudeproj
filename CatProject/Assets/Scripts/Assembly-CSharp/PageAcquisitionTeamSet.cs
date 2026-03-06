@@ -45,7 +45,6 @@ public class PageAcquisitionTeamSet : UIBase
 
 	public override void OnHideBefore()
 	{
-		// Cleanup before hide
 	}
 
 	private void SetCurStageInfo()

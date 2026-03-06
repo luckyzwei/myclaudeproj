@@ -70,7 +70,6 @@ public class InterstitialSystem : SystemBase
 
 	private void SubscribeConditionEvents()
 	{
-		// Subscribe to in-app purchase events to update active flag
 	}
 
 	public void SetCountry(string countryCode)

@@ -330,7 +330,6 @@ public class PageOneTimeEvent : UIBase, ILocalizeRefresh
 
 	private void HideInfoBubbles()
 	{
-		// Hide any info bubbles that are showing
 	}
 
 	private void ShowCurrencyParticle()

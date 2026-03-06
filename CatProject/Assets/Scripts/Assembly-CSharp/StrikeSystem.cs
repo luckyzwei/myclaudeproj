@@ -59,7 +59,6 @@ public class StrikeSystem
 
 	private void SetStrike()
 	{
-		// Evaluate each office for strike eligibility based on manager levels
 	}
 
 	private void SetOfficeStrikeEnable(int officeIdx, int regionIdx, OfficeData officeData)
@@ -97,7 +96,6 @@ public class StrikeSystem
 
 	private void FocusStrikeOffice()
 	{
-		// Focus camera on first striking office
 	}
 
 	public int GetStrikeRatio(int officeIdx, int regionIdx)
@@ -107,7 +105,6 @@ public class StrikeSystem
 
 	public void SetNegotiation(int officeIdx)
 	{
-		// Mark office as negotiated to resolve strike
 	}
 
 	public BigInteger GetNegotiationGemCount(int officeIdx, int regionIdx)

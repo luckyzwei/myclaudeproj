@@ -49,7 +49,6 @@ public class ItemEmployeeMood : MonoBehaviour
 
 	public void UpdateShowMood()
 	{
-		// Read mood from system and update display
 	}
 
 	public void Refresh()

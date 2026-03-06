@@ -86,7 +86,6 @@ public class PopupMiniGameShop : UIBase
 
 	private void OnClickIAPItem()
 	{
-		// Handle IAP purchase for mini game shop
 	}
 
 	private void SetReward(int itemIdx)

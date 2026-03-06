@@ -147,12 +147,10 @@ public class ItemWorkshopWorkerFacility : MonoBehaviour
 
 	private void OnClickedManagerButton()
 	{
-		// Show manager info popup
 	}
 
 	private void OnClickedPauseStateWorkerIcon(ItemWorkshopWorkerFacilitySlot.E_SlotState slotState)
 	{
-		// Handle click on paused worker slot
 	}
 
 	private void OnChangeWorkerCount(int hiredWorkerCnt, int maxWorkerCnt, int productionWorkerCount)

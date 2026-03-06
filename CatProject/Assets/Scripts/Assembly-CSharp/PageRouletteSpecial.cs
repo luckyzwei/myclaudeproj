@@ -189,7 +189,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 
 	private void OnClickRatioInfo()
 	{
-		// Show ratio info popup
 	}
 
 	private void OnClickLuckyDrawReward()
@@ -202,7 +201,6 @@ public class PageRouletteSpecial : UIBase, ILocalizeRefresh
 
 	private void OnClickLuckyDrawInfo()
 	{
-		// Show lucky draw info popup
 	}
 
 	public override void Hide()

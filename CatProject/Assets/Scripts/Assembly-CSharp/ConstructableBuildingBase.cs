@@ -390,7 +390,6 @@ public class ConstructableBuildingBase : BuildingBase
 
 	private void SetBlockAStarRoad(bool bBlock)
 	{
-		// Block or unblock A* pathfinding road when building state changes
 	}
 
 	private void OnChangeMaxWorkerCount(int hiredCount)

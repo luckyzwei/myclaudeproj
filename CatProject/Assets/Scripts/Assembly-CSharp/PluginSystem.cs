@@ -405,12 +405,10 @@ public class PluginSystem
 
 	public void StopRecordingLoadingEvent(ulong handle)
 	{
-		// Firebase Performance monitoring - stop loading trace
 	}
 
 	public void StopRecordingLoadingGroup(ulong handle)
 	{
-		// Firebase Performance monitoring - stop group trace
 	}
 
 	public void InitImmersiveAD()
@@ -503,12 +501,10 @@ public class PluginSystem
 
 	private void InitTapjoyCallbackMgr()
 	{
-		// Register Tapjoy callback manager
 	}
 
 	public void Update()
 	{
-		// Update ad SDK if needed
 	}
 
 	[IteratorStateMachine(typeof(_003CcoEndReview_003Ed__49))]

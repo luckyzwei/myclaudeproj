@@ -114,7 +114,6 @@ public class WorldmapBuilding : MonoBehaviour
 
 	private void LoadSignUI()
 	{
-		// Load building sign UI via resource system at Trans position
 	}
 
 	private void OnClickBuilding(int building)
@@ -133,7 +132,6 @@ public class WorldmapBuilding : MonoBehaviour
 
 	private void ShowBuildingInfo(ShopSystem.InAppPurchaseLocation location)
 	{
-		// Show building info popup for this building
 	}
 
 	public Transform GetUITrans()

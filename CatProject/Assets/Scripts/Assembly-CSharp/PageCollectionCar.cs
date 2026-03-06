@@ -76,16 +76,13 @@ public class PageCollectionCar : UIBase
 
 	private void SetParkingSet()
 	{
-		// Setup parking lot collection display
 	}
 
 	private void OnBrandClick(int brandIdx)
 	{
-		// Show brand detail popup
 	}
 
 	private void OnClickTotalRewardBtn()
 	{
-		// Claim total collection reward
 	}
 }

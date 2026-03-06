@@ -104,7 +104,6 @@ public class ItemBuildingProgressSlot : MonoBehaviour
 
 	private void SetBuildingImg(string imgKey)
 	{
-		// Set building image sprite by key
 	}
 
 	private void SetBuildingLevelInfo(int prevLv, int nextLv)
@@ -119,7 +118,6 @@ public class ItemBuildingProgressSlot : MonoBehaviour
 
 	private void OnClickedBuildingImmediatelyCompleteBtn()
 	{
-		// Instantly complete construction with gem cost
 	}
 
 	private void UpdateTimeText()

@@ -55,7 +55,6 @@ public class ItemMilestoneProgressList : MonoBehaviour
 
 	private void SetSeasonMainIcon(string iconKey)
 	{
-		// Set season main icon sprite
 	}
 
 	private void SetMilestoneProgressInfo(int curStep, int maxStep)
@@ -78,6 +77,5 @@ public class ItemMilestoneProgressList : MonoBehaviour
 
 	private void SetMilestoneRewardList()
 	{
-		// Create milestone reward slots from reward data
 	}
 }

@@ -138,11 +138,9 @@ public class InGameBuildingInConstructionUI : InGameFloatingUI
 
 	private void OnClickedBuildingFastBtn()
 	{
-		// Show fast complete confirmation popup
 	}
 
 	private void OnConfirmedFastOpen()
 	{
-		// Fast complete construction via gem spending
 	}
 }

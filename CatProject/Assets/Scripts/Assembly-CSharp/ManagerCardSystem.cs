@@ -467,7 +467,6 @@ public class ManagerCardSystem
 
 	public void UpdateAllFindManagerUI()
 	{
-		// Triggers UI refresh for all manager-related screens
 	}
 
 	public BigInteger CalculateManagerAddRewardBuff(BigInteger value, int managerIdx)
@@ -529,7 +528,6 @@ public class ManagerCardSystem
 
 	private void OnSkillContentsOpen()
 	{
-		// Called when skill contents UI opens - refresh skill info
 	}
 
 	private void UpdateManagerSkillBuff(int managerIdx)
@@ -539,7 +537,6 @@ public class ManagerCardSystem
 
 	public void UpdateManagerPopups(int officeIdx = -1, int regionIdx = -1, bool showUpgradeArrow = false)
 	{
-		// Would refresh popup UI elements for manager info
 	}
 
 	public string GetOutlineColor(int region)
@@ -583,26 +580,21 @@ public class ManagerCardSystem
 
 	public void LogManagerUnlock(int managerIdx)
 	{
-		// Analytics: log manager unlock event
 	}
 
 	public void LogManagerUpgrade(int managerIdx, int resultLevel)
 	{
-		// Analytics: log manager upgrade event
 	}
 
 	public void LogSuitCasseBuy(int buyType, int buyCount)
 	{
-		// Analytics: log suitcase purchase
 	}
 
 	public void LogManagerSpecs(int clearStageIdx)
 	{
-		// Analytics: log manager specs at stage clear
 	}
 
 	private void LogManagerSpec(int clearStageIdx, Config.ManagerGrade grade, AbilitySystem.AbilityType abilityType)
 	{
-		// Analytics: log individual manager spec
 	}
 }

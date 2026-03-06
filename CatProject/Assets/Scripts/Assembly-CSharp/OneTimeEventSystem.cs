@@ -82,7 +82,6 @@ public class OneTimeEventSystem
 
 	private void SubscribeContentOpen()
 	{
-		// Subscribe to contents open changes to enable/disable one-time events
 	}
 
 	private void UpdateOneTimeEvent()
@@ -146,7 +145,6 @@ public class OneTimeEventSystem
 
 	private void ShowBonusOneTimeOpenPopup()
 	{
-		// Show bonus one-time event open popup
 	}
 
 	private void ShowDonePopup()

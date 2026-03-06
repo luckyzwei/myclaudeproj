@@ -393,6 +393,5 @@ public class RentalFeeSystem
 
 	private void PlayRentalFeeGetSound()
 	{
-		// Play rental fee collection sound effect
 	}
 }

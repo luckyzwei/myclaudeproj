@@ -133,7 +133,6 @@ public class PopupFactoryStorage : UIBase
 
 	private void UpdateList()
 	{
-		// Populate product list from factory storage data
 	}
 
 	private void ListActiveCallback()

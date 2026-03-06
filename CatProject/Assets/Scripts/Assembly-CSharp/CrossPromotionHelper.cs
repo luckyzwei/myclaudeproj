@@ -9,7 +9,6 @@ public static class CrossPromotionHelper
 
 	public static void OpenCrossPromotionPage()
 	{
-		// Would open cross promotion deep link or store page
 	}
 
 	public static bool CheckPossibleClaimReward(Config.E_INHOUSE_RESERVATION reservationType)

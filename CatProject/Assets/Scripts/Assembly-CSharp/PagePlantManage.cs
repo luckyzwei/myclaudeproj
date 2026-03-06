@@ -305,12 +305,10 @@ public class PagePlantManage : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show plant info popup
 	}
 
 	private void OnClickPreview()
 	{
-		// Show plant preview
 	}
 
 	private void OnClickBefore()
@@ -338,7 +336,6 @@ public class PagePlantManage : UIBase
 
 	private void OnClickBuyItem()
 	{
-		// Navigate to tonic purchase
 	}
 
 	private void OnClickLevelUp()

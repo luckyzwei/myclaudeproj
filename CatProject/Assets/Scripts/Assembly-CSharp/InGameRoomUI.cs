@@ -80,7 +80,6 @@ public class InGameRoomUI : InGameFloatingUI
 
 	private void OnClickBtn()
 	{
-		// Open office management popup
 	}
 
 	private bool CheckOnStrike()

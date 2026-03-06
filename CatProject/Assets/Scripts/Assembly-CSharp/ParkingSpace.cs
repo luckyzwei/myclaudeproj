@@ -47,7 +47,6 @@ public class ParkingSpace : MonoBehaviour
 
 	private void LoadEditUI()
 	{
-		// Load parking edit UI at CarTrans position
 	}
 
 	public void UpdateEditMode()
@@ -69,7 +68,6 @@ public class ParkingSpace : MonoBehaviour
 
 	public void UpdateCar()
 	{
-		// Refresh car visual based on current car data
 	}
 
 	private void DestroyCar()

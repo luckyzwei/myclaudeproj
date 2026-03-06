@@ -144,6 +144,5 @@ public class PageSeasonalQuestList : FullScreenUI
 
 	private void OnClickInfo()
 	{
-		// Show seasonal quest info popup
 	}
 }

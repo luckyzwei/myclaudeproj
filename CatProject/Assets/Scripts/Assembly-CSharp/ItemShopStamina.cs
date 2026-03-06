@@ -83,17 +83,14 @@ public class ItemShopStamina : MonoBehaviour
 
 	private void OnClickFree()
 	{
-		// Claim free stamina
 	}
 
 	private void OnClickAds()
 	{
-		// Watch ad for stamina
 	}
 
 	private void OnClickCash()
 	{
-		// Purchase stamina with gems
 	}
 
 	private void OnDestroy()

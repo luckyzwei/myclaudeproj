@@ -117,6 +117,5 @@ public class TabToggleGroup : ToggleGroup
 
 	public static void ChangeTab<T>(int index) where T : UIBase
 	{
-		// Static helper to change tab on a typed UIBase
 	}
 }

@@ -125,7 +125,6 @@ public class EmployeeMoodSystem : MonoBehaviour
 
 	public void UpdateOneSeconds()
 	{
-		// Update mood buff timers
 	}
 
 	private int CalcOfficeItemScore(int officeIdx, OfficeData officeData, int companyGrade)

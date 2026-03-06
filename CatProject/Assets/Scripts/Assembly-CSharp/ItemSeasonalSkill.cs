@@ -190,6 +190,5 @@ public class ItemSeasonalSkill : MonoBehaviour
 
 	private void OnClickedSkillUnlockButton()
 	{
-		// Unlock skill
 	}
 }

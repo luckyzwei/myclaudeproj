@@ -149,7 +149,6 @@ public class PopupDataSave : UIBase
 
 	private void OnClickAccountDelete()
 	{
-		// Delete account data
 	}
 
 	private string EscapeURL(string url)
@@ -159,7 +158,6 @@ public class PopupDataSave : UIBase
 
 	private void Test()
 	{
-		// Test cloud save/load functionality
 	}
 
 	private void ReloadData()
@@ -176,6 +174,5 @@ public class PopupDataSave : UIBase
 
 	private void OpenMailBox()
 	{
-		// Open in-game mailbox
 	}
 }

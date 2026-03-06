@@ -89,6 +89,5 @@ public class InGameSeasonalData
 
 	private void CheckAndRemoveOlderSeasonInfo()
 	{
-		// Remove expired season data if needed
 	}
 }

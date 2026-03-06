@@ -51,11 +51,9 @@ public class BuffObjectComponent : MonoBehaviour
 
 	private void UpdateEffect()
 	{
-		// Apply buff object visual effects
 	}
 
 	private void OnClickObject()
 	{
-		// Show buff object info popup
 	}
 }

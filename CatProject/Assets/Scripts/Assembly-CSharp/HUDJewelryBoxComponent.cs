@@ -69,6 +69,5 @@ public class HUDJewelryBoxComponent : MonoBehaviour
 
 	private void OnClickJewelryBoxBtn()
 	{
-		// Open jewelry box popup
 	}
 }

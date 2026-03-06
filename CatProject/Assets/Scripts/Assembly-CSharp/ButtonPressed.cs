@@ -168,7 +168,6 @@ public class ButtonPressed : MonoBehaviour, IPointerDownHandler, IEventSystemHan
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		// Prevent drag from canceling press
 	}
 
 	public void OnCancel()

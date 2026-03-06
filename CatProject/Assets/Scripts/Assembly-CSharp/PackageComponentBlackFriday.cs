@@ -119,12 +119,10 @@ public class PackageComponentBlackFriday : PackageComponent
 
 	private void SubscribeCash()
 	{
-		// Subscribe to cash currency changes to update display
 	}
 
 	private void OnClickCashShop()
 	{
-		// Open cash shop page
 	}
 
 	public override void OnBuySuccess(int idx)

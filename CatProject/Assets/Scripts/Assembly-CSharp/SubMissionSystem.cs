@@ -114,12 +114,10 @@ public class SubMissionSystem
 
 	private void NotifyMissionRewardReady()
 	{
-		// Notify UI that a mission reward is ready to claim
 	}
 
 	private void JustSyncMissionSaveData()
 	{
-		// Sync mission save data to UserDataSystem
 	}
 
 	private SubMissionSlotData MakeMissionSlotData(SubMissionData missionTable)

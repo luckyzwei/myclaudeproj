@@ -211,7 +211,6 @@ public class GameNotificationSystem
 
 	public void UpdateNotification(NotificationCategory category)
 	{
-		// Would recalculate notification state for the given category
 	}
 
 	public void CheckChangeOnceNotification(NotificationCategory category, bool value, int targetIdx = -1)

@@ -318,7 +318,6 @@ public class PageStageWorldMap : UIBase
 
 	private void OnScrollValueChange(Vector2 delta)
 	{
-		// Handle scroll for parallax or chapter transitions
 	}
 
 	private void UpdateChapterBtn()

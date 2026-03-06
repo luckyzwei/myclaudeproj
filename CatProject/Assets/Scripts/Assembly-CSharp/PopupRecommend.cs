@@ -66,11 +66,9 @@ public class PopupRecommend : UIBase
 
 	private void OnClickInfo()
 	{
-		// Show recommend info popup
 	}
 
 	private void OnClickInvite()
 	{
-		// Share invite link
 	}
 }

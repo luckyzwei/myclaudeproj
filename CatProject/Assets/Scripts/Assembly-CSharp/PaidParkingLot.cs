@@ -55,7 +55,6 @@ public class PaidParkingLot : MonoBehaviour
 
 	private void LoadUI(int needHouse)
 	{
-		// Load InGameParkingOpenUI at UITrans via Addressables
 	}
 
 	public void UpdateEditModeUI()

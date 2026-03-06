@@ -310,7 +310,6 @@ public class PageMiniGame_Dig : UIBase
 
 	private void LoadCeo()
 	{
-		// Load CEO character model into MyCeoRoot
 	}
 
 	private void SetRemainTimeText()
@@ -326,7 +325,6 @@ public class PageMiniGame_Dig : UIBase
 
 	private void UpdateHasCurrencyValue()
 	{
-		// Update UseCurrencyItem display with current currency amount
 	}
 
 	private void MakeUpStage()
@@ -363,12 +361,10 @@ public class PageMiniGame_Dig : UIBase
 
 	private void TryLoadFloor(string floorPath)
 	{
-		// Load floor grid from addressable
 	}
 
 	private void PlaceTreasureItems()
 	{
-		// Place treasure items on the grid
 	}
 
 	private void OnClickedCell(Vector2Int position)

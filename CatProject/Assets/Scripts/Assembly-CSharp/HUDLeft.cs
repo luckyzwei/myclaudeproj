@@ -123,7 +123,6 @@ public class HUDLeft : UIBase, IScreenAction
 
 	public void OnScreenActionStep()
 	{
-		// Screen action step - no additional behavior needed
 	}
 
 	public void OnScreenActionComplete()

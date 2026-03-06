@@ -89,7 +89,6 @@ public class PageDailyQuestList : UIBase
 
 	private void SetList()
 	{
-		// Populate quest list from DailyQuestData
 	}
 
 	private void UpdateRewardInfo()
@@ -156,12 +155,10 @@ public class PageDailyQuestList : UIBase
 
 	private void UpdateOneTimeCurrencyIcon()
 	{
-		// Set one-time currency icon from event data
 	}
 
 	public void UpdateOneTimeCurrencyCount()
 	{
-		// Update one-time currency count text
 	}
 
 	private void OnDestroy()

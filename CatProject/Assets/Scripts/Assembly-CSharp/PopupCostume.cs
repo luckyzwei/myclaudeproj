@@ -206,7 +206,6 @@ public class PopupCostume : UIBase
 
 	private void SetCostumeList()
 	{
-		// Populate costume list from CeoCostumeData
 	}
 
 	private void OnClickCostumeSelectBtn(int costumeIdx)

@@ -54,7 +54,6 @@ public class InGameOpenFactory : InGameFloatingUI
 
 	private void OnClickSkip()
 	{
-		// Skip factory open wait time with gems
 	}
 
 	private void OnDestroy()

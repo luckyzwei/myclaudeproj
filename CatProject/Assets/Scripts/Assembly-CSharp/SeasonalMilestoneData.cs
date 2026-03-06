@@ -133,6 +133,5 @@ public class SeasonalMilestoneData
 
 	private void UpdateGoalAccumulationValue(int rewardTableIdx)
 	{
-		// Set GoalAccumulationValue_PerMile from reward table config
 	}
 }

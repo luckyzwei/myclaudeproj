@@ -57,12 +57,10 @@ public class AbilitySystem
 
 	private void InitBooster()
 	{
-		// Would load booster configurations from table data
 	}
 
 	public void UpdateOneSeconds()
 	{
-		// Would check booster expiry timers and deactivate expired ones
 	}
 
 	public int GetActiveBoosterAbilityValue(AbilityType type, int regionIdx)

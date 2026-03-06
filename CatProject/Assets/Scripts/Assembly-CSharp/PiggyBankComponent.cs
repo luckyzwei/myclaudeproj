@@ -73,12 +73,10 @@ public class PiggyBankComponent : MonoBehaviour
 
 	private void SetPiggySkin(int level)
 	{
-		// Set piggy bank spine skin based on level
 	}
 
 	private void OnClickInfo()
 	{
-		// Show piggy bank info popup
 	}
 
 	private void OnClickBuyPiggyBank()
