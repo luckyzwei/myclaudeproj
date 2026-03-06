@@ -30,6 +30,7 @@ public class PackageComponentAnniversary : PackageComponent
 
 	public override void SetSaleList(int packageIdx)
 	{
+		base.SetSaleList(packageIdx);
 	}
 
 	private void OnDisable()
@@ -38,6 +39,7 @@ public class PackageComponentAnniversary : PackageComponent
 
 	private void Update()
 	{
+		UpdateRemainTime();
 	}
 
 	private void UpdateRemainTime()
@@ -46,5 +48,6 @@ public class PackageComponentAnniversary : PackageComponent
 
 	public override void OnBuySuccess(int idx)
 	{
+		base.OnBuySuccess(idx);
 	}
 }

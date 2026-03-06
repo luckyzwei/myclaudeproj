@@ -32,10 +32,19 @@ public class Tip : MonoBehaviour
 
 	public void AddPrice(BigInteger Price, bool Critical = false, bool Unique = false)
 	{
+		TipValue += Price;
+		isCritical = Critical;
+		isUnique = Unique;
+		if (TipObj != null) TipObj.SetActive(!Critical && !Unique);
+		if (CriticalTipObj != null) CriticalTipObj.SetActive(Critical);
+		if (SpecialTipObj != null) SpecialTipObj.SetActive(Unique);
 	}
 
 	private void OnDisable()
 	{
+		TipValue = BigInteger.Zero;
+		isCritical = false;
+		isUnique = false;
 	}
 
 	public void OnClick()
@@ -44,6 +53,6 @@ public class Tip : MonoBehaviour
 
 	public bool isActive()
 	{
-		return false;
+		return TipValue > BigInteger.Zero;
 	}
 }

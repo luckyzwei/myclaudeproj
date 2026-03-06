@@ -44,10 +44,13 @@ public class SeasonalCoinBankComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
+		if (PurchaseBtn != null) PurchaseBtn.onClick.AddListener(OnClickBuyCoinBank);
 	}
 
 	public void Init(bool isShop)
 	{
+		bShop = isShop;
 	}
 
 	private void SetPiggySkin(int level)
@@ -56,9 +59,11 @@ public class SeasonalCoinBankComponent : MonoBehaviour
 
 	private void OnClickInfo()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 
 	private void OnClickBuyCoinBank()
 	{
+		LevelUpCallback?.Invoke();
 	}
 }

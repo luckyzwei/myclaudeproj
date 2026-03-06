@@ -17,14 +17,19 @@ public class HUDSeasonalWorkerMood : MonoBehaviour
 
 	private void Awake()
 	{
+		if (MoodBtn != null) MoodBtn.onClick.AddListener(OnClickWorkersMood);
 	}
 
 	public void Init()
 	{
+		if (RootObj != null) RootObj.SetActive(true);
+		UpdateEmployeesMood();
 	}
 
 	public void Reset()
 	{
+		if (Disposable != null) { Disposable.Dispose(); Disposable = null; }
+		if (RootObj != null) RootObj.SetActive(false);
 	}
 
 	private void UpdateEmployeesMood()

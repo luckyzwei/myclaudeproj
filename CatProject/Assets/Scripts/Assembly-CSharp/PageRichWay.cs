@@ -25,10 +25,14 @@ public class PageRichWay : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (richPointinfoBtn != null) richPointinfoBtn.onClick.AddListener(OnClickRichPointInfo);
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateMissions();
+		FocusCurMission();
 	}
 
 	private void UpdateMissions()
@@ -41,5 +45,6 @@ public class PageRichWay : UIBase
 
 	private void OnClickRichPointInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

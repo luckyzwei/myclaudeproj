@@ -9,7 +9,7 @@ public class SpecialParkingLot : MonoBehaviour
 
 	private GameObject CarObj;
 
-	public GameObject GetLockObj { get { return null; } }
+	public GameObject GetLockObj { get { return LockObj; } }
 
 	public int Idx { get; private set; }
 
@@ -17,6 +17,8 @@ public class SpecialParkingLot : MonoBehaviour
 
 	public void Init(int idx)
 	{
+		Idx = idx;
+		LoadCar();
 	}
 
 	private void LoadCar()
@@ -25,9 +27,11 @@ public class SpecialParkingLot : MonoBehaviour
 
 	private void OnClick()
 	{
+		ClickCallback?.TutorialClick();
 	}
 
 	private void OnDestroy()
 	{
+		if (CarObj != null) Object.Destroy(CarObj);
 	}
 }

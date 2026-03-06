@@ -73,14 +73,26 @@ public class PageCrossPromotion : UIBase
 
 	public bool IsCreateSlot { get { return false; } }
 
-	public List<CrossPromotionComponent> GetListItems { get { return null; } }
+	public List<CrossPromotionComponent> GetListItems { get { return listItem; } }
 
 	public void Set(APP_IDX _appMyIdx, Action _onReward, Sprite rewardIcon = null)
 	{
+		appMyIdx = _appMyIdx;
+		if (!bCreateSlot)
+		{
+			bCreateSlot = true;
+			listItem = new List<CrossPromotionComponent>();
+			list_toggle = new List<Toggle>();
+			list_tap_object = new Dictionary<CPTab, GameObject>();
+			InstantiateToggle();
+			InstantiateView();
+		}
 	}
 
 	private void ChangeTab(CPTab tab, bool on)
 	{
+		if (!on) return;
+		CurTab = tab;
 	}
 
 	public void PlaySound(string soundKey)

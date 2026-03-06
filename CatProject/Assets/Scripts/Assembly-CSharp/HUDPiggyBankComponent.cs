@@ -24,6 +24,7 @@ public class HUDPiggyBankComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		if (PiggyBtn != null) PiggyBtn.onClick.AddListener(OnClickPiggyBankBtn);
 	}
 
 	private void OnDestroy()
@@ -32,6 +33,7 @@ public class HUDPiggyBankComponent : MonoBehaviour
 
 	public void SetPiggyBank()
 	{
+		UpdatePiggyValue();
 	}
 
 	public void UpdatePiggyValue()
@@ -40,5 +42,6 @@ public class HUDPiggyBankComponent : MonoBehaviour
 
 	private void OnClickPiggyBankBtn()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupAdsSupply>();
 	}
 }

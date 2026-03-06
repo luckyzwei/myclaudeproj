@@ -35,6 +35,7 @@ public class PackageComponentPeriodicShop : PackageComponent
 
 	public override void SetSaleList(int shopSaleListIdx)
 	{
+		base.SetSaleList(shopSaleListIdx);
 	}
 
 	private void OnDisable()
@@ -43,6 +44,7 @@ public class PackageComponentPeriodicShop : PackageComponent
 
 	private void Update()
 	{
+		UpdateRemainTime();
 	}
 
 	private void UpdateRemainTime()
@@ -51,5 +53,6 @@ public class PackageComponentPeriodicShop : PackageComponent
 
 	public override void OnBuySuccess(int idx)
 	{
+		base.OnBuySuccess(idx);
 	}
 }
