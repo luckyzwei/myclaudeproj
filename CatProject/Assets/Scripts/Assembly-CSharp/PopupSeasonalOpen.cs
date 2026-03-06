@@ -87,39 +87,57 @@ public class PopupSeasonalOpen : UIBase
 
 	public void Init(int seasonInfoIdx)
 	{
+		SeasonInfoIdx = seasonInfoIdx;
+		// Load seasonal info and set UI
 	}
 
 	private void Update()
 	{
+		var now = DateTime.Now;
+		if (now >= SeasonEndDateTime) return;
+		int remainSec = (int)(SeasonEndDateTime - now).TotalSeconds;
+		SetRemainTimeText(remainSec);
 	}
 
 	private void SetTitleText(string titleStr)
 	{
+		if (TitleText != null) TitleText.text = titleStr;
 	}
 
 	private void SetDescriptionText(string descStr)
 	{
+		if (DescText != null) DescText.text = descStr;
 	}
 
 	private void SetThemeImage(string imageKey)
 	{
+		if (ThemeImage != null && !string.IsNullOrEmpty(imageKey))
+		{
+			Sprite sprite = Resources.Load<Sprite>(imageKey);
+			if (sprite != null) ThemeImage.sprite = sprite;
+		}
 	}
 
 	private void SetRemainTimeText(int remainTimeSec)
 	{
+		if (RemainTimeText != null)
+			RemainTimeText.text = ProjectUtility.GetTimeStringFormattingShort(remainTimeSec);
 	}
 
 	private void SetBgColor(int seasonThemeIdx)
 	{
+		// Set background color based on season theme index
 	}
 
 	[IteratorStateMachine(typeof(_003CPlaySeasonalStartHUDEffect_003Ed__15))]
 	public IEnumerator PlaySeasonalStartHUDEffect()
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		// Play seasonal start HUD decoration effect
 	}
 
 	public override void OnHideAfter()
 	{
+		// Cleanup after seasonal open popup hides
 	}
 }

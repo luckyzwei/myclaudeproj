@@ -118,39 +118,61 @@ public class PopupOneTimeEventOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		if (moveBtn != null) moveBtn.onClick.AddListener(() => Hide());
+
+		if (TileImg != null) originTile = TileImg.sprite;
+		if (TileBgImg != null) originTileBgColor = TileBgImg.color;
 	}
 
 	public override void OnShowBefore()
 	{
+		SetOneTimeEvent();
+		UpdateSpecialTheme();
 	}
 
 	public void SetOneTimeEvent()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Set one-time event info (title, subtitle, description, remain time, reward image)
 	}
 
 	private void RunHUDEffect()
 	{
+		CurProcess = StartCoroutine(ShowOneTimeHUDEffect());
 	}
 
 	[IteratorStateMachine(typeof(_003CShowOneTimeHUDEffect_003Ed__20))]
 	private IEnumerator ShowOneTimeHUDEffect()
 	{
-		yield break;
+		yield return new WaitForSeconds(0.5f);
+		// Show one-time event HUD decoration effect
 	}
 
 	public void KillProcess()
 	{
+		if (CurProcess != null)
+		{
+			StopCoroutine(CurProcess);
+			CurProcess = null;
+		}
 	}
 
 	private void UpdateSpecialTheme()
 	{
+		if (TileImg != null && originTile != null) TileImg.sprite = originTile;
+		if (TileBgImg != null) TileBgImg.color = originTileBgColor;
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

@@ -132,33 +132,58 @@ public class PopupListRecontract : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		ItemOfficeCompanyInfoList = new List<ItemOfficeCompanyInfo>();
+		if (ListScrollRect != null) ListScrollRect.onValueChanged.AddListener(OnScrolled);
 	}
 
 	private void OnDestroy()
 	{
+		if (InputCheckCoroutine != null) { StopCoroutine(InputCheckCoroutine); InputCheckCoroutine = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (InputCheckCoroutine != null) { StopCoroutine(InputCheckCoroutine); InputCheckCoroutine = null; }
 	}
 
 	public void Init(int focusOfficeIdx)
 	{
+		if (ItemOfficeCompanyInfoList == null) ItemOfficeCompanyInfoList = new List<ItemOfficeCompanyInfo>();
+		ItemOfficeCompanyInfoList.Clear();
+		FocusOfficeSlot = null;
+
+		// Create office company info slots from prefab
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		StartCoroutine(FocusOffsetSlot());
+		InputCheckCoroutine = StartCoroutine(CheckInput());
 	}
 
 	[IteratorStateMachine(typeof(_003CFocusOffsetSlot_003Ed__9))]
 	private IEnumerator FocusOffsetSlot()
 	{
-		yield break;
+		yield return null;
+		// Scroll to focused office slot position
+		if (FocusOfficeSlot != null && ListScrollRect != null)
+		{
+			// Normalize scroll position to focus item
+		}
 	}
 
 	private void OnScrolled(Vector2 value)
 	{
+		// Handle scroll position changes
 	}
 
 	[IteratorStateMachine(typeof(_003CCheckInput_003Ed__11))]
 	private IEnumerator CheckInput()
 	{
-		yield break;
+		while (true)
+		{
+			yield return null;
+			// Check for user input to close popup
+		}
 	}
 }
