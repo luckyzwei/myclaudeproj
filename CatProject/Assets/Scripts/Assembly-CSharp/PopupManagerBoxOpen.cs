@@ -50,17 +50,26 @@ public class PopupManagerBoxOpen : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (OpenBtn != null) OpenBtn.onClick.AddListener(OnClickOpenBtn);
+		if (ManyOpenBtn != null) ManyOpenBtn.onClick.AddListener(OnClickManyOpenBtn);
 	}
 
 	public void Set(int goodsIdx, int itemIdx, Action<int> callBack)
 	{
+		OpenCb = callBack;
+		openCount = 1;
 	}
 
 	public void OnClickOpenBtn()
 	{
+		OpenCb?.Invoke(1);
+		Hide();
 	}
 
 	public void OnClickManyOpenBtn()
 	{
+		OpenCb?.Invoke(openCount);
+		Hide();
 	}
 }

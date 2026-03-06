@@ -13,10 +13,13 @@ public class PopupSeasonalShortcut : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ShortcutBtn != null) ShortcutBtn.onClick.AddListener(OnClickedShortcutBtn);
 	}
 
 	public override void OnShowBefore()
 	{
+		SetDescText();
 	}
 
 	private void SetDescText()
@@ -25,5 +28,6 @@ public class PopupSeasonalShortcut : UIBase
 
 	private void OnClickedShortcutBtn()
 	{
+		Hide();
 	}
 }

@@ -40,17 +40,26 @@ public class PopupCompanyRecontract : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (RecontractBtn != null) RecontractBtn.onClick.AddListener(OnClickRecontract);
+		if (OutBtn != null) OutBtn.onClick.AddListener(OnClickOut);
 	}
 
 	public void Set(int office)
 	{
+		OfficeIdx = office;
 	}
 
 	private void OnClickRecontract()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 
 	private void OnClickOut()
 	{
+		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupCompanyOut>();
 	}
 }

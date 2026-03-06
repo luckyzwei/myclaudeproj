@@ -18,17 +18,22 @@ public class PopupAuctionOrganizeMyCEO : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (InfoBtn != null) InfoBtn.onClick.AddListener(OnClickInfo);
 	}
 
 	public void SetRound(int idx)
 	{
+		Round = idx;
 	}
 
 	private void OnClickSelectCeo(int managerIdx)
 	{
+		Hide();
 	}
 
 	private void OnClickInfo()
 	{
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupRewardDetail>();
 	}
 }

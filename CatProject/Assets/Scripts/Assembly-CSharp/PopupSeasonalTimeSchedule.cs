@@ -31,18 +31,31 @@ public class PopupSeasonalTimeSchedule : UIBase
 
 	public void Init()
 	{
+		DayScheduleList = new List<float>();
+		bInitPopup = true;
 	}
 
 	private void Update()
 	{
+		if (!bInitPopup) return;
 	}
 
 	private void UpdateDayActivityObjList(double gameTimeSec)
 	{
+		if (DayActivityObjList == null) return;
+		int scheduleIdx = FindDayScheduleIndex(gameTimeSec);
+		for (int i = 0; i < DayActivityObjList.Count; i++)
+		{
+			if (DayActivityObjList[i] != null)
+				DayActivityObjList[i].SetActive(i == scheduleIdx);
+		}
 	}
 
 	private void UpdateDayIcon(bool isDayTime)
 	{
+		if (DayIconObj != null) DayIconObj.SetActive(isDayTime);
+		if (NightIconObj != null) NightIconObj.SetActive(!isDayTime);
+		NowDayTime = isDayTime;
 	}
 
 	private bool IsDayTime()

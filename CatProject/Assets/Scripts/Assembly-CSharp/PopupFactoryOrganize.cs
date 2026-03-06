@@ -30,17 +30,24 @@ public class PopupFactoryOrganize : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (OrganizeBtn != null) OrganizeBtn.onClick.AddListener(OnClickOrganize);
 	}
 
 	public void Set(int product)
 	{
+		ProductIdx = product;
 	}
 
 	private void OnValueChanged(float value)
 	{
+		if (Count != null) Count.text = ((int)value).ToString();
 	}
 
 	private void OnClickOrganize()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		Hide();
 	}
 }
