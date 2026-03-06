@@ -37,17 +37,32 @@ public class InGameProduction : InGameFloatingUI
 
 	private void OnEnable()
 	{
+		disposable = new CompositeDisposable();
 	}
 
 	private void OnDisable()
 	{
+		if (disposable != null) { disposable.Dispose(); disposable = null; }
 	}
 
 	public void Show(Queue<Sequence> seqList, Action OnEnd)
 	{
+		direction = seqList;
+		onEnd = OnEnd;
+		Play();
 	}
 
 	private void Play()
 	{
+		if (direction == null || direction.Count == 0)
+		{
+			onEnd?.Invoke();
+			return;
+		}
+		var seq = direction.Dequeue();
+		if (title != null) title.text = seq.title;
+		if (value != null) value.text = seq.value;
+		if (icon != null && seq.icon != null) icon.sprite = seq.icon;
+		if (productionAni != null) productionAni.SetTrigger("Play");
 	}
 }

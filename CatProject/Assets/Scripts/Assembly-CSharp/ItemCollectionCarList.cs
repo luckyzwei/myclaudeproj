@@ -21,17 +21,24 @@ public class ItemCollectionCarList : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnBtnClick);
 	}
 
 	public void SetCar(int carIdx, Action purchaseCb)
 	{
+		CarIdx = carIdx;
+		PurchaseAction = purchaseCb;
+		UpdateOwn();
 	}
 
 	private void UpdateOwn()
 	{
+		if (OwnObj != null) OwnObj.SetActive(IsOwn);
 	}
 
 	private void OnBtnClick()
 	{
+		if (!IsOwn)
+			PurchaseAction?.Invoke();
 	}
 }

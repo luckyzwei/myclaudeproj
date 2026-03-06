@@ -14,14 +14,19 @@ public class CrossPromotionTabText : MonoBehaviour
 
 	private void Start()
 	{
+		ApplySettings();
 	}
 
 	public void Set(PageCrossPromotion.CPTab tab, bool isNormal)
 	{
+		this.tab = tab;
+		this.isNormal = isNormal;
+		ApplySettings();
 	}
 
 	private void OnValidate()
 	{
+		ApplySettings();
 	}
 
 	private void ApplySettings()

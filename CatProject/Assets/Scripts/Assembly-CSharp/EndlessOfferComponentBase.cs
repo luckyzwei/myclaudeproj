@@ -16,10 +16,14 @@ public class EndlessOfferComponentBase : MonoBehaviour
 
 	public virtual void Set(int endlessIdx, ShopSystem.InAppPurchaseLocation enterPlace)
 	{
+		EndlessPackageIdx = endlessIdx;
+		EnterPlace = enterPlace;
+		UpdateOfferPurchaseData();
 	}
 
 	public virtual void Reset()
 	{
+		EndlessPackageIdx = 0;
 	}
 
 	protected virtual EndlessOfferRewardData GetTargetRewardTable(int orderIdx)
@@ -33,5 +37,6 @@ public class EndlessOfferComponentBase : MonoBehaviour
 
 	protected virtual void OnPurchaseSuccess(List<IRewardItemData> rewardItemDataList, Action callback)
 	{
+		callback?.Invoke();
 	}
 }

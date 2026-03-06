@@ -35,17 +35,24 @@ public class ItemCompanyBook : MonoBehaviour
 
 	private void Awake()
 	{
+		var btn = GetComponent<UnityEngine.UI.Button>();
+		if (btn != null) btn.onClick.AddListener(OnClickBtn);
 	}
 
 	public void Set(int idx)
 	{
+		CompanyIdx = idx;
+		if (LockObj != null) LockObj.SetActive(false);
+		if (NotGetObj != null) NotGetObj.SetActive(false);
 	}
 
 	public void SetVisibleArrowIcon(bool bShow)
 	{
+		if (ArrowObj != null) ArrowObj.SetActive(bShow);
 	}
 
 	private void OnClickBtn()
 	{
+		ClickCb?.Invoke(CompanyIdx);
 	}
 }

@@ -49,33 +49,44 @@ public class ContentsMissionData
 
 	public void SetMissionSetTime(DateTime setTime)
 	{
+		MissionSetTime = setTime;
+		MissionNextResetTime = CalcMissionNextResetTime(setTime);
 	}
 
 	~ContentsMissionData()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	public void ClearMissions()
 	{
+		if (Missions != null) Missions.Clear();
+		else Missions = new Dictionary<int, SingleMissionBase>();
 	}
 
 	public void PutNewMission(int slotId, SingleMissionBase mission)
 	{
+		if (Missions == null) Missions = new Dictionary<int, SingleMissionBase>();
+		Missions[slotId] = mission;
 	}
 
 	public bool TryGetMission(int slotId, out SingleMissionBase mission)
 	{
 		mission = null;
-		return false;
+		if (Missions == null) return false;
+		return Missions.TryGetValue(slotId, out mission);
 	}
 
 	public List<SingleMissionBase> GetAllMissions()
 	{
-		return null;
+		if (Missions == null) return new List<SingleMissionBase>();
+		return new List<SingleMissionBase>(Missions.Values);
 	}
 
 	private DateTime CalcMissionNextResetTime(DateTime baseTime)
 	{
-		return default(DateTime);
+		var next = baseTime.Date.AddHours(MissionResetHour);
+		if (next <= baseTime) next = next.AddDays(1);
+		return next;
 	}
 }

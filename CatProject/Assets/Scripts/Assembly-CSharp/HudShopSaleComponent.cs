@@ -18,17 +18,21 @@ public class HudShopSaleComponent : MonoBehaviour
 
 	private void Awake()
 	{
+		if (ShopSaleBtn != null) ShopSaleBtn.onClick.AddListener(OnClickShopSale);
 	}
 
 	public void Set()
 	{
+		SetShopSaleButton();
 	}
 
 	private void SetShopSaleButton()
 	{
+		if (ShopSaleBtn != null) ShopSaleBtn.gameObject.SetActive(false);
 	}
 
 	private void OnClickShopSale()
 	{
+		Treeplla.Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 }

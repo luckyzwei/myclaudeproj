@@ -20,17 +20,22 @@ public class ItemCeoOfficeSKill : MonoBehaviour
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	public void Set(int skillIdx, int value, Action openInfoAction)
 	{
+		onOpenInfo = openInfoAction;
 	}
 
 	private void OnClickBtn()
 	{
+		if (InfoObj != null) InfoObj.SetActive(true);
+		onOpenInfo?.Invoke();
 	}
 
 	public void CloseInfo()
 	{
+		if (InfoObj != null) InfoObj.SetActive(false);
 	}
 }

@@ -26,14 +26,21 @@ public class InGameParkingEditUI : InGameFloatingUI
 
 	private void Awake()
 	{
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	public void Set(int zone, int space)
 	{
+		ParkingZone = zone;
+		ParkingSpace = space;
+		UpdateStatus();
 	}
 
 	public void UpdateStatus()
 	{
+		if (SelectObj != null) SelectObj.SetActive(false);
+		if (ConfirmObj != null) ConfirmObj.SetActive(false);
+		if (CancelObj != null) CancelObj.SetActive(false);
 	}
 
 	private void OnClickBtn()

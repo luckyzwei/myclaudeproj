@@ -21,10 +21,13 @@ public class InGameSeasonalRestaurantFoodUI : InGameFloatingUI
 
 	public void Init(int buildingIdx)
 	{
+		Disposables = new CompositeDisposable();
+		FoodProductIdx = buildingIdx;
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	private void SetFoodIconImage(string imageKey)
@@ -33,5 +36,8 @@ public class InGameSeasonalRestaurantFoodUI : InGameFloatingUI
 
 	private void OnChangedFoodValue(int hasValue, int maxValue)
 	{
+		MaxHasValue = maxValue;
+		if (FoodHasValueText != null)
+			FoodHasValueText.text = hasValue + "/" + maxValue;
 	}
 }

@@ -13,10 +13,13 @@ public class InGameZoneName : InGameFloatingUI, ILocalizeRefresh
 
 	public override void Init(Transform parent, GameType type = GameType.WorldMap)
 	{
+		base.Init(parent, type);
 	}
 
 	public void Set(int zoneIdx)
 	{
+		curZoneIdx = zoneIdx;
+		RefreshText();
 	}
 
 	public void RefreshText()

@@ -32,36 +32,57 @@ public class ItemSpecialDayStruct : MonoBehaviour
 	[SerializeField]
 	private ParticleSystem currencyParticle;
 
-	public int Idx { get { return 0; } }
+	public int Idx { get { return idx; } }
 
-	public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return null; } }
+	public List<ItemOnetimeFloor> ItemOnetimeFloors { get { return itemOnetimeFloors; } }
 
-	public List<DoTweenScriptComponent> FloorDoTweens { get { return null; } }
+	public List<DoTweenScriptComponent> FloorDoTweens { get { return floorDoTweens; } }
 
-	public float CharacterTerm { get { return 0f; } }
+	public float CharacterTerm { get { return characterTerm; } }
 
-	public Transform ExitT { get { return null; } }
+	public Transform ExitT { get { return exitT; } }
 
-	public ParticleSystem CurrencyParticle { get { return null; } }
+	public ParticleSystem CurrencyParticle { get { return currencyParticle; } }
 
 	public void UpdateRewards()
 	{
+		if (RewardItems == null) return;
+		for (int i = 0; i < RewardItems.Length; i++)
+		{
+			if (RewardItems[i] != null)
+				RewardItems[i].gameObject.SetActive(true);
+		}
 	}
 
 	public void UpdateBtns()
 	{
+		if (RewardItems == null) return;
+		for (int i = 0; i < RewardItems.Length; i++)
+		{
+			if (RewardItems[i] != null)
+				RewardItems[i].UpdateBtn();
+		}
 	}
 
 	public void HideInfoBubbles()
 	{
+		if (RewardItems == null) return;
+		for (int i = 0; i < RewardItems.Length; i++)
+		{
+			if (RewardItems[i] != null)
+				RewardItems[i].HideAllBubble();
+		}
 	}
 
 	public void PlayCharacterAnimation(string clipName)
 	{
+		if (CharactersAnimator != null)
+			CharactersAnimator.Play(clipName);
 	}
 
 	public ItemOnetimeReward GetLastRewardItem()
 	{
-		return null;
+		if (RewardItems == null || RewardItems.Length == 0) return null;
+		return RewardItems[RewardItems.Length - 1];
 	}
 }
