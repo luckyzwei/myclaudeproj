@@ -30,17 +30,29 @@ public class PopupRatioInfo : UIBase
 
 	private void DrawList()
 	{
+		if (Root == null || Item == null || Rewards == null) return;
+		for (int i = 0; i < Rewards.Count; i++)
+		{
+			var go = Instantiate(Item, Root);
+			go.SetActive(true);
+		}
 	}
 
 	public void SetRouletteRatio(bool isluckydraw)
 	{
+		Rewards = new List<RewardInfo>();
+		DrawList();
 	}
 
 	public void SetRouletteSpecialRatio()
 	{
+		Rewards = new List<RewardInfo>();
+		DrawList();
 	}
 
 	public void SetRouletteAnniversaryRatio()
 	{
+		Rewards = new List<RewardInfo>();
+		DrawList();
 	}
 }

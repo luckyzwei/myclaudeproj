@@ -19,6 +19,8 @@ public class PopupAdsPass : UIBase
 
 	public override void OnShowBefore()
 	{
+		disposables = new CompositeDisposable();
+		UpdateList();
 	}
 
 	private void UpdateList()
@@ -27,9 +29,11 @@ public class PopupAdsPass : UIBase
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

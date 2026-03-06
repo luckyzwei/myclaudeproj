@@ -16,17 +16,23 @@ public class PopupInsufficient : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (GoShopBtn != null) GoShopBtn.onClick.AddListener(OnClickGotoShop);
 	}
 
 	public void Init(int need, ShopSystem.InAppPurchaseLocation _location = ShopSystem.InAppPurchaseLocation.popup)
 	{
+		location = _location;
 	}
 
 	private void OnClickGotoShop()
 	{
+		Hide();
+		Singleton<GameRoot>.Instance?.WaitAndOpenUICoroutine<PopupShop>();
 	}
 
 	private void OnClickRecommandPurchase(int itemIdx)
 	{
+		Hide();
 	}
 }

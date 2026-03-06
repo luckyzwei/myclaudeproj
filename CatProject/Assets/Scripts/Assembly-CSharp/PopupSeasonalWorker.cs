@@ -25,17 +25,23 @@ public class PopupSeasonalWorker : UIBase
 
 	public override void OnShowBefore()
 	{
+		Disposables = new CompositeDisposable();
+		SetInfo();
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	private void SetInfo()
 	{
+		SetWorkerCountText();
 	}
 
 	public void SetWorkerCountText()
 	{
+		if (text_working_count != null) text_working_count.text = "0";
+		if (text_idle_count != null) text_idle_count.text = "0";
 	}
 }

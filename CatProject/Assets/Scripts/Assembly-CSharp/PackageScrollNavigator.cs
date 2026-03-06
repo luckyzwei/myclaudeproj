@@ -19,17 +19,23 @@ public class PackageScrollNavigator : MonoBehaviour
 
 	private void Awake()
 	{
+		if (btn != null) btn.onClick.AddListener(OnClick);
 	}
 
 	public void Init(int _idx, Action<int> _clickAction)
 	{
+		idx = _idx;
+		clickAction = _clickAction;
 	}
 
 	public void OnClick()
 	{
+		clickAction?.Invoke(idx);
 	}
 
 	public void SetFocus(bool isFocus)
 	{
+		if (outerImg != null) outerImg.enabled = isFocus;
+		if (innerImg != null) innerImg.enabled = isFocus;
 	}
 }

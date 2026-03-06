@@ -61,17 +61,28 @@ public class PopupReward2X : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (RewardBtn != null) RewardBtn.onClick.AddListener(OnClickNormal);
+		if (DoubleRewardBtn != null) DoubleRewardBtn.onClick.AddListener(OnClickDouble);
+		if (ArrowTrans != null) ArrowOriginPos = ArrowTrans.localPosition;
 	}
 
 	public void Set(TpMaxProp.AdRewardType adType, Config.RewardType rewardType, int rewardIdx, BigInteger rewardValue, bool isCustomOneTime, Action<int> GetCb)
 	{
+		AdType = adType;
+		RewardCb = GetCb;
+		CustomOneTime = isCustomOneTime;
 	}
 
 	private void OnClickNormal()
 	{
+		RewardCb?.Invoke(1);
+		Hide();
 	}
 
 	private void OnClickDouble()
 	{
+		RewardCb?.Invoke(2);
+		Hide();
 	}
 }

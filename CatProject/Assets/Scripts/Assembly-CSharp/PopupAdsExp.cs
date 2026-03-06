@@ -40,17 +40,25 @@ public class PopupAdsExp : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (RefuseBtn != null) RefuseBtn.onClick.AddListener(() => Hide());
+		if (AdsBtn != null) AdsBtn.onClick.AddListener(OnClickGetExp);
 	}
 
 	public void Set(int company)
 	{
+		TargetCompany = company;
+		GetReward = false;
 	}
 
 	private void OnClickGetExp()
 	{
+		GetReward = true;
+		Hide();
 	}
 
 	public override void Hide()
 	{
+		base.Hide();
 	}
 }

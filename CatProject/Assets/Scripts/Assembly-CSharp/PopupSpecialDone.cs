@@ -19,6 +19,8 @@ public class PopupSpecialDone : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (ClaimRewardBtn != null) ClaimRewardBtn.onClick.AddListener(OnClickClaimRewardBtn);
 	}
 
 	public override void OnShowBefore()
@@ -27,9 +29,11 @@ public class PopupSpecialDone : UIBase
 
 	public override void OnHideAfter()
 	{
+		if (TimeDisposable != null) { TimeDisposable.Dispose(); TimeDisposable = null; }
 	}
 
 	private void OnClickClaimRewardBtn()
 	{
+		Hide();
 	}
 }
