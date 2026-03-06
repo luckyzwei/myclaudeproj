@@ -25,25 +25,33 @@ public class HudEndlessOfferItem : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (Btn != null) Btn.onClick.AddListener(OnClickBtn);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 
 	public void Set(int offerIdx)
 	{
+		EndlessOfferIdx = offerIdx;
+		SetRedDot();
 	}
 
 	private void SetRedDot()
 	{
+		if (RedDotObj != null) RedDotObj.SetActive(false);
 	}
 
 	private void OnClickBtn()
 	{
+		// Open endless offer page for this offer index
 	}
 }

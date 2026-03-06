@@ -33,29 +33,46 @@ public class PageManagerHireList : UIBase
 
 	public override void OnShowBefore()
 	{
+		savedPiggyCount = 0;
+		savedOneTimeCount = 0;
+		UpdateList();
 	}
 
 	public override void OnHideBefore()
 	{
+		ShowPiggyOnetime();
 	}
 
 	public override void OnHideAfter()
 	{
+		focusCardT = null;
 	}
 
 	private void ShowPiggyOnetime()
 	{
+		if (onetimeCurrencyComponent != null)
+			onetimeCurrencyComponent.gameObject.SetActive(false);
 	}
 
 	public void UpdateList()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (ItemList == null) return;
+		for (int i = 0; i < ItemList.Count; i++)
+		{
+			if (ItemList[i] != null)
+				ItemList[i].gameObject.SetActive(true);
+		}
 	}
 
 	public void ShowUpgradeArrow(int officeIdx)
 	{
+		// Show arrow indicator for upgradeable manager
 	}
 
 	private void UpgradeCallBack(int level)
 	{
+		UpdateList();
 	}
 }

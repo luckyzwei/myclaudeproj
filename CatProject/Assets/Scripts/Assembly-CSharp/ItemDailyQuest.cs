@@ -40,34 +40,47 @@ public class ItemDailyQuest : MonoBehaviour
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (GetBtn != null) GetBtn.onClick.AddListener(OnClickComplete);
+		if (ShortcutBtn != null) ShortcutBtn.onClick.AddListener(OnClickShortcut);
 	}
 
 	public void Set(int questorder)
 	{
+		Order = questorder;
+		if (ReceiveObj != null) ReceiveObj.SetActive(false);
+		if (oneTimeComponent != null) oneTimeComponent.gameObject.SetActive(false);
+		UpdateValue();
 	}
 
 	private string GetQuestDesc(params object[] args)
 	{
-		return null;
+		return "";
 	}
 
 	public void UpdateValue()
 	{
+		if (Progress != null) Progress.value = 0f;
+		if (ProgressValue != null) ProgressValue.text = "0/0";
 	}
 
 	private void OnClickComplete()
 	{
+		CompleteAction?.Invoke(Order);
 	}
 
 	public void Reset()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnClickShortcut()
 	{
+		ShortcutAction?.Invoke(Order);
 	}
 }

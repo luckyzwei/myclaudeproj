@@ -34,25 +34,36 @@ public class ItemEmployeeMood : MonoBehaviour
 
 	public void Set(int office, int seat)
 	{
+		OfficeIdx = office;
+		Seat = seat;
+		disposables = new CompositeDisposable();
+		UpdateShowMood();
 	}
 
 	private void UpdateMood(EmployeeMoodSystem.Mood mood)
 	{
+		if (BuffDebuffRoot != null) BuffDebuffRoot.SetActive(true);
+		if (BuffRoot != null) BuffRoot.SetActive(false);
+		if (DebuffRoot != null) DebuffRoot.SetActive(false);
 	}
 
 	public void UpdateShowMood()
 	{
+		// Read mood from system and update display
 	}
 
 	public void Refresh()
 	{
+		UpdateShowMood();
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

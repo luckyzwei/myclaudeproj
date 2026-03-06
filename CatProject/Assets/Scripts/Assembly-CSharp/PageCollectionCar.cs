@@ -48,29 +48,44 @@ public class PageCollectionCar : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		if (TotalRewardBtn != null) TotalRewardBtn.onClick.AddListener(OnClickTotalRewardBtn);
 	}
 
 	public override void OnShowBefore()
 	{
+		DrawCollection();
 	}
 
 	public void DrawCollection()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		SetTotalReward();
+		SetParkingSet();
 	}
 
 	private void SetTotalReward()
 	{
+		if (TotalRewardRoot != null) TotalRewardRoot.SetActive(true);
+		if (TotalRewardOffRoot != null) TotalRewardOffRoot.SetActive(false);
+		if (TotalRewardOnObj != null) TotalRewardOnObj.SetActive(false);
+		if (TotalRewardProgress != null) TotalRewardProgress.value = 0f;
+		if (TotalRewardCount != null) TotalRewardCount.text = "0/0";
 	}
 
 	private void SetParkingSet()
 	{
+		// Setup parking lot collection display
 	}
 
 	private void OnBrandClick(int brandIdx)
 	{
+		// Show brand detail popup
 	}
 
 	private void OnClickTotalRewardBtn()
 	{
+		// Claim total collection reward
 	}
 }

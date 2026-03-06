@@ -66,29 +66,43 @@ public class ItemShopStamina : MonoBehaviour
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (FreeBtn != null) FreeBtn.onClick.AddListener(OnClickFree);
+		if (AdsBtn != null) AdsBtn.onClick.AddListener(OnClickAds);
+		if (GemBtn != null) GemBtn.onClick.AddListener(OnClickCash);
 	}
 
 	public void Set(int idx, Transform _hudTrans)
 	{
+		shopTd = null;
+		hudTrans = _hudTrans;
+
+		if (FreeCoolTimeObj != null) FreeCoolTimeObj.SetActive(false);
+		if (AdsCooltimeObj != null) AdsCooltimeObj.SetActive(false);
 	}
 
 	private void OnClickFree()
 	{
+		// Claim free stamina
 	}
 
 	private void OnClickAds()
 	{
+		// Watch ad for stamina
 	}
 
 	private void OnClickCash()
 	{
+		// Purchase stamina with gems
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 }

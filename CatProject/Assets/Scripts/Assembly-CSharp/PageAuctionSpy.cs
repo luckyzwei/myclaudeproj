@@ -44,29 +44,51 @@ public class PageAuctionSpy : UIBase
 
 	protected override void Awake()
 	{
+		base.Awake();
+		disposables = new CompositeDisposable();
+		if (SpyBtn != null) SpyBtn.onClick.AddListener(OnClickSpyStart);
+		if (MoreBtn != null) MoreBtn.onClick.AddListener(OnClickSpyStart);
+		if (CashShopBtn != null) CashShopBtn.onClick.AddListener(OnClickCashShop);
 	}
 
 	public override void OnShowBefore()
 	{
+		UpdateInfo();
 	}
 
 	private void UpdateInfo()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+
+		if (Roots != null)
+		{
+			for (int i = 0; i < Roots.Count; i++)
+			{
+				if (Roots[i] != null) Roots[i].SetActive(false);
+			}
+		}
 	}
 
 	private void OnClickCashShop()
 	{
+		// Open gem shop
 	}
 
 	private void OnClickSpyStart()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Start spy search
 	}
 
 	private void OnDisable()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }

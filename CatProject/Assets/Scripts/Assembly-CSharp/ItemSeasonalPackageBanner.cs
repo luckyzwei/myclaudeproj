@@ -46,29 +46,42 @@ public class ItemSeasonalPackageBanner : MonoBehaviour
 
 	private void Awake()
 	{
+		Disposables = new CompositeDisposable();
+		if (BuyBtn != null) BuyBtn.onClick.AddListener(OnClickBtn);
 	}
 
 	public virtual void Init(ShopSystem.SeasonalPackageMatchType type, ShopSystem.InAppPurchaseLocation location = ShopSystem.InAppPurchaseLocation.none)
 	{
+		CurType = type;
+		Idx = 0;
+		if (SaleRoot != null) SaleRoot.SetActive(false);
+		if (RemainTimeRoot != null) RemainTimeRoot.SetActive(false);
 	}
 
 	public virtual void InitMaxTimeLevelUpPackage(int packageIdx, ShopSystem.InAppPurchaseLocation location = ShopSystem.InAppPurchaseLocation.none)
 	{
+		Idx = packageIdx;
+		if (SaleRoot != null) SaleRoot.SetActive(false);
+		if (RemainTimeRoot != null) RemainTimeRoot.SetActive(false);
 	}
 
 	private void BuyPackage(int idx)
 	{
+		// Initiate IAP purchase for package
 	}
 
 	public void OnClickBtn()
 	{
+		BuyPackage(Idx);
 	}
 
 	private void OnDisable()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = new CompositeDisposable(); }
 	}
 
 	private void OnDestroy()
 	{
+		if (Disposables != null) { Disposables.Dispose(); Disposables = null; }
 	}
 }

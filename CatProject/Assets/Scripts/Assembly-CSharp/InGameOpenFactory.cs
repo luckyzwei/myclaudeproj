@@ -28,25 +28,37 @@ public class InGameOpenFactory : InGameFloatingUI
 
 	private void Awake()
 	{
+		disposables = new CompositeDisposable();
+		if (OpenBtn != null) OpenBtn.onClick.AddListener(OnClickOpen);
+		if (SkipTimeBtn != null) SkipTimeBtn.onClick.AddListener(OnClickSkip);
 	}
 
 	public override void Init(Transform parent, GameType type = GameType.Factory)
 	{
+		base.Init(parent, type);
 	}
 
 	public void SetFactory(int factory)
 	{
+		FactoryIdx = factory;
+		if (OpenObj != null) OpenObj.SetActive(true);
+		if (TimeObj != null) TimeObj.SetActive(false);
 	}
 
 	private void OnClickOpen()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.FactorySystem == null) return;
+		// Open factory
 	}
 
 	private void OnClickSkip()
 	{
+		// Skip factory open wait time with gems
 	}
 
 	private void OnDestroy()
 	{
+		if (disposables != null) { disposables.Dispose(); disposables = null; }
 	}
 }
