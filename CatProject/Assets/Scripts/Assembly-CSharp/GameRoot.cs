@@ -679,7 +679,142 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CLoadGameData_003Ed__255))]
 	private IEnumerator LoadGameData()
 	{
-		yield break;
+		// Phase 1: Initialize utility and config
+		ProjectUtility.Init();
+
+		// Phase 2: Try loading user save data
+		UserData.Load();
+
+		// Phase 3: If no save data exists, create fresh new-game data
+		if (UserData.mainData == null)
+		{
+			var mainData = new UserDataMain();
+			mainData.Init();
+			mainData.InitFirstRegion();
+			UserData.mainData = mainData;
+			UserData.CurMode = mainData;
+			UserData.Level.Value = 1;
+			UserData.CommonLastLoginTime = System.DateTime.UtcNow;
+			UserData.FirstLoginTime = System.DateTime.UtcNow;
+		}
+
+		yield return null;
+
+		// Phase 4: Initialize all remaining subsystems
+		InitSubSystems();
+
+		yield return null;
+
+		// Phase 5: Create InGameSystem and SceneSystem
+		InGameSystem = new InGameSystem();
+		SceneSystem = new SceneSystem();
+
+		// Phase 6: Start the main game mode (Office scene)
+		bool sceneLoaded = false;
+		InGameSystem.StartFirstGame(GameType.Main, () => { sceneLoaded = true; });
+
+		// Wait for scene load
+		while (!sceneLoaded)
+			yield return null;
+
+		yield return null;
+
+		// Phase 7: Hide loading screen
+		if (Loading != null && Loading.gameObject.activeSelf)
+			Loading.WaitStageLoadHide();
+
+		// Phase 8: Post-load initialization
+		if (DaySystem != null)
+			DaySystem.CalcCurTime();
+
+		if (UserData != null)
+			UserData.CommonLastLoginTime = System.DateTime.UtcNow;
+	}
+
+	private void InitSubSystems()
+	{
+		// Systems that need UserData to be loaded first
+		ShopSystem = new ShopSystem();
+		ShopSystem.Init();
+
+		CompanySystem = new CompanySystem();
+		CompanySystem.Init();
+
+		RentalFeeSystem = new RentalFeeSystem();
+		RentalFeeSystem.Init();
+
+		MissionSystem = new MissionSystem();
+		MissionSystem.Init();
+
+		// EmployeeMoodSystem is MonoBehaviour — find it in scene or create on GameRoot
+		MoodSystem = GetComponentInChildren<EmployeeMoodSystem>(true);
+		if (MoodSystem == null)
+		{
+			var moodObj = new GameObject("EmployeeMoodSystem");
+			moodObj.transform.SetParent(transform);
+			MoodSystem = moodObj.AddComponent<EmployeeMoodSystem>();
+		}
+		MoodSystem.Init();
+		ElectricWorkSystem = new ElectricWorkSystem();
+		ElectricWorkSystem.Init();
+
+		ContentsOpenSystem = new ContentsOpenSystem();
+		ContentsOpenSystem.Init();
+
+		RouletteSystem = new RouletteSystem();
+		RouletteSystem.Init();
+		MassengerSystem = new MassengerSystem();
+		MassengerSystem.Init();
+		PlantSystem = new PlantSystem();
+		PlantSystem.Init();
+		DailyQuestSystem = new DailyQuestSystem();
+		DailyQuestSystem.Init();
+		InfraSystem = new InfraSystem();
+		InfraSystem.Init();
+		FactorySystem = new FactorySystem();
+		FactorySystem.Init();
+
+		InvestSystem = new InvestSystem();
+		InvestSystem.Init();
+		OneTimeEventSystem = new OneTimeEventSystem();
+		OneTimeEventSystem.Init();
+		TutorialSystem = new TutorialSystem();
+		TutorialSystem.Init();
+		AdSupplySystem = new AdSupplySystem();
+		AdSupplySystem.Init();
+
+		ABTestSystem = new ABTestSystem();
+		ABTestSystem.Init();
+		SeasonalSystem = new SeasonalSystem();
+		SeasonalSystem.Init();
+		TarotSystem = new TarotSystem();
+		TarotSystem.Init();
+		AuctionSystem = new AuctionSystem();
+		AuctionSystem.Init();
+		SpecialDaySystem = new SpecialDaySystem();
+		SpecialDaySystem.Init();
+		RichAchieveSystem = new RichAchieveSystem();
+		RichAchieveSystem.Init();
+		StrikeSystem = new StrikeSystem();
+		StrikeSystem.Init();
+		AttendanceSystem = new AttendanceSystem();
+		ContentsMissionSystem = new ContentsMissionSystem();
+		BizAcqBattleSystem = new BizAcqBattleSystem();
+		BizAcqBattleSystem.InitSystem();
+		SubMissionSystem = new SubMissionSystem();
+		SubMissionSystem.Init();
+		AdPassSystem = new AdPassSystem();
+		AdPassSystem.Init();
+		MiniGameSystem = new MiniGameSystem();
+		MiniGameSystem.InitSystem();
+		InterstitialSystem = new InterstitialSystem();
+		InterstitialSystem.InitSystem();
+		FreecashSystem = new FreecashSystem();
+		UserSegmentSystem = new UserSegmentSystem();
+		PluginSystem = new PluginSystem();
+		PluginSystem.Init();
+		RankSystem = new RankingSystem();
+		RankSystem.Init();
 	}
 
 	private void GiveBackHouseAddPoint()

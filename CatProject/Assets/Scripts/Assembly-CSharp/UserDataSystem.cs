@@ -157,9 +157,9 @@ public class UserDataSystem
 
 	public AdPassData AdPassData { get; set; }
 
-	public IUserDataMode CurMode { get; private set; }
+	public IUserDataMode CurMode { get; set; }
 
-	public UserDataMain mainData { get; private set; }
+	public UserDataMain mainData { get; set; }
 
 	public EventData userEventData { get; private set; }
 

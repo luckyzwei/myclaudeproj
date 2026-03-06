@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Treeplla;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameSystem
 {
@@ -92,6 +94,15 @@ public class InGameSystem
 	[HideInInspector]
 	public bool isNextEventNotice;
 
+	private static readonly Dictionary<GameType, string> SceneNameMap = new Dictionary<GameType, string>
+	{
+		{ GameType.Main, "InGameOffice" },
+		{ GameType.Factory, "InGameFactory" },
+		{ GameType.House, "InGameHouse" },
+		{ GameType.Seasonal, "InGameSeasonal" },
+		{ GameType.WorldMap, "InGameWorldmap" },
+	};
+
 	public InGameMode CurInGame { get; private set; }
 
 	public OutGameMode CurOutGame { get; private set; }
@@ -123,8 +134,73 @@ public class InGameSystem
 		}
 	}
 
+	public void StartFirstGame(GameType type, Action loadCallback = null)
+	{
+		StartGame(type, loadCallback);
+	}
+
 	private void StartGame(GameType type, Action loadCallback = null, bool isNewRegion = false)
 	{
+		string sceneName;
+		if (!SceneNameMap.TryGetValue(type, out sceneName))
+		{
+			loadCallback?.Invoke();
+			return;
+		}
+
+		// Check if scene is already loaded
+		var scene = SceneManager.GetSceneByName(sceneName);
+		if (scene.isLoaded)
+		{
+			OnSceneLoaded(scene, type, loadCallback, isNewRegion);
+			return;
+		}
+
+		// Load scene additively
+		var op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+		if (op == null)
+		{
+			UnityEngine.Debug.LogWarning("[InGameSystem] Failed to load scene: " + sceneName);
+			loadCallback?.Invoke();
+			return;
+		}
+		op.completed += (asyncOp) =>
+		{
+			var loadedScene = SceneManager.GetSceneByName(sceneName);
+			OnSceneLoaded(loadedScene, type, loadCallback, isNewRegion);
+		};
+	}
+
+	private void OnSceneLoaded(Scene scene, GameType type, Action loadCallback, bool isNewRegion)
+	{
+		if (!scene.IsValid())
+		{
+			loadCallback?.Invoke();
+			return;
+		}
+
+		// Find InGameMode or OutGameMode in scene root objects
+		var rootObjects = scene.GetRootGameObjects();
+		for (int i = 0; i < rootObjects.Length; i++)
+		{
+			var inGame = rootObjects[i].GetComponentInChildren<InGameMode>(true);
+			if (inGame != null)
+			{
+				CurInGame = inGame;
+				inGame.Load();
+				inGame.LoadUI();
+				break;
+			}
+
+			var outGame = rootObjects[i].GetComponentInChildren<OutGameMode>(true);
+			if (outGame != null)
+			{
+				CurOutGame = outGame;
+				outGame.Load();
+				break;
+			}
+		}
+
 		loadCallback?.Invoke();
 	}
 
@@ -140,6 +216,7 @@ public class InGameSystem
 			return;
 
 		inInitPopups = true;
+		// Initialize various popups (login bonus, daily quest, etc.)
 		inInitPopups = false;
 	}
 
@@ -186,30 +263,50 @@ public class InGameSystem
 
 	public RegionData InitNewRegionData(int stage)
 	{
-		return null;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.mainData == null) return null;
+
+		var mainData = root.UserData.mainData;
+		if (mainData.RegionDatas == null)
+			mainData.RegionDatas = new Dictionary<int, RegionData>();
+
+		var region = new RegionData();
+		region.StageData = new StageData();
+		region.StageData.Init(stage);
+		region.OfflineData = new OfflineData { LastLoginTime = System.DateTime.UtcNow };
+		region.BuyParkingLotData = new System.Collections.Generic.List<BuyParkingLotData>();
+		mainData.RegionDatas[stage] = region;
+		mainData.ActiveRegion = stage;
+		return region;
 	}
 
 	private void InitStageData(int stage)
 	{
-		// TODO
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.mainData == null) return;
+		var mainData = root.UserData.mainData;
+		mainData.ActiveRegion = stage;
 	}
 
 	public void CloseWorldmap(Action cb = null)
 	{
-		if (CurOutGame != null)
-		{
-			// Would close the worldmap UI
-		}
+		UnLoadOutGame();
 		cb?.Invoke();
 	}
 
 	public void CloseOutGame(Action cb = null)
 	{
+		UnLoadOutGame();
+		cb?.Invoke();
+	}
+
+	private void UnLoadOutGame()
+	{
 		if (CurOutGame != null)
 		{
-			// Would close the current out-game mode
+			CurOutGame.UnLoad();
+			CurOutGame = null;
 		}
-		cb?.Invoke();
 	}
 
 	public void GotoOutGame(GameType gameType, Action Cb = null, string place = "popup")
@@ -232,21 +329,30 @@ public class InGameSystem
 
 	public void PlayStageBgm()
 	{
-		// Activate
+		// Play background music for current stage
 	}
 
 	public void PlayOutGameBgm(GameType gameType)
 	{
-		// Activate
+		// Play background music for out-game screen
 	}
 
 	private void UnLoadCurGameMode()
 	{
 		if (CurInGame != null)
 		{
-			// Would unload the current in-game mode's resources
+			CurInGame.UnLoadUI();
+			CurInGame.UnLoad();
+
+			// Unload the additive scene
+			var go = CurInGame.gameObject;
+			if (go != null && go.scene.IsValid() && go.scene.name != "Main")
+			{
+				SceneManager.UnloadSceneAsync(go.scene);
+			}
 			CurInGame = null;
 		}
+		UnLoadOutGame();
 	}
 
 	private void UnLoadCurStage()
