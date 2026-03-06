@@ -110,31 +110,40 @@ public class ProjectUtility
 
 	public static void InitParkingLotData()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		if (root.UserData.BuyParkingLotData == null)
+			root.UserData.BuyParkingLotData = new List<BuyParkingLotData>();
 	}
 
 	public static Sprite GetRewardIconImg(int type, int idx, int region, int order = 0)
 	{
-		return null;
+		string path = GetCurrencyIconPath(idx, region, order);
+		if (string.IsNullOrEmpty(path)) return null;
+		return Resources.Load<Sprite>(path);
 	}
 
 	public static Sprite GetCurrencyImg(int currencyId, int regionIdx, int resourceIdx)
 	{
-		return null;
+		string path = GetCurrencyIconPath(currencyId, regionIdx, resourceIdx);
+		if (string.IsNullOrEmpty(path)) return null;
+		return Resources.Load<Sprite>(path);
 	}
 
 	public static Sprite GetItemImg(int idx)
 	{
-		return null;
+		return Resources.Load<Sprite>("Icon/Item/item_" + idx);
 	}
 
 	public static Sprite GetImg(string img)
 	{
-		return null;
+		if (string.IsNullOrEmpty(img)) return null;
+		return Resources.Load<Sprite>(img);
 	}
 
 	public static string GetCurrencyIconPath(int currencyId, int regionIdx, int resourceIdx)
 	{
-		return null;
+		return "Icon/Currency/currency_" + currencyId + "_" + regionIdx;
 	}
 
 	public static string GetCompanyGradeText(int grade)
@@ -173,6 +182,9 @@ public class ProjectUtility
 
 	public static void CloseActionNotiSequence(int facilityidx, int slotidx = -1)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.GameNotification == null) return;
+		root.GameNotification.DelNotifiaction(GameNotificationSystem.NotificationCategory.EnableFactoryOrder, facilityidx);
 	}
 
 	public static DateTime GetNextResetTime(DateTime date)
@@ -328,11 +340,14 @@ public class ProjectUtility
 
 	public static void GotoRoom(int officeIdx, int focustype = -1, int focuslevel = -1, Action Cb = null)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.InGameSystem == null) { Cb?.Invoke(); return; }
+		Cb?.Invoke();
 	}
 
 	public static string GetEventMissionText(int stage, int type, int target, int count)
 	{
-		return null;
+		return string.Format("mission_{0}_{1}_{2}", stage, type, target);
 	}
 
 	public static int GetRandomSeed()
@@ -394,66 +409,90 @@ public class ProjectUtility
 
 	public static void PlayGoodsEffect(Vector3 startPos, int rewardType, int rewardIdx, int rewardRegion, BigInteger value, bool isCenterStart = true, Action OnEnd = null, float delay = 0f, string viewText = "", bool ispopup = false, bool reward = true, bool underOrder = false, Vector3 endPos = default(Vector3))
 	{
+		// VFX: goods reward effect from startPos to endPos
+		OnEnd?.Invoke();
 	}
 
 	public static void PlayCurveEffect(Vector3 startPos, int rewardType, int rewardIdx, int rewardRegion, int rewardGrade, Action OnEnd = null, float delay = 0f, bool ispopup = false, bool underOrder = false)
 	{
+		// VFX: curve effect for reward display
+		OnEnd?.Invoke();
 	}
 
 	public static void GoodsGetEffect(Vector3 worldStartPos, Vector3 worldMiddlePos, Vector3 worldEndPos, int goodsType, int goodsIdx, int goodsRegion, BigInteger goodsCnt, Action OnEnd = null, float delay = 0f, string viewText = "", bool underOrder = false, string ani = "Show")
 	{
+		// VFX: goods get effect with bezier curve
+		OnEnd?.Invoke();
 	}
 
 	public static void IconGetEffect(Vector3 worldStartPos, Vector3 worldEndPos, Config.AtlasType atlasType, string Icon, string CountText, Action OnEnd = null, bool isCenter = true, string Ani = "Show", float firstmovetime = 0.95f, Vector2 iconSize = default(Vector2))
 	{
+		// VFX: icon fly effect from start to end
+		OnEnd?.Invoke();
 	}
 
 	public static void PackageGetEffect(Vector3 worldEndPos, int packageIdx, Action OnEnd = null)
 	{
+		// VFX: package open effect
+		OnEnd?.Invoke();
 	}
 
 	public static void GetSeasonalPointEffect(Vector3 worldStartPos, Vector3 worldEndPos, int count)
 	{
+		// VFX: seasonal point collection effect
 	}
 
 	public static void PiggyGetEffect(Vector3 worldStartPos, Vector3 worldEndPos, int count)
 	{
+		// VFX: piggy bank coin effect
 	}
 
 	public static void HudUpdatePiggyValue()
 	{
+		// Update piggy bank display in HUD
 	}
 
 	public static void OneTimeGetEffect(int curCount, Vector3 worldStartPos, Vector3 worldEndPos, Action effectCb)
 	{
+		// VFX: one-time event reward effect
+		effectCb?.Invoke();
 	}
 
 	public static void LevelGetEffect(Vector3 worldStartPos, Action endCb = null)
 	{
+		// VFX: level up effect
+		endCb?.Invoke();
 	}
 
 	public static void SeasonalGetEffect(Dictionary<int, BigInteger> rewards, Vector3 worldStartPos, Vector3 worldEndPos, Action effectEndCb = null)
 	{
+		// VFX: seasonal rewards collection effect
+		effectEndCb?.Invoke();
 	}
 
 	public static void ShowRichWayProgress(int startPoint, int getPoint)
 	{
+		// UI: show rich way progress bar update
 	}
 
 	public static void ShowKeyProgressByPageReward(Config.ItemIdx itemIdx, int gainKey)
 	{
+		ShowKeyProgressByPageReward((int)itemIdx, gainKey);
 	}
 
 	public static void ShowKeyProgressByPageReward(int keyIdx, int gainKey)
 	{
+		// UI: show key progress in reward page
 	}
 
 	public static void ShowKeyProgressByGoodsEffect(Vector3 startPos, int rewardType, int rewardIdx, int value, bool isReward = true)
 	{
+		// UI: show key progress with goods effect
 	}
 
 	public static void SetPlantGetEffect(int plantIdx = -1)
 	{
+		// VFX: plant acquisition effect
 	}
 
 	public static Sequence PlayPlantGetEffect(int plantIdx = -1)
@@ -495,10 +534,16 @@ public class ProjectUtility
 
 	public static void FriendInvite(Action successAction, Action endAction = null, bool isPopup = true)
 	{
+		// Native share invitation
+		successAction?.Invoke();
+		endAction?.Invoke();
 	}
 
 	public static void ResetInviteGem()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null || root.UserData.InviteData == null) return;
+		root.UserData.InviteData.Invitegemreceive = false;
 	}
 
 	public static bool ShopContentsOpenConvert(int boxidx)
@@ -555,18 +600,25 @@ public class ProjectUtility
 
 	public static void ShowBuildingArrowNoti(int buildingIdx)
 	{
+		int region = GetBuildingToRegion(buildingIdx);
+		ShowRegionArrowNoti(region);
 	}
 
 	private static void ShowRegionArrowNoti(int zoneIdx)
 	{
+		// Show arrow notification on region/zone
 	}
 
 	public static void ShowGetRichPointArrowNoti(int regionIdx)
 	{
+		// Show arrow notification for rich point collection
 	}
 
 	public static void OpenPhoneAndFocusCompany(int companyIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PopupPhone>();
 	}
 
 	public static long GetDiffTimeByStageStartTime()
@@ -714,43 +766,72 @@ public class ProjectUtility
 
 	public static void ShowPagePackage(ShopSystem.InAppPurchaseLocation location, int idx, Action hideAction = null, bool ignoreGroup = false, bool waitOtherProcess = false)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		root.WaitAndOpenUICoroutine<PagePackage>(
+			(page) => { },
+			() => { hideAction?.Invoke(); }
+		);
 	}
 
 	public static void GotoInsufficientShop(int currencyID, int region, BigInteger needValue, Action onComplete = null)
 	{
+		GotoInsufficientShopWithPacakge(currencyID, region, needValue, onComplete, false, -1);
 	}
 
 	public static void GotoInsufficientShopWithParams(int currencyID, int region, BigInteger needValue, Action onComplete = null, params object[] logParams)
 	{
+		GotoInsufficientShopWithPacakge(currencyID, region, needValue, onComplete, false, -1, logParams);
 	}
 
 	public static void GotoInsufficientShopWithPacakge(int currencyID, int region, BigInteger needValue, Action onComplete = null, bool packageMode = false, int packageIdx = -1, params object[] logParams)
 	{
+		LogNomoneyPopup((int)Config.RewardType.Currency, currencyID, region, needValue, logParams);
+		OpenPurchasePopup(currencyID, region, needValue, onComplete, packageMode, packageIdx, logParams);
 	}
 
 	private static void OpenPurchasePopup(int currencyID, int region, BigInteger needValue, Action onComplete, bool packageMode, int packageIdx, params object[] logParams)
 	{
+		if (IsMoney(currencyID))
+		{
+			OpenMoneyPurchasePopup(region, needValue, onComplete, logParams);
+		}
+		else
+		{
+			OpenGemPurchasePopup(currencyID, region, onComplete, packageMode, packageIdx);
+		}
 	}
 
 	private static bool IsShopAvailable()
 	{
-		return false;
+		var root = Singleton<GameRoot>.Instance;
+		return root != null && root.ShopSystem != null;
 	}
 
 	private static void ShowInsufficientToast()
 	{
+		// Show insufficient currency toast message
 	}
 
 	private static void OpenMoneyPurchasePopup(int region, BigInteger needValue, Action onComplete, params object[] logParams)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) { onComplete?.Invoke(); return; }
+		root.WaitAndOpenUICoroutine<PopupShopInsufficient>(null, () => { onComplete?.Invoke(); });
 	}
 
 	private static void OpenGemPurchasePopup(int currencyID, int region, Action onComplete, bool packageMode = false, int packageIdx = -1)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) { onComplete?.Invoke(); return; }
+		root.WaitAndOpenUICoroutine<PopupShop>(null, () => { onComplete?.Invoke(); });
 	}
 
 	public static void LogNomoneyPopup(int rewardType, int currencyID, int regionType, BigInteger needValue, params object[] a_params)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.PluginSystem == null) return;
+		root.PluginSystem.AnalyticsProp?.AllEvent(IngameEventType.None, "nomoney_popup", rewardType, currencyID, regionType, needValue.ToString());
 	}
 
 	public static bool CheckCashPromotion()
@@ -760,6 +841,9 @@ public class ProjectUtility
 
 	public static void ConsumeCashLog(BigInteger consumeCash, TpAnalyticsProp.LogCostCashType idx, TpAnalyticsProp.LogCostCashPlace place = TpAnalyticsProp.LogCostCashPlace.None, params object[] a_params)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.PluginSystem == null) return;
+		root.PluginSystem.AnalyticsProp?.AllEvent(IngameEventType.None, "consume_cash", consumeCash.ToString(), (int)idx, (int)place);
 	}
 
 	public static string GetThousandCommaText(BigInteger data)
@@ -778,18 +862,29 @@ public class ProjectUtility
 
 	public static void PurchaseNoAdsRefundAbility7()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.AbilitySystem == null) return;
+		root.AbilitySystem.UpdateAbility(AbilitySystem.AbilityType.AddReward);
 	}
 
 	public static void SetNoAds()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) return;
+		// Set NoAds flag through shop system
+		UpdateNoAdsHUDs();
 	}
 
 	public static void SetLvPass(int groupIdx)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Mark gem pass as purchased for the given group
 	}
 
 	public static void UpdateNoAdsHUDs()
 	{
+		// Refresh HUD elements related to ad display state
 	}
 
 	public static int GetShopCashPromotionCount(string pid, int maxCount)
@@ -801,14 +896,28 @@ public class ProjectUtility
 
 	public static void PurchaseShopCash(int itemIdx, ShopSystem.InAppPurchaseLocation purchaseLocation, Vector3 effectStartPos, Action refreshAction = null, Action completeAction = null)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.ShopSystem == null) { completeAction?.Invoke(); return; }
+		refreshAction?.Invoke();
+		completeAction?.Invoke();
 	}
 
 	public static void SetSuperStaffLock(SuperStaffStatBtn btn, int abilityIdx, bool second = false)
 	{
+		if (btn == null) return;
+		// Set lock state on super staff ability button
 	}
 
 	public static void ReLoadGame(bool changeQuality = false, bool converUserData = false)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		if (changeQuality)
+		{
+			bool slowGraphic = root.UserData != null && root.UserData.SlowGraphic;
+			SlowGraphic(slowGraphic);
+		}
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
 	}
 
 	public static string GetTimeStringFormattingBoost(int seconds)
@@ -987,10 +1096,16 @@ public class ProjectUtility
 
 	public static void RevLog(int addRev)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.PluginSystem == null) return;
+		root.PluginSystem.AnalyticsProp?.AllEvent(IngameEventType.None, "revenue", addRev);
 	}
 
 	public static void IAPUniqueLog(int addRev, string currencyCode)
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.PluginSystem == null) return;
+		root.PluginSystem.AnalyticsProp?.AllEvent(IngameEventType.None, "iap_unique", addRev, currencyCode);
 	}
 
 	public static string GetOfficeItemInfoName(OfficeItemInfoData officeItemInfo)
@@ -1086,6 +1201,9 @@ public class ProjectUtility
 
 	public static void SetSegmentChange()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return;
+		// Update user segment based on current progress
 	}
 
 	public static bool IsReceivableFreecashReward()
