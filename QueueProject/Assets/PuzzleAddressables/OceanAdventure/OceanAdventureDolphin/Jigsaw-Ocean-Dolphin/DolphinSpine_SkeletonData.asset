@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 106799970, guid: ebe353a9e51fc6708625f16edcb81e06, type: 3}
+  m_Name: DolphinSpine_SkeletonData
+  m_EditorClassIdentifier:
+  atlasAssets:
+  - {fileID: 11400000, guid: 0f26f6f04ba080b42ae77b0da66396dd, type: 2}
+  scale: 0.01
+  skeletonJSON: {fileID: 4900000, guid: a4f6006c699ec9e41a3b955e8892f1a4, type: 3}
+  isUpgradingBlendModeMaterials: 0
+  blendModeMaterials:
+    requiresBlendModeMaterials: 1
+    applyAdditiveMaterial: 1
+    additiveMaterials: []
+    multiplyMaterials:
+    - pageName: Dolphin.png
+      material: {fileID: 2100000, guid: 2f3208d9db09d6840921bcf0fd8439ec, type: 2}
+    screenMaterials:
+    - pageName: Dolphin.png
+      material: {fileID: 2100000, guid: 440de75a22e61a040bb0adf42de7813d, type: 2}
+  skeletonDataModifiers: []
+  fromAnimation: []
+  toAnimation: []
+  duration: []
+  defaultMix: 0.2
+  controller: {fileID: 0}

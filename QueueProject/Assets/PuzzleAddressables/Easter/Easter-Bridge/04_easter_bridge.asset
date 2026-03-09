@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095476e4cc74ee4e1e078a20bfaca34f, type: 3}
+  m_Name: 04_easter_bridge
+  m_EditorClassIdentifier:
+  clientID: 04_easter_bridge
+  image: {fileID: 2800000, guid: a9d0a8ccc3c913146906f204c9fd4429, type: 3}
+  skeletonDataAsset: {fileID: 11400000, guid: 158b46482723be9478f08a607c1f6da3, type: 2}
+  puzzleSfx:
+    audioClip: {fileID: 8300000, guid: 76fe314b839da3944907fddb3c2fd167, type: 3}
+    volume: 0.6

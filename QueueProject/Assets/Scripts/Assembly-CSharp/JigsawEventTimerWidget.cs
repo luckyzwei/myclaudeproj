@@ -1,0 +1,44 @@
+using Balancy.Models;
+using Balancy.Models.SmartObjects;
+using TMPro;
+using UnityEngine;
+
+public class JigsawEventTimerWidget : MonoBehaviour
+{
+	private enum TimerType
+	{
+		ENDS_IN = 0,
+		STARTS_IN = 1
+	}
+
+	[SerializeField]
+	private TimerType m_timerType;
+
+	[Space(10f)]
+	[SerializeField]
+	private TextMeshProUGUI m_timeText;
+
+	private GameEvent m_jigsawEvent;
+
+	public void Config(JigsawPuzzleGameEvent jigsawEvent)
+	{
+	}
+
+	private int TimeLeft()
+	{
+		return 0;
+	}
+
+	private int TimeToStart()
+	{
+		return 0;
+	}
+
+	private void UpdateTimeText(int timeSeconds)
+	{
+	}
+
+	private void Update()
+	{
+	}
+}

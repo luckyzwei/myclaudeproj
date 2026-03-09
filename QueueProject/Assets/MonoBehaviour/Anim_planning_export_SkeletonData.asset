@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 106799970, guid: ebe353a9e51fc6708625f16edcb81e06, type: 3}
+  m_Name: Anim_planning_export_SkeletonData
+  m_EditorClassIdentifier:
+  atlasAssets:
+  - {fileID: 11400000, guid: 124ba0afcb26fc445a0fbc370082b29c, type: 2}
+  scale: 0.01
+  skeletonJSON: {fileID: 4900000, guid: f0c0c4a6820c3e943a963f713308dc53, type: 3}
+  isUpgradingBlendModeMaterials: 0
+  blendModeMaterials:
+    requiresBlendModeMaterials: 1
+    applyAdditiveMaterial: 1
+    additiveMaterials:
+    - pageName: Chest_animations.png
+      material: {fileID: 2100000, guid: 862015e770091c242bf43ad8d4decd43, type: 2}
+    multiplyMaterials: []
+    screenMaterials: []
+  skeletonDataModifiers: []
+  fromAnimation: []
+  toAnimation: []
+  duration: []
+  defaultMix: 0.2
+  controller: {fileID: 0}

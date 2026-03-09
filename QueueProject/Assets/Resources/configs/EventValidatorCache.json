@@ -1,0 +1,1099 @@
+{
+  "parameters": [
+    {
+      "field": "event_info_created",
+      "dataType": "timestamp",
+      "length": 0
+    },
+    {
+      "field": "event_info_submitted",
+      "dataType": "timestamp",
+      "length": 0
+    },
+    {
+      "field": "event_info_timezone_offset",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "event_info_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "event_info_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_session_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_info_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_vendor_id",
+      "dataType": "varchar",
+      "length": 36
+    },
+    {
+      "field": "game_player_id",
+      "dataType": "varchar",
+      "length": 128
+    },
+    {
+      "field": "game_segment_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_device_platform",
+      "dataType": "varchar",
+      "length": 12
+    },
+    {
+      "field": "game_device_type",
+      "dataType": "varchar",
+      "length": 8
+    },
+    {
+      "field": "game_device_version",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_device_country",
+      "dataType": "varchar",
+      "length": 12
+    },
+    {
+      "field": "game_device_city",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_device_model",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_device_os",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_device_screen_dpi",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_device_screen_height",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_device_screen_width",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_device_screen_size",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_device_system_memory",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_device_processor_type",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_device_system_language",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "app_action_type",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "app_action_context",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_action_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_action_id",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "app_action_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_action_duration",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_item_type",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_item_context",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_item_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_item_adjustment",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_item_id",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_item_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_currency_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_currency_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_currency_context",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_ad_type",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_context",
+      "dataType": "varchar",
+      "length": 56
+    },
+    {
+      "field": "app_ad_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_ad_bid_usd",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_provider",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "app_iap_context",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "app_iap_currency",
+      "dataType": "varchar",
+      "length": 3
+    },
+    {
+      "field": "app_iap_price",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_iap_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_iap_value",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_transaction_id",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_progression_id",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_progression_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_progression_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_progression_context",
+      "dataType": "varchar",
+      "length": 52
+    },
+    {
+      "field": "game_progression_adjustment",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_interaction_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_interaction_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_interaction_context",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_interaction_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_interaction_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_level_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_level_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_level_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_level_context",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_score",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_duration",
+      "dataType": "bigint",
+      "length": 0
+    },
+    {
+      "field": "game_stage_outcome",
+      "dataType": "varchar",
+      "length": 24
+    },
+    {
+      "field": "game_stage_progression",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_stage_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_balance",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_item",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_distance",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_stage_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_position",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_env_object_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_env_object_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_env_object_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_env_object_damage",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_env_object_health",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_player_object_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_player_object_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_player_object_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_player_object_damage",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_player_object_health",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_stage_reward_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_reward_type",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "game_stage_reward_used",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "game_currency_balance",
+      "dataType": "numeric",
+      "length": 38
+    },
+    {
+      "field": "game_currency_adjustment",
+      "dataType": "numeric",
+      "length": 38
+    },
+    {
+      "field": "event_join_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "event_transaction_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_ml_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_ml_value",
+      "dataType": "varchar",
+      "length": 63555
+    },
+    {
+      "field": "game_ml_treatment_group",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_ml_question",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_unit_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_unit_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_unit_format",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_impression_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_currency",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_publisher_revenue",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_group_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_group_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_group_type",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_group_priority",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_ad_country",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_precision",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_network_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_network_placement_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_mopub_json",
+      "dataType": "varchar",
+      "length": 4000
+    },
+    {
+      "field": "app_ad_version",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_install_id",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "game_stage_context",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_advertiser_id",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "game_session_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_ad_location",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_attribution_type",
+      "dataType": "varchar",
+      "length": 16
+    },
+    {
+      "field": "app_attribution_context",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_attribution_value",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_attribution_cummulative",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_ad_data",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "app_ad_stage_index",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_ad_partition_index",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_xpromo_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_xpromo_current_value",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_xpromo_target_value",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_xpromo_probability",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_xpromo_type",
+      "dataType": "varchar",
+      "length": 16
+    },
+    {
+      "field": "app_xpromo_context",
+      "dataType": "varchar",
+      "length": 12
+    },
+    {
+      "field": "app_xpromo_target_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "generic_string_0",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "generic_string_1",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "generic_string_2",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "generic_string_3",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "generic_string_4",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "generic_int_0",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "generic_int_1",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "generic_int_2",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "generic_int_3",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "generic_int_4",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "generic_float_0",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "generic_float_1",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "generic_float_2",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "generic_float_3",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "generic_float_4",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "generic_bool_0",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "generic_bool_1",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "generic_bool_2",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "generic_bool_3",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "generic_bool_4",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "game_settings_duration",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_boot_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_action_accepted",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_creative_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_creative_target_game_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_campaign_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_campaign_impression_index",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_campaign_type",
+      "dataType": "varchar",
+      "length": 8
+    },
+    {
+      "field": "app_campaign_probability",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_campaign_ltv",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_campaign_bid",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_user_ltv",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_campaign_tenjin_campaign_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_no_fill",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_ad_unique_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_load_time",
+      "dataType": "bigint",
+      "length": 0
+    },
+    {
+      "field": "app_ad_simulation",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_ad_impressions_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_settings_received",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_ad_stack_count",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_iap_restore",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_ad_time",
+      "dataType": "bigint",
+      "length": 0
+    },
+    {
+      "field": "app_play_time",
+      "dataType": "bigint",
+      "length": 0
+    },
+    {
+      "field": "very_long_string",
+      "dataType": "varchar",
+      "length": 10000
+    },
+    {
+      "field": "app_ad_player_score",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_threshold_value",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_competitor_best_mediator_name",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "app_ad_ab_group",
+      "dataType": "varchar",
+      "length": 16
+    },
+    {
+      "field": "app_ad_segment_name",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "app_ad_lifetime_revenue",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_competitor_best_bid",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_competitors_auction_result_json",
+      "dataType": "varchar",
+      "length": 4000
+    },
+    {
+      "field": "event_info_created_ntp",
+      "dataType": "timestamp",
+      "length": 0
+    },
+    {
+      "field": "game_device_network_bandwidth",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "game_device_available_disk_space",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "game_device_available_ram",
+      "dataType": "integer",
+      "length": 0
+    },
+    {
+      "field": "app_frame_rate",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_ad_rejection_cause_system",
+      "dataType": "varchar",
+      "length": 500
+    },
+    {
+      "field": "app_ad_rejection_cause_mediator",
+      "dataType": "varchar",
+      "length": 500
+    },
+    {
+      "field": "app_ad_rejection_cause_xpromo",
+      "dataType": "varchar",
+      "length": 500
+    },
+    {
+      "field": "game_reinstall",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_iap_unique_id",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "game_bucket_segment_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "embrace_session_id",
+      "dataType": "varchar",
+      "length": 32
+    },
+    {
+      "field": "embrace_last_run_end_state",
+      "dataType": "varchar",
+      "length": 9
+    },
+    {
+      "field": "balancy_player_id",
+      "dataType": "varchar",
+      "length": 36
+    },
+    {
+      "field": "app_framerate",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_device_network_bandwidth",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_device_available_disk_space",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "app_device_available_ram",
+      "dataType": "double",
+      "length": 0
+    },
+    {
+      "field": "install_mode",
+      "dataType": "varchar",
+      "length": 16
+    },
+    {
+      "field": "install_name",
+      "dataType": "varchar",
+      "length": 64
+    },
+    {
+      "field": "install_is_store_build",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "install_correct_bundle_id",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "game_appsflyer_id",
+      "dataType": "varchar",
+      "length": 48
+    },
+    {
+      "field": "app_action_verified",
+      "dataType": "boolean",
+      "length": 0
+    },
+    {
+      "field": "app_action_body",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "event_info_captured",
+      "dataType": "timestamp",
+      "length": 0
+    },
+    {
+      "field": "event_info_received",
+      "dataType": "timestamp",
+      "length": 0
+    },
+    {
+      "field": "kwalee_sdk_version",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_backend",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_segmented_session_id",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_segment_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "game_segment_bucket",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_managed_network_name",
+      "dataType": "varchar",
+      "length": 256
+    },
+    {
+      "field": "app_ad_is_aggregator",
+      "dataType": "boolean",
+      "length": 0
+    }
+  ]
+}

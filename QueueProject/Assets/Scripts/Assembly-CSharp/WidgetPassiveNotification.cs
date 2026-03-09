@@ -1,0 +1,20 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class WidgetPassiveNotification : MonoBehaviour
+{
+	[SerializeField]
+	private TMP_Text m_message;
+
+	[SerializeField]
+	private Image m_icon;
+
+	public void Configure(string key, bool showIcon)
+	{
+	}
+
+	public void KillMe()
+	{
+	}
+}

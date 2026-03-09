@@ -1,0 +1,380 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d476c3f11e0947c220fb888dd7ce03, type: 3}
+  m_Name: ConfigParams
+  m_EditorClassIdentifier:
+  test:
+    unlockSpinWheel: 0
+    unlockDailyChallenge: 0
+    unlockPVPChallengeButton: 0
+    testDailyChallengesProgress: 0
+    dailyChallengeStartProgress: 0
+    dailyChallengeTargetProgress: 31
+    dontClearNewDailyChallenges: 0
+    overrideControlScheme: 0
+    selectedControlScehemeIndex: 1
+    queensEventEnded: 0
+    queensLastSeenGems: 2
+    testGemsProgress: 0
+    testStartingGems: 125
+    testTargetGems: 140
+    verbose: 0
+    jigsawPuzzles: 0
+    useOldColors: 0
+    discountVipState: 0
+    freeBoosters: 0
+    specialOffer: 0
+    specialOfferIndex: 2
+    testDiscountedOffer: 0
+    pushMessagesShortTime: 0
+    showNoAdsTimeLeft: 0
+    forceActiveLimitedOffer: 0
+    limitedOfferID: season_of_love
+    limitedOfferBehaviour: 0
+    levelTimerShortWarningTimes: 0
+    show2026forDailyChallenges: 0
+    testDifferentBoardSizes: 0
+    testDifferentBoardSizesTime: 0.5
+    forceReceiveChallenge: 0
+    forceChallengeResult: 0
+  specialOffer:
+    containerData: {fileID: 11400000, guid: 970cc0806e1a8c147ab8265759e167aa, type: 2}
+  leaderboard:
+    autoscrollStartDelay: 2
+    playerCellIntroDelay: 0.5
+    scrollDuration: 1
+    endDelay: 0.5
+    lerpScoreDuration: 0.1
+    lerpScoreDelay: 3
+    punchScale: 0.5
+    punchScaleTime: 0.2
+  queensEvent:
+    startDelay: 1
+    endDelay: 0
+    progressDurationsForSlots:
+    - 0.75
+    - 1.2
+    - 1.75
+    - 2
+    - 2.25
+    - 3
+    showCompletePopup: 1
+    autoClosePopupTime: 1
+  levelEndFlow:
+    delayAfterWin: 1.5
+    delayAfterWinFtueLevel: 0.5
+    delayBeforeGameOver: 1
+    delayButtons: 2.5
+    delayRvButton: 2
+    rewardSectionComeInDelayAfterPlayerCellMvement: 1
+    doubleRewardComeInDelayAfterPlayerCellMvement: 1.6
+    rewardColors:
+    - {r: 0.18039216, g: 0.5254902, b: 0.9254902, a: 1}
+    - {r: 0.9411765, g: 0.6901961, b: 0.16470589, a: 1}
+    - {r: 0.5686275, g: 0.25882354, b: 0.92941177, a: 1}
+    rewardGradients:
+    - color1: {r: 1, g: 0.88429755, b: 0.25098038, a: 1}
+      color2: {r: 1, g: 0.54705113, b: 0.16470587, a: 1}
+    - color1: {r: 0.82106066, g: 0.2956123, b: 0.8584906, a: 1}
+      color2: {r: 0.4994136, g: 0.10980392, b: 0.8509804, a: 1}
+    - color1: {r: 1, g: 0.88429755, b: 0.25098038, a: 1}
+      color2: {r: 1, g: 0.54705113, b: 0.16470587, a: 1}
+  sound:
+    clickSoundToPlay: 0
+    XSoundToPlay: 0
+    RemoveXSoundToPlay: 0
+    TimeToResetPitch: 0.2
+    hintDelay: 1
+    musicFadeOutTime: 0.5
+    musicFadeInTime: 1
+  jigsawGenerationSettings:
+    knobFactor: 0.2
+    pixelsPerUnit: 100
+    addPixelOverlap: 1
+    spriteOverlapScaleFactor: 1.005
+    uiOverlapPixelAmount: 2
+    stretchUiToFillParent: 1
+    forceRegenerateAtlas: 1
+    atlasSaveDirectory: PuzzleAtlases
+    yieldAfterPiecesProcessed: 10
+    cellsStartDelay: 0
+    cellAnimateTime: 0.4
+    cellDelayBetween: 0.05
+    cellAcceleration: 0.9
+    rewardDelay: 1
+    cellScaleUpCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.4896457
+        outSlope: 2.4896457
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.053264536
+      - serializedVersion: 3
+        time: 0.86111355
+        value: 1.0752723
+        inSlope: 0.006181009
+        outSlope: 0.006181009
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.7432021
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: -1.2085426
+        outSlope: -1.2085426
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.3277684
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    fragmentScaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 6.519568
+        outSlope: 6.519568
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.21765813
+      - serializedVersion: 3
+        time: 0.100581765
+        value: 0.50292987
+        inSlope: 2.529086
+        outSlope: 2.529086
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8816026
+        value: 0.5482001
+        inSlope: -2.2861032
+        outSlope: -2.2861032
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -4.6301694
+        outSlope: -4.6301694
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    fragmentStartScale: 0
+    fragmentFinalScale: 0.5
+    fragmentMoveTime: 0.5
+    waitBetweenRows: 1
+    scrollDuration: 1.25
+    delayAfterScroll: 0.75
+    delayBeforeScroll: 0.25
+    cellOffsetY: -200
+    sfxMinDelay: 0.07
+    whiteHideDuration: 0.2
+  cross:
+    changeColorToRedTime: 0.95
+  hints:
+    applyButtonAppearDelay: 2
+    applyButtonAppearTime: 0.25
+    autoDoDelayTime: 0.035
+    autoSpeedMultiplier: 0.95
+    highlightFormat: '<color=#{1}>{0}</color>'
+    delayBeforeMaskDisappear: 0.25
+    maskFadeTime: 0.2
+    maskExtraSize: 10
+  input:
+    holdTimerOffset: {x: 0, y: 0, z: 0}
+    usePrediction: 0
+    predictColliderSizeScale: 1.7
+  pushMessages:
+    gemsNeededForNextReward: 10
+    minTimeGems:
+      days: 0
+      hours: 2
+      minutes: 0
+      seconds: 0
+    maxTimeGems:
+      days: 0
+      hours: 2
+      minutes: 0
+      seconds: 0
+    notPlayedMinTime:
+      days: 0
+      hours: 72
+      minutes: 0
+      seconds: 0
+    notPlayedMaxTime:
+      days: 0
+      hours: 96
+      minutes: 0
+      seconds: 0
+    pieceNeededForNextJigsaw: 5
+    jigsawMinTime:
+      days: 0
+      hours: 2
+      minutes: 0
+      seconds: 0
+    jigsawMaxTime:
+      days: 0
+      hours: 12
+      minutes: 0
+      seconds: 0
+    newCollectionMinTime:
+      days: 0
+      hours: 0
+      minutes: 10
+      seconds: 0
+    newCollectionMaxTime:
+      days: 0
+      hours: 24
+      minutes: 0
+      seconds: 0
+    vipOfferMinTime:
+      days: 0
+      hours: 4
+      minutes: 0
+      seconds: 0
+    vipOfferMaxTime:
+      days: 0
+      hours: 23
+      minutes: 0
+      seconds: 0
+    royalTournamentStartOffsetMinTime:
+      days: 0
+      hours: 0
+      minutes: 1
+      seconds: 0
+    royalTournamentStartOffsetMaxTime:
+      days: 0
+      hours: 24
+      minutes: 0
+      seconds: 0
+    streakStartedMinTime:
+      days: 0
+      hours: 8
+      minutes: 0
+      seconds: 0
+    streakStartedMaxTime:
+      days: 0
+      hours: 14
+      minutes: 0
+      seconds: 0
+    streakLoseWarningMinTimeBefore:
+      days: 0
+      hours: 5
+      minutes: 0
+      seconds: 0
+    streakLoseWarningMaxTimeBefore:
+      days: 0
+      hours: 2
+      minutes: 0
+      seconds: 0
+    queensEventMinTime:
+      days: 0
+      hours: 0
+      minutes: 0
+      seconds: 0
+    queensEventMaxTime:
+      days: 0
+      hours: 12
+      minutes: 0
+      seconds: 0
+    queensEventLastChanceMinTime:
+      days: 0
+      hours: 12
+      minutes: 0
+      seconds: 0
+    queensEventLastChanceMaxTime:
+      days: 0
+      hours: 1
+      minutes: 0
+      seconds: 0
+    oneDcLeftToTrophyMinTime:
+      days: 0
+      hours: 1
+      minutes: 0
+      seconds: 0
+    oneDcLeftToTrophyMaxTime:
+      days: 0
+      hours: 48
+      minutes: 0
+      seconds: 0
+  extraTutorial:
+    startCellOffset: {x: -1, y: 1}
+    rotateClockwise: 1
+    disableInputOnFirstAnimationLoop: 0
+    tapDownDelay: 0.25
+    handUnitMovementDuration: 0.15
+    handSpeedIncreaseOnCorners: 0.25
+    handMovementDelay: 1.5
+    waitAfterFirstTouch: 3
+    minTimePopupShow: 0.5
+    heartFadeInDelay: 0
+    heartFadeInTime: 0.5
+    rulesFadeInDelay: 0.5
+    rulesFadeInTime: 0.5
+    bubbleFadeOutDelay: 0.2
+    bubbleFadeOutTime: 0.5
+  dailyChallenges:
+    fillBarTime: 0.5
+    startDelay: 0.35
+    flyingEffectDelay: 0.25
+  levelIntroFlow:
+    noThanksDelay: 2
+    autoCloseDelay: 2.5
+    hardLevelFadeTime: 0.2
+  fakePVP:
+    connectingTextMinTime: 1
+    connectingTextMaxTime: 4
+    startingTextMinTime: 0.3
+    startingTextMaxTime: 1
+    searchingOpponentMinTime: 2
+    searchingOpponentMaxTime: 6
+    waitAfterSearchMinTime: 0.75
+    waitAfterSearchMaxTime: 1.5
+    disconnectTime:
+      days: 0
+      hours: 0
+      minutes: 0
+      seconds: 30
+    botActionTimeIfPlayerFailed: 0.25
+  queenIndex: 3
+  hapticsDelay: 0
+  hapticsDelayWhistle: 0
+  grandRewardPrizeDelay: 0.5
+  jigsawViewerForcePopup: 0.25
+  pitchIncreasePerPieceInPuzzleScreen: 0.02
+  pitchIncreasePerPiece: 0.2
+  showCellOutline: 1
+  cellOutlineSize: 0.145
+  cellSize: 1.8
+  cameraMargin: 0.1
+  cameraOffsetY: -0.3
+  queenAmplitude: 0.15
+  queenFrequency: 0.5
+  delayFramesForPosition: 2

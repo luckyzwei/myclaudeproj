@@ -1,0 +1,446 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb67b0b907f9e6fc3f88db330dd15611, type: 3}
+  m_Name: AudioSoundList
+  m_EditorClassIdentifier:
+  globalButtonPositive:
+    audioClip: {fileID: 8300000, guid: c96eb0f99349ac44faa2654fca3934e6, type: 3}
+    volume: 0.8
+  globalButtonNeutral:
+    audioClip: {fileID: 8300000, guid: acf954c0557569e40b7e12d40fd31511, type: 3}
+    volume: 0.7
+  globalSwoosh:
+    audioClip: {fileID: 0}
+    volume: 1
+  globalSliderOn:
+    audioClip: {fileID: 8300000, guid: 550170cdd1c4c194eb12665092f108dc, type: 3}
+    volume: 0.6
+  globalSliderOff:
+    audioClip: {fileID: 8300000, guid: c03a3f5c8d331304b9182be862a65f2b, type: 3}
+    volume: 0.6
+  globalTabClick:
+    audioClip: {fileID: 0}
+    volume: 1
+  globalPopUpWindow:
+    audioClip: {fileID: 0}
+    volume: 1
+  swipe:
+    audioClip: {fileID: 0}
+    volume: 1
+  levelComplete:
+    audioClip: {fileID: 0}
+    volume: 1
+  levelCompletePopUp:
+    audioClip: {fileID: 0}
+    volume: 1
+  levelFail:
+    audioClip: {fileID: 8300000, guid: 68b601e34a1c4a7459cae09a2d5b6acc, type: 3}
+    volume: 1
+  monthNext:
+    audioClip: {fileID: 8300000, guid: 62917212aba3b14418275e09329fb042, type: 3}
+    volume: 0.8
+  selectedDate:
+    audioClip: {fileID: 8300000, guid: 62917212aba3b14418275e09329fb042, type: 3}
+    volume: 0.8
+  buttonClaim:
+    audioClip: {fileID: 8300000, guid: 3db4c768593b08c4196c5cbf6e637f03, type: 3}
+    volume: 0.8
+  levelResultScreen:
+    audioClip: {fileID: 8300000, guid: b8517ef92269ca449aea883cdee828a2, type: 3}
+    volume: 1
+  coinTallyingUp:
+    audioClip: {fileID: 8300000, guid: 6fa934868dd78e34cb43aa427c92f04c, type: 3}
+    volume: 0.7
+  spinningWheel:
+    audioClip: {fileID: 8300000, guid: fbea08bfe2330e0439d653532da63705, type: 3}
+    volume: 0.4
+  piggyBankFill:
+    audioClip: {fileID: 0}
+    volume: 1
+  playerProfile:
+    audioClip: {fileID: 8300000, guid: 053478dbd1cc80c47a1b97b89d254872, type: 3}
+    volume: 0.4
+  boosterPopup:
+    audioClip: {fileID: 8300000, guid: 9ac72add07b7a414d8492eabbcb27e69, type: 3}
+    volume: 1
+  piggyBankShatter:
+    audioClip: {fileID: 0}
+    volume: 1
+  featureUnlocked:
+    audioClip: {fileID: 8300000, guid: 21f6526be47fdf041a3c7a2280ec94c2, type: 3}
+    volume: 0.6
+  infoPopupSFX:
+    audioClip: {fileID: 8300000, guid: a4843d926dfa7384ca9ae7023d8f98f3, type: 3}
+    volume: 0.4
+  HeartIn:
+    audioClip: {fileID: 8300000, guid: 27c6ee4eace1a124ab3cc7c1784f1602, type: 3}
+    volume: 0.8
+  shopOpen:
+    audioClip: {fileID: 8300000, guid: d235d9cffdbfdd0469a59c214b5a68bc, type: 3}
+    volume: 1
+  boosterPurchasedPopup:
+    audioClip: {fileID: 8300000, guid: 13260eba42df7a04fa95738ff7e47afb, type: 3}
+    volume: 0.3
+  gemsObtained:
+    audioClip: {fileID: 8300000, guid: ed3845d263d1b864bbb177e3e10f8abc, type: 3}
+    volume: 0.6
+  cellScaleUp:
+    audioClip: {fileID: 8300000, guid: 6274073e6730d534991ca9cfd4054e9d, type: 3}
+    volume: 1
+  cellMovement:
+    audioClip: {fileID: 8300000, guid: 6f8bc7e5ac1eac84ba89e241bf2cb6b6, type: 3}
+    volume: 0.3
+  cellScaleDown:
+    audioClip: {fileID: 8300000, guid: 4011e93e58ee8c847a157cc444b989ad, type: 3}
+    volume: 1
+  treasureReward:
+    audioClip: {fileID: 0}
+    volume: 0.7
+  starPopUp:
+    audioClip: {fileID: 8300000, guid: 9df1a1f66fa24b34b96214cc926f9b81, type: 3}
+    volume: 1.2
+  menuMusic:
+    audioClip: {fileID: 8300000, guid: 0c382824dde642f4c8755e53f64e55d5, type: 3}
+    volume: 0.8
+  gameMusic:
+    audioClip: {fileID: 8300000, guid: f700b435791044a4d80589f95674655f, type: 3}
+    volume: 0.7
+  gameMusicHard:
+    audioClip: {fileID: 8300000, guid: 137de09f90896f74f8fd69b11dc535a2, type: 3}
+    volume: 0.6
+  gameMusicVeryHard:
+    audioClip: {fileID: 8300000, guid: a2f0cf73ee5b0be42b05de1e9ce24419, type: 3}
+    volume: 0.7
+  GemIntro:
+    audioClip: {fileID: 8300000, guid: efe6576cf800b104881e221b5a5402fd, type: 3}
+    volume: 1
+  GemReachTarget:
+    audioClip: {fileID: 8300000, guid: 07631d745123ab748a3b1d230626e1ac, type: 3}
+    volume: 1
+  weeklyLegendsLeaderboard:
+    audioClip: {fileID: 8300000, guid: eb8b64eee18b7e64095e86bbc0eacb5e, type: 3}
+    volume: 0.6
+  leaderboardPopupIAP:
+    audioClip: {fileID: 8300000, guid: d8e574abf1d40b34e9a867c98e199b68, type: 3}
+    volume: 1
+  expertModePopUp:
+    audioClip: {fileID: 8300000, guid: 92eb6bb6c7d1c3a44a5c1d0689bf6e84, type: 3}
+    volume: 0.6
+  leaderbordFragmentSpawn:
+    audioClip: {fileID: 0}
+    volume: 1
+  leaderbordFragmentReachesTarget:
+    audioClip: {fileID: 0}
+    volume: 1
+  claimButton:
+    audioClip: {fileID: 8300000, guid: 18111a09eabc70948a4b713ed0dfb883, type: 3}
+    volume: 1
+  gameOver:
+    audioClip: {fileID: 8300000, guid: 420b35597b3fc49458d016562a6153ef, type: 3}
+    volume: 1
+  cellMovementSingle:
+    audioClip: {fileID: 8300000, guid: 169fc276b73925b4a8ff711f66663efe, type: 3}
+    volume: 1
+  qgLevelRise:
+    audioClip: {fileID: 8300000, guid: c3daf7ad4c4f6a749b9007d022cb5cc7, type: 3}
+    volume: 1
+  giftBox:
+    audioClip: {fileID: 8300000, guid: f7c87fba76a25fd4a8f732bb2cb6da45, type: 3}
+    volume: 1
+  withCoinRewads:
+    audioClip: {fileID: 8300000, guid: 7ae1f923db32a6145bb5d551c78cbc6d, type: 3}
+    volume: 0.6
+  noCoinRewads:
+    audioClip: {fileID: 8300000, guid: 96206e3ceed84704b81849b806903f3e, type: 3}
+    volume: 0.7
+  storeReward:
+    audioClip: {fileID: 8300000, guid: f2efa4042d9436b4c912ef8d60539848, type: 3}
+    volume: 0.7
+  queenPurchase:
+    audioClip: {fileID: 8300000, guid: 3d9c44ea26bcbb64f82d960160304a45, type: 3}
+    volume: 0.7
+  pageSelect:
+    audioClip: {fileID: 8300000, guid: cd8cf57fad597ff47a00c35f7762368a, type: 3}
+    volume: 1
+  onboardBoardPage:
+    audioClip: {fileID: 8300000, guid: 0d9b5a059475ace49a1b7d246114339d, type: 3}
+    volume: 1
+  tapSound:
+    audioClip: {fileID: 8300000, guid: 64e8626b211be184abdfe5f44aff0bff, type: 3}
+    volume: 0.7
+  vipAppear:
+    audioClip: {fileID: 8300000, guid: 9beae5f7d234d8b46b7879ce5232e6c1, type: 3}
+    volume: 0.6
+  vipAppearSimple:
+    audioClip: {fileID: 8300000, guid: cb54bd79fafc02b45868eeccaba02abd, type: 3}
+    volume: 1
+  vipButtonClaim:
+    audioClip: {fileID: 8300000, guid: 6f4e15714ba3125468c2d49d80115e3a, type: 3}
+    volume: 1
+  specialOfferPop:
+    audioClip: {fileID: 8300000, guid: 85d0f1386300ea3418ec2de43dd428ec, type: 3}
+    volume: 1
+  purplePopUp:
+    audioClip: {fileID: 8300000, guid: 9e393854cee56b04288f1a6fad71a7e4, type: 3}
+    volume: 0.6
+  collectJigsaw:
+    audioClip: {fileID: 8300000, guid: 40cf962ea0d6e8647b26f7526745e068, type: 3}
+    volume: 0.8
+  skinUnlock:
+    audioClip: {fileID: 8300000, guid: 37e92f173ce14634eb8d7e24f1d91eb5, type: 3}
+    volume: 0.2
+  queenhintFx:
+    audioClip: {fileID: 8300000, guid: 93b45a9ed536d5c4a96ead02cfcdadae, type: 3}
+    volume: 1
+  qgButton:
+    audioClip: {fileID: 8300000, guid: ae174ceef8f4f9145a5cdea13662ea47, type: 3}
+    volume: 0.6
+  puzzlePiecesSpawn:
+    audioClip: {fileID: 8300000, guid: 2eddaf822d490c0409337e9b077692a2, type: 3}
+    volume: 0.5
+  puzzlePiecesReceived:
+    audioClip: {fileID: 8300000, guid: 2eddaf822d490c0409337e9b077692a2, type: 3}
+    volume: 0.2
+  barFill:
+    audioClip: {fileID: 8300000, guid: eae36e9560c46a74ba8a5626eab9b3f8, type: 3}
+    volume: 1
+  puzzleComplete1:
+    audioClip: {fileID: 8300000, guid: 689049b25d8df4349bd50e6b220ee321, type: 3}
+    volume: 0.7
+  puzzleComplete2:
+    audioClip: {fileID: 8300000, guid: 2bdfbe895e9510f479c3986ccd5c89c9, type: 3}
+    volume: 0.7
+  puzzleComplete3:
+    audioClip: {fileID: 8300000, guid: 7458f281b3ebe3143afff8f68dd56fe7, type: 3}
+    volume: 0.7
+  pecilIcon:
+    audioClip: {fileID: 8300000, guid: c96eb0f99349ac44faa2654fca3934e6, type: 3}
+    volume: 1
+  giftSpinWheel:
+    audioClip: {fileID: 8300000, guid: 197d2ec5b839fc9428ad2ec9f265d940, type: 3}
+    volume: 0.7
+  puzzleComplete:
+    audioClip: {fileID: 8300000, guid: 6dda88a0bddca6441b873fe9f408a80c, type: 3}
+    volume: 1
+  spinTransition:
+    audioClip: {fileID: 8300000, guid: 6602fdc237b615a4d9689feebb69fe2b, type: 3}
+    volume: 0.5
+  spookytheme:
+    audioClip: {fileID: 8300000, guid: b4bc1b4c932224140aa559d0dd0f69ac, type: 3}
+    volume: 0.4
+  gameCountdown:
+    audioClip: {fileID: 8300000, guid: 3298c8ab2eb398f42a776a0e645ff9c5, type: 3}
+    volume: 0.85
+  peopleFinding:
+    audioClip: {fileID: 8300000, guid: eaadcee6567689d499b861c4e2a34570, type: 3}
+    volume: 0.5
+  peopleNumberCount:
+    audioClip: {fileID: 8300000, guid: ee466314a4f9d404f9c5e16282774476, type: 3}
+    volume: 0.5
+  startTournament:
+    audioClip: {fileID: 8300000, guid: daccf26abb4f8eb4297abe006c7bf934, type: 3}
+    volume: 0.75
+  milestoneUnlock:
+    audioClip: {fileID: 8300000, guid: 6e375c3ac78f62842a40b23209ef5312, type: 3}
+    volume: 1
+  dailyStreakUp:
+    audioClip: {fileID: 8300000, guid: 0a91fa46600825e46aa7a486137f2f76, type: 3}
+    volume: 0.5
+  dailyStreakDown:
+    audioClip: {fileID: 8300000, guid: 0a91fa46600825e46aa7a486137f2f76, type: 3}
+    volume: 0.5
+  dayChange:
+    audioClip: {fileID: 8300000, guid: 95efb67858786ba45b34ab8429acb422, type: 3}
+    volume: 0.8
+  dayNumberChange:
+    audioClip: {fileID: 8300000, guid: 341f1749ce3699d42a1c52ce056ff7e9, type: 3}
+    volume: 0.5
+  tournamentWin:
+    audioClip: {fileID: 8300000, guid: 7f325c3680e887b44961acf7b3002fb2, type: 3}
+    volume: 1
+  tournamentQualified:
+    audioClip: {fileID: 8300000, guid: b7b2068d1d4393342b26572507758cb0, type: 3}
+    volume: 1
+  tournamentEliminated:
+    audioClip: {fileID: 8300000, guid: 2f117f0283e60c84ba4704685f7e1ff7, type: 3}
+    volume: 1
+  tournamentLose:
+    audioClip: {fileID: 8300000, guid: 2f117f0283e60c84ba4704685f7e1ff7, type: 3}
+    volume: 1
+  flashTime:
+    audioClip: {fileID: 8300000, guid: 85d024c9930dd104686bf9b7c372f537, type: 3}
+    volume: 0.7
+  timeInfo:
+    audioClip: {fileID: 8300000, guid: 69ebe789ee11c474ca0c737cd4cca963, type: 3}
+    volume: 0.6
+  timeResult:
+    audioClip: {fileID: 8300000, guid: b377d344ff669b7478a91ab61b663349, type: 3}
+    volume: 0.3
+  newJigsawEventStart:
+    audioClip: {fileID: 8300000, guid: f512c52e1c68bba46bff497f17c7606c, type: 3}
+    volume: 0.4
+  newJigsawEventCompleted:
+    audioClip: {fileID: 8300000, guid: eff0aade659b41545bdeddea769a0e91, type: 3}
+    volume: 0.35
+  valenttinesdayIAP:
+    audioClip: {fileID: 8300000, guid: 3da09ba124906ac4b88ee06140442d9f, type: 3}
+    volume: 1
+  valenttinesdayPopup:
+    audioClip: {fileID: 8300000, guid: 5f09256836c3b674fbb44ff2e927fe01, type: 3}
+    volume: 1
+  pvpWin:
+    audioClip: {fileID: 8300000, guid: 8e9033befec905d4888dec0de157b328, type: 3}
+    volume: 1
+  pvpLoss:
+    audioClip: {fileID: 8300000, guid: 18d39602ad582764d802d9ed486ece4e, type: 3}
+    volume: 1
+  pvpFindingPlayers:
+    audioClip: {fileID: 8300000, guid: f988f1bd6a37dbf43a012c1f89967618, type: 3}
+    volume: 0.7
+  newQueenPlaybackSound:
+    audioClip: {fileID: 8300000, guid: 9b2fc5c6afef0db45a78841a03754761, type: 3}
+    volume: 1
+  playbackQueenEnding:
+    audioClip: {fileID: 8300000, guid: 0d947161eadeb1b429863f9a44f72173, type: 3}
+    volume: 1
+  trophyRewardedFly:
+    audioClip: {fileID: 8300000, guid: e0f0fe4357e3f05448e4f21680a703be, type: 3}
+    volume: 0.6
+  xmasDinner:
+    audioClip: {fileID: 8300000, guid: 7afa09b9943046c42b9741df0991971b, type: 3}
+    volume: 1
+  xmasStick:
+    audioClip: {fileID: 8300000, guid: d632dd458c19c3041976fb69a09c1062, type: 3}
+    volume: 1
+  xmasCarGift:
+    audioClip: {fileID: 8300000, guid: 3ad076f4808abdf41b376c0c97f208ac, type: 3}
+    volume: 1
+  xmasCookies:
+    audioClip: {fileID: 8300000, guid: 6e22ebfdd399a7b46bf51e6fc47cc2fe, type: 3}
+    volume: 1
+  xmasSantaSleigh:
+    audioClip: {fileID: 8300000, guid: a4c6287fdedfdbb40958e03f25b52fb2, type: 3}
+    volume: 1
+  xmasTree:
+    audioClip: {fileID: 8300000, guid: 05e71e88f2b9ab74eb16c3476fffeb9c, type: 3}
+    volume: 1
+  seaHorseJigsaw:
+    audioClip: {fileID: 8300000, guid: 567f7a063f72570499ef0bf853326d80, type: 3}
+    volume: 1
+  jellyFishJigsaw:
+    audioClip: {fileID: 8300000, guid: 6b762e9650b429a498babba91b1ee5fb, type: 3}
+    volume: 1
+  schoolofFishJigsaw:
+    audioClip: {fileID: 8300000, guid: 44f0152531a0dbd44bca2c387927281b, type: 3}
+    volume: 1
+  octopusJigsaw:
+    audioClip: {fileID: 8300000, guid: 5c29c26d980961a44bbe9db8ae28ad30, type: 3}
+    volume: 1
+  pearlJigsaw:
+    audioClip: {fileID: 8300000, guid: c080f1d1d28903441a2161c454aa103d, type: 3}
+    volume: 1
+  turtleJigsaw:
+    audioClip: {fileID: 8300000, guid: ce4856157dc23bb42a18233df1c558cf, type: 3}
+    volume: 1
+  whaleJigsaw:
+    audioClip: {fileID: 8300000, guid: c75012672774d244c8d170fa07be5566, type: 3}
+    volume: 1
+  streakBreak:
+    audioClip: {fileID: 8300000, guid: 5161b58df26539447af3bc47ee02f60a, type: 3}
+    volume: 1
+  countDownBroken:
+    audioClip: {fileID: 8300000, guid: cf98ac8d9b503124896bb70ecb576a64, type: 3}
+    volume: 1
+  jigsawIapButton:
+    audioClip: {fileID: 8300000, guid: 2b6c69f3c58ac4a449bc5909be009183, type: 3}
+    volume: 1
+  jigsawIapBarFill:
+    audioClip: {fileID: 8300000, guid: ffef29c92c8a9be45bc070f58356f6f9, type: 3}
+    volume: 1
+  jigsawIapMilestone:
+    audioClip: {fileID: 8300000, guid: 8ff820588e30aa64e93ed02efaa687ed, type: 3}
+    volume: 1
+  coffee:
+    audioClip: {fileID: 8300000, guid: a220a054fce8ce14ebb7b92676d3f73f, type: 3}
+    volume: 1
+  fountain:
+    audioClip: {fileID: 8300000, guid: 0091587ffedfb074596594ec6f10576f, type: 3}
+    volume: 1
+  garden:
+    audioClip: {fileID: 8300000, guid: 228e6254c2a20ad4faf0f0d6de443000, type: 3}
+    volume: 1
+  letter:
+    audioClip: {fileID: 8300000, guid: 6027633a727cafd40a6652259545109b, type: 3}
+    volume: 1
+  decoramaFill:
+    audioClip: {fileID: 8300000, guid: 27c6ee4eace1a124ab3cc7c1784f1602, type: 3}
+    volume: 0.5
+  decoramaFillButton:
+    audioClip: {fileID: 8300000, guid: 23cf0a68cb9688b43aa98f532ea2a1c9, type: 3}
+    volume: 0.4
+  decoramaObjectComplete:
+    audioClip: {fileID: 8300000, guid: 9444b1b4c4530194e9d9179de12cc9d0, type: 3}
+    volume: 1
+  decoramaComplete:
+    audioClip: {fileID: 8300000, guid: 62ee95a149410e947b4d32dd8231de12, type: 3}
+    volume: 1
+  decoramaEmptyPaint:
+    audioClip: {fileID: 8300000, guid: 793c9104a6b06cf43980bee89c40171a, type: 3}
+    volume: 1
+  paintablePop:
+    audioClip: {fileID: 8300000, guid: e45e5f413e99fa94a9c33e6f61ed9f3f, type: 3}
+    volume: 0.6
+  leaderboardScrolling:
+    audioClip: {fileID: 8300000, guid: d00edc54f4fa8fb468801afe30c29be4, type: 3}
+    volume: 0.8
+  leaderboardComplete:
+    audioClip: {fileID: 8300000, guid: cec7bc4012007cb47b1100d108dc2ea7, type: 3}
+    volume: 0.9
+  leaguePromotion:
+    audioClip: {fileID: 8300000, guid: 3c907f3fa827434448160610fdc1be6d, type: 3}
+    volume: 1
+  leagueDemotion:
+    audioClip: {fileID: 8300000, guid: 07b3d547c58289745a4dea78e4e8d3b0, type: 3}
+    volume: 1
+  leagueFinished:
+    audioClip: {fileID: 8300000, guid: 4fddfc8d0cbfb2843bf9a2e99da21f7f, type: 3}
+    volume: 1
+  leagueContinue:
+    audioClip: {fileID: 8300000, guid: fa30eaec0ac6d554c89553f674642f03, type: 3}
+    volume: 1
+  buttonShopBuy:
+    audioClip: {fileID: 8300000, guid: 2e69d89e559cf8b449ed2b7750047f0e, type: 3}
+    volume: 1
+  shopRewardReceived:
+    audioClip: {fileID: 0}
+    volume: 1
+  ButtonPositive:
+    audioClip: {fileID: 0}
+    volume: 1
+  ButtonNegative:
+    audioClip: {fileID: 0}
+    volume: 1
+  AutoButton:
+    audioClip: {fileID: 0}
+    volume: 1
+  CoinWidgetTallyUp:
+    audioClip: {fileID: 0}
+    volume: 1
+  CoinWidgetTallyDown:
+    audioClip: {fileID: 0}
+    volume: 1
+  MusicMain:
+    audioClip: {fileID: 0}
+    volume: 1
+  MusicMenu:
+    audioClip: {fileID: 0}
+    volume: 7
