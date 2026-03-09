@@ -156,8 +156,8 @@ public class InGameSystem
 			return;
 		}
 
-		// Load scene additively
-		var op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+		// Load scene (replace current scene — GameRoot survives via DontDestroyOnLoad)
+		var op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
 		if (op == null)
 		{
 			UnityEngine.Debug.LogWarning("[InGameSystem] Failed to load scene: " + sceneName);
@@ -343,13 +343,6 @@ public class InGameSystem
 		{
 			CurInGame.UnLoadUI();
 			CurInGame.UnLoad();
-
-			// Unload the additive scene
-			var go = CurInGame.gameObject;
-			if (go != null && go.scene.IsValid() && go.scene.name != "Main")
-			{
-				SceneManager.UnloadSceneAsync(go.scene);
-			}
 			CurInGame = null;
 		}
 		UnLoadOutGame();

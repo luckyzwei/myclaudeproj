@@ -77,8 +77,9 @@ public class DaySystem
 
 	public void CalcCurTime()
 	{
-		int gameHour = (int)(timer / (one_min * 60));
-		DayTime = (float)gameHour;
+		double gameTimeInHours = timer / (one_min * 60);
+		int gameHour = (int)gameTimeInHours;
+		DayTime = (float)gameTimeInHours;
 
 		DayStatus newStatus = DayStatus.Midnight;
 		if (gameHour >= (int)DayStatus.Rest)

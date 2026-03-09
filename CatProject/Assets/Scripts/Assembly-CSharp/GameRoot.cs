@@ -670,6 +670,12 @@ public class GameRoot : Singleton<GameRoot>
 			if (GamePlayTimeSec != null)
 				GamePlayTimeSec.Value++;
 		}
+
+		// Drive game systems each frame
+		if (RentalFeeSystem != null)
+			RentalFeeSystem.Update();
+		if (DaySystem != null)
+			DaySystem.Update();
 	}
 
 	public void InitGameType()
@@ -715,6 +721,9 @@ public class GameRoot : Singleton<GameRoot>
 			UserData.Level.Value = 1;
 			UserData.CommonLastLoginTime = System.DateTime.UtcNow;
 			UserData.FirstLoginTime = System.DateTime.UtcNow;
+
+			// --- Initial game state (tutorial prefabs don't exist) ---
+			SetupInitialGameState(mainData);
 		}
 
 		yield return null;
@@ -747,10 +756,72 @@ public class GameRoot : Singleton<GameRoot>
 
 		// Phase 8: Post-load initialization
 		if (DaySystem != null)
-			DaySystem.CalcCurTime();
+		{
+			// Start at work time (9:00 AM) so employees are visible
+			DaySystem.CalcCheatTime(9);
+		}
+
+		if (RentalFeeSystem != null)
+			RentalFeeSystem.CalculateRentalFee();
 
 		if (UserData != null)
 			UserData.CommonLastLoginTime = System.DateTime.UtcNow;
+
+		Debug.Log("[GameRoot] LoadGameData complete. Game is running.");
+	}
+
+	private void SetupInitialGameState(UserDataMain mainData)
+	{
+		Debug.Log("[GameRoot] Setting up initial game state for new player");
+
+		var stageData = mainData.StageData;
+		if (stageData == null) return;
+
+		// Give starting money
+		UserData.HUDMoney.Value = new System.Numerics.BigInteger(1000);
+		stageData.Money.Value = new System.Numerics.BigInteger(1000);
+
+		// Mark early tutorials as cleared (prefabs don't exist in exported project)
+		if (UserData.Tutorial != null)
+		{
+			UserData.Tutorial.Add("1");  // Tutorial_Start1
+			UserData.Tutorial.Add("2");  // Tutorial_Start2
+		}
+
+		// Create first 3 offices (typical starting stage)
+		for (int i = 0; i < 3; i++)
+		{
+			var office = new OfficeData();
+			office.Create();
+			office.IsOpen.Value = (i == 0); // Only first office is open
+			office.Level.Value = 1;
+			office.Exp.Value = 0;
+			office.Employees = new System.Collections.Generic.List<EmployeeData>();
+
+			if (i == 0)
+			{
+				// First office: assign a company with rental fee
+				office.CompanyIdx.Value = 1;
+				office.RentalFee = new System.Numerics.BigInteger(100); // Base rental fee
+				office.CompanyEndTime = System.DateTime.UtcNow.AddHours(24);
+
+				// Create company data for the contracted company
+				var company = new CompanyData(1, 1, System.Numerics.BigInteger.Zero, false);
+				company.MaxLevel = 50;
+				company.Create();
+				stageData.Companies.Add(company);
+			}
+
+			stageData.Offices[i] = office;
+		}
+
+		// Add initial unlocked company to the available list
+		stageData.UnLockCompanyList.Add(1);
+		stageData.CompanyList.Add(1);
+		stageData.CompanyList.Add(2);
+		stageData.CompanyList.Add(3);
+
+		Debug.Log("[GameRoot] Initial state: 3 offices created, first office open with company, $1000 starting money");
 	}
 
 	private void InitSubSystems()
