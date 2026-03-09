@@ -7,6 +7,7 @@ using Balancy.Models.SmartObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using Price = Balancy.Models.SmartObjects.Price;
 using UnityEngine.Serialization;
 
 public class PriceWidget : MonoBehaviour

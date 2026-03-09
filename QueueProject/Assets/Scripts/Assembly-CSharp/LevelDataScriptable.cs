@@ -8,11 +8,14 @@ public class LevelDataScriptable : ScriptableObject
 	[ContextMenu("Fix Colors")]
 	public bool FixColors()
 	{
-		return false;
+		if (data == null) return false;
+		return data.FixColours();
 	}
 
 	[ContextMenu("Grab Used Colours")]
 	public void GrabUsedColours()
 	{
+		if (data != null)
+			data.GenerateUsedColours();
 	}
 }

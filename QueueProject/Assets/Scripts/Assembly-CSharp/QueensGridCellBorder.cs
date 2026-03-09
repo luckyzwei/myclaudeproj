@@ -68,10 +68,68 @@ public class QueensGridCellBorder : MonoBehaviour
 
 	public static int GetConfigFromCell(QueensGrid grid, QueensGridCell cell)
 	{
-		return 0;
+		if (grid == null || cell == null || grid.LevelData == null) return 0;
+
+		int config = 0;
+		int x = cell.Coords.x;
+		int y = cell.Coords.y;
+		int myColor = cell.Colour;
+		var levelData = grid.LevelData;
+
+		// Check 4 cardinal neighbors - set flag if different color
+		// Top
+		if (y > 0 && levelData.GetColor(x, y - 1) != myColor) config |= TOP;
+		else if (y == 0) config |= TOP;
+		// Bottom
+		if (y < levelData.sizeY - 1 && levelData.GetColor(x, y + 1) != myColor) config |= BOTTOM;
+		else if (y == levelData.sizeY - 1) config |= BOTTOM;
+		// Left
+		if (x > 0 && levelData.GetColor(x - 1, y) != myColor) config |= LEFT;
+		else if (x == 0) config |= LEFT;
+		// Right
+		if (x < levelData.sizeX - 1 && levelData.GetColor(x + 1, y) != myColor) config |= RIGHT;
+		else if (x == levelData.sizeX - 1) config |= RIGHT;
+
+		// Check 4 diagonal neighbors
+		// Top-Left
+		if (x > 0 && y > 0 && levelData.GetColor(x - 1, y - 1) != myColor) config |= TOPLEFT;
+		// Top-Right
+		if (x < levelData.sizeX - 1 && y > 0 && levelData.GetColor(x + 1, y - 1) != myColor) config |= TOPRIGHT;
+		// Bottom-Left
+		if (x > 0 && y < levelData.sizeY - 1 && levelData.GetColor(x - 1, y + 1) != myColor) config |= BOTTOMLEFT;
+		// Bottom-Right
+		if (x < levelData.sizeX - 1 && y < levelData.sizeY - 1 && levelData.GetColor(x + 1, y + 1) != myColor) config |= BOTTOMRIGHT;
+
+		return config;
 	}
 
 	public void Configure(int config)
 	{
+		// Show/hide border segments based on bitmask config
+		SetActive(m_topRight, (config & TOP) != 0 && (config & RIGHT) == 0);
+		SetActive(m_topLeft, (config & TOP) != 0 && (config & LEFT) == 0);
+		SetActive(m_bottomRight, (config & BOTTOM) != 0 && (config & RIGHT) == 0);
+		SetActive(m_bottomLeft, (config & BOTTOM) != 0 && (config & LEFT) == 0);
+		SetActive(m_rightTop, (config & RIGHT) != 0 && (config & TOP) == 0);
+		SetActive(m_rightBottom, (config & RIGHT) != 0 && (config & BOTTOM) == 0);
+		SetActive(m_leftTop, (config & LEFT) != 0 && (config & TOP) == 0);
+		SetActive(m_leftBottom, (config & LEFT) != 0 && (config & BOTTOM) == 0);
+
+		// Corners - show when both adjacent sides have borders
+		SetActive(m_rightTopCorner, (config & RIGHT) != 0 && (config & TOP) != 0);
+		SetActive(m_rightBottomCorner, (config & RIGHT) != 0 && (config & BOTTOM) != 0);
+		SetActive(m_leftTopCorner, (config & LEFT) != 0 && (config & TOP) != 0);
+		SetActive(m_leftBottomCorner, (config & LEFT) != 0 && (config & BOTTOM) != 0);
+
+		// Reverse corners - show when diagonal differs but both adjacent sides are same color
+		SetActive(m_rightTopReverseCorner, (config & TOPRIGHT) != 0 && (config & RIGHT) == 0 && (config & TOP) == 0);
+		SetActive(m_rightBottomReverseCorner, (config & BOTTOMRIGHT) != 0 && (config & RIGHT) == 0 && (config & BOTTOM) == 0);
+		SetActive(m_leftTopReverseCorner, (config & TOPLEFT) != 0 && (config & LEFT) == 0 && (config & TOP) == 0);
+		SetActive(m_leftBottomReverseCorner, (config & BOTTOMLEFT) != 0 && (config & LEFT) == 0 && (config & BOTTOM) == 0);
+	}
+
+	private void SetActive(GameObject obj, bool active)
+	{
+		if (obj != null) obj.SetActive(active);
 	}
 }

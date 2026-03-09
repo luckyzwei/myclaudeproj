@@ -24,21 +24,33 @@ namespace KWUserInterface
 		{
 			get
 			{
-				return null;
+				return m_genericTransition;
 			}
 			set
 			{
+				m_genericTransition = value;
 			}
 		}
 
 		public ScreenTransitionData GetTransitionTo(Screen screen)
 		{
-			return null;
+			if (screen != null && m_specificTransitions != null)
+			{
+				string screenName = screen.GetType().Name;
+				for (int i = 0; i < m_specificTransitions.Count; i++)
+				{
+					if (m_specificTransitions[i].screenTypeString == screenName)
+					{
+						return m_specificTransitions[i].transition;
+					}
+				}
+			}
+			return m_genericTransition;
 		}
 
 		public List<SpecificTransition> GetSpecificTransitions()
 		{
-			return null;
+			return m_specificTransitions;
 		}
 	}
 }

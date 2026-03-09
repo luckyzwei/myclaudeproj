@@ -23,17 +23,31 @@ public class GameOverScreen : KWUserInterface.Screen
 
 	private void Awake()
 	{
+		if (m_canvasGroup == null)
+			m_canvasGroup = GetComponent<CanvasGroup>();
 	}
 
 	public void RetryLevel()
 	{
+		FadeOut();
+		if (GameManager.Instance != null)
+			GameManager.Instance.Restart();
 	}
 
 	private void GoToNextScreen()
 	{
+		FadeOut();
+		if (GameManager.Instance != null)
+			GameManager.Instance.ReturnToHomeScreen();
 	}
 
 	private void FadeOut()
 	{
+		if (m_canvasGroup != null)
+		{
+			m_canvasGroup.alpha = 0f;
+			m_canvasGroup.interactable = false;
+			m_canvasGroup.blocksRaycasts = false;
+		}
 	}
 }

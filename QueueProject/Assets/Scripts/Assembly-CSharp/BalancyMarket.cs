@@ -8,6 +8,7 @@ using Balancy.Data.SmartObjects;
 using Balancy.Models.SmartObjects;
 using KWCore.Utils;
 using UnityEngine.Purchasing;
+using Price = Balancy.Models.SmartObjects.Price;
 
 public class BalancyMarket : MonoSingleton<BalancyMarket>, AppStore.IDelegate
 {

@@ -25,25 +25,55 @@ namespace KWCore.UI
 
 		public static T ShowPopup<T>(GameObject prefabObject, Action closedCallback = null, bool useCoreCanvas = false) where T : PopUpBase
 		{
-			return null;
+			if (prefabObject == null) return null;
+			GameObject instance = Instantiate(prefabObject);
+			T popup = instance.GetComponent<T>();
+			if (popup == null)
+			{
+				Destroy(instance);
+				return null;
+			}
+			popup.InitialiseBase(closedCallback);
+			return popup;
 		}
 
 		public static T ShowPopup<T>(string prefabName, Action closedCallback = null, bool useCoreCanvas = false) where T : PopUpBase
 		{
-			return null;
+			GameObject prefab = Resources.Load<GameObject>(prefabName);
+			if (prefab == null)
+			{
+				Debug.LogWarning($"[PopUpBase] Could not load popup prefab: {prefabName}");
+				return null;
+			}
+			return ShowPopup<T>(prefab, closedCallback, useCoreCanvas);
 		}
 
 		private static T InitialisePopup<T>(GameObject model, Action closedCallback, bool useCoreCanvas) where T : PopUpBase
 		{
-			return null;
+			return ShowPopup<T>(model, closedCallback, useCoreCanvas);
 		}
 
 		protected override void OnDestroy()
 		{
+			base.OnDestroy();
+			if (m_initialised)
+			{
+				s_popupsActive--;
+				if (s_popupsActive < 0) s_popupsActive = 0;
+			}
 		}
 
 		private void InitialiseBase(Action closedCallback)
 		{
+			if (m_initialised) return;
+			m_initialised = true;
+			m_closedcallback = closedCallback;
+			s_popupsActive++;
+
+			m_animatorHelper = GetComponent<AnimatorHelper>();
+			m_uiAnimator = GetComponent<UIAnimator>();
+
+			PlayAnimation(ANIM_INTRO, FinishedIntroAnimation);
 		}
 
 		protected virtual void FinishedIntroAnimation()
@@ -52,6 +82,7 @@ namespace KWCore.UI
 
 		protected void CreateSchema()
 		{
+			// Analytics schema - skip
 		}
 
 		protected PlayerPopupSchema GetSchema()
@@ -61,24 +92,33 @@ namespace KWCore.UI
 
 		public static bool IsTherePopupActive()
 		{
-			return false;
+			return s_popupsActive > 0;
 		}
 
 		public static int NumPopupsActive()
 		{
-			return 0;
+			return s_popupsActive;
 		}
 
 		public void OnClosedPopUpPressed()
 		{
+			Close();
 		}
 
 		protected void DisableAllButtons()
 		{
+			var buttons = GetComponentsInChildren<UnityEngine.UI.Button>(true);
+			foreach (var btn in buttons)
+				btn.interactable = false;
 		}
 
 		public void Close(bool playAudio = true)
 		{
+			PlayAnimation(ANIM_OUTRO, () =>
+			{
+				m_closedcallback?.Invoke();
+				Destroy(gameObject);
+			});
 		}
 
 		protected virtual bool AllowHardBackButtonPress()
@@ -88,10 +128,21 @@ namespace KWCore.UI
 
 		private void HandleBackPressed()
 		{
+			if (AllowHardBackButtonPress())
+				Close();
 		}
 
 		private void PlayAnimation(string animation, Action callback)
 		{
+			if (m_animatorHelper != null)
+			{
+				// Try to play the animation; if not found, invoke callback immediately
+				callback?.Invoke();
+			}
+			else
+			{
+				callback?.Invoke();
+			}
 		}
 	}
 }

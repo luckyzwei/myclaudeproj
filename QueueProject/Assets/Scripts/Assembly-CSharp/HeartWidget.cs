@@ -22,13 +22,18 @@ public class HeartWidget : MonoBehaviour
 
 	private void Awake()
 	{
+		m_animatorHelper = GetComponent<AnimatorHelper>();
 	}
 
 	public void LifeLost()
 	{
+		if (m_animatorHelper != null)
+			m_animatorHelper.Play(ANIM_LOST);
 	}
 
 	public void Intro()
 	{
+		if (m_animatorHelper != null)
+			m_animatorHelper.Play(ANIM_IN);
 	}
 }

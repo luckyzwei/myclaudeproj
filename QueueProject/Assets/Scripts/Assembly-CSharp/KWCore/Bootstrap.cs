@@ -162,10 +162,22 @@ namespace KWCore
 
 		private void Awake()
 		{
+			if (s_instance != null)
+			{
+				Destroy(gameObject);
+				return;
+			}
+			s_instance = this;
+			DontDestroyOnLoad(gameObject);
+			Init();
 		}
 
 		private void Init()
 		{
+			// Initialize only what's needed for core gameplay
+			// Skip: ads, analytics, attribution, GDPR, server, facebook, firebase, etc.
+			InitSceneExecutionOrder();
+			Debug.Log("[Bootstrap] Initialized (minimal mode - ads/server/analytics skipped)");
 		}
 
 		private void InitAfterLoading()
@@ -251,6 +263,15 @@ namespace KWCore
 
 		private void InitSceneExecutionOrder()
 		{
+			// Activate scene objects in order
+			if (m_sceneExecutionOrder != null)
+			{
+				foreach (var go in m_sceneExecutionOrder)
+				{
+					if (go != null)
+						go.SetActive(true);
+				}
+			}
 		}
 
 		private void InitCoreRequests()
