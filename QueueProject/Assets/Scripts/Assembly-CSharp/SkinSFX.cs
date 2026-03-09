@@ -10,6 +10,13 @@ public class SkinSFX : GenericConfig<SkinSFX>
 
 	public QueenSFX GetSfxById(Balancy.Models.SkinSFX id)
 	{
-		return null;
+		if (m_sfxList == null) return null;
+		foreach (var sfx in m_sfxList)
+		{
+			if (sfx != null && sfx.id == id)
+				return sfx;
+		}
+		// Return first available if ID not found
+		return m_sfxList.Count > 0 ? m_sfxList[0] : null;
 	}
 }

@@ -11,38 +11,45 @@ namespace KWLocalisation.Localisation
 
 		public override void SetText(string text)
 		{
+			if (m_textComponent != null)
+				m_textComponent.text = text;
 		}
 
 		public override string GetText()
 		{
-			return null;
+			return m_textComponent != null ? m_textComponent.text : null;
 		}
 
 		public override void SetTextComponent(Graphic textComponent)
 		{
+			m_textComponent = textComponent as TextMeshProUGUI;
 		}
 
 		public override Graphic GetTextComponent()
 		{
-			return null;
+			return m_textComponent;
 		}
 
 		public override void SetColor(Color color)
 		{
+			if (m_textComponent != null)
+				m_textComponent.color = color;
 		}
 
 		public override Color GetColor()
 		{
-			return default(Color);
+			return m_textComponent != null ? m_textComponent.color : Color.white;
 		}
 
 		public override object GetFont()
 		{
-			return null;
+			return m_textComponent != null ? m_textComponent.font : null;
 		}
 
 		public override void SetFont(object font)
 		{
+			if (m_textComponent != null && font is TMP_FontAsset tmpFont)
+				m_textComponent.font = tmpFont;
 		}
 	}
 }

@@ -14,6 +14,8 @@ namespace KWLocalisation.Localisation
 
 		public void Initialise()
 		{
+			m_localisationManager = new LocalisationManager();
+			m_localisationManager.Initialize();
 		}
 
 		private void InitializeInGame()
@@ -22,40 +24,59 @@ namespace KWLocalisation.Localisation
 
 		public string Get(string key)
 		{
-			return null;
+			if (m_localisationManager == null) return key;
+			string result = m_localisationManager.GetString(key);
+			if (result != null) return result;
+			// Try without prefix (e.g., "DEFAULT/key" -> search just "key")
+			if (key != null && !key.Contains("/"))
+			{
+				string withPrefix = "DEFAULT/" + key;
+				result = m_localisationManager.GetString(withPrefix);
+				if (result != null) return result;
+			}
+			return key; // Return key itself as fallback
 		}
 
 		public bool Contains(string key)
 		{
-			return false;
+			if (m_localisationManager == null) return false;
+			return m_localisationManager.ContainsKey(key);
 		}
 
 		public string Get(string key, int index)
 		{
-			return null;
+			if (m_localisationManager == null) return key;
+			return m_localisationManager.GetArrayEntry(key, index) ?? key;
 		}
 
 		public string GetRandom(string arrayKey)
 		{
-			return null;
+			if (m_localisationManager == null) return arrayKey;
+			return m_localisationManager.GetArrayRandomEntry(arrayKey) ?? arrayKey;
 		}
 
 		public int Count(string key)
 		{
-			return 0;
+			if (m_localisationManager == null) return 0;
+			return m_localisationManager.GetArrayCount(key);
 		}
 
 		public string[] GetAll(string key)
 		{
-			return null;
+			if (m_localisationManager == null) return null;
+			return m_localisationManager.GetArray(key);
 		}
 
 		public void SetCurrentLanguage(string deviceLanguage)
 		{
+			if (m_localisationManager != null)
+				m_localisationManager.SetLanguage(deviceLanguage);
 		}
 
 		public string GetCurrentLanguage()
 		{
+			if (m_localisationManager != null)
+				return m_localisationManager.GetCurrentLanguage();
 			return null;
 		}
 	}

@@ -958,20 +958,24 @@ namespace KWCore
 
 			public LocalisationAccess(TextManager textManager)
 			{
+				this.textManager = textManager;
 			}
 
 			public string GetLocalisedString(string key)
 			{
-				return null;
+				if (textManager == null) return key;
+				return textManager.Get(key) ?? key;
 			}
 
 			public void SetCurrentLanguage(string deviceLanguage)
 			{
+				if (textManager != null)
+					textManager.SetCurrentLanguage(deviceLanguage);
 			}
 
 			public string GetCurrentLanguage()
 			{
-				return null;
+				return textManager?.GetCurrentLanguage();
 			}
 		}
 
@@ -1072,7 +1076,15 @@ namespace KWCore
 
 		public static CoreAccess Core => null;
 
-		protected static Umbrella Instance => null;
+		protected static Umbrella Instance
+		{
+			get
+			{
+				if (s_instance == null)
+					s_instance = new Umbrella();
+				return s_instance;
+			}
+		}
 
 		public static FirebaseAccess Firebase => null;
 
@@ -1086,7 +1098,7 @@ namespace KWCore
 
 		public static HapticsAccess Haptics => null;
 
-		public static LocalisationAccess Localisation => null;
+		public static LocalisationAccess Localisation => s_instance?.m_localisationAccess;
 
 		public static PushNotificationsAccess PushNotifications => null;
 
@@ -1146,6 +1158,7 @@ namespace KWCore
 
 		public static void InitialiseLocalisationUmbrella(TextManager textManager)
 		{
+			Instance.m_localisationAccess = new LocalisationAccess(textManager);
 		}
 
 		public static void InitialisePushNotificationsUmbrella(LocalPushNotificationsManager pushNotificationManager)

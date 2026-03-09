@@ -1,3 +1,4 @@
+using KWCore.UI;
 using UnityEngine;
 
 public class GameScreenInfoButton : MonoBehaviour
@@ -21,6 +22,13 @@ public class GameScreenInfoButton : MonoBehaviour
 
 	private void OnClick()
 	{
+		// Show FTUE tutorial popup (rules/how to play)
+		PopUpBase.ShowPopup<PopupQueensInGameAdaptiveFTUE>(
+			"prefabs/popups/Popup-FTUE-SchemeA", null);
+		// Hide notification dot
+		if (m_notif != null)
+			m_notif.SetActive(false);
+		m_isShowingNotif = false;
 	}
 
 	private void SwipeReminderDisplayed()

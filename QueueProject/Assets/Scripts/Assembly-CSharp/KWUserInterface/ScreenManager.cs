@@ -9,6 +9,8 @@ namespace KWUserInterface
 	{
 		private Canvas m_canvas;
 
+		public Canvas RootCanvas => m_canvas;
+
 		private CanvasScaler m_canvasScaler;
 
 		private Stack<Screen> m_screenStack;

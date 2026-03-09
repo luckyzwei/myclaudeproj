@@ -267,7 +267,9 @@ public class QueensGameController : MonoBehaviour
 
 	private void ApplySFX()
 	{
-		// Load SFX set based on current skin
+		var skinSfx = SkinSFX.Instance;
+		if (skinSfx != null && skinSfx.m_sfxList != null && skinSfx.m_sfxList.Count > 0)
+			m_sfxSet = skinSfx.m_sfxList[0]; // Use default SFX set
 	}
 
 	public void Revive()

@@ -56,4 +56,9 @@ public class BoosterBarWidget : MonoBehaviour
 	private void EnableSpeechBubble()
 	{
 	}
+
+	public void OnButtonPressed()
+	{
+		// Base booster bar button - delegates to individual booster buttons
+	}
 }

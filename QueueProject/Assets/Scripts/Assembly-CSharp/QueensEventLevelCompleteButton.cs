@@ -52,5 +52,6 @@ public class QueensEventLevelCompleteButton : MonoBehaviour
 
 	public virtual void OnPressed()
 	{
+		UnityEngine.Debug.Log("[QueensEvent] Event not active in offline mode.");
 	}
 }

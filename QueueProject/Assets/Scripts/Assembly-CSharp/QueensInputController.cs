@@ -49,6 +49,16 @@ public class QueensInputController : MonoSingleton<QueensInputController>
 		m_pointerStatus = 1;
 	}
 
+	public void OnPointerDownFromControlPad()
+	{
+		m_pointerStatus = 1;
+	}
+
+	public void OnPointerUpFromControlPad()
+	{
+		m_pointerStatus = -1;
+	}
+
 	private void LateUpdate()
 	{
 		// Transition pointer status after frame

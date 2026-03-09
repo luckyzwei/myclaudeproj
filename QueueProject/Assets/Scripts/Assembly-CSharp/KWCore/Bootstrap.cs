@@ -176,6 +176,7 @@ namespace KWCore
 		{
 			// Initialize only what's needed for core gameplay
 			// Skip: ads, analytics, attribution, GDPR, server, facebook, firebase, etc.
+			InitLocalisation();
 			InitSceneExecutionOrder();
 			Debug.Log("[Bootstrap] Initialized (minimal mode - ads/server/analytics skipped)");
 		}
@@ -198,6 +199,11 @@ namespace KWCore
 
 		private void InitLocalisation()
 		{
+			CJKFontInitializer.Init();
+			m_textManager = new TextManager();
+			m_textManager.Initialise();
+			Umbrella.InitialiseLocalisationUmbrella(m_textManager);
+			Debug.Log("[Bootstrap] Localisation initialized");
 		}
 
 		private void InitNTPTime()

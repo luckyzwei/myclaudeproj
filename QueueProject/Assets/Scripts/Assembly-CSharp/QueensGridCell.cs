@@ -214,6 +214,15 @@ public class QueensGridCell : MonoBehaviour
 			m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_VISIBLE);
 		if (m_cellAnimator != null && animate)
 			m_cellAnimator.Play(ANIM_IN);
+		if (animate)
+			PlayQueenSound();
+	}
+
+	private void PlayQueenSound()
+	{
+		var sfx = QueensGameController.CurrentSFX;
+		if (sfx == null || sfx.QueenGood == null || sfx.QueenGood.audioClip == null) return;
+		AudioSource.PlayClipAtPoint(sfx.QueenGood.audioClip, Camera.main != null ? Camera.main.transform.position : Vector3.zero, sfx.QueenGood.volume > 0f ? sfx.QueenGood.volume : 1f);
 	}
 
 	public void SetAsX(bool hint, bool sound, float pitch)
@@ -227,6 +236,18 @@ public class QueensGridCell : MonoBehaviour
 			m_xAnimator.Play(ANIM_ANIM_X);
 		if (m_markerAnimator != null)
 			m_markerAnimator.Play(hint ? ANIM_HINT : ANIM_MARKER_IN);
+		// Play X mark sound effect
+		if (sound)
+			PlayXSound(pitch);
+	}
+
+	private void PlayXSound(float pitch)
+	{
+		var sfx = QueensGameController.CurrentSFX;
+		if (sfx == null || sfx.X == null || sfx.X.Length == 0) return;
+		var clipRef = sfx.X[UnityEngine.Random.Range(0, sfx.X.Length)];
+		if (clipRef == null || clipRef.audioClip == null) return;
+		AudioSource.PlayClipAtPoint(clipRef.audioClip, Camera.main != null ? Camera.main.transform.position : Vector3.zero, clipRef.volume > 0f ? clipRef.volume : 1f);
 	}
 
 	public void SetAsLoseLife()
@@ -269,6 +290,17 @@ public class QueensGridCell : MonoBehaviour
 			m_markerAnimator.Play(ANIM_MARKER_OUT);
 		if (m_queenAnimator != null)
 			m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_OUT);
+		if (playSound)
+			PlayUndoXSound(pitch);
+	}
+
+	private void PlayUndoXSound(float pitch)
+	{
+		var sfx = QueensGameController.CurrentSFX;
+		if (sfx == null || sfx.UndoX == null || sfx.UndoX.Length == 0) return;
+		var clipRef = sfx.UndoX[UnityEngine.Random.Range(0, sfx.UndoX.Length)];
+		if (clipRef == null || clipRef.audioClip == null) return;
+		AudioSource.PlayClipAtPoint(clipRef.audioClip, Camera.main != null ? Camera.main.transform.position : Vector3.zero, clipRef.volume > 0f ? clipRef.volume : 1f);
 	}
 
 	public void Highlight(bool highlight)

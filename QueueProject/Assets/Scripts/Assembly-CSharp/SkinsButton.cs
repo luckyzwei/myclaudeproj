@@ -1,3 +1,4 @@
+using KWCore.UI;
 using UnityEngine;
 
 public class SkinsButton : MonoBehaviour
@@ -39,5 +40,7 @@ public class SkinsButton : MonoBehaviour
 
 	public void OnSkinsButtonPressed()
 	{
+		// Show skins popup
+		PopUpBase.ShowPopup<PopUpSkins>("prefabs/popups/PopUp-Skins", null);
 	}
 }

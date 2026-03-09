@@ -22,8 +22,14 @@ public class QueensControlSchemeA : QueensControlSchemeBase
 
 	private void Update()
 	{
+		// Retry finding grid if it wasn't available at Start time
+		if (m_grid == null)
+		{
+			m_grid = FindObjectOfType<QueensGrid>();
+			if (m_grid == null) return;
+		}
+
 		if (!IsActive()) return;
-		if (m_grid == null) return;
 
 		if (Input.GetMouseButtonDown(0))
 		{

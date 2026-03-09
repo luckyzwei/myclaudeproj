@@ -1,5 +1,6 @@
 using System;
 using KWAnalytics.Analytics;
+using KWAudio;
 using KWCore.Utils;
 using UnityEngine;
 
@@ -26,7 +27,14 @@ namespace KWCore.UI
 		public static T ShowPopup<T>(GameObject prefabObject, Action closedCallback = null, bool useCoreCanvas = false) where T : PopUpBase
 		{
 			if (prefabObject == null) return null;
-			GameObject instance = Instantiate(prefabObject);
+
+			// Parent popup to the active Canvas so it renders on screen
+			Transform parent = null;
+			var sm = KWUserInterface.ScreenManager.Instance;
+			if (sm != null && sm.RootCanvas != null)
+				parent = sm.RootCanvas.transform;
+
+			GameObject instance = parent != null ? Instantiate(prefabObject, parent) : Instantiate(prefabObject);
 			T popup = instance.GetComponent<T>();
 			if (popup == null)
 			{
@@ -73,7 +81,23 @@ namespace KWCore.UI
 			m_animatorHelper = GetComponent<AnimatorHelper>();
 			m_uiAnimator = GetComponent<UIAnimator>();
 
+			// Play popup open sound
+			PlayPopupSound();
+
 			PlayAnimation(ANIM_INTRO, FinishedIntroAnimation);
+		}
+
+		private static void PlayPopupSound()
+		{
+			var soundList = Resources.Load<AudioSoundList>("AudioSoundList");
+			if (soundList != null && soundList.globalButtonPositive != null &&
+				soundList.globalButtonPositive.audioClip != null)
+			{
+				var clip = soundList.globalButtonPositive;
+				var cam = Camera.main;
+				Vector3 pos = cam != null ? cam.transform.position : Vector3.zero;
+				AudioSource.PlayClipAtPoint(clip.audioClip, pos, clip.volume > 0f ? clip.volume : 1f);
+			}
 		}
 
 		protected virtual void FinishedIntroAnimation()

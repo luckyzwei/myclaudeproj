@@ -188,6 +188,7 @@ public class GameManager : MonoSingleton<GameManager>
 				UnityEngine.Debug.Log($"[GameManager] EventSystem exists ({existing.name}) but not current yet");
 			}
 		}
+
 	}
 
 	private void OnApplicationFocus(bool hasFocus)
@@ -278,8 +279,9 @@ public class GameManager : MonoSingleton<GameManager>
 			return;
 		}
 
-		// Fix: if ScreenSpaceCamera but no camera assigned, assign main camera
-		if (m_canvas != null && m_canvas.renderMode == RenderMode.ScreenSpaceCamera && m_canvas.worldCamera == null)
+		// Fix: if camera-dependent Canvas mode but no camera assigned, assign main camera
+		if (m_canvas != null && m_canvas.worldCamera == null &&
+			(m_canvas.renderMode == RenderMode.ScreenSpaceCamera || m_canvas.renderMode == RenderMode.WorldSpace))
 			m_canvas.worldCamera = UnityEngine.Camera.main;
 
 		// Debug: comprehensive diagnostics

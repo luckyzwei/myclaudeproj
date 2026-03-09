@@ -92,6 +92,7 @@ public class PopUpSkins : PopUpBase
 
 	public static void Open()
 	{
+		ShowPopup<PopUpSkins>("prefabs/popups/PopUp-Skins", null);
 	}
 
 	private void Start()

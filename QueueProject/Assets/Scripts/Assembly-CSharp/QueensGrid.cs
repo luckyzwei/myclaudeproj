@@ -291,11 +291,13 @@ public class QueensGrid : MonoBehaviour
 	public void DisableInput()
 	{
 		m_inputEnabled = false;
+		UnityEngine.Debug.Log($"[QueensGrid] DisableInput called", this);
 	}
 
 	public void EnableInput()
 	{
 		m_inputEnabled = true;
+		UnityEngine.Debug.Log($"[QueensGrid] EnableInput called", this);
 	}
 
 	public int GetColour(int color)

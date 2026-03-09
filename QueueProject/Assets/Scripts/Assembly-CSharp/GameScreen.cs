@@ -1,3 +1,4 @@
+using KWCore.UI;
 using KWUserInterface;
 using UnityEngine;
 
@@ -73,7 +74,7 @@ public class GameScreen : KWUserInterface.Screen
 		if (m_ftueButton != null)
 			m_ftueButton.SetActive(false);
 
-		// Hide non-essential UI elements to clean up layout
+		// Match emulator: hide non-essential UI
 		CleanupUI();
 
 		GameplayEvents.SendGameScreenLoaded();
@@ -81,49 +82,33 @@ public class GameScreen : KWUserInterface.Screen
 
 	private void CleanupUI()
 	{
-		// In TopUI, only keep essential elements: Text-Level, Counter-Game-Lives, Button-Settings
-		// Hide everything else
+		// TopUI: keep gameplay-relevant elements
 		if (m_topPart != null)
 		{
-			string[] keepNames = new string[]
-			{
-				"Text-Level",
-				"Counter-Game-Lives",
-				"Button-Settings",
-			};
-
+			string[] keepNames = { "Text-Level", "Counter-Game-Lives", "Button-Settings",
+				"Button-Info", "Buttons-Layout", "QueenEventContainer" };
 			for (int i = 0; i < m_topPart.transform.childCount; i++)
 			{
 				var child = m_topPart.transform.GetChild(i);
-				bool keep = false;
-				foreach (string keepName in keepNames)
-				{
-					if (child.name == keepName)
-					{
-						keep = true;
-						break;
-					}
-				}
+				bool keep = System.Array.IndexOf(keepNames, child.name) >= 0;
 				if (!keep)
 					child.gameObject.SetActive(false);
 			}
 		}
 
-		// Hide non-essential root-level children of Screen-Game
-		// Keep: TopUI (m_topPart), Control Pad, and the grid-related elements
+		// Screen-Game root: hide non-essential children
+		string[] hideContains = { "NoAds", "PVP", "Interrupt", "Feedback" };
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			var child = transform.GetChild(i);
 			string n = child.name;
-			// Keep TopUI and Control Pad, hide everything else that's not essential
-			if (n == "TopUI" || n == "Control Pad" || n == "White Overlay")
-				continue;
-			if (n.Contains("Event") || n.Contains("Notification") ||
-				n.Contains("NoAds") || n.Contains("Offer") ||
-				n.Contains("Tournament") || n.Contains("PVP") ||
-				n.Contains("Bank") || n.Contains("Dificulty"))
+			foreach (string keyword in hideContains)
 			{
-				child.gameObject.SetActive(false);
+				if (n.Contains(keyword))
+				{
+					child.gameObject.SetActive(false);
+					break;
+				}
 			}
 		}
 	}
@@ -147,6 +132,13 @@ public class GameScreen : KWUserInterface.Screen
 	{
 		if (QueensGameController.Instance != null)
 			QueensGameController.Instance.PauseTimer();
+		PopUpBase.ShowPopup<PopupPause>("prefabs/popups/Popup-Pause", OnPausePopupClosed);
+	}
+
+	private void OnPausePopupClosed()
+	{
+		if (QueensGameController.Instance != null)
+			QueensGameController.Instance.ResumeTimer();
 	}
 
 	public void ToggleTopPart(bool value, bool fade = false)

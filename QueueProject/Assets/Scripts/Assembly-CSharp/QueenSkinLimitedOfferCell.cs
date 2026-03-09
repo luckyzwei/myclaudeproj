@@ -6,7 +6,7 @@ using UnityEngine;
 public class QueenSkinLimitedOfferCell : QueenSkinCell
 {
 	[SerializeField]
-	private PriceWidget m_priceWidget;
+	private PriceWidget m_limitedOfferPriceWidget;
 
 	private bool m_inited;
 

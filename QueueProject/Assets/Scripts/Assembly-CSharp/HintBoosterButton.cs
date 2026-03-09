@@ -11,7 +11,17 @@ public class HintBoosterButton : BoosterButton
 
 	protected override bool TryPerformAction()
 	{
-		return false;
+		if (QueensGameController.Instance == null) return false;
+		var grid = QueensGameController.Instance.Grid;
+		if (grid == null) return false;
+
+		grid.HintBooster();
+		return true;
+	}
+
+	public override void OnButtonPressed()
+	{
+		TryPerformAction();
 	}
 
 	public override void PlayAlertAnimation()

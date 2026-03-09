@@ -34,27 +34,36 @@ public class ControlPad : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 
 	private void Awake()
 	{
+		s_instance = this;
 	}
 
 	private void OnDestroy()
 	{
+		if (s_instance == this)
+			s_instance = null;
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (s_disableControlPad) return;
+		if (QueensInputController.Exist)
+			QueensInputController.Instance.OnPointerDownFromControlPad();
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
 	{
+		if (QueensInputController.Exist)
+			QueensInputController.Instance.OnPointerUpFromControlPad();
 	}
 
 	public static void DisableControlPad()
 	{
+		s_disableControlPad = true;
 	}
 
 	public static bool IsDisabled()
 	{
-		return false;
+		return s_disableControlPad;
 	}
 
 	private void Start()
@@ -63,6 +72,7 @@ public class ControlPad : MonoBehaviour, IPointerDownHandler, IEventSystemHandle
 
 	private void DisablePad()
 	{
+		s_disableControlPad = true;
 	}
 
 	private void Update()

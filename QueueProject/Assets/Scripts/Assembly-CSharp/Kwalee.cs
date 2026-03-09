@@ -127,12 +127,22 @@ public class Kwalee
 
 	public static string GetLocalisedText(string key, params object[] formatting)
 	{
-		return null;
+		var loc = KWCore.Umbrella.Localisation;
+		if (loc == null) return key;
+		string text = loc.GetLocalisedString(key);
+		if (formatting != null && formatting.Length > 0)
+		{
+			try { text = string.Format(text, formatting); }
+			catch { }
+		}
+		return text;
 	}
 
 	public static string GetLocalisedText(string key)
 	{
-		return null;
+		var loc = KWCore.Umbrella.Localisation;
+		if (loc == null) return key;
+		return loc.GetLocalisedString(key);
 	}
 
 	[Conditional("ANALYTICS")]
