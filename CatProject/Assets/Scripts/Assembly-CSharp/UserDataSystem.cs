@@ -11,17 +11,17 @@ public class UserDataSystem
 {
 	public delegate void RewardSetDelegate(int rewardType, int rewardIdx, BigInteger rewardCnt, BigInteger resultCnt);
 
-	private readonly string dataFileName;
+	private string dataFileName = "save.dat";
 
-	private readonly string backupTimeKey;
+	private string backupTimeKey = "BackupTime";
 
-	private readonly string backupFormat;
+	private string backupFormat = "save_backup_{0}.dat";
 
-	private readonly int backupPeriod;
+	private int backupPeriod = 3600;
 
 	private UserData flatBufferUserData;
 
-	private float saveWaitStandardTime;
+	private float saveWaitStandardTime = 30f;
 
 	private float deltaTime;
 
@@ -233,14 +233,14 @@ public class UserDataSystem
 
 	public void Load()
 	{
-		string path = GetSaveFilePath();
-		if (!File.Exists(path))
-		{
-			LoadBackupFile();
-			return;
-		}
 		try
 		{
+			string path = GetSaveFilePath();
+			if (!File.Exists(path))
+			{
+				LoadBackupFile();
+				return;
+			}
 			byte[] bytes = File.ReadAllBytes(path);
 			ByteBuffer bb = new ByteBuffer(bytes);
 			flatBufferUserData = UserData.GetRootAsUserData(bb);
@@ -248,18 +248,20 @@ public class UserDataSystem
 			ConnectReadOnlyDatas();
 			isSafeData = true;
 		}
-		catch (Exception)
+		catch (Exception e)
 		{
+			UnityEngine.Debug.LogWarning("[UserDataSystem] Load failed: " + e.Message);
 			LoadBackupFile();
 		}
 	}
 
 	private void LoadBackupFile()
 	{
-		string backupPath = GetBackUpSaveFilePath(backupFormat);
-		if (!File.Exists(backupPath)) return;
 		try
 		{
+			if (string.IsNullOrEmpty(backupFormat)) return;
+			string backupPath = GetBackUpSaveFilePath(backupFormat);
+			if (!File.Exists(backupPath)) return;
 			byte[] bytes = File.ReadAllBytes(backupPath);
 			ByteBuffer bb = new ByteBuffer(bytes);
 			flatBufferUserData = UserData.GetRootAsUserData(bb);
@@ -267,9 +269,9 @@ public class UserDataSystem
 			ConnectReadOnlyDatas();
 			isSafeData = true;
 		}
-		catch (Exception)
+		catch (Exception e)
 		{
-			// backup load failed
+			UnityEngine.Debug.LogWarning("[UserDataSystem] LoadBackup failed: " + e.Message);
 		}
 	}
 

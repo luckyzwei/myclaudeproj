@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Treeplla;
 using UniRx;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using Debug = UnityEngine.Debug;
 
 public class InGameOffice : InGameMode
 {
@@ -139,6 +141,111 @@ public class InGameOffice : InGameMode
 		buffObjects = new List<BuffObjectComponent>();
 		CurEngineerCount = 0;
 		OnAllLoadComplete = new Subject<bool>();
+
+		// Set camera to show sky blue background, keep within PanAndZoom bounds
+		if (MainCamera != null)
+		{
+			MainCamera.backgroundColor = new Color(0.65f, 0.85f, 0.95f, 1f);
+			MainCamera.clearFlags = CameraClearFlags.SolidColor;
+			MainCamera.orthographicSize = 12f;
+			// Position camera at center of PanAndZoom bounds (not at InGame's position)
+			MainCamera.transform.position = new Vector3(9.5f, 2.5f, -10f);
+			Debug.Log("[InGameOffice] Camera at (9.5, 2.5), bounds center");
+		}
+
+		// Find stage in scene (if instantiated)
+		stage = FindObjectOfType<InGameOfficeStage>();
+
+		// Load atlas textures and create visible scene at world origin
+		CreateVisualScene();
+
+		Debug.Log("[InGameOffice] Load complete. Stage found: " + (stage != null));
+	}
+
+	private void CreateVisualScene()
+	{
+		// Create sprites at WORLD positions (not as children of InGame which is at 216,431)
+		// because PanAndZoom clamps camera to bounds (-28~47, -30~35)
+		var bgTex = Resources.Load<Texture2D>("StageBG");
+		var stageTex = Resources.Load<Texture2D>("StageAtlas");
+		var stageTex2 = Resources.Load<Texture2D>("StageAtlas2");
+
+		Debug.Log("[InGameOffice] StageBG: " + (bgTex != null ? bgTex.width + "x" + bgTex.height : "NULL"));
+		Debug.Log("[InGameOffice] StageAtlas: " + (stageTex != null ? stageTex.width + "x" + stageTex.height : "NULL"));
+		Debug.Log("[InGameOffice] StageAtlas2: " + (stageTex2 != null ? stageTex2.width + "x" + stageTex2.height : "NULL"));
+
+		// Background - full screen at world origin
+		if (bgTex != null)
+		{
+			var bgGO = new GameObject("Background");
+			bgGO.transform.position = new Vector3(9.5f, 2.5f, 5f);
+			var bgRenderer = bgGO.AddComponent<SpriteRenderer>();
+			bgRenderer.sprite = Sprite.Create(bgTex,
+				new Rect(0, 0, bgTex.width, bgTex.height),
+				new Vector2(0.5f, 0.5f), 100f);
+			bgRenderer.sortingOrder = -100;
+			// Scale to cover visible area (~30 units wide)
+			float scale = 30f / (bgTex.width / 100f);
+			bgGO.transform.localScale = new Vector3(scale, scale, 1f);
+			Debug.Log("[InGameOffice] Background created at world (9.5, 2.5)");
+		}
+
+		// Stage atlas tiles - place as office floors/items at world positions
+		if (stageTex != null)
+		{
+			int tw = stageTex.width;
+			int th = stageTex.height;
+			// Tile the atlas into visible sections across the view
+			int cols = Mathf.Min(tw / 256, 8);
+			int rows = Mathf.Min(th / 256, 6);
+			for (int r = 0; r < rows; r++)
+			{
+				for (int c = 0; c < cols; c++)
+				{
+					float wx = c * 5f - 5f;
+					float wy = r * 5f - 8f;
+					var rect = new Rect(c * 256, r * 256, 256, 256);
+					CreateWorldSprite(stageTex, "Stage_" + r + "_" + c, rect,
+						new Vector3(wx, wy, 0f), 0.08f, r * cols + c);
+				}
+			}
+			Debug.Log("[InGameOffice] Created " + (cols * rows) + " stage tile sprites");
+		}
+
+		// Second atlas
+		if (stageTex2 != null)
+		{
+			int tw = stageTex2.width;
+			int th = stageTex2.height;
+			int cols = Mathf.Min(tw / 256, 4);
+			int rows = Mathf.Min(th / 256, 4);
+			for (int r = 0; r < rows; r++)
+			{
+				for (int c = 0; c < cols; c++)
+				{
+					float wx = c * 5f + 20f;
+					float wy = r * 5f - 8f;
+					var rect = new Rect(c * 256, r * 256, 256, 256);
+					CreateWorldSprite(stageTex2, "Stage2_" + r + "_" + c, rect,
+						new Vector3(wx, wy, 0f), 0.08f, 100 + r * cols + c);
+				}
+			}
+		}
+	}
+
+	private void CreateWorldSprite(Texture2D tex, string name, Rect region, Vector3 worldPos, float scale, int order)
+	{
+		// Clamp region to texture bounds
+		region.width = Mathf.Min(region.width, tex.width - region.x);
+		region.height = Mathf.Min(region.height, tex.height - region.y);
+		if (region.width <= 0 || region.height <= 0) return;
+
+		var go = new GameObject(name);
+		go.transform.position = worldPos; // World position, NOT child of InGame
+		go.transform.localScale = new Vector3(scale, scale, 1f);
+		var renderer = go.AddComponent<SpriteRenderer>();
+		renderer.sprite = Sprite.Create(tex, region, new Vector2(0.5f, 0.5f), 100f);
+		renderer.sortingOrder = order;
 	}
 
 	public BuffObjectComponent GetBuffObject(int idx)

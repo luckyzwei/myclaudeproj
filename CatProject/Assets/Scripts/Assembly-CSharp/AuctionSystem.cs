@@ -89,12 +89,16 @@ public class AuctionSystem
 		AuctionOrganizeCoin = new Dictionary<int, int>();
 		AuctionOrganizeResult = new Dictionary<int, int>();
 
-		AuctionData auctionData = GameRoot.Instance.UserData.AuctionData;
-		if (auctionData != null)
+		var root = GameRoot.Instance;
+		if (root != null && root.UserData != null)
 		{
-			AuctionStaminaProperty.Value = auctionData.Stamina;
-			AuctionNpcIdx = auctionData.EnemyIdx;
-			SetAuctionLevel();
+			AuctionData auctionData = root.UserData.AuctionData;
+			if (auctionData != null)
+			{
+				AuctionStaminaProperty.Value = auctionData.Stamina;
+				AuctionNpcIdx = auctionData.EnemyIdx;
+				SetAuctionLevel();
+			}
 		}
 
 		MaxStamina = auction_house_stamina_max_count + auction_house_stamina_max_add_count;

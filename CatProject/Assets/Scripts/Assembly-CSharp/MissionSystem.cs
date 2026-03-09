@@ -105,7 +105,9 @@ public class MissionSystem
 
 	private void Create()
 	{
-		var userData = Singleton<GameRoot>.Instance.UserData;
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null) return;
+		var userData = root.UserData;
 		if (userData == null || userData.mainData == null) return;
 		var stageData = userData.mainData.StageData;
 		if (stageData == null || stageData.Missions == null) return;

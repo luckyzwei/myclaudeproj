@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 using System.Runtime.CompilerServices;
 using Treeplla;
 using UniRx;
@@ -637,6 +638,19 @@ public class GameRoot : Singleton<GameRoot>
 
 	public int OriginScreenHeight { get; private set; }
 
+	private new void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else if (instance != this)
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	public static bool IsInit()
 	{
 		return InitTry;
@@ -666,22 +680,27 @@ public class GameRoot : Singleton<GameRoot>
 	[IteratorStateMachine(typeof(_003CStart_003Ed__251))]
 	private IEnumerator Start()
 	{
+		Debug.Log("[GameRoot] Start() begin");
 		SetNativeLanguage();
 		InitUILoading();
 		InitRequestAtlas();
 		InitLastVersionCheck();
 		InitSystem();
 		InitGameType();
+		Debug.Log("[GameRoot] InitSystem done, starting LoadGameData...");
 		yield return StartCoroutine(LoadGameData());
+		Debug.Log("[GameRoot] LoadGameData done");
 		GiveBackHouseAddPoint();
 	}
 
 	[IteratorStateMachine(typeof(_003CLoadGameData_003Ed__255))]
 	private IEnumerator LoadGameData()
 	{
+		Debug.Log("[GameRoot] LoadGameData Phase 1: ProjectUtility.Init");
 		// Phase 1: Initialize utility and config
 		ProjectUtility.Init();
 
+		Debug.Log("[GameRoot] LoadGameData Phase 2: UserData.Load");
 		// Phase 2: Try loading user save data
 		UserData.Load();
 
@@ -700,18 +719,21 @@ public class GameRoot : Singleton<GameRoot>
 
 		yield return null;
 
+		Debug.Log("[GameRoot] LoadGameData Phase 4: InitSubSystems");
 		// Phase 4: Initialize all remaining subsystems
 		InitSubSystems();
 
 		yield return null;
 
+		Debug.Log("[GameRoot] LoadGameData Phase 5: Create InGameSystem/SceneSystem");
 		// Phase 5: Create InGameSystem and SceneSystem
 		InGameSystem = new InGameSystem();
 		SceneSystem = new SceneSystem();
 
+		Debug.Log("[GameRoot] LoadGameData Phase 6: StartFirstGame");
 		// Phase 6: Start the main game mode (Office scene)
 		bool sceneLoaded = false;
-		InGameSystem.StartFirstGame(GameType.Main, () => { sceneLoaded = true; });
+		InGameSystem.StartFirstGame(GameType.Main, () => { sceneLoaded = true; Debug.Log("[GameRoot] Scene loaded callback fired"); });
 
 		// Wait for scene load
 		while (!sceneLoaded)
