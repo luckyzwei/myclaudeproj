@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using Cinemachine;
 using KWCore.Utils;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -162,6 +163,31 @@ public class GameManager : MonoSingleton<GameManager>
 		m_boot = false;
 		m_isInGame = false;
 		m_startedGameSuccessfully = false;
+
+		// Runtime fix: ensure camera renders GridCell layer (Layer 9)
+		var cam = UnityEngine.Camera.main;
+		if (cam != null && (cam.cullingMask & (1 << 9)) == 0)
+		{
+			cam.cullingMask |= (1 << 9);
+			UnityEngine.Debug.Log($"[GameManager] Fixed camera cullingMask, added Layer 9. New mask={cam.cullingMask}");
+		}
+
+		// Runtime fix: ensure EventSystem exists
+		if (EventSystem.current == null)
+		{
+			var existing = FindObjectOfType<EventSystem>();
+			if (existing == null)
+			{
+				var esGO = new GameObject("EventSystem");
+				esGO.AddComponent<EventSystem>();
+				esGO.AddComponent<StandaloneInputModule>();
+				UnityEngine.Debug.Log("[GameManager] Created EventSystem at runtime");
+			}
+			else
+			{
+				UnityEngine.Debug.Log($"[GameManager] EventSystem exists ({existing.name}) but not current yet");
+			}
+		}
 	}
 
 	private void OnApplicationFocus(bool hasFocus)
@@ -239,17 +265,49 @@ public class GameManager : MonoSingleton<GameManager>
 	private void LoadGameplay(LevelData levelData)
 	{
 		m_isInGame = true;
-		if (m_queenGameController != null)
+
+		// Set the canvas for ScreenManager
+		if (m_canvas != null)
+			KWUserInterface.ScreenManager.Instance.SetRootCanvas(m_canvas);
+
+		// Push game screen UI
+		var screen = ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.GAME);
+		if (screen == null)
 		{
-			m_queenGameController.StartGame(levelData, true);
+			UnityEngine.Debug.LogError("[GameManager] ReplaceScreen returned null!");
+			return;
 		}
+
+		// Fix: if ScreenSpaceCamera but no camera assigned, assign main camera
+		if (m_canvas != null && m_canvas.renderMode == RenderMode.ScreenSpaceCamera && m_canvas.worldCamera == null)
+			m_canvas.worldCamera = UnityEngine.Camera.main;
+
+		// Debug: comprehensive diagnostics
+		UnityEngine.Debug.Log($"[GameManager] Screen={screen.name} active={screen.gameObject.activeSelf} parent={screen.transform.parent?.name}");
+		var cg = screen.GetComponent<UnityEngine.CanvasGroup>();
+		if (cg != null) UnityEngine.Debug.Log($"[GameManager] CanvasGroup alpha={cg.alpha} interactable={cg.interactable} blocksRaycasts={cg.blocksRaycasts}");
+		UnityEngine.Debug.Log($"[GameManager] Canvas: mode={m_canvas.renderMode} camera={m_canvas.worldCamera?.name ?? "null"} sorting={m_canvas.sortingOrder}");
+		// Missing components check
+		var allMB = screen.GetComponentsInChildren<UnityEngine.Component>(true);
+		int nullCount = 0;
+		foreach (var c in allMB) { if (c == null) nullCount++; }
+		UnityEngine.Debug.Log($"[GameManager] Total components in Screen: {allMB.Length}, null/missing: {nullCount}");
+		// EventSystem check
+		var es = UnityEngine.EventSystems.EventSystem.current;
+		UnityEngine.Debug.Log($"[GameManager] EventSystem.current={es?.name ?? "NULL"} enabled={es?.enabled}");
+		// Camera culling mask check
+		var cam = UnityEngine.Camera.main;
+		if (cam != null) UnityEngine.Debug.Log($"[GameManager] Camera={cam.name} cullingMask={cam.cullingMask} (hasLayer9={(cam.cullingMask & (1<<9)) != 0})");
+
+		if (m_queenGameController != null)
+			m_queenGameController.StartGame(levelData, true);
 	}
 
 	public void GameOver()
 	{
 		m_isInGame = false;
 		UnityEngine.Debug.Log("[GameManager] Game Over");
-		// Show game over popup or return to home
+		ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.GAME_OVER);
 	}
 
 	public void TournamentRoundFinished(bool outOfLives = false)
@@ -261,7 +319,7 @@ public class GameManager : MonoSingleton<GameManager>
 	{
 		m_isInGame = false;
 		UnityEngine.Debug.Log("[GameManager] Level Complete!");
-		// Show level complete screen, advance to next level
+		ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.LEVEL_COMPLETE);
 	}
 
 	private void GiveWeeklyLeaderboardScore(string context, int overrideScore = -1)

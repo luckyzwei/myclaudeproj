@@ -118,7 +118,7 @@ public class LevelData
 		int colorIdx = 0;
 		for (int i = 0; i < queensGrid.Length; i++)
 		{
-			if (queensGrid[i] == 1)
+			if (queensGrid[i] >= 1)
 			{
 				gridColours[i] = colorIdx++;
 			}
@@ -311,14 +311,14 @@ public class LevelData
 		if (idx < 0) return false;
 		int[] grid = qGrid ?? queensGrid;
 		if (grid == null || idx >= grid.Length) return false;
-		return grid[idx] == 1;
+		return grid[idx] >= 1;
 	}
 
 	public bool GetQueen(int index, int[] qGrid = null)
 	{
 		int[] grid = qGrid ?? queensGrid;
 		if (grid == null || index < 0 || index >= grid.Length) return false;
-		return grid[index] == 1;
+		return grid[index] >= 1;
 	}
 
 	public int GetQueenRaw(int x, int y, int[] qGrid = null)
@@ -378,9 +378,15 @@ public class LevelData
 		int count = 0;
 		for (int i = 0; i < queensGrid.Length; i++)
 		{
-			if (queensGrid[i] == 1) count++;
+			if (queensGrid[i] >= 1) count++;
 		}
 		return count;
+	}
+
+	public bool IsPrePlacedQueen(int index)
+	{
+		if (queensGrid == null || index < 0 || index >= queensGrid.Length) return false;
+		return queensGrid[index] == 2;
 	}
 
 	private bool IsLevelFullyColoured()
@@ -605,7 +611,7 @@ public class LevelData
 		if (queensGrid == null) return -1;
 		for (int i = 0; i < queensGrid.Length; i++)
 		{
-			if (queensGrid[i] == 1) return i;
+			if (queensGrid[i] >= 1) return i;
 		}
 		return -1;
 	}

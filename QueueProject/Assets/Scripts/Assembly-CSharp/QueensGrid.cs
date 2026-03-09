@@ -339,7 +339,16 @@ public class QueensGrid : MonoBehaviour
 	public void Configure(LevelData levelData)
 	{
 		m_levelData = levelData;
-		if (m_levelData == null) return;
+		if (m_levelData == null) { UnityEngine.Debug.LogError("[QueensGrid] LevelData is null!"); return; }
+
+		// Debug: log level data
+		int queenTotal = 0;
+		if (m_levelData.queensGrid != null)
+		{
+			for (int i = 0; i < m_levelData.queensGrid.Length; i++)
+				if (m_levelData.queensGrid[i] >= 1) queenTotal++;
+		}
+		UnityEngine.Debug.Log($"[QueensGrid] Configure: {m_levelData.sizeX}x{m_levelData.sizeY}, queensGrid len={m_levelData.queensGrid?.Length ?? -1}, queens={queenTotal}, colors len={m_levelData.gridColours?.Length ?? -1}, usedColors={m_levelData.usedColors?.Length ?? -1}");
 
 		int totalCells = m_levelData.sizeX * m_levelData.sizeY;
 		m_playerSolution = new int[totalCells];
@@ -363,6 +372,7 @@ public class QueensGrid : MonoBehaviour
 		SetupGemLocations();
 		CreateGrid();
 		SetCellColours();
+		PlacePrePlacedQueens();
 
 		Configured?.Invoke();
 	}
@@ -370,6 +380,19 @@ public class QueensGrid : MonoBehaviour
 	private bool IsQueensEventLive()
 	{
 		return false; // Skip server events
+	}
+
+	private void PlacePrePlacedQueens()
+	{
+		if (m_levelData == null || m_levelData.queensGrid == null) return;
+		for (int i = 0; i < m_levelData.queensGrid.Length; i++)
+		{
+			if (m_levelData.IsPrePlacedQueen(i))
+			{
+				MarkQueenCell(i, true); // isDefaultQueen=true to bypass input check
+				UnityEngine.Debug.Log($"[QueensGrid] Pre-placed queen at index {i} ({m_levelData.GetX(i)},{m_levelData.GetY(i)})");
+			}
+		}
 	}
 
 	private void GridIntroDone()
@@ -401,7 +424,7 @@ public class QueensGrid : MonoBehaviour
 		var queenIndices = new List<int>();
 		for (int i = 0; i < m_levelData.queensGrid.Length; i++)
 		{
-			if (m_levelData.queensGrid[i] == 1) queenIndices.Add(i);
+			if (m_levelData.queensGrid[i] >= 1) queenIndices.Add(i);
 		}
 		for (int i = 0; i < numGems && queenIndices.Count > 0; i++)
 		{
@@ -483,6 +506,7 @@ public class QueensGrid : MonoBehaviour
 
 		// Check if this is actually a queen position
 		bool isCorrect = m_levelData.GetQueen(cellIndex);
+		UnityEngine.Debug.Log($"[QueensGrid] MarkQueenCell({cellIndex}): queensGrid[{cellIndex}]={m_levelData.queensGrid[cellIndex]}, isCorrect={isCorrect}");
 
 		if (isCorrect)
 		{
@@ -664,7 +688,11 @@ public class QueensGrid : MonoBehaviour
 			m_cells = new List<QueensGridCell>();
 		}
 
-		if (m_levelData == null || m_gridCellPrefab == null) return;
+		if (m_levelData == null || m_gridCellPrefab == null)
+		{
+			UnityEngine.Debug.LogError($"[QueensGrid] CreateGrid aborted: levelData={m_levelData != null}, cellPrefab={m_gridCellPrefab != null}");
+			return;
+		}
 
 		float totalWidth = m_levelData.sizeX * m_cellWidth;
 		float totalHeight = m_levelData.sizeY * m_cellWidth;
@@ -672,6 +700,7 @@ public class QueensGrid : MonoBehaviour
 		float startY = totalHeight / 2f - m_cellWidth / 2f;
 
 		Transform parent = m_cellContainer != null ? m_cellContainer : transform;
+		UnityEngine.Debug.Log($"[QueensGrid] CreateGrid: {m_levelData.sizeX}x{m_levelData.sizeY}, cellWidth={m_cellWidth}, parent={parent.name}, parentPos={parent.position}, gridPos={transform.position}, gridLayer={gameObject.layer}");
 
 		for (int y = 0; y < m_levelData.sizeY; y++)
 		{
@@ -691,17 +720,35 @@ public class QueensGrid : MonoBehaviour
 				// Flip corner cells appropriately
 				if (isCorner)
 				{
-					cell.Flip(x == m_levelData.sizeX - 1, y == m_levelData.sizeY - 1);
+					cell.Flip(x == m_levelData.sizeX - 1, y == 0);
 				}
 
 				m_cells.Add(cell);
 			}
 		}
 
+		UnityEngine.Debug.Log($"[QueensGrid] Created {m_cells.Count} cells. First cell layer={m_cells[0].gameObject.layer}, pos={m_cells[0].transform.position}");
+
+		// Fix: SpriteMask was lost during AssetRipper export.
+		// Sprites with VisibleOutsideMask (like Background-Grey) cover the color layer.
+		// Set them to None and disable the opaque gray overlay by name.
+		for (int i = 0; i < m_cells.Count; i++)
+		{
+			var renderers = m_cells[i].GetComponentsInChildren<SpriteRenderer>(true);
+			foreach (var sr in renderers)
+			{
+				if (sr.maskInteraction == SpriteMaskInteraction.VisibleOutsideMask)
+					sr.maskInteraction = SpriteMaskInteraction.None;
+			}
+			// Disable the opaque gray background that covers the color
+			var greyBg = m_cells[i].transform.Find("Content/Background-Grey");
+			if (greyBg != null) greyBg.gameObject.SetActive(false);
+		}
+
 		ResizeSpriteToCoverChildren();
 
-		// Start border configuration
-		ConfigureAccesibilityBorders();
+		// Accessibility borders disabled - optional feature, not needed for core gameplay
+		// ConfigureAccesibilityBorders();
 
 		// Done - signal grid is ready
 		m_animatingIn = false;
@@ -753,7 +800,7 @@ public class QueensGrid : MonoBehaviour
 			// Find a queen position that hasn't been placed yet
 			for (int i = 0; i < m_levelData.queensGrid.Length; i++)
 			{
-				if (m_levelData.queensGrid[i] == 1 && m_playerSolution[i] != QUEEN)
+				if (m_levelData.queensGrid[i] >= 1 && m_playerSolution[i] != QUEEN)
 				{
 					targetIndex = i;
 					break;
@@ -777,7 +824,7 @@ public class QueensGrid : MonoBehaviour
 		// Highlight cells where queens should go
 		for (int i = 0; i < m_levelData.queensGrid.Length; i++)
 		{
-			if (m_levelData.queensGrid[i] == 1 && m_playerSolution[i] != QUEEN)
+			if (m_levelData.queensGrid[i] >= 1 && m_playerSolution[i] != QUEEN)
 			{
 				var cell = GetCell(i);
 				if (cell != null)

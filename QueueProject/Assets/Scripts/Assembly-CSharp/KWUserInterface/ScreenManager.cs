@@ -20,9 +20,26 @@ namespace KWUserInterface
 			m_screenStack = new Stack<Screen>();
 			m_screensToDestory = new List<Screen>();
 			m_canvas = GetComponentInChildren<Canvas>();
+			if (m_canvas == null)
+			{
+				// Try to find the GameManager's canvas or any canvas in the scene
+				if (GameManager.Exist && GameManager.Instance.GetComponentInChildren<Canvas>() != null)
+				{
+					m_canvas = GameManager.Instance.GetComponentInChildren<Canvas>();
+				}
+				else
+				{
+					// Find any canvas in the scene
+					m_canvas = Object.FindObjectOfType<Canvas>();
+				}
+			}
 			if (m_canvas != null)
 			{
 				m_canvasScaler = m_canvas.GetComponent<CanvasScaler>();
+			}
+			else
+			{
+				Debug.LogWarning("[ScreenManager] No Canvas found in scene!");
 			}
 		}
 

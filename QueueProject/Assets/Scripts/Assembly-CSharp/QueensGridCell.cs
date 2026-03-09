@@ -128,6 +128,13 @@ public class QueensGridCell : MonoBehaviour
 		m_value = QueensGrid.NONE;
 		m_dontAcceptX = false;
 		SetColour();
+		SetSkin();
+
+		// Hide queen crown sprites initially
+		if (m_flourishCrownSprite != null)
+			m_flourishCrownSprite.enabled = false;
+		if (m_baseCrownSprite != null)
+			m_baseCrownSprite.enabled = false;
 	}
 
 	private void OnDestroy()
@@ -135,14 +142,29 @@ public class QueensGridCell : MonoBehaviour
 		m_queenTileMaterial = null;
 	}
 
+	private static Sprite s_defaultCrownSprite;
+	private static bool s_crownSpriteLoaded;
+
 	private void SetSkin()
 	{
-		// Apply queen skin from player profile
+		// Load default crown sprite (Tile-Queen-Crown) as fallback for skin-A
+		if (!s_crownSpriteLoaded)
+		{
+			s_crownSpriteLoaded = true;
+			s_defaultCrownSprite = Resources.Load<Sprite>("sprites/Tile-Queen-Crown");
+			if (s_defaultCrownSprite == null)
+				UnityEngine.Debug.LogWarning("[GridCell] Could not load Tile-Queen-Crown from Resources");
+		}
+		if (s_defaultCrownSprite != null)
+		{
+			SetFlourishCrownSprite(s_defaultCrownSprite);
+			SetBaseCrownSprite(s_defaultCrownSprite);
+		}
 	}
 
 	private void SetCrossSprite()
 	{
-		// Apply X marker sprite
+		// X marker sprite is already assigned in prefab (Tex-Xdrawn_11)
 	}
 
 	private void SetFlourishCrownSprite(Sprite sprite)
@@ -160,6 +182,8 @@ public class QueensGridCell : MonoBehaviour
 	private void SetColour()
 	{
 		Color color = CellColour(m_colourIndex);
+		if (m_cellIndex == 0)
+			UnityEngine.Debug.Log($"[GridCell] SetColour cell0: colourIndex={m_colourIndex}, color={color}, backColour={m_backColour != null}, backSprite={m_backColour?.sprite?.name ?? "NULL"}, backEnabled={m_backColour?.enabled}, gameObject.layer={gameObject.layer}");
 		if (m_backColour != null)
 			m_backColour.color = color;
 		if (m_queenColour != null)
@@ -175,6 +199,17 @@ public class QueensGridCell : MonoBehaviour
 	public void SetAsQueen(bool animate = true)
 	{
 		m_value = QueensGrid.QUEEN;
+		// Show crown sprites and fix scale (Tile-Queen-Crown is smaller than original SkinCrown)
+		if (m_flourishCrownSprite != null)
+		{
+			m_flourishCrownSprite.enabled = true;
+			m_flourishCrownSprite.transform.localScale = new Vector3(0.76f, 0.76f, 0.76f);
+		}
+		if (m_baseCrownSprite != null)
+		{
+			m_baseCrownSprite.enabled = true;
+			m_baseCrownSprite.transform.localScale = new Vector3(0.76f, 0.76f, 0.76f);
+		}
 		if (m_queenAnimator != null && animate)
 			m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_VISIBLE);
 		if (m_cellAnimator != null && animate)
@@ -185,6 +220,9 @@ public class QueensGridCell : MonoBehaviour
 	{
 		if (m_dontAcceptX) return;
 		m_value = QueensGrid.X;
+		// Activate marker container (starts inactive in prefab)
+		if (m_markerAnimator != null && !m_markerAnimator.gameObject.activeSelf)
+			m_markerAnimator.gameObject.SetActive(true);
 		if (m_xAnimator != null)
 			m_xAnimator.Play(ANIM_ANIM_X);
 		if (m_markerAnimator != null)

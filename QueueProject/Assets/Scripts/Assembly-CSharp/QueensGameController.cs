@@ -343,8 +343,8 @@ public class QueensGameController : MonoBehaviour
 
 	public bool HasPermanentAutoX()
 	{
-		// Check if player has unlocked permanent auto-X feature
-		return false;
+		// Auto-X is always enabled for core gameplay
+		return true;
 	}
 
 	public bool IsAutoXAvailable()

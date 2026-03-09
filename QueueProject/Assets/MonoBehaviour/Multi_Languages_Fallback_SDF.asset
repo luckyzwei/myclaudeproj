@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -667331979, guid: 67dfb1fdfb2b407222eda8e23ac8b724, type: 3}
+  m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Multi_Languages_Fallback_SDF
   m_EditorClassIdentifier:
   m_Version: 1.1.0
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_StrikethroughThickness: 4.5
     m_TabWidth: 20
   m_Material: {fileID: 2100000, guid: 6017057dd3543b24f9d9e60efc99176c, type: 2}
-  m_SourceFontFileGUID: 4c420b4804898490e9353b94866fe5e5
+  m_SourceFontFileGUID: 72bfc311104cf0943843b2d993491242
   m_CreationSettings:
     sourceFontFileName:
     sourceFontFileGUID:
@@ -56,12 +56,11 @@ MonoBehaviour:
     fontStyleModifier: 0
     renderMode: 0
     includeFontFeatures: 0
-  m_SourceFontFile: {fileID: 0}
+  m_SourceFontFile: {fileID: 12800000, guid: 72bfc311104cf0943843b2d993491242, type: 3}
   m_SourceFontFilePath:
-  m_AtlasPopulationMode: 0
+  m_AtlasPopulationMode: 1
   InternalDynamicOS: 0
-  m_GlyphTable:
-  - m_Index: 64
+  m_GlyphTable: []
     m_Metrics:
       m_Width: 47.15625
       m_Height: 3.25
@@ -37276,8 +37275,7 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 21
     m_ClassDefinitionType: 0
-  m_CharacterTable:
-  - m_ElementType: 1
+  m_CharacterTable: []
     m_Unicode: 95
     m_GlyphIndex: 64
     m_Scale: 1
@@ -47242,8 +47240,7 @@ MonoBehaviour:
   m_AtlasHeight: 1024
   m_AtlasPadding: 5
   m_AtlasRenderMode: 4165
-  m_UsedGlyphRects:
-  - m_X: 0
+  m_UsedGlyphRects: []
     m_Y: 0
     m_Width: 94
     m_Height: 93
@@ -47479,8 +47476,7 @@ MonoBehaviour:
     m_Y: 462
     m_Width: 93
     m_Height: 90
-  m_FreeGlyphRects:
-  - m_X: 277
+  m_FreeGlyphRects: []
     m_Y: 87
     m_Width: 2
     m_Height: 6
@@ -47637,8 +47633,7 @@ MonoBehaviour:
     m_LigatureSubstitutionRecords:
     - m_ComponentGlyphIDs: dd2200007b280000
       m_LigatureGlyphID: 1866
-    m_GlyphPairAdjustmentRecords:
-    - m_FirstAdjustmentRecord:
+    m_GlyphPairAdjustmentRecords: []
         m_GlyphIndex: 1240
         m_GlyphValueRecord:
           m_XPlacement: 0

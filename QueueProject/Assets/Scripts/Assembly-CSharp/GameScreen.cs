@@ -73,7 +73,59 @@ public class GameScreen : KWUserInterface.Screen
 		if (m_ftueButton != null)
 			m_ftueButton.SetActive(false);
 
+		// Hide non-essential UI elements to clean up layout
+		CleanupUI();
+
 		GameplayEvents.SendGameScreenLoaded();
+	}
+
+	private void CleanupUI()
+	{
+		// In TopUI, only keep essential elements: Text-Level, Counter-Game-Lives, Button-Settings
+		// Hide everything else
+		if (m_topPart != null)
+		{
+			string[] keepNames = new string[]
+			{
+				"Text-Level",
+				"Counter-Game-Lives",
+				"Button-Settings",
+			};
+
+			for (int i = 0; i < m_topPart.transform.childCount; i++)
+			{
+				var child = m_topPart.transform.GetChild(i);
+				bool keep = false;
+				foreach (string keepName in keepNames)
+				{
+					if (child.name == keepName)
+					{
+						keep = true;
+						break;
+					}
+				}
+				if (!keep)
+					child.gameObject.SetActive(false);
+			}
+		}
+
+		// Hide non-essential root-level children of Screen-Game
+		// Keep: TopUI (m_topPart), Control Pad, and the grid-related elements
+		for (int i = 0; i < transform.childCount; i++)
+		{
+			var child = transform.GetChild(i);
+			string n = child.name;
+			// Keep TopUI and Control Pad, hide everything else that's not essential
+			if (n == "TopUI" || n == "Control Pad" || n == "White Overlay")
+				continue;
+			if (n.Contains("Event") || n.Contains("Notification") ||
+				n.Contains("NoAds") || n.Contains("Offer") ||
+				n.Contains("Tournament") || n.Contains("PVP") ||
+				n.Contains("Bank") || n.Contains("Dificulty"))
+			{
+				child.gameObject.SetActive(false);
+			}
+		}
 	}
 
 	private void FeatureUnlockQueueFinished()
