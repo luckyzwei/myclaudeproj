@@ -748,7 +748,7 @@ public class QueensGrid : MonoBehaviour
 		{
 			if (i < m_playerSolution.Length && m_playerSolution[i] == QUEEN)
 			{
-				m_cells[i].Celebrate(true);
+				m_cells[i].Celebrate(UnityEngine.Random.value > 0.5f);
 			}
 		}
 	}
