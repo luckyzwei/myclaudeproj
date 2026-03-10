@@ -52,13 +52,15 @@ public static class CJKFontInitializer
 			return;
 		}
 
-		// Create dynamic TMP font asset from system font
-		TMP_FontAsset tmpFont = TMP_FontAsset.CreateFontAsset(cjkFont);
+		// Create dynamic TMP font asset from system font with large atlas for CJK
+		TMP_FontAsset tmpFont = TMP_FontAsset.CreateFontAsset(cjkFont, 36, 4,
+			UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDFAA, 2048, 2048);
 		if (tmpFont == null)
 		{
 			Debug.LogWarning("[CJKFont] Failed to create TMP_FontAsset.");
 			return;
 		}
+		tmpFont.atlasPopulationMode = AtlasPopulationMode.Dynamic;
 
 		tmpFont.name = "CJK-Fallback-Dynamic";
 

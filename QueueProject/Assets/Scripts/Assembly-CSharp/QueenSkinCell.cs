@@ -66,8 +66,9 @@ public class QueenSkinCell : MonoBehaviour
 		// All skins unlocked in offline mode
 		m_unlocked = true;
 
-		// Set icon image if available
-		// Note: icon sprite comes from Balancy ScriptableObject data
+		// Set icon image from Balancy cached sprite
+		if (m_image != null && icon != null && icon.IconSprite != null)
+			m_image.sprite = icon.IconSprite;
 
 		// Hide purchase UI
 		if (m_priceWidget != null)

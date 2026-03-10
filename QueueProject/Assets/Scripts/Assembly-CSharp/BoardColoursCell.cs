@@ -60,7 +60,9 @@ public class BoardColoursCell : MonoBehaviour
 		// All colors unlocked in offline mode
 		m_unlocked = true;
 
-		// Note: icon sprite comes from Balancy ScriptableObject data
+		// Set icon image from Balancy cached sprite
+		if (m_image != null && icon != null && icon.IconSprite != null)
+			m_image.sprite = icon.IconSprite;
 
 		// Hide purchase UI
 		if (m_priceWidget != null)

@@ -10,12 +10,16 @@ public class DailyChallenge : ScriptableObject
 
 	private DailyChallengePopup m_dailyChallengePopup;
 
-	public string DailyChallengeID => null;
+	public string DailyChallengeID => m_dailyChallengeID;
 
-	public DailyChallengePopup DailyChallengePopup => null;
+	public DailyChallengePopup DailyChallengePopup => m_dailyChallengePopup;
 
 	public virtual void ShowDailyChallengePopup(bool firstShow = true)
 	{
+		if (m_dailyChallengePopupPrefab != null)
+		{
+			m_dailyChallengePopup = Instantiate(m_dailyChallengePopupPrefab);
+		}
 	}
 
 	public virtual void OnDailyChallengeWidgetUpdated(DCDate date)

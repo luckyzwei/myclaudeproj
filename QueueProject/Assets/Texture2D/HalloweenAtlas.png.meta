@@ -4,7 +4,28 @@ timeCreated: 1773030005
 licenseType: Free
 TextureImporter:
   serializedVersion: 13
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Graphic-HalloweenEvent-GameBG
+  - first:
+      213: 21300002
+    second: Graphic-HalloweenEvent-Header
+  - first:
+      213: 21300004
+    second: Graphic-HalloweenGhost-Small
+  - first:
+      213: 21300006
+    second: Graphic-HalloweenVine01
+  - first:
+      213: 21300008
+    second: Graphic-HalloweenVine02
+  - first:
+      213: 21300010
+    second: Graphic-HalloweenVine03
+  - first:
+      213: 21300012
+    second: SkinPumpkin
   externalObjects: {}
   mipmaps:
     mipMapMode: 0
@@ -84,7 +105,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Graphic-HalloweenEvent-GameBG
+      rect:
+        serializedVersion: 2
+        x: 1.5
+        y: 388
+        width: 316
+        height: 635
+      alignment: 0
+      pivot: {x: 0.49920887, y: 0.4996063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aab22ce91bd2300535cabb4895f0854
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graphic-HalloweenEvent-Header
+      rect:
+        serializedVersion: 2
+        x: 1.5
+        y: 1.5
+        width: 507
+        height: 218
+      alignment: 9
+      pivot: {x: 0.4990138, y: 0.4988532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f934183a098078971423997491d11140
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graphic-HalloweenGhost-Small
+      rect:
+        serializedVersion: 2
+        x: 1.5
+        y: 1.5
+        width: 55.923878
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49173987, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8745b2603e2d96a397738c4b19a5d2
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graphic-HalloweenVine01
+      rect:
+        serializedVersion: 2
+        x: 352.5
+        y: 766
+        width: 159
+        height: 257
+      alignment: 9
+      pivot: {x: 0.49685535, y: 0.49902725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869dfa381d44f237ab49d725d038f70d
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graphic-HalloweenVine02
+      rect:
+        serializedVersion: 2
+        x: 52.5
+        y: 317
+        width: 59
+        height: 68
+      alignment: 9
+      pivot: {x: 0.4957627, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3d241c1a67d78660d833118c788d50
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graphic-HalloweenVine03
+      rect:
+        serializedVersion: 2
+        x: 1.5
+        y: 217.5
+        width: 105
+        height: 168
+      alignment: 9
+      pivot: {x: 0.49761903, y: 0.4985119}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540dd35db711e7b9d8f2f2974bc92545
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkinPumpkin
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 201.5
+        width: 206
+        height: 210
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9da7e0519b0258e56af0969e36e0f8
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -98,7 +266,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Graphic-HalloweenEvent-GameBG: {fileID: 21300000}
+      Graphic-HalloweenEvent-Header: {fileID: 21300002}
+      Graphic-HalloweenGhost-Small: {fileID: 21300004}
+      Graphic-HalloweenVine01: {fileID: 21300006}
+      Graphic-HalloweenVine02: {fileID: 21300008}
+      Graphic-HalloweenVine03: {fileID: 21300010}
+      SkinPumpkin: {fileID: 21300012}
   mipmapLimitGroupName:
   output:
     textureImportInstructions:

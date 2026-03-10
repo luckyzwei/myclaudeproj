@@ -4,7 +4,31 @@ timeCreated: 1773030008
 licenseType: Free
 TextureImporter:
   serializedVersion: 13
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Border-SpinWheelNew
+  - first:
+      213: 21300002
+    second: Border-SpinWheelNewPremium
+  - first:
+      213: 21300004
+    second: Pivot-SpinWheelNew
+  - first:
+      213: 21300006
+    second: Pivot-SpinWheelNewPremium
+  - first:
+      213: 21300008
+    second: Segment-SpinWheel-Dark
+  - first:
+      213: 21300010
+    second: Segment-SpinWheel-Grey
+  - first:
+      213: 21300012
+    second: Segment-SpinWheel-Light
+  - first:
+      213: 21300014
+    second: Segment-SpinWheel-Rose
   externalObjects: {}
   mipmaps:
     mipMapMode: 0
@@ -84,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Border-SpinWheelNew
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1065
+        width: 981
+        height: 982
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229412865600d15d1508ae3fc979d862
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border-SpinWheelNewPremium
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 81
+        width: 981
+        height: 982
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739f478e702d58c76aa8445e83bc26f9
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pivot-SpinWheelNew
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1637
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5dcdf966776ec5b14820f9ae645793
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pivot-SpinWheelNewPremium
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 1637
+        width: 170
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5014af23df8f8c7ad377b819ab23eb96
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segment-SpinWheel-Dark
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1812
+        width: 235
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8c7b5e661843e68bd5e128f4d878db
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segment-SpinWheel-Grey
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1812
+        width: 235
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93722db72b29b9405e602ee3a24476bf
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segment-SpinWheel-Light
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 1812
+        width: 235
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017d0a419dabc94eeae552d2c21457c4
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segment-SpinWheel-Rose
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1812
+        width: 235
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92943cfbefc430f25f17db960eecfe95
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
     outline: []
     customData:
     physicsShape: []
@@ -98,7 +290,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Border-SpinWheelNew: {fileID: 21300000}
+      Border-SpinWheelNewPremium: {fileID: 21300002}
+      Pivot-SpinWheelNew: {fileID: 21300004}
+      Pivot-SpinWheelNewPremium: {fileID: 21300006}
+      Segment-SpinWheel-Dark: {fileID: 21300008}
+      Segment-SpinWheel-Grey: {fileID: 21300010}
+      Segment-SpinWheel-Light: {fileID: 21300012}
+      Segment-SpinWheel-Rose: {fileID: 21300014}
   mipmapLimitGroupName:
   output:
     textureImportInstructions:

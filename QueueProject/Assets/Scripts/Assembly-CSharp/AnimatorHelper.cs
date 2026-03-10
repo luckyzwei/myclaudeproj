@@ -145,6 +145,11 @@ public class AnimatorHelper : MonoBehaviour
 	private void PlayAnimationInternal(AnimationHelperState state, Action onFinished = null, float startTime = 0f, float crossfade = 0f, int layer = 0)
 	{
 		if (m_animator == null || state == null) return;
+		if (m_animatorLayerDatas == null)
+		{
+			m_animatorLayerDatas = new Dictionary<int, LayerData>();
+			m_activeKeys = new List<int>();
+		}
 		m_animator.enabled = true;
 		var layerData = new LayerData(state, onFinished, startTime);
 		m_animatorLayerDatas[layer] = layerData;

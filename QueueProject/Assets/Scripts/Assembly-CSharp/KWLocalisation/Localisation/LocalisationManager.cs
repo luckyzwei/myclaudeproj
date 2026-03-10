@@ -130,28 +130,72 @@ namespace KWLocalisation.Localisation
 
 		private bool ReadLanguageFile(string languageId)
 		{
+			var lang = new LocalisedLanguage();
+			bool loaded = false;
+
+			// 1) Load flat JSON file (1cb7879e-..._Localization-xx.json)
 			string resourcePath = JSON_FILE_PREFIX + languageId;
 			var textAsset = Resources.Load<TextAsset>(resourcePath);
-			if (textAsset == null)
+			if (textAsset != null)
 			{
-				Debug.LogWarning($"[LocalisationManager] Language file not found: {resourcePath}");
+				var hashtable = JsonSerializer.JsonDecode(textAsset.text) as Hashtable;
+				if (hashtable != null)
+				{
+					lang.ParseJsonData(hashtable);
+					loaded = true;
+				}
+			}
+
+			// 2) Load nested txt file (configs/localisation/Localisation_xx.txt)
+			//    Language ID mapping: "zh-CN" → try "zh_CN", "zh_Hans"; "zh-TW" → try "zh_TW", "zh_Hant"; "pt" → try "pt", "pt_PT"
+			var txtIds = GetTxtLanguageIds(languageId);
+			foreach (var txtId in txtIds)
+			{
+				string txtPath = FILEFOLDER + "/" + BASEFILENAME + txtId;
+				var txtAsset = Resources.Load<TextAsset>(txtPath);
+				if (txtAsset != null)
+				{
+					var txtHash = JsonSerializer.JsonDecode(txtAsset.text) as Hashtable;
+					if (txtHash != null)
+					{
+						lang.ParseNestedTextData(txtHash);
+						loaded = true;
+						Debug.Log($"[LocalisationManager] Loaded txt: {txtPath} for {languageId}");
+						break;
+					}
+				}
+			}
+
+			if (!loaded)
+			{
+				Debug.LogWarning($"[LocalisationManager] No language files found for: {languageId}");
 				return false;
 			}
 
-			var json = textAsset.text;
-			var hashtable = JsonSerializer.JsonDecode(json) as Hashtable;
-
-			if (hashtable == null)
-			{
-				Debug.LogWarning($"[LocalisationManager] Failed to parse language JSON: {languageId}");
-				return false;
-			}
-
-			var lang = new LocalisedLanguage();
-			lang.ParseJsonData(hashtable);
 			m_languages[languageId] = lang;
 			Debug.Log($"[LocalisationManager] Loaded language: {languageId} ({lang.Strings?.Count ?? 0} strings)");
 			return true;
+		}
+
+		private static List<string> GetTxtLanguageIds(string languageId)
+		{
+			var ids = new List<string>();
+			// Convert dash to underscore: "zh-CN" → "zh_CN"
+			string underscored = languageId.Replace('-', '_');
+			ids.Add(underscored);
+
+			// Add Hans/Hant variants for Chinese
+			if (languageId == "zh-CN" || languageId == "zh_CN")
+				ids.Add("zh_Hans");
+			else if (languageId == "zh-TW" || languageId == "zh_TW")
+				ids.Add("zh_Hant");
+
+			// Also try without region: "pt-BR" → "pt"
+			int dashIdx = languageId.IndexOf('-');
+			if (dashIdx > 0)
+				ids.Add(languageId.Substring(0, dashIdx));
+
+			return ids;
 		}
 
 		private bool DoLanguageExist(string languageID)
