@@ -14,13 +14,19 @@ public class FeedbackText : MonoBehaviour
 
 	private void OnEnable()
 	{
+		if (m_animatorHelper != null && !string.IsNullOrEmpty(m_animationName))
+			m_animatorHelper.Play(m_animationName);
 	}
 
 	public void Deactivate()
 	{
+		gameObject.SetActive(false);
 	}
 
 	public void Activate(string text)
 	{
+		if (m_text != null)
+			m_text.text = text;
+		gameObject.SetActive(true);
 	}
 }

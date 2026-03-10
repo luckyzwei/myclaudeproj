@@ -334,16 +334,52 @@ public class QueensGameController : MonoBehaviour
 		if (m_grid != null)
 			m_grid.DisableInput();
 
-		// Wait for celebration audio, or a short default if no audio
-		float waitTime = 1.5f;
-		var sfx = CurrentSFX;
-		if (sfx != null && sfx.QueenCelebrate != null && sfx.QueenCelebrate.audioClip != null)
-			waitTime = Mathf.Min(sfx.QueenCelebrate.audioClip.length, 3f);
+		// Wait for queen Out-L/Out-R main motion (~0.63s real time), plus a brief pause
+		yield return new WaitForSeconds(0.8f);
 
-		yield return new WaitForSeconds(waitTime);
+		// Play fullscreen ScoreCelebrations VFX ("Awesome!" text + star burst)
+		GameObject scoreCelebrationGO = FindScoreCelebrations();
+		if (scoreCelebrationGO != null)
+		{
+			scoreCelebrationGO.SetActive(true);
+			var feedbackText = scoreCelebrationGO.GetComponent<FeedbackText>();
+			if (feedbackText != null)
+				feedbackText.Activate("Awesome!");
+		}
+		else
+		{
+			UnityEngine.Debug.LogWarning("[WinSequence] ScoreCelebrations not found in scene");
+		}
 
 		if (GameManager.Instance != null)
 			GameManager.Instance.LevelComplete();
+	}
+
+	private GameObject FindScoreCelebrations()
+	{
+		// ScoreCelebrations is inactive, search all scene root objects' children
+		var sceneRoots = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+		for (int i = 0; i < sceneRoots.Length; i++)
+		{
+			var found = FindInactiveByName(sceneRoots[i].transform, "ScoreCelebrations");
+			if (found != null)
+				return found;
+		}
+		return null;
+	}
+
+	private GameObject FindInactiveByName(Transform parent, string name)
+	{
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			var child = parent.GetChild(i);
+			if (child.name == name)
+				return child.gameObject;
+			var found = FindInactiveByName(child, name);
+			if (found != null)
+				return found;
+		}
+		return null;
 	}
 
 	[IteratorStateMachine(typeof(_003CGameOverSequence_003Ed__45))]
