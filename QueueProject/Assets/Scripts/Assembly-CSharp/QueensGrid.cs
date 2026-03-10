@@ -597,9 +597,17 @@ public class QueensGrid : MonoBehaviour
 			m_playerSolution[cellIndex] = QUEEN;
 			m_queenCount++;
 			var cell = GetCell(cellIndex);
-			if (cell != null)
+
+			bool isLastQueen = GetRemainingQueens() == 0;
+
+			if (cell != null && !isLastQueen)
 			{
 				cell.SetAsQueen(!isDefaultQueen);
+				cell.DontAcceptX();
+			}
+			else if (cell != null)
+			{
+				// Last queen: just set value, don't play individual animation
 				cell.DontAcceptX();
 			}
 
@@ -612,7 +620,7 @@ public class QueensGrid : MonoBehaviour
 			if (IsAGemLocation(cellIndex) && cell != null)
 				RevealGem(cell.transform);
 
-			if (GetRemainingQueens() == 0)
+			if (isLastQueen)
 				DoQueensCelebration();
 		}
 		else
@@ -731,12 +739,27 @@ public class QueensGrid : MonoBehaviour
 	private void DoQueensCelebration()
 	{
 		DisableInput();
-		if (m_cells == null) return;
+		if (m_cells == null || m_playerSolution == null) return;
+
+		PlayCelebrateSound();
+
+		// All queen cells celebrate simultaneously (including the last one just clicked)
 		for (int i = 0; i < m_cells.Count; i++)
 		{
-			bool left = m_cells[i].Coords.x < m_levelData.sizeX / 2f;
-			m_cells[i].Celebrate(left);
+			if (i < m_playerSolution.Length && m_playerSolution[i] == QUEEN)
+			{
+				m_cells[i].Celebrate(true);
+			}
 		}
+	}
+
+	private void PlayCelebrateSound()
+	{
+		var sfx = QueensGameController.CurrentSFX;
+		if (sfx == null || sfx.QueenCelebrate == null || sfx.QueenCelebrate.audioClip == null) return;
+		AudioSource.PlayClipAtPoint(sfx.QueenCelebrate.audioClip,
+			Camera.main != null ? Camera.main.transform.position : Vector3.zero,
+			sfx.QueenCelebrate.volume > 0f ? sfx.QueenCelebrate.volume : 1f);
 	}
 
 	public void Clear()

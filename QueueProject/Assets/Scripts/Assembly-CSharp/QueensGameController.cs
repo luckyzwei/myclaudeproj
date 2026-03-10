@@ -329,12 +329,21 @@ public class QueensGameController : MonoBehaviour
 		}
 	}
 
-	[IteratorStateMachine(typeof(_003CWinSequence_003Ed__44))]
 	private IEnumerator WinSequence()
 	{
-		var d = new _003CWinSequence_003Ed__44(0);
-		d._003C_003E4__this = this;
-		return d;
+		if (m_grid != null)
+			m_grid.DisableInput();
+
+		// Wait for celebration sound to finish, with a reasonable cap
+		float waitTime = 2f;
+		var sfx = CurrentSFX;
+		if (sfx != null && sfx.QueenCelebrate != null && sfx.QueenCelebrate.audioClip != null)
+			waitTime = Mathf.Min(sfx.QueenCelebrate.audioClip.length, 4f);
+
+		yield return new WaitForSeconds(waitTime);
+
+		if (GameManager.Instance != null)
+			GameManager.Instance.LevelComplete();
 	}
 
 	[IteratorStateMachine(typeof(_003CGameOverSequence_003Ed__45))]

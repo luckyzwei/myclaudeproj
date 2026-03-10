@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class QueensGridCell : MonoBehaviour
@@ -110,6 +111,8 @@ public class QueensGridCell : MonoBehaviour
 
 	private GameObject m_vfxCelebrate;
 
+	private SpriteRenderer m_queenBackground;
+
 	public int CellIndex => m_cellIndex;
 
 	public Vector2Int Coords => m_coords;
@@ -144,6 +147,18 @@ public class QueensGridCell : MonoBehaviour
 
 	private void CacheVFXCelebrate()
 	{
+		// Find VFX-Celebrate and queen Background under Tile-Queen-Base
+		Transform queenBase = m_queenAnimator != null ? m_queenAnimator.transform : null;
+		if (queenBase != null)
+		{
+			for (int i = 0; i < queenBase.childCount; i++)
+			{
+				var child = queenBase.GetChild(i);
+				if (child.name == "Background")
+					m_queenBackground = child.GetComponent<SpriteRenderer>();
+			}
+		}
+
 		var allTransforms = GetComponentsInChildren<Transform>(true);
 		for (int i = 0; i < allTransforms.Length; i++)
 		{
@@ -200,12 +215,12 @@ public class QueensGridCell : MonoBehaviour
 	private void SetColour()
 	{
 		Color color = CellColour(m_colourIndex);
-		if (m_cellIndex == 0)
-			UnityEngine.Debug.Log($"[GridCell] SetColour cell0: colourIndex={m_colourIndex}, color={color}, backColour={m_backColour != null}, backSprite={m_backColour?.sprite?.name ?? "NULL"}, backEnabled={m_backColour?.enabled}, gameObject.layer={gameObject.layer}");
 		if (m_backColour != null)
 			m_backColour.color = color;
 		if (m_queenColour != null)
 			m_queenColour.color = color;
+		if (m_queenBackground != null)
+			m_queenBackground.color = color;
 	}
 
 	public void ReColour(int colorIndex)
@@ -218,8 +233,23 @@ public class QueensGridCell : MonoBehaviour
 	{
 		m_value = QueensGrid.QUEEN;
 
+		// Set crown scale (prefab default is 0.28, too small)
+		float crownScale = 0.76f;
+		if (m_flourishCrownSprite != null)
+			m_flourishCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
+		if (m_baseCrownSprite != null)
+			m_baseCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
+
 		if (animate)
 		{
+			// Punch scale the whole cell (use m_content to avoid Animator overriding root scale)
+			if (m_content != null)
+			{
+				m_content.DOKill();
+				m_content.localScale = Vector3.one;
+				m_content.DOPunchScale(m_punchScale, m_punchTime, 6, 0.5f);
+			}
+
 			// "In" animation on AC-Tile: queen spins in with rotation, scale bounce,
 			// glow effect, crown management, and haptic feedback (~1.32s)
 			if (m_queenAnimator != null)
@@ -305,10 +335,17 @@ public class QueensGridCell : MonoBehaviour
 
 	public void Celebrate(bool left)
 	{
-		// Out-L / Out-R are in AC-Tile (m_queenAnimator):
-		// queen rotates and flies out with glow effect (~0.83s)
+		m_value = QueensGrid.QUEEN;
+		float crownScale = 0.76f;
+		if (m_flourishCrownSprite != null)
+			m_flourishCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
+		if (m_baseCrownSprite != null)
+			m_baseCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
+
+		// Out-L/Out-R on AC-Tile: Queen rotates ±20°, scales 1.4x, moves up, Background shows color, glow
 		if (m_queenAnimator != null)
 			m_queenAnimator.Play(left ? ANIM_OUT_L : ANIM_OUT_R);
+		PlayQueenVFX();
 	}
 
 	public void Flip(bool x, bool y)
@@ -361,21 +398,13 @@ public class QueensGridCell : MonoBehaviour
 
 	private Color CellColour(int colourIndex)
 	{
-		// Default color palette
-		Color[] palette = new Color[]
+		var cm = CosmeticsManager.Instance;
+		if (cm != null)
 		{
-			new Color(0.95f, 0.55f, 0.55f), // red
-			new Color(0.55f, 0.75f, 0.95f), // blue
-			new Color(0.55f, 0.90f, 0.55f), // green
-			new Color(0.95f, 0.85f, 0.45f), // yellow
-			new Color(0.75f, 0.55f, 0.95f), // purple
-			new Color(0.95f, 0.70f, 0.40f), // orange
-			new Color(0.55f, 0.90f, 0.85f), // teal
-			new Color(0.90f, 0.55f, 0.80f), // pink
-			new Color(0.70f, 0.70f, 0.70f), // gray
-		};
-		if (colourIndex >= 0 && colourIndex < palette.Length)
-			return palette[colourIndex];
+			var config = cm.GetCurrentColorConfig();
+			if (config != null && config.colors != null && colourIndex >= 0 && colourIndex < config.colors.Count)
+				return config.colors[colourIndex];
+		}
 		return Color.white;
 	}
 
