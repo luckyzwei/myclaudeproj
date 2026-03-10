@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class UITextLookup : MonoBehaviour
@@ -21,21 +23,62 @@ public class UITextLookup : MonoBehaviour
 
 	public void SetDelegate(IDelegate iDelegate)
 	{
+		m_delegate = iDelegate;
 	}
 
 	private void Awake()
 	{
+		LookupText();
 	}
 
 	public void SetText(string key)
 	{
+		m_stringKey = key;
+		LookupText();
 	}
 
 	private void LookupText()
 	{
+		if (string.IsNullOrEmpty(m_stringKey)) return;
+		if (m_stringKey == m_prevStringKey) return;
+		m_prevStringKey = m_stringKey;
+
+		string localised = Kwalee.GetLocalisedText(m_stringKey);
+		if (string.IsNullOrEmpty(localised))
+			localised = m_stringKey; // Fallback to key
+
+		SetLocalisedText(localised);
 	}
 
 	private void SetLocalisedText(string value)
 	{
+		if (string.IsNullOrEmpty(value)) return;
+
+		// Try TextMeshProUGUI first
+		var tmp = GetComponent<TextMeshProUGUI>();
+		if (tmp != null)
+		{
+			tmp.text = value;
+			m_delegate?.OnTextLocalised();
+			return;
+		}
+
+		// Try TextMeshPro (3D)
+		var tmp3d = GetComponent<TextMeshPro>();
+		if (tmp3d != null)
+		{
+			tmp3d.text = value;
+			m_delegate?.OnTextLocalised();
+			return;
+		}
+
+		// Try legacy Text
+		var text = GetComponent<Text>();
+		if (text != null)
+		{
+			text.text = value;
+			m_delegate?.OnTextLocalised();
+			return;
+		}
 	}
 }

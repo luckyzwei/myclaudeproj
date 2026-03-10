@@ -14,9 +14,14 @@ public class PopupPause : PopUpBase
 
 	private void Awake()
 	{
+		if (m_returnHomeButton != null)
+			m_returnHomeButton.onClick.AddListener(OnReturnHomeClick);
 	}
 
 	private void OnReturnHomeClick()
 	{
+		Close();
+		if (GameManager.Instance != null)
+			GameManager.Instance.ReturnToHomeScreen();
 	}
 }

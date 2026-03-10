@@ -402,6 +402,88 @@ public class QueensGrid : MonoBehaviour
 		m_animatingIn = false;
 		EnableInput();
 		GridBuilt?.Invoke();
+		GameplayEvents.SendGridIntroDone();
+	}
+
+	private IEnumerator GridIntroColorReveal()
+	{
+		// Wave reveal: cells pop in from top-left to bottom-right
+		float delay = 0.04f;
+		if (m_levelData != null && m_cells != null)
+		{
+			for (int y = 0; y < m_levelData.sizeY; y++)
+			{
+				for (int x = 0; x < m_levelData.sizeX; x++)
+				{
+					int idx = m_levelData.Index(x, y);
+					var cell = GetCell(idx);
+					if (cell != null)
+						cell.transform.localScale = Vector3.one;
+				}
+				yield return new WaitForSeconds(delay);
+			}
+		}
+		// Wait for rotation animation to finish (~2.5s total, cells took some of that)
+		yield return new WaitForSeconds(1.5f);
+		GridIntroDone();
+	}
+
+	private IEnumerator GridIntroFallback()
+	{
+		// Fallback: rotate the grid container + wave reveal cells
+		if (m_cells != null)
+		{
+			for (int i = 0; i < m_cells.Count; i++)
+				m_cells[i].transform.localScale = Vector3.zero;
+		}
+
+		Transform gridTransform = m_cellContainer != null ? m_cellContainer : transform;
+		Quaternion startRot = Quaternion.Euler(0, 0, 120f);
+		Quaternion endRot = Quaternion.identity;
+		float duration = 1.5f;
+		float elapsed = 0f;
+
+		gridTransform.localRotation = startRot;
+
+		// Rotate while revealing cells row by row
+		int revealedRows = 0;
+		int totalRows = m_levelData != null ? m_levelData.sizeY : 0;
+		float rowInterval = totalRows > 0 ? duration / totalRows : duration;
+
+		while (elapsed < duration)
+		{
+			elapsed += Time.deltaTime;
+			float t = Mathf.Clamp01(elapsed / duration);
+			// Smooth ease-out
+			float smooth = 1f - (1f - t) * (1f - t);
+			gridTransform.localRotation = Quaternion.Lerp(startRot, endRot, smooth);
+
+			// Reveal rows progressively
+			int rowsToShow = Mathf.FloorToInt(t * totalRows);
+			while (revealedRows < rowsToShow && m_levelData != null && m_cells != null)
+			{
+				for (int x = 0; x < m_levelData.sizeX; x++)
+				{
+					int idx = m_levelData.Index(x, revealedRows);
+					var cell = GetCell(idx);
+					if (cell != null)
+						cell.transform.localScale = Vector3.one;
+				}
+				revealedRows++;
+			}
+
+			yield return null;
+		}
+
+		// Ensure everything is visible
+		gridTransform.localRotation = endRot;
+		if (m_cells != null)
+		{
+			for (int i = 0; i < m_cells.Count; i++)
+				m_cells[i].transform.localScale = Vector3.one;
+		}
+
+		GridIntroDone();
 	}
 
 	private int GetNumberOfGems()
@@ -752,9 +834,24 @@ public class QueensGrid : MonoBehaviour
 		// Accessibility borders disabled - optional feature, not needed for core gameplay
 		// ConfigureAccesibilityBorders();
 
-		// Done - signal grid is ready
-		m_animatingIn = false;
-		GridIntroDone();
+		// Play grid intro animation (rotation + color paint effect)
+		m_animatingIn = true;
+		DisableInput();
+		var animator = GetComponent<Animator>();
+		if (animator != null)
+		{
+			// Hide all cells initially, then reveal with wave delay
+			for (int ci = 0; ci < m_cells.Count; ci++)
+				m_cells[ci].transform.localScale = Vector3.zero;
+
+			animator.Play(ANIM_INTRO, -1, 0f);
+			StartCoroutine(GridIntroColorReveal());
+		}
+		else
+		{
+			// No animator — use coroutine-based rotation + wave reveal
+			StartCoroutine(GridIntroFallback());
+		}
 	}
 
 	private void ConfigureAccesibilityBorders()

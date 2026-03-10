@@ -189,6 +189,20 @@ public class GameManager : MonoSingleton<GameManager>
 			}
 		}
 
+		// Initialize localization (Bootstrap is not in the scene, so do it here)
+		try
+		{
+			CJKFontInitializer.Init();
+			var textManager = new KWLocalisation.Localisation.TextManager();
+			textManager.Initialise();
+			KWCore.Umbrella.InitialiseLocalisationUmbrella(textManager);
+			UnityEngine.Debug.Log("[GameManager] Localization initialized successfully");
+		}
+		catch (System.Exception ex)
+		{
+			UnityEngine.Debug.LogWarning($"[GameManager] Localization init failed: {ex.Message}");
+		}
+
 	}
 
 	private void OnApplicationFocus(bool hasFocus)

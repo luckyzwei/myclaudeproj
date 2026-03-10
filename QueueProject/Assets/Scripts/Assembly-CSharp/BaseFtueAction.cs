@@ -9,10 +9,14 @@ public class BaseFtueAction : MonoBehaviour
 
 	public void Config(QueensGrid grid, Action finishCallback)
 	{
+		m_grid = grid;
+		m_finishCallback = finishCallback;
 	}
 
 	public virtual void Play()
 	{
+		// Default: finish immediately
+		Finished();
 	}
 
 	public virtual void Stop()
@@ -21,9 +25,11 @@ public class BaseFtueAction : MonoBehaviour
 
 	protected virtual void Finished()
 	{
+		m_finishCallback?.Invoke();
 	}
 
 	public virtual void ContinuePressed()
 	{
+		Finished();
 	}
 }
