@@ -1,5 +1,6 @@
 using KWCore.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameScreenInfoButton : MonoBehaviour
 {
@@ -10,17 +11,23 @@ public class GameScreenInfoButton : MonoBehaviour
 
 	private void Awake()
 	{
+		var btn = GetComponent<Button>();
+		if (btn != null)
+			btn.onClick.AddListener(OnClick);
 	}
 
 	private void OnDestroy()
 	{
+		var btn = GetComponent<Button>();
+		if (btn != null)
+			btn.onClick.RemoveListener(OnClick);
 	}
 
 	private void OnSwipeHappened()
 	{
 	}
 
-	private void OnClick()
+	public void OnClick()
 	{
 		// Show FTUE tutorial popup (rules/how to play)
 		PopUpBase.ShowPopup<PopupQueensInGameAdaptiveFTUE>(

@@ -108,6 +108,8 @@ public class QueensGridCell : MonoBehaviour
 
 	private bool m_isPlayingFade;
 
+	private GameObject m_vfxCelebrate;
+
 	public int CellIndex => m_cellIndex;
 
 	public Vector2Int Coords => m_coords;
@@ -130,11 +132,27 @@ public class QueensGridCell : MonoBehaviour
 		SetColour();
 		SetSkin();
 
-		// Hide queen crown sprites initially
+		// Hide queen crown GameObjects initially (animations control m_IsActive, not SpriteRenderer.enabled)
 		if (m_flourishCrownSprite != null)
-			m_flourishCrownSprite.enabled = false;
+			m_flourishCrownSprite.gameObject.SetActive(false);
 		if (m_baseCrownSprite != null)
-			m_baseCrownSprite.enabled = false;
+			m_baseCrownSprite.gameObject.SetActive(false);
+
+		// Cache VFX-Celebrate reference (including inactive objects)
+		CacheVFXCelebrate();
+	}
+
+	private void CacheVFXCelebrate()
+	{
+		var allTransforms = GetComponentsInChildren<Transform>(true);
+		for (int i = 0; i < allTransforms.Length; i++)
+		{
+			if (allTransforms[i].name == "VFX-Celebrate")
+			{
+				m_vfxCelebrate = allTransforms[i].gameObject;
+				break;
+			}
+		}
 	}
 
 	private void OnDestroy()
@@ -199,23 +217,44 @@ public class QueensGridCell : MonoBehaviour
 	public void SetAsQueen(bool animate = true)
 	{
 		m_value = QueensGrid.QUEEN;
-		// Show crown sprites and fix scale (Tile-Queen-Crown is smaller than original SkinCrown)
-		if (m_flourishCrownSprite != null)
-		{
-			m_flourishCrownSprite.enabled = true;
-			m_flourishCrownSprite.transform.localScale = new Vector3(0.76f, 0.76f, 0.76f);
-		}
-		if (m_baseCrownSprite != null)
-		{
-			m_baseCrownSprite.enabled = true;
-			m_baseCrownSprite.transform.localScale = new Vector3(0.76f, 0.76f, 0.76f);
-		}
-		if (m_queenAnimator != null && animate)
-			m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_VISIBLE);
-		if (m_cellAnimator != null && animate)
-			m_cellAnimator.Play(ANIM_IN);
+
 		if (animate)
+		{
+			// "In" animation on AC-Tile: queen spins in with rotation, scale bounce,
+			// glow effect, crown management, and haptic feedback (~1.32s)
+			if (m_queenAnimator != null)
+				m_queenAnimator.Play(ANIM_IN);
+			PlayQueenVFX();
 			PlayQueenSound();
+		}
+		else
+		{
+			// "Anim-Tile-Queen-Visible": quick scale punch 0→1.2→1.0 (0.3s),
+			// enables Queen SpriteRenderer, activates both crowns
+			if (m_queenAnimator != null)
+				m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_VISIBLE);
+		}
+	}
+
+	private void PlayQueenVFX()
+	{
+		// Use cached reference instead of searching each time
+		if (m_vfxCelebrate != null)
+		{
+			m_vfxCelebrate.SetActive(true);
+			var ps = m_vfxCelebrate.GetComponent<ParticleSystem>();
+			if (ps != null) ps.Play(true);
+		}
+	}
+
+	private void StopQueenVFX()
+	{
+		if (m_vfxCelebrate != null)
+		{
+			var ps = m_vfxCelebrate.GetComponent<ParticleSystem>();
+			if (ps != null) ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+			m_vfxCelebrate.SetActive(false);
+		}
 	}
 
 	private void PlayQueenSound()
@@ -252,20 +291,24 @@ public class QueensGridCell : MonoBehaviour
 
 	public void SetAsLoseLife()
 	{
-		if (m_cellAnimator != null)
-			m_cellAnimator.Play(ANIM_LIFELOST);
+		// LifeLost is in AC-Tile-Marker (m_markerAnimator)
+		if (m_markerAnimator != null)
+			m_markerAnimator.Play(ANIM_LIFELOST);
 	}
 
 	public void SetAsLoseLifeFTUE()
 	{
-		if (m_cellAnimator != null)
-			m_cellAnimator.Play(ANIM_LIFELOST_FTUE);
+		// LifeLost-FTUE is in AC-Tile-Marker (m_markerAnimator)
+		if (m_markerAnimator != null)
+			m_markerAnimator.Play(ANIM_LIFELOST_FTUE);
 	}
 
 	public void Celebrate(bool left)
 	{
-		if (m_cellAnimator != null)
-			m_cellAnimator.Play(left ? ANIM_OUT_L : ANIM_OUT_R);
+		// Out-L / Out-R are in AC-Tile (m_queenAnimator):
+		// queen rotates and flies out with glow effect (~0.83s)
+		if (m_queenAnimator != null)
+			m_queenAnimator.Play(left ? ANIM_OUT_L : ANIM_OUT_R);
 	}
 
 	public void Flip(bool x, bool y)
@@ -290,6 +333,7 @@ public class QueensGridCell : MonoBehaviour
 			m_markerAnimator.Play(ANIM_MARKER_OUT);
 		if (m_queenAnimator != null)
 			m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_OUT);
+		StopQueenVFX();
 		if (playSound)
 			PlayUndoXSound(pitch);
 	}
@@ -338,15 +382,17 @@ public class QueensGridCell : MonoBehaviour
 	public void PlayFade()
 	{
 		m_isPlayingFade = true;
-		if (m_cellAnimator != null)
-			m_cellAnimator.Play(ANIM_FADE);
+		// Fade is in AC-Tile-Marker (m_markerAnimator)
+		if (m_markerAnimator != null)
+			m_markerAnimator.Play(ANIM_FADE);
 	}
 
 	public void StopFade()
 	{
 		m_isPlayingFade = false;
-		if (m_cellAnimator != null)
-			m_cellAnimator.Play(ANIM_IDLE);
+		// Idle is in AC-Tile-Marker (m_markerAnimator)
+		if (m_markerAnimator != null)
+			m_markerAnimator.Play(ANIM_IDLE);
 	}
 
 	public void SetColliderEnabled(bool active)

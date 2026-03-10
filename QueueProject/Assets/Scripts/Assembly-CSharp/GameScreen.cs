@@ -96,6 +96,18 @@ public class GameScreen : KWUserInterface.Screen
 			}
 		}
 
+		// QueenEventContainer: only keep the treasure chest button
+		var eventContainer = m_topPart != null ? m_topPart.transform.Find("QueenEventContainer") : null;
+		if (eventContainer != null)
+		{
+			for (int i = 0; i < eventContainer.childCount; i++)
+			{
+				var child = eventContainer.GetChild(i);
+				if (child.name != "Button-Event-QueenGameplay")
+					child.gameObject.SetActive(false);
+			}
+		}
+
 		// Screen-Game root: hide non-essential children
 		string[] hideContains = { "NoAds", "PVP", "Interrupt", "Feedback" };
 		for (int i = 0; i < transform.childCount; i++)

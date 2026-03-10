@@ -8,6 +8,12 @@ public class QueensControlSchemeA : QueensControlSchemeBase
 	private float m_lastClickTime;
 	private int m_lastClickCellIndex = -1;
 
+	// Drag state
+	private QueensGridCell m_startingCell;
+	private QueensGridCell m_currentCell;
+	private bool m_isDragging;
+	private bool m_dragIsMarking; // true = mark X, false = clear X
+
 	public override ControlSchemes GetScheme()
 	{
 		return ControlSchemes.Scheme_A;
@@ -16,13 +22,11 @@ public class QueensControlSchemeA : QueensControlSchemeBase
 	protected override void Start()
 	{
 		base.Start();
-		// Single click = X mark by default
 		m_markingXEnabled = true;
 	}
 
 	private void Update()
 	{
-		// Retry finding grid if it wasn't available at Start time
 		if (m_grid == null)
 		{
 			m_grid = FindObjectOfType<QueensGrid>();
@@ -35,51 +39,78 @@ public class QueensControlSchemeA : QueensControlSchemeBase
 		{
 			var cell = GetCell();
 			if (cell != null)
-				CellClicked(cell);
+			{
+				m_startingCell = cell;
+				m_currentCell = cell;
+				m_isDragging = false;
+
+				int idx = cell.CellIndex;
+				int val = m_grid.GetPlayerSolution(idx);
+				float now = Time.time;
+
+				// Double-click detection: place queen
+				bool isDoubleClick = (idx == m_lastClickCellIndex) &&
+					(now - m_lastClickTime < DOUBLE_CLICK_TIME);
+				m_lastClickTime = now;
+				m_lastClickCellIndex = idx;
+
+				if (isDoubleClick)
+				{
+					// Undo the X we just placed on first click, then place queen
+					if (val == QueensGrid.X)
+						m_grid.ClearCell(idx);
+					m_grid.MarkQueenCell(idx);
+					m_lastClickCellIndex = -1;
+					m_startingCell = null;
+					return;
+				}
+
+				// Single press: immediately mark/clear X
+				m_dragIsMarking = (val == QueensGrid.NONE);
+				ApplyDragToCell(cell);
+			}
+		}
+		else if (Input.GetMouseButton(0) && m_startingCell != null)
+		{
+			var cell = GetCell();
+			if (cell != null && cell != m_currentCell)
+			{
+				m_isDragging = true;
+				m_currentCell = cell;
+				ApplyDragToCell(cell);
+			}
+		}
+		else if (Input.GetMouseButtonUp(0) && m_startingCell != null)
+		{
+			m_startingCell = null;
+			m_currentCell = null;
+			m_isDragging = false;
 		}
 	}
 
-	private void CellClicked(QueensGridCell cell)
+	private void ApplyDragToCell(QueensGridCell cell)
 	{
-		if (m_grid == null) return;
+		if (m_grid == null || cell == null) return;
 		int idx = cell.CellIndex;
-		int currentValue = m_grid.GetPlayerSolution(idx);
-		float now = Time.time;
+		int val = m_grid.GetPlayerSolution(idx);
 
-		// Double-click detection: place queen
-		bool isDoubleClick = (idx == m_lastClickCellIndex) && (now - m_lastClickTime < DOUBLE_CLICK_TIME);
-		m_lastClickTime = now;
-		m_lastClickCellIndex = idx;
-
-		if (isDoubleClick)
+		if (m_dragIsMarking)
 		{
-			// Double click on empty or X cell -> place queen
-			if (currentValue == QueensGrid.X)
+			if (val == QueensGrid.NONE)
+				m_grid.MarkXCell(idx);
+		}
+		else
+		{
+			if (val == QueensGrid.X)
 				m_grid.ClearCell(idx);
-			if (currentValue != QueensGrid.QUEEN)
-				m_grid.MarkQueenCell(idx);
-			// Reset to prevent triple-click
-			m_lastClickCellIndex = -1;
-			return;
-		}
-
-		// Single click logic
-		if (currentValue == QueensGrid.NONE)
-		{
-			m_grid.MarkXCell(idx);
-		}
-		else if (currentValue == QueensGrid.X)
-		{
-			m_grid.ClearCell(idx);
-		}
-		else if (currentValue == QueensGrid.QUEEN)
-		{
-			// Can't undo queens in scheme A
 		}
 	}
 
 	public override void KillInput()
 	{
 		m_lastClickCellIndex = -1;
+		m_startingCell = null;
+		m_currentCell = null;
+		m_isDragging = false;
 	}
 }
