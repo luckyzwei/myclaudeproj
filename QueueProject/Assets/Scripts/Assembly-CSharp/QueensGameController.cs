@@ -334,11 +334,11 @@ public class QueensGameController : MonoBehaviour
 		if (m_grid != null)
 			m_grid.DisableInput();
 
-		// Wait for celebration sound to finish, with a reasonable cap
-		float waitTime = 2f;
+		// Wait for celebration audio, or a short default if no audio
+		float waitTime = 1.5f;
 		var sfx = CurrentSFX;
 		if (sfx != null && sfx.QueenCelebrate != null && sfx.QueenCelebrate.audioClip != null)
-			waitTime = Mathf.Min(sfx.QueenCelebrate.audioClip.length, 4f);
+			waitTime = Mathf.Min(sfx.QueenCelebrate.audioClip.length, 3f);
 
 		yield return new WaitForSeconds(waitTime);
 

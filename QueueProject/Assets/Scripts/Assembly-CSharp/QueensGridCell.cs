@@ -13,6 +13,10 @@ public class QueensGridCell : MonoBehaviour
 
 	private const string ANIM_OUTLINE_HIGHLIGHT = "Outline-Highlight";
 
+	private const string ANIM_CELEBRATE_L = "Celebrate-L";
+
+	private const string ANIM_CELEBRATE_R = "Celebrate-R";
+
 	private const string ANIM_IN = "In";
 
 	private const string ANIM_OUT_L = "Out-L";
@@ -263,6 +267,9 @@ public class QueensGridCell : MonoBehaviour
 			// enables Queen SpriteRenderer, activates both crowns
 			if (m_queenAnimator != null)
 				m_queenAnimator.Play(ANIM_ANIM_TILE_QUEEN_VISIBLE);
+			// Hide BaseCrown to avoid two overlapping crowns (Visible activates both)
+			if (m_baseCrownSprite != null)
+				m_baseCrownSprite.gameObject.SetActive(false);
 		}
 	}
 
@@ -336,16 +343,26 @@ public class QueensGridCell : MonoBehaviour
 	public void Celebrate(bool left)
 	{
 		m_value = QueensGrid.QUEEN;
+
 		float crownScale = 0.76f;
 		if (m_flourishCrownSprite != null)
 			m_flourishCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
 		if (m_baseCrownSprite != null)
 			m_baseCrownSprite.transform.localScale = new Vector3(crownScale, crownScale, crownScale);
 
-		// Out-L/Out-R on AC-Tile: Queen rotates ±20°, scales 1.4x, moves up, Background shows color, glow
+		// Restore Queen SpriteRenderer (In animation disables it at the end, WDV=0 won't restore)
+		if (m_queenColour != null)
+			m_queenColour.enabled = true;
+
+		// Ensure FlourishCrown active, hide BaseCrown (avoid two crowns overlapping)
+		if (m_flourishCrownSprite != null)
+			m_flourishCrownSprite.gameObject.SetActive(true);
+		if (m_baseCrownSprite != null)
+			m_baseCrownSprite.gameObject.SetActive(false);
+
+		// Play Out-L/Out-R: Queen rotates ±20° + scales 1.4x + moves up + VFX
 		if (m_queenAnimator != null)
 			m_queenAnimator.Play(left ? ANIM_OUT_L : ANIM_OUT_R);
-		PlayQueenVFX();
 	}
 
 	public void Flip(bool x, bool y)
