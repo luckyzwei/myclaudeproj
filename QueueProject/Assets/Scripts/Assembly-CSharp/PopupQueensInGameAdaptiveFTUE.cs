@@ -37,20 +37,27 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 
 	public static bool TryToStart(Action finishCallback)
 	{
-		// FTUE tutorial - skip for now, just invoke callback
-		finishCallback?.Invoke();
-		return false;
+		if (KWCore.SaveData.BucketGameplay.FtueGameplayCompleted)
+		{
+			finishCallback?.Invoke();
+			return false;
+		}
+
+		string prefabName = GetPrefabName();
+		return StartFTUEPopUp(prefabName, finishCallback);
 	}
 
 	public static bool TryToStartExpert(Action finishCallback)
 	{
-		finishCallback?.Invoke();
-		return false;
+		string prefabName = GetExpertPrefabName();
+		return StartFTUEPopUp(prefabName, finishCallback);
 	}
 
 	private static bool StartFTUEPopUp(string prefabName, Action finishCallback)
 	{
+		UnityEngine.Debug.Log($"[FTUE] StartFTUEPopUp prefab={prefabName}");
 		var popup = ShowPopup<PopupQueensInGameAdaptiveFTUE>(prefabName, null);
+		UnityEngine.Debug.Log($"[FTUE] ShowPopup returned: {(popup != null ? popup.name : "NULL")}");
 		if (popup != null)
 		{
 			popup.m_finishCallback = finishCallback;
@@ -84,6 +91,8 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 
 	private void Start()
 	{
+		UnityEngine.Debug.Log($"[FTUE] Start() - m_steps={m_steps?.Length ?? -1}, m_continueButton={m_continueButton != null}, m_hintButton={m_hintButton != null}");
+
 		if (m_continueButton != null)
 			m_continueButton.onClick.AddListener(ContinueButtonPressed);
 		if (m_hintButton != null)
@@ -92,6 +101,27 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 		// Find grid
 		if (QueensGameController.Instance != null)
 			m_grid = QueensGameController.Instance.Grid;
+
+		UnityEngine.Debug.Log($"[FTUE] Grid={m_grid != null}, QueensGameController.Instance={QueensGameController.Instance != null}");
+
+		// Debug: check popup visibility
+		var rt = GetComponent<RectTransform>();
+		UnityEngine.Debug.Log($"[FTUE] Popup pos={transform.position}, localPos={transform.localPosition}, siblingIndex={transform.GetSiblingIndex()}, parent={transform.parent?.name}, childCount={transform.childCount}");
+		if (rt != null) UnityEngine.Debug.Log($"[FTUE] RectTransform size={rt.sizeDelta}, anchors=({rt.anchorMin},{rt.anchorMax}), pivot={rt.pivot}");
+		var cg = GetComponent<CanvasGroup>();
+		if (cg != null) UnityEngine.Debug.Log($"[FTUE] CanvasGroup alpha={cg.alpha}, interactable={cg.interactable}, blocksRaycasts={cg.blocksRaycasts}");
+		var canvas = GetComponent<Canvas>();
+		if (canvas != null) UnityEngine.Debug.Log($"[FTUE] Canvas overrideSorting={canvas.overrideSorting}, sortingOrder={canvas.sortingOrder}");
+		else UnityEngine.Debug.Log("[FTUE] No Canvas component on popup root - may be behind GameScreen!");
+
+		// Force to front
+		transform.SetAsLastSibling();
+
+		// Let clicks pass through to the grid/ControlPad underneath
+		var canvasGroup = GetComponent<CanvasGroup>();
+		if (canvasGroup == null)
+			canvasGroup = gameObject.AddComponent<CanvasGroup>();
+		canvasGroup.blocksRaycasts = false;
 
 		Config(0);
 	}
@@ -116,17 +146,27 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 
 	private void PlayNextStep()
 	{
+		UnityEngine.Debug.Log($"[FTUE] PlayNextStep - step={m_step}, m_steps={(m_steps != null ? m_steps.Length.ToString() : "NULL")}");
 		if (m_steps == null || m_step >= m_steps.Length)
 		{
+			UnityEngine.Debug.Log("[FTUE] No more steps, finishing");
 			OnStepFinished();
 			return;
 		}
 
-		var step = m_steps[m_step];
-		if (step != null)
-			step.Play(m_grid, () => { m_continue = true; });
-
 		m_continue = false;
+
+		var step = m_steps[m_step];
+		UnityEngine.Debug.Log($"[FTUE] Playing step {m_step}: {(step != null ? step.name : "NULL")}");
+		if (step != null)
+		{
+			step.Play(m_grid, () =>
+			{
+				m_continue = true;
+				m_step++;
+				PlayNextStep();
+			});
+		}
 	}
 
 	private void OnStepFinished()
@@ -147,6 +187,9 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 
 	public void ContinueButtonPressed()
 	{
+		if (m_continue)
+			return; // Step already completed and auto-advanced, ignore duplicate
+
 		m_continue = true;
 		m_step++;
 		if (m_steps != null && m_step < m_steps.Length)

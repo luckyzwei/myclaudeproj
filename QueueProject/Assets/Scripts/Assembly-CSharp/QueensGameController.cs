@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Balancy.Models;
 using KWCore.UI;
+using KWGameCore.Events;
 using UnityEngine;
 
 public class QueensGameController : MonoBehaviour
@@ -229,6 +230,8 @@ public class QueensGameController : MonoBehaviour
 
 		StartLevelTimer();
 		ApplySFX();
+
+		GameCoreEvents.SendGameStartedEvent();
 	}
 
 	private void OnQueenMarked(int cellIndex)

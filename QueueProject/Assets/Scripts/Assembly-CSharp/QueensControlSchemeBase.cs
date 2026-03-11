@@ -20,7 +20,7 @@ public abstract class QueensControlSchemeBase : MonoBehaviour
 
 	protected bool IsActive()
 	{
-		return m_grid != null && m_grid.IsInputEnabled && !m_grid.m_isFTUEActive;
+		return m_grid != null && m_grid.IsInputEnabled;
 	}
 
 	protected QueensGridCell GetCell()

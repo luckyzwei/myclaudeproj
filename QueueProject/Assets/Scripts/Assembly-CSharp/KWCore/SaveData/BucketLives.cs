@@ -11,42 +11,46 @@ namespace KWCore.SaveData
 
 		public static int TotalLivesLost
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetInt(TOTAL_LIVES_LOST); }
+			set { GetBucket().SetInt(TOTAL_LIVES_LOST, value); }
 		}
 
 		public override string GetBucketKey()
 		{
-			return null;
+			return BUCKET_KEY;
 		}
 
 		public override bool IsStoredInCloud()
 		{
-			return false;
+			return true;
 		}
 
 		private static BucketLives GetBucket()
 		{
-			return null;
+			if (s_bucketlives == null)
+			{
+				s_bucketlives = new BucketLives();
+				s_bucketlives.LoadFromDisk();
+			}
+			return s_bucketlives;
 		}
 
 		public static int GetTotalLivesLost(int defaultValue = 0)
 		{
-			return 0;
+			return GetBucket().GetInt(TOTAL_LIVES_LOST, defaultValue);
 		}
 
 		public static void SetTotalLivesLost(int value)
 		{
+			GetBucket().SetInt(TOTAL_LIVES_LOST, value);
+			GetBucket().SaveToDisk();
 		}
 
 		public static int IncrementAndSetTotalLivesLost(int increment = 1)
 		{
-			return 0;
+			int result = GetBucket().IncrementAndSetInt(TOTAL_LIVES_LOST, increment);
+			GetBucket().SaveToDisk();
+			return result;
 		}
 	}
 }

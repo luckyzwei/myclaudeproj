@@ -27,25 +27,73 @@ public class AddQueenFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		m_queensCount = 0;
+
+		if (m_grid != null)
+		{
+			m_grid.SetFtueMode();
+			m_grid.ClearFtueTargets();
+
+			if (m_ftueCells != null)
+			{
+				for (int i = 0; i < m_ftueCells.Length; i++)
+					m_grid.AddFtueTarget(m_ftueCells[i].x, m_ftueCells[i].y);
+			}
+
+			m_grid.QueenMarked += QueenMarked;
+			m_grid.CrossMarked += CrossMarked;
+			m_grid.LifeLost += OnLifeLost;
+		}
+
+		ConfigureFTUEHand();
 	}
 
 	private void ConfigureFTUEHand()
 	{
+		if (m_hand != null && m_showHandAtStart && m_ftueCells != null && m_ftueCells.Length > 0)
+		{
+			var cell = m_grid != null ? m_grid.GetCell(m_ftueCells[0].x, m_ftueCells[0].y) : null;
+			if (cell != null)
+				m_hand.Config(cell);
+		}
 	}
 
 	private void CrossMarked(int cellIndex)
 	{
+		if (m_removeHilightOnCross && m_grid != null)
+		{
+			// Cross was placed - possibly play wrong animation
+		}
 	}
 
 	private void OnLifeLost(int cellIndex)
 	{
+		if (m_wrongPLayable != null)
+			m_wrongPLayable.Play();
 	}
 
 	protected override void Finished()
 	{
+		if (m_grid != null)
+		{
+			m_grid.QueenMarked -= QueenMarked;
+			m_grid.CrossMarked -= CrossMarked;
+			m_grid.LifeLost -= OnLifeLost;
+
+			if (m_clearFtueCellsAtEnd)
+				m_grid.ClearFtueTargets();
+		}
+		if (m_hand != null)
+			m_hand.Hide();
+		base.Finished();
 	}
 
 	private void QueenMarked(int cellIndex)
 	{
+		m_queensCount++;
+		if (m_queensCount >= m_queensNeeded)
+		{
+			Finished();
+		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cinemachine;
+using KWCore.SaveData;
 using KWCore.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -240,11 +241,14 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 			m_currentLevelScriptable = puzzle;
 		}
+		else if (!BucketGameplay.FtueGameplayCompleted && m_ftueLevel != null)
+		{
+			// First time: use the FTUE tutorial level (3x4 simplified)
+			m_currentLevelScriptable = m_ftueLevel;
+		}
 		else if (m_levelOrder != null)
 		{
-			int currentLevel = 0;
-			if (LevelManager.Exist)
-				currentLevel = 0; // Would get from save data
+			int currentLevel = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
 			m_currentLevelScriptable = m_levelOrder.GetLevel(currentLevel);
 		}
 

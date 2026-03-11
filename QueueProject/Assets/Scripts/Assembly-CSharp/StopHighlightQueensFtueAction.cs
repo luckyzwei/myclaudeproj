@@ -7,5 +7,8 @@ public class StopHighlightQueensFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		if (m_grid != null)
+			m_grid.ClearFtueTargets();
+		Finished();
 	}
 }

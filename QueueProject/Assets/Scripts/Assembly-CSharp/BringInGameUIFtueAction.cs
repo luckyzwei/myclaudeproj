@@ -7,9 +7,11 @@ public class BringInGameUIFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		Invoke(nameof(BringInUIWithDelay), m_delay);
 	}
 
 	private void BringInUIWithDelay()
 	{
+		Finished();
 	}
 }

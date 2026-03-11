@@ -22,102 +22,97 @@ namespace KWCore.SaveData
 
 		public static int MaxRanking
 		{
-			get
-			{
-				return 0;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetInt(MAX_RANKING); }
+			set { GetBucket().SetInt(MAX_RANKING, value); }
 		}
 
 		public static List<string> GlobalBots
 		{
-			get
-			{
-				return null;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetList<string>(GLOBAL_BOTS); }
+			set { GetBucket().SetList(GLOBAL_BOTS, value); }
 		}
 
 		public static long BotTimeBank
 		{
-			get
-			{
-				return 0L;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetLong(BOT_TIME_BANK); }
+			set { GetBucket().SetLong(BOT_TIME_BANK, value); }
 		}
 
 		public static long BotScoreTimeStamp
 		{
-			get
-			{
-				return 0L;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetLong(BOT_SCORE_TIME_STAMP); }
+			set { GetBucket().SetLong(BOT_SCORE_TIME_STAMP, value); }
 		}
 
 		public override string GetBucketKey()
 		{
-			return null;
+			return BUCKET_KEY;
 		}
 
 		public override bool IsStoredInCloud()
 		{
-			return false;
+			return true;
 		}
 
 		private static BucketLeague GetBucket()
 		{
-			return null;
+			if (s_bucketleague == null)
+			{
+				s_bucketleague = new BucketLeague();
+				s_bucketleague.LoadFromDisk();
+			}
+			return s_bucketleague;
 		}
 
 		public static int GetMaxRanking(int defaultValue = 0)
 		{
-			return 0;
+			return GetBucket().GetInt(MAX_RANKING, defaultValue);
 		}
 
 		public static void SetMaxRanking(int value)
 		{
+			GetBucket().SetInt(MAX_RANKING, value);
+			GetBucket().SaveToDisk();
 		}
 
 		public static int IncrementAndSetMaxRanking(int increment = 1)
 		{
-			return 0;
+			int result = GetBucket().IncrementAndSetInt(MAX_RANKING, increment);
+			GetBucket().SaveToDisk();
+			return result;
 		}
 
 		public static List<string> GetGlobalBots()
 		{
-			return null;
+			return GetBucket().GetList<string>(GLOBAL_BOTS);
 		}
 
 		public static void SetGlobalBots(List<string> value)
 		{
+			GetBucket().SetList(GLOBAL_BOTS, value);
+			GetBucket().SaveToDisk();
 		}
 
 		public static long GetBotTimeBank(long defaultValue = 0L)
 		{
-			return 0L;
+			return GetBucket().GetLong(BOT_TIME_BANK, defaultValue);
 		}
 
 		public static void SetBotTimeBank(long value)
 		{
+			GetBucket().SetLong(BOT_TIME_BANK, value);
+			GetBucket().SaveToDisk();
 		}
 
 		public static long GetBotScoreTimeStamp(long defaultValue = 0L)
 		{
-			return 0L;
+			return GetBucket().GetLong(BOT_SCORE_TIME_STAMP, defaultValue);
 		}
 
 		public static void SetBotScoreTimeStamp(long value)
 		{
+			GetBucket().SetLong(BOT_SCORE_TIME_STAMP, value);
+			GetBucket().SaveToDisk();
 		}
 	}
 }

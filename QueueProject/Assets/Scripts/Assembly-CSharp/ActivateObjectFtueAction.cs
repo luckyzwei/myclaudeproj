@@ -10,5 +10,8 @@ public class ActivateObjectFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		if (m_target != null)
+			m_target.SetActive(m_active);
+		Finished();
 	}
 }

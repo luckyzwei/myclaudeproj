@@ -587,6 +587,7 @@ public class QueensGrid : MonoBehaviour
 		if (!m_inputEnabled && !isDefaultQueen) return;
 		if (m_playerSolution == null || cellIndex < 0 || cellIndex >= m_playerSolution.Length) return;
 		if (m_levelData == null) return;
+		if (!isDefaultQueen && !IsFTUETarget(cellIndex)) return;
 
 		// Check if this is actually a queen position
 		bool isCorrect = m_levelData.GetQueen(cellIndex);
@@ -679,6 +680,7 @@ public class QueensGrid : MonoBehaviour
 		if (!m_inputEnabled && !hint) return;
 		if (m_playerSolution == null || cellIndex < 0 || cellIndex >= m_playerSolution.Length) return;
 		if (m_playerSolution[cellIndex] != NONE) return;
+		if (!hint && !IsFTUETarget(cellIndex)) return;
 
 		m_playerSolution[cellIndex] = X;
 		var cell = GetCell(cellIndex);

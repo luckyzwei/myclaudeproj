@@ -10,5 +10,16 @@ public class HideBoardCoverFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		if (m_cellMasks != null)
+		{
+			for (int i = 0; i < m_cellMasks.Length; i++)
+			{
+				if (m_cellMasks[i] != null)
+					m_cellMasks[i].SetActive(false);
+			}
+		}
+		if (m_background != null)
+			m_background.SetActive(false);
+		Finished();
 	}
 }

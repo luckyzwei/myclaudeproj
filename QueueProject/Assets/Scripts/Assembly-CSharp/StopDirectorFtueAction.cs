@@ -7,6 +7,9 @@ public class StopDirectorFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		if (m_directorHelper != null)
+			m_directorHelper.Stop();
+		Finished();
 	}
 
 	private void Reset()

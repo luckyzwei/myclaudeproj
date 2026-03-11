@@ -2,6 +2,8 @@ namespace KWCore.SaveData
 {
 	public class BucketRating : BucketBase
 	{
+		private const string BUCKET_KEY = "BUCKET_RATING";
+
 		[KeyBool]
 		private const string RATING_SHOWN = "RATING_SHOWN";
 
@@ -9,18 +11,13 @@ namespace KWCore.SaveData
 
 		public static bool RatingShown
 		{
-			get
-			{
-				return false;
-			}
-			set
-			{
-			}
+			get { return GetBucket().GetBool(RATING_SHOWN); }
+			set { GetBucket().SetBool(RATING_SHOWN, value); }
 		}
 
 		public override string GetBucketKey()
 		{
-			return null;
+			return BUCKET_KEY;
 		}
 
 		public override bool IsStoredInCloud()
@@ -30,16 +27,23 @@ namespace KWCore.SaveData
 
 		private static BucketRating GetBucket()
 		{
-			return null;
+			if (s_bucketrating == null)
+			{
+				s_bucketrating = new BucketRating();
+				s_bucketrating.LoadFromDisk();
+			}
+			return s_bucketrating;
 		}
 
 		public static bool GetRatingShown(bool defaultValue = false)
 		{
-			return false;
+			return GetBucket().GetBool(RATING_SHOWN, defaultValue);
 		}
 
 		public static void SetRatingShown(bool value)
 		{
+			GetBucket().SetBool(RATING_SHOWN, value);
+			GetBucket().SaveToDisk();
 		}
 	}
 }

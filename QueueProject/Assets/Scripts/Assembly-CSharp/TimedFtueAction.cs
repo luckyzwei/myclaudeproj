@@ -7,5 +7,11 @@ public class TimedFtueAction : BaseFtueAction
 
 	public override void Play()
 	{
+		Invoke(nameof(TimerFinished), m_time);
+	}
+
+	private void TimerFinished()
+	{
+		Finished();
 	}
 }
