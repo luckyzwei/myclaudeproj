@@ -331,11 +331,12 @@ public class QueensGameController : MonoBehaviour
 
 	private IEnumerator WinSequence()
 	{
+		UnityEngine.Debug.Log("[WinSequence] Started");
 		if (m_grid != null)
 			m_grid.DisableInput();
 
-		// Wait for queen Out-L/Out-R main motion (~0.63s real time), plus a brief pause
 		yield return new WaitForSeconds(0.8f);
+		UnityEngine.Debug.Log("[WinSequence] After 0.8s wait");
 
 		// Play fullscreen ScoreCelebrations VFX ("Awesome!" text + star burst)
 		GameObject scoreCelebrationGO = FindScoreCelebrations();
@@ -346,13 +347,17 @@ public class QueensGameController : MonoBehaviour
 			if (feedbackText != null)
 				feedbackText.Activate("Awesome!");
 		}
+
+		UnityEngine.Debug.Log($"[WinSequence] About to call LevelComplete. GameManager.Instance={GameManager.Instance != null}");
+		if (GameManager.Instance != null)
+		{
+			GameManager.Instance.LevelComplete();
+			UnityEngine.Debug.Log("[WinSequence] LevelComplete called successfully");
+		}
 		else
 		{
-			UnityEngine.Debug.LogWarning("[WinSequence] ScoreCelebrations not found in scene");
+			UnityEngine.Debug.LogError("[WinSequence] GameManager.Instance is null!");
 		}
-
-		if (GameManager.Instance != null)
-			GameManager.Instance.LevelComplete();
 	}
 
 	private GameObject FindScoreCelebrations()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
 using KWUserInterface;
@@ -81,6 +82,42 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private PopupInputBlocker m_popupInputBlocker;
 
+	// Names to hide only when they are direct children of "Content-Size Fitted !!"
+	private static readonly HashSet<string> s_contentSizeFittedHideNames = new HashSet<string>
+	{
+		"Header",
+		"Collection",
+		"Collection-LayoutGroup",
+	};
+
+	// Top-level containers to hide (server/social features that don't work offline)
+	private static readonly HashSet<string> s_hideNames = new HashSet<string>
+	{
+		"Widget-Challenged [Please Keep This Active]",
+		"WinStreak-Container",
+		"Widget-WinStreak-Notification",
+		"Widget-WeekDayStreak",
+		"Button-StreakRepair",
+		"Widget-LiveLeaderboard",
+		"League",
+		"Button-VIP",
+		"Widget-VIPEventTimer",
+		"Button-NoAdsOfferParent",
+		"Button-QueenEvent",
+		"Widget-QueensEventCounter",
+		"Widget-Notification",
+		"Widget-Bank-Currency",
+		"Widget-DailyMissions-Animated",
+		"Button-DailyChallenge",
+		"Button-DailyChallengeRV",
+		"Button-RVReward",
+		"Button-Play-ExpertModeNext",
+		"Button-Play-ExpertModeBuy",
+		"Button-Accept",
+		"Button-Accept with auto X",
+		"Text-Difficulty",
+	};
+
 	private void Awake()
 	{
 		m_multiplier = 1;
@@ -90,17 +127,10 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private void InitializeWinStreak()
 	{
-		// Skip - win streak feature
 	}
 
 	private void InitializeButtons()
 	{
-		if (m_buttonController != null)
-		{
-			// Show next button by default
-		}
-
-		// Hide RV button (ads skipped)
 		if (m_rvButtonObject != null)
 			m_rvButtonObject.gameObject.SetActive(false);
 	}
@@ -123,45 +153,34 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private void ApplyQueensEventRewardsIfNeeded()
 	{
-		// Skip - queen event rewards
 	}
 
 	private void HandleSubscriptionState()
 	{
-		// Skip - subscriptions
 	}
 
 	private void SendCurrencyEarnedAnalytics()
 	{
-		// Skip - analytics
 	}
 
 	private void HandleDailySubscriptionReward()
 	{
-		// Skip - subscriptions
 	}
 
 	private void PlayIntroAnimation()
 	{
-		if (m_screenAnimator != null)
-		{
-			// Play intro animation if available
-		}
 	}
 
 	private void ShowBeatenPlayersPercent()
 	{
-		// Skip - server/leaderboard
 	}
 
 	private void DisplayLeaderboardData(LeaderboardData leaderboardData = null)
 	{
-		// Skip - leaderboard
 	}
 
 	private void AnimEvent_PlayTimeSFX()
 	{
-		// Skip - SFX
 	}
 
 	protected string GetSourceAnalyticsString()
@@ -182,7 +201,6 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private void SetInputBlocker()
 	{
-		// Skip - input blocker popup
 	}
 
 	private void ShowSpecialOffer(Action finished)
@@ -202,12 +220,10 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	public void AnimEvent_TryShowSpecialOfferLevelComplete()
 	{
-		// Skip - special offers
 	}
 
 	private void OnPlayerMovementDone(bool movement)
 	{
-		// Skip - leaderboard movement
 	}
 
 	private bool IsQueenLevelReached()
@@ -222,20 +238,44 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	protected virtual void Start()
 	{
+		// Step 1: Disable Animator so it doesn't fight our layout
+		var animator = GetComponent<Animator>();
+		if (animator != null)
+			animator.enabled = false;
+
+		// Step 2: Recursively show all descendants
+		ForceShowAllRecursive(transform);
+
+		// Step 3: Hide specific unwanted containers
+		HideUnwantedRecursive(transform);
+
+		// Step 3b: Hide Header/Collection only under "Content-Size Fitted !!"
+		HideContentSizeFittedChildren();
+
+		// Step 4: Ensure CanvasGroup is visible
+		if (m_canvasGroup != null)
+		{
+			m_canvasGroup.alpha = 1f;
+			m_canvasGroup.interactable = true;
+			m_canvasGroup.blocksRaycasts = true;
+		}
+
+		// Step 5: Setup content
 		InitializeButtons();
 		InitializeRewardsAndMultiplier();
 		UpdatePercentageCompleteUI();
-		PlayIntroAnimation();
 
 		// Set complete text
 		if (m_completeText != null)
 		{
 			bool isChallenge = GameManager.Instance != null &&
 				GameManager.Instance.CurrentGameMode == GameManager.GameMode.DAILY_CHALLENGE;
-			m_completeText.text = isChallenge ? "Challenge Complete!" : "Level Complete!";
+			string key = isChallenge ? CHALLENGE_COMPLETE_KEY : LEVEL_COMPLETE_KEY;
+			string text = Kwalee.GetLocalisedText(key);
+			m_completeText.text = !string.IsNullOrEmpty(text) ? text : (isChallenge ? "挑战完成！" : "关卡完成！");
 		}
 
-		// Show expert mode header if applicable
+		// Expert mode header
 		if (m_mainHeader != null && m_expertModeHeader != null)
 		{
 			bool isExpert = GameManager.Instance != null &&
@@ -244,7 +284,7 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 			m_expertModeHeader.SetActive(isExpert);
 		}
 
-		// Show level number
+		// Queen count
 		if (m_queensNumber != null && GameManager.Instance != null &&
 			GameManager.Instance.CurrentLevelScriptable != null)
 		{
@@ -253,17 +293,265 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 				m_queensNumber.text = levelData.sizeX.ToString();
 		}
 
+		// Fix "Collected Pieces" label text on Rewards component
+		FixRewardsText();
+
+		// Center Button-Home text alignment
+		FixButtonHomeTextAlignment();
+
+		// Populate rewards display
+		PopulateRewards();
+
 		GameplayEvents.SendLevelSolved();
+	}
+
+	private void FixRewardsText()
+	{
+		// Find all Text components and clear the "Collected Pieces" label
+		var allTexts = GetComponentsInChildren<Text>(true);
+		for (int i = 0; i < allTexts.Length; i++)
+		{
+			if (allTexts[i] != null && allTexts[i].text == "Collected Pieces")
+				allTexts[i].text = "";
+		}
+	}
+
+	private void FixButtonHomeTextAlignment()
+	{
+		// Find Button-Home and center its text
+		var buttonHome = FindChildRecursive(transform, "Button-Home");
+		if (buttonHome != null)
+		{
+			var texts = buttonHome.GetComponentsInChildren<Text>(true);
+			for (int i = 0; i < texts.Length; i++)
+			{
+				if (texts[i] != null)
+					texts[i].alignment = TextAnchor.MiddleCenter;
+			}
+		}
+	}
+
+	private void PopulateRewards()
+	{
+		// Determine coin reward based on level size
+		int coinReward = 10;
+		if (GameManager.Instance != null && GameManager.Instance.CurrentLevelScriptable != null)
+		{
+			var levelData = GameManager.Instance.CurrentLevelScriptable.data;
+			if (levelData != null)
+				coinReward = levelData.sizeX * 10;
+		}
+
+		Debug.Log($"[LevelCompleteScreen] PopulateRewards: coinReward={coinReward}, m_rewardWidget={m_rewardWidget != null}");
+
+		// Find the Rewards node under Content-Size Fitted (inner Rewards with RewardWidget)
+		var csf = FindChildRecursive(transform, "Content-Size Fitted !!");
+		if (csf == null) return;
+
+		var rewardsNode = FindChildDirect(csf, "Rewards");
+		if (rewardsNode == null) return;
+
+		// Get the RewardWidget on this node
+		var rewardWidget = rewardsNode.GetComponent<RewardWidget>();
+		if (rewardWidget == null)
+		{
+			Debug.Log("[LevelCompleteScreen] No RewardWidget on inner Rewards node");
+			return;
+		}
+
+		// Find Reward-LayoutGroup recursively under Rewards
+		var layoutTransform = FindChildRecursive(rewardsNode, "Reward-LayoutGroup");
+		if (layoutTransform == null)
+		{
+			Debug.Log("[LevelCompleteScreen] Reward-LayoutGroup not found, using rewardsNode directly");
+			layoutTransform = rewardsNode;
+		}
+
+		// Try to get ItemWithAmountCellPrefab via reflection
+		var prefabField = typeof(RewardWidget).GetField("m_ItemWithAmountCellPrefab",
+			System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+		var cellPrefab = prefabField?.GetValue(rewardWidget) as ItemWithAmountCell;
+
+		if (cellPrefab != null)
+		{
+			Debug.Log("[LevelCompleteScreen] Spawning reward cell from prefab");
+			var cellInstance = Instantiate(cellPrefab, layoutTransform);
+			cellInstance.gameObject.SetActive(true);
+
+			// Set the amount text on the spawned cell
+			var amountText = cellInstance.GetComponentInChildren<Text>(true);
+			if (amountText != null)
+				amountText.text = coinReward.ToString();
+
+			// Make sure the icon is visible
+			var images = cellInstance.GetComponentsInChildren<Image>(true);
+			for (int i = 0; i < images.Length; i++)
+				if (images[i] != null) images[i].gameObject.SetActive(true);
+		}
+		else
+		{
+			Debug.Log("[LevelCompleteScreen] No cell prefab, creating reward text");
+			CreateRewardText(layoutTransform, coinReward);
+		}
+	}
+
+	private void CreateRewardText(Transform parent, int coinReward)
+	{
+		// Icon + text row
+		var rowGO = new GameObject("RewardRow");
+		rowGO.transform.SetParent(parent, false);
+		var rowRT = rowGO.AddComponent<RectTransform>();
+		rowRT.sizeDelta = new Vector2(300, 80);
+		var hlg = rowGO.AddComponent<HorizontalLayoutGroup>();
+		hlg.childAlignment = TextAnchor.MiddleCenter;
+		hlg.spacing = 10;
+		hlg.childForceExpandWidth = false;
+		hlg.childForceExpandHeight = false;
+
+		// Coin icon - try to find an existing coin sprite from CoinWidget or similar
+		var iconGO = new GameObject("Icon");
+		iconGO.transform.SetParent(rowGO.transform, false);
+		var iconImg = iconGO.AddComponent<Image>();
+		// Try loading a coin sprite from resources
+		var coinSprite = Resources.Load<Sprite>("UI/icon_coin");
+		if (coinSprite == null)
+			coinSprite = Resources.Load<Sprite>("icons/coin");
+		if (coinSprite != null)
+			iconImg.sprite = coinSprite;
+		else
+			iconImg.color = new Color(1f, 0.84f, 0f); // Gold color as fallback
+		var iconLE = iconGO.AddComponent<LayoutElement>();
+		iconLE.preferredWidth = 60;
+		iconLE.preferredHeight = 60;
+
+		// Amount text
+		var textGO = new GameObject("Amount");
+		textGO.transform.SetParent(rowGO.transform, false);
+		var amountText = textGO.AddComponent<Text>();
+		amountText.text = $"+{coinReward}";
+		amountText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+		amountText.fontSize = 48;
+		amountText.alignment = TextAnchor.MiddleLeft;
+		amountText.color = Color.white;
+		amountText.horizontalOverflow = HorizontalWrapMode.Overflow;
+		var textLE = textGO.AddComponent<LayoutElement>();
+		textLE.preferredWidth = 200;
+		textLE.preferredHeight = 60;
+	}
+
+	private Transform FindChildRecursive(Transform parent, string name)
+	{
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			var child = parent.GetChild(i);
+			if (child.name == name)
+				return child;
+			var found = FindChildRecursive(child, name);
+			if (found != null)
+				return found;
+		}
+		return null;
+	}
+
+	private void ForceShowAllRecursive(Transform parent)
+	{
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			var child = parent.GetChild(i);
+			child.gameObject.SetActive(true);
+			child.localScale = Vector3.one;
+
+			var cg = child.GetComponent<CanvasGroup>();
+			if (cg != null)
+				cg.alpha = 1f;
+
+			ForceShowAllRecursive(child);
+		}
+	}
+
+	private void HideContentSizeFittedChildren()
+	{
+		var csf = FindChildRecursive(transform, "Content-Size Fitted !!");
+		if (csf == null)
+		{
+			Debug.Log("[LevelCompleteScreen] Content-Size Fitted !! not found");
+			return;
+		}
+		Debug.Log($"[LevelCompleteScreen] Found Content-Size Fitted !!, childCount={csf.childCount}");
+		for (int i = 0; i < csf.childCount; i++)
+		{
+			var child = csf.GetChild(i);
+			Debug.Log($"[LevelCompleteScreen] CSF child[{i}]: {child.name} active={child.gameObject.activeSelf}");
+			if (s_contentSizeFittedHideNames.Contains(child.name))
+			{
+				child.gameObject.SetActive(false);
+				Debug.Log($"[LevelCompleteScreen] Hiding CSF child: {child.name}");
+			}
+		}
+
+		// In the Buttons container under CSF, only keep Button-Home and Button-Next
+		var buttons = FindChildDirect(csf, "Buttons");
+		if (buttons != null)
+		{
+			Debug.Log($"[LevelCompleteScreen] Found Buttons under CSF, childCount={buttons.childCount}");
+			for (int i = 0; i < buttons.childCount; i++)
+			{
+				var child = buttons.GetChild(i);
+				if (child.name == "Button-Home" || child.name == "Button-Next")
+				{
+					child.gameObject.SetActive(true);
+					Debug.Log($"[LevelCompleteScreen] Keeping button: {child.name}");
+				}
+				else
+				{
+					child.gameObject.SetActive(false);
+					Debug.Log($"[LevelCompleteScreen] Hiding button: {child.name}");
+				}
+			}
+			// Make sure Buttons container itself is visible
+			buttons.gameObject.SetActive(true);
+			var buttonsCG = buttons.GetComponent<CanvasGroup>();
+			if (buttonsCG != null) buttonsCG.alpha = 1f;
+		}
+		else
+		{
+			Debug.Log("[LevelCompleteScreen] Buttons not found as direct child of CSF");
+		}
+	}
+
+	private Transform FindChildDirect(Transform parent, string name)
+	{
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			if (parent.GetChild(i).name == name)
+				return parent.GetChild(i);
+		}
+		return null;
+	}
+
+	private void HideUnwantedRecursive(Transform parent)
+	{
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			var child = parent.GetChild(i);
+			if (s_hideNames.Contains(child.name))
+			{
+				child.gameObject.SetActive(false);
+				// Don't recurse into hidden objects
+			}
+			else
+			{
+				HideUnwantedRecursive(child);
+			}
+		}
 	}
 
 	protected void SendLevelCompleteAnalyticStart()
 	{
-		// Skip - analytics
 	}
 
 	public void OnRewardRVButtonClicked()
 	{
-		// Skip - ads
 	}
 
 	private void DoubleReward()
@@ -307,7 +595,6 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 		}
 		else
 		{
-			// Start next level
 			if (GameManager.Instance != null)
 			{
 				var nextLevel = GameManager.Instance.GetNextLevelScriptable();
@@ -326,7 +613,6 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	public void AnimEvent_PopUpLevelCompleteShowRewards()
 	{
-		// Rewards display animation event
 	}
 
 	private void OnApplicationPause(bool pauseStatus)
@@ -340,21 +626,17 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private void ShowRateUs()
 	{
-		// Skip - rating
 	}
 
 	private void CheckForJigsawPuzzle(LevelDifficulty difficulty = LevelDifficulty.NORMAL)
 	{
-		// Skip - jigsaw puzzle feature
 	}
 
 	public void AnimEvent_ShowDailyStreak()
 	{
-		// Skip - daily streak
 	}
 
 	public void AnimEvent_ForceInterstitial()
 	{
-		// Skip - ads
 	}
 }

@@ -47,14 +47,40 @@ public class LevelCompleteScreenButtonsController : MonoBehaviour
 
 	private void Start()
 	{
-		// Set next level text
-		string nextText = Kwalee.GetLocalisedText(NEXT_LEVEL_KEY);
-		if (!string.IsNullOrEmpty(nextText) && m_nextLevelTexts != null)
+		// Determine next level number (index in levelOrder + 1 for display)
+		int nextLevel = 1;
+		if (GameManager.Instance != null && GameManager.Instance.LevelOrder != null
+			&& GameManager.Instance.LevelOrder.levelOrder != null
+			&& GameManager.Instance.LevelOrder.levelOrder.levels != null)
 		{
+			var levels = GameManager.Instance.LevelOrder.levelOrder.levels;
+			var current = GameManager.Instance.CurrentLevelScriptable;
+			for (int idx = 0; idx < levels.Count; idx++)
+			{
+				if (levels[idx] == current)
+				{
+					nextLevel = idx + 2; // current is idx, next is idx+1, display as 1-based
+					break;
+				}
+			}
+		}
+
+		// Set next level text with formatted level number
+		string nextText = Kwalee.GetLocalisedText(NEXT_LEVEL_KEY);
+		if (m_nextLevelTexts != null)
+		{
+			string displayText;
+			if (!string.IsNullOrEmpty(nextText) && nextText.Contains("{0}"))
+				displayText = string.Format(nextText, nextLevel);
+			else if (!string.IsNullOrEmpty(nextText))
+				displayText = nextText;
+			else
+				displayText = "下一关";
+
 			for (int i = 0; i < m_nextLevelTexts.Length; i++)
 			{
 				if (m_nextLevelTexts[i] != null)
-					m_nextLevelTexts[i].text = nextText;
+					m_nextLevelTexts[i].text = displayText;
 			}
 		}
 	}

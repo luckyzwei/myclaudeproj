@@ -334,8 +334,9 @@ public class GameManager : MonoSingleton<GameManager>
 	public void LevelComplete()
 	{
 		m_isInGame = false;
-		UnityEngine.Debug.Log("[GameManager] Level Complete!");
-		ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.LEVEL_COMPLETE);
+		UnityEngine.Debug.Log("[GameManager] LevelComplete() called");
+		var screen = ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.LEVEL_COMPLETE);
+		UnityEngine.Debug.Log($"[GameManager] ReplaceScreen returned: {(screen != null ? screen.name : "NULL")}");
 	}
 
 	private void GiveWeeklyLeaderboardScore(string context, int overrideScore = -1)

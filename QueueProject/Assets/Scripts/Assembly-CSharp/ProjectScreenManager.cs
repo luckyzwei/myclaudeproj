@@ -38,6 +38,7 @@ public static class ProjectScreenManager
 	public static Screen ReplaceScreen(ScreenID screen, bool pushBehind = false)
 	{
 		string dir = GetScreenDir(screen);
+		UnityEngine.Debug.Log($"[ProjectScreenManager] ReplaceScreen({screen}) → dir='{dir}', ScreenManager.Instance={ScreenManager.Instance != null}");
 		if (string.IsNullOrEmpty(dir)) return null;
 		return ScreenManager.Instance?.ReplaceScreen(dir, pushBehind);
 	}

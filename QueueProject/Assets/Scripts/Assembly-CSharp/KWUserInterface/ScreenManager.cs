@@ -67,9 +67,12 @@ namespace KWUserInterface
 		private Screen GetScreenModel(string prefabName)
 		{
 			GameObject prefab = Resources.Load<GameObject>(prefabName);
+			Debug.Log($"[ScreenManager] GetScreenModel('{prefabName}'): prefab={(prefab != null ? prefab.name : "NULL")}");
 			if (prefab != null)
 			{
-				return prefab.GetComponent<Screen>();
+				var screen = prefab.GetComponent<Screen>();
+				Debug.Log($"[ScreenManager] GetComponent<Screen>: {(screen != null ? screen.GetType().Name : "NULL")}");
+				return screen;
 			}
 			return null;
 		}
@@ -124,13 +127,19 @@ namespace KWUserInterface
 
 		public Screen PushScreen(Screen screen, bool pushBehind = true, bool disablePreviousScreen = true)
 		{
-			if (screen == null) return null;
+			if (screen == null) { Debug.LogError("[ScreenManager] PushScreen: screen is null!"); return null; }
+
+			Debug.Log($"[ScreenManager] PushScreen: {screen.name}, canvas={(m_canvas != null ? m_canvas.name : "NULL")}, pushBehind={pushBehind}");
 
 			Screen prevScreen = GetCurrentScreen();
 
 			if (m_canvas != null)
 			{
 				screen.transform.SetParent(m_canvas.transform, false);
+			}
+			else
+			{
+				Debug.LogWarning("[ScreenManager] PushScreen: m_canvas is null, screen has no parent canvas!");
 			}
 
 			if (pushBehind && prevScreen != null)
@@ -143,6 +152,7 @@ namespace KWUserInterface
 
 			DoScreenSwap(prevScreen, screen, disablePreviousScreen);
 
+			Debug.Log($"[ScreenManager] PushScreen complete. Screen active={screen.gameObject.activeSelf}, pos={screen.transform.position}");
 			return screen;
 		}
 
