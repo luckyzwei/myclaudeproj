@@ -1,5 +1,4 @@
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +13,7 @@ public class PopupJigsawCompleteIap : PopUpBase
 	private const string ANIM_ANIM_JIGSAWIAPFINISH = "Anim-JigsawIAPFinish";
 
 	[SerializeField]
-	private TextMeshProUGUI m_percentCompleteTMP;
+	private Text m_percentCompleteTMP;
 
 	[SerializeField]
 	private Image m_eventImage;
@@ -35,7 +34,7 @@ public class PopupJigsawCompleteIap : PopUpBase
 	private new AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_eventTMP;
+	private Text m_eventTMP;
 
 	private string m_eventId;
 

@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,10 +18,10 @@ public class CalendarWidget : MonoBehaviour
 	protected Button m_nextMonthButton;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_currentMonthText;
+	protected Text m_currentMonthText;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_currentYearText;
+	protected Text m_currentYearText;
 
 	[SerializeField]
 	protected GameObject m_playButton;

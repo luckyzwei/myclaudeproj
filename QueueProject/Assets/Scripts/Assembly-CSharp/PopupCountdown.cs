@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupCountdown : PopUpBase
@@ -10,7 +10,7 @@ public class PopupCountdown : PopUpBase
 	private const string ANIM_INTRO = "Intro";
 
 	[SerializeField]
-	private TMP_Text m_topText;
+	private Text m_topText;
 
 	public static void Show(Action closedCallback, string topText)
 	{

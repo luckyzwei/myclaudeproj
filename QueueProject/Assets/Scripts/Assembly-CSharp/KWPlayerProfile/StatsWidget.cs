@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Hiro;
 using Nakama;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 namespace KWPlayerProfile
@@ -14,7 +14,7 @@ namespace KWPlayerProfile
 		{
 			public T Id;
 
-			public TMP_Text TmpText;
+			public Text TmpText;
 		}
 
 		[SerializeField]

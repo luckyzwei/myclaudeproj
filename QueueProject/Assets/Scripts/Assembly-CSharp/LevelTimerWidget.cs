@@ -1,5 +1,5 @@
 using Balancy.Models;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelTimerWidget : MonoBehaviour
@@ -15,13 +15,13 @@ public class LevelTimerWidget : MonoBehaviour
 	private Animator m_clockAnimator;
 
 	[SerializeField]
-	private TMP_Text m_timerText;
+	private Text m_timerText;
 
 	[SerializeField]
-	private TMP_Text m_starsText;
+	private Text m_starsText;
 
 	[SerializeField]
-	private TMP_Text m_starsAltText;
+	private Text m_starsAltText;
 
 	[SerializeField]
 	private bool m_staticTime;

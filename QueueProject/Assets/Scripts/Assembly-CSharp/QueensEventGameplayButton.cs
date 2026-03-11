@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensEventGameplayButton : QueensEventLevelCompleteButton
@@ -6,7 +6,7 @@ public class QueensEventGameplayButton : QueensEventLevelCompleteButton
 	private const string ANIM_ANIM_EVENTBUTTON_HIT = "Anim-EventButton-Hit";
 
 	[SerializeField]
-	private TextMeshProUGUI m_gemCountText;
+	private Text m_gemCountText;
 
 	[SerializeField]
 	private AnimatorHelper m_animatorHelper;

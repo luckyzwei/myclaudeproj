@@ -1,5 +1,4 @@
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,7 @@ public class JigsawButton : MonoBehaviour
 	public delegate void ButtonClickedDelegate(JigsawButton button);
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private Image m_image;

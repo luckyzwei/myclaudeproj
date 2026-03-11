@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,7 @@ public class PlayButtonController : MonoBehaviour
 	private Button[] m_buttons;
 
 	[SerializeField]
-	private TMP_Text[] m_texts;
+	private Text[] m_texts;
 
 	private void Start()
 	{

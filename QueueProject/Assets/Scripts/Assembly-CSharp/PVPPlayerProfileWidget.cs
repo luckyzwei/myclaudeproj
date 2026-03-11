@@ -1,11 +1,10 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PVPPlayerProfileWidget : MonoBehaviour
 {
 	[SerializeField]
-	private TMP_Text m_PlayerNameText;
+	private Text m_PlayerNameText;
 
 	[SerializeField]
 	private AvatarContainer m_avatarContainer;

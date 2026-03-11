@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RoyalTouranmentResultSummaryPopup : PopUpBase
@@ -8,16 +8,16 @@ public class RoyalTouranmentResultSummaryPopup : PopUpBase
 	public const string PREFAB_NAME = "Prefabs/Popups/Popup-RoyalTournamentResultSummary";
 
 	[SerializeField]
-	private TextMeshProUGUI m_eliminatedText;
+	private Text m_eliminatedText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_positionText;
+	private Text m_positionText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_newBestText;
+	private Text m_newBestText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_bextText;
+	private Text m_bextText;
 
 	[SerializeField]
 	private GameObject m_newBestContainer;

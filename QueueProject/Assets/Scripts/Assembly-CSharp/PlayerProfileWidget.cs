@@ -1,5 +1,5 @@
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerProfileWidget : MonoBehaviour
@@ -9,7 +9,7 @@ public class PlayerProfileWidget : MonoBehaviour
 	private EditablePlayerNameContainer m_editablePlayerNameContainer;
 
 	[SerializeField]
-	private TMP_Text m_PlayerNameText;
+	private Text m_PlayerNameText;
 
 	[SerializeField]
 	private AvatarContainer m_avatarContainer;

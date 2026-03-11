@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -205,10 +204,10 @@ public class LeaderboardCell : MonoBehaviour, IScrollItemRecyclable
 	protected AnimatorHelper m_animator;
 
 	[SerializeField]
-	protected TMP_Text m_nameTMP;
+	protected Text m_nameTMP;
 
 	[SerializeField]
-	protected TMP_Text m_cellScoreTMP;
+	protected Text m_cellScoreTMP;
 
 	[SerializeField]
 	protected NumberFormatter m_rank;

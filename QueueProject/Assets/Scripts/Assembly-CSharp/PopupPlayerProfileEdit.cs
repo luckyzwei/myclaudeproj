@@ -1,5 +1,5 @@
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupPlayerProfileEdit : PopUpBase
@@ -18,7 +18,7 @@ public class PopupPlayerProfileEdit : PopUpBase
 	private EditablePlayerNameContainer m_nameInputContainer;
 
 	[SerializeField]
-	private TMP_Text m_serverIdText;
+	private Text m_serverIdText;
 
 	public static void Open()
 	{

@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ public class DecoramaWidget : MonoBehaviour
 	private GameObject m_decoramaTitleGO;
 
 	[SerializeField]
-	private TextMeshProUGUI m_decoramaTitleText;
+	private Text m_decoramaTitleText;
 
 	[SerializeField]
 	private Button m_buildButton;

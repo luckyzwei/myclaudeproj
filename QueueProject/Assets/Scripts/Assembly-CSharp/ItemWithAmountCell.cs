@@ -6,7 +6,6 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,7 +77,7 @@ public class ItemWithAmountCell : MonoBehaviour
 	private Image m_icon;
 
 	[SerializeField]
-	protected TMP_Text m_amount;
+	protected Text m_amount;
 
 	[SerializeField]
 	private bool m_displayAmount;

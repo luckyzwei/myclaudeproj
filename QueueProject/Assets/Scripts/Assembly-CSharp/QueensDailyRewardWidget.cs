@@ -1,5 +1,5 @@
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensDailyRewardWidget : MonoBehaviour
@@ -16,7 +16,7 @@ public class QueensDailyRewardWidget : MonoBehaviour
 	private AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TMP_Text m_lockText;
+	private Text m_lockText;
 
 	[SerializeField]
 	private string m_unlockTextKey;

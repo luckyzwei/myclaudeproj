@@ -1,7 +1,7 @@
 using KWPlayerProfile.WebImage;
 using KWPlayerProfile.Widget;
 using Nakama;
-using TMPro;
+using UnityEngine.UI;
 using UI.Widgets.Buttons;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,13 +10,13 @@ public class UserCellWidget : MonoBehaviour
 {
 	[Header("Texts")]
 	[SerializeField]
-	protected TMP_Text m_userName;
+	protected Text m_userName;
 
 	[SerializeField]
-	protected TMP_Text m_className;
+	protected Text m_className;
 
 	[SerializeField]
-	protected TMP_Text m_clanName;
+	protected Text m_clanName;
 
 	[Header("Widgets")]
 	[SerializeField]

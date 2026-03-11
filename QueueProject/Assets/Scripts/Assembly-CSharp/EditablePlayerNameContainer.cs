@@ -1,11 +1,11 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
-[RequireComponent(typeof(TMP_InputField))]
+[RequireComponent(typeof(InputField))]
 public class EditablePlayerNameContainer : MonoBehaviour, IUserContainer
 {
 	[SerializeField]
-	protected TMP_InputField m_nameInputField;
+	protected InputField m_nameInputField;
 
 	private string m_initialName;
 

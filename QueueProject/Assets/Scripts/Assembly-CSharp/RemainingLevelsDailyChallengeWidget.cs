@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RemainingLevelsDailyChallengeWidget : MonoBehaviour
@@ -7,7 +7,7 @@ public class RemainingLevelsDailyChallengeWidget : MonoBehaviour
 	private string m_widgetID;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private string m_formatKey;

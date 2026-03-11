@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(KPFGameLossAnalytics))]
@@ -26,14 +26,14 @@ public class GameOverPopUp : PopUpBase
 	private GameObject m_levelFailed;
 
 	[SerializeField]
-	private TextMeshProUGUI m_crownsAmount;
+	private Text m_crownsAmount;
 
 	[Space]
 	[SerializeField]
-	private TextMeshProUGUI m_reviveHeartsText;
+	private Text m_reviveHeartsText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_reviveText;
+	private Text m_reviveText;
 
 	[SerializeField]
 	private string m_reviveTextFormatKey;

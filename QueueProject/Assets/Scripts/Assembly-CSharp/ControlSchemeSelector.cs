@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class ControlSchemeSelector : MonoBehaviour
 	private Button m_nextControlSchemeButton;
 
 	[SerializeField]
-	private TMP_Text m_controlSchemeLabel;
+	private Text m_controlSchemeLabel;
 
 	[SerializeField]
 	private Transform m_root;

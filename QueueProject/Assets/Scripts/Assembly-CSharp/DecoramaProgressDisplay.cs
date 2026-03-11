@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,7 @@ public class DecoramaProgressDisplay : MonoBehaviour
 	private Image m_currencyImage;
 
 	[SerializeField]
-	private TextMeshProUGUI m_remainingCurrencyText;
+	private Text m_remainingCurrencyText;
 
 	private Transform m_parent;
 

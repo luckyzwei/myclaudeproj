@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Balancy.Models.SmartObjects;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using Price = Balancy.Models.SmartObjects.Price;
@@ -76,7 +76,7 @@ public class PriceWidget : MonoBehaviour
 
 	[FormerlySerializedAs("m_name")]
 	[SerializeField]
-	private TMP_Text m_nameText;
+	private Text m_nameText;
 
 	[SerializeField]
 	private GameObject m_loader;
@@ -88,7 +88,7 @@ public class PriceWidget : MonoBehaviour
 	[FormerlySerializedAs("m_iapPrice")]
 	[Header("IAP")]
 	[SerializeField]
-	private TMP_Text m_iapPriceText;
+	private Text m_iapPriceText;
 
 	[FormerlySerializedAs("m_appPurchaseGroup")]
 	[SerializeField]

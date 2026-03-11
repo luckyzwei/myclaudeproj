@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -143,10 +142,10 @@ public class PopupHint : PopUpBase
 	private const float MASK_SIZE = 190f;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
-	private TMP_Text m_hintTypeText;
+	private Text m_hintTypeText;
 
 	[SerializeField]
 	private Image[] m_masks;

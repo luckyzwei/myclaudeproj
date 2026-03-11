@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,7 @@ public class JigsawHomeWidget : MonoBehaviour
 	private Image m_poster;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private TabToolbar m_tabToolbar;
@@ -19,7 +18,7 @@ public class JigsawHomeWidget : MonoBehaviour
 	private GameObject m_lockOverlay;
 
 	[SerializeField]
-	private TMP_Text m_lockText;
+	private Text m_lockText;
 
 	[SerializeField]
 	private string m_lockFormatKey;

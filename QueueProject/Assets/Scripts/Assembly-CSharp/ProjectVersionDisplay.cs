@@ -1,10 +1,10 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ProjectVersionDisplay : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private string m_prefix;

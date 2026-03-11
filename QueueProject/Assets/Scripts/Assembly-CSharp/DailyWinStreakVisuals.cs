@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 
@@ -20,7 +20,7 @@ public class DailyWinStreakVisuals : MonoBehaviour
 	private AnimatorHelper m_flameAnimatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_daysTMP;
+	private Text m_daysTMP;
 
 	[SerializeField]
 	private Gradient2[] m_gradient2;

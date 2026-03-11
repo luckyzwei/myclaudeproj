@@ -1,7 +1,6 @@
 using System;
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
@@ -29,7 +28,7 @@ public class LeagueResultPopup : PopUpBase
 	private UnityEngine.UI.Extensions.Gradient m_nextLeagueGradient;
 
 	[SerializeField]
-	private TextMeshProUGUI m_nextLeagueName;
+	private Text m_nextLeagueName;
 
 	[SerializeField]
 	private GameObject m_promotionObject;

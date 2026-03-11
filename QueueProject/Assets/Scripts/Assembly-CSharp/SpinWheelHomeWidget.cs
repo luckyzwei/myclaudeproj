@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpinWheelHomeWidget : MonoBehaviour
@@ -17,7 +17,7 @@ public class SpinWheelHomeWidget : MonoBehaviour
 
 	[Header("Lock Text")]
 	[SerializeField]
-	private TextMeshProUGUI m_lockText;
+	private Text m_lockText;
 
 	[SerializeField]
 	private string m_lockPrefixKey;

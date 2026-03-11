@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -121,7 +120,7 @@ public class PopupJigsawViewer : PopUpBase
 	private Button m_closeBackgroundButton;
 
 	[SerializeField]
-	private TextMeshProUGUI m_puzzleText;
+	private Text m_puzzleText;
 
 	[SerializeField]
 	private Button m_jigsawFinishNowButton;

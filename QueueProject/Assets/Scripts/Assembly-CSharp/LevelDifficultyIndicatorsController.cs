@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelDifficultyIndicatorsController : MonoBehaviour
@@ -14,13 +14,13 @@ public class LevelDifficultyIndicatorsController : MonoBehaviour
 	private Color[] m_textColors;
 
 	[SerializeField]
-	private TMP_Text[] m_colorTexts;
+	private Text[] m_colorTexts;
 
 	[SerializeField]
-	private TMP_Text m_hardLevelText;
+	private Text m_hardLevelText;
 
 	[SerializeField]
-	private TMP_Text m_veryHardLevelText;
+	private Text m_veryHardLevelText;
 
 	private void Awake()
 	{

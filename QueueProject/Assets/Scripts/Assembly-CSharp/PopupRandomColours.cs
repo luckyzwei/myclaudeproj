@@ -1,5 +1,4 @@
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class PopupRandomColours : PopUpBase
 	private Toggle m_toggle;
 
 	[SerializeField]
-	private TMP_InputField m_inputField;
+	private InputField m_inputField;
 
 	private void Awake()
 	{

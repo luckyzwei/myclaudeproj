@@ -1,5 +1,4 @@
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,19 +20,19 @@ public class PopupDailyWinStreak : PopUpBase
 	private const string ANIM_ANIM_WINSTREAKPOPUP_STREAKBROKEN_TRANSITION = "Anim-WinStreakPopup-StreakBroken-Transition";
 
 	[SerializeField]
-	private TextMeshProUGUI m_playerNameTMP;
+	private Text m_playerNameTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_winStreakTMP;
+	private Text m_winStreakTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_levelTMP;
+	private Text m_levelTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_winRateTMP;
+	private Text m_winRateTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_maxStreakTMP;
+	private Text m_maxStreakTMP;
 
 	[SerializeField]
 	private DailyWinStreakWidget dailyWinStreakWidget;

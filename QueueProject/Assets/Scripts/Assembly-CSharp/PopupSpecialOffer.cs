@@ -2,7 +2,7 @@ using System;
 using Balancy.Models;
 using DG.Tweening;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupSpecialOffer : PopUpBase
@@ -32,25 +32,25 @@ public class PopupSpecialOffer : PopUpBase
 	private PriceWidget m_priceWidget;
 
 	[SerializeField]
-	private TextMeshProUGUI m_coinAmount;
+	private Text m_coinAmount;
 
 	[SerializeField]
-	private TextMeshProUGUI m_originalPriceText;
+	private Text m_originalPriceText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_iapText;
+	private Text m_iapText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_percentageOffText;
+	private Text m_percentageOffText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_valueText;
+	private Text m_valueText;
 
 	[SerializeField]
 	private AnimatorHelper m_iconAnimatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_title;
+	private Text m_title;
 
 	[SerializeField]
 	private GameObject m_discountTag;

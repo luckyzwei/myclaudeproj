@@ -1,7 +1,6 @@
 using System;
 using Balancy.Models.Inventory;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,13 +46,13 @@ public abstract class BoosterButton : MonoBehaviour
 
 	[Space]
 	[SerializeField]
-	private TextMeshProUGUI m_inventoryText;
+	private Text m_inventoryText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_priceText;
+	private Text m_priceText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_unlockLevel;
+	private Text m_unlockLevel;
 
 	[Space]
 	[SerializeField]

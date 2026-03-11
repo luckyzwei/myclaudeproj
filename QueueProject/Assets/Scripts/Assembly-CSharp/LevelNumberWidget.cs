@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelNumberWidget : MonoBehaviour
@@ -12,7 +12,7 @@ public class LevelNumberWidget : MonoBehaviour
 	private const string EXPERT_MODE_KEY = "GameScreen.LevelTextExpertMode";
 
 	[SerializeField]
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	private void Start()
 	{

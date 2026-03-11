@@ -1,6 +1,5 @@
 using System;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
@@ -21,10 +20,10 @@ public class LeaguePromotionPopup : PopUpBase
 	private Image m_nextLeagueIcon;
 
 	[SerializeField]
-	private TextMeshProUGUI m_nextLeagueName;
+	private Text m_nextLeagueName;
 
 	[SerializeField]
-	private TextMeshProUGUI m_titleText;
+	private Text m_titleText;
 
 	[SerializeField]
 	private UnityEngine.UI.Extensions.Gradient m_headerGradient;

@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AccountClashPopup : PopUpBase
@@ -8,7 +8,7 @@ public class AccountClashPopup : PopUpBase
 	public const string PREFAB_NAME = "Prefabs/Popups/PopUp-AccountClash";
 
 	[SerializeField]
-	private TextMeshProUGUI m_contentText;
+	private Text m_contentText;
 
 	[TextLookup(null, true)]
 	[SerializeField]

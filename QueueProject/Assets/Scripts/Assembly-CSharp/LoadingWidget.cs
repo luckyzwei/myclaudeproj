@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LoadingWidget : MonoBehaviour
@@ -7,7 +7,7 @@ public class LoadingWidget : MonoBehaviour
 	private GameObject m_spinner;
 
 	[SerializeField]
-	private TMP_Text m_noConnection;
+	private Text m_noConnection;
 
 	[SerializeField]
 	private float m_rotationSpeed;

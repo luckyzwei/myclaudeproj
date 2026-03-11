@@ -1,6 +1,5 @@
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,7 @@ public class PopupJigsawEventStart : PopUpBase
 	public const string PREFAB_NAME = "Prefabs/Popups/PopUp-NewJigsawEvent";
 
 	[SerializeField]
-	private TextMeshProUGUI m_eventName;
+	private Text m_eventName;
 
 	[SerializeField]
 	private Image m_image;

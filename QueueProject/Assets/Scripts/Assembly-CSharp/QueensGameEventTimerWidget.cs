@@ -1,5 +1,5 @@
 using Balancy.Models.SmartObjects.Conditions;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensGameEventTimerWidget : MonoBehaviour
@@ -10,7 +10,7 @@ public class QueensGameEventTimerWidget : MonoBehaviour
 	private string m_eventClientId;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	[SerializeField]
 	private bool m_weekDayFormat;

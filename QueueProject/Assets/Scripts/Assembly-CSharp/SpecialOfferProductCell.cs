@@ -1,6 +1,6 @@
 using Balancy.Models.LiveOps.Store;
 using Balancy.Models.Store;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpecialOfferProductCell : StoreProductCellCurrencyExplosion
@@ -14,10 +14,10 @@ public class SpecialOfferProductCell : StoreProductCellCurrencyExplosion
 	private GameObject m_valueTag;
 
 	[SerializeField]
-	private TextMeshProUGUI m_valueText;
+	private Text m_valueText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_percentageOffText;
+	private Text m_percentageOffText;
 
 	public override void Setup(Product product, Slot slot)
 	{

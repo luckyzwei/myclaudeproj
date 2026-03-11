@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WeeklyLeaderboardTimerWidget : MonoBehaviour
@@ -63,7 +63,7 @@ public class WeeklyLeaderboardTimerWidget : MonoBehaviour
 	}
 
 	[SerializeField]
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	private Coroutine m_timerCoroutine;
 

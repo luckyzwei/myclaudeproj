@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameTimerWidget : MonoBehaviour
@@ -6,7 +6,7 @@ public class GameTimerWidget : MonoBehaviour
 	[SerializeField]
 	private Animator m_animator;
 
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	private void Awake()
 	{

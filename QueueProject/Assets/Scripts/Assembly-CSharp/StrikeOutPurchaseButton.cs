@@ -1,6 +1,5 @@
 using System;
 using Balancy.API.Payments;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +14,7 @@ public class StrikeOutPurchaseButton : MonoBehaviour
 	private const string ANIM_ANIM_JIGSAWCOLLECT_ENABLED_01 = "Anim-JigsawCollect-Enabled-01";
 
 	[SerializeField]
-	private TextMeshProUGUI m_iapPriceTMP;
+	private Text m_iapPriceTMP;
 
 	[SerializeField]
 	private AnimatorHelper m_strikeAnimatorHelper;

@@ -9,7 +9,7 @@ using Balancy.Models.SmartObjects;
 using Hiro;
 using Hiro.Unity;
 using KWCore.Utils;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.Purchasing;
 
 public class NakamaMarket : MonoSingleton<NakamaMarket>
@@ -181,7 +181,7 @@ public class NakamaMarket : MonoSingleton<NakamaMarket>
 
 		private object _003C_003E2__current;
 
-		public TMP_Text textTMP;
+		public Text textTMP;
 
 		public NakamaMarket _003C_003E4__this;
 
@@ -252,7 +252,7 @@ public class NakamaMarket : MonoSingleton<NakamaMarket>
 	}
 
 	[IteratorStateMachine(typeof(_003CSetProductPrice_003Ed__11))]
-	public IEnumerator SetProductPrice(TMP_Text textTMP, string productID)
+	public IEnumerator SetProductPrice(Text textTMP, string productID)
 	{
 		return null;
 	}

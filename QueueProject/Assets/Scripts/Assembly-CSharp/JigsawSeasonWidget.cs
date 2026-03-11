@@ -7,7 +7,6 @@ using Balancy.Models;
 using Balancy.Models.JigsawPuzzleEvent;
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -99,7 +98,7 @@ public class JigsawSeasonWidget : MonoBehaviour
 	private JigsawPuzzleCell[] m_presetCells;
 
 	[SerializeField]
-	private TextMeshProUGUI m_titleTMP;
+	private Text m_titleTMP;
 
 	[SerializeField]
 	private JigsawEventTimerWidget m_jigsawEventTimerWidget;

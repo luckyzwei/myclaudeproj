@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,13 +29,13 @@ public class ExpertModeHomeWidget : MonoBehaviour
 	private Button m_button;
 
 	[SerializeField]
-	private TextMeshProUGUI m_levelText;
+	private Text m_levelText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_headerText;
+	private Text m_headerText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_lockedText;
+	private Text m_lockedText;
 
 	[SerializeField]
 	private bool m_showAdOnClick;

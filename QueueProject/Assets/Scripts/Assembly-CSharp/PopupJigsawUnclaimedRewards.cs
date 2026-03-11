@@ -1,6 +1,5 @@
 using System;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +19,7 @@ public class PopupJigsawUnclaimedRewards : RewardPopupBase
 	protected RewardWidget m_rewardWdiget;
 
 	[SerializeField]
-	private TextMeshProUGUI m_titleTMP;
+	private Text m_titleTMP;
 
 	[SerializeField]
 	private GameObject m_descriptionText;
@@ -35,13 +34,13 @@ public class PopupJigsawUnclaimedRewards : RewardPopupBase
 	private GameObject m_rewardContainer;
 
 	[SerializeField]
-	private TextMeshProUGUI m_claimTMP;
+	private Text m_claimTMP;
 
 	[SerializeField]
 	private Image m_promoArt;
 
 	[SerializeField]
-	private TextMeshProUGUI m_unclaimedRewardsText;
+	private Text m_unclaimedRewardsText;
 
 	private Action m_rewardGivenCallback;
 

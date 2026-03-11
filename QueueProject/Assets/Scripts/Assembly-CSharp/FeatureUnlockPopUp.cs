@@ -1,7 +1,6 @@
 using System;
 using DG.Tweening;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,10 +19,10 @@ public class FeatureUnlockPopUp : PopUpBase
 	public const string PREFAB_SKINS = "Prefabs/Popups/Popup-SkinsFeatureUnlock";
 
 	[SerializeField]
-	private TextMeshProUGUI m_featureName;
+	private Text m_featureName;
 
 	[SerializeField]
-	private TextMeshProUGUI m_featureDescription;
+	private Text m_featureDescription;
 
 	[SerializeField]
 	private Image m_featureIcon;

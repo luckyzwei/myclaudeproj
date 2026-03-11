@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DailyWinStreakHomeButton : MonoBehaviour
@@ -26,7 +26,7 @@ public class DailyWinStreakHomeButton : MonoBehaviour
 	private AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_lockedLevelTMP;
+	private Text m_lockedLevelTMP;
 
 	private Action m_finishCallback;
 

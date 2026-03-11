@@ -1,5 +1,4 @@
 using KWCore.Utils;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ namespace KWAds.UI
 		private Text m_productCost;
 
 		[SerializeField]
-		private TextMeshProUGUI m_productCostTMP;
+		private Text m_productCostTMP;
 
 		private void Awake()
 		{

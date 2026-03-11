@@ -1,6 +1,5 @@
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +20,7 @@ public class LadderCell : MonoBehaviour
 	private RewardWidget[] m_rewardWidgets;
 
 	[SerializeField]
-	private TMP_Text m_numberText;
+	private Text m_numberText;
 
 	[SerializeField]
 	private string m_rewardPrefix;

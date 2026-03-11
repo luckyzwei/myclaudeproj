@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LeaderboardCellPlayerAdditions : MonoBehaviour
@@ -80,7 +80,7 @@ public class LeaderboardCellPlayerAdditions : MonoBehaviour
 	private GameObject m_upIcon;
 
 	[SerializeField]
-	private TMP_Text m_scoreText;
+	private Text m_scoreText;
 
 	[SerializeField]
 	private AnimatorHelper m_promotionAnimator;

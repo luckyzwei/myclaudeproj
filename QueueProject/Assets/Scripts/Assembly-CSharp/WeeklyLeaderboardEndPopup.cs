@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class WeeklyLeaderboardEndPopup : PopUpBase
@@ -16,16 +16,16 @@ public class WeeklyLeaderboardEndPopup : PopUpBase
 	private const string ANIM_WEEKLYLEADERBOARDEND_MIDMEDALS_INTRO = "WeeklyLeaderboardEnd-MidMedals-Intro";
 
 	[SerializeField]
-	private TextMeshProUGUI m_textPosition;
+	private Text m_textPosition;
 
 	[SerializeField]
-	private TextMeshProUGUI m_textButton;
+	private Text m_textButton;
 
 	[SerializeField]
-	private TextMeshProUGUI m_textScore;
+	private Text m_textScore;
 
 	[SerializeField]
-	private TextMeshProUGUI m_textYourAreCool;
+	private Text m_textYourAreCool;
 
 	[SerializeField]
 	private GameObject m_rewardContainer;

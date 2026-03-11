@@ -1,14 +1,14 @@
 using System;
 using System.Runtime.CompilerServices;
 using Balancy.Models;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class LimitedOfferTimer : MonoBehaviour
 {
 	[Space(10f)]
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	private LimitedOffer m_offer;
 

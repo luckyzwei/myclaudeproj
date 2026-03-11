@@ -1,6 +1,5 @@
 using System;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +12,10 @@ public class TrophyWidget : MonoBehaviour
 	private Image m_fillImage;
 
 	[SerializeField]
-	private TMP_Text m_monthName;
+	private Text m_monthName;
 
 	[SerializeField]
-	private TMP_Text m_daysText;
+	private Text m_daysText;
 
 	[SerializeField]
 	private Image m_bar;

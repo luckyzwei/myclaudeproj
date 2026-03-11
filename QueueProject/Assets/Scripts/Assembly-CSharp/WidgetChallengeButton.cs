@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +18,7 @@ public class WidgetChallengeButton : MonoBehaviour
 	private AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_unlockAtLevelTMP;
+	private Text m_unlockAtLevelTMP;
 
 	[SerializeField]
 	private GameObject m_loading;

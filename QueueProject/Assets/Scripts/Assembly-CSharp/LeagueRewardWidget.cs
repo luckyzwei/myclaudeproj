@@ -1,5 +1,4 @@
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,7 @@ public class LeagueRewardWidget : MonoBehaviour
 	protected GameObject m_rewardGroup;
 
 	[SerializeField]
-	protected TMP_Text m_rewardTMP;
+	protected Text m_rewardTMP;
 
 	[Header("optional")]
 	[SerializeField]

@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class StarterPackOfferTimer : MonoBehaviour
@@ -9,7 +9,7 @@ public class StarterPackOfferTimer : MonoBehaviour
 	private string m_gameEventId;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	private SpecialOfferData m_specialOfferData;
 

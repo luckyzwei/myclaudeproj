@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DailyMissionTimerWidget : MonoBehaviour
@@ -7,7 +7,7 @@ public class DailyMissionTimerWidget : MonoBehaviour
 	private const int TIME_TO_REFRESH = 60;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	private int m_lastWrittenTime;
 

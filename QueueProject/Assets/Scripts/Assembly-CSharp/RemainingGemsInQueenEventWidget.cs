@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RemainingGemsInQueenEventWidget : MonoBehaviour
@@ -7,7 +7,7 @@ public class RemainingGemsInQueenEventWidget : MonoBehaviour
 	private GameObject m_parentGameObject;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private string m_formatKey;

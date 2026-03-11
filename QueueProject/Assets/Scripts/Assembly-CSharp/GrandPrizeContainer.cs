@@ -1,6 +1,5 @@
 using System.Runtime.InteropServices;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,7 @@ public class GrandPrizeContainer : MonoBehaviour
 	private Image m_bar;
 
 	[SerializeField]
-	private TMP_Text m_progressText;
+	private Text m_progressText;
 
 	[SerializeField]
 	private RewardWidget m_rewardWidget;

@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DailyWinStreakBadge : MonoBehaviour
@@ -15,7 +15,7 @@ public class DailyWinStreakBadge : MonoBehaviour
 	private AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TextMeshProUGUI m_milestoneTMP;
+	private Text m_milestoneTMP;
 
 	public void Configure(int milestone)
 	{

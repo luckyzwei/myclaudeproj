@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensCalendarWidget : CalendarWidget
@@ -25,7 +25,7 @@ public class QueensCalendarWidget : CalendarWidget
 	private GameObject m_unlockMonthButton;
 
 	[SerializeField]
-	private TextMeshProUGUI m_unlockMonthButtonText;
+	private Text m_unlockMonthButtonText;
 
 	private bool m_shouldConsumeFreeDC;
 

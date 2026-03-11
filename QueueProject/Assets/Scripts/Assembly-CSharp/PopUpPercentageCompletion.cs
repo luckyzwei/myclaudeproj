@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopUpPercentageCompletion : PopUpBase
@@ -10,7 +10,7 @@ public class PopUpPercentageCompletion : PopUpBase
 	private const float PERCENTAGE_NOISE = 0.1f;
 
 	[SerializeField]
-	private TMP_Text m_tmpText;
+	private Text m_tmpText;
 
 	[SerializeField]
 	private string m_percentageCompletionTextKey;

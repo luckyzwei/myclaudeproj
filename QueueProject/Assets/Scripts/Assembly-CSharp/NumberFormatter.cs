@@ -1,8 +1,8 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
-[RequireComponent(typeof(TMP_Text))]
+[RequireComponent(typeof(Text))]
 public class NumberFormatter : MonoBehaviour
 {
 	[Serializable]
@@ -20,7 +20,7 @@ public class NumberFormatter : MonoBehaviour
 	private ThresholdData[] m_thresholdData;
 
 	[SerializeField]
-	private TMP_Text m_targetText;
+	private Text m_targetText;
 
 	private long m_number;
 

@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class FeedbackText : MonoBehaviour
@@ -7,7 +7,7 @@ public class FeedbackText : MonoBehaviour
 	private AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private string m_animationName;

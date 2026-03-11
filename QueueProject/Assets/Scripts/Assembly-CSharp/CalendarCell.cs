@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,7 @@ public class CalendarCell : MonoBehaviour
 	private const string ANIM_FAILED = "Lose";
 
 	[SerializeField]
-	protected TextMeshProUGUI m_cellText;
+	protected Text m_cellText;
 
 	[SerializeField]
 	protected AnimatorHelper m_animatorHelper;

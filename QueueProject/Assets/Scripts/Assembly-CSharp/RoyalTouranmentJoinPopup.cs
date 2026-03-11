@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -138,20 +137,20 @@ public class RoyalTouranmentJoinPopup : PopUpBase
 	private RewardWidget m_rewardWidget;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timerText;
+	private Text m_timerText;
 
 	[SerializeField]
 	private GameObject m_bestWidget;
 
 	[SerializeField]
-	private TextMeshProUGUI m_bestText;
+	private Text m_bestText;
 
 	[Header("Reduce time")]
 	[SerializeField]
-	private TextMeshProUGUI m_reduceTimeText;
+	private Text m_reduceTimeText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timerBigText;
+	private Text m_timerBigText;
 
 	[SerializeField]
 	private GameObject m_reduceTimePanel;

@@ -1,6 +1,6 @@
 using System;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupQueenEventNotActiveYet : PopUpBase
@@ -10,7 +10,7 @@ public class PopupQueenEventNotActiveYet : PopUpBase
 	private const string PREFAB_NAME_SKINS = "Prefabs/Popups/PopUp-QueenEventNotActiveYet-SkinsVariant";
 
 	[SerializeField]
-	private TMP_Text m_skinsUnlockText;
+	private Text m_skinsUnlockText;
 
 	[SerializeField]
 	private string m_unlockTextFormatKey;

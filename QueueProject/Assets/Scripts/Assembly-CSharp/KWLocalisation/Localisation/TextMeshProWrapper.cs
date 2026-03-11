@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,7 @@ namespace KWLocalisation.Localisation
 	public sealed class TextMeshProWrapper : TextWrapper
 	{
 		[SerializeField]
-		private TextMeshProUGUI m_textComponent;
+		private Text m_textComponent;
 
 		public override void SetText(string text)
 		{
@@ -22,7 +21,7 @@ namespace KWLocalisation.Localisation
 
 		public override void SetTextComponent(Graphic textComponent)
 		{
-			m_textComponent = textComponent as TextMeshProUGUI;
+			m_textComponent = textComponent as Text;
 		}
 
 		public override Graphic GetTextComponent()
@@ -48,7 +47,7 @@ namespace KWLocalisation.Localisation
 
 		public override void SetFont(object font)
 		{
-			if (m_textComponent != null && font is TMP_FontAsset tmpFont)
+			if (m_textComponent != null && font is Font tmpFont)
 				m_textComponent.font = tmpFont;
 		}
 	}

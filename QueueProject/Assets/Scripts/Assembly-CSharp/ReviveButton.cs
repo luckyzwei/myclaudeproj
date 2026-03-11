@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ReviveButton : MonoBehaviour
@@ -10,7 +10,7 @@ public class ReviveButton : MonoBehaviour
 	private GameObject m_threeHearts;
 
 	[SerializeField]
-	private TMP_Text m_livesText;
+	private Text m_livesText;
 
 	private void Awake()
 	{

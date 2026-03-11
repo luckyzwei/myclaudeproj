@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -66,16 +65,16 @@ public class RoyalTournamentFirstPositionWidget : MonoBehaviour
 	}
 
 	[SerializeField]
-	private TextMeshProUGUI m_name;
+	private Text m_name;
 
 	[SerializeField]
-	private TextMeshProUGUI m_time;
+	private Text m_time;
 
 	[SerializeField]
 	private Image m_avatar;
 
 	[SerializeField]
-	private TextMeshProUGUI m_youFinishedTMP;
+	private Text m_youFinishedTMP;
 
 	private LeaderboardData.User m_user;
 

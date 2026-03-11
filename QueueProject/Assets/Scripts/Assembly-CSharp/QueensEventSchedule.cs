@@ -1,5 +1,5 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensEventSchedule : MonoBehaviour
@@ -7,17 +7,17 @@ public class QueensEventSchedule : MonoBehaviour
 	[Serializable]
 	public struct TextInfo
 	{
-		public TMP_Text text;
+		public Text text;
 
 		public string keyFormat;
 	}
 
 	[SerializeField]
-	private TextMeshProUGUI m_dayNumbeText;
+	private Text m_dayNumbeText;
 
 	[Space]
 	[SerializeField]
-	private TextMeshProUGUI m_dayInWeekText;
+	private Text m_dayInWeekText;
 
 	[SerializeField]
 	private string m_startDayFormat;

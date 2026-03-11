@@ -1,10 +1,10 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RoyalTournamentHomeWidget : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI m_bestPositionText;
+	private Text m_bestPositionText;
 
 	[SerializeField]
 	private GameObject m_bestPositionObject;

@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,7 @@ public class ProgressRewardDisplay : MonoBehaviour
 	private string m_progressRewardWidgetID;
 
 	[SerializeField]
-	private TextMeshProUGUI m_displayText;
+	private Text m_displayText;
 
 	[SerializeField]
 	private Image m_progressRequiredIcon;

@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Balancy.Models;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -257,7 +256,7 @@ public class DailyWinStreakWidget : MonoBehaviour
 	private Button m_repairStreakButton;
 
 	[SerializeField]
-	private TextMeshProUGUI m_winStreakTMP;
+	private Text m_winStreakTMP;
 
 	[SerializeField]
 	private Color m_redColor;

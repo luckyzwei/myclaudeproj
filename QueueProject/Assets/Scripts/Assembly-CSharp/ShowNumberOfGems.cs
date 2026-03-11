@@ -1,10 +1,10 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ShowNumberOfGems : MonoBehaviour
 {
 	[SerializeField]
-	private TMP_Text m_amount;
+	private Text m_amount;
 
 	private void Start()
 	{

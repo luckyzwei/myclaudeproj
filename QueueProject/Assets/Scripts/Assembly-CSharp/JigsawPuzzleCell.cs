@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Spine.Unity;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,7 +48,7 @@ public class JigsawPuzzleCell : MonoBehaviour
 	private AnimatorHelper m_progressBarAnimator;
 
 	[SerializeField]
-	private TextMeshProUGUI m_progressBarTMP;
+	private Text m_progressBarTMP;
 
 	[SerializeField]
 	private GameObject m_notification;

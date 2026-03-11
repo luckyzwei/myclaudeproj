@@ -1,5 +1,4 @@
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,7 @@ public class DailyMissionWidget : MonoBehaviour
 	private Image[] m_bars;
 
 	[SerializeField]
-	private TextMeshProUGUI m_progressText;
+	private Text m_progressText;
 
 	[SerializeField]
 	protected GameObject m_check;
@@ -39,10 +38,10 @@ public class DailyMissionWidget : MonoBehaviour
 
 	[Header("Texts")]
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
-	private TMP_Text m_headerText;
+	private Text m_headerText;
 
 	[Header("Buttons")]
 	[SerializeField]

@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ public class DailyWinStreakPip : MonoBehaviour
 	private const string ANIM_WINSTREAK_DAY_SHIELD = "WinStreak-Day-Shield";
 
 	[SerializeField]
-	private TextMeshProUGUI m_dayTMP;
+	private Text m_dayTMP;
 
 	[SerializeField]
 	private AnimatorHelper m_animatorHelper;

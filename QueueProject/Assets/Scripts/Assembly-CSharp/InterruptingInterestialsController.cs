@@ -1,5 +1,5 @@
 using Balancy.Models.Gameplay;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class InterruptingInterestialsController : MonoBehaviour
@@ -18,7 +18,7 @@ public class InterruptingInterestialsController : MonoBehaviour
 	private GameObject m_popupOutstanding;
 
 	[SerializeField]
-	private TMP_Text m_rewardText;
+	private Text m_rewardText;
 
 	[SerializeField]
 	private float m_delay;

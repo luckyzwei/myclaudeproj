@@ -1,14 +1,13 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class JigsawOldSeasonWidget : MonoBehaviour
 {
 	[SerializeField]
-	private TextMeshProUGUI m_titleTMP;
+	private Text m_titleTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_completedPuzzlesTMP;
+	private Text m_completedPuzzlesTMP;
 
 	[SerializeField]
 	private Image m_backgroundImage;

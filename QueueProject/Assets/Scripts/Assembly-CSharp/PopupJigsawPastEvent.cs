@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupJigsawPastEvent : PopUpBase
@@ -72,7 +72,7 @@ public class PopupJigsawPastEvent : PopUpBase
 	public const string PREFAB_NAME = "Prefabs/Popups/PopUp-PastEvent";
 
 	[SerializeField]
-	private TextMeshProUGUI m_titleTMP;
+	private Text m_titleTMP;
 
 	[SerializeField]
 	private JigsawPuzzleCompletedCell m_cellPrefab;

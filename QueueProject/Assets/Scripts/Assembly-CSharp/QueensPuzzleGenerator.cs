@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -90,16 +89,16 @@ public class QueensPuzzleGenerator : JigsawGenerator
 	private Image m_pictureIntact;
 
 	[SerializeField]
-	private TMP_InputField m_width;
+	private InputField m_width;
 
 	[SerializeField]
-	private TMP_InputField m_height;
+	private InputField m_height;
 
 	[SerializeField]
 	private GameObject m_cutButton;
 
 	[SerializeField]
-	private TMP_Text m_timeText;
+	private Text m_timeText;
 
 	[SerializeField]
 	private RectTransform m_parent;

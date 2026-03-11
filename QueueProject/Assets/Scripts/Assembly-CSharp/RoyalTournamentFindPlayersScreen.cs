@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWUserInterface;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class RoyalTournamentFindPlayersScreen : KWUserInterface.Screen
@@ -140,10 +140,10 @@ public class RoyalTournamentFindPlayersScreen : KWUserInterface.Screen
 	private RectTransform m_playerIconsArea;
 
 	[SerializeField]
-	private TextMeshProUGUI m_playersText;
+	private Text m_playersText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_descriptionText;
+	private Text m_descriptionText;
 
 	[SerializeField]
 	private RoyalTournamentAvatarWidget m_playerAvatar;

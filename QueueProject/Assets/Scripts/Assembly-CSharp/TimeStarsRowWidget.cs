@@ -1,13 +1,13 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class TimeStarsRowWidget : MonoBehaviour
 {
 	[SerializeField]
-	private TMP_Text m_timeText;
+	private Text m_timeText;
 
 	[SerializeField]
-	private TMP_Text m_starsText;
+	private Text m_starsText;
 
 	[Space]
 	[SerializeField]

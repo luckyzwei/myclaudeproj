@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class NoAdsDebug : MonoBehaviour
@@ -6,7 +6,7 @@ public class NoAdsDebug : MonoBehaviour
 	private const string NO_ADS_LEFT = "No Ads Time Left: ";
 
 	[SerializeField]
-	private TextMeshProUGUI m_noAdsTMP;
+	private Text m_noAdsTMP;
 
 	private void Awake()
 	{

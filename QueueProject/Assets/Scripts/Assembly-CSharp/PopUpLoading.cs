@@ -1,5 +1,4 @@
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,10 +13,10 @@ public class PopUpLoading : PopUpBase
 	private Image m_fillBarImage;
 
 	[SerializeField]
-	private TextMeshProUGUI m_loadingText;
+	private Text m_loadingText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_tipText;
+	private Text m_tipText;
 
 	[SerializeField]
 	private CanvasGroup m_group;

@@ -1,7 +1,6 @@
 using System;
 using Balancy.Models;
 using Balancy.Models.KWPlayerProfile;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,10 +41,10 @@ public class ProfileBackgroundContainer : MonoBehaviour
 
 	[Space]
 	[SerializeField]
-	private TMP_Text m_coinAmountText;
+	private Text m_coinAmountText;
 
 	[SerializeField]
-	private TMP_Text m_progressText;
+	private Text m_progressText;
 
 	[SerializeField]
 	private RectTransform m_progressLockTransform;

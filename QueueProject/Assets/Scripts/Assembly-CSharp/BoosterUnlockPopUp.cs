@@ -1,7 +1,7 @@
 using Balancy.Models.Inventory;
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class BoosterUnlockPopUp : PopUpBase
@@ -13,10 +13,10 @@ public class BoosterUnlockPopUp : PopUpBase
 	public const string PREFAB_NAME = "Prefabs/Popups/Popup-BoosterUnlock";
 
 	[SerializeField]
-	private TextMeshProUGUI m_boosterName;
+	private Text m_boosterName;
 
 	[SerializeField]
-	private TextMeshProUGUI m_boosterDescription;
+	private Text m_boosterDescription;
 
 	[SerializeField]
 	private ItemWithAmountCell m_itemWithAmountCell;

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,10 +69,10 @@ public class PopupFeatureUpdate : PopUpBase
 
 	[Header("Text")]
 	[SerializeField]
-	private TextMeshProUGUI m_headerText;
+	private Text m_headerText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_bodyText;
+	private Text m_bodyText;
 
 	[Header("Sprites")]
 	[SerializeField]

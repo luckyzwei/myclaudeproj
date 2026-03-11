@@ -1,5 +1,5 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DailyWinStreakLevelCompleteWidget : MonoBehaviour
@@ -23,7 +23,7 @@ public class DailyWinStreakLevelCompleteWidget : MonoBehaviour
 	private DailyWinStreakWidget dailyWinStreakWidget;
 
 	[SerializeField]
-	private TextMeshProUGUI m_streakDaysTMP;
+	private Text m_streakDaysTMP;
 
 	private Action m_finishCallback;
 

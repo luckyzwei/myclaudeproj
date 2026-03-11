@@ -1,6 +1,5 @@
 using Balancy.Models.KWSpinWheel;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +24,7 @@ public class SpinWheelSegment : MonoBehaviour
 	private RectTransform m_rewardGroupRect;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_rewardText;
+	protected Text m_rewardText;
 
 	[SerializeField]
 	protected Image m_rewardSprite;

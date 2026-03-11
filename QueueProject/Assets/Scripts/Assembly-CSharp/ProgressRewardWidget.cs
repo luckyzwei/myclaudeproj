@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +18,7 @@ public class ProgressRewardWidget : MonoBehaviour
 	protected Image m_fillBarImage;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_fillCounterText;
+	protected Text m_fillCounterText;
 
 	[SerializeField]
 	protected Image m_progressRequiredIcon;

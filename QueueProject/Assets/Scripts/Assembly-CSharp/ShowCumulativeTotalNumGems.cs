@@ -1,11 +1,11 @@
 using Balancy.Models.SmartObjects;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ShowCumulativeTotalNumGems : MonoBehaviour
 {
 	[SerializeField]
-	private TMP_Text m_amount;
+	private Text m_amount;
 
 	private void Awake()
 	{

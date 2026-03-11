@@ -1,6 +1,5 @@
 using Balancy.Models;
 using Balancy.Models.Store;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +25,7 @@ public class ButtonLimitedOffer : MonoBehaviour
 	private Image m_iconImage;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private LimitedOfferTimer m_timer;

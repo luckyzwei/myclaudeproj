@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using KWGameCore;
 using KWHaptics.Haptics;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -233,7 +232,7 @@ public class LeagueLeaderboardWidget : MonoBehaviour
 	private LeagueHeaderWidget m_header;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timerText;
+	private Text m_timerText;
 
 	[Header("TROPHYS")]
 	[SerializeField]

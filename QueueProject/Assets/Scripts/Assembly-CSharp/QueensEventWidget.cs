@@ -1,5 +1,5 @@
 using Balancy.Models.SmartObjects;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensEventWidget : MonoBehaviour
@@ -26,7 +26,7 @@ public class QueensEventWidget : MonoBehaviour
 	private GameObject[] m_activeGameObjects;
 
 	[SerializeField]
-	private TMP_Text m_lockText;
+	private Text m_lockText;
 
 	[SerializeField]
 	private string m_lockTextFormatKey;

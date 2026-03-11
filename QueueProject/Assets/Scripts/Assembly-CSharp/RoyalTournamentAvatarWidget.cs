@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +16,7 @@ public class RoyalTournamentAvatarWidget : MonoBehaviour
 	private AnimatorHelper m_animator;
 
 	[SerializeField]
-	private TextMeshProUGUI m_playerNameText;
+	private Text m_playerNameText;
 
 	private static float s_audioTimestamp;
 

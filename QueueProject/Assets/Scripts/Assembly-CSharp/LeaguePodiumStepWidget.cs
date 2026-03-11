@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,10 +61,10 @@ public class LeaguePodiumStepWidget : MonoBehaviour
 	private const string ANIM_PLAYERGOLD = "PlayerGold";
 
 	[SerializeField]
-	private TMP_Text m_nameTMP;
+	private Text m_nameTMP;
 
 	[SerializeField]
-	private TMP_Text m_cellScoreTMP;
+	private Text m_cellScoreTMP;
 
 	[SerializeField]
 	private LeagueRewardWidget m_leagueReward;

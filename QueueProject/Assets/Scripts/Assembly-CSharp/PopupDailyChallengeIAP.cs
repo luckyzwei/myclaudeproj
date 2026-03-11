@@ -1,6 +1,6 @@
 using Balancy.Models.Store;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PopupDailyChallengeIAP : PopUpBase
@@ -30,10 +30,10 @@ public class PopupDailyChallengeIAP : PopUpBase
 	private DateButtonLabel m_dateLabel;
 
 	[SerializeField]
-	private TextMeshProUGUI m_headerTMP;
+	private Text m_headerTMP;
 
 	[SerializeField]
-	private TextMeshProUGUI m_buttonTMP;
+	private Text m_buttonTMP;
 
 	private Product m_product;
 

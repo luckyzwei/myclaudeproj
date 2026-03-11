@@ -1,6 +1,5 @@
 using System;
 using Balancy.Models.JigsawPuzzleEvent;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,10 +18,10 @@ public class JigsawStrikeOutWidget : MonoBehaviour
 	private JigsawIapProgressPip[] m_barPipsAnimator;
 
 	[SerializeField]
-	private TextMeshProUGUI m_piecesLeft;
+	private Text m_piecesLeft;
 
 	[SerializeField]
-	private TextMeshProUGUI m_piecesCollected;
+	private Text m_piecesCollected;
 
 	[SerializeField]
 	private Transform m_jigsawCount;

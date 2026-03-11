@@ -1,5 +1,4 @@
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,10 +19,10 @@ public class LeagueHelpPopup : PopUpBase
 	private new AnimatorHelper m_animatorHelper;
 
 	[SerializeField]
-	private TMP_Text m_leaguePromotionText;
+	private Text m_leaguePromotionText;
 
 	[SerializeField]
-	private TMP_Text m_leagueDemotionText;
+	private Text m_leagueDemotionText;
 
 	protected void Start()
 	{

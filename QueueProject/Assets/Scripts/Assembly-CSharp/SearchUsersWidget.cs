@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Nakama;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,7 +47,7 @@ public class SearchUsersWidget : MonoBehaviour
 
 	[Header("Searching")]
 	[SerializeField]
-	private TMP_InputField m_inputField;
+	private InputField m_inputField;
 
 	[SerializeField]
 	private Button m_searchButton;
@@ -59,7 +58,7 @@ public class SearchUsersWidget : MonoBehaviour
 	private string m_playerIdFormat;
 
 	[SerializeField]
-	private TMP_Text m_playerIdText;
+	private Text m_playerIdText;
 
 	[SerializeField]
 	private GameObject m_searchResultPanel;

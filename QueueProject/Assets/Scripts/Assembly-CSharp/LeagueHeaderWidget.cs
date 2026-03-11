@@ -1,5 +1,4 @@
 using Balancy.Models.KWLeaderboard;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
@@ -13,7 +12,7 @@ public class LeagueHeaderWidget : MonoBehaviour
 	private UnityEngine.UI.Extensions.Gradient m_headerBackGradient;
 
 	[SerializeField]
-	private TextMeshProUGUI m_headerTitleText;
+	private Text m_headerTitleText;
 
 	public void Configure(LeagueDataConfig leagueData)
 	{

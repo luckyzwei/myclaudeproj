@@ -1,11 +1,11 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DecoramaPaintButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 {
 	[SerializeField]
-	private TextMeshProUGUI m_paintPointsCurrencyText;
+	private Text m_paintPointsCurrencyText;
 
 	private bool m_buttonPressed;
 

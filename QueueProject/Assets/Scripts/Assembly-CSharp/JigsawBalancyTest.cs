@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using KWGameCore;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class JigsawBalancyTest : MonoBehaviour
 {
 	[SerializeField]
-	private TMP_InputField m_clientIDInputField;
+	private InputField m_clientIDInputField;
 
 	[SerializeField]
 	private JigsawButton m_buttonPrefab;

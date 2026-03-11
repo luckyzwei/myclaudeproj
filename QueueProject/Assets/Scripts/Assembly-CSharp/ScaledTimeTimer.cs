@@ -1,5 +1,5 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ScaledTimeTimer : MonoBehaviour
@@ -9,7 +9,7 @@ public class ScaledTimeTimer : MonoBehaviour
 	private const float PULSE_DURATION = 1f;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private Animator m_animator;

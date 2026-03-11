@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.Serialization;
@@ -76,7 +76,7 @@ public class KwaleePriceWidget : MonoBehaviour
 
 	[FormerlySerializedAs("m_name")]
 	[SerializeField]
-	private TMP_Text m_nameText;
+	private Text m_nameText;
 
 	[SerializeField]
 	private GameObject m_loader;
@@ -88,7 +88,7 @@ public class KwaleePriceWidget : MonoBehaviour
 	[FormerlySerializedAs("m_iapPrice")]
 	[Header("IAP")]
 	[SerializeField]
-	private TMP_Text m_iapPriceText;
+	private Text m_iapPriceText;
 
 	[FormerlySerializedAs("m_appPurchaseGroup")]
 	[SerializeField]

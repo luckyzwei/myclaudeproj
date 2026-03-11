@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +24,7 @@ public class LevelCompleteScreenButtonsController : MonoBehaviour
 	private DateButtonLabel[] m_dailyChallengeDates;
 
 	[SerializeField]
-	protected TextMeshProUGUI[] m_nextLevelTexts;
+	protected Text[] m_nextLevelTexts;
 
 	[SerializeField]
 	private GameObject m_adIcon;

@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DownTimeWidget : MonoBehaviour
@@ -7,7 +7,7 @@ public class DownTimeWidget : MonoBehaviour
 	private GameObject m_content;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timerText;
+	private Text m_timerText;
 
 	private void Awake()
 	{

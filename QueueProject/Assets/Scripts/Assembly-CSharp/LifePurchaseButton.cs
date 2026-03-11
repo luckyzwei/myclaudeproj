@@ -2,7 +2,6 @@ using System;
 using Balancy.Models.SmartObjects;
 using Balancy.Models.Store;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,7 @@ public class LifePurchaseButton : MonoBehaviour
 	private Image m_heartImage;
 
 	[SerializeField]
-	private TextMeshProUGUI m_rewardAmount;
+	private Text m_rewardAmount;
 
 	[Header("Shop Popup")]
 	[SerializeField]

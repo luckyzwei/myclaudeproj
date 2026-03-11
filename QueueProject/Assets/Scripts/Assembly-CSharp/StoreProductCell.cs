@@ -1,7 +1,6 @@
 using System;
 using Balancy.Models.LiveOps.Store;
 using Balancy.Models.Store;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +31,7 @@ public class StoreProductCell : MonoBehaviour
 	[Header("Everything is optional")]
 	[Header("References")]
 	[SerializeField]
-	private TextMeshProUGUI m_titleText;
+	private Text m_titleText;
 
 	[SerializeField]
 	protected StorePurchaseButton m_storePurchaseButton;

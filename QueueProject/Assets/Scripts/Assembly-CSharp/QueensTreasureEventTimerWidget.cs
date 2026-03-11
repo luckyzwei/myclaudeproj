@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class QueensTreasureEventTimerWidget : MonoBehaviour
@@ -16,7 +16,7 @@ public class QueensTreasureEventTimerWidget : MonoBehaviour
 
 	[Space(10f)]
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	private int TimeLeft()
 	{

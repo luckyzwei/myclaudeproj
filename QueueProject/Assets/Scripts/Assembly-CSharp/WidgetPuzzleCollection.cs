@@ -1,6 +1,5 @@
 using Balancy.Models.JigsawPuzzleEvent;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +30,7 @@ public class WidgetPuzzleCollection : MonoBehaviour
 	private GameObject m_lockedGameObject;
 
 	[SerializeField]
-	private TextMeshProUGUI m_unlockAtLevelX;
+	private Text m_unlockAtLevelX;
 
 	[SerializeField]
 	private string m_unlockLevelKey;

@@ -2,7 +2,6 @@ using System;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
 using KWUserInterface;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,16 +27,16 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	[Header("Game")]
 	[SerializeField]
-	protected TextMeshProUGUI m_queensNumber;
+	protected Text m_queensNumber;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_percentageCompleteText;
+	protected Text m_percentageCompleteText;
 
 	[SerializeField]
 	protected string m_percentageCompleteKey;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_completeText;
+	protected Text m_completeText;
 
 	[SerializeField]
 	protected LevelCompleteScreenButtonsController m_buttonController;

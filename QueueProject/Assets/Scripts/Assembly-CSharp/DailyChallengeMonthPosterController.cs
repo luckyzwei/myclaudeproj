@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +10,10 @@ public class DailyChallengeMonthPosterController : MonoBehaviour
 	private Image m_image;
 
 	[SerializeField]
-	private TMP_Text m_monthText;
+	private Text m_monthText;
 
 	[SerializeField]
-	private TMP_Text m_yearText;
+	private Text m_yearText;
 
 	private void Awake()
 	{

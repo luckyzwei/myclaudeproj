@@ -2,7 +2,6 @@ using System;
 using Balancy;
 using Balancy.Models.SmartObjects;
 using KWCore.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,19 +12,19 @@ public class PopUpPurchaseBooster : PopUpBase
 	private const string REWARD_POPUP = "Prefabs/KWReward/Popup-AutoReward";
 
 	[SerializeField]
-	private TMP_Text m_boosterNameText;
+	private Text m_boosterNameText;
 
 	[SerializeField]
-	private TMP_Text m_descText;
+	private Text m_descText;
 
 	[SerializeField]
-	private TMP_Text m_priceText;
+	private Text m_priceText;
 
 	[SerializeField]
 	private Image[] m_boosterIconImages;
 
 	[SerializeField]
-	private TMP_Text[] m_packCountTexts;
+	private Text[] m_packCountTexts;
 
 	[SerializeField]
 	private GameObject[] m_panels;

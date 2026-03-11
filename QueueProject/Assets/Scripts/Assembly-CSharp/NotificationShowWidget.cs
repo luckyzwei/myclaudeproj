@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +24,7 @@ public class NotificationShowWidget : MonoBehaviour
 	private bool m_displayNumber;
 
 	[SerializeField]
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private Image m_icon;

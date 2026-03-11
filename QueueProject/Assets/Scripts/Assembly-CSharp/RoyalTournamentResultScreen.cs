@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using KWUserInterface;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -162,25 +161,25 @@ public class RoyalTournamentResultScreen : KWUserInterface.Screen
 	private GameObject[] m_qualifiedObjects;
 
 	[SerializeField]
-	private TextMeshProUGUI m_status;
+	private Text m_status;
 
 	[SerializeField]
-	private TextMeshProUGUI m_roundText;
+	private Text m_roundText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_topText;
+	private Text m_topText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_winText;
+	private Text m_winText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_loseText;
+	private Text m_loseText;
 
 	[SerializeField]
-	private TextMeshProUGUI m_lastRoundloseText;
+	private Text m_lastRoundloseText;
 
 	[SerializeField]
 	private Button m_continueButton;

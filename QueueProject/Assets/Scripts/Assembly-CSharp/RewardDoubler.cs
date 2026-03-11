@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +19,7 @@ public class RewardDoubler : MonoBehaviour
 
 		public int startValue;
 
-		public TMP_Text text;
+		public Text text;
 
 		public int targetValue;
 
@@ -96,10 +95,10 @@ public class RewardDoubler : MonoBehaviour
 	private float m_countingDuration;
 
 	[SerializeField]
-	private TMP_Text m_2xText;
+	private Text m_2xText;
 
 	[SerializeField]
-	private TMP_Text m_2xTextSmall;
+	private Text m_2xTextSmall;
 
 	[SerializeField]
 	private string m_2xFormatKey;
@@ -144,7 +143,7 @@ public class RewardDoubler : MonoBehaviour
 	}
 
 	[IteratorStateMachine(typeof(_003CLerpValue_003Ed__25))]
-	private IEnumerator LerpValue(TMP_Text text, int startValue, int targetValue, bool fireCallback)
+	private IEnumerator LerpValue(Text text, int startValue, int targetValue, bool fireCallback)
 	{
 		return null;
 	}

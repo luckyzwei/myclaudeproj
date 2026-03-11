@@ -1,6 +1,5 @@
 using System.Runtime.CompilerServices;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class BoosterPurchaseButton : MonoBehaviour
 	private const string ADS_KEY = "Store.CoinsGet";
 
 	[SerializeField]
-	private TMP_Text m_coinsText;
+	private Text m_coinsText;
 
 	[SerializeField]
 	private GameObject[] m_boosters;

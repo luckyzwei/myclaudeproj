@@ -1,5 +1,5 @@
 using System;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class NextLifeTimerWidget : MonoBehaviour
@@ -13,7 +13,7 @@ public class NextLifeTimerWidget : MonoBehaviour
 	private const float UPDATE_EVERY_X_SECS = 1f;
 
 	[SerializeField]
-	private TextMeshProUGUI m_timerText;
+	private Text m_timerText;
 
 	[SerializeField]
 	private string m_fullText;

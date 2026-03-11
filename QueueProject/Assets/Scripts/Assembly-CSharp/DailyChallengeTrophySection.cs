@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Balancy.Models.KWDailyChallenge;
 using Balancy.Models.SmartObjects;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -197,7 +196,7 @@ public class DailyChallengeTrophySection : MonoBehaviour, IQueueableEntity
 	private Image m_progressBar;
 
 	[SerializeField]
-	private TMP_Text m_progressBarText;
+	private Text m_progressBarText;
 
 	[SerializeField]
 	private Image m_miniTrophyIcon;

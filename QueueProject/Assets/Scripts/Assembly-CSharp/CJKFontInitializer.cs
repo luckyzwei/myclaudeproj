@@ -1,89 +1,71 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
-/// Creates a dynamic TMP font from system CJK fonts at runtime
-/// and adds it as a global fallback for TextMeshPro.
+/// Creates a dynamic Font from system CJK fonts (Microsoft YaHei preferred)
+/// and assigns it to all Text components that lack CJK support.
 /// </summary>
 public static class CJKFontInitializer
 {
 	private static bool s_initialized;
+	private static Font s_cjkFont;
+
+	public static Font CJKFont => s_cjkFont;
 
 	public static void Init()
 	{
 		if (s_initialized) return;
 		s_initialized = true;
 
-		// Try to find a CJK-capable system font
 		string[] cjkFontNames = new string[]
 		{
-			"Microsoft YaHei",    // Windows Chinese
+			"Microsoft YaHei",    // Windows Chinese (preferred)
 			"SimHei",             // Windows Chinese
 			"PingFang SC",        // macOS Chinese
 			"Hiragino Sans GB",   // macOS Chinese
-			"Noto Sans CJK SC",  // Linux/Android Chinese
+			"Noto Sans CJK SC",   // Linux/Android Chinese
 			"Droid Sans Fallback",// Android
 			"Source Han Sans SC", // Adobe CJK
 			"WenQuanYi Micro Hei",// Linux
 			"Arial Unicode MS",  // Windows universal
 		};
 
-		Font cjkFont = null;
 		foreach (string fontName in cjkFontNames)
 		{
-			cjkFont = Font.CreateDynamicFontFromOSFont(fontName, 36);
-			if (cjkFont != null)
+			Font font = Font.CreateDynamicFontFromOSFont(fontName, 36);
+			if (font != null)
 			{
-				// Verify it actually has CJK characters
-				cjkFont.RequestCharactersInTexture("\u4e2d", 36);
+				font.RequestCharactersInTexture("\u4e2d", 36);
 				CharacterInfo ci;
-				if (cjkFont.GetCharacterInfo('\u4e2d', out ci, 36))
+				if (font.GetCharacterInfo('\u4e2d', out ci, 36))
 				{
+					s_cjkFont = font;
 					Debug.Log($"[CJKFont] Using system font: {fontName}");
 					break;
 				}
-				cjkFont = null;
 			}
 		}
 
-		if (cjkFont == null)
+		if (s_cjkFont == null)
 		{
 			Debug.LogWarning("[CJKFont] No CJK system font found. Chinese text may not display.");
 			return;
 		}
 
-		// Create dynamic TMP font asset from system font with large atlas for CJK
-		TMP_FontAsset tmpFont = TMP_FontAsset.CreateFontAsset(cjkFont, 36, 4,
-			UnityEngine.TextCore.LowLevel.GlyphRenderMode.SDFAA, 2048, 2048);
-		if (tmpFont == null)
-		{
-			Debug.LogWarning("[CJKFont] Failed to create TMP_FontAsset.");
-			return;
-		}
-		tmpFont.atlasPopulationMode = AtlasPopulationMode.Dynamic;
+		// Apply to all existing Text components in the scene
+		ApplyToAllText();
+	}
 
-		tmpFont.name = "CJK-Fallback-Dynamic";
-
-		// Add as fallback to the default TMP font
-		TMP_FontAsset defaultFont = TMP_Settings.defaultFontAsset;
-		if (defaultFont != null)
+	public static void ApplyToAllText()
+	{
+		if (s_cjkFont == null) return;
+		var allText = Resources.FindObjectsOfTypeAll<Text>();
+		int count = 0;
+		foreach (var t in allText)
 		{
-			if (defaultFont.fallbackFontAssetTable == null)
-				defaultFont.fallbackFontAssetTable = new System.Collections.Generic.List<TMP_FontAsset>();
-			defaultFont.fallbackFontAssetTable.Add(tmpFont);
-			Debug.Log($"[CJKFont] Added CJK fallback to default font ({defaultFont.name}).");
+			t.font = s_cjkFont;
+			count++;
 		}
-
-		// Also try to add to any Nunito fonts loaded in Resources
-		var allFonts = Resources.FindObjectsOfTypeAll<TMP_FontAsset>();
-		foreach (var font in allFonts)
-		{
-			if (font == tmpFont) continue;
-			if (font.fallbackFontAssetTable == null)
-				font.fallbackFontAssetTable = new System.Collections.Generic.List<TMP_FontAsset>();
-			if (!font.fallbackFontAssetTable.Contains(tmpFont))
-				font.fallbackFontAssetTable.Add(tmpFont);
-		}
-		Debug.Log($"[CJKFont] Added CJK fallback to {allFonts.Length} font assets.");
+		Debug.Log($"[CJKFont] Applied Microsoft YaHei to {count} Text components.");
 	}
 }

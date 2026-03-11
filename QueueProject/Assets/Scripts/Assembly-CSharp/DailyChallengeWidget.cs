@@ -1,4 +1,4 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class DailyChallengeWidget : MonoBehaviour
@@ -20,7 +20,7 @@ public class DailyChallengeWidget : MonoBehaviour
 
 	[Header("Lock Text")]
 	[SerializeField]
-	private TextMeshProUGUI m_lockText;
+	private Text m_lockText;
 
 	private bool m_canOpenDailyChallenge;
 

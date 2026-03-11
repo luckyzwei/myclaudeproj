@@ -1,5 +1,4 @@
 using Balancy;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +15,7 @@ public class MilestoneCell : MonoBehaviour
 	protected Image m_milestoneIcon;
 
 	[SerializeField]
-	protected TextMeshProUGUI m_milestoneName;
+	protected Text m_milestoneName;
 
 	public virtual void Configure(UnnyObject sprite, string name)
 	{

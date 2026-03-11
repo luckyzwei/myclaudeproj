@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
@@ -54,31 +53,11 @@ public class UITextLookup : MonoBehaviour
 	{
 		if (string.IsNullOrEmpty(value)) return;
 
-		// Try TextMeshProUGUI first
-		var tmp = GetComponent<TextMeshProUGUI>();
-		if (tmp != null)
-		{
-			tmp.text = value;
-			m_delegate?.OnTextLocalised();
-			return;
-		}
-
-		// Try TextMeshPro (3D)
-		var tmp3d = GetComponent<TextMeshPro>();
-		if (tmp3d != null)
-		{
-			tmp3d.text = value;
-			m_delegate?.OnTextLocalised();
-			return;
-		}
-
-		// Try legacy Text
 		var text = GetComponent<Text>();
 		if (text != null)
 		{
 			text.text = value;
 			m_delegate?.OnTextLocalised();
-			return;
 		}
 	}
 }

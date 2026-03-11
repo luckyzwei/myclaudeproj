@@ -1,5 +1,4 @@
 using KWUserInterface;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +30,7 @@ public class PiggyBankWidget : CoinWidget
 
 	[Header("Lock Text")]
 	[SerializeField]
-	private TextMeshProUGUI m_lockText;
+	private Text m_lockText;
 
 	[SerializeField]
 	private string m_prefix;

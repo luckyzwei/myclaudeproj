@@ -1,6 +1,6 @@
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class JigsawEventTimerWidget : MonoBehaviour
@@ -16,7 +16,7 @@ public class JigsawEventTimerWidget : MonoBehaviour
 
 	[Space(10f)]
 	[SerializeField]
-	private TextMeshProUGUI m_timeText;
+	private Text m_timeText;
 
 	private GameEvent m_jigsawEvent;
 

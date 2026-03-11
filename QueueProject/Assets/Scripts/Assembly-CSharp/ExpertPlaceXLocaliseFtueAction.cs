@@ -1,10 +1,10 @@
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class ExpertPlaceXLocaliseFtueAction : BaseFtueAction
 {
 	[SerializeField]
-	private TextMeshProUGUI m_text;
+	private Text m_text;
 
 	[SerializeField]
 	private Vector2Int m_cellToCheck;

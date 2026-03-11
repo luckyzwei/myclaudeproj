@@ -2,7 +2,7 @@ using System;
 using Balancy;
 using Balancy.Models.Store;
 using KWCore.UI;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class NoAdsOfferPopUp : PopUpBase, INoAdsOfferInterface
@@ -26,10 +26,10 @@ public class NoAdsOfferPopUp : PopUpBase, INoAdsOfferInterface
 
 	[Header("Optional")]
 	[SerializeField]
-	private TextMeshProUGUI m_originalPriceText24H;
+	private Text m_originalPriceText24H;
 
 	[SerializeField]
-	private TextMeshProUGUI m_originalPriceTextForEver;
+	private Text m_originalPriceTextForEver;
 
 	public string GetPrefabPath()
 	{

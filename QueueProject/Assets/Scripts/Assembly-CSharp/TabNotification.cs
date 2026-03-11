@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class TabNotification : MonoBehaviour
@@ -11,7 +11,7 @@ public class TabNotification : MonoBehaviour
 	private GameObject m_notificationObject;
 
 	[SerializeField]
-	private TMP_Text m_text;
+	private Text m_text;
 
 	private List<bool> m_notifications;
 

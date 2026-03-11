@@ -2,7 +2,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using KWPlayerProfile.WebImage;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,16 +49,16 @@ namespace KWPlayerProfile.Widget
 
 		[Header("Texts")]
 		[SerializeField]
-		private TMP_Text m_userName;
+		private Text m_userName;
 
 		[SerializeField]
-		private TMP_Text m_className;
+		private Text m_className;
 
 		[SerializeField]
-		private TMP_Text m_clanName;
+		private Text m_clanName;
 
 		[SerializeField]
-		private TMP_Text m_uniqueUserId;
+		private Text m_uniqueUserId;
 
 		[Header("Containers")]
 		[SerializeField]
@@ -97,7 +96,7 @@ namespace KWPlayerProfile.Widget
 		{
 		}
 
-		private void SetText(TMP_Text textComponent, string value, GameObject container)
+		private void SetText(Text textComponent, string value, GameObject container)
 		{
 		}
 	}
