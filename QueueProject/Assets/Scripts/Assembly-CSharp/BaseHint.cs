@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using KWCore.UI;
 using UnityEngine;
 
 public abstract class BaseHint : MonoBehaviour
@@ -56,19 +57,27 @@ public abstract class BaseHint : MonoBehaviour
 					highlightedCells[i].Highlight(true);
 			}
 		}
-		return null; // Hint popup not critical for core gameplay
+
+		// Show hint popup with explanation text
+		m_popupHint = KWCore.UI.PopUpBase.ShowPopup<PopupHint>(PopupHint.PREFAB_NAME);
+		if (m_popupHint != null)
+			m_popupHint.Config(text, interactibleCells, highlightedCells);
+		return m_popupHint;
 	}
 
 	protected string GetLocalisedColorName(int color)
 	{
-		string key = "Colors.Color" + color;
+		string key = "Color.C" + (color + 1);
 		string localized = Kwalee.GetLocalisedText(key);
 		return string.IsNullOrEmpty(localized) ? "Color " + color : localized;
 	}
 
 	protected string GetHighlighterLocalisedColorName(int color)
 	{
-		return GetLocalisedColorName(color);
+		string name = GetLocalisedColorName(color);
+		Color c = GetColor(color);
+		string hex = ColorUtility.ToHtmlStringRGB(c);
+		return "<color=#" + hex + ">" + name + "</color>";
 	}
 
 	protected string ReplaceRowColTag(string explanation, bool isColumn)

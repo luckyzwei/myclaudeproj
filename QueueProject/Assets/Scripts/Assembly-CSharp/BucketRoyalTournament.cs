@@ -39,10 +39,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(BEST_POSITION, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(BEST_POSITION, value);
 		}
 	}
 
@@ -50,10 +51,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return 0L;
+			return GetBucket()?.GetLong(BEST_TIME, 0L) ?? 0L;
 		}
 		set
 		{
+			GetBucket()?.SetLong(BEST_TIME, value);
 		}
 	}
 
@@ -61,10 +63,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(LAST_RESULT_POSITION, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(LAST_RESULT_POSITION, value);
 		}
 	}
 
@@ -72,10 +75,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(TIMES_COMPLETE, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(TIMES_COMPLETE, value);
 		}
 	}
 
@@ -83,10 +87,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return 0L;
+			return GetBucket()?.GetLong(LAST_FINISHED_TIME_STAMP, 0L) ?? 0L;
 		}
 		set
 		{
+			GetBucket()?.SetLong(LAST_FINISHED_TIME_STAMP, value);
 		}
 	}
 
@@ -94,10 +99,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetList<int>(LEVEL_POOL);
 		}
 		set
 		{
+			GetBucket()?.SetList<int>(LEVEL_POOL, value);
 		}
 	}
 
@@ -105,10 +111,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(GIVEN_LAST_RT_STARS, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(GIVEN_LAST_RT_STARS, value);
 		}
 	}
 
@@ -116,10 +123,11 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(FTUE_SHOWN, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(FTUE_SHOWN, value);
 		}
 	}
 
@@ -127,121 +135,136 @@ public class BucketRoyalTournament : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(ELIMINATION_REASON, null);
 		}
 		set
 		{
+			GetBucket()?.SetString(ELIMINATION_REASON, value);
 		}
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketRoyalTournament GetBucket()
 	{
-		return null;
+		if (s_bucketroyaltournament == null)
+		{
+			s_bucketroyaltournament = new BucketRoyalTournament();
+			s_bucketroyaltournament.LoadFromDisk();
+		}
+		return s_bucketroyaltournament;
 	}
 
 	public static int GetBestPosition(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(BEST_POSITION, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetBestPosition(int value)
 	{
+		GetBucket()?.SetInt(BEST_POSITION, value);
 	}
 
 	public static int IncrementAndSetBestPosition(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(BEST_POSITION, increment) ?? 0;
 	}
 
 	public static long GetBestTime(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket()?.GetLong(BEST_TIME, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetBestTime(long value)
 	{
+		GetBucket()?.SetLong(BEST_TIME, value);
 	}
 
 	public static int GetLastResultPosition(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(LAST_RESULT_POSITION, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastResultPosition(int value)
 	{
+		GetBucket()?.SetInt(LAST_RESULT_POSITION, value);
 	}
 
 	public static int IncrementAndSetLastResultPosition(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(LAST_RESULT_POSITION, increment) ?? 0;
 	}
 
 	public static int GetTimesComplete(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(TIMES_COMPLETE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetTimesComplete(int value)
 	{
+		GetBucket()?.SetInt(TIMES_COMPLETE, value);
 	}
 
 	public static int IncrementAndSetTimesComplete(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(TIMES_COMPLETE, increment) ?? 0;
 	}
 
 	public static long GetLastFinishedTimeStamp(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket()?.GetLong(LAST_FINISHED_TIME_STAMP, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastFinishedTimeStamp(long value)
 	{
+		GetBucket()?.SetLong(LAST_FINISHED_TIME_STAMP, value);
 	}
 
 	public static List<int> GetLevelPool()
 	{
-		return null;
+		return GetBucket()?.GetList<int>(LEVEL_POOL);
 	}
 
 	public static void SetLevelPool(List<int> value)
 	{
+		GetBucket()?.SetList<int>(LEVEL_POOL, value);
 	}
 
 	public static bool GetGivenLastRtStars(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(GIVEN_LAST_RT_STARS, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetGivenLastRtStars(bool value)
 	{
+		GetBucket()?.SetBool(GIVEN_LAST_RT_STARS, value);
 	}
 
 	public static bool GetFtueShown(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(FTUE_SHOWN, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetFtueShown(bool value)
 	{
+		GetBucket()?.SetBool(FTUE_SHOWN, value);
 	}
 
 	public static string GetEliminationReason(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(ELIMINATION_REASON, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetEliminationReason(string value)
 	{
+		GetBucket()?.SetString(ELIMINATION_REASON, value);
 	}
 }

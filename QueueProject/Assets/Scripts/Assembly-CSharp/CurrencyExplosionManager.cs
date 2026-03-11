@@ -21,10 +21,13 @@ public class CurrencyExplosionManager : MonoSingleton<CurrencyExplosionManager>
 		{
 			get
 			{
-				return null;
+				return m_origins != null && m_origins.Count > 0 ? m_origins[0] : null;
 			}
 			set
 			{
+				if (m_origins == null) m_origins = new List<CurrencyExplosionOrigin>();
+				if (m_origins.Count == 0) m_origins.Add(value);
+				else m_origins[0] = value;
 			}
 		}
 
@@ -32,20 +35,27 @@ public class CurrencyExplosionManager : MonoSingleton<CurrencyExplosionManager>
 		{
 			get
 			{
-				return null;
+				return m_receivers != null && m_receivers.Count > 0 ? m_receivers[0] : null;
 			}
 			set
 			{
+				if (m_receivers == null) m_receivers = new List<CurrencyExplosionReceiver>();
+				if (m_receivers.Count == 0) m_receivers.Add(value);
+				else m_receivers[0] = value;
 			}
 		}
 
 		public CurrencyExplosionPair(CurrencyExplosionOrigin origin, CurrencyExplosionReceiver receiver)
 		{
+			m_origins = new List<CurrencyExplosionOrigin>();
+			m_receivers = new List<CurrencyExplosionReceiver>();
+			if (origin != null) m_origins.Add(origin);
+			if (receiver != null) m_receivers.Add(receiver);
 		}
 
 		public bool IsValid()
 		{
-			return false;
+			return Origin != null && Receiver != null;
 		}
 	}
 
@@ -73,16 +83,16 @@ public class CurrencyExplosionManager : MonoSingleton<CurrencyExplosionManager>
 
 		public QueuedExplosionData(KwaleeItem item, int numAwarded, Vector3 origin, CurrencyExplosionReceiver receiver, Action onFirstElementReached, Action onFinishedActions, string clientId, Transform parent = null, int siblingIndex = 0, GameObject placeholderGO = null)
 		{
-			this.item = null;
-			this.numAwarded = 0;
-			this.origin = default(Vector3);
-			this.onFirstElementReached = null;
-			this.receiver = null;
-			this.onFinishedActions = null;
-			this.clientId = null;
-			originalParent = null;
-			originalSiblingIndex = 0;
-			placeHolderGameObject = null;
+			this.item = item;
+			this.numAwarded = numAwarded;
+			this.origin = origin;
+			this.onFirstElementReached = onFirstElementReached;
+			this.receiver = receiver;
+			this.onFinishedActions = onFinishedActions;
+			this.clientId = clientId;
+			originalParent = parent;
+			originalSiblingIndex = siblingIndex;
+			placeHolderGameObject = placeholderGO;
 		}
 	}
 
@@ -179,78 +189,188 @@ public class CurrencyExplosionManager : MonoSingleton<CurrencyExplosionManager>
 
 	protected override void Init()
 	{
+		m_registeredPairs = new Dictionary<string, CurrencyExplosionPair>();
+		m_currencyExplosionDatasDictionary = new Dictionary<string, CurrencyExplosionTweenData>();
+		m_queuedCountByReceiver = new Dictionary<GameObject, List<QueuedExplosionData>>();
+		m_onGoingFlows = 0;
+
+		if (m_currencyExplosionsData != null)
+		{
+			for (int i = 0; i < m_currencyExplosionsData.Length; i++)
+			{
+				var data = m_currencyExplosionsData[i];
+				if (data != null && !string.IsNullOrEmpty(data.ClientdId))
+					m_currencyExplosionDatasDictionary[data.ClientdId] = data;
+			}
+		}
 	}
 
 	protected void TrySpawnPopUp()
 	{
+		if (m_currencyExplosionPopUp == null)
+		{
+			var prefab = Resources.Load<CurrencyExplosionPopUp>("prefabs/CurrencyExplosionPopUp");
+			if (prefab != null)
+				m_currencyExplosionPopUp = Instantiate(prefab, transform);
+		}
 	}
 
 	private void TryRemovePopUp()
 	{
+		if (m_currencyExplosionPopUp != null && m_onGoingFlows <= 0)
+		{
+			Destroy(m_currencyExplosionPopUp.gameObject);
+			m_currencyExplosionPopUp = null;
+		}
 	}
 
 	public void PrepareForExplosion(string clientID)
 	{
+		if (m_registeredPairs == null || !m_registeredPairs.ContainsKey(clientID)) return;
+		TrySpawnPopUp();
 	}
 
 	public void DoExplosion(Reward reward, Action onQueueFinished = null, float delay = 0f, bool pauseBank = true, string clientId = "default", bool reParentReceiver = false, Transform overrideOrigin = null)
 	{
+		if (reward == null) { onQueueFinished?.Invoke(); return; }
+
+		var queue = new Queue<QueuedExplosionData>();
+		// Queue reward items
+		var explosionData = new QueuedExplosionData(null, 1, overrideOrigin != null ? overrideOrigin.position : Vector3.zero,
+			GetReceiverFromId(clientId), null, null, clientId);
+		queue.Enqueue(explosionData);
+
+		m_onGoingFlows++;
+		TrySpawnPopUp();
+		StartCoroutine(ExecuteQueueCoroutine(queue, onQueueFinished, delay));
 	}
 
 	private GameObject CreatePlaceHolderFor(Transform item)
 	{
-		return null;
+		if (item == null) return null;
+		var placeholder = new GameObject("Placeholder");
+		placeholder.transform.SetParent(item.parent);
+		placeholder.transform.SetSiblingIndex(item.GetSiblingIndex());
+		return placeholder;
 	}
 
 	[IteratorStateMachine(typeof(_003CExecuteQueueCoroutine_003Ed__17))]
 	private IEnumerator ExecuteQueueCoroutine(Queue<QueuedExplosionData> queue, Action onQueueFinished = null, float delay = 0f)
 	{
-		return null;
+		if (delay > 0)
+			yield return new WaitForSeconds(delay);
+
+		while (queue.Count > 0)
+		{
+			var data = queue.Dequeue();
+			CreateExplosionFromQueueData(data, data.onFirstElementReached, data.onFinishedActions);
+			if (m_timeBetweenExplosions > 0)
+				yield return new WaitForSeconds(m_timeBetweenExplosions);
+		}
+
+		TryFinishQueue(0, onQueueFinished);
 	}
 
 	private void TryFinishQueue(int queueCount, Action onQueueFinished)
 	{
+		if (queueCount <= 0)
+		{
+			m_onGoingFlows--;
+			TryRemovePopUp();
+			onQueueFinished?.Invoke();
+		}
 	}
 
 	private void RestoreParent(QueuedExplosionData data)
 	{
+		if (data.originalParent != null && data.receiver != null)
+		{
+			data.receiver.transform.SetParent(data.originalParent);
+			data.receiver.transform.SetSiblingIndex(data.originalSiblingIndex);
+		}
+		if (data.placeHolderGameObject != null)
+			Destroy(data.placeHolderGameObject);
 	}
 
 	public void DoExplosion(Sprite sprite, int numObtained, Vector3 origin, Transform target, Action firstElementReached = null, Action finished = null, string clientId = "default")
 	{
+		var receiver = GetReceiverFromId(clientId);
+		var data = new QueuedExplosionData(null, numObtained, origin, receiver, firstElementReached, finished, clientId);
+		m_onGoingFlows++;
+		TrySpawnPopUp();
+		CreateExplosionFromQueueData(data, firstElementReached, finished);
 	}
 
 	public void DoExplosion(string clientID, int numObtained, Vector3 origin, Transform target, Action firstElementReached = null, Action finished = null, string clientId = "default")
 	{
+		var receiver = GetReceiverFromId(clientID);
+		var data = new QueuedExplosionData(null, numObtained, origin, receiver, firstElementReached, finished, clientID);
+		m_onGoingFlows++;
+		TrySpawnPopUp();
+		CreateExplosionFromQueueData(data, firstElementReached, finished);
 	}
 
 	protected virtual void CreateExplosionFromQueueData(QueuedExplosionData explosionData, Action firstElementReached = null, Action finished = null)
 	{
+		// Base implementation - subclasses provide actual explosion visuals
+		firstElementReached?.Invoke();
+		finished?.Invoke();
+		m_onGoingFlows--;
+		TryRemovePopUp();
 	}
 
 	protected UnnyObject GetItemSprite(KwaleeItem kwaleeItem)
 	{
-		return null;
+		return null; // Loaded from Balancy
 	}
 
 	public void RegisterReceiver(CurrencyExplosionReceiver receiver)
 	{
+		if (receiver == null || m_registeredPairs == null) return;
+		string id = receiver.ClientID;
+		if (string.IsNullOrEmpty(id)) return;
+		if (!m_registeredPairs.ContainsKey(id))
+			m_registeredPairs[id] = new CurrencyExplosionPair(null, receiver);
+		else
+			m_registeredPairs[id].Receiver = receiver;
 	}
 
 	public void RemoveReceiver(CurrencyExplosionReceiver receiver)
 	{
+		if (receiver == null || m_registeredPairs == null) return;
+		string id = receiver.ClientID;
+		if (!string.IsNullOrEmpty(id) && m_registeredPairs.ContainsKey(id))
+			m_registeredPairs.Remove(id);
 	}
 
 	public void RegisterOrigin(CurrencyExplosionOrigin origin)
 	{
+		if (origin == null || m_registeredPairs == null) return;
+		string id = origin.GetClientID();
+		if (string.IsNullOrEmpty(id)) return;
+		if (!m_registeredPairs.ContainsKey(id))
+			m_registeredPairs[id] = new CurrencyExplosionPair(origin, null);
+		else
+			m_registeredPairs[id].Origin = origin;
 	}
 
 	public void RemoveOrigin(CurrencyExplosionOrigin origin)
 	{
+		if (origin == null || m_registeredPairs == null) return;
+		string id = origin.GetClientID();
+		if (!string.IsNullOrEmpty(id) && m_registeredPairs.ContainsKey(id))
+		{
+			var pair = m_registeredPairs[id];
+			if (pair.Receiver == null)
+				m_registeredPairs.Remove(id);
+		}
 	}
 
 	public CurrencyExplosionReceiver GetReceiverFromId(string clientId)
 	{
+		if (string.IsNullOrEmpty(clientId) || m_registeredPairs == null) return null;
+		if (m_registeredPairs.TryGetValue(clientId, out var pair))
+			return pair.Receiver;
 		return null;
 	}
 }

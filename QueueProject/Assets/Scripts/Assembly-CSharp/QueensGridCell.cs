@@ -328,9 +328,15 @@ public class QueensGridCell : MonoBehaviour
 
 	public void SetAsLoseLife()
 	{
-		// LifeLost is in AC-Tile-Marker (m_markerAnimator)
+		// Lock this cell permanently after wrong queen placement
 		if (m_markerAnimator != null)
+		{
+			if (!m_markerAnimator.gameObject.activeSelf)
+				m_markerAnimator.gameObject.SetActive(true);
 			m_markerAnimator.Play(ANIM_LIFELOST);
+		}
+		m_dontAcceptX = true;
+		m_value = QueensGrid.QUEEN; // Treat as occupied so MarkXCell/ClearCell skip it
 	}
 
 	public void SetAsLoseLifeFTUE()

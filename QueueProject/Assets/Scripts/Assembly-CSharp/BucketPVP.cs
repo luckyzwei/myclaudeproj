@@ -47,10 +47,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(LAST_CHALLENGE_RECIEVED_LEVEL, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(LAST_CHALLENGE_RECIEVED_LEVEL, value);
 		}
 	}
 
@@ -58,10 +59,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(LAST_CHALLENGE_ACCEPTED_LEVEL, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(LAST_CHALLENGE_ACCEPTED_LEVEL, value);
 		}
 	}
 
@@ -69,10 +71,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(LAST_CHALLENGE_REFUSED_LEVEL, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(LAST_CHALLENGE_REFUSED_LEVEL, value);
 		}
 	}
 
@@ -80,10 +83,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(REFUSED_CHALLENGES_COUNT, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(REFUSED_CHALLENGES_COUNT, value);
 		}
 	}
 
@@ -91,10 +95,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(ACCEPTED_CHALLENGES_COUNT, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(ACCEPTED_CHALLENGES_COUNT, value);
 		}
 	}
 
@@ -102,10 +107,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(CHALLENGE_COOLDOWN_LEVEL, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(CHALLENGE_COOLDOWN_LEVEL, value);
 		}
 	}
 
@@ -113,10 +119,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(AUTO_X_FOR_CHALLENGE_NUMBER, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(AUTO_X_FOR_CHALLENGE_NUMBER, value);
 		}
 	}
 
@@ -124,10 +131,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(UNFINISHED_CHALLENGE, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(UNFINISHED_CHALLENGE, value);
 		}
 	}
 
@@ -135,10 +143,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(CHALLENGE_INITIATION_TYPE, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(CHALLENGE_INITIATION_TYPE, value);
 		}
 	}
 
@@ -146,10 +155,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(LAST_OPPONENT_NAME, null);
 		}
 		set
 		{
+			GetBucket()?.SetString(LAST_OPPONENT_NAME, value);
 		}
 	}
 
@@ -157,10 +167,11 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(LAST_OPPONENT_AVATAR, null);
 		}
 		set
 		{
+			GetBucket()?.SetString(LAST_OPPONENT_AVATAR, value);
 		}
 	}
 
@@ -168,173 +179,191 @@ public class BucketPVP : BucketBase
 	{
 		get
 		{
-			return 0L;
+			return GetBucket()?.GetLong(LAST_OPPONENT_BADGE, 0L) ?? 0L;
 		}
 		set
 		{
+			GetBucket()?.SetLong(LAST_OPPONENT_BADGE, value);
 		}
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketPVP GetBucket()
 	{
-		return null;
+		if (s_bucketpvp == null)
+		{
+			s_bucketpvp = new BucketPVP();
+			s_bucketpvp.LoadFromDisk();
+		}
+		return s_bucketpvp;
 	}
 
 	public static int GetLastChallengeRecievedLevel(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(LAST_CHALLENGE_RECIEVED_LEVEL, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastChallengeRecievedLevel(int value)
 	{
+		GetBucket()?.SetInt(LAST_CHALLENGE_RECIEVED_LEVEL, value);
 	}
 
 	public static int IncrementAndSetLastChallengeRecievedLevel(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(LAST_CHALLENGE_RECIEVED_LEVEL, increment) ?? 0;
 	}
 
 	public static int GetLastChallengeAcceptedLevel(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(LAST_CHALLENGE_ACCEPTED_LEVEL, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastChallengeAcceptedLevel(int value)
 	{
+		GetBucket()?.SetInt(LAST_CHALLENGE_ACCEPTED_LEVEL, value);
 	}
 
 	public static int IncrementAndSetLastChallengeAcceptedLevel(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(LAST_CHALLENGE_ACCEPTED_LEVEL, increment) ?? 0;
 	}
 
 	public static int GetLastChallengeRefusedLevel(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(LAST_CHALLENGE_REFUSED_LEVEL, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastChallengeRefusedLevel(int value)
 	{
+		GetBucket()?.SetInt(LAST_CHALLENGE_REFUSED_LEVEL, value);
 	}
 
 	public static int IncrementAndSetLastChallengeRefusedLevel(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(LAST_CHALLENGE_REFUSED_LEVEL, increment) ?? 0;
 	}
 
 	public static int GetRefusedChallengesCount(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(REFUSED_CHALLENGES_COUNT, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetRefusedChallengesCount(int value)
 	{
+		GetBucket()?.SetInt(REFUSED_CHALLENGES_COUNT, value);
 	}
 
 	public static int IncrementAndSetRefusedChallengesCount(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(REFUSED_CHALLENGES_COUNT, increment) ?? 0;
 	}
 
 	public static int GetAcceptedChallengesCount(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(ACCEPTED_CHALLENGES_COUNT, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetAcceptedChallengesCount(int value)
 	{
+		GetBucket()?.SetInt(ACCEPTED_CHALLENGES_COUNT, value);
 	}
 
 	public static int IncrementAndSetAcceptedChallengesCount(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(ACCEPTED_CHALLENGES_COUNT, increment) ?? 0;
 	}
 
 	public static int GetChallengeCooldownLevel(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(CHALLENGE_COOLDOWN_LEVEL, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetChallengeCooldownLevel(int value)
 	{
+		GetBucket()?.SetInt(CHALLENGE_COOLDOWN_LEVEL, value);
 	}
 
 	public static int IncrementAndSetChallengeCooldownLevel(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(CHALLENGE_COOLDOWN_LEVEL, increment) ?? 0;
 	}
 
 	public static int GetAutoXForChallengeNumber(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(AUTO_X_FOR_CHALLENGE_NUMBER, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetAutoXForChallengeNumber(int value)
 	{
+		GetBucket()?.SetInt(AUTO_X_FOR_CHALLENGE_NUMBER, value);
 	}
 
 	public static int IncrementAndSetAutoXForChallengeNumber(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(AUTO_X_FOR_CHALLENGE_NUMBER, increment) ?? 0;
 	}
 
 	public static bool GetUnfinishedChallenge(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(UNFINISHED_CHALLENGE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetUnfinishedChallenge(bool value)
 	{
+		GetBucket()?.SetBool(UNFINISHED_CHALLENGE, value);
 	}
 
 	public static int GetChallengeInitiationType(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(CHALLENGE_INITIATION_TYPE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetChallengeInitiationType(int value)
 	{
+		GetBucket()?.SetInt(CHALLENGE_INITIATION_TYPE, value);
 	}
 
 	public static int IncrementAndSetChallengeInitiationType(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(CHALLENGE_INITIATION_TYPE, increment) ?? 0;
 	}
 
 	public static string GetLastOpponentName(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(LAST_OPPONENT_NAME, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastOpponentName(string value)
 	{
+		GetBucket()?.SetString(LAST_OPPONENT_NAME, value);
 	}
 
 	public static string GetLastOpponentAvatar(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(LAST_OPPONENT_AVATAR, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastOpponentAvatar(string value)
 	{
+		GetBucket()?.SetString(LAST_OPPONENT_AVATAR, value);
 	}
 
 	public static long GetLastOpponentBadge(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket()?.GetLong(LAST_OPPONENT_BADGE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetLastOpponentBadge(long value)
 	{
+		GetBucket()?.SetLong(LAST_OPPONENT_BADGE, value);
 	}
 }

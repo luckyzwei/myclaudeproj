@@ -24,10 +24,11 @@ public class BucketProfileBackground : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(BOT_PROFILES_SET) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(BOT_PROFILES_SET, value);
 		}
 	}
 
@@ -35,10 +36,11 @@ public class BucketProfileBackground : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(BOT_PROFILES_SET_DATE) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(BOT_PROFILES_SET_DATE, value);
 		}
 	}
 
@@ -46,10 +48,11 @@ public class BucketProfileBackground : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(SELECTED_BACKGROUND_ID);
 		}
 		set
 		{
+			GetBucket()?.SetString(SELECTED_BACKGROUND_ID, value);
 		}
 	}
 
@@ -57,66 +60,76 @@ public class BucketProfileBackground : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetList<string>(BACKGROUNDS_USED);
 		}
 		set
 		{
+			GetBucket()?.SetList(BACKGROUNDS_USED, value);
 		}
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketProfileBackground GetBucket()
 	{
-		return null;
+		if (s_bucketprofilebackground == null)
+		{
+			s_bucketprofilebackground = new BucketProfileBackground();
+			s_bucketprofilebackground.LoadFromDisk();
+		}
+		return s_bucketprofilebackground;
 	}
 
 	public static bool GetBotProfilesSet(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(BOT_PROFILES_SET, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetBotProfilesSet(bool value)
 	{
+		GetBucket()?.SetBool(BOT_PROFILES_SET, value);
 	}
 
 	public static int GetBotProfilesSetDate(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(BOT_PROFILES_SET_DATE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetBotProfilesSetDate(int value)
 	{
+		GetBucket()?.SetInt(BOT_PROFILES_SET_DATE, value);
 	}
 
 	public static int IncrementAndSetBotProfilesSetDate(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(BOT_PROFILES_SET_DATE, increment) ?? 0;
 	}
 
 	public static string GetSelectedBackgroundId(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(SELECTED_BACKGROUND_ID, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetSelectedBackgroundId(string value)
 	{
+		GetBucket()?.SetString(SELECTED_BACKGROUND_ID, value);
 	}
 
 	public static List<string> GetBackgroundsUsed()
 	{
-		return null;
+		return GetBucket()?.GetList<string>(BACKGROUNDS_USED);
 	}
 
 	public static void SetBackgroundsUsed(List<string> value)
 	{
+		GetBucket()?.SetList(BACKGROUNDS_USED, value);
 	}
 }

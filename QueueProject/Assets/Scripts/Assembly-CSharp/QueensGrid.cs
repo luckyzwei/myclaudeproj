@@ -598,6 +598,10 @@ public class QueensGrid : MonoBehaviour
 			m_queenCount++;
 			var cell = GetCell(cellIndex);
 
+			// Clear hint highlight when queen is placed
+			if (cell != null)
+				cell.ShowHintHighlight(false);
+
 			bool isLastQueen = GetRemainingQueens() == 0;
 
 			if (cell != null && !isLastQueen)
@@ -625,7 +629,8 @@ public class QueensGrid : MonoBehaviour
 		}
 		else
 		{
-			// Wrong placement - lose a life
+			// Wrong placement - lock cell and lose a life
+			m_playerSolution[cellIndex] = QUEEN; // Mark as occupied so it can't be changed
 			var cell = GetCell(cellIndex);
 			if (cell != null)
 				cell.SetAsLoseLife();
@@ -679,6 +684,7 @@ public class QueensGrid : MonoBehaviour
 		var cell = GetCell(cellIndex);
 		if (cell != null)
 		{
+			cell.ShowHintHighlight(false);
 			m_pitch = Mathf.Min(m_pitch + PITCH_INCREASE, 2f);
 			cell.SetAsX(hint, sound, m_pitch);
 			if (sound) StartPitchResetCoroutine();
@@ -943,7 +949,12 @@ public class QueensGrid : MonoBehaviour
 	{
 		if (m_levelData == null || m_playerSolution == null || m_cells == null) return;
 
-		// Highlight cells where queens should go
+		// Try the advanced hint system first (shows explanation text via PopupHint)
+		var hintsManager = HintsManager.Instance;
+		if (hintsManager != null && hintsManager.TryShowHint())
+			return;
+
+		// Fallback: just highlight the next queen cell
 		for (int i = 0; i < m_levelData.queensGrid.Length; i++)
 		{
 			if (m_levelData.queensGrid[i] >= 1 && m_playerSolution[i] != QUEEN)
@@ -951,7 +962,7 @@ public class QueensGrid : MonoBehaviour
 				var cell = GetCell(i);
 				if (cell != null)
 					cell.ShowHintHighlight(true);
-				break; // Just show one hint
+				break;
 			}
 		}
 	}

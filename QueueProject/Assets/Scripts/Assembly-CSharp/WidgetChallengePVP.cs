@@ -98,6 +98,9 @@ public class WidgetChallengePVP : MonoBehaviour
 
 	private void Awake()
 	{
+		// Hide challenge widget unless there is an active PVP challenge
+		bool hasChallenge = PVPManager.Instance != null && PVPManager.Instance.IsThereChallenge;
+		gameObject.SetActive(hasChallenge);
 	}
 
 	[IteratorStateMachine(typeof(_003CComeInFlow_003Ed__11))]

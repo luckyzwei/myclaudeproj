@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using KWCore.UI;
 using UnityEngine;
 
 public class HintProcessDoer : MonoBehaviour
@@ -90,8 +91,13 @@ public class HintProcessDoer : MonoBehaviour
 
 	private List<QueensGridCell> m_highlightedCells;
 
+	private bool m_subscribedToEvents;
+
 	public void DoHint(HintsManager.HintResult hintResult, Action callback)
 	{
+		// Clean up previous hint if any
+		CleanupPreviousHint();
+
 		m_hintResult = hintResult;
 		m_callback = callback;
 
@@ -103,23 +109,63 @@ public class HintProcessDoer : MonoBehaviour
 		GetCells(hintResult.interactibleCells, m_interactableCells);
 		GetCells(hintResult.highlightedCells, m_highlightedCells);
 
-		// Highlight cells
+		// Highlight cells with white background
 		for (int i = 0; i < m_highlightedCells.Count; i++)
 		{
 			if (m_highlightedCells[i] != null)
 				m_highlightedCells[i].Highlight(true);
 		}
+
+		// Show hint highlight animation on interactible cells
+		for (int i = 0; i < m_interactableCells.Count; i++)
+		{
+			if (m_interactableCells[i] != null)
+				m_interactableCells[i].ShowHintHighlight(true);
+		}
+
+		// Subscribe to grid events so we know when player acts on the hint
+		SubscribeToGridEvents();
+
+		// Show hint popup with explanation text
+		if (!string.IsNullOrEmpty(hintResult.explanation))
+		{
+			m_popupHint = KWCore.UI.PopUpBase.ShowPopup<PopupHint>(PopupHint.PREFAB_NAME);
+			if (m_popupHint != null)
+				m_popupHint.Config(hintResult.explanation, m_interactableCells, m_highlightedCells);
+		}
+	}
+
+	private void SubscribeToGridEvents()
+	{
+		UnsubscribeFromGridEvents();
+		var grid = QueensGameController.Instance?.Grid;
+		if (grid == null) return;
+		grid.CrossMarked += OnCrossMarked;
+		grid.QueenMarked += OnQueenMarked;
+		m_subscribedToEvents = true;
+	}
+
+	private void UnsubscribeFromGridEvents()
+	{
+		if (!m_subscribedToEvents) return;
+		var grid = QueensGameController.Instance?.Grid;
+		if (grid != null)
+		{
+			grid.CrossMarked -= OnCrossMarked;
+			grid.QueenMarked -= OnQueenMarked;
+		}
+		m_subscribedToEvents = false;
 	}
 
 	private void OnCrossMarked(int cellIndex)
 	{
-		// Check if hint action was completed by player
 		if (m_hintResult == null || m_interactableCells == null) return;
 
 		for (int i = m_interactableCells.Count - 1; i >= 0; i--)
 		{
 			if (m_interactableCells[i] != null && m_interactableCells[i].CellIndex == cellIndex)
 			{
+				m_interactableCells[i].ShowHintHighlight(false);
 				m_interactableCells.RemoveAt(i);
 				break;
 			}
@@ -129,8 +175,55 @@ public class HintProcessDoer : MonoBehaviour
 			HintCompleted();
 	}
 
+	private void OnQueenMarked(int cellIndex)
+	{
+		if (m_hintResult == null || m_interactableCells == null) return;
+
+		for (int i = m_interactableCells.Count - 1; i >= 0; i--)
+		{
+			if (m_interactableCells[i] != null && m_interactableCells[i].CellIndex == cellIndex)
+			{
+				m_interactableCells[i].ShowHintHighlight(false);
+				m_interactableCells.RemoveAt(i);
+				break;
+			}
+		}
+
+		if (m_interactableCells.Count == 0)
+			HintCompleted();
+	}
+
+	private void CleanupPreviousHint()
+	{
+		UnsubscribeFromGridEvents();
+		// Clear old highlights
+		if (m_highlightedCells != null)
+		{
+			for (int i = 0; i < m_highlightedCells.Count; i++)
+			{
+				if (m_highlightedCells[i] != null)
+					m_highlightedCells[i].Highlight(false);
+			}
+		}
+		if (m_interactableCells != null)
+		{
+			for (int i = 0; i < m_interactableCells.Count; i++)
+			{
+				if (m_interactableCells[i] != null)
+					m_interactableCells[i].ShowHintHighlight(false);
+			}
+		}
+		// Close old popup if still alive
+		if (m_popupHint != null)
+		{
+			Destroy(m_popupHint.gameObject);
+			m_popupHint = null;
+		}
+	}
+
 	private void HintCompleted()
 	{
+		UnsubscribeFromGridEvents();
 		// Clear highlights
 		if (m_highlightedCells != null)
 		{
@@ -140,7 +233,29 @@ public class HintProcessDoer : MonoBehaviour
 					m_highlightedCells[i].Highlight(false);
 			}
 		}
+		// Clear hint highlight animations
+		if (m_interactableCells != null)
+		{
+			for (int i = 0; i < m_interactableCells.Count; i++)
+			{
+				if (m_interactableCells[i] != null)
+					m_interactableCells[i].ShowHintHighlight(false);
+			}
+		}
+		// Close popup
+		if (m_popupHint != null)
+		{
+			m_popupHint.gameObject.SetActive(false);
+			Destroy(m_popupHint.gameObject);
+			m_popupHint = null;
+		}
+		m_hintResult = null;
 		m_callback?.Invoke();
+	}
+
+	private void OnDestroy()
+	{
+		UnsubscribeFromGridEvents();
 	}
 
 	private static void GetCells(List<int> cellIndexList, List<QueensGridCell> cellsList)
@@ -159,12 +274,19 @@ public class HintProcessDoer : MonoBehaviour
 
 	public void AutoDo(Action finishCallback)
 	{
+		// Unsubscribe so auto-do actions don't trigger OnCrossMarked/OnQueenMarked
+		UnsubscribeFromGridEvents();
+
 		if (m_hintResult == null || m_interactableCells == null)
 		{
 			finishCallback?.Invoke();
 			return;
 		}
-		StartCoroutine(DoAutoActionCoroutine(m_interactableCells, m_hintResult.isQueen, finishCallback));
+		StartCoroutine(DoAutoActionCoroutine(m_interactableCells, m_hintResult.isQueen, () =>
+		{
+			HintCompleted();
+			finishCallback?.Invoke();
+		}));
 	}
 
 	[IteratorStateMachine(typeof(_003CDoAutoActionCoroutine_003Ed__10))]

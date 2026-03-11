@@ -71,6 +71,11 @@ public class HintsManager : MonoSingleton<HintsManager>
 		if (m_currentGridState == null) LoadLevel();
 		if (m_currentGridState == null) return false;
 
+		// Refresh player solution state before analyzing
+		var grid = QueensGameController.Instance?.Grid;
+		if (grid != null)
+			m_currentGridState.LoadFromGrid(grid);
+
 		m_hintResult.Clear();
 		if (GetHintData(m_currentGridState, doubleQueen, out var result))
 		{
@@ -115,9 +120,16 @@ public class HintsManager : MonoSingleton<HintsManager>
 			m_hintProcessDoer.DoHint(hintResult, null);
 	}
 
+	public void DoHintExternal(HintResult hintResult)
+	{
+		DoHint(hintResult);
+	}
+
 	public void AutoDoHint(Action finishCallback = null)
 	{
-		if (m_activeHintTechnique != null)
+		if (m_hintProcessDoer != null)
+			m_hintProcessDoer.AutoDo(finishCallback);
+		else if (m_activeHintTechnique != null)
 			m_activeHintTechnique.AutoDoAction(finishCallback);
 		else
 			finishCallback?.Invoke();

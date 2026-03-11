@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class QueenBoosterButton : BoosterButton
 {
 	private const string ANIM_ANIM_BOOSTERBUTTON_ALERT = "Anim-BoosterButton-Alert";
@@ -18,11 +20,30 @@ public class QueenBoosterButton : BoosterButton
 		{
 			if (levelData.queensGrid[i] >= 1 && grid.GetPlayerSolution(i) != QueensGrid.QUEEN)
 			{
-				grid.MarkQueenCell(i, false, true);
+				// Show hint popup instead of placing queen directly
+				ShowQueenHint(i);
 				return true;
 			}
 		}
 		return false;
+	}
+
+	private void ShowQueenHint(int cellIndex)
+	{
+		var hintsManager = HintsManager.Instance;
+		if (hintsManager == null) return;
+
+		// Build a HintResult for this single queen cell
+		var result = new HintsManager.HintResult();
+		result.isQueen = true;
+		result.hintTechniqueName = "QueenBooster";
+		result.highlightedCells = new List<int> { cellIndex };
+		result.interactibleCells = new List<int> { cellIndex };
+		string text = Kwalee.GetLocalisedText("Hints.QueenBooster");
+		result.explanation = !string.IsNullOrEmpty(text) ? text : "在这里放置皇后！";
+
+		// Use HintProcessDoer to show the popup with highlight
+		hintsManager.DoHintExternal(result);
 	}
 
 	public override void OnButtonPressed()

@@ -1,6 +1,7 @@
 using System;
 using Balancy.Models;
 using Balancy.Models.SmartObjects;
+using KWCore.SaveData;
 
 public static class QueensTreasureEventHelpers
 {
@@ -22,166 +23,274 @@ public static class QueensTreasureEventHelpers
 
 	public static PrizeLadderRewardData[] PrizeLadderRewardDatas => null;
 
-	public static int RewardSetIndex => 0;
+	public static int RewardSetIndex => BucketGameplay.QueensEventRewardIndex;
 
 	private static int Loop(int index, int count, int loopFrom)
 	{
-		return 0;
+		if (index < loopFrom)
+			return index;
+		return loopFrom + (index - loopFrom) % (count - loopFrom);
 	}
 
 	private static GameEvent GetCurrentlyActiveQueenEvent()
 	{
-		return null;
+		return QueensGameEventsHelper.FindActiveGameEventById(EVENT_ACTIVE_ID);
 	}
 
 	public static bool IsEventLive(bool ignoreMinLevel = false)
 	{
-		return false;
+		if (!ignoreMinLevel && !ReachedTheMinimumRequiredLevelForTreassureEvent())
+			return false;
+
+		GameEvent activeEvent = GetCurrentlyActiveQueenEvent();
+		if (activeEvent != null)
+			return true;
+
+		return IsCustomEventActive(out _);
 	}
 
 	private static bool IsTreasureEventStartDateBeforeCustomEventEnd()
 	{
-		return false;
+		long customFinishTime = BucketQueensEvent.CustomEventFinishTime;
+		if (customFinishTime <= 0)
+			return false;
+
+		int timeUntilStart = QueensGameEventsHelper.GetTimeLeftUntilEventStart(EVENT_ACTIVE_ID);
+		if (timeUntilStart <= 0)
+			return false;
+
+		long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+		long eventStartTime = now + timeUntilStart;
+		return eventStartTime < customFinishTime;
 	}
 
 	private static GameEvent GetInactiveQueenEvent()
 	{
-		return null;
+		return QueensGameEventsHelper.FindActiveGameEventById(EVENT_INACTIVE_ID);
 	}
 
 	public static bool ReachedTheMinimumRequiredLevelForTreassureEvent()
 	{
-		return false;
+		return FeatureUnlockManager.IsQueensEventUnlocked;
 	}
 
 	public static int GetUnlockLevel()
 	{
-		return 0;
+		// Queens event unlock level; typical default for feature unlock
+		return 5;
 	}
 
 	public static int GetTimeLeftUntilEventStart()
 	{
-		return 0;
+		return QueensGameEventsHelper.GetTimeLeftUntilEventStart(EVENT_ACTIVE_ID);
 	}
 
 	public static int GetTimeLeftUntilEventFinish()
 	{
-		return 0;
+		// Check custom event first
+		if (IsCustomEventActive(out long remaining))
+			return (int)remaining;
+
+		return QueensGameEventsHelper.GetTimeLeftUntilEventFinish(EVENT_ACTIVE_ID);
 	}
 
 	public static void StartCustomEvent()
 	{
+		// Set custom event finish time (e.g. 24 hours from now)
+		long finishTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds() + 86400;
+		BucketQueensEvent.CustomEventFinishTime = finishTime;
 	}
 
 	public static void EndCustomEvent()
 	{
+		BucketQueensEvent.CustomEventFinishTime = 0;
 	}
 
 	public static bool IsCustomEventActive(out long remainingTime)
 	{
-		remainingTime = default(long);
-		return false;
+		long finishTime = BucketQueensEvent.CustomEventFinishTime;
+		if (finishTime <= 0)
+		{
+			remainingTime = 0;
+			return false;
+		}
+
+		long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+		remainingTime = finishTime - now;
+		if (remainingTime <= 0)
+		{
+			remainingTime = 0;
+			return false;
+		}
+		return true;
 	}
 
 	public static int NumberOfGemsCollected()
 	{
-		return 0;
+		return BucketGameplay.NumQueenEventGemsCollected;
 	}
 
 	public static void ResetGems()
 	{
+		BucketGameplay.NumQueenEventGemsCollected = 0;
+		BucketGameplay.NumLastSeenGems = 0;
 	}
 
 	public static void AddGems(int gems)
 	{
+		BucketGameplay.NumQueenEventGemsCollected = BucketGameplay.NumQueenEventGemsCollected + gems;
 	}
 
 	public static bool HasRewardBeenClaimed(int rewardIndex)
 	{
-		return false;
+		string claimed = BucketGameplay.QueenEventRewardsClaimed;
+		if (string.IsNullOrEmpty(claimed) || rewardIndex < 0 || rewardIndex >= claimed.Length)
+			return false;
+		return claimed[rewardIndex] == CLAIMED_REWARD;
 	}
 
 	public static void RecordClaimedReward(int rewardIndex, bool claimed = true)
 	{
+		string rewardsClaimed = BucketGameplay.QueenEventRewardsClaimed ?? "";
+
+		// Extend the string if needed
+		while (rewardsClaimed.Length <= rewardIndex)
+			rewardsClaimed += UNCLAIMED_REWARD;
+
+		char[] chars = rewardsClaimed.ToCharArray();
+		chars[rewardIndex] = claimed ? CLAIMED_REWARD : UNCLAIMED_REWARD;
+		BucketGameplay.QueenEventRewardsClaimed = new string(chars);
 	}
 
 	public static bool AnyRewardIsAvailable()
 	{
+		PrizeLadderRewardData[] rewards = PrizeLadderRewardDatas;
+		if (rewards == null)
+			return false;
+
+		for (int i = 0; i < rewards.Length; i++)
+		{
+			if (RewardIsAvailable(i))
+				return true;
+		}
 		return false;
 	}
 
 	public static bool RewardIsAvailable(int rewardIndex)
 	{
-		return false;
+		if (HasRewardBeenClaimed(rewardIndex))
+			return false;
+
+		int gemsRequired = GetCumulativeRequiredGemsForPrize(rewardIndex);
+		return NumberOfGemsCollected() >= gemsRequired;
 	}
 
 	public static bool LastRewardClaimed()
 	{
-		return false;
+		PrizeLadderRewardData[] rewards = PrizeLadderRewardDatas;
+		if (rewards == null || rewards.Length == 0)
+			return false;
+		return HasRewardBeenClaimed(rewards.Length - 1);
 	}
 
 	public static DateTime GetEventStartDate()
 	{
-		return default(DateTime);
+		GameEvent activeEvent = GetCurrentlyActiveQueenEvent();
+		if (activeEvent != null)
+		{
+			// Compute start date from time left until finish and event duration
+			int timeLeftFinish = QueensGameEventsHelper.GetTimeLeftUntilEventFinish(EVENT_ACTIVE_ID);
+			return DateTime.UtcNow.AddSeconds(timeLeftFinish).Date;
+		}
+		return DateTime.UtcNow.Date;
 	}
 
 	public static int GetEventStartDateDayIndex()
 	{
-		return 0;
+		return BucketGameplay.LastQueensEventStartDay;
 	}
 
 	public static bool HasPlayedBefore()
 	{
-		return false;
+		return BucketQueensEvent.PlayedBefore;
 	}
 
 	public static void SetPlayedBefore()
 	{
+		BucketQueensEvent.PlayedBefore = true;
 	}
 
 	public static int GetLastSeenGems()
 	{
-		return 0;
+		return BucketGameplay.NumLastSeenGems;
 	}
 
 	public static bool HasUnseenGems()
 	{
-		return false;
+		return NumberOfGemsCollected() > GetLastSeenGems();
 	}
 
 	public static void SawAllGems()
 	{
+		BucketGameplay.NumLastSeenGems = NumberOfGemsCollected();
 	}
 
 	public static void CheckForNotifications()
 	{
+		if (!IsEventLive())
+			return;
+
+		if (AnyRewardIsAvailable())
+		{
+			NotificationWidgetManager.Instance.AddNotification(NOTIFICATION_ID);
+		}
+		else
+		{
+			NotificationWidgetManager.Instance.SwallowNotification(NOTIFICATION_ID);
+		}
 	}
 
 	public static bool HasCollectedAllGems()
 	{
-		return false;
+		PrizeLadderRewardData[] rewards = PrizeLadderRewardDatas;
+		if (rewards == null || rewards.Length == 0)
+			return false;
+
+		int totalRequired = GetCumulativeRequiredGemsForPrize(rewards.Length - 1);
+		return NumberOfGemsCollected() >= totalRequired;
 	}
 
 	public static int GetRemainingGems()
 	{
-		return 0;
+		PrizeLadderRewardData[] rewards = PrizeLadderRewardDatas;
+		if (rewards == null || rewards.Length == 0)
+			return 0;
+
+		int totalRequired = GetCumulativeRequiredGemsForPrize(rewards.Length - 1);
+		int collected = NumberOfGemsCollected();
+		return Math.Max(0, totalRequired - collected);
 	}
 
 	public static bool HasClaimedAllRewards()
 	{
-		return false;
+		return BucketGameplay.HasCollectedAllQueensRewards;
 	}
 
 	public static void ClaimedAllRewards()
 	{
+		BucketGameplay.HasCollectedAllQueensRewards = true;
 	}
 
 	public static void SetRewardSetIndex(int setIndex)
 	{
+		BucketGameplay.QueensEventRewardIndex = setIndex;
+		s_initialisedRewardSetIndex = setIndex;
 	}
 
 	public static int GetCumulativeRequiredGemsForPrize(int prizeIndex)
 	{
+		if (s_cumulativeGems != null && prizeIndex >= 0 && prizeIndex < s_cumulativeGems.Length)
+			return s_cumulativeGems[prizeIndex];
 		return 0;
 	}
 }

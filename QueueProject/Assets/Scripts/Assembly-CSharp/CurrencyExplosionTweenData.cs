@@ -61,7 +61,7 @@ public class CurrencyExplosionTweenData : ScriptableObject
 	[SerializeField]
 	protected List<CurrencyExplosionAudio> m_currencyCollectionAudio;
 
-	public string ClientdId => null;
+	public string ClientdId => m_clientID;
 
 	public virtual void PlayExplosionTween(Transform parent, Sprite sprite, int numToSpawn, Vector3 start, Transform target, Action firstElementReached, Action finished, string clientID = "default")
 	{

@@ -29,10 +29,11 @@ public class BucketNakama : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(ACCOUNT_ACCEPTED) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(ACCOUNT_ACCEPTED, value);
 		}
 	}
 
@@ -40,10 +41,11 @@ public class BucketNakama : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(FRIENDS_COUNT) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(FRIENDS_COUNT, value);
 		}
 	}
 
@@ -51,10 +53,11 @@ public class BucketNakama : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(FRIENDS_REQUEST_COUNT) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(FRIENDS_REQUEST_COUNT, value);
 		}
 	}
 
@@ -62,99 +65,111 @@ public class BucketNakama : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(FRIENDS_ACCEPTED_COUNT) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(FRIENDS_ACCEPTED_COUNT, value);
 		}
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketNakama GetBucket()
 	{
-		return null;
+		if (s_bucketnakama == null)
+		{
+			s_bucketnakama = new BucketNakama();
+			s_bucketnakama.LoadFromDisk();
+		}
+		return s_bucketnakama;
 	}
 
 	public static bool GetAccountAccepted(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(ACCOUNT_ACCEPTED, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetAccountAccepted(bool value)
 	{
+		GetBucket()?.SetBool(ACCOUNT_ACCEPTED, value);
 	}
 
 	public static int GetFriendsCount(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(FRIENDS_COUNT, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetFriendsCount(int value)
 	{
+		GetBucket()?.SetInt(FRIENDS_COUNT, value);
 	}
 
 	public static int IncrementAndSetFriendsCount(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(FRIENDS_COUNT, increment) ?? 0;
 	}
 
 	public static int GetFriendsRequestCount(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(FRIENDS_REQUEST_COUNT, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetFriendsRequestCount(int value)
 	{
+		GetBucket()?.SetInt(FRIENDS_REQUEST_COUNT, value);
 	}
 
 	public static int IncrementAndSetFriendsRequestCount(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(FRIENDS_REQUEST_COUNT, increment) ?? 0;
 	}
 
 	public static int GetFriendsAcceptedCount(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(FRIENDS_ACCEPTED_COUNT, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetFriendsAcceptedCount(int value)
 	{
+		GetBucket()?.SetInt(FRIENDS_ACCEPTED_COUNT, value);
 	}
 
 	public static int IncrementAndSetFriendsAcceptedCount(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(FRIENDS_ACCEPTED_COUNT, increment) ?? 0;
 	}
 
 	public static int GetProductPurchasedCount(string subkey, int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(PRODUCT_PURCHASED_COUNT, defaultValue, subkey) ?? defaultValue;
 	}
 
 	public static void SetProductPurchasedCount(string subkey, int value)
 	{
+		GetBucket()?.SetInt(PRODUCT_PURCHASED_COUNT, value, subkey);
 	}
 
 	public static int IncrementAndSetProductPurchasedCount(string subkey, int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(PRODUCT_PURCHASED_COUNT, increment, subkey) ?? 0;
 	}
 
 	public static bool GetUserNotificationRead(string subkey, bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(USER_NOTIFICATION_READ, defaultValue, subkey) ?? defaultValue;
 	}
 
 	public static void SetUserNotificationRead(string subkey, bool value)
 	{
+		GetBucket()?.SetBool(USER_NOTIFICATION_READ, value, subkey);
 	}
 }

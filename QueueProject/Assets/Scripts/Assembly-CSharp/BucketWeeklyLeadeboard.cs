@@ -41,10 +41,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(PENDING_REWARD, null) ?? null;
 		}
 		set
 		{
+			GetBucket()?.SetString(PENDING_REWARD, value);
 		}
 	}
 
@@ -52,10 +53,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(PREVIOUS_WEEK_REWARD, null) ?? null;
 		}
 		set
 		{
+			GetBucket()?.SetString(PREVIOUS_WEEK_REWARD, value);
 		}
 	}
 
@@ -63,10 +65,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return 0L;
+			return GetBucket()?.GetLong(WEEK_EXPIRY_DATE, 0L) ?? 0L;
 		}
 		set
 		{
+			GetBucket()?.SetLong(WEEK_EXPIRY_DATE, value);
 		}
 	}
 
@@ -74,10 +77,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(MIGRATION_SHOWN, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(MIGRATION_SHOWN, value);
 		}
 	}
 
@@ -85,10 +89,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(OFFER_PURCHASED, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(OFFER_PURCHASED, value);
 		}
 	}
 
@@ -96,10 +101,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return null;
+			return GetBucket()?.GetString(DEBUG_ID, null) ?? null;
 		}
 		set
 		{
+			GetBucket()?.SetString(DEBUG_ID, value);
 		}
 	}
 
@@ -107,10 +113,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(CACHE_RANK, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(CACHE_RANK, value);
 		}
 	}
 
@@ -118,10 +125,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return 0;
+			return GetBucket()?.GetInt(CACHE_SCORE, 0) ?? 0;
 		}
 		set
 		{
+			GetBucket()?.SetInt(CACHE_SCORE, value);
 		}
 	}
 
@@ -129,10 +137,11 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return false;
+			return GetBucket()?.GetBool(WAITING_SERVER_NOTIFICATION, false) ?? false;
 		}
 		set
 		{
+			GetBucket()?.SetBool(WAITING_SERVER_NOTIFICATION, value);
 		}
 	}
 
@@ -140,125 +149,141 @@ public class BucketWeeklyLeadeboard : BucketBase
 	{
 		get
 		{
-			return 0L;
+			return GetBucket()?.GetLong(DOWN_PERIOD_DATE, 0L) ?? 0L;
 		}
 		set
 		{
+			GetBucket()?.SetLong(DOWN_PERIOD_DATE, value);
 		}
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketWeeklyLeadeboard GetBucket()
 	{
-		return null;
+		if (s_bucketweeklyleadeboard == null)
+		{
+			s_bucketweeklyleadeboard = new BucketWeeklyLeadeboard();
+			s_bucketweeklyleadeboard.LoadFromDisk();
+		}
+		return s_bucketweeklyleadeboard;
 	}
 
 	public static string GetPendingReward(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(PENDING_REWARD, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetPendingReward(string value)
 	{
+		GetBucket()?.SetString(PENDING_REWARD, value);
 	}
 
 	public static string GetPreviousWeekReward(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(PREVIOUS_WEEK_REWARD, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetPreviousWeekReward(string value)
 	{
+		GetBucket()?.SetString(PREVIOUS_WEEK_REWARD, value);
 	}
 
 	public static long GetWeekExpiryDate(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket()?.GetLong(WEEK_EXPIRY_DATE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetWeekExpiryDate(long value)
 	{
+		GetBucket()?.SetLong(WEEK_EXPIRY_DATE, value);
 	}
 
 	public static bool GetMigrationShown(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(MIGRATION_SHOWN, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetMigrationShown(bool value)
 	{
+		GetBucket()?.SetBool(MIGRATION_SHOWN, value);
 	}
 
 	public static bool GetOfferPurchased(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(OFFER_PURCHASED, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetOfferPurchased(bool value)
 	{
+		GetBucket()?.SetBool(OFFER_PURCHASED, value);
 	}
 
 	public static string GetDebugId(string defaultValue = null)
 	{
-		return null;
+		return GetBucket()?.GetString(DEBUG_ID, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetDebugId(string value)
 	{
+		GetBucket()?.SetString(DEBUG_ID, value);
 	}
 
 	public static int GetCacheRank(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(CACHE_RANK, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetCacheRank(int value)
 	{
+		GetBucket()?.SetInt(CACHE_RANK, value);
 	}
 
 	public static int IncrementAndSetCacheRank(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(CACHE_RANK, increment) ?? 0;
 	}
 
 	public static int GetCacheScore(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket()?.GetInt(CACHE_SCORE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetCacheScore(int value)
 	{
+		GetBucket()?.SetInt(CACHE_SCORE, value);
 	}
 
 	public static int IncrementAndSetCacheScore(int increment = 1)
 	{
-		return 0;
+		return GetBucket()?.IncrementAndSetInt(CACHE_SCORE, increment) ?? 0;
 	}
 
 	public static bool GetWaitingServerNotification(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket()?.GetBool(WAITING_SERVER_NOTIFICATION, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetWaitingServerNotification(bool value)
 	{
+		GetBucket()?.SetBool(WAITING_SERVER_NOTIFICATION, value);
 	}
 
 	public static long GetDownPeriodDate(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket()?.GetLong(DOWN_PERIOD_DATE, defaultValue) ?? defaultValue;
 	}
 
 	public static void SetDownPeriodDate(long value)
 	{
+		GetBucket()?.SetLong(DOWN_PERIOD_DATE, value);
 	}
 }

@@ -25,116 +25,106 @@ public class BucketCustomisation : BucketBase
 
 	public static bool MigrationDone
 	{
-		get
-		{
-			return false;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetBool(MIGRATION_DONE); }
+		set { GetBucket().SetBool(MIGRATION_DONE, value); }
 	}
 
 	public static bool AutoXOnOffState
 	{
-		get
-		{
-			return false;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetBool(AUTO_X_ON_OFF_STATE); }
+		set { GetBucket().SetBool(AUTO_X_ON_OFF_STATE, value); }
 	}
 
 	public static string BoardColourClientId
 	{
-		get
-		{
-			return null;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetString(BOARD_COLOUR_CLIENT_ID); }
+		set { GetBucket().SetString(BOARD_COLOUR_CLIENT_ID, value); }
 	}
 
 	public static string QueenSkinClientId
 	{
-		get
-		{
-			return null;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetString(QUEEN_SKIN_CLIENT_ID); }
+		set { GetBucket().SetString(QUEEN_SKIN_CLIENT_ID, value); }
 	}
 
 	public static List<string> AvatarsInventory
 	{
-		get
-		{
-			return null;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetList<string>(AVATARS_INVENTORY) ?? new List<string>(); }
+		set { GetBucket().SetList(AVATARS_INVENTORY, value); }
 	}
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketCustomisation GetBucket()
 	{
-		return null;
+		if (s_bucketcustomisation == null)
+		{
+			s_bucketcustomisation = new BucketCustomisation();
+			s_bucketcustomisation.LoadFromDisk();
+		}
+		return s_bucketcustomisation;
 	}
 
 	public static bool GetMigrationDone(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket().GetBool(MIGRATION_DONE, defaultValue);
 	}
 
 	public static void SetMigrationDone(bool value)
 	{
+		GetBucket().SetBool(MIGRATION_DONE, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static bool GetAutoXOnOffState(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket().GetBool(AUTO_X_ON_OFF_STATE, defaultValue);
 	}
 
 	public static void SetAutoXOnOffState(bool value)
 	{
+		GetBucket().SetBool(AUTO_X_ON_OFF_STATE, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static string GetBoardColourClientId(string defaultValue = null)
 	{
-		return null;
+		return GetBucket().GetString(BOARD_COLOUR_CLIENT_ID, defaultValue);
 	}
 
 	public static void SetBoardColourClientId(string value)
 	{
+		GetBucket().SetString(BOARD_COLOUR_CLIENT_ID, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static string GetQueenSkinClientId(string defaultValue = null)
 	{
-		return null;
+		return GetBucket().GetString(QUEEN_SKIN_CLIENT_ID, defaultValue);
 	}
 
 	public static void SetQueenSkinClientId(string value)
 	{
+		GetBucket().SetString(QUEEN_SKIN_CLIENT_ID, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static List<string> GetAvatarsInventory()
 	{
-		return null;
+		return GetBucket().GetList<string>(AVATARS_INVENTORY) ?? new List<string>();
 	}
 
 	public static void SetAvatarsInventory(List<string> value)
 	{
+		GetBucket().SetList(AVATARS_INVENTORY, value);
+		GetBucket().SaveToDisk();
 	}
 }

@@ -163,183 +163,303 @@ public class QueensLeaderboardManager : Singleton<QueensLeaderboardManager>, IQu
 
 	private Coroutine m_downTimeCoroutine;
 
-	public static string WeeklyLeaderboardId => null;
+	private static Action _ExpiryTimeUpdated;
+	private static Action<int> _AddedScoreToWeeklyLeaderboard;
 
-	public static string LegendsLeaderboardId => null;
+	public static string WeeklyLeaderboardId => TweakId(LEADERBOARD_ID_WEEKLY);
+
+	public static string LegendsLeaderboardId => TweakId(LEADERBOARD_ID_LEGENDS);
 
 	public static bool MigratedFromOldVersion { get; set; }
 
 	public static bool Initialized { get; private set; }
 
-	private bool IsRewardPendingToShow => false;
+	private bool IsRewardPendingToShow =>
+		!string.IsNullOrEmpty(BucketWeeklyLeadeboard.PendingReward) &&
+		BucketWeeklyLeadeboard.PendingReward != REWARD_ID_NONE;
 
 	public static event Action ExpiryTimeUpdated
 	{
 		[CompilerGenerated]
-		add
-		{
-		}
+		add { _ExpiryTimeUpdated += value; }
 		[CompilerGenerated]
-		remove
-		{
-		}
+		remove { _ExpiryTimeUpdated -= value; }
 	}
 
 	public static event Action<int> AddedScoreToWeeklyLeaderboard
 	{
 		[CompilerGenerated]
-		add
-		{
-		}
+		add { _AddedScoreToWeeklyLeaderboard += value; }
 		[CompilerGenerated]
-		remove
-		{
-		}
+		remove { _AddedScoreToWeeklyLeaderboard -= value; }
 	}
 
 	protected override void Init()
 	{
+		Initialized = false;
+		GameplayEvents.HomeScreenLoaded += GameplayEventsOnHomeScreenLoaded;
 	}
 
 	public void NakamaEventsOnNakamaConnected(NakamaSystemsInterface nakamaSystems)
 	{
+		InitialSetup();
 	}
 
 	private void InitialSetup()
 	{
+		Initialized = true;
+		RetrieveLeaderboards();
+		RetrieveCachedRank();
+		TryStartWeeklyCoroutine();
 	}
 
 	private void RetrieveLeaderboards()
 	{
+		if (LeaderboardsService.Instance != null)
+		{
+			LeaderboardsService.OnLeaderboardUpdated += LeaderboardsServiceOnOnLeaderboardUpdated;
+		}
 	}
 
 	public int GetScoreMultiplier()
 	{
-		return 0;
+		// Default multiplier: 1x
+		return 1;
 	}
 
 	private void GameplayEventsOnHomeScreenLoaded()
 	{
+		if (IsRewardPendingToShow)
+			HandleRewardShared();
 	}
 
 	public static string TweakId(string leaderboardId)
 	{
-		return null;
+		string debugId = BucketWeeklyLeadeboard.DebugId;
+		if (!string.IsNullOrEmpty(debugId))
+			return leaderboardId + "_" + debugId;
+		return leaderboardId;
 	}
 
 	private void LeaderboardsServiceOnOnLeaderboardUpdated(LeaderboardData leadeboard)
 	{
+		if (leadeboard == null) return;
+		if (leadeboard.leaderboardId == WeeklyLeaderboardId)
+		{
+			if (leadeboard.currentPlayer != null)
+			{
+				BucketWeeklyLeadeboard.CacheRank = leadeboard.currentPlayer.position;
+				BucketWeeklyLeadeboard.CacheScore = leadeboard.currentPlayer.score;
+			}
+		}
 	}
 
 	public void PostToWeeklyLeaderboard(int score, string context, bool applyMultiplier = true, bool onlyUpdateCache = false)
 	{
+		if (!Initialized) return;
+
+		int finalScore = score;
+		if (applyMultiplier)
+			finalScore *= GetScoreMultiplier();
+
+		if (onlyUpdateCache)
+		{
+			BucketWeeklyLeadeboard.CacheScore += finalScore;
+			return;
+		}
+
+		if (LeaderboardsService.Instance != null)
+		{
+			var metadata = CreateLeaderboardMetadata();
+			LeaderboardsService.Instance.PostPlayerScore(WeeklyLeaderboardId, finalScore, null, null, metadata);
+		}
+
+		_AddedScoreToWeeklyLeaderboard?.Invoke(finalScore);
 	}
 
 	private Dictionary<string, object> CreateLeaderboardMetadata()
 	{
-		return null;
+		var metadata = new Dictionary<string, object>();
+		string previousReward = BucketWeeklyLeadeboard.PreviousWeekReward;
+		if (!string.IsNullOrEmpty(previousReward))
+			metadata[METADAKEY_PREVIOUS_REWARD] = previousReward;
+		return metadata;
 	}
 
 	private void OnServerNotificationReceived(IApiNotification notification)
 	{
+		if (notification == null) return;
+		if (notification.Code == CODE_PERSONAL_REWARD)
+			HandlePersonalReward(notification);
 	}
 
 	private void HandlePersonalReward(IApiNotification notification)
 	{
+		if (notification == null || string.IsNullOrEmpty(notification.Content)) return;
+		// Parse reward from notification content
+		BucketWeeklyLeadeboard.PendingReward = notification.Content;
+		BucketWeeklyLeadeboard.WaitingServerNotification = false;
 	}
 
 	private void HandleNoReward()
 	{
+		BucketWeeklyLeadeboard.PendingReward = REWARD_ID_NONE;
+		BucketWeeklyLeadeboard.WaitingServerNotification = false;
 	}
 
 	private void HandleRewardShared()
 	{
+		string pendingReward = BucketWeeklyLeadeboard.PendingReward;
+		if (string.IsNullOrEmpty(pendingReward) || pendingReward == REWARD_ID_NONE) return;
+
+		// Store as previous reward and clear pending
+		BucketWeeklyLeadeboard.PreviousWeekReward = pendingReward;
+		BucketWeeklyLeadeboard.PendingReward = REWARD_ID_NONE;
 	}
 
 	private void NukeWeeklyCache()
 	{
+		if (LeaderboardsService.Instance != null)
+			LeaderboardsService.Instance.DeleteCachedData(WeeklyLeaderboardId);
 	}
 
 	private void ResetLeaderboardsCache()
 	{
+		BucketWeeklyLeadeboard.CacheRank = 0;
+		BucketWeeklyLeadeboard.CacheScore = 0;
+		NukeWeeklyCache();
 	}
 
 	private void TryStartWeeklyCoroutine(bool force = false)
 	{
+		long expiryDate = BucketWeeklyLeadeboard.WeekExpiryDate;
+		if (expiryDate <= 0) return;
+		StartTimeCoroutine(expiryDate, ref m_weeklyExpiryCoroutine, WeekFinishedActions, "weekly", force);
 	}
 
 	private void TryStartDownTimeCoroutine(bool force = false)
 	{
+		long downDate = BucketWeeklyLeadeboard.DownPeriodDate;
+		if (downDate <= 0) return;
+		StartTimeCoroutine(downDate, ref m_downTimeCoroutine, DownTimeFinishedAction, "downtime", force);
 	}
 
 	private void StartTimeCoroutine(long expiryDate, ref Coroutine coroutine, Action callback, string context, bool force = false)
 	{
+		if (coroutine != null && !force) return;
+		if (coroutine != null)
+			KWCore.CoroutineRunner.Stop(coroutine);
+		coroutine = KWCore.CoroutineRunner.Run(ExpireCoroutine(expiryDate, callback, context));
 	}
 
 	private int GetDownTimeSeconds()
 	{
-		return 0;
+		return 300; // 5 minutes default downtime
 	}
 
 	private void WeekFinishedActions()
 	{
+		m_weeklyExpiryCoroutine = null;
+		BucketWeeklyLeadeboard.WaitingServerNotification = true;
+
+		// Start downtime period
+		long downTimeEnd = NowUnixSeconds() + GetDownTimeSeconds();
+		BucketWeeklyLeadeboard.DownPeriodDate = downTimeEnd;
+		TryStartDownTimeCoroutine(true);
+
+		ResetLeaderboardsCache();
 	}
 
 	private void DownTimeFinishedAction()
 	{
+		m_downTimeCoroutine = null;
+		BucketWeeklyLeadeboard.DownPeriodDate = 0;
+
+		// Retrieve new week's expiry
+		RetrieveWeeklyExpireDate();
 	}
 
 	[IteratorStateMachine(typeof(_003CExpireCoroutine_003Ed__58))]
 	private IEnumerator ExpireCoroutine(long expiryDate, Action callback, string context)
 	{
-		return null;
+		while (true)
+		{
+			long now = NowUnixSeconds();
+			long remaining = expiryDate - EARLY_EXPIRY_BUFFER_SECONDS - now;
+			if (remaining <= 0)
+			{
+				callback?.Invoke();
+				yield break;
+			}
+			float waitTime = Mathf.Min(remaining, 60);
+			yield return new WaitForSeconds(waitTime);
+		}
 	}
 
 	public bool IsDownTimePeriod()
 	{
-		return false;
+		long downDate = BucketWeeklyLeadeboard.DownPeriodDate;
+		if (downDate <= 0) return false;
+		return NowUnixSeconds() < downDate;
 	}
 
 	public long GetDownTimeRemainingSeconds()
 	{
-		return 0L;
+		long downDate = BucketWeeklyLeadeboard.DownPeriodDate;
+		if (downDate <= 0) return 0;
+		long remaining = downDate - NowUnixSeconds();
+		return remaining > 0 ? remaining : 0;
 	}
 
 	private void RetrieveCachedRank()
 	{
+		// Rank is already cached in BucketWeeklyLeadeboard.CacheRank
 	}
 
 	private long NowUnixSeconds()
 	{
-		return 0L;
+		return DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 	}
 
 	public long GetWeekTimeRemainingInSeconds()
 	{
-		return 0L;
+		long expiryDate = BucketWeeklyLeadeboard.WeekExpiryDate;
+		if (expiryDate <= 0) return 0;
+		long remaining = expiryDate - NowUnixSeconds();
+		return remaining > 0 ? remaining : 0;
 	}
 
 	[AsyncStateMachine(typeof(_003CRetrieveWeeklyExpireDate_003Ed__64))]
 	private Task RetrieveWeeklyExpireDate(int retryCount = 0)
 	{
-		return null;
+		return Task.CompletedTask;
 	}
 
 	public void StartProcess(Action finishCallback)
 	{
+		if (IsRewardPendingToShow)
+		{
+			TryToShowEndOfWeekPopup(finishCallback);
+		}
+		else
+		{
+			finishCallback?.Invoke();
+		}
 	}
 
 	public void TryToShowEndOfWeekPopup(Action finishCallback)
 	{
+		HandleRewardShared();
+		finishCallback?.Invoke();
 	}
 
 	public int GetPriority()
 	{
-		return 0;
+		return 40;
 	}
 
 	public int GetUnlockLocationMask()
 	{
-		return 0;
+		return 1; // Home screen
 	}
 }

@@ -158,10 +158,9 @@ namespace KWCore.UI
 
 		private void PlayAnimation(string animation, Action callback)
 		{
-			if (m_animatorHelper != null)
+			if (m_animatorHelper != null && m_animatorHelper.HasAnimationStateWithName(animation))
 			{
-				// Try to play the animation; if not found, invoke callback immediately
-				callback?.Invoke();
+				m_animatorHelper.Play(animation, callback);
 			}
 			else
 			{

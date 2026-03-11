@@ -3,6 +3,8 @@ using KWCore.SaveData;
 
 public class BucketSpinWheel : BucketBase
 {
+	private const string BUCKET_KEY = "BUCKET_SPIN_WHEEL";
+
 	[KeyInt]
 	public const string TOTAL_SPINS = "TOTAL_SPINS";
 
@@ -25,68 +27,38 @@ public class BucketSpinWheel : BucketBase
 
 	public static int TotalSpins
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetInt(TOTAL_SPINS); }
+		set { GetBucket().SetInt(TOTAL_SPINS, value); }
 	}
 
 	public static bool Migrated
 	{
-		get
-		{
-			return false;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetBool(MIGRATED); }
+		set { GetBucket().SetBool(MIGRATED, value); }
 	}
 
 	public static int ActivationIndex
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetInt(ACTIVATION_INDEX); }
+		set { GetBucket().SetInt(ACTIVATION_INDEX, value); }
 	}
 
 	public static int RewardSegmentIndex
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetInt(REWARD_SEGMENT_INDEX); }
+		set { GetBucket().SetInt(REWARD_SEGMENT_INDEX, value); }
 	}
 
 	public static int RewardActivationIndex
 	{
-		get
-		{
-			return 0;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetInt(REWARD_ACTIVATION_INDEX); }
+		set { GetBucket().SetInt(REWARD_ACTIVATION_INDEX, value); }
 	}
 
 	public static long LastStartSpinTimestamp
 	{
-		get
-		{
-			return 0L;
-		}
-		set
-		{
-		}
+		get { return GetBucket().GetLong(LAST_START_SPIN_TIMESTAMP); }
+		set { GetBucket().SetLong(LAST_START_SPIN_TIMESTAMP, value); }
 	}
 
 	public void MigrateFromBalancy()
@@ -95,90 +67,107 @@ public class BucketSpinWheel : BucketBase
 
 	public override string GetBucketKey()
 	{
-		return null;
+		return BUCKET_KEY;
 	}
 
 	public override bool IsStoredInCloud()
 	{
-		return false;
+		return true;
 	}
 
 	private static BucketSpinWheel GetBucket()
 	{
-		return null;
+		if (s_bucketspinwheel == null)
+		{
+			s_bucketspinwheel = new BucketSpinWheel();
+			s_bucketspinwheel.LoadFromDisk();
+		}
+		return s_bucketspinwheel;
 	}
 
 	public static int GetTotalSpins(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket().GetInt(TOTAL_SPINS, defaultValue);
 	}
 
 	public static void SetTotalSpins(int value)
 	{
+		GetBucket().SetInt(TOTAL_SPINS, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static int IncrementAndSetTotalSpins(int increment = 1)
 	{
-		return 0;
+		return GetBucket().IncrementAndSetInt(TOTAL_SPINS, increment);
 	}
 
 	public static bool GetMigrated(bool defaultValue = false)
 	{
-		return false;
+		return GetBucket().GetBool(MIGRATED, defaultValue);
 	}
 
 	public static void SetMigrated(bool value)
 	{
+		GetBucket().SetBool(MIGRATED, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static int GetActivationIndex(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket().GetInt(ACTIVATION_INDEX, defaultValue);
 	}
 
 	public static void SetActivationIndex(int value)
 	{
+		GetBucket().SetInt(ACTIVATION_INDEX, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static int IncrementAndSetActivationIndex(int increment = 1)
 	{
-		return 0;
+		return GetBucket().IncrementAndSetInt(ACTIVATION_INDEX, increment);
 	}
 
 	public static int GetRewardSegmentIndex(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket().GetInt(REWARD_SEGMENT_INDEX, defaultValue);
 	}
 
 	public static void SetRewardSegmentIndex(int value)
 	{
+		GetBucket().SetInt(REWARD_SEGMENT_INDEX, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static int IncrementAndSetRewardSegmentIndex(int increment = 1)
 	{
-		return 0;
+		return GetBucket().IncrementAndSetInt(REWARD_SEGMENT_INDEX, increment);
 	}
 
 	public static int GetRewardActivationIndex(int defaultValue = 0)
 	{
-		return 0;
+		return GetBucket().GetInt(REWARD_ACTIVATION_INDEX, defaultValue);
 	}
 
 	public static void SetRewardActivationIndex(int value)
 	{
+		GetBucket().SetInt(REWARD_ACTIVATION_INDEX, value);
+		GetBucket().SaveToDisk();
 	}
 
 	public static int IncrementAndSetRewardActivationIndex(int increment = 1)
 	{
-		return 0;
+		return GetBucket().IncrementAndSetInt(REWARD_ACTIVATION_INDEX, increment);
 	}
 
 	public static long GetLastStartSpinTimestamp(long defaultValue = 0L)
 	{
-		return 0L;
+		return GetBucket().GetLong(LAST_START_SPIN_TIMESTAMP, defaultValue);
 	}
 
 	public static void SetLastStartSpinTimestamp(long value)
 	{
+		GetBucket().SetLong(LAST_START_SPIN_TIMESTAMP, value);
+		GetBucket().SaveToDisk();
 	}
 }
