@@ -650,7 +650,9 @@ namespace KWCore.SaveData
 
 		public static int IncrementAndSetShownTutorialAmount(int increment = 1)
 		{
-			return GetBucket().IncrementAndSetInt(SHOWN_TUTORIAL_AMOUNT, increment);
+			int val = GetBucket().IncrementAndSetInt(SHOWN_TUTORIAL_AMOUNT, increment);
+			GetBucket().SaveToDisk();
+			return val;
 		}
 
 		public static int GetLastLevelTutorialWasShown(int defaultValue = 0)

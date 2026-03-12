@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using KWCore.UI;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class TutorialPopup : PopUpBase
@@ -56,12 +58,40 @@ public class TutorialPopup : PopUpBase
 	{
 		m_currentStep = 0;
 
+		Debug.Log($"[TutorialPopup] Start() — m_steps={m_steps != null}, length={m_steps?.Length ?? 0}, " +
+			$"nextBtn={m_nextButton != null}, prevBtn={m_prevButton != null}, finishBtn={m_finishButton != null}");
+
 		// Wire up button click events in code (prefab events may be lost from AssetRipper export)
 		BindButton(m_nextButton, OnNextPressed);
 		BindButton(m_prevButton, OnPrevPressed);
 		BindButton(m_finishButton, OnFinishPressed);
 
+		// Stop any auto-playing PlayableDirectors in children before we take control
+		StopAllChildDirectors();
+
+		// Deactivate all step GameObjects first, then configure step 0
+		if (m_steps != null)
+		{
+			for (int i = 0; i < m_steps.Length; i++)
+			{
+				Debug.Log($"[TutorialPopup] m_steps[{i}] = {(m_steps[i] != null ? m_steps[i].gameObject.name : "NULL")}");
+				if (m_steps[i] != null)
+					m_steps[i].gameObject.SetActive(false);
+			}
+		}
+
 		Configure();
+	}
+
+	private void StopAllChildDirectors()
+	{
+		var directors = GetComponentsInChildren<PlayableDirector>(true);
+		Debug.Log($"[TutorialPopup] StopAllChildDirectors — found {directors.Length} directors");
+		for (int i = 0; i < directors.Length; i++)
+		{
+			Debug.Log($"[TutorialPopup]   director[{i}]: '{directors[i].gameObject.name}' state={directors[i].state} asset={directors[i].playableAsset?.name ?? "NULL"}");
+			directors[i].Stop();
+		}
 	}
 
 	private void BindButton(GameObject buttonObj, UnityEngine.Events.UnityAction callback)
@@ -74,6 +104,7 @@ public class TutorialPopup : PopUpBase
 
 	public void OnNextPressed()
 	{
+		Debug.Log($"[TutorialPopup] OnNextPressed — currentStep={m_currentStep}, stepsLength={m_steps?.Length ?? 0}");
 		if (m_steps == null) return;
 		if (m_currentStep < m_steps.Length - 1)
 		{
@@ -84,6 +115,7 @@ public class TutorialPopup : PopUpBase
 
 	public void OnPrevPressed()
 	{
+		Debug.Log($"[TutorialPopup] OnPrevPressed — currentStep={m_currentStep}");
 		if (m_currentStep > 0)
 		{
 			m_currentStep--;
@@ -93,21 +125,37 @@ public class TutorialPopup : PopUpBase
 
 	public void OnFinishPressed()
 	{
+		Debug.Log("[TutorialPopup] OnFinishPressed");
 		m_closeCallback?.Invoke();
 		Close();
 	}
 
 	private void Configure()
 	{
-		// Update step animations
-		if (m_currentAnimation != null)
-			m_currentAnimation.Stop();
+		Debug.Log($"[TutorialPopup] Configure — step={m_currentStep}");
 
+		// Stop and deactivate previous step
+		if (m_currentAnimation != null)
+		{
+			Debug.Log($"[TutorialPopup]   stopping previous: '{m_currentAnimation.gameObject.name}'");
+			m_currentAnimation.Stop();
+			m_currentAnimation.gameObject.SetActive(false);
+		}
+
+		// Activate and play new step (with one-frame delay so PlayableDirector can rebuild graph)
 		if (m_steps != null && m_currentStep >= 0 && m_currentStep < m_steps.Length)
 		{
 			m_currentAnimation = m_steps[m_currentStep];
 			if (m_currentAnimation != null)
-				m_currentAnimation.Play();
+			{
+				Debug.Log($"[TutorialPopup]   activating & playing: '{m_currentAnimation.gameObject.name}'");
+				m_currentAnimation.gameObject.SetActive(true);
+				StartCoroutine(PlayStepDelayed(m_currentAnimation));
+			}
+			else
+			{
+				Debug.LogWarning($"[TutorialPopup]   m_steps[{m_currentStep}] is NULL!");
+			}
 		}
 
 		// Update pip indicators
@@ -128,5 +176,20 @@ public class TutorialPopup : PopUpBase
 			m_nextButton.SetActive(!isLastStep);
 		if (m_finishButton != null)
 			m_finishButton.SetActive(isLastStep);
+	}
+
+	private IEnumerator PlayStepDelayed(PlayableDirectorHelper step)
+	{
+		// Wait one frame for PlayableDirector to rebuild its playable graph after GameObject activation
+		yield return null;
+		if (step != null && step.gameObject.activeInHierarchy)
+		{
+			Debug.Log($"[TutorialPopup] PlayStepDelayed — playing '{step.gameObject.name}'");
+			step.Play();
+		}
+		else
+		{
+			Debug.LogWarning($"[TutorialPopup] PlayStepDelayed — step is null or inactive!");
+		}
 	}
 }

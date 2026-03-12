@@ -139,6 +139,10 @@ public class GameManager : MonoSingleton<GameManager>
 
 	private bool m_isTimedLevel;
 
+	private bool m_ftueCompletedThisSession;
+
+	private bool m_howToPlayShown;
+
 	public bool Boot => m_boot;
 
 	public GameMode CurrentGameMode => m_gameMode;
@@ -158,6 +162,15 @@ public class GameManager : MonoSingleton<GameManager>
 	public bool StartedGameSuccessfully => m_startedGameSuccessfully;
 
 	public bool IsTimedLevel => m_isTimedLevel;
+
+	/// <summary>Whether the current level being played is the FTUE tutorial level.</summary>
+	public bool IsPlayingFtue => m_currentLevelScriptable != null && m_currentLevelScriptable == m_ftueLevel;
+
+	public void MarkFtueCompleted()
+	{
+		m_ftueCompletedThisSession = true;
+		BucketGameplay.SetFtueGameplayCompleted(true);
+	}
 
 	protected override void Init()
 	{
@@ -241,15 +254,18 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 			m_currentLevelScriptable = puzzle;
 		}
-		else if (!BucketGameplay.FtueGameplayCompleted && m_ftueLevel != null)
-		{
-			// First time: use the FTUE tutorial level (3x4 simplified)
-			m_currentLevelScriptable = m_ftueLevel;
-		}
-		else if (m_levelOrder != null)
+		else
 		{
 			int currentLevel = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
-			m_currentLevelScriptable = m_levelOrder.GetLevel(currentLevel);
+			if (currentLevel == 0 && !m_ftueCompletedThisSession && m_ftueLevel != null)
+			{
+				// 第一次启动：加载教学关卡
+				m_currentLevelScriptable = m_ftueLevel;
+			}
+			else if (m_levelOrder != null)
+			{
+				m_currentLevelScriptable = m_levelOrder.GetLevel(currentLevel);
+			}
 		}
 
 		if (m_currentLevelScriptable == null || m_currentLevelScriptable.data == null)
@@ -321,6 +337,16 @@ public class GameManager : MonoSingleton<GameManager>
 
 		if (m_queenGameController != null)
 			m_queenGameController.StartGame(levelData, true);
+
+		// 第一关一定弹窗"如何玩"（教学关卡除外，只弹一次）
+		int levelIndex = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
+		UnityEngine.Debug.Log($"[GameManager] LoadGameplay — levelIndex={levelIndex}, IsPlayingFtue={IsPlayingFtue}, ftueCompletedThisSession={m_ftueCompletedThisSession}, howToPlayShown={m_howToPlayShown}");
+		if (!IsPlayingFtue && levelIndex == 0 && !m_howToPlayShown)
+		{
+			m_howToPlayShown = true;
+			UnityEngine.Debug.Log("[GameManager] First level — showing How to Play");
+			TutorialPopup.Show();
+		}
 	}
 
 	public void GameOver()
@@ -338,7 +364,15 @@ public class GameManager : MonoSingleton<GameManager>
 	public void LevelComplete()
 	{
 		m_isInGame = false;
-		UnityEngine.Debug.Log("[GameManager] LevelComplete() called");
+		if (!IsPlayingFtue)
+		{
+			// 教学关卡不计入进度
+			BucketGameCore.IncrementAndSetProgressManagerLevelIndex(1);
+			BucketGameCore.SetProgressManagerStageIndex(0);
+			BucketGameCore.SetLastStageCompleted(true);
+		}
+		UnityEngine.Debug.Log($"[GameManager] LevelComplete — IsPlayingFtue={IsPlayingFtue}, level index={BucketGameCore.ProgressManagerLevelIndex}");
+
 		var screen = ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.LEVEL_COMPLETE);
 		UnityEngine.Debug.Log($"[GameManager] ReplaceScreen returned: {(screen != null ? screen.name : "NULL")}");
 	}

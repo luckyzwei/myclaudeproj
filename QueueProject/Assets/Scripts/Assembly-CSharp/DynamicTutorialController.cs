@@ -18,16 +18,14 @@ public class DynamicTutorialController : MonoBehaviour
 
 	private void GameCoreEvents_GameStarted()
 	{
-		// Don't show tutorial reminder if the main FTUE is still in progress
-		if (!BucketGameplay.FtueGameplayCompleted)
+		// 第一关一定弹窗"如何玩"，但教学关卡除外
+		int levelIndex = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
+		if (levelIndex > 0)
 			return;
 
-		// Show tutorial if player hasn't seen it enough times
-		int shownCount = BucketGameplay.GetShownTutorialAmount();
-		if (shownCount < MAX_AMOUNT_OF_TIMES_TO_SHOW_TUTORIAL)
-		{
-			TutorialPopup.Show();
-			BucketGameplay.IncrementAndSetShownTutorialAmount();
-		}
+		if (GameManager.Instance != null && GameManager.Instance.IsPlayingFtue)
+			return;
+
+		TutorialPopup.Show();
 	}
 }

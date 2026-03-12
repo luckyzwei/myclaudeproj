@@ -31,7 +31,11 @@ public class PlayableDirectorHelper : MonoBehaviour
 		m_doneCallback = callback;
 
 		if (m_director == null)
+		{
 			m_director = GetComponent<PlayableDirector>();
+			if (m_director != null)
+				m_director.extrapolationMode = m_animationMode;
+		}
 
 		UnityEngine.Debug.Log($"[PlayableDirectorHelper] Play() on '{gameObject.name}' - director={m_director != null}, playableAsset={(m_director != null ? (m_director.playableAsset != null ? m_director.playableAsset.name : "NULL") : "N/A")}");
 

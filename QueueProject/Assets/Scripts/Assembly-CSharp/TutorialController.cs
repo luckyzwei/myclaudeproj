@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using KWCore.SaveData;
 using UnityEngine;
 
 public class TutorialController : MonoBehaviour
@@ -25,15 +24,23 @@ public class TutorialController : MonoBehaviour
 
 	private void OnGameScreenLoaded()
 	{
-		Debug.Log($"[TutorialController] OnGameScreenLoaded - FtueCompleted={BucketGameplay.FtueGameplayCompleted}");
-		if (!BucketGameplay.FtueGameplayCompleted)
+		bool isPlayingFtue = GameManager.Instance != null && GameManager.Instance.IsPlayingFtue;
+		Debug.Log($"[TutorialController] OnGameScreenLoaded - IsPlayingFtue={isPlayingFtue}");
+
+		if (isPlayingFtue)
 		{
+			// 教学关卡一定出现引导
 			bool started = PopupQueensInGameAdaptiveFTUE.TryToStart(OnFtueDone);
 			Debug.Log($"[TutorialController] TryToStart returned: {started}");
 			if (!started)
 			{
-				// Fallback: show extra tutorial hand animation
-				ShowExtraTutorial();
+				bool showedExtra = ShowExtraTutorial();
+				if (!showedExtra)
+				{
+					// 引导弹窗都无法加载，跳过教学
+					Debug.Log("[TutorialController] FTUE popups failed, skipping");
+					OnFtueDone();
+				}
 			}
 		}
 	}
@@ -45,24 +52,24 @@ public class TutorialController : MonoBehaviour
 
 	private void OnFtueDone()
 	{
-		Debug.Log("[TutorialController] FTUE done, marking complete and loading Level 1");
-		BucketGameplay.SetFtueGameplayCompleted(true);
-
-		// After FTUE completes, load the real Level 1
+		Debug.Log("[TutorialController] FTUE done, loading first level");
 		if (GameManager.Instance != null)
 		{
+			GameManager.Instance.MarkFtueCompleted();
 			GameManager.Instance.StartGame(GameManager.GameMode.STANDARD);
 		}
 	}
 
-	private void ShowExtraTutorial()
+	private bool ShowExtraTutorial()
 	{
 		Debug.Log("[TutorialController] Showing ExtraTutorial fallback");
 		m_popUpExtraTutorial = KWCore.UI.PopUpBase.ShowPopup<PopUpExtraTutorial>(PopUpExtraTutorial.PREFAB_NAME, null);
 		if (m_popUpExtraTutorial != null)
 		{
 			m_popUpExtraTutorial.OnDone += ExtraTutorialDone;
+			return true;
 		}
+		return false;
 	}
 
 	private void ExtraTutorialDone()

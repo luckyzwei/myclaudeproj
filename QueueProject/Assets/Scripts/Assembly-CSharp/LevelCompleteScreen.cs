@@ -113,6 +113,8 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 		"Button-RVReward",
 		"Button-Play-ExpertModeNext",
 		"Button-Play-ExpertModeBuy",
+		"Button-Play-Hard",
+		"Button-Play-VeryHard",
 		"Button-Accept",
 		"Button-Accept with auto X",
 		"Text-Difficulty",
@@ -296,8 +298,11 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 		// Fix "Collected Pieces" label text on Rewards component
 		FixRewardsText();
 
-		// Center Button-Home text alignment
-		FixButtonHomeTextAlignment();
+		// Center button text alignment
+		FixButtonTextAlignment();
+
+		// Wire up buttons in code (prefab UnityEvents may be broken from AssetRipper)
+		BindButtons();
 
 		// Populate rewards display
 		PopulateRewards();
@@ -316,17 +321,41 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 		}
 	}
 
-	private void FixButtonHomeTextAlignment()
+	private void BindButtons()
 	{
-		// Find Button-Home and center its text
+		// 只确保按钮可交互，不再 AddListener（prefab 序列化 onClick 已绑定 OnNextPressed/OnHomePressed）
+		var buttonNext = FindChildRecursive(transform, "Button-Next");
+		if (buttonNext != null)
+		{
+			var btn = buttonNext.GetComponent<Button>();
+			if (btn != null)
+				btn.interactable = true;
+		}
+
 		var buttonHome = FindChildRecursive(transform, "Button-Home");
 		if (buttonHome != null)
 		{
-			var texts = buttonHome.GetComponentsInChildren<Text>(true);
-			for (int i = 0; i < texts.Length; i++)
+			var btn = buttonHome.GetComponent<Button>();
+			if (btn != null)
+				btn.interactable = true;
+		}
+	}
+
+	private void FixButtonTextAlignment()
+	{
+		// Center text in all nav buttons
+		string[] buttonNames = { "Button-Home", "Button-Next", "Button-GotIt" };
+		for (int b = 0; b < buttonNames.Length; b++)
+		{
+			var btn = FindChildRecursive(transform, buttonNames[b]);
+			if (btn != null)
 			{
-				if (texts[i] != null)
-					texts[i].alignment = TextAnchor.MiddleCenter;
+				var texts = btn.GetComponentsInChildren<Text>(true);
+				for (int i = 0; i < texts.Length; i++)
+				{
+					if (texts[i] != null)
+						texts[i].alignment = TextAnchor.MiddleCenter;
+				}
 			}
 		}
 	}
@@ -561,11 +590,13 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	public void OnHomePressed()
 	{
+		Debug.Log("[LevelCompleteScreen] OnHomePressed called!");
 		Continue(true);
 	}
 
 	public void OnNextPressed()
 	{
+		Debug.Log("[LevelCompleteScreen] OnNextPressed called!");
 		Continue(false);
 	}
 
@@ -588,6 +619,7 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 
 	private void GoNextScreen(bool goHome)
 	{
+		Debug.Log($"[LevelCompleteScreen] GoNextScreen goHome={goHome}, GameManager={GameManager.Instance != null}");
 		if (goHome)
 		{
 			if (GameManager.Instance != null)
@@ -596,13 +628,7 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 		else
 		{
 			if (GameManager.Instance != null)
-			{
-				var nextLevel = GameManager.Instance.GetNextLevelScriptable();
-				if (nextLevel != null)
-					GameManager.Instance.StartGame(GameManager.Instance.CurrentGameMode, nextLevel);
-				else
-					GameManager.Instance.ReturnToHomeScreen();
-			}
+				GameManager.Instance.StartGame(GameManager.Instance.CurrentGameMode);
 		}
 	}
 

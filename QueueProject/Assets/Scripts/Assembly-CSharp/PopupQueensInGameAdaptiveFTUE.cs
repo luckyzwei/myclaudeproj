@@ -37,12 +37,6 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 
 	public static bool TryToStart(Action finishCallback)
 	{
-		if (KWCore.SaveData.BucketGameplay.FtueGameplayCompleted)
-		{
-			finishCallback?.Invoke();
-			return false;
-		}
-
 		string prefabName = GetPrefabName();
 		return StartFTUEPopUp(prefabName, finishCallback);
 	}
