@@ -820,7 +820,7 @@ public class QueensGrid : MonoBehaviour
 		float startY = totalHeight / 2f - m_cellWidth / 2f;
 
 		Transform parent = m_cellContainer != null ? m_cellContainer : transform;
-		UnityEngine.Debug.Log($"[QueensGrid] CreateGrid: {m_levelData.sizeX}x{m_levelData.sizeY}, cellWidth={m_cellWidth}, parent={parent.name}, parentPos={parent.position}, gridPos={transform.position}, gridLayer={gameObject.layer}");
+		UnityEngine.Debug.Log($"[QueensGrid] CreateGrid: {m_levelData.sizeX}x{m_levelData.sizeY}, cellWidth={m_cellWidth}, parent={parent.name}");
 
 		for (int y = 0; y < m_levelData.sizeY; y++)
 		{
@@ -866,6 +866,7 @@ public class QueensGrid : MonoBehaviour
 		}
 
 		ResizeSpriteToCoverChildren();
+		AdjustCameraForGridSize();
 
 		// Accessibility borders disabled - optional feature, not needed for core gameplay
 		// ConfigureAccesibilityBorders();
@@ -1030,6 +1031,21 @@ public class QueensGrid : MonoBehaviour
 		float totalHeight = m_levelData.sizeY * m_cellWidth;
 		m_textureOverlay.localScale = new Vector3(totalWidth, totalHeight, 1f);
 	}
+
+	private void AdjustCameraForGridSize()
+	{
+		if (m_levelData == null) return;
+		float maxDim = Mathf.Max(m_levelData.sizeX, m_levelData.sizeY);
+		const float refDim = 4f;
+		if (maxDim <= refDim) return;
+
+		// Scale the entire cell container down — all cells + spacing scale together uniformly
+		Transform container = m_cellContainer != null ? m_cellContainer : transform;
+		float scale = refDim / maxDim;
+		container.localScale = new Vector3(scale, scale, 1f);
+		UnityEngine.Debug.Log($"[QueensGrid] Container scaled for {m_levelData.sizeX}x{m_levelData.sizeY}: scale={scale:F2}");
+	}
+
 
 	public QueensGridCell GetCell(Vector2Int coords)
 	{
