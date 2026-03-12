@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,36 +28,42 @@ public class UITextLookup : MonoBehaviour
 
 	private void Awake()
 	{
-		LookupText();
+		ForceApplyLocalisation();
+	}
+
+	private void OnEnable()
+	{
+		// Timeline 动画可能在同帧的 LateUpdate 覆盖文本
+		// 延迟一帧重新应用本地化
+		ForceApplyLocalisation();
+		if (Application.isPlaying)
+			StartCoroutine(DelayedLookup());
+	}
+
+	private IEnumerator DelayedLookup()
+	{
+		yield return null; // 等一帧，让 Timeline 先执行
+		ForceApplyLocalisation();
 	}
 
 	public void SetText(string key)
 	{
 		m_stringKey = key;
-		LookupText();
+		ForceApplyLocalisation();
 	}
 
-	private void LookupText()
+	private void ForceApplyLocalisation()
 	{
 		if (string.IsNullOrEmpty(m_stringKey)) return;
-		if (m_stringKey == m_prevStringKey) return;
-		m_prevStringKey = m_stringKey;
 
 		string localised = Kwalee.GetLocalisedText(m_stringKey);
 		if (string.IsNullOrEmpty(localised))
 			localised = m_stringKey; // Fallback to key
 
-		SetLocalisedText(localised);
-	}
-
-	private void SetLocalisedText(string value)
-	{
-		if (string.IsNullOrEmpty(value)) return;
-
 		var text = GetComponent<Text>();
 		if (text != null)
 		{
-			text.text = value;
+			text.text = localised;
 			m_delegate?.OnTextLocalised();
 		}
 	}

@@ -3056,7 +3056,6 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   m_steps:
   - {fileID: 114789711717377307}
-  - {fileID: 114846667071028776}
   - {fileID: 114389991902224113}
   - {fileID: 114029543675603457}
   - {fileID: 114858067511853781}
@@ -3461,7 +3460,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -32.5
-  m_Text: "QUEENS\nMASTER"
+  m_Text: "\u7687\u540E\u5927\u5E08"
 --- !u!224 &224295926465608920
 RectTransform:
   serializedVersion: 2
@@ -3785,7 +3784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Witamy w...
+  m_Text: "\u7687\u540E\u5927\u5E08"
 --- !u!114 &114066338149260220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4140,7 +4139,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: '<color=#2E86EC>Tap here</color> to place an X.'
+  m_Text: "<color=#2E86EC>\u70B9\u51FB\u8FD9\u91CC</color>\u653E\u7F6E\u4E00\u4E2AX\u3002"
 --- !u!114 &114353891062718048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4417,7 +4416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: '<color=#2E86EC>Tap it again</color> to make it a queen'
+  m_Text: "<color=#2E86EC>\u53CC\u51FB</color>\u653E\u7F6E\u7687\u540E\u3002"
 --- !u!114 &114989434536655964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4694,7 +4693,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: Each colour must have exactly <#FF6B26>one </color>Queen.
+  m_Text: "\u6BCF\u79CD\u989C\u8272\u5FC5\u987B\u6709\u4E14\u4EC5\u6709<color=#FF6B26>\u4E00\u4E2A</color>\u7687\u540E\u3002"
 --- !u!114 &114729442808604298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5032,7 +5031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -52.11
-  m_Text: Ottimo lavoro!
+  m_Text: "\u505A\u5F97\u597D\uFF01"
 --- !u!114 &114934287144746640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5433,7 +5432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Queens <#FF6B26>cannot touch </color>other Queens
+  m_Text: "\u7687\u540E\u548C\u7687\u540E<color=#FF6B26>\u4E0D\u80FD\u76F8\u90BB</color>\u3002"
 --- !u!114 &114117307842306080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5710,7 +5709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: '<color=#2E86EC>Tap once</color><br> in these spaces to rule them out'
+  m_Text: "<color=#2E86EC>\u70B9\u51FB</color>\u9AD8\u4EAE\u65B9\u683C\u653E\u7F6EX"
 --- !u!114 &114544837802452058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5987,7 +5986,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: 'Queens <#FF6B26>can''t be in rows or columns </color>with other Queens either.  '
+  m_Text: "\u7687\u540E\u4E5F<color=#FF6B26>\u4E0D\u80FD\u4E0E\u5176\u4ED6\u7687\u540E\u540C\u884C\u6216\u540C\u5217</color>\u3002"
 --- !u!114 &114949593803130734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6679,7 +6678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: This is the<color=#2E86EC> last Green space </color>so it has to be a Queen
+  m_Text: "\u6B64\u8272\u4EC5\u5269<color=#2E86EC>\u4E00\u683C</color>\uFF0C\u987B\u653E\u7687\u540E"
 --- !u!224 &224386568470988373
 RectTransform:
   serializedVersion: 2
@@ -6943,7 +6942,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Can you figure out where the last Queen has to go?
+  m_Text: "\u60A8\u80FD\u63A8\u65AD\u51FA\u6700\u540E\u7684\u7687\u540E\u5E94\u653E\u7F6E\u5728\u4F55\u5904\u5417\uFF1F"
 --- !u!114 &114134286944189183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7261,7 +7260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Bad Luck
+  m_Text: "\u8FD0\u6C14\u4E0D\u597D"
 --- !u!114 &114566389953100910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7616,7 +7615,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: ' You can''t place the Queen there because of this Queen.'
+  m_Text: "\u60A8\u4E0D\u80FD\u628A\u7687\u540E\u653E\u5728\u90A3\u91CC\uFF0C\u56E0\u4E3A\u8FD9\u91CC\u6709\u8FD9\u4E2A\u7687\u540E\u3002"
 --- !u!114 &114031343952073922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7894,7 +7893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: Se hai bisogno di un suggerimento fai clic qui
+  m_Text: "\u5982\u9700\u63D0\u793A\uFF0C\u8BF7\u70B9\u51FB\u6B64\u5904\u3002"
 --- !u!114 &114781547038788540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8229,7 +8228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: -14.0
-  m_Text: This Queen blocks all of these spaces.
+  m_Text: "\u6B64\u7687\u540E\u4F1A\u963B\u6321\u6240\u6709\u8FD9\u4E9B\u65B9\u683C\u3002"
 --- !u!114 &114246380077148219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8908,7 +8907,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Ce l'hai fatta!
+  m_Text: "\u4F60\u505A\u5230\u4E86\uFF01"
 --- !u!114 &114716408055262162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14433,13 +14432,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 30
     m_MaxSize: 68
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Got it!
+  m_Text: "\u660E\u767D\u4E86\uFF01"
 --- !u!224 &224713443856332608
 RectTransform:
   serializedVersion: 2
@@ -14917,7 +14916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Leeren
+  m_Text: "\u6E05\u9664"
 --- !u!114 &114594813517421274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15273,7 +15272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Kostenlos!
+  m_Text: "\u514D\u8D39\uFF01"
 --- !u!114 &114752286656310646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15828,7 +15827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Level 5
+  m_Text: "\u7B2C 5 \u5173"
 --- !u!224 &224523791136275799
 RectTransform:
   serializedVersion: 2

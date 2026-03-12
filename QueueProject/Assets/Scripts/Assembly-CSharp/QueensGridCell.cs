@@ -411,6 +411,15 @@ public class QueensGridCell : MonoBehaviour
 	{
 		if (m_whiteBg != null)
 			m_whiteBg.enabled = highlight;
+
+		// 播放 Outline-Highlight 脉冲动画（循环闪烁效果，引导玩家注意目标格子）
+		if (m_cellAnimator != null)
+		{
+			if (highlight)
+				m_cellAnimator.Play(ANIM_OUTLINE_HIGHLIGHT);
+			else
+				m_cellAnimator.Play(ANIM_IDLE);
+		}
 	}
 
 	public void ShowHintHighlight(bool highlight)

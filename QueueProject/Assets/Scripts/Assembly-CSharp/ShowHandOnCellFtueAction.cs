@@ -36,11 +36,15 @@ public class ShowHandOnCellFtueAction : BaseFtueAction
 
 	protected override void Finished()
 	{
+		UnityEngine.Debug.Log($"[ShowHandOnCellFtueAction] Finished() on '{gameObject.name}' - m_hand={(m_hand != null ? m_hand.gameObject.name : "NULL")}");
+
 		if (m_grid != null)
 		{
 			m_grid.QueenMarked -= OnCellChanged;
 			m_grid.CrossMarked -= OnCellChanged;
 		}
+		if (m_hand != null)
+			m_hand.Hide();
 		base.Finished();
 	}
 }

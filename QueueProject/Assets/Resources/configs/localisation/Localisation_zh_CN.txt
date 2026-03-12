@@ -165,7 +165,7 @@
             "BadLuck": "\u8fd0\u6c14\u4e0d\u597d",
             "CantPlaceQueen": "\u60a8\u4e0d\u80fd\u628a\u7687\u540e\u653e\u5728\u90a3\u91cc\uff0c\u56e0\u4e3a\u8fd9\u91cc\u6709\u8fd9\u4e2a\u7687\u540e\u3002",
             "DoubleTap": "\uff08\u53cc\u51fb\uff09",
-            "EachColor": "\u6bcf\u79cd\u989c\u8272\u5fc5\u987b\u6709\u4e14\u4ec5\u6709<#FF6B26>\u4e00\u4e2a</color>\u7687\u540e\u3002",
+            "EachColor": "\u6bcf\u79cd\u989c\u8272\u5fc5\u987b\u6709\u4e14\u4ec5\u6709<color=#FF6B26>\u4e00\u4e2a</color>\u7687\u540e\u3002",
             "Expert": {
                 "Explanation1": "\u5728\u4e13\u5bb6\u6a21\u5f0f\u4e2d\uff0c\u6bcf\u884c\u3001\u6bcf\u5217\u548c\u6bcf\u79cd\u989c\u8272\u90fd\u5fc5\u987b\u6709<b>2 \u4f4d\u7687\u540e\u3002</b>",
                 "HaveFun": "\u592a\u68d2\u4e86\uff01\u5927\u91cf<b>\u4e13\u5bb6</b>\u6311\u6218\u7b49\u7740\u4f60\u3002\u73a9\u5f97\u5f00\u5fc3\uff01",
@@ -182,16 +182,16 @@
             "GreatWork": "\u505a\u5f97\u597d!",
             "Hint": "\u5982\u9700\u63d0\u793a\uff0c\u8bf7\u70b9\u51fb\u6b64\u5904\u3002",
             "LastQueen": "\u60a8\u80fd\u63a8\u65ad\u51fa\u6700\u540e\u7684\u7687\u540e\u5e94\u653e\u7f6e\u5728\u4f55\u5904\u5417\uff1f",
-            "LastSpaceLeft": "\u8fd9\u662f<color=#2E86EC>\u6700\u540e\u7684\u7eff\u8272\u65b9\u683c</color>\uff0c\u56e0\u6b64\u5fc5\u987b\u653e\u7f6e\u7687\u540e\u3002",
+            "LastSpaceLeft": "\u6b64\u8272\u4ec5\u5269<color=#2E86EC>\u4e00\u683c</color>\uff0c\u987b\u653e\u7687\u540e",
             "Nice": "\u4e0d\u9519!",
             "QueenBlocks": "\u6b64\u7687\u540e\u4f1a\u963b\u6321\u6240\u6709\u8fd9\u4e9b\u65b9\u683c\u3002",
-            "QueensCantTouch": "\u7687\u540e\u548c\u7687\u540e<#FF6B26>\u4e0d\u80fd\u76f8\u90bb</color>\u3002",
-            "RowsAndColumns": "\u7687\u540e\u4e5f<#FF6B26>\u4e0d\u80fd\u4e0e\u5176\u4ed6\u7687\u540e\u540c\u884c\u6216\u540c\u5217</color>\u3002",
+            "QueensCantTouch": "\u7687\u540e\u548c\u7687\u540e<color=#FF6B26>\u4e0d\u80fd\u76f8\u90bb</color>\u3002",
+            "RowsAndColumns": "\u7687\u540e\u4e5f<color=#FF6B26>\u4e0d\u80fd\u4e0e\u5176\u4ed6\u7687\u540e\u540c\u884c\u6216\u540c\u5217</color>\u3002",
             "TapTheseToRuleOut": "\u70b9\u51fb\u8fd9\u4e9b\u7a7a\u683c\u4ee5\u6392\u9664\u5b83\u4eec",
             "TapToPlaceAnX": "<color=#2E86EC>\u70b9\u51fb\u8fd9\u91cc</color>\u653e\u7f6e\u4e00\u4e2aX\u3002",
             "tapToPlaceAQueen": "<color=#2E86EC>\u53cc\u51fb</color>\u653e\u7f6e\u7687\u540e\u3002",
-            "TapToRuleOut": "\u7687\u540e\u548c\u7687\u540e<#FF6B26>\u4e0d\u80fd\u76f8\u90bb</color>\u3002",
-            "WelcomeTo": "\u6b22\u8fce\u6765\u5230...",
+            "TapToRuleOut": "<color=#2E86EC>\u70b9\u51fb</color>\u9ad8\u4eae\u65b9\u683c\u653e\u7f6eX",
+            "WelcomeTo": "\u7687\u540e\u5927\u5e08",
             "YouDidIt": "\u4f60\u505a\u5230\u4e86!"
         },
         "GameScreen": {
@@ -201,7 +201,8 @@
             "LevelTextExpertMode": "\u4e13\u5bb6\u7ea7\u522b {0}",
             "LevelTextPVP": "1 \u5bf9 1 \u6311\u6218",
             "QueenBoosterUnlockLevelText": "\u7b2c {0} \u5173",
-            "SkinsButton": "\u76ae\u80a4"
+            "SkinsButton": "\u76ae\u80a4",
+            "TutorialLevel": "\u6559\u5b66\u5173\u5361"
         },
         "GameScreenRules": {
             "OneQueenPerRow": "\u6bcf\u79cd\u989c\u8272 1 \u7687\u540e",
@@ -617,14 +618,14 @@
         "PopupTutorial": {
             "Back": "\u8fd4\u56de",
             "Expert": {
-                "Instruction1": "\u6bcf\u79cd\u989c\u8272\u53ea\u80fd\u6709<#FF6B26>2\u4e2a\u7687\u540e</color>\u3002",
-                "Instruction3": "\u6bcf\u884c\u6216\u5217\u53ea\u80fd\u6709<#FF6B26>2\u4e2a\u7687\u540e</color>"
+                "Instruction1": "\u6bcf\u79cd\u989c\u8272\u53ea\u80fd\u6709<color=#FF6B26>2\u4e2a\u7687\u540e</color>\u3002",
+                "Instruction3": "\u6bcf\u884c\u6216\u5217\u53ea\u80fd\u6709<color=#FF6B26>2\u4e2a\u7687\u540e</color>"
             },
             "Finish": "\u660e\u767d\u4e86",
             "HowToPlay": "\u5982\u4f55\u73a9",
-            "Instruction1": "\u6bcf\u79cd\u989c\u8272\u6709\u4e14\u4ec5\u6709<#FF6B26>1\u4e2a\u7687\u540e</color>\u3002",
-            "Instruction2": "\u7687\u540e\u548c\u7687\u540e<#FF6B26>\u4e0d\u80fd\u76f8\u90bb</color>\u3002",
-            "Instruction3": "\u7687\u540e<#FF6B26>\u4e0d\u80fd\u4e0e\u5176\u4ed6\u7687\u540e\u540c\u884c\u6216\u540c\u5217</color>\u3002",
+            "Instruction1": "\u6bcf\u79cd\u989c\u8272\u6709\u4e14\u4ec5\u6709<color=#FF6B26>1\u4e2a\u7687\u540e</color>\u3002",
+            "Instruction2": "\u7687\u540e\u548c\u7687\u540e<color=#FF6B26>\u4e0d\u80fd\u76f8\u90bb</color>\u3002",
+            "Instruction3": "\u7687\u540e<color=#FF6B26>\u4e0d\u80fd\u4e0e\u5176\u4ed6\u7687\u540e\u540c\u884c\u6216\u540c\u5217</color>\u3002",
             "Instruction4": "<color=#2E86EC>\u53cc\u51fb</color>\u653e\u7f6e\u7687\u540e\u3002",
             "Next": "\u4e0b\u4e00\u6b65"
         },

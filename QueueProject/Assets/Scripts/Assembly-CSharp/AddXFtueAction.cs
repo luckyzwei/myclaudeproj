@@ -22,6 +22,9 @@ public class AddXFtueAction : BaseFtueAction
 	{
 		m_crossCount = 0;
 
+		// Hide continue button during placement steps
+		HideContinueButton();
+
 		if (m_grid != null)
 		{
 			m_grid.SetFtueMode();
@@ -37,6 +40,7 @@ public class AddXFtueAction : BaseFtueAction
 			m_grid.CrossRemoved += OnCrossRemoved;
 		}
 
+		// 只有 prefab 绑定了 m_hand 的步骤才显示手（m_hand=null 表示只需高亮格子）
 		if (m_hand != null && m_cells != null && m_cells.Length > 0)
 		{
 			var cell = m_grid != null ? m_grid.GetCell(m_cells[0].x, m_cells[0].y) : null;
@@ -47,6 +51,8 @@ public class AddXFtueAction : BaseFtueAction
 
 	protected override void Finished()
 	{
+		UnityEngine.Debug.Log($"[AddXFtueAction] Finished() on '{gameObject.name}' - m_hand={(m_hand != null ? m_hand.gameObject.name : "NULL")}, crossCount={m_crossCount}");
+
 		if (m_grid != null)
 		{
 			m_grid.CrossMarked -= OnCrossMarked;
@@ -73,5 +79,20 @@ public class AddXFtueAction : BaseFtueAction
 	{
 		m_crossCount--;
 		if (m_crossCount < 0) m_crossCount = 0;
+	}
+
+	private void HideContinueButton()
+	{
+		var popup = GetComponentInParent<PopupQueensInGameAdaptiveFTUE>();
+		if (popup == null) return;
+		var buttons = popup.GetComponentsInChildren<UnityEngine.UI.Button>(true);
+		for (int i = 0; i < buttons.Length; i++)
+		{
+			if (buttons[i].gameObject.name == "Button-Continue")
+			{
+				buttons[i].gameObject.SetActive(false);
+				break;
+			}
+		}
 	}
 }

@@ -545,8 +545,13 @@ public class QueensGrid : MonoBehaviour
 
 	public void AddFtueTarget(int x, int y, bool hilight = true)
 	{
-		if (m_levelData == null) return;
+		if (m_levelData == null)
+		{
+			UnityEngine.Debug.LogWarning("[QueensGrid] AddFtueTarget - m_levelData is null!");
+			return;
+		}
 		int idx = m_levelData.Index(x, y);
+		UnityEngine.Debug.Log($"[QueensGrid] AddFtueTarget({x},{y}) hilight={hilight} → idx={idx}, cellCount={m_cells?.Count ?? 0}");
 		if (idx >= 0)
 		{
 			m_ftueTarget.Add(idx);

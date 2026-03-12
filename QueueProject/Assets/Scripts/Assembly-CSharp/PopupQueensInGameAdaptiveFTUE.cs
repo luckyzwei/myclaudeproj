@@ -190,7 +190,35 @@ public class PopupQueensInGameAdaptiveFTUE : PopUpBase
 		if (m_continue)
 			return; // Step already completed and auto-advanced, ignore duplicate
 
+		// 通知当前 step 的 ContinueButtonFtueAction
+		if (m_steps != null && m_step >= 0 && m_step < m_steps.Length)
+		{
+			var step = m_steps[m_step];
+			if (step != null)
+			{
+				// 调用当前步骤的 ContinuePressed，让 action 正常完成
+				// 这会触发 action callback → step callback → 自动推进
+				var actions = step.GetComponentsInChildren<ContinueButtonFtueAction>(true);
+				if (actions != null && actions.Length > 0)
+				{
+					// 重新禁用 raycasts
+					var cg = GetComponent<CanvasGroup>();
+					if (cg != null)
+						cg.blocksRaycasts = false;
+
+					for (int i = 0; i < actions.Length; i++)
+						actions[i].ContinuePressed();
+					return;
+				}
+			}
+		}
+
+		// 备用路径：没有 ContinueButtonFtueAction 时直接推进
 		m_continue = true;
+		var canvasGroup = GetComponent<CanvasGroup>();
+		if (canvasGroup != null)
+			canvasGroup.blocksRaycasts = false;
+
 		m_step++;
 		if (m_steps != null && m_step < m_steps.Length)
 			PlayNextStep();

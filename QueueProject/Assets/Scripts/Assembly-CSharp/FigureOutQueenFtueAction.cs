@@ -20,6 +20,18 @@ public class FigureOutQueenFtueAction : BaseFtueAction
 	{
 		m_queensCount = 0;
 
+		// Hide continue button during placement steps
+		var popup = GetComponentInParent<PopupQueensInGameAdaptiveFTUE>();
+		if (popup != null)
+		{
+			var buttons = popup.GetComponentsInChildren<UnityEngine.UI.Button>(true);
+			for (int i = 0; i < buttons.Length; i++)
+			{
+				if (buttons[i].gameObject.name == "Button-Continue")
+				{ buttons[i].gameObject.SetActive(false); break; }
+			}
+		}
+
 		if (m_grid != null)
 		{
 			m_grid.SetFtueMode();

@@ -1,3 +1,4 @@
+using KWCore.SaveData;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -16,17 +17,18 @@ public class LevelNumberWidget : MonoBehaviour
 
 	private void Start()
 	{
-		UnityEngine.Debug.Log($"[LevelNumberWidget] Start called. m_text={m_text != null} gameObject={gameObject.name} active={gameObject.activeSelf} parent={transform.parent?.name}");
-		if (m_text == null)
-		{
-			UnityEngine.Debug.LogWarning("[LevelNumberWidget] m_text is null!");
-			return;
-		}
+		if (m_text == null) return;
 
 		var gm = GameManager.Instance;
-		if (gm == null)
+		if (gm == null) return;
+
+		// FTUE 教学关卡检测
+		if (!BucketGameplay.FtueGameplayCompleted)
 		{
-			UnityEngine.Debug.LogWarning("[LevelNumberWidget] GameManager.Instance is null!");
+			m_text.text = Kwalee.GetLocalisedText("GameScreen.TutorialLevel");
+			// 如果本地化没有该 key，回退到中文
+			if (m_text.text == "GameScreen.TutorialLevel")
+				m_text.text = "教学关卡";
 			return;
 		}
 
@@ -46,21 +48,22 @@ public class LevelNumberWidget : MonoBehaviour
 			}
 		}
 
+		string text;
 		switch (gm.CurrentGameMode)
 		{
 			case GameManager.GameMode.DAILY_CHALLENGE:
-				m_text.text = "Daily Challenge";
+				text = Kwalee.GetLocalisedText(DAILY_CHALLENGE_KEY, "");
 				break;
 			case GameManager.GameMode.PVP:
-				m_text.text = "PVP";
+				text = Kwalee.GetLocalisedText(PVP_KEY);
 				break;
 			case GameManager.GameMode.EXPERT_MODE:
-				m_text.text = $"Expert Level {levelNum}";
+				text = Kwalee.GetLocalisedText(EXPERT_MODE_KEY, levelNum);
 				break;
 			default:
-				m_text.text = $"Level {levelNum}";
+				text = Kwalee.GetLocalisedText(LEVEL_TEXT, levelNum);
 				break;
 		}
-		UnityEngine.Debug.Log($"[LevelNumberWidget] Set text to: '{m_text.text}' fontSize={m_text.fontSize} color={m_text.color} enabled={m_text.enabled}");
+		m_text.text = text;
 	}
 }

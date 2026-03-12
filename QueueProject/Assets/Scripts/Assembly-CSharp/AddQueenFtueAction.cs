@@ -29,6 +29,9 @@ public class AddQueenFtueAction : BaseFtueAction
 	{
 		m_queensCount = 0;
 
+		// Hide continue button during placement steps
+		HideContinueButton();
+
 		if (m_grid != null)
 		{
 			m_grid.SetFtueMode();
@@ -48,8 +51,24 @@ public class AddQueenFtueAction : BaseFtueAction
 		ConfigureFTUEHand();
 	}
 
+	private void HideContinueButton()
+	{
+		var popup = GetComponentInParent<PopupQueensInGameAdaptiveFTUE>();
+		if (popup == null) return;
+		var buttons = popup.GetComponentsInChildren<UnityEngine.UI.Button>(true);
+		for (int i = 0; i < buttons.Length; i++)
+		{
+			if (buttons[i].gameObject.name == "Button-Continue")
+			{
+				buttons[i].gameObject.SetActive(false);
+				break;
+			}
+		}
+	}
+
 	private void ConfigureFTUEHand()
 	{
+		// 只有 prefab 绑定了 m_hand 的步骤才显示手
 		if (m_hand != null && m_showHandAtStart && m_ftueCells != null && m_ftueCells.Length > 0)
 		{
 			var cell = m_grid != null ? m_grid.GetCell(m_ftueCells[0].x, m_ftueCells[0].y) : null;
@@ -74,6 +93,8 @@ public class AddQueenFtueAction : BaseFtueAction
 
 	protected override void Finished()
 	{
+		UnityEngine.Debug.Log($"[AddQueenFtueAction] Finished() on '{gameObject.name}' - m_hand={(m_hand != null ? m_hand.gameObject.name : "NULL")}, queensCount={m_queensCount}");
+
 		if (m_grid != null)
 		{
 			m_grid.QueenMarked -= QueenMarked;
