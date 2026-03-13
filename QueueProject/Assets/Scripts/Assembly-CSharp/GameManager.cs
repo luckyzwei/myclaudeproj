@@ -338,15 +338,6 @@ public class GameManager : MonoSingleton<GameManager>
 		if (m_queenGameController != null)
 			m_queenGameController.StartGame(levelData, true);
 
-		// 第一关一定弹窗"如何玩"（教学关卡除外，只弹一次）
-		int levelIndex = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
-		UnityEngine.Debug.Log($"[GameManager] LoadGameplay — levelIndex={levelIndex}, IsPlayingFtue={IsPlayingFtue}, ftueCompletedThisSession={m_ftueCompletedThisSession}, howToPlayShown={m_howToPlayShown}");
-		if (!IsPlayingFtue && levelIndex == 0 && !m_howToPlayShown)
-		{
-			m_howToPlayShown = true;
-			UnityEngine.Debug.Log("[GameManager] First level — showing How to Play");
-			TutorialPopup.Show();
-		}
 	}
 
 	public void GameOver()
