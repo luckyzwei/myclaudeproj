@@ -272,6 +272,8 @@ public class QueensGrid : MonoBehaviour
 
 	private HashSet<int> m_uniqueColors;
 
+	private HashSet<int> m_loseLifeCells;
+
 	private List<int> m_colorsArray;
 
 	private bool m_animatingIn;
@@ -600,6 +602,14 @@ public class QueensGrid : MonoBehaviour
 
 		if (isCorrect)
 		{
+			// Clear existing X mark before placing queen
+			if (m_playerSolution[cellIndex] == X)
+			{
+				var clearCell = GetCell(cellIndex);
+				if (clearCell != null)
+					clearCell.Clear(1f, false);
+			}
+
 			m_playerSolution[cellIndex] = QUEEN;
 			m_queenCount++;
 			var cell = GetCell(cellIndex);
@@ -637,6 +647,8 @@ public class QueensGrid : MonoBehaviour
 		{
 			// Wrong placement - lock cell and lose a life
 			m_playerSolution[cellIndex] = QUEEN; // Mark as occupied so it can't be changed
+			if (m_loseLifeCells == null) m_loseLifeCells = new HashSet<int>();
+			m_loseLifeCells.Add(cellIndex);
 			var cell = GetCell(cellIndex);
 			if (cell != null)
 				cell.SetAsLoseLife();
@@ -756,10 +768,11 @@ public class QueensGrid : MonoBehaviour
 
 		PlayCelebrateSound();
 
-		// All queen cells celebrate simultaneously (including the last one just clicked)
+		// All queen cells celebrate simultaneously, skip wrong-placement cells
 		for (int i = 0; i < m_cells.Count; i++)
 		{
-			if (i < m_playerSolution.Length && m_playerSolution[i] == QUEEN)
+			if (i < m_playerSolution.Length && m_playerSolution[i] == QUEEN
+				&& (m_loseLifeCells == null || !m_loseLifeCells.Contains(i)))
 			{
 				m_cells[i].Celebrate(UnityEngine.Random.value > 0.5f);
 			}
