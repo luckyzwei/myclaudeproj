@@ -54,6 +54,8 @@ public class QueensGridCell : MonoBehaviour
 	[SerializeField]
 	private Transform m_content;
 
+	private Vector3 m_flipScale = Vector3.one;
+
 	[SerializeField]
 	private SpriteRenderer m_backColour;
 
@@ -250,7 +252,7 @@ public class QueensGridCell : MonoBehaviour
 			if (m_content != null)
 			{
 				m_content.DOKill();
-				m_content.localScale = Vector3.one;
+				m_content.localScale = m_flipScale;
 				m_content.DOPunchScale(m_punchScale, m_punchTime, 6, 0.5f);
 			}
 
@@ -378,6 +380,7 @@ public class QueensGridCell : MonoBehaviour
 		if (x) scale.x = -scale.x;
 		if (y) scale.y = -scale.y;
 		m_content.localScale = scale;
+		m_flipScale = scale;
 	}
 
 	public Vector3 GetFlipValue()

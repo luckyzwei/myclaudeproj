@@ -108,13 +108,12 @@ public abstract class BaseHint : MonoBehaviour
 
 	public static bool CanSee(Vector2Int viewer, Vector2Int subject, bool onlyNeighbors = false)
 	{
-		// Check if viewer can "see" subject (same row, column, or diagonal)
+		// Check if viewer can "see" subject (same row, column, or adjacent)
+		// Queens puzzle rules: same row, same column, and adjacent 8 neighbors (NOT full diagonals)
 		if (viewer.x == subject.x) return true; // same column
 		if (viewer.y == subject.y) return true; // same row
-		if (Mathf.Abs(viewer.x - subject.x) == Mathf.Abs(viewer.y - subject.y)) return true; // diagonal
-
-		if (onlyNeighbors)
-			return Mathf.Abs(viewer.x - subject.x) <= 1 && Mathf.Abs(viewer.y - subject.y) <= 1;
+		// Adjacent (including diagonal neighbors, distance <= 1)
+		if (Mathf.Abs(viewer.x - subject.x) <= 1 && Mathf.Abs(viewer.y - subject.y) <= 1) return true;
 
 		return false;
 	}

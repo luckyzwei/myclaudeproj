@@ -32,6 +32,9 @@ public abstract class QueensControlSchemeBase : MonoBehaviour
 	protected QueensGridCell GetCell(out Vector3 hitPoint)
 	{
 		hitPoint = Vector3.zero;
+		// Block board input when hint popup is showing (prevent click-through to board)
+		if (PopupHint.IsShowing)
+			return null;
 		Vector3 mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 		if (hit.collider != null)

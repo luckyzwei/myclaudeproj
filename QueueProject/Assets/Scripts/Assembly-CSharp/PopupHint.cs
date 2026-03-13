@@ -137,6 +137,8 @@ public class PopupHint : PopUpBase
 
 	public const string PREFAB_NAME = "Prefabs/Popups/PopUp-HintBooster";
 
+	public static bool IsShowing { get; private set; }
+
 	private const float CELL_SIZE = 1.8f;
 
 	private const float MASK_SIZE = 190f;
@@ -172,6 +174,7 @@ public class PopupHint : PopUpBase
 
 	private void OnEnable()
 	{
+		IsShowing = true;
 		m_isAutoDoing = false;
 		m_index = 0;
 		m_maskScale = 0f;
@@ -221,9 +224,32 @@ public class PopupHint : PopUpBase
 		if (m_masksParent != null)
 			m_masksParent.SetAsFirstSibling();
 
-		// Highlight all highlighted cells (shows them through the dark overlay)
+		// Build a set of interactable cell indices for quick lookup
+		HashSet<int> interactableSet = new HashSet<int>();
+		if (interactableCells != null)
+		{
+			for (int i = 0; i < interactableCells.Count; i++)
+			{
+				if (interactableCells[i] != null)
+					interactableSet.Add(interactableCells[i].CellIndex);
+			}
+		}
+
+		// Highlight all cells through the dark overlay, but dim reference-only cells
+		// so the player can clearly see which cells "快速应用" will act on
 		if (highlightedCells != null)
-			HighlightCells(highlightedCells, true);
+		{
+			for (int i = 0; i < highlightedCells.Count; i++)
+			{
+				var cell = highlightedCells[i];
+				if (cell == null) continue;
+				bool isActionable = interactableSet.Contains(cell.CellIndex);
+				Highlight(cell, true);
+				// Dim reference cells so actionable cells stand out
+				if (!isActionable && m_cellMasks != null && m_cellMasks.TryGetValue(cell, out var mask) && mask != null)
+					mask.color = new Color(1f, 1f, 1f, 0.45f);
+			}
+		}
 
 		MakeButtonAppear();
 	}
@@ -324,8 +350,14 @@ public class PopupHint : PopUpBase
 			HintsManager.Instance.AutoDoHint(null);
 	}
 
+	private void OnDisable()
+	{
+		IsShowing = false;
+	}
+
 	protected override void OnDestroy()
 	{
+		IsShowing = false;
 		base.OnDestroy();
 		m_cellMasks?.Clear();
 		m_cellMasks = null;

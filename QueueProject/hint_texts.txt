@@ -1,0 +1,336 @@
+BoosterQueen (2字):
+  皇后
+
+CantPlaceQueen (21字):
+  您不能把皇后放在那里，因为这里有这个皇后。
+
+CellRuleOut (15字):
+  此格挡住所有{0}格，可排除。
+
+CellRuleOut_DiffColor_DoubleQueen (14字):
+  此格阻止{0}包含两位皇后。
+
+CellRuleOut_DoubleQueen (22字):
+  此格挡住所有{0}格，{0}无法放两位皇后。
+
+CellRuleOut_OtherColours (15字):
+  此格挡住该颜色所有格，可排除。
+
+CellRuleOut_OtherColours_DiffColor_DoubleQueen (14字):
+  此格阻止该颜色包含两位皇后。
+
+CellRuleOut_OtherColours_DoubleQueen (19字):
+  此格挡住该颜色所有格，无法放两位皇后。
+
+CellRuleOut_Plural (16字):
+  这些格挡住所有{0}格，可排除。
+
+CellRuleOut_Plural_DiffColor_DoubleQueen (15字):
+  这些格阻止{0}包含两位皇后。
+
+CellRuleOut_Plural_DoubleQueen (23字):
+  这些格挡住所有{0}格，{0}无法放两位皇后。
+
+CellRuleOut_Plural_OtherColours (16字):
+  这些格挡住该颜色所有格，可排除。
+
+CellRuleOut_Plural_OtherColours_DiffColor_DoubleQueen (15字):
+  这些格阻止该颜色包含两位皇后。
+
+CellRuleOut_Plural_OtherColours_DoubleQueen (20字):
+  这些格挡住该颜色所有格，无法放两位皇后。
+
+CheckBackTomorrow (8字):
+  请明天再来查看：
+
+CheckOtherMonths (6字):
+  查看其他月份
+
+ColourCheck (14字):
+  {0}已有皇后，排除这些格。
+
+ColourCheck_DoubleQueen (16字):
+  {0}已有两位皇后，排除这些格。
+
+ColourCheck_OtherColours (14字):
+  此颜色已有皇后，排除这些格。
+
+ColourCheck_OtherColours_DoubleQueen (16字):
+  此颜色已有两位皇后，排除这些格。
+
+Desc_hint_booster (14字):
+  卡住了？立即显示您的下一步！
+
+DoublePointingPairs (28字):
+  这两[ROWCOL]须放{0}和{1}皇后，排除其余格。
+
+DoublePointingPairs_DoubleQueen (23字):
+  {0}和{1}仅在这2[行列]中，排除其他格。
+
+DoublePointingPairs_OtherColours (24字):
+  这两[ROWCOL]须放这两色皇后，排除其余格。
+
+DoublePointingPairs_OtherColours_DoubleQueen (19字):
+  这两色仅在这2[行列]中，排除其他格。
+
+DoubleQueens (3字):
+  双皇后
+
+Fallback (7字):
+  可排除这些格。
+
+ForcedQueen (20字):
+  此[ROWCOL]仅剩此格，必须放皇后。
+
+ForcedQueen_1Cell_DoubleQueen (17字):
+  此[行/列]需两位皇后，仅剩此格。
+
+ForcedQueen_ManyCells_DoubleQueen (18字):
+  此[行/列]需两位皇后，仅剩这些格。
+
+ForcedRuleOut (26字):
+  此[ROWCOL]皇后必为{0}，排除其余{0}格。
+
+ForcedRuleOut_DoubleQueen (25字):
+  此[行/列]两位皇后必为{0}，排除其他{0}格。
+
+ForcedRuleOut_OtherColours (23字):
+  此[ROWCOL]皇后必为此颜色，排除同色格。
+
+ForcedRuleOut_OtherColours_DoubleQueen (22字):
+  此[行/列]两位皇后必为此颜色，排除同色格。
+
+Hint (11字):
+  如需提示，请点击此处。
+
+LastQueen (18字):
+  您能推断出最后的皇后应放置在何处吗？
+
+Mistake (12字):
+  此格不应排除，应放皇后。
+
+NakedSingle (12字):
+  {0}仅剩此格，放皇后！
+
+NakedSingle_1Queen_DoubleQueen (14字):
+  {0}唯一方格，必须是皇后。
+
+NakedSingle_1Queen_OtherColours_DoubleQueen (14字):
+  此颜色唯一方格，必须是皇后。
+
+NakedSingle_DoubleQueen (15字):
+  {0}仅剩这些格，必须放皇后。
+
+NakedSingle_OnlyCell (12字):
+  {0}唯一方格，放皇后！
+
+NakedSingle_OtherColours (12字):
+  该颜色仅剩此格，放皇后！
+
+NakedSingle_OtherColours_DoubleQueen (15字):
+  此颜色仅剩这些格，必须放皇后。
+
+NakedSingle_OtherColours_OnlyCell (12字):
+  该颜色唯一方格，放皇后！
+
+OneQueenPerRow (9字):
+  每种颜色 1 皇后
+
+OneQueenPerRowCol (14字):
+  每行、每列均有且仅有1个皇后
+
+PentaPointingPairs (40字):
+  这五[ROWCOL]须放{0}、{1}、{2}、{3}和{4}皇后，排除其余格。
+
+PentaPointingPairs_DoubleQueen (35字):
+  {0}、{1}、{2}、{3}和{4}仅在这5[行列]中，排除其他格。
+
+PentaPointingPairs_OtherColours (24字):
+  这五[ROWCOL]须放这五色皇后，排除其余格。
+
+PentaPointingPairs_OtherColours_DoubleQueen (19字):
+  这五色仅在这5[行列]中，排除其他格。
+
+PlaceFirstQueen (23字):
+  {0} 区必须包含 2 位皇后，皇后不能接触。
+
+PlaceFirstQueen_OtherColours (20字):
+  本区必须包含 2 位皇后，皇后不能接触。
+
+PlaceSecondQueen (17字):
+  最后这个 {0} 空间必须是皇后。
+
+PlaceSecondQueen_OtherColours (12字):
+  最后这个空间必须是皇后。
+
+PlaceSecondRowQueens (18字):
+  你能找出接下来 2 位皇后的位置吗？
+
+PointingPairs (27字):
+  {0}皇后必在这些格中，排除此[ROWCOL]其余格。
+
+PointingPairs_DoubleQueen (32字):
+  {0}和{1}皇后必在这些格中，此[ROWCOL]不能再有皇后。
+
+PointingPairs_OtherColours (26字):
+  此色皇后必在这些格中，排除此[ROWCOL]其余格。
+
+PointingPairs_OtherColours_DoubleQueen (27字):
+  这些颜色皇后必在此处，此[ROWCOL]不能再有皇后。
+
+ProximityCheck (12字):
+  排除所有与皇后相邻的格。
+
+QuadruplePointingPairs (36字):
+  这四[ROWCOL]须放{0}、{1}、{2}和{3}皇后，排除其余格。
+
+QuadruplePointingPairs_DoubleQueen (31字):
+  {0}、{1}、{2}和{3}仅在这4[行列]中，排除其他格。
+
+QuadruplePointingPairs_OtherColours (24字):
+  这四[ROWCOL]须放这四色皇后，排除其余格。
+
+QuadruplePointingPairs_OtherColours_DoubleQueen (19字):
+  这四色仅在这4[行列]中，排除其他格。
+
+QueenBlocks (13字):
+  此皇后会阻挡所有这些方格。
+
+QueenBooster (5字):
+  皇后助推器
+
+QueenBoosterDesc (12字):
+  在正确的位置放置一个皇后
+
+QueenBoosterUnlockLevelText (7字):
+  第 {0} 关
+
+QueenEventWidgetLocked (3字):
+  未解锁
+
+QueenEventWidgetUnlock (8字):
+  解锁关卡 {0}
+
+Queens (7字):
+  Queen's
+
+QueensCantTouch (6字):
+  皇后不能相邻
+
+QueensEventLastChance_Body (15字):
+  仅剩不到12小时可赢取丰厚奖励
+
+QueensEventLastChance_Title (11字):
+  领取特别奖励的最后机会
+
+QueensEventLive_Body (10字):
+  快来领取属于您的宝藏
+
+QueensEventLive_Title (8字):
+  限时活动现已开启
+
+QueensTab (2字):
+  女王
+
+QueensTreasure (5字):
+  女王的宝藏
+
+RemoteCell_DoubleQueen (21字):
+  此颜色须两位皇后且不能相邻，此格必为皇后。
+
+RemoteCell_OtherColours_DoubleQueen (21字):
+  此颜色须两位皇后且不能相邻，此格必为皇后。
+
+ReversePentaPointingPair (43字):
+  这五[ROWCOL]仅含{0}、{1}、{2}、{3}和{4}，须放皇后，排除外部格。
+
+ReversePentaPointingPair_DoubleQueens (37字):
+  {0}、{1}、{2}、{3}和{4}仅在这5[行列]中，排除外部同色格。
+
+ReversePentaPointingPair_OtherColours (28字):
+  这五[ROWCOL]仅含五种颜色，须放皇后，排除外部格。
+
+ReversePentaPointingPair_OtherColours_DoubleQueens (21字):
+  这五色仅在这5[行列]中，排除外部同色格。
+
+ReversePointingPair (31字):
+  这两[ROWCOL]仅含{0}和{1}，须放皇后，排除外部格。
+
+ReversePointingPair_DoubleQueen (25字):
+  {0}和{1}仅在这2[行列]中，排除外部同色格。
+
+ReversePointingPair_OtherColours (28字):
+  这两[ROWCOL]仅含两种颜色，须放皇后，排除外部格。
+
+ReversePointingPair_OtherColours_DoubleQueen (21字):
+  这两色仅在这2[行列]中，排除外部同色格。
+
+ReverseQuadPointingPair (39字):
+  这四[ROWCOL]仅含{0}、{1}、{2}和{3}，须放皇后，排除外部格。
+
+ReverseQuadPointingPair_DoubleQueen (33字):
+  {0}、{1}、{2}和{3}仅在这4[行列]中，排除外部同色格。
+
+ReverseQuadPointingPair_OtherColours (28字):
+  这四[ROWCOL]仅含四种颜色，须放皇后，排除外部格。
+
+ReverseQuadPointingPair_OtherColours_DoubleQueen (21字):
+  这四色仅在这4[行列]中，排除外部同色格。
+
+ReverseTriplePointingPair (35字):
+  这三[ROWCOL]仅含{0}、{1}和{2}，须放皇后，排除外部格。
+
+ReverseTriplePointingPair_DoubleQueen (29字):
+  {0}、{1}和{2}仅在这3[行列]中，排除外部同色格。
+
+ReverseTriplePointingPair_OtherColours (28字):
+  这三[ROWCOL]仅含三种颜色，须放皇后，排除外部格。
+
+ReverseTriplePointingPair_OtherColours_DoubleQueen (21字):
+  这三色仅在这3[行列]中，排除外部同色格。
+
+RowColumnCheck (14字):
+  排除皇后所在行和列的所有格。
+
+RowColumnCheck_DoubleQueen (13字):
+  排除已有两位皇后的行和列。
+
+RowColumnRuleOut (20字):
+  此格挡住该[ROWCOL]全部格，排除。
+
+RowColumnRuleOut_DoubleQueen (20字):
+  在此放皇后会阻止该[行/列]有两位皇后。
+
+RowColumnRuleOut_Plural (21字):
+  这些格挡住该[ROWCOL]全部格，排除。
+
+RowColumnRuleOut_Plural_DoubleQueen (22字):
+  在这些格放皇后会阻止该[行/列]有两位皇后。
+
+SelectAcceptCheck (33字):
+  勾选“我接受”即表示您已阅读并同意我们的隐私政策，且已年满16岁。
+
+TapTheseToRuleOut (11字):
+  点击这些空格以排除它们
+
+TapToRuleOut (32字):
+  <color=#2E86EC>点击</color>高亮方格放置X
+
+TriplePointingPairs (32字):
+  这三[ROWCOL]须放{0}、{1}和{2}皇后，排除其余格。
+
+TriplePointingPairs_DoubleQueen (27字):
+  {0}、{1}和{2}仅在这3[行列]中，排除其他格。
+
+TriplePointingPairs_OtherColours (24字):
+  这三[ROWCOL]须放这三色皇后，排除其余格。
+
+TriplePointingPairs_OtherColours_DoubleQueen (19字):
+  这三色仅在这3[行列]中，排除其他格。
+
+hint_booster (2字):
+  提示
+
+tapToPlaceAQueen (30字):
+  <color=#2E86EC>双击</color>放置皇后。
+

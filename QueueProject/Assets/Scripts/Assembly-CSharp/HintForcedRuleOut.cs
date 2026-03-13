@@ -26,7 +26,7 @@ public class HintForcedRuleOut : BaseHint
 		for (int x = 0; x < gridState.Size.x; x++)
 		{
 			int oneColor = GetColumnOneColor(x);
-			if (oneColor > 0 && HasOpenCellsWithColor(gridState, x, oneColor, true))
+			if (oneColor >= 0 && HasOpenCellsWithColor(gridState, x, oneColor, true))
 			{
 				CollectInfo(gridState, x, true, oneColor, result);
 				if (result.interactibleCells.Count > 0)
@@ -41,7 +41,7 @@ public class HintForcedRuleOut : BaseHint
 		for (int y = 0; y < gridState.Size.y; y++)
 		{
 			int oneColor = GetRowOneColor(y);
-			if (oneColor > 0 && HasOpenCellsWithColor(gridState, y, oneColor, false))
+			if (oneColor >= 0 && HasOpenCellsWithColor(gridState, y, oneColor, false))
 			{
 				CollectInfo(gridState, y, false, oneColor, result);
 				if (result.interactibleCells.Count > 0)
@@ -73,7 +73,7 @@ public class HintForcedRuleOut : BaseHint
 
 	private int GetColumnOneColor(int column)
 	{
-		if (m_gridState == null) return 0;
+		if (m_gridState == null) return -1;
 		int foundColor = -1;
 		bool hasQueen = false;
 
@@ -91,17 +91,17 @@ public class HintForcedRuleOut : BaseHint
 				if (foundColor == -1)
 					foundColor = color;
 				else if (foundColor != color)
-					return 0; // multiple colors => not forced
+					return -1; // multiple colors => not forced
 			}
 		}
 
-		if (hasQueen) return 0;
-		return foundColor > 0 ? foundColor : 0;
+		if (hasQueen) return -1;
+		return foundColor;
 	}
 
 	private int GetRowOneColor(int row)
 	{
-		if (m_gridState == null) return 0;
+		if (m_gridState == null) return -1;
 		int foundColor = -1;
 		bool hasQueen = false;
 
@@ -119,12 +119,12 @@ public class HintForcedRuleOut : BaseHint
 				if (foundColor == -1)
 					foundColor = color;
 				else if (foundColor != color)
-					return 0;
+					return -1;
 			}
 		}
 
-		if (hasQueen) return 0;
-		return foundColor > 0 ? foundColor : 0;
+		if (hasQueen) return -1;
+		return foundColor;
 	}
 
 	private void CollectInfo(GridState gridState, int index, bool isColumn, int columnColor, HintsManager.HintResult result)
