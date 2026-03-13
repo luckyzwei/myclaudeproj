@@ -257,23 +257,26 @@ public class GameManager : MonoSingleton<GameManager>
 		else
 		{
 			int currentLevel = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
-			if (currentLevel == 0 && !m_ftueCompletedThisSession && m_ftueLevel != null)
+			UnityEngine.Debug.Log($"[GameManager] StartGame — currentLevel={currentLevel}");
+			if (currentLevel == 0 && m_ftueLevel != null)
 			{
-				// 第一次启动：加载教学关卡
+				// currentLevel=0 就是教学关卡
 				m_currentLevelScriptable = m_ftueLevel;
 			}
 			else if (m_levelOrder != null)
 			{
-				m_currentLevelScriptable = m_levelOrder.GetLevel(currentLevel);
+				// currentLevel=1 对应 levelOrder[0]，以此类推
+				m_currentLevelScriptable = m_levelOrder.GetLevel(currentLevel - 1);
 			}
 		}
 
 		if (m_currentLevelScriptable == null || m_currentLevelScriptable.data == null)
 		{
-			UnityEngine.Debug.LogWarning("[GameManager] No level data available");
+			UnityEngine.Debug.LogWarning($"[GameManager] No level data available, currentLevel={KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex}, scriptable={m_currentLevelScriptable?.name ?? "NULL"}, data={m_currentLevelScriptable?.data != null}");
 			return false;
 		}
 
+		UnityEngine.Debug.Log($"[GameManager] StartGame — loading: {m_currentLevelScriptable.name}");
 		LoadGameplay(m_currentLevelScriptable.data);
 		m_startedGameSuccessfully = true;
 		return true;
@@ -355,14 +358,11 @@ public class GameManager : MonoSingleton<GameManager>
 	public void LevelComplete()
 	{
 		m_isInGame = false;
-		if (!IsPlayingFtue)
-		{
-			// 教学关卡不计入进度
-			BucketGameCore.IncrementAndSetProgressManagerLevelIndex(1);
-			BucketGameCore.SetProgressManagerStageIndex(0);
-			BucketGameCore.SetLastStageCompleted(true);
-		}
-		UnityEngine.Debug.Log($"[GameManager] LevelComplete — IsPlayingFtue={IsPlayingFtue}, level index={BucketGameCore.ProgressManagerLevelIndex}");
+		// 所有关卡完成都 +1，包括教学关卡
+		BucketGameCore.IncrementAndSetProgressManagerLevelIndex(1);
+		BucketGameCore.SetProgressManagerStageIndex(0);
+		BucketGameCore.SetLastStageCompleted(true);
+		UnityEngine.Debug.Log($"[GameManager] LevelComplete — level index now={BucketGameCore.ProgressManagerLevelIndex}");
 
 		var screen = ProjectScreenManager.ReplaceScreen(ProjectScreenManager.ScreenID.LEVEL_COMPLETE);
 		UnityEngine.Debug.Log($"[GameManager] ReplaceScreen returned: {(screen != null ? screen.name : "NULL")}");

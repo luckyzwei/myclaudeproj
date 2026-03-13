@@ -620,15 +620,25 @@ public class LevelCompleteScreen : KWUserInterface.Screen
 	private void GoNextScreen(bool goHome)
 	{
 		Debug.Log($"[LevelCompleteScreen] GoNextScreen goHome={goHome}, GameManager={GameManager.Instance != null}");
-		if (goHome)
+		try
 		{
-			if (GameManager.Instance != null)
-				GameManager.Instance.ReturnToHomeScreen();
+			if (goHome)
+			{
+				if (GameManager.Instance != null)
+					GameManager.Instance.ReturnToHomeScreen();
+			}
+			else
+			{
+				if (GameManager.Instance != null)
+				{
+					bool result = GameManager.Instance.StartGame(GameManager.Instance.CurrentGameMode);
+					Debug.Log($"[LevelCompleteScreen] StartGame returned {result}");
+				}
+			}
 		}
-		else
+		catch (System.Exception ex)
 		{
-			if (GameManager.Instance != null)
-				GameManager.Instance.StartGame(GameManager.Instance.CurrentGameMode);
+			Debug.LogError($"[LevelCompleteScreen] GoNextScreen exception: {ex}");
 		}
 	}
 

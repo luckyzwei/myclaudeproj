@@ -18,12 +18,9 @@ public class DynamicTutorialController : MonoBehaviour
 
 	private void GameCoreEvents_GameStarted()
 	{
-		// 第一关一定弹窗"如何玩"，但教学关卡除外
+		// currentLevel=1 是第一关，弹"如何玩"；0是教学关卡不弹，>1也不弹
 		int levelIndex = KWCore.SaveData.BucketGameCore.ProgressManagerLevelIndex;
-		if (levelIndex > 0)
-			return;
-
-		if (GameManager.Instance != null && GameManager.Instance.IsPlayingFtue)
+		if (levelIndex != 1)
 			return;
 
 		TutorialPopup.Show();
