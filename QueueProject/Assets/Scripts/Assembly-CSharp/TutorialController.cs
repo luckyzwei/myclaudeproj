@@ -52,12 +52,9 @@ public class TutorialController : MonoBehaviour
 
 	private void OnFtueDone()
 	{
-		Debug.Log("[TutorialController] FTUE done, loading first level");
+		Debug.Log("[TutorialController] FTUE done");
 		if (GameManager.Instance != null)
-		{
 			GameManager.Instance.MarkFtueCompleted();
-			GameManager.Instance.StartGame(GameManager.GameMode.STANDARD);
-		}
 	}
 
 	private bool ShowExtraTutorial()
