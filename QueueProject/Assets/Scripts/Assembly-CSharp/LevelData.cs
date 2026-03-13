@@ -152,18 +152,18 @@ public class LevelData
 
 	public int GetX(int index)
 	{
-		return index % sizeX;
+		return index / sizeY;
 	}
 
 	public int GetY(int index)
 	{
-		return index / sizeX;
+		return index % sizeY;
 	}
 
 	public int Index(int x, int y)
 	{
 		if (x < 0 || x >= sizeX || y < 0 || y >= sizeY) return -1;
-		return y * sizeX + x;
+		return x * sizeY + y;
 	}
 
 	private void GenerateQueenSolution()

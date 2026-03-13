@@ -51,17 +51,17 @@ public class GridState
 	public int Index(int x, int y)
 	{
 		if (x < 0 || x >= m_size.x || y < 0 || y >= m_size.y) return -1;
-		return y * m_size.x + x;
+		return x * m_size.y + y;
 	}
 
 	public int GetX(int index)
 	{
-		return index % m_size.x;
+		return index / m_size.y;
 	}
 
 	public int GetY(int index)
 	{
-		return index / m_size.x;
+		return index % m_size.y;
 	}
 
 	public void LoadLevel(QueensGrid grid)
