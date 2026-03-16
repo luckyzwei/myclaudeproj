@@ -1,1 +1,0 @@
-{"list":[{"unnyId":"1218","unnyIdRvInsteadOfInt":"36840","unnyIdPlayerAdScore":"1217","unnyIdBreakPopupSettings":"1206","unnyIdGeneral":"1211","unnyIdRewardAds":"24921","unnyIdAppOpenAds":"3765","unnyIdIntInsteadOfRv":"36870","unnyIdPlacementProvideWaterfall":"1210","unnyIdForceInterstitial":"40160","unnyIdInsterstitials":"24919"}],"config":{"selected":"1218"}}
