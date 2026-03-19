@@ -777,61 +777,36 @@ public class GameRoot : Singleton<GameRoot>
 		var stageData = mainData.StageData;
 		if (stageData == null) return;
 
-		// Give starting money (small amount to encourage earning)
-		UserData.HUDMoney.Value = new System.Numerics.BigInteger(500);
-		stageData.Money.Value = new System.Numerics.BigInteger(500);
-		UserData.Level.Value = 1;
+		// Starting money matches original game (~38,800)
+		UserData.HUDMoney.Value = new System.Numerics.BigInteger(38800);
+		stageData.Money.Value = new System.Numerics.BigInteger(38800);
+		UserData.Level.Value = 0; // Original starts at Level 0
+		UserData.HUDPower.Value = 86;
 
-		// Mark early tutorials as cleared (prefabs don't exist in exported project)
-		if (UserData.Tutorial != null)
-		{
-			UserData.Tutorial.Add("1");
-			UserData.Tutorial.Add("2");
-		}
-
-		// Create 3 offices — only first one open, rest locked
+		// Create 3 offices — first one open but EMPTY (no company, no employees)
+		// Player will buy desks and sign contracts via tutorial
 		for (int i = 0; i < 3; i++)
 		{
 			var office = new OfficeData();
 			office.Create();
-			bool shouldOpen = (i == 0); // Only first office starts open
+			bool shouldOpen = (i == 0); // Only first office is open (but empty)
 			office.IsOpen = new ReactiveProperty<bool>(shouldOpen);
 			office.IsOpen.Value = shouldOpen;
 			office.Level.Value = 1;
 			office.Exp.Value = 0;
 			office.Employees = new System.Collections.Generic.List<EmployeeData>();
-
-			if (i == 0)
-			{
-				// First office: assign company, 2 employees to start
-				office.CompanyIdx.Value = 1;
-				office.RentalFee = new System.Numerics.BigInteger(100);
-				office.CompanyEndTime = System.DateTime.UtcNow.AddHours(24);
-
-				int startingEmployees = CompanySystem.GetMaxEmployeesForLevel(1); // 2 at level 1
-				for (int e = 0; e < startingEmployees; e++)
-				{
-					var emp = new EmployeeData();
-					emp.Idx = e;
-					emp.Seat = e;
-					emp.ViewIdx = e;
-					emp.Create();
-					office.Employees.Add(emp);
-				}
-
-				var company = new CompanyData(1, 1, System.Numerics.BigInteger.Zero, false);
-				company.MaxLevel = 50;
-				company.Create();
-				stageData.Companies.Add(company);
-			}
+			// No company assigned, no employees — player does this via tutorial
 
 			stageData.Offices[i] = office;
 		}
 
+		// Companies available for contract (player picks from list)
 		stageData.UnLockCompanyList.Add(1);
 		stageData.CompanyList.Add(1);
+		stageData.CompanyList.Add(2);
+		stageData.CompanyList.Add(3);
 
-		Debug.Log($"[GameRoot] Initial state: 1 office open, {CompanySystem.GetMaxEmployeesForLevel(1)} employees, $500, Level 1");
+		Debug.Log("[GameRoot] Initial state: 1 empty office open, $38800, Level 0 — tutorial will guide");
 	}
 
 	private void InitSubSystems()

@@ -17,8 +17,8 @@ public class AutoPlayTest
     private static readonly string TriggerFile = "I:/client/myclaudeproj/autotest_output/TRIGGER";
     private static readonly string LogFile = "I:/client/myclaudeproj/autotest_output/test_log.txt";
     private static readonly string DoneFile = "I:/client/myclaudeproj/autotest_output/DONE";
-    private static readonly float TestDuration = 300f; // 5 min for progression test
-    private static readonly float ScreenshotInterval = 30f;
+    private static readonly float TestDuration = 60f; // Quick test
+    private static readonly float ScreenshotInterval = 5f;
 
     private static List<string> capturedLogs = new List<string>();
     private static bool isRunning = false;

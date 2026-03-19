@@ -555,7 +555,8 @@ public class HUDTotal : HUDBase, IScreenAction
 	{
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return false;
-		return root.UserData.Level != null && root.UserData.Level.Value >= minLevel;
+		int level = root.UserData.Level != null ? root.UserData.Level.Value : 0;
+		return level >= minLevel;
 	}
 
 	public HudMissionItem GetHudMissionItem { get { return HudMissionItem; } }
@@ -641,6 +642,13 @@ public class HUDTotal : HUDBase, IScreenAction
 	{
 		// Bind currency display (money, cash, level)
 		if (CurrencyHud != null) CurrencyHud.Binding();
+
+		// Hide side panels at low levels (original game shows minimal UI)
+		bool showSidePanels = IsFeatureUnlocked(1);
+		if (LeftRoot != null)
+			foreach (var obj in LeftRoot) { if (obj != null) obj.SetActive(showSidePanels); }
+		if (RightRoot != null)
+			foreach (var obj in RightRoot) { if (obj != null) obj.SetActive(showSidePanels); }
 
 		SetLevel();
 		SetDayTime();
@@ -778,6 +786,13 @@ public class HUDTotal : HUDBase, IScreenAction
 	/// Re-evaluates button visibility when player level changes
 	public void RefreshFeatureGating()
 	{
+		bool showSidePanels = IsFeatureUnlocked(1);
+		if (LeftRoot != null)
+			foreach (var obj in LeftRoot) { if (obj != null) obj.SetActive(showSidePanels); }
+		if (RightRoot != null)
+			foreach (var obj in RightRoot) { if (obj != null) obj.SetActive(showSidePanels); }
+		SetRentalFee();
+		SetShop();
 		SetMission();
 		SetManager();
 		SetPhone();
@@ -888,7 +903,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetShop()
 	{
 		if (ShopBtn != null)
-			ShopBtn.gameObject.SetActive(true);
+			ShopBtn.gameObject.SetActive(IsFeatureUnlocked(1));
 	}
 
 	private void OnClickShop()
@@ -993,7 +1008,10 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetRentalFee()
 	{
 		if (RentalFeeProgress != null)
+		{
+			RentalFeeProgress.gameObject.SetActive(IsFeatureUnlocked(1));
 			RentalFeeProgress.value = 0f;
+		}
 		UpdateAddRewawrdBuff();
 	}
 
