@@ -250,7 +250,9 @@ public class FactorySystem
 		{
 			if (itemData.Count >= slot.OrderCount)
 			{
-				// Deduct products - actual count management would be done here
+				// Deduct products from inventory
+				if (itemData.CountProperty != null)
+					itemData.CountProperty.Value -= slot.OrderCount;
 				OnFactoryOrderComplete.OnNext(slotIdx);
 				UpdateMissionData();
 				UpdateStorage();

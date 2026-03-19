@@ -89,8 +89,8 @@ public class CompanySystem
 
 	public void Init(bool init = false)
 	{
-		if (init)
-			return;
+		if (!init)
+		{}
 
 		OnCompanyLevelUp = new Subject<int>();
 		OnCompanyContract = new Subject<int>();
@@ -184,7 +184,8 @@ public class CompanySystem
 			int totalExp = expPerTick * offlineSeconds;
 			if (totalExp > 0)
 			{
-				companyData.UpdateExp();
+				for (int t = 0; t < totalExp; t++)
+					companyData.UpdateExp();
 			}
 		}
 	}
@@ -357,6 +358,14 @@ public class CompanySystem
 		}
 	}
 
+	/// Returns max employees allowed at a given player level
+	public static int GetMaxEmployeesForLevel(int playerLevel)
+	{
+		if (playerLevel < 3) return 2;
+		if (playerLevel < 5) return 3;
+		return 4;
+	}
+
 	private void CreateOfficeEmployess(int office)
 	{
 		var gameRoot = Singleton<GameRoot>.Instance;
@@ -375,7 +384,8 @@ public class CompanySystem
 		else
 			officeData.Employees.Clear();
 
-		int seatCount = 4; // default seats per office
+		int playerLevel = gameRoot.UserData.Level != null ? gameRoot.UserData.Level.Value : 1;
+		int seatCount = GetMaxEmployeesForLevel(playerLevel);
 		for (int i = 0; i < seatCount; i++)
 		{
 			var empData = new EmployeeData();
@@ -384,6 +394,40 @@ public class CompanySystem
 			empData.ViewIdx = i;
 			empData.Create();
 			officeData.Employees.Add(empData);
+		}
+	}
+
+	/// Try to add a new employee slot if player level allows more than current count
+	public void TryAddEmployeeToOffice(int officeIdx)
+	{
+		var gameRoot = Singleton<GameRoot>.Instance;
+		if (gameRoot == null || gameRoot.UserData == null) return;
+
+		var curMode = gameRoot.UserData.CurMode;
+		if (curMode == null || curMode.StageData == null) return;
+		if (!curMode.StageData.Offices.TryGetValue(officeIdx, out var officeData)) return;
+		if (officeData == null || officeData.Employees == null) return;
+
+		int playerLevel = gameRoot.UserData.Level != null ? gameRoot.UserData.Level.Value : 1;
+		int maxSeats = GetMaxEmployeesForLevel(playerLevel);
+		int currentCount = officeData.Employees.Count;
+
+		while (currentCount < maxSeats)
+		{
+			var emp = new EmployeeData();
+			emp.Idx = currentCount;
+			emp.Seat = currentCount;
+			emp.ViewIdx = currentCount;
+			emp.Create();
+			officeData.Employees.Add(emp);
+
+			// Spawn visual employee in scene
+			if (gameRoot.InGameSystem?.CurInGame is InGameOffice inGame)
+			{
+				inGame.LoadEmployee(officeIdx, currentCount, Worker.E_AppearType.Seat, 0, null);
+			}
+			currentCount++;
+			UnityEngine.Debug.Log($"[CompanySystem] New employee added to office {officeIdx}, seat {currentCount - 1}");
 		}
 	}
 

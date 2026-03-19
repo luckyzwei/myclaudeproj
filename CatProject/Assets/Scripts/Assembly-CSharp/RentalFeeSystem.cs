@@ -15,7 +15,7 @@ public class RentalFeeSystem
 
 	public IReactiveProperty<int> RunTimeGetMoneyTime;
 
-	private float DeltaTime;
+	public float DeltaTime { get; private set; }
 
 	private Config.CurrencyID RentalFeeIdx;
 
@@ -84,6 +84,7 @@ public class RentalFeeSystem
 
 		BigInteger totalFee = CalculateActiveRegionRentalFee(false);
 		RentalFeeValue.Value = totalFee;
+		UnityEngine.Debug.Log($"[RentalFee] CalculateRentalFee: totalFee={totalFee}, moneyTime={RunTimeGetMoneyTime?.Value}");
 
 		int baseTime = get_money_time;
 		int buffValue = gameRoot.AbilitySystem != null
@@ -359,10 +360,13 @@ public class RentalFeeSystem
 		return strikeLoss;
 	}
 
+	private float _logTimer;
 	public void Update()
 	{
 		float dt = UnityEngine.Time.deltaTime;
 		DeltaTime += dt;
+		_logTimer += dt;
+		if (_logTimer >= 5f) { _logTimer = 0; UnityEngine.Debug.Log($"[RentalFee] Update tick: dt={dt:F3}, DeltaTime={DeltaTime:F1}/{(RunTimeGetMoneyTime?.Value ?? 10)}, fee={RentalFeeValue?.Value}"); }
 
 		int moneyTime = RunTimeGetMoneyTime != null ? RunTimeGetMoneyTime.Value : get_money_time;
 		if (moneyTime <= 0) moneyTime = get_money_time;
@@ -374,7 +378,10 @@ public class RentalFeeSystem
 			BigInteger fee = RentalFeeValue != null ? RentalFeeValue.Value : BigInteger.Zero;
 			if (fee > BigInteger.Zero)
 			{
-				RuntimeRentalFeeValue.Value += fee;
+				BigInteger oldVal = RuntimeRentalFeeValue.Value;
+				BigInteger newVal = oldVal + fee;
+				UnityEngine.Debug.Log($"[RentalFee] Income tick! +${fee}, old={oldVal}, new={newVal}");
+				RuntimeRentalFeeValue.Value = newVal;
 				PlayRentalFeeGetSound();
 			}
 		}

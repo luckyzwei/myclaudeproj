@@ -31,8 +31,8 @@ public class BuildingData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		Value = new ReactiveProperty<BigInteger>();
-		RemainNextRewardTime = new ReactiveProperty<int>();
+		if (Value == null) Value = new ReactiveProperty<BigInteger>();
+		if (RemainNextRewardTime == null) RemainNextRewardTime = new ReactiveProperty<int>();
 	}
 
 	public virtual object Clone()

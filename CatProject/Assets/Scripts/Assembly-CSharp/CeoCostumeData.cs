@@ -18,24 +18,23 @@ public class CeoCostumeData
 
 	public void SetOwned(bool isOwned)
 	{
-		// Update display
+		IsOwned = isOwned;
 	}
 
 	public void SetShowRedDot(bool showRedDot)
 	{
-		// Update display
+		ShowRedDot = showRedDot;
 	}
 
 	public static CeoCostumeData FromFlatBuffer(Treeplla.Data.CeoCostumeData? fbData)
 	{
 		if (!fbData.HasValue) return null;
 		var d = fbData.Value;
-		var result = (CeoCostumeData)new CeoCostumeData(0, false, false).MemberwiseClone();
-		return result;
+		return new CeoCostumeData(d.Idx, d.Isowned, d.Showreddot);
 	}
 
 	public Offset<Treeplla.Data.CeoCostumeData> ToFlatBuffer(FlatBufferBuilder builder)
 	{
-		return default(Offset<Treeplla.Data.CeoCostumeData>);
+		return Treeplla.Data.CeoCostumeData.CreateCeoCostumeData(builder, CostumeIdx, IsOwned, ShowRedDot);
 	}
 }

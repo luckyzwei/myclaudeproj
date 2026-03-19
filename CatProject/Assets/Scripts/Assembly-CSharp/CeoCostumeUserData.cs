@@ -29,6 +29,16 @@ public class CeoCostumeUserData
 	{
 		if (CostumeDataList == null)
 			CostumeDataList = new Dictionary<int, CeoCostumeData>();
+		if (CostumeDataList.ContainsKey(costumeIdx))
+		{
+			var existing = CostumeDataList[costumeIdx];
+			existing.SetOwned(isOwned);
+			existing.SetShowRedDot(showRedDot);
+		}
+		else
+		{
+			CostumeDataList[costumeIdx] = new CeoCostumeData(costumeIdx, isOwned, showRedDot);
+		}
 	}
 
 	public void SetShowRedDot(int costumeIdx, bool showRedDot)
@@ -36,7 +46,7 @@ public class CeoCostumeUserData
 		if (CostumeDataList == null) return;
 		if (CostumeDataList.TryGetValue(costumeIdx, out var data))
 		{
-			// Would set red dot flag on data
+			data.SetShowRedDot(showRedDot);
 		}
 	}
 
@@ -51,7 +61,7 @@ public class CeoCostumeUserData
 		if (CostumeDataList == null) return false;
 		if (CostumeDataList.TryGetValue(costumeIdx, out var data))
 		{
-			// Would check red dot flag
+			return data.ShowRedDot;
 		}
 		return false;
 	}
@@ -63,12 +73,33 @@ public class CeoCostumeUserData
 		var result = new CeoCostumeUserData();
 		result.ChangeEquippedCostumeIdx(d.Equippedcostumeidx);
 		result.SetDefaultCostumeIdx(d.Defaultcostumeidx);
+		for (int i = 0; i < d.OwnedcostumeidxlistLength; i++)
+		{
+			var fbCostume = d.Ownedcostumeidxlist(i);
+			if (fbCostume.HasValue)
+			{
+				var costumeData = CeoCostumeData.FromFlatBuffer(fbCostume);
+				if (costumeData != null)
+					result.CostumeDataList[costumeData.CostumeIdx] = costumeData;
+			}
+		}
 		return result;
 	}
 
 	public Offset<CeoCostumeOwnedData> ToFlatBuffer(FlatBufferBuilder builder, CeoCostumeUserData data)
 	{
 		if (data == null) return default(Offset<CeoCostumeOwnedData>);
-		return CeoCostumeOwnedData.CreateCeoCostumeOwnedData(builder, data.DefaultCostumeIdx, data.EquippedCostumeIdx);
+		VectorOffset costumeVectorOffset = default(VectorOffset);
+		if (data.CostumeDataList != null && data.CostumeDataList.Count > 0)
+		{
+			var offsets = new Offset<Treeplla.Data.CeoCostumeData>[data.CostumeDataList.Count];
+			int i = 0;
+			foreach (var kvp in data.CostumeDataList)
+			{
+				offsets[i++] = kvp.Value.ToFlatBuffer(builder);
+			}
+			costumeVectorOffset = CeoCostumeOwnedData.CreateOwnedcostumeidxlistVector(builder, offsets);
+		}
+		return CeoCostumeOwnedData.CreateCeoCostumeOwnedData(builder, data.DefaultCostumeIdx, data.EquippedCostumeIdx, costumeVectorOffset);
 	}
 }

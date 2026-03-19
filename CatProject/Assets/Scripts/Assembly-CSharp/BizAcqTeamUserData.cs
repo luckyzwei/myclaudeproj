@@ -37,10 +37,16 @@ public class BizAcqTeamUserData
 		if (TeamCeoIdxList == null)
 			TeamCeoIdxList = new List<int>();
 		TeamCeoIdxList.Clear();
+		for (int i = 0; i < d.TeamceoidxlistLength; i++)
+			TeamCeoIdxList.Add(d.Teamceoidxlist(i));
 	}
 
 	public static Offset<Treeplla.Data.BizAcqTeamData> ToFlatBuffer(FlatBufferBuilder builder, BizAcqTeamUserData data)
 	{
-		return default(Offset<Treeplla.Data.BizAcqTeamData>);
+		if (data == null) return default(Offset<Treeplla.Data.BizAcqTeamData>);
+		VectorOffset teamVecOffset = default(VectorOffset);
+		if (data.TeamCeoIdxList != null && data.TeamCeoIdxList.Count > 0)
+			teamVecOffset = Treeplla.Data.BizAcqTeamData.CreateTeamceoidxlistVector(builder, data.TeamCeoIdxList.ToArray());
+		return Treeplla.Data.BizAcqTeamData.CreateBizAcqTeamData(builder, teamVecOffset);
 	}
 }

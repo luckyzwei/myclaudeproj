@@ -1,3 +1,4 @@
+using System.Numerics;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -82,6 +83,38 @@ public class HudTopComponent : MonoBehaviour
 		if (disposables != null) disposables.Clear();
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
+
+		// Bind money display
+		if (MoneyText != null && root.UserData.HUDMoney != null)
+		{
+			root.UserData.HUDMoney
+				.Subscribe(val => MoneyText.text = FormatBigNumber(val))
+				.AddTo(disposables);
+		}
+
+		// Bind level display
+		if (LevelText != null && root.UserData.Level != null)
+		{
+			root.UserData.Level
+				.Subscribe(val => LevelText.text = "Lv." + val)
+				.AddTo(disposables);
+		}
+
+		// Bind cash display
+		if (CashText != null && root.UserData.HUDCash != null)
+		{
+			root.UserData.HUDCash
+				.Subscribe(val => CashText.text = val.ToString())
+				.AddTo(disposables);
+		}
+	}
+
+	private static string FormatBigNumber(System.Numerics.BigInteger val)
+	{
+		if (val < 1000) return val.ToString();
+		if (val < 1000000) return (val / 1000).ToString() + "K";
+		if (val < 1000000000) return (val / 1000000).ToString() + "M";
+		return (val / 1000000000).ToString() + "B";
 	}
 
 	public void SetSeasonal()

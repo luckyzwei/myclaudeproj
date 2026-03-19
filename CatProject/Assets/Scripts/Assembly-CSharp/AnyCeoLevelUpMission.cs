@@ -1,12 +1,19 @@
+using System.Numerics;
+using UniRx;
+using Treeplla;
+
 public class AnyCeoLevelUpMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		var root = GameRoot.Instance;
+		if (root == null) return;
+		root.ManagerCardSystem?.OnManagerLevelUp.Subscribe(_ => OnCurrentValueChanged(System.Numerics.BigInteger.One)).AddTo(Disposables);
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

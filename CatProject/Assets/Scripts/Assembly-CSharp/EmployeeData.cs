@@ -22,8 +22,9 @@ public class EmployeeData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		CriticalExpValue = new ReactiveProperty<int>();
-		MoodStatus = new ReactiveProperty<EmployeeMoodSystem.Mood>();
+		if (CriticalExpValue == null) CriticalExpValue = new ReactiveProperty<int>();
+		if (MoodStatus == null) MoodStatus = new ReactiveProperty<EmployeeMoodSystem.Mood>();
+		if (MoodBuffs == null) MoodBuffs = new List<EmployeeMoodSystem.MoodBuff>();
 	}
 
 	public virtual object Clone()

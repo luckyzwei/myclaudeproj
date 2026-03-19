@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using UniRx;
+using Treeplla;
 
 public class BuyDailySkillStoneMission : SingleMissionBase
 {
@@ -11,11 +13,12 @@ public class BuyDailySkillStoneMission : SingleMissionBase
 
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		// Event subscription handled by ContentsMissionSystem (shop system dependent)
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

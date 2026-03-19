@@ -91,7 +91,19 @@ public class InvestSystem
 			return;
 		}
 
-		BigInteger reward = data.RewardMoney;
+		// Check if investment duration has elapsed
+		if (data.InvestStartTime != DateTime.MinValue)
+		{
+			double elapsed = (DateTime.UtcNow - data.InvestStartTime).TotalSeconds;
+			if (elapsed < invest_duration)
+			{
+				// Not ready yet
+				Cb?.Invoke(BigInteger.Zero);
+				return;
+			}
+		}
+
+		BigInteger reward = data.InvestMoney * data.MultipleValue * invest_recovery_money_multiple;
 		ResetInvestData(idx);
 		Cb?.Invoke(reward);
 	}

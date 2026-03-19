@@ -141,6 +141,20 @@ public class MissionSystem
 		if (userData == null || userData.mainData == null) return;
 		var stageData = userData.mainData.StageData;
 		if (stageData == null || stageData.Missions == null) return;
+
+		// Increment progress value for missions in matching slots
+		for (int i = 0; i < stageData.Missions.Length && i < MISSION_SLOT_CNT; i++)
+		{
+			var mission = stageData.Missions[i];
+			if (mission == null) continue;
+			if (mission.Value != null)
+			{
+				mission.Value.Value += 1;
+			}
+		}
+
+		// Also notify Catstagram event missions
+		UpdateCatstaEventMap(type);
 	}
 
 	public string GetMissionDesc(int type, params object[] args)
@@ -275,7 +289,33 @@ public class MissionSystem
 		int regionIdx = GetMilestoneRegionIdx(orderIdx);
 		var milestoneData = GetMilestoneData(regionIdx);
 		if (milestoneData == null) return false;
+
+		// Check if already claimed
+		if (IsClaimedMilestone(orderIdx)) return false;
+
+		// Check if enough missions cleared to claim this milestone
 		int clearedCount = milestoneData.ClearedMissionCount;
+		if (milestoneData.StepDataList != null)
+		{
+			for (int i = 0; i < milestoneData.StepDataList.Count; i++)
+			{
+				var step = milestoneData.StepDataList[i];
+				if (step != null && step.Order == orderIdx)
+				{
+					if (clearedCount < step.TotalNeedCount) return false;
+					break;
+				}
+			}
+		}
+
+		// Mark milestone as claimed via SetRecordCount
+		var userData = Singleton<GameRoot>.Instance.UserData;
+		if (userData != null && userData.RecordCount != null)
+		{
+			userData.RecordCount["milestone_claimed_" + orderIdx] = 1;
+			userData.Save();
+		}
+
 		if (!isMultipleClaim)
 			OnMissionMilestoneRewarded.OnNext(Unit.Default);
 		return true;

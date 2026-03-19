@@ -100,14 +100,32 @@ public class SeasonalMissionSystem
 	{
 		if (MissionSlotDataMap == null || !MissionSlotDataMap.TryGetValue(slotIdx, out var slotData))
 			return null;
-		if (slotData.LastActiveMissionGroup == null) return null;
+		if (slotData.MissionPriorityGroups == null || slotData.MissionPriorityGroups.Count == 0)
+			return null;
 
-		for (int i = 0; i < slotData.LastActiveMissionGroup.Count; i++)
+		// Iterate priority groups to find the first eligible mission
+		for (int i = 0; i < slotData.MissionPriorityGroups.Count; i++)
 		{
-			var groupData = slotData.LastActiveMissionGroup[i];
-			if (groupData == null) continue;
-			if (groupData.bSatisfiedOpenCondition != null && groupData.bSatisfiedOpenCondition.Value)
-				return null;
+			var group = slotData.MissionPriorityGroups[i];
+			if (group == null) continue;
+			for (int j = 0; j < group.Count; j++)
+			{
+				var groupData = group[j];
+				if (groupData == null) continue;
+				// Check if group's open condition is satisfied
+				if (groupData.bSatisfiedOpenCondition != null && !groupData.bSatisfiedOpenCondition.Value)
+					continue;
+				// Find first incomplete mission in this group
+				if (groupData.MissionData != null)
+				{
+					for (int k = 0; k < groupData.MissionData.Count; k++)
+					{
+						var mission = groupData.MissionData[k];
+						if (mission != null && !mission.bComplete && !mission.bReadyToComplete)
+							return mission;
+					}
+				}
+			}
 		}
 		return null;
 	}

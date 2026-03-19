@@ -113,6 +113,92 @@ public class UserDataSystem
 
 	public IReactiveProperty<int> Level { get; set; }
 
+	public IReactiveProperty<int> Exp { get; set; }
+
+	public static int GetExpForLevel(int level) { return level * 100; }
+
+	public void AddExp(int amount)
+	{
+		if (Exp == null || Level == null) return;
+		Exp.Value += amount;
+		UnityEngine.Debug.Log($"[UserData] AddExp({amount}), total={Exp.Value}/{GetExpForLevel(Level.Value + 1)}, Level={Level.Value}");
+		int required = GetExpForLevel(Level.Value + 1);
+		while (Exp.Value >= required)
+		{
+			Exp.Value -= required;
+			Level.Value++;
+			OnLevelUp(Level.Value);
+			required = GetExpForLevel(Level.Value + 1);
+		}
+	}
+
+	private void OnLevelUp(int newLevel)
+	{
+		UnityEngine.Debug.Log($"[UserData] LEVEL UP! Now level {newLevel}");
+
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null) return;
+
+		// Expand offices at certain levels
+		if (newLevel == 3 && root.CompanySystem != null)
+		{
+			// Open second office + assign company
+			root.CompanySystem.StartOpen(1);
+			var stageData = mainData?.StageData;
+			if (stageData != null && stageData.Offices.TryGetValue(1, out var office2))
+			{
+				office2.CompanyIdx.Value = 2;
+				office2.RentalFee = new System.Numerics.BigInteger(200);
+				office2.CompanyEndTime = System.DateTime.UtcNow.AddHours(24);
+				if (!stageData.CompanyList.Contains(2)) stageData.CompanyList.Add(2);
+				var company2 = new CompanyData(2, 1, System.Numerics.BigInteger.Zero, false);
+				company2.MaxLevel = 50;
+				company2.Create();
+				stageData.Companies.Add(company2);
+			}
+			UnityEngine.Debug.Log("[UserData] Level 3: Second office opened!");
+		}
+		if (newLevel == 7 && root.CompanySystem != null)
+		{
+			root.CompanySystem.StartOpen(2);
+			var stageData = mainData?.StageData;
+			if (stageData != null && stageData.Offices.TryGetValue(2, out var office3))
+			{
+				office3.CompanyIdx.Value = 3;
+				office3.RentalFee = new System.Numerics.BigInteger(300);
+				office3.CompanyEndTime = System.DateTime.UtcNow.AddHours(24);
+				if (!stageData.CompanyList.Contains(3)) stageData.CompanyList.Add(3);
+				var company3 = new CompanyData(3, 1, System.Numerics.BigInteger.Zero, false);
+				company3.MaxLevel = 50;
+				company3.Create();
+				stageData.Companies.Add(company3);
+			}
+			UnityEngine.Debug.Log("[UserData] Level 7: Third office opened!");
+		}
+
+		// Try adding employees to all open offices (capacity grows with level)
+		if (root.CompanySystem != null)
+		{
+			var stageData = mainData?.StageData;
+			if (stageData?.Offices != null)
+			{
+				foreach (var kvp in stageData.Offices)
+				{
+					if (kvp.Value != null && kvp.Value.IsOpen.Value)
+						root.CompanySystem.TryAddEmployeeToOffice(kvp.Key);
+				}
+			}
+		}
+
+		// Recalculate rental fee with new employees
+		if (root.RentalFeeSystem != null)
+			root.RentalFeeSystem.CalculateRentalFee();
+
+		// Notify ContentsOpenSystem
+		if (root.ContentsOpenSystem != null)
+			root.ContentsOpenSystem.EvaluateLevelUnlocks(newLevel);
+	}
+
 	public IReactiveCollection<ItemData> ItemData { get; set; }
 
 	public IReactiveCollection<CurrencyUserData> CurrencyDataList { get; set; }
@@ -207,6 +293,7 @@ public class UserDataSystem
 		Cash = new ReactiveProperty<int>();
 		Permission = new ReactiveProperty<int>();
 		Level = new ReactiveProperty<int>();
+		Exp = new ReactiveProperty<int>();
 		BuyInappIds = new ReactiveCollection<string>();
 		GameNotifications = new ReactiveCollection<string>();
 		ItemData = new ReactiveCollection<ItemData>();

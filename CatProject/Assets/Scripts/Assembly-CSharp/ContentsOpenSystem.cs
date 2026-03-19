@@ -155,16 +155,62 @@ public class ContentsOpenSystem
 		return false;
 	}
 
+	// Level thresholds for feature unlocks
+	private static readonly Dictionary<int, int> FeatureLevelRequirements = new Dictionary<int, int>
+	{
+		{ (int)OpenConditionType.OfficeContract, 1 },
+		{ (int)OpenConditionType.OfficeItemPurchase, 1 },
+		{ (int)OpenConditionType.Level, 2 },
+		{ (int)OpenConditionType.OfficeOpen, 3 },
+		{ (int)OpenConditionType.OfficeOpenStart, 3 },
+		{ (int)OpenConditionType.AllGradeManagerLevel, 3 },
+		{ (int)OpenConditionType.Plant, 5 },
+		{ (int)OpenConditionType.FactoryOrder, 5 },
+		{ (int)OpenConditionType.StageMove, 7 },
+		{ (int)OpenConditionType.Building, 10 },
+		{ (int)OpenConditionType.BizAcquisitionStageClear, 10 },
+		{ (int)OpenConditionType.ManagerLevel, 8 },
+		{ (int)OpenConditionType.MaxRegionStageOpen, 15 },
+		{ (int)OpenConditionType.SeasonalBuildingOpen, 15 },
+	};
+
 	public bool IsContentsOpen(OpenConditionType conditionType, int conditionValue)
 	{
-		if (openedContents != null && openedContents.TryGetValue((int)conditionType, out bool opened))
-			return opened;
+		int idx = (int)conditionType;
+		if (openedContents != null && openedContents.TryGetValue(idx, out bool opened) && opened)
+			return true;
+
+		// Dynamic level check
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		int playerLevel = root.UserData.Level != null ? root.UserData.Level.Value : 1;
+		if (FeatureLevelRequirements.TryGetValue(idx, out int required))
+			return playerLevel >= required;
 		return false;
+	}
+
+	/// Called by UserDataSystem.OnLevelUp to check and notify newly unlocked features
+	public void EvaluateLevelUnlocks(int newLevel)
+	{
+		foreach (var kvp in FeatureLevelRequirements)
+		{
+			if (newLevel >= kvp.Value)
+			{
+				int idx = kvp.Key;
+				bool wasOpened = openedContents != null && openedContents.TryGetValue(idx, out bool prev) && prev;
+				if (!wasOpened)
+				{
+					if (openedContents != null) openedContents[idx] = true;
+					ManualNotifyContentsOpen((OpenConditionType)idx);
+				}
+			}
+		}
 	}
 
 	private void SubscribeReview()
 	{
 		if (disposables == null) return;
+		// Level subscriptions handled by UserDataSystem.OnLevelUp calling EvaluateLevelUnlocks
 	}
 
 	private void SubscribeInhouse()

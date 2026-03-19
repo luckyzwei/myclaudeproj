@@ -23,26 +23,77 @@ public class AddressableLoadGameObject
 
 	public bool InstantiateAsync(object key, Transform parent = null, bool instantiateInWorldSpace = false, Action<GameObject> onLoad = null)
 	{
+		if (key == null) return false;
+		Key = key;
+		LoadState = E_LoadState.Loading;
+
+		// Try to load via AddressableShim (Editor-friendly direct asset loading)
+		GameObject prefab = AddressableShim.LoadAsset<GameObject>(key.ToString());
+		if (prefab != null)
+		{
+			GameObject instance = UnityEngine.Object.Instantiate(prefab, parent, instantiateInWorldSpace);
+			LoadObject = instance;
+			LoadState = E_LoadState.Loaded;
+			onLoad?.Invoke(instance);
+			return true;
+		}
+
+		Debug.LogWarning($"[AddressableLoad] Failed to load: {key}");
+		LoadState = E_LoadState.Ready;
+		onLoad?.Invoke(null);
 		return false;
 	}
 
 	public bool InstantiateAsync(object key, Vector3 position, Quaternion rotation, Transform parent = null, bool instantiateInWorldSpace = false, Action<GameObject> onLoad = null)
 	{
+		if (key == null) return false;
+		Key = key;
+		LoadState = E_LoadState.Loading;
+
+		GameObject prefab = AddressableShim.LoadAsset<GameObject>(key.ToString());
+		if (prefab != null)
+		{
+			GameObject instance = UnityEngine.Object.Instantiate(prefab, position, rotation, parent);
+			LoadObject = instance;
+			LoadState = E_LoadState.Loaded;
+			onLoad?.Invoke(instance);
+			return true;
+		}
+
+		LoadState = E_LoadState.Ready;
+		onLoad?.Invoke(null);
 		return false;
 	}
 
 	public bool CheckSameKey(object key)
 	{
-		return false;
+		if (Key == null || key == null) return false;
+		return Key.ToString() == key.ToString();
 	}
 
 	private void OnLoadComp(AsyncOperationHandle<GameObject> handle, Action<GameObject> onLoad)
 	{
-		// TODO
+		if (handle.Status == AsyncOperationStatus.Succeeded)
+		{
+			LoadObject = handle.Result;
+			LoadState = E_LoadState.Loaded;
+			onLoad?.Invoke(handle.Result);
+		}
+		else
+		{
+			LoadState = E_LoadState.Ready;
+			onLoad?.Invoke(null);
+		}
 	}
 
 	public void Release()
 	{
-		// TODO
+		if (LoadObject != null)
+		{
+			UnityEngine.Object.Destroy(LoadObject);
+			LoadObject = null;
+		}
+		LoadState = E_LoadState.Ready;
+		Key = null;
 	}
 }

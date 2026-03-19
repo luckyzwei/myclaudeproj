@@ -34,6 +34,12 @@ public class BoosterBuffUserData
 		if (!data.HasValue) return null;
 		var d = data.Value;
 		var result = new BoosterBuffUserData(d.Boosteridx, d.Totalusecount, d.Boosterticketuseactive);
+		for (int i = 0; i < d.BoosterregionbuffdataLength; i++)
+		{
+			var regionBuff = BoosterRegionBuffUserData.FromFlatBuffer(d.Boosterregionbuffdata(i));
+			if (regionBuff != null)
+				result.BoosterRegionBuffDataList.Add(regionBuff);
+		}
 		return result;
 	}
 

@@ -62,7 +62,12 @@ public class CompanyData : IReadOnlyData, ICloneable
 	public int CalculateIncreaseExp(int targetRegion, bool forceStrikeMood, bool checkStrike)
 	{
 		if (IsMaxLevel()) return 0;
-		return 1;
+		// Base exp scales with grade (level / 10), minimum 1
+		int baseExp = 1 + Grade;
+		// Strike penalty: employees on strike produce less
+		if (checkStrike && forceStrikeMood)
+			baseExp = Math.Max(1, baseExp / 2);
+		return baseExp;
 	}
 
 	public bool IsEnableLevelUp()
@@ -81,9 +86,11 @@ public class CompanyData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		LevelProperty = new ReactiveProperty<int>(Level);
-		ExpProperty = new ReactiveProperty<BigInteger>(Exp);
-		IncreaseExp = new ReactiveProperty<int>();
+		if (LevelProperty == null) LevelProperty = new ReactiveProperty<int>(Level);
+		else LevelProperty.Value = Level;
+		if (ExpProperty == null) ExpProperty = new ReactiveProperty<BigInteger>(Exp);
+		else ExpProperty.Value = Exp;
+		if (IncreaseExp == null) IncreaseExp = new ReactiveProperty<int>();
 	}
 
 	public bool IsFirstMaxLevel()

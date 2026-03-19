@@ -18,7 +18,7 @@ public class HUDBase : HUDAniBase
 
 	[Header("[HUDBase]")]
 	[SerializeField]
-	private HudTopComponent CurrencyHud;
+	protected HudTopComponent CurrencyHud;
 
 	[SerializeField]
 	private Transform ShopT;
@@ -58,7 +58,15 @@ public class HUDBase : HUDAniBase
 
 	protected void UpdateDayStatus(DaySystem.DayStatus status)
 	{
-		if (TimeIcon == null) return;
+		var root = Treeplla.Singleton<GameRoot>.Instance;
+		if (root == null || root.DaySystem == null) return;
+
+		if (TimeText != null)
+		{
+			int hour = (int)root.DaySystem.DayTime;
+			int min = (int)((root.DaySystem.DayTime - hour) * 60);
+			TimeText.text = hour.ToString("D2") + ":" + min.ToString("D2");
+		}
 	}
 
 	protected void UpdateDayTime()

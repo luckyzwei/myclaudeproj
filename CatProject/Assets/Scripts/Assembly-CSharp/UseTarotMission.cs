@@ -1,12 +1,19 @@
+using System.Numerics;
+using UniRx;
+using Treeplla;
+
 public class UseTarotMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		var root = GameRoot.Instance;
+		if (root == null) return;
+		root.TarotSystem?.OnUseTarot.Subscribe(_ => OnCurrentValueChanged(System.Numerics.BigInteger.One)).AddTo(Disposables);
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

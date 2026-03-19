@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using UniRx;
+using Treeplla;
 
 public class AnyPlantUseTonicMission : SingleMissionBase
 {
@@ -13,11 +15,12 @@ public class AnyPlantUseTonicMission : SingleMissionBase
 
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		// Event subscription handled by ContentsMissionSystem (no confirmed plant tonic event)
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

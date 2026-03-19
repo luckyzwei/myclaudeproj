@@ -1,12 +1,16 @@
+using UniRx;
+using Treeplla;
+
 public class AnyCarBuyMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		// Event subscription handled by ContentsMissionSystem (no confirmed car buy event)
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

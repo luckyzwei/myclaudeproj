@@ -209,7 +209,18 @@ public class AdSupplySystem
 	{
 		var root = Treeplla.Singleton<GameRoot>.Instance;
 		if (root == null || root.UserData == null) return;
-		haveNotMaxLvCompany = true; // Would check actual company levels
+		haveNotMaxLvCompany = false;
+		var curMode = root.UserData.CurMode;
+		if (curMode == null || curMode.StageData == null || curMode.StageData.Companies == null) return;
+		for (int i = 0; i < curMode.StageData.Companies.Count; i++)
+		{
+			var comp = curMode.StageData.Companies[i];
+			if (comp != null && !comp.IsMaxLevel())
+			{
+				haveNotMaxLvCompany = true;
+				return;
+			}
+		}
 	}
 
 	private void SetExpUpCompany()

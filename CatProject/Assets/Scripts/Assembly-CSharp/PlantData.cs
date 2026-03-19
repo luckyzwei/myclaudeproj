@@ -34,9 +34,10 @@ public class PlantData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		LevelProperty = new ReactiveProperty<int>();
-		ExpProperty = new ReactiveProperty<float>();
-		RemainNextAbilityUseTime = new ReactiveProperty<int>();
+		if (LevelProperty == null) LevelProperty = new ReactiveProperty<int>();
+		if (ExpProperty == null) ExpProperty = new ReactiveProperty<float>();
+		if (RemainNextAbilityUseTime == null) RemainNextAbilityUseTime = new ReactiveProperty<int>();
+		if (Fulls == null) Fulls = new Dictionary<int, float>();
 	}
 
 	public void LevelUp(Action cb = null)

@@ -1,4 +1,6 @@
 using System;
+using UniRx;
+using Treeplla;
 
 public class AnyViewAdMission : SingleMissionBase
 {
@@ -6,11 +8,12 @@ public class AnyViewAdMission : SingleMissionBase
 
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		// Event subscription handled by ContentsMissionSystem (ad system dependent)
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

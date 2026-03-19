@@ -777,35 +777,48 @@ public class GameRoot : Singleton<GameRoot>
 		var stageData = mainData.StageData;
 		if (stageData == null) return;
 
-		// Give starting money
-		UserData.HUDMoney.Value = new System.Numerics.BigInteger(1000);
-		stageData.Money.Value = new System.Numerics.BigInteger(1000);
+		// Give starting money (small amount to encourage earning)
+		UserData.HUDMoney.Value = new System.Numerics.BigInteger(500);
+		stageData.Money.Value = new System.Numerics.BigInteger(500);
+		UserData.Level.Value = 1;
 
 		// Mark early tutorials as cleared (prefabs don't exist in exported project)
 		if (UserData.Tutorial != null)
 		{
-			UserData.Tutorial.Add("1");  // Tutorial_Start1
-			UserData.Tutorial.Add("2");  // Tutorial_Start2
+			UserData.Tutorial.Add("1");
+			UserData.Tutorial.Add("2");
 		}
 
-		// Create first 3 offices (typical starting stage)
+		// Create 3 offices — only first one open, rest locked
 		for (int i = 0; i < 3; i++)
 		{
 			var office = new OfficeData();
 			office.Create();
-			office.IsOpen.Value = (i == 0); // Only first office is open
+			bool shouldOpen = (i == 0); // Only first office starts open
+			office.IsOpen = new ReactiveProperty<bool>(shouldOpen);
+			office.IsOpen.Value = shouldOpen;
 			office.Level.Value = 1;
 			office.Exp.Value = 0;
 			office.Employees = new System.Collections.Generic.List<EmployeeData>();
 
 			if (i == 0)
 			{
-				// First office: assign a company with rental fee
+				// First office: assign company, 2 employees to start
 				office.CompanyIdx.Value = 1;
-				office.RentalFee = new System.Numerics.BigInteger(100); // Base rental fee
+				office.RentalFee = new System.Numerics.BigInteger(100);
 				office.CompanyEndTime = System.DateTime.UtcNow.AddHours(24);
 
-				// Create company data for the contracted company
+				int startingEmployees = CompanySystem.GetMaxEmployeesForLevel(1); // 2 at level 1
+				for (int e = 0; e < startingEmployees; e++)
+				{
+					var emp = new EmployeeData();
+					emp.Idx = e;
+					emp.Seat = e;
+					emp.ViewIdx = e;
+					emp.Create();
+					office.Employees.Add(emp);
+				}
+
 				var company = new CompanyData(1, 1, System.Numerics.BigInteger.Zero, false);
 				company.MaxLevel = 50;
 				company.Create();
@@ -815,13 +828,10 @@ public class GameRoot : Singleton<GameRoot>
 			stageData.Offices[i] = office;
 		}
 
-		// Add initial unlocked company to the available list
 		stageData.UnLockCompanyList.Add(1);
 		stageData.CompanyList.Add(1);
-		stageData.CompanyList.Add(2);
-		stageData.CompanyList.Add(3);
 
-		Debug.Log("[GameRoot] Initial state: 3 offices created, first office open with company, $1000 starting money");
+		Debug.Log($"[GameRoot] Initial state: 1 office open, {CompanySystem.GetMaxEmployeesForLevel(1)} employees, $500, Level 1");
 	}
 
 	private void InitSubSystems()

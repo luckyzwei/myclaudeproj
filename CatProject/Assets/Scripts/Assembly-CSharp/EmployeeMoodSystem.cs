@@ -95,11 +95,31 @@ public class EmployeeMoodSystem : MonoBehaviour
 	private void UpdateMood(EmployeeData employData, int officeScore, bool onStrike)
 	{
 		if (employData == null) return;
+		Mood newMood;
 		if (onStrike)
 		{
-			// Set mood to Strike when on strike
-			return;
+			newMood = Mood.Strike;
 		}
+		else if (officeScore >= 20)
+		{
+			newMood = Mood.VeryGood;
+		}
+		else if (officeScore >= 12)
+		{
+			newMood = Mood.Good;
+		}
+		else if (officeScore >= 5)
+		{
+			newMood = Mood.Soso;
+		}
+		else
+		{
+			newMood = Mood.Bad;
+		}
+		employData.OriginMood = newMood;
+		employData.NonStrikeMood = onStrike ? Mood.Bad : newMood;
+		if (employData.MoodStatus != null)
+			employData.MoodStatus.Value = newMood;
 	}
 
 	public void AddMoodBuff(int office, int seat, int buff)
@@ -109,6 +129,18 @@ public class EmployeeMoodSystem : MonoBehaviour
 		if (seat < 0 || seat >= officeData.Employees.Count) return;
 		var employeeData = officeData.Employees[seat];
 		if (employeeData == null) return;
+		if (employeeData.MoodBuffs == null)
+			employeeData.MoodBuffs = new System.Collections.Generic.List<MoodBuff>();
+		var moodBuff = new MoodBuff { buffidx = buff, duration = mood_critical_runtime };
+		employeeData.MoodBuffs.Add(moodBuff);
+		// Raise mood by one tier
+		Mood cur = employeeData.MoodStatus != null ? employeeData.MoodStatus.Value : Mood.Soso;
+		if (cur < Mood.VeryGood && cur != Mood.Strike)
+		{
+			Mood raised = (Mood)((int)cur + 1);
+			if (employeeData.MoodStatus != null)
+				employeeData.MoodStatus.Value = raised;
+		}
 	}
 
 	public void RemoveMoodbuff(int office, int seat, int buffidx = -1)
@@ -118,6 +150,15 @@ public class EmployeeMoodSystem : MonoBehaviour
 		if (seat < 0 || seat >= officeData.Employees.Count) return;
 		var employeeData = officeData.Employees[seat];
 		if (employeeData == null) return;
+		if (employeeData.MoodBuffs != null)
+		{
+			if (buffidx >= 0)
+				employeeData.MoodBuffs.RemoveAll(b => b.buffidx == buffidx);
+			else
+				employeeData.MoodBuffs.Clear();
+		}
+		// Re-evaluate mood without buff
+		UpdateMood(office, seat);
 	}
 
 	public void UpdateOneSeconds()

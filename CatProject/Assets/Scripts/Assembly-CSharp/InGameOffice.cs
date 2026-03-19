@@ -135,13 +135,22 @@ public class InGameOffice : InGameMode
 	public bool IsBizAcqMode { get; private set; }
 
 	// Runtime HUD state (IMGUI-based, no font dependencies)
-	private string hudMoney = "$ 0";
+	private string hudMoney = "$ 1,000";
 	private string hudIncome = "Income: $0";
 	private string hudLevel = "Lv.1";
 	private string hudTime = "09:00";
+	private float levelUpDisplayTime;
+	private int levelUpNewLevel;
+	private string unlockText;
+	private float unlockDisplayTime;
 	private CompositeDisposable hudDisposables;
 	private GUIStyle hudStyleLarge;
 	private GUIStyle hudStyleSmall;
+	private GUIStyle hudStylePopup;
+	// Floating income popup
+	private struct IncomePopup { public float y; public float alpha; public string text; public float time; }
+	private List<IncomePopup> incomePopups = new List<IncomePopup>();
+	private float lastIncomeTime;
 
 	private void Start()
 	{
@@ -184,6 +193,8 @@ public class InGameOffice : InGameMode
 		{
 			MainCamera.backgroundColor = new Color(0.53f, 0.81f, 0.92f, 1f);
 			MainCamera.clearFlags = CameraClearFlags.SolidColor;
+			// Let PanAndZoom handle camera - don't override
+			Debug.Log("[InGameOffice] Camera set: ortho=10, pos=(-3,6,-10)");
 		}
 
 		// Find stage prefab instance in scene
@@ -236,47 +247,46 @@ public class InGameOffice : InGameMode
 		}
 	}
 
+	// Direct prefab paths (bypasses broken Addressables)
+	private static readonly Dictionary<string, string> PrefabPaths = new Dictionary<string, string>
+	{
+		{ "Employee", "Assets/Arts/Prefabs/Ingame/Employee.prefab" },
+		{ "Ceo", "Assets/Arts/Prefabs/Ingame/Ceo.prefab" },
+		{ "Engineer", "Assets/Arts/Prefabs/Ingame/Engineer.prefab" },
+		{ "Secretary", "Assets/Arts/Prefabs/Ingame/Secretary.prefab" },
+		{ "Manager", "Assets/Arts/Prefabs/Ingame/Manager.prefab" },
+	};
+
+	private GameObject LoadPrefabDirect(string prefabKey, Transform parent)
+	{
+		if (!PrefabPaths.TryGetValue(prefabKey, out string path)) return null;
+		var prefab = AddressableShim.LoadAsset<GameObject>(path);
+		if (prefab != null)
+		{
+			var go = Instantiate(prefab, parent);
+			Debug.Log($"[InGameOffice] Loaded {prefabKey} from {path}");
+			return go;
+		}
+		Debug.LogWarning($"[InGameOffice] Failed to load {prefabKey} from {path}");
+		return null;
+	}
+
 	public void LoadAdsupplyVip(Action<AdSupplyVIP> CompCb)
 	{
-		if (AdsupplyVipPref == null) { CompCb?.Invoke(null); return; }
-		Addressables.InstantiateAsync(AdsupplyVipPref, CharacterRoot).Completed += (handle) =>
-		{
-			if (handle.Result != null)
-			{
-				AdsupplyMoneyVip = handle.Result.GetComponent<AdSupplyVIP>();
-				CompCb?.Invoke(AdsupplyMoneyVip);
-			}
-			else CompCb?.Invoke(null);
-		};
+		// AdSupplyVIP not critical for basic gameplay - skip
+		CompCb?.Invoke(null);
 	}
 
 	public void LoadNightSkip(Action<NightSkipVIP> CompCb)
 	{
-		if (NightSkipPref == null) { CompCb?.Invoke(null); return; }
-		Addressables.InstantiateAsync(NightSkipPref, CharacterRoot).Completed += (handle) =>
-		{
-			if (handle.Result != null)
-			{
-				NightSkipVip = handle.Result.GetComponent<NightSkipVIP>();
-				CompCb?.Invoke(NightSkipVip);
-			}
-			else CompCb?.Invoke(null);
-		};
+		// NightSkipVIP not critical for basic gameplay - skip
+		CompCb?.Invoke(null);
 	}
 
 	public void LoadBizAcqStage(Action compCb, bool isActive)
 	{
-		if (BizAcqStagePref == null) { compCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(BizAcqStagePref, CharacterRoot).Completed += (handle) =>
-		{
-			if (handle.Result != null)
-			{
-				BizAcqStage = handle.Result.GetComponent<BizAcqStage>();
-				handle.Result.SetActive(isActive);
-				IsBizAcqMode = isActive;
-			}
-			compCb?.Invoke();
-		};
+		// BizAcq stage loaded on demand
+		compCb?.Invoke();
 	}
 
 	public void MoveBizAcqStage(Action compCb)
@@ -322,76 +332,75 @@ public class InGameOffice : InGameMode
 
 	public void LoadEmployee(int office, int seat, Worker.E_AppearType appearType, int order, Action CompCb)
 	{
-		if (CharacterPref == null) { CompCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(CharacterPref, CharacterRoot).Completed += (handle) =>
+		var go = LoadPrefabDirect("Employee", CharacterRoot);
+		if (go != null)
 		{
-			if (handle.Result != null)
+			var employee = go.GetComponent<Employee>();
+			if (employee != null)
 			{
-				var employee = handle.Result.GetComponent<Employee>();
-				if (employee != null)
+				employee.Init(office, seat, appearType, order);
+				EmployeeList.Add(employee);
+				if (!CurEmployeeCnt.ContainsKey(office)) CurEmployeeCnt[office] = 0;
+				CurEmployeeCnt[office]++;
+
+				// Position at desk seat FIRST
+				if (stage != null && office < stage.OfficeRoomCount)
 				{
-					EmployeeList.Add(employee);
-					if (!CurEmployeeCnt.ContainsKey(office)) CurEmployeeCnt[office] = 0;
-					CurEmployeeCnt[office]++;
+					var seatTrans = stage.GetOfficeSeat(office, seat);
+					if (seatTrans != null)
+						go.transform.position = seatTrans.position;
 				}
+
+				// Load character sprite model
+				int viewIdx = seat % 8;
+				employee.LoadChar(viewIdx, null);
+				Debug.Log($"[InGameOffice] Employee o={office} s={seat} pos={go.transform.position}");
 			}
-			CompCb?.Invoke();
-		};
+		}
+		CompCb?.Invoke();
 	}
 
 	public void LoadCeo(Worker.E_AppearType appearType, int order, Action CompCb)
 	{
-		if (CeoPref == null) { CompCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(CeoPref, CharacterRoot).Completed += (handle) =>
-		{
-			if (handle.Result != null)
-				Ceo = handle.Result.GetComponent<CEO>();
-			CompCb?.Invoke();
-		};
+		var go = LoadPrefabDirect("Ceo", CharacterRoot);
+		if (go != null)
+			Ceo = go.GetComponent<CEO>();
+		CompCb?.Invoke();
 	}
 
 	public void LoadSecretary(Worker.E_AppearType appearType, int order, Action CompCb)
 	{
-		if (SecretaryPref == null) { CompCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(SecretaryPref, CharacterRoot).Completed += (handle) =>
-		{
-			if (handle.Result != null)
-				Secretary = handle.Result.GetComponent<Secretary>();
-			CompCb?.Invoke();
-		};
+		var go = LoadPrefabDirect("Secretary", CharacterRoot);
+		if (go != null)
+			Secretary = go.GetComponent<Secretary>();
+		CompCb?.Invoke();
 	}
 
 	public void LoadEngineer(int seat, int order, Worker.E_AppearType appearType, Action CompCb)
 	{
-		if (EngineerPref == null) { CompCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(EngineerPref, CharacterRoot).Completed += (handle) =>
+		var go = LoadPrefabDirect("Engineer", CharacterRoot);
+		if (go != null)
 		{
-			if (handle.Result != null)
+			var engineer = go.GetComponent<Engineer>();
+			if (engineer != null)
 			{
-				var engineer = handle.Result.GetComponent<Engineer>();
-				if (engineer != null)
-				{
-					EngineerList.Add(engineer);
-					CurEngineerCount++;
-				}
+				EngineerList.Add(engineer);
+				CurEngineerCount++;
 			}
-			CompCb?.Invoke();
-		};
+		}
+		CompCb?.Invoke();
 	}
 
 	public void LoadManager(int managerIdx, int officeIdx, int order, Worker.E_AppearType appearType, Action CompCb = null)
 	{
-		if (ManagerPref == null) { CompCb?.Invoke(); return; }
-		Addressables.InstantiateAsync(ManagerPref, CharacterRoot).Completed += (handle) =>
+		var go = LoadPrefabDirect("Manager", CharacterRoot);
+		if (go != null)
 		{
-			if (handle.Result != null)
-			{
-				var manager = handle.Result.GetComponent<Manager>();
-				if (manager != null)
-					ManagerList.Add(manager);
-			}
-			CompCb?.Invoke();
-		};
+			var manager = go.GetComponent<Manager>();
+			if (manager != null)
+				ManagerList.Add(manager);
+		}
+		CompCb?.Invoke();
 	}
 
 	public bool HaveToLoadChar()
@@ -552,47 +561,175 @@ public class InGameOffice : InGameMode
 		}
 	}
 
+	private bool useIMGUI = true;
+	private GameObject hudTotalInstance;
+	private HUDTotal hudTotalComp;
+
 	public override void LoadUI()
 	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root != null)
+		{
+			var hudPrefab = AddressableShim.LoadAsset<GameObject>("Assets/Arts/Prefabs/HUD/HUDTotal.prefab");
+			if (hudPrefab != null)
+			{
+				hudTotalInstance = Instantiate(hudPrefab);
+				hudTotalInstance.name = "HUDTotal";
+				DontDestroyOnLoad(hudTotalInstance);
+
+				// Ensure Canvas is set up for overlay rendering
+				var canvas = hudTotalInstance.GetComponent<Canvas>();
+				if (canvas != null)
+				{
+					canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+					canvas.sortingOrder = 100;
+				}
+				var scaler = hudTotalInstance.GetComponent<UnityEngine.UI.CanvasScaler>();
+				if (scaler == null) scaler = hudTotalInstance.AddComponent<UnityEngine.UI.CanvasScaler>();
+				scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
+				scaler.referenceResolution = new UnityEngine.Vector2(750, 1334);
+				scaler.matchWidthOrHeight = 0.5f;
+
+				// Get the HUDTotal component (should be on the prefab root from serialization)
+				hudTotalComp = hudTotalInstance.GetComponent<HUDTotal>();
+				if (hudTotalComp != null)
+				{
+					// Initialize the HUD with game data
+					try
+					{
+						hudTotalComp.OnShowBefore();
+						Debug.Log("[InGameOffice] HUDTotal component initialized via OnShowBefore()");
+					}
+					catch (System.Exception ex)
+					{
+						Debug.LogWarning($"[InGameOffice] HUDTotal.OnShowBefore() error (non-fatal): {ex.Message}");
+					}
+					useIMGUI = false;
+				}
+				else
+				{
+					Debug.LogWarning("[InGameOffice] HUDTotal component not found on prefab - using IMGUI fallback");
+				}
+
+				// Log sprite status for debugging
+				var images = hudTotalInstance.GetComponentsInChildren<UnityEngine.UI.Image>(true);
+				int validImages = 0;
+				for (int i = 0; i < images.Length; i++)
+				{
+					if (images[i].sprite != null) validImages++;
+				}
+				Debug.Log($"[InGameOffice] HUDTotal: {images.Length} Images, {validImages} with sprites, useIMGUI={useIMGUI}");
+			}
+		}
 		SubscribeToGameSystems();
-		Debug.Log("[InGameOffice] HUD initialized (IMGUI mode)");
+
+		// Start all employees working (state = Work, but no animation triggers)
+		if (EmployeeList != null)
+		{
+			for (int i = 0; i < EmployeeList.Count; i++)
+			{
+				if (EmployeeList[i] != null)
+					EmployeeList[i].WorkStart();
+			}
+		}
+
+		Debug.Log("[InGameOffice] LoadUI complete, useIMGUI=" + useIMGUI);
 	}
 
 	private void OnGUI()
 	{
+		if (!useIMGUI) return; // Real HUD loaded, skip IMGUI
 		if (hudStyleLarge == null)
 		{
 			hudStyleLarge = new GUIStyle(GUI.skin.label);
-			hudStyleLarge.fontSize = 24;
+			hudStyleLarge.fontSize = 22;
 			hudStyleLarge.fontStyle = FontStyle.Bold;
 			hudStyleSmall = new GUIStyle(GUI.skin.label);
-			hudStyleSmall.fontSize = 16;
+			hudStyleSmall.fontSize = 14;
+			hudStylePopup = new GUIStyle(GUI.skin.label);
+			hudStylePopup.fontSize = 18;
+			hudStylePopup.fontStyle = FontStyle.Bold;
+			hudStylePopup.alignment = TextAnchor.MiddleCenter;
 		}
 
-		// Dark background panel
-		GUI.color = new Color(0, 0, 0, 0.7f);
-		GUI.DrawTexture(new Rect(0, 0, Screen.width, 80), Texture2D.whiteTexture);
+		float w = Screen.width;
+		float h = Screen.height;
+
+		// === TOP HUD BAR ===
+		GUI.color = new Color(0.15f, 0.15f, 0.2f, 0.85f);
+		GUI.DrawTexture(new Rect(0, 0, w, 70), Texture2D.whiteTexture);
 		GUI.color = Color.white;
 
-		// Money (left side)
-		hudStyleLarge.normal.textColor = Color.yellow;
-		GUI.Label(new Rect(15, 8, 400, 35), hudMoney, hudStyleLarge);
+		// Money (top-left, coin icon style)
+		hudStyleLarge.normal.textColor = new Color(1f, 0.85f, 0.2f);
+		GUI.Label(new Rect(15, 5, 300, 30), hudMoney, hudStyleLarge);
 
-		// Income (left side, second row)
-		hudStyleSmall.normal.textColor = Color.green;
-		GUI.Label(new Rect(15, 45, 400, 25), hudIncome, hudStyleSmall);
+		// Income rate (below money)
+		hudStyleSmall.normal.textColor = new Color(0.5f, 1f, 0.5f);
+		GUI.Label(new Rect(15, 35, 300, 25), hudIncome, hudStyleSmall);
 
-		// Level (right side)
-		hudStyleLarge.normal.textColor = Color.white;
+		// Level (center)
+		hudStyleSmall.normal.textColor = Color.white;
+		hudStyleSmall.alignment = TextAnchor.MiddleCenter;
+		GUI.Label(new Rect(w / 2 - 50, 5, 100, 25), hudLevel, hudStyleSmall);
+		hudStyleSmall.alignment = TextAnchor.MiddleLeft;
+
+		// Time + Day status (top-right)
+		hudStyleLarge.normal.textColor = new Color(0.7f, 0.9f, 1f);
 		hudStyleLarge.alignment = TextAnchor.MiddleRight;
-		GUI.Label(new Rect(Screen.width - 215, 8, 200, 35), hudLevel, hudStyleLarge);
+		GUI.Label(new Rect(w - 160, 5, 145, 30), hudTime, hudStyleLarge);
 		hudStyleLarge.alignment = TextAnchor.MiddleLeft;
 
-		// Time (right side, second row)
-		hudStyleSmall.normal.textColor = new Color(0.7f, 0.9f, 1f);
-		hudStyleSmall.alignment = TextAnchor.MiddleRight;
-		GUI.Label(new Rect(Screen.width - 215, 45, 200, 25), hudTime, hudStyleSmall);
+		// === BOTTOM NAV BAR ===
+		GUI.color = new Color(0.15f, 0.15f, 0.2f, 0.85f);
+		GUI.DrawTexture(new Rect(0, h - 50, w, 50), Texture2D.whiteTexture);
+		GUI.color = Color.white;
+		hudStyleSmall.normal.textColor = Color.white;
+		hudStyleSmall.alignment = TextAnchor.MiddleCenter;
+		float btnW = w / 5;
+		string[] navLabels = { "Office", "Company", "Shop", "Mission", "More" };
+		for (int i = 0; i < navLabels.Length; i++)
+		{
+			GUI.Label(new Rect(i * btnW, h - 45, btnW, 40), navLabels[i], hudStyleSmall);
+		}
 		hudStyleSmall.alignment = TextAnchor.MiddleLeft;
+
+		// === FLOATING INCOME POPUPS ===
+		for (int i = incomePopups.Count - 1; i >= 0; i--)
+		{
+			var popup = incomePopups[i];
+			hudStylePopup.normal.textColor = new Color(0.2f, 1f, 0.3f, popup.alpha);
+			float px = w * 0.3f + (i % 3) * 80;
+			float py = h * 0.4f - popup.y;
+			GUI.Label(new Rect(px, py, 200, 30), popup.text, hudStylePopup);
+		}
+
+		// === LEVEL UP DISPLAY ===
+		if (levelUpDisplayTime > 0)
+		{
+			float alpha = Mathf.Clamp01(levelUpDisplayTime);
+			var lvStyle = new GUIStyle(GUI.skin.label);
+			lvStyle.fontSize = 36;
+			lvStyle.fontStyle = FontStyle.Bold;
+			lvStyle.alignment = TextAnchor.MiddleCenter;
+			lvStyle.normal.textColor = new Color(1f, 0.85f, 0.1f, alpha);
+			GUI.Label(new Rect(0, h * 0.3f, w, 50), "LEVEL UP!", lvStyle);
+			lvStyle.fontSize = 24;
+			lvStyle.normal.textColor = new Color(1f, 1f, 1f, alpha);
+			GUI.Label(new Rect(0, h * 0.3f + 50, w, 35), "Lv." + levelUpNewLevel, lvStyle);
+		}
+
+		// === UNLOCK TEXT ===
+		if (unlockDisplayTime > 0)
+		{
+			float alpha = Mathf.Clamp01(unlockDisplayTime);
+			var ulStyle = new GUIStyle(GUI.skin.label);
+			ulStyle.fontSize = 20;
+			ulStyle.fontStyle = FontStyle.Bold;
+			ulStyle.alignment = TextAnchor.MiddleCenter;
+			ulStyle.normal.textColor = new Color(0.3f, 1f, 0.5f, alpha);
+			GUI.Label(new Rect(0, h * 0.45f, w, 30), unlockText, ulStyle);
+		}
 	}
 
 	private void SubscribeToGameSystems()
@@ -624,7 +761,7 @@ public class InGameOffice : InGameMode
 					.AddTo(hudDisposables);
 			}
 
-			// Subscribe to RuntimeRentalFeeValue to add to HUDMoney
+			// Subscribe to RuntimeRentalFeeValue to add to HUDMoney + spawn popup
 			if (root.RentalFeeSystem.RuntimeRentalFeeValue != null)
 			{
 				root.RentalFeeSystem.RuntimeRentalFeeValue
@@ -633,18 +770,62 @@ public class InGameOffice : InGameMode
 						if (val > BigInteger.Zero && root.UserData != null && root.UserData.HUDMoney != null)
 						{
 							root.UserData.HUDMoney.Value += val;
+							// Grant XP from income
+							int xpGain = System.Math.Max(1, (int)val); // 1:1 income to XP
+							root.UserData.AddExp(xpGain);
+
+							// IMGUI popup
+							if (incomePopups != null)
+							{
+								incomePopups.Add(new IncomePopup
+								{
+									y = 0, alpha = 1f,
+									text = "+" + FormatBigNumber(val),
+									time = 0
+								});
+							}
+							// UGUI earn toast
+							if (hudTotalComp != null)
+							{
+								hudTotalComp.ShowEarnToast();
+								hudTotalComp.UpdateRentalFeeProgress(0f);
+							}
 							root.RentalFeeSystem.RuntimeRentalFeeValue.Value = BigInteger.Zero;
+							Debug.Log($"[InGameOffice] Income applied: +{val}, total money now={root.UserData.HUDMoney.Value}");
 						}
 					})
 					.AddTo(hudDisposables);
 			}
 		}
 
-		// Subscribe to level changes
+		// Subscribe to level changes — update display + refresh HUD buttons
 		if (root.UserData != null && root.UserData.Level != null)
 		{
 			root.UserData.Level
-				.Subscribe(val => { hudLevel = "Lv." + val; })
+				.Subscribe(val =>
+				{
+					hudLevel = "Lv." + val;
+					if (val > 1)
+					{
+						levelUpDisplayTime = 3f;
+						levelUpNewLevel = val;
+					}
+					// Refresh UGUI HUD button visibility
+					if (hudTotalComp != null)
+						hudTotalComp.RefreshFeatureGating();
+				})
+				.AddTo(hudDisposables);
+		}
+
+		// Subscribe to XP for display
+		if (root.UserData != null && root.UserData.Exp != null)
+		{
+			root.UserData.Exp
+				.Subscribe(val =>
+				{
+					int nextLevelExp = UserDataSystem.GetExpForLevel(root.UserData.Level.Value + 1);
+					hudLevel = "Lv." + root.UserData.Level.Value + " (" + val + "/" + nextLevelExp + ")";
+				})
 				.AddTo(hudDisposables);
 		}
 
@@ -661,14 +842,47 @@ public class InGameOffice : InGameMode
 	protected override void Update()
 	{
 		base.Update();
-		// Update time display every frame
 		var root = Singleton<GameRoot>.Instance;
-		if (root != null && root.DaySystem != null)
+		if (root == null) return;
+
+		// Update time display
+		if (root.DaySystem != null)
 		{
 			int hour = (int)root.DaySystem.DayTime;
 			int min = (int)((root.DaySystem.DayTime - hour) * 60);
 			var status = root.DaySystem.CurTimeStatus != null ? root.DaySystem.CurTimeStatus.Value : DaySystem.DayStatus.NotSet;
 			hudTime = hour.ToString("D2") + ":" + min.ToString("D2") + " " + status;
+		}
+
+		// Update rental fee progress bar on UGUI HUD
+		if (hudTotalComp != null && root.RentalFeeSystem != null)
+		{
+			int moneyTime = root.RentalFeeSystem.RunTimeGetMoneyTime != null
+				? root.RentalFeeSystem.RunTimeGetMoneyTime.Value : 10;
+			if (moneyTime > 0)
+			{
+				float progress = root.RentalFeeSystem.DeltaTime / moneyTime;
+				hudTotalComp.UpdateRentalFeeProgress(Mathf.Clamp01(progress));
+			}
+		}
+
+		// Countdown level-up / unlock displays
+		if (levelUpDisplayTime > 0) levelUpDisplayTime -= Time.unscaledDeltaTime;
+		if (unlockDisplayTime > 0) unlockDisplayTime -= Time.unscaledDeltaTime;
+
+		// Animate income popups (IMGUI fallback)
+		if (incomePopups != null)
+		{
+			float dt = Time.unscaledDeltaTime;
+			for (int i = incomePopups.Count - 1; i >= 0; i--)
+			{
+				var p = incomePopups[i];
+				p.time += dt;
+				p.y += dt * 60f;
+				p.alpha = Mathf.Max(0, 1f - p.time / 2f);
+				incomePopups[i] = p;
+				if (p.alpha <= 0) incomePopups.RemoveAt(i);
+			}
 		}
 	}
 

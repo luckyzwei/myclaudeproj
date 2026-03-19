@@ -551,6 +551,13 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	public WaitUntil WaitHUDAppear { get; set; }
 
+	private bool IsFeatureUnlocked(int minLevel)
+	{
+		var root = Singleton<GameRoot>.Instance;
+		if (root == null || root.UserData == null) return false;
+		return root.UserData.Level != null && root.UserData.Level.Value >= minLevel;
+	}
+
 	public HudMissionItem GetHudMissionItem { get { return HudMissionItem; } }
 
 	public Button GetMissionBtn { get { return MissionBtn; } }
@@ -632,6 +639,9 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	public override void OnShowBefore()
 	{
+		// Bind currency display (money, cash, level)
+		if (CurrencyHud != null) CurrencyHud.Binding();
+
 		SetLevel();
 		SetDayTime();
 		SetFloor();
@@ -765,6 +775,25 @@ public class HUDTotal : HUDBase, IScreenAction
 		}
 	}
 
+	/// Re-evaluates button visibility when player level changes
+	public void RefreshFeatureGating()
+	{
+		SetMission();
+		SetManager();
+		SetPhone();
+		SetRoulette();
+		SetInvest();
+		SetBizAcq();
+		SetWorldmap();
+		SetPiggyBank();
+		SetNoAds();
+		SetGemPass();
+		SetAdPass();
+		SetMultiRevenue();
+		SetInvite();
+		SetOfferwall();
+	}
+
 	public void SetActiveRoot(bool isActive)
 	{
 		if (TotalRoot != null)
@@ -786,7 +815,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetWorldmap()
 	{
 		if (WorldmapBtn != null)
-			WorldmapBtn.gameObject.SetActive(true);
+			WorldmapBtn.gameObject.SetActive(IsFeatureUnlocked(10));
 	}
 
 	private void StartWorldmap()
@@ -1008,11 +1037,12 @@ public class HUDTotal : HUDBase, IScreenAction
 
 	private void SetPiggyBank()
 	{
-		if (PiggyBtn != null)
-			PiggyBtn.gameObject.SetActive(true);
+		if (PiggyBtn == null) return;
+		bool unlocked = IsFeatureUnlocked(8);
+		PiggyBtn.gameObject.SetActive(unlocked);
 		if (PiggyReddot != null)
 			PiggyReddot.SetActive(false);
-		UpdatePiggyValue();
+		if (unlocked) UpdatePiggyValue();
 	}
 
 	public void UpdatePiggyValue()
@@ -1093,8 +1123,8 @@ public class HUDTotal : HUDBase, IScreenAction
 		if (NoAdsBtn == null) return;
 		noadssale_disposables?.Dispose();
 		noadssale_disposables = new CompositeDisposable();
-		NoAdsBtn.gameObject.SetActive(true);
-		UpdateNoAdsIcon();
+		NoAdsBtn.gameObject.SetActive(IsFeatureUnlocked(5));
+		if (IsFeatureUnlocked(5)) UpdateNoAdsIcon();
 	}
 
 	private void UpdateNoAdsIcon()
@@ -1114,8 +1144,8 @@ public class HUDTotal : HUDBase, IScreenAction
 		if (GemPassBtn == null) return;
 		playerlvpasssale_disposables?.Dispose();
 		playerlvpasssale_disposables = new CompositeDisposable();
-		GemPassBtn.gameObject.SetActive(true);
-		UpdateGemPassIcon();
+		GemPassBtn.gameObject.SetActive(IsFeatureUnlocked(5));
+		if (IsFeatureUnlocked(5)) UpdateGemPassIcon();
 	}
 
 	private void UpdateGemPassIcon()
@@ -1140,7 +1170,7 @@ public class HUDTotal : HUDBase, IScreenAction
 		if (AdPassBtn == null) return;
 		adpass_disposables?.Dispose();
 		adpass_disposables = new CompositeDisposable();
-		AdPassBtn.gameObject.SetActive(true);
+		AdPassBtn.gameObject.SetActive(IsFeatureUnlocked(5));
 	}
 
 	public void UpdateAdPass()
@@ -1190,11 +1220,9 @@ public class HUDTotal : HUDBase, IScreenAction
 		if (InvestBtn == null) return;
 		invest_disposables?.Dispose();
 		invest_disposables = new CompositeDisposable();
-		var root = Singleton<GameRoot>.Instance;
-		if (root == null) return;
-		bool isOpen = root.ContentsOpenSystem != null;
-		InvestBtn.gameObject.SetActive(isOpen);
-		UpdateInvest();
+		bool unlocked = IsFeatureUnlocked(8);
+		InvestBtn.gameObject.SetActive(unlocked);
+		if (unlocked) UpdateInvest();
 	}
 
 	private void UpdateInvest()
@@ -1213,8 +1241,9 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetInvite()
 	{
 		if (RecommendBtn == null) return;
-		RecommendBtn.gameObject.SetActive(true);
-		if (RecommendBtn.transform is RectTransform rt)
+		bool unlocked = IsFeatureUnlocked(8);
+		RecommendBtn.gameObject.SetActive(unlocked);
+		if (unlocked && RecommendBtn.transform is RectTransform rt)
 			recommendPos = rt.anchoredPosition;
 	}
 
@@ -1238,9 +1267,9 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetOfferwall()
 	{
 		if (OfferwallBtn == null) return;
-		OfferwallBtn.gameObject.SetActive(true);
+		OfferwallBtn.gameObject.SetActive(IsFeatureUnlocked(10));
 		if (OfferwallEventObj != null)
-			OfferwallEventObj.SetActive(OfferwallReddot);
+			OfferwallEventObj.SetActive(false);
 	}
 
 	private void OnClickOfferwall()
@@ -1280,7 +1309,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	public void SetMultiRevenue()
 	{
 		if (MultiRevenueBtn == null) return;
-		MultiRevenueBtn.gameObject.SetActive(true);
+		MultiRevenueBtn.gameObject.SetActive(IsFeatureUnlocked(8));
 	}
 
 	private void OnClickMultiRevenue()
@@ -1291,9 +1320,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetRoulette()
 	{
 		if (RouletteBtn == null) return;
-		var root = Singleton<GameRoot>.Instance;
-		bool isOpen = root != null && root.ContentsOpenSystem != null;
-		RouletteBtn.gameObject.SetActive(isOpen);
+		RouletteBtn.gameObject.SetActive(IsFeatureUnlocked(5));
 	}
 
 	private void OnClickRoulette()
@@ -1304,7 +1331,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetPhone()
 	{
 		if (PhoneBtn == null) return;
-		PhoneBtn.gameObject.SetActive(true);
+		PhoneBtn.gameObject.SetActive(IsFeatureUnlocked(5));
 	}
 
 	private void StartPhone()
@@ -1321,8 +1348,9 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetMission()
 	{
 		if (MissionBtn == null) return;
-		MissionBtn.gameObject.SetActive(true);
-		if (MissionMilestoneComp != null)
+		bool unlocked = IsFeatureUnlocked(2);
+		MissionBtn.gameObject.SetActive(unlocked);
+		if (unlocked && MissionMilestoneComp != null)
 			MissionMilestoneComp.Init();
 	}
 
@@ -1334,9 +1362,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetManager()
 	{
 		if (ManagerBtn == null) return;
-		var root = Singleton<GameRoot>.Instance;
-		bool isOpen = root != null && root.ContentsOpenSystem != null;
-		ManagerBtn.gameObject.SetActive(isOpen);
+		ManagerBtn.gameObject.SetActive(IsFeatureUnlocked(3));
 	}
 
 	private void OnClickManager()
@@ -1347,8 +1373,7 @@ public class HUDTotal : HUDBase, IScreenAction
 	private void SetBizAcq()
 	{
 		if (BizAcqBtn == null) return;
-		var root = Singleton<GameRoot>.Instance;
-		bool isOpen = root != null && root.ContentsOpenSystem != null && root.ContentsOpenSystem.IsContentsOpen(ContentsOpenSystem.OpenConditionType.Level, 0);
+		bool isOpen = IsFeatureUnlocked(10);
 		BizAcqBtn.gameObject.SetActive(isOpen);
 		if (BizAcqLockObj != null)
 			BizAcqLockObj.SetActive(!isOpen);

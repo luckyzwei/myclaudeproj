@@ -850,6 +850,16 @@ public class InGameOfficeStage : MonoBehaviour
 		inGame.LoadSecretary(Worker.E_AppearType.Seat, order, CompCb);
 	}
 
+	public int OfficeRoomCount { get { return Offices != null ? Offices.Count : 0; } }
+
+	public Transform GetOfficeSeat(int officeIdx, int seat)
+	{
+		if (Offices == null || officeIdx < 0 || officeIdx >= Offices.Count) return null;
+		var office = Offices[officeIdx];
+		if (office == null) return null;
+		return office.GetSeat(seat);
+	}
+
 	public InGameAstar GetAstar(int floor)
 	{
 		if (Floors == null || floor < 0 || floor >= Floors.Count)
@@ -1290,31 +1300,42 @@ public class InGameOfficeStage : MonoBehaviour
 		totalCount = 0;
 		var root = Singleton<GameRoot>.Instance;
 		if (root == null || root.InGameSystem == null || root.UserData == null || root.UserData.mainData == null)
+		{
+			UnityEngine.Debug.Log("[Stage] CallEmployeeToWorkOn: root/system null");
 			return;
+		}
 
 		var inGame = root.InGameSystem.GetInGame<InGameOffice>();
-		if (inGame == null) return;
+		if (inGame == null) { UnityEngine.Debug.Log("[Stage] CallEmployeeToWorkOn: inGame null"); return; }
 
 		var regionData = root.UserData.mainData.RegionData;
 		if (regionData == null || regionData.StageData == null || regionData.StageData.Offices == null)
+		{
+			UnityEngine.Debug.Log($"[Stage] CallEmployeeToWorkOn: regionData={regionData != null}, stageData={regionData?.StageData != null}, offices={regionData?.StageData?.Offices != null}");
 			return;
+		}
+		UnityEngine.Debug.Log($"[Stage] CallEmployeeToWorkOn: {regionData.StageData.Offices.Count} offices");
 
 		int order = 0;
 		foreach (var kvp in regionData.StageData.Offices)
 		{
 			int officeIdx = kvp.Key;
 			var officeData = kvp.Value;
-			if (officeData == null || officeData.IsOpen == null || !officeData.IsOpen.Value)
+			bool hasCompany = officeData != null && officeData.CompanyIdx != null && officeData.CompanyIdx.Value > 0;
+			UnityEngine.Debug.Log($"[Stage] Office {officeIdx}: hasCompany={hasCompany}, companyIdx={officeData?.CompanyIdx?.Value}, employees={officeData?.Employees?.Count}");
+			if (officeData == null || !hasCompany)
 				continue;
 			if (officeData.Employees == null) continue;
 
 			for (int seat = 0; seat < officeData.Employees.Count; seat++)
 			{
 				totalCount++;
+				UnityEngine.Debug.Log($"[Stage] Loading employee office={officeIdx} seat={seat}");
 				inGame.LoadEmployee(officeIdx, seat, appearType, order, loadCb);
 				order++;
 			}
 		}
+		UnityEngine.Debug.Log($"[Stage] CallEmployeeToWorkOn done. totalCount={totalCount}");
 	}
 
 	public void CallEmployeeToWorkOff()

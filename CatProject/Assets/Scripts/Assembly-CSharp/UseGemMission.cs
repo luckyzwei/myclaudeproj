@@ -1,12 +1,16 @@
+using UniRx;
+using Treeplla;
+
 public class UseGemMission : SingleMissionBase
 {
 	public override void Subscribe()
 	{
-		// Subscribe to mission events
+		if (Disposables == null) Disposables = new CompositeDisposable();
+		// Event subscription handled by ContentsMissionSystem (gem usage tracking)
 	}
 
 	public override string GetMissionDescriptionText()
 	{
-		return null;
+		return MissionDescriptionKey ?? "";
 	}
 }

@@ -55,21 +55,22 @@ public class OfficeData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		CompanyIdx = new ReactiveProperty<int>();
-		Level = new ReactiveProperty<int>();
-		Exp = new ReactiveProperty<int>();
-		IsOpen = new ReactiveProperty<bool>();
-		OpenRemainTime = new ReactiveProperty<int>();
-		CompanyRemainTime = new ReactiveProperty<int>();
-		MaintenanceRemainTime = new ReactiveProperty<int>();
-		RepaireGuardRemainTime = new ReactiveProperty<int>();
-		inMaintenance = new ReactiveProperty<bool>();
-		inRepair = new ReactiveProperty<bool>();
-		Manager = new ReactiveProperty<int>();
-		EnableStrike = new ReactiveProperty<bool>();
-		OnNegotiation = new ReactiveProperty<bool>();
-		Items = new ReactiveCollection<OfficeItemData>();
-		OnEndCompanyContract = new Subject<bool>();
+		if (CompanyIdx == null) CompanyIdx = new ReactiveProperty<int>();
+		if (Level == null) Level = new ReactiveProperty<int>();
+		if (Exp == null) Exp = new ReactiveProperty<int>();
+		if (IsOpen == null) IsOpen = new ReactiveProperty<bool>();
+		if (OpenRemainTime == null) OpenRemainTime = new ReactiveProperty<int>();
+		if (CompanyRemainTime == null) CompanyRemainTime = new ReactiveProperty<int>();
+		if (MaintenanceRemainTime == null) MaintenanceRemainTime = new ReactiveProperty<int>();
+		if (RepaireGuardRemainTime == null) RepaireGuardRemainTime = new ReactiveProperty<int>();
+		if (inMaintenance == null) inMaintenance = new ReactiveProperty<bool>();
+		if (inRepair == null) inRepair = new ReactiveProperty<bool>();
+		if (Manager == null) Manager = new ReactiveProperty<int>();
+		if (EnableStrike == null) EnableStrike = new ReactiveProperty<bool>();
+		if (OnNegotiation == null) OnNegotiation = new ReactiveProperty<bool>();
+		if (Items == null) Items = new ReactiveCollection<OfficeItemData>();
+		if (Employees == null) Employees = new List<EmployeeData>();
+		if (OnEndCompanyContract == null) OnEndCompanyContract = new Subject<bool>();
 	}
 
 	public virtual object Clone()

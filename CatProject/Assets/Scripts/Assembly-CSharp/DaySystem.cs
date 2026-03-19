@@ -182,6 +182,12 @@ public class DaySystem
 
 	public void Update()
 	{
+		// Determine time scale BEFORE accumulating delta
+		if (isWorkTime())
+			one_min = work_one_min;
+		else
+			one_min = workoff_one_min;
+
 		timer += Time.deltaTime;
 
 		double dayEnd = (int)DayStatus.Rest * one_min * 60;
@@ -190,11 +196,6 @@ public class DaySystem
 			ResetTime();
 			return;
 		}
-
-		if (isWorkTime())
-			one_min = work_one_min;
-		else
-			one_min = workoff_one_min;
 
 		CalcCurTime();
 	}

@@ -191,12 +191,22 @@ public class BizAcqBattleSystem : SystemBase
 	{
 		if (caster == null) return false;
 		if (caster.SkillData == null) return false;
-		return false;
+		if (caster.SkillData.SkillIdx <= 0) return false;
+		// Skill triggers based on activation type match
+		if (caster.SkillData.ActivationType != activationType) return false;
+		if (caster.SkillData.IsTriggered) return false; // Already triggered this battle
+		// Check trigger probability
+		float roll = UnityEngine.Random.Range(0f, 100f);
+		if (roll > caster.SkillData.TriggerChance) return false;
+		return true;
 	}
 
 	private void CheckAndTriggerSkill(BizAcqCharacterData caster, Config.ManagerSkillActivationType activationType)
 	{
 		if (!CheckSkillTrigger(caster, activationType)) return;
+		var skillCmd = BattleCommandFactory.CreateSkillCommand(caster);
+		if (skillCmd != null && CommandQueue != null)
+			CommandQueue.Enqueue(skillCmd);
 	}
 
 	public int ApplyDamage(BizAcqCharacterData caster, BizAcqCharacterData target, int damage)
@@ -215,7 +225,31 @@ public class BizAcqBattleSystem : SystemBase
 		if (command == null) return false;
 
 		LastPlayedCommand = command;
+
+		// Execute the command's actual combat logic
+		if (command is AttackCommand || command is AdditionalAttackCommand)
+		{
+			if (command.Caster != null && command.Targets != null && command.DamageValue > 0)
+			{
+				var diedList = new List<BizAcqCharacterData>();
+				for (int i = 0; i < command.Targets.Count; i++)
+				{
+					var target = command.Targets[i];
+					if (target == null || target.IsDead()) continue;
+					ApplyDamage(command.Caster, target, command.DamageValue);
+					if (target.IsDead())
+						diedList.Add(target);
+				}
+				if (diedList.Count > 0)
+					_onDied?.Invoke(diedList);
+			}
+		}
+
 		_onCommandExecuted?.Invoke(command);
+
+		// Check if skill should trigger after attack
+		if (command.Caster != null)
+			CheckAndTriggerSkill(command.Caster, Config.ManagerSkillActivationType.OnAttack);
 
 		return true;
 	}
@@ -397,7 +431,9 @@ public class BizAcqBattleSystem : SystemBase
 		var bizAcqData = userData.BizAcqUserData;
 		if (bizAcqData != null)
 		{
-			// Would update to latest clear stage
+			int stageIdx = GetStageIdx() - 1; // GetStageIdx returns next, so -1 for current clear
+			if (stageIdx > bizAcqData.LastClearStageIdx)
+				bizAcqData.LastClearStageIdx = stageIdx;
 		}
 	}
 
@@ -578,7 +614,7 @@ public class BizAcqBattleSystem : SystemBase
 		if (userData == null) return false;
 		var bizAcqData = userData.BizAcqUserData;
 		if (bizAcqData == null) return false;
-		return false;
+		return bizAcqData.LastClearStageIdx >= BizAcqHelper.MAX_STAGE_IDX;
 	}
 
 	public BizAcqTeamData GetTeam(TeamType teamType)

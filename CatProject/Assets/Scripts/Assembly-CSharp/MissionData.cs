@@ -21,7 +21,7 @@ public class MissionData : IReadOnlyData, ICloneable
 
 	public void Create()
 	{
-		Value = new ReactiveProperty<BigInteger>();
+		if (Value == null) Value = new ReactiveProperty<BigInteger>();
 	}
 
 	public virtual object Clone()

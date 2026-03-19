@@ -197,6 +197,16 @@ public class Employee : Worker
 			if (go != null)
 			{
 				CharAni = go.GetComponent<Animator>();
+				// Ensure character is visible - set Animator to show state
+				if (CharAni != null)
+				{
+					CharAni.SetBool("Hide", false);
+					CharAni.Play("Idle", 0, 0);
+				}
+				// Activate all children
+				go.SetActive(true);
+				for (int i = 0; i < go.transform.childCount; i++)
+					go.transform.GetChild(i).gameObject.SetActive(true);
 			}
 			SubscribeMood();
 			loadComp?.Invoke();
@@ -281,6 +291,12 @@ public class Employee : Worker
 	{
 		isWorkOnComp = true;
 		ChangeState(E_State.Work);
+
+		// Work animation disabled — Animator doesn't have Work triggers
+		WorkAniDuration = 2.5f;
+		WorkAniDeltaTime = 0f;
+		WorkAniCount = 0;
+		InWorkAni = false;
 	}
 
 	protected override void ChangeState(E_State _state, bool isForce = false)
@@ -464,25 +480,8 @@ public class Employee : Worker
 			}
 
 			// Work animation cycling
-			if (InWorkAni)
-			{
-				WorkAniDeltaTime += deltaTime;
-				if (WorkAniDeltaTime >= WorkAniDuration)
-				{
-					WorkAniDeltaTime = 0f;
-					InWorkAni = false;
-					WorkAniCount++;
-					if (WorkAnis != null && WorkAnis.Count > 0)
-					{
-						int idx = WorkAniCount % WorkAnis.Count;
-						if (CharAni != null)
-						{
-							CharAni.SetTrigger(WorkAnis[idx]);
-						}
-						InWorkAni = true;
-					}
-				}
-			}
+			// Work animation cycling disabled - Employee Animator lacks Work triggers
+			// Employees stay in their current pose while in Work state
 		}
 		else if (state == E_State.WaitLine)
 		{
